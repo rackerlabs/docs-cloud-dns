@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <domain name="secondlevel434705.com" accountId="434705" id="2610501">
+        <records>
+            <record ttl="86400" data="172.11.122.24" name="secondlevel434705.com"
+                type="A" id="6500342" />
+            <record priority="2" ttl="5000" data="mail.secondlevel434705.com"
+                name="secondlevel434705.com" type="MX" id="3012592" />
+        </records>
+    </domain>
+</domains>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <record ttl="5400" data="dns1.stabletransit.com" name="bbunittestacct2static3.com"
+        type="NS" id="6012691" />
+</records>

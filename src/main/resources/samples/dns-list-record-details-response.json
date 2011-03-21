@@ -1,0 +1,11 @@
+{
+  "records" : {
+    "record" : [ {
+      "id" : 6012691,
+      "type" : "NS",
+      "name" : "bbunittestacct2static3.com",
+      "data" : "dns1.stabletransit.com",
+      "ttl" : 5400
+    } ]
+  }
+}

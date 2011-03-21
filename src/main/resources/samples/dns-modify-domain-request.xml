@@ -1,0 +1,2 @@
+http://localhost/cxf/dns/434705/domains/34454
+<domain xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  ttl="9500" emailAddress="hostmaster@newzone.com" />

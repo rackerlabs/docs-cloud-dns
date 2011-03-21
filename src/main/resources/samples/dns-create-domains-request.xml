@@ -1,0 +1,9 @@
+http://localhost/cxf/dns/434705/domains/
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
+    <domain  name="secondlevel434705.com" ttl="5600" emailAddress="hostmaster@secondlevel434705.com" >
+        <records>
+            <record type="A" data="172.11.122.24" name="secondlevel434705.com"/>
+            <record type="MX" data="mail.secondlevel434705.com" priority="2" ttl="5000" name="secondlevel434705.com"/>
+        </records>
+    </domain>
+</domains>

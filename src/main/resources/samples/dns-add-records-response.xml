@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <record ttl="86400" data="dev.bbunittestacct2static3.com" name="sub.bbunittestacct2static3.com"
+        type="CNAME" id="9573515" />
+    <record ttl="86400" data="172.23.2.212" name="bbunittestacct2static3.com"
+        type="A" id="6500361" />
+</records>

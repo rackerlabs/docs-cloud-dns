@@ -1,0 +1,23 @@
+{
+  "records" : {
+    "record" : [ {
+      "id" : 6012691,
+      "type" : "NS",
+      "name" : "bbunittestacct2static3.com",
+      "data" : "dns1.stabletransit.com",
+      "ttl" : 5400
+    }, {
+      "id" : 6012692,
+      "type" : "NS",
+      "name" : "bbunittestacct2static3.com",
+      "data" : "dns2.stabletransit.com",
+      "ttl" : 5400
+    }, {
+      "id" : 2610338,
+      "type" : "SOA",
+      "name" : "bbunittestacct2static3.com",
+      "data" : "ns1.rackspace.com hostmaster@newzone.com 1299008840",
+      "ttl" : 9500
+    } ]
+  }
+}

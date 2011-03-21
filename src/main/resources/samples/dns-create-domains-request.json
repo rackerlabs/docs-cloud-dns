@@ -1,0 +1,25 @@
+{
+   "domains":{
+      "domain":{
+         "name":"secondlevel434705.com",
+         "accountId":"434705",
+         "id":"2610502",
+         "records":{
+            "record":[{
+               "ttl":"86400",
+               "data":"172.11.122.24",
+               "name":"secondlevel434705.com",
+               "type":"A",
+               "id":"6500343"
+            },{
+               "priority":"2",
+               "ttl":"5000",
+               "data":"mail.secondlevel434705.com",
+               "name":"secondlevel434705.com",
+               "type":"MX",
+               "id":"3012593"
+            }]
+         }
+      }
+   }
+}

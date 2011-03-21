@@ -1,0 +1,17 @@
+{
+  "records" : {
+    "record" : [ {
+      "id" : 9573517,
+      "type" : "CNAME",
+      "name" : "sub.bbunittestacct2static3.com",
+      "data" : "dev.bbunittestacct2static3.com",
+      "ttl" : 86400
+    }, {
+      "id" : 6500365,
+      "type" : "A",
+      "name" : "bbunittestacct2static3.com",
+      "data" : "172.23.2.212",
+      "ttl" : 86400
+    } ]
+  }
+}

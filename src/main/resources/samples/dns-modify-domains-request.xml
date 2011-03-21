@@ -1,0 +1,7 @@
+http://localhost/cxf/dns/434705/domains/
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
+    <domain id="2610338" ttl="9200" emailAddress="hostmaster@newzone.com">
+    </domain>
+    <domain id="2610428" ttl="8800" emailAddress="changed@cloneddomain.com">
+    </domain>
+</domains>

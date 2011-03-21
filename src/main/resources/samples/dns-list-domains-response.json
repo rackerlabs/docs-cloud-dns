@@ -1,0 +1,32 @@
+{
+  "domains" : {
+    "domain" : [ {
+      "id" : 2610338,
+      "name" : "bbunittestacct2static3.com"
+    }, {
+      "id" : 2610368,
+      "name" : "demodomainwithsubs.com",
+      "subdomains" : {
+        "domain" : [ {
+          "id" : 2610369,
+          "name" : "sub.demodomainwithsubs.com"
+        } ]
+      }
+    }, {
+      "id" : 2610326,
+      "name" : "domainremoverecord.com"
+    }, {
+      "id" : 2610424,
+      "name" : "demo.dayjson.org",
+      "subdomains" : {
+        "domain" : [ {
+          "id" : 2610425,
+          "name" : "sub.demo.dayjson.org"
+        } ]
+      }
+    }, {
+      "id" : 2575497,
+      "name" : "cwc201101201654.com"
+    }]
+  }
+}
