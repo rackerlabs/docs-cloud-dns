@@ -140,12 +140,11 @@
                     xlink:href="http://docs.rackspacecloud.com/api/">
                     http://docs.rackspacecloud.com/api/</link>.
             </para>
-            <para>For more details about Rackspace Cloud products, refer to <link
-                xlink:href="http://www.rackspace.com/cloud/"
-                >http://www.rackspace.com/cloud</link>. This site also offers links to
+            <para>For information about Rackspace Cloud products, refer to <link
+                    xlink:href="http://www.rackspace.com/cloud/"
+                    >http://www.rackspace.com/cloud</link>. This site also offers links to
                 Rackspace's official support channels, including knowledge base articles, forums,
-                phone, chat, and email.
-            </para>
+                phone, chat, and email. </para>
             <para>You can also follow Rackspace updates and announcements via twitter at
                 <link
                     xlink:href="http://www.twitter.com/rackcloud"
