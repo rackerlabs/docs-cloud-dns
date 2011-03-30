@@ -1,7 +1,7 @@
 http://localhost/cxf/dns/v1.0/440369/domains/2610338/records/
-<record data="172.23.2.214" name="bbunittestacct2static3.com"  ttl="4544" type="A">
-    <records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-        <record xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-            data="172.23.2.214" name="bbunittestacct2static3.com" ttl="4544" type="A">
-        </record>
-    </records>
+<records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
+    <record id="9573534" data="dev15.whoe757whoa.com" name="sub0.whoe757whoa.com" ttl="4544">
+    </record>
+    <record id="6500965" data="172.23.2.193" name="whoe173whoa.com" ttl="4544">
+    </record>
+</records> 
