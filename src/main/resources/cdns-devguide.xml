@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2011-03-30</pubdate>
+        <pubdate>2011-04-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -120,6 +120,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td colspan="1" align="center">Apr. 1, 2011</td>
+                            <td colspan="4">
+                                <itemizedlist spacing="compact">
+                                    <listitem>
+                                        <para> Identified authentication endpoints. </para>
+                                    </listitem>
+                                </itemizedlist>
+                            </td>
+                        </tr>
                         <tr>
                             <td colspan="1" align="center">Mar. 30, 2011</td>
                             <td colspan="4">
@@ -229,41 +239,79 @@
         </note>
         <section>
             <title>Authentication</title>
-            <para> Each ReST request against the DNS service requires the inclusion of a specific
-                authorization token HTTP x-header, defined as <code>X-Auth-Token</code>. Customers
-                obtain this token by first using the Rackspace Cloud Authentication Service and
-                supplying a valid username and API access key. </para>
-            <para> The Rackspace Cloud Authentication Service is a ReSTful web service. It is the
-                entry point to all Rackspace Cloud APIs. It is accessible at
-                <link xlink:href="https://auth.api.rackspacecloud.com/v1.0">https://auth.api.rackspacecloud.com/v1.0</link>.
+            <para> Each ReST request against the Cloud DNS system requires the inclusion of a
+                specific authorization token HTTP x-header, defined as <code>X-Auth-Token</code>.
+                Clients obtain this token, along with the Cloud Servers API URL, by first using the
+                Rackspace Cloud Authentication Service and supplying a valid username and API access
+                key. </para>
+            <para> The Rackspace Cloud Authentication Service is a ReSTful web service. It is
+                the entry point to all Rackspace Cloud APIs. </para>
+            <para> To access the Authentication Service, you must know whether your account is
+                US-based or UK-based: 
             </para>
-               <simplesect>
+            <itemizedlist spacing="compact">
+                <listitem>
+                    <para>
+                        US-based accounts authenticate through <link xlink:href="https://dns.api.rackspacecloud.com/v1.0">https://dns.api.rackspacecloud.com/v1.0</link>.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        UK-based accounts authenticate through <link xlink:href="https://lon.dns.api.rackspacecloud.com/v1.0">https://lon.dns.api.rackspacecloud.com/v1.0</link>.
+                    </para>
+                </listitem>
+            </itemizedlist>
+            <para>
+                Your account may be based in either the US or the UK; this is not determined
+                by your physical location but by the location of the Rackspace retail site which
+                was used to create your account: 
+            </para>
+            <itemizedlist spacing="compact">
+                <listitem>
+                    <para>
+                        If your account was
+                        created via <link xlink:href="http://www.rackspacecloud.com">http://www.rackspacecloud.com</link>, it is a US-based account.
+                    </para>   
+                </listitem>
+                <listitem>
+                    <para>
+                        If your account was
+                        created via <link xlink:href="http:/www.rackspace.co.uk">http:/www.rackspace.co.uk</link>, it is a UK-based account.
+                    </para>
+                </listitem>
+            </itemizedlist>
+            <para>
+                If you are unsure how your account was created, use the Rackspace contact
+                information at either site to ask for help.
+            </para>
+            <simplesect>
                 <title>Request</title>
-				<para>
-				    To authenticate, you must supply your username and API access key in x-headers:
-				</para>
+                <para>
+                    To authenticate, you must supply your username and API access key in x-headers:
+                </para>
                 <para>
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>
                                 Use your Rackspace Cloud
-                                    username as the username for the API. Place it in the
-                                        <code>X-Auth-User</code> x-header.
-                              </para>
+                                username as the username for the API. Place it in the
+                                <code>X-Auth-User</code> x-header.
+                            </para>
                         </listitem>
                         <listitem>
-                               <para> Obtain your API access key from the Rackspace Cloud Control
+                            <para> Obtain your API access key from the Rackspace Cloud Control
                                 Panel in the Your Account | API Access section. Place it in the
-                                    <code>X-Auth-Key</code> x-header. </para>
+                                <code>X-Auth-Key</code> x-header. </para>
                         </listitem>
                     </itemizedlist>
                 </para>
+                <para> </para>
                 <example>
-                    <title>Authentication Request</title>
+                    <title>Authentication Request (US-Based Account)</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">
 GET /v1.0 HTTP/1.1
-Host: auth.api.rackspacecloud.com
+Host: dns.api.rackspacecloud.com
 X-Auth-User: jdoe
 X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89
                     </literallayout>
@@ -272,15 +320,14 @@ X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89
             <simplesect>
                 <title>Response</title>
                 <para> If authentication is successful, an HTTP status <returnvalue>204 (No
-                        Content)</returnvalue> is returned with an <code>X-Auth-Token</code> header;
+                    Content)</returnvalue> is returned with an <code>X-Auth-Token</code> header;
                     additional Cloud Service headers are returned along with with
-                        <code>X-Auth-Token</code>, but they are not applicable to the DNS service.
+                    <code>X-Auth-Token</code>, but they are not applicable to the DNS service.
                     An HTTP status of <errorcode>401 (Unauthorized)</errorcode> is returned if
                     authentication fails. All operations against the DNS service must include the
-                        <code>X-Auth-Token</code> header as noted above.</para>
+                    <code>X-Auth-Token</code> header as noted above.</para>
                 <example>
                     <title>Authentication Response</title>
-                    <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">
 HTTP/1.1 204 No Content
 Date: Mon, 12 Nov 2007 15:32:21 GMT
@@ -294,10 +341,10 @@ Content-Type: text/plain; charset=UTF-8
                     </literallayout>
                 </example>
                 <para>
-                     Authentication tokens are typically valid for 24
-                     hours. Applications should be designed to
-                     re-authenticate after receiving a <errorcode>401
-                     (Unauthorized)</errorcode> response.
+                    Authentication tokens are typically valid for 24
+                    hours. Applications should be designed to
+                    re-authenticate after receiving a <errorcode>401
+                        (Unauthorized)</errorcode> response.
                 </para>
             </simplesect>
         </section>
