@@ -873,7 +873,7 @@ Content-Type: text/plain; charset=UTF-8
                 </informaltable>
                 <simpara>
                     Normal Response Code(s):
-                    <returnvalue>200</returnvalue>, <returnvalue>202</returnvalue>
+                    <returnvalue>204</returnvalue>, <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
@@ -951,7 +951,7 @@ Content-Type: text/plain; charset=UTF-8
                 </informaltable>
                 <simpara>
                     Normal Response Code(s):
-                    <returnvalue>200</returnvalue>, <returnvalue>202</returnvalue>
+                    <returnvalue>204</returnvalue>, <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                     <errorcode>500</errorcode>), serviceUnavailable
@@ -1146,7 +1146,7 @@ Content-Type: text/plain; charset=UTF-8
                         </tr>
                     </tbody>
                 </informaltable>
-                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                <simpara> Normal Response Code(s): <returnvalue>204</returnvalue>,
                     <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
@@ -1193,7 +1193,7 @@ Content-Type: text/plain; charset=UTF-8
                         </tr>
                     </tbody>
                 </informaltable>
-                <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                <para> Normal Response Code(s): <returnvalue>204</returnvalue>,
                     <returnvalue>202</returnvalue>
                 </para>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
