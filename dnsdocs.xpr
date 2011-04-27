@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="12.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="*.fo"
+            positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="12.1">
+                <map>
+                    <entry>
+                        <String xml:space="preserve">document.type.only.local.dtds</String>
+                        <Boolean xml:space="preserve">false</Boolean>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">document.types</String>
+                        <documentTypeDescriptor-array/>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">document.types.order</String>
+                        <documentTypeEntry-array>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">ant/ant.framework/ANT</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">dita/dita.framework/DITA</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">dita/ditamap.framework/DITA Map</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">dita/ditaval.framework/DITAVAL</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">docbook/docbook4.framework/DocBook 4</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">docbook/docbook5.framework/DocBook 5</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">docbook/targetset.framework/Docbook Targetset</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">ead/ead.framework/EAD</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">fo/fo.framework/FO</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">kml/kml.framework/KML</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">mathml2/mathml.framework/MathML</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">nvdl/nvdl.framework/NVDL</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">odf/odf.framework/ODF</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">ooxml/ooxml.framework/OOXML</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">relaxng/relaxng.framework/Relax NG</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">schematron/schematron.framework/Schematron</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">schematron/schematron15.framework/Schematron 1.5</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">svg/svg.framework/SVG</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">tei/teip4.framework/TEI P4</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">tei/teip5.framework/TEI P5</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">widgets/widgets.framework/Widgets</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">xhtml/xhtml.framework/XHTML</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">xml/xmlcatalog.framework/OASIS XML Catalog</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">xmlschema/xmlschema.framework/XML Schema</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">xmlspec/xmlspec.framework/XMLSpec</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">xproc/xproc.framework/XProc</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">xslt/xslt.framework/XSLT</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">ncx/ncx.framework/NCX</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">ocf/ocf.framework/OCF</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String xml:space="preserve">opf/opf.framework/OPF</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                        </documentTypeEntry-array>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">external.tool.cmds</String>
+                        <xsltCustomEngines-array>
+                            <xsltCustomEngines>
+                                <field name="outEncoding">
+                                    <null/>
+                                </field>
+                                <field name="outContentType">
+                                    <null/>
+                                </field>
+                                <field name="errEncoding">
+                                    <null/>
+                                </field>
+                                <field name="cmd">
+                                    <String xml:space="preserve">mvn compile</String>
+                                </field>
+                                <field name="description">
+                                    <String xml:space="preserve"></String>
+                                </field>
+                                <field name="name">
+                                    <String xml:space="preserve">mvn compile</String>
+                                </field>
+                                <field name="workingDirectory">
+                                    <String xml:space="preserve">${pd}</String>
+                                </field>
+                                <field name="keyStroke">
+                                    <null/>
+                                </field>
+                                <field name="isBuiltin">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                            </xsltCustomEngines>
+                            <xsltCustomEngines>
+                                <field name="outEncoding">
+                                    <null/>
+                                </field>
+                                <field name="outContentType">
+                                    <null/>
+                                </field>
+                                <field name="errEncoding">
+                                    <null/>
+                                </field>
+                                <field name="cmd">
+                                    <String xml:space="preserve">mvn clean</String>
+                                </field>
+                                <field name="description">
+                                    <String xml:space="preserve"></String>
+                                </field>
+                                <field name="name">
+                                    <String xml:space="preserve">mvn clean (deletes target dir)</String>
+                                </field>
+                                <field name="workingDirectory">
+                                    <String xml:space="preserve">${pd}</String>
+                                </field>
+                                <field name="keyStroke">
+                                    <null/>
+                                </field>
+                                <field name="isBuiltin">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                            </xsltCustomEngines>
+                        </xsltCustomEngines-array>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">key.editor.document.type.association.option.pane</String>
+                        <Boolean xml:space="preserve">true</Boolean>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">key.external.tools.option.pane</String>
+                        <Boolean xml:space="preserve">true</Boolean>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">key.spellcheck.option.pane</String>
+                        <Boolean xml:space="preserve">true</Boolean>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">profiling.conditions</String>
+                        <Boolean xml:space="preserve">true</Boolean>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">profiling.conditions.list</String>
+                        <profileConditionInfo-array>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">audience</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">expert</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">novice</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DITA*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve"> </String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Audience</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">platform</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">linux</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">windows</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DITA*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve"> </String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Platform</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">product</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">product1</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">product2</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DITA*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve"> </String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Product</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">otherprops</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">prop1</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">prop2</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DITA*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve"> </String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Other</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">arch</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">i386</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">i486</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Architecture</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">condition</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">condition1</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">condition2</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Condition</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">conformance</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">lsb</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Conformance</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">os</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">linux</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">windows</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Operating System</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">revision</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">1.0</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">1.1</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Revision</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">revisionflag</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">added</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">changed</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Revision Flag</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">security</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">high</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">low</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Security</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">status</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">devel</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">draft</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Status</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">userlevel</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">advanced</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">beginner</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">User Level</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">vendor</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">vendor1</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">vendor2</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Vendor</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">wordsize</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">32bit</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">64bit</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook*</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Word Size</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">lang</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">en</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">fr</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook 4</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Language</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">xml:lang</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">en</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">fr</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook 5</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Language</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">audience</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">expert</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">novice</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Sample value. You can change it from the "Profiling/Conditional Text" preferences page.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">DocBook 5</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">Audience</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">condition</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">online</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Shows only in html output formats.</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">print</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve">Shows only in pdf output</String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">BroadBook 2.0</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve"> </String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">condition</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">localize</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">false</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">no</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve"></String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">yes</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve"></String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">BroadBook 2.0</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve"> </String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">localze</String>
+                                </field>
+                            </profileConditionInfo>
+                            <profileConditionInfo>
+                                <field name="attributeName">
+                                    <String xml:space="preserve">security</String>
+                                </field>
+                                <field name="allowsMultipleValues">
+                                    <Boolean xml:space="preserve">true</Boolean>
+                                </field>
+                                <field name="allowedValues">
+                                    <profileConditionValue-array>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">external</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve"></String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">internal</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve"></String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">reviewer</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve"></String>
+                                    </field>
+                                    </profileConditionValue>
+                                    <profileConditionValue>
+                                    <field name="value">
+                                    <String xml:space="preserve">writeronly</String>
+                                    </field>
+                                    <field name="description">
+                                    <String xml:space="preserve"></String>
+                                    </field>
+                                    </profileConditionValue>
+                                    </profileConditionValue-array>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">BroadBook 2.0</String>
+                                </field>
+                                <field name="valuesSeparator">
+                                    <String xml:space="preserve">;</String>
+                                </field>
+                                <field name="attributeRenderName">
+                                    <String xml:space="preserve">security</String>
+                                </field>
+                            </profileConditionInfo>
+                        </profileConditionInfo-array>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">profiling.conditions.set.list</String>
+                        <profileConditionsSetInfo-array>
+                            <profileConditionsSetInfo>
+                                <field name="conditions">
+                                    <serializableOrderedMap>
+                                    <entry>
+                                    <String xml:space="preserve">security</String>
+                                    <String-array>
+                                    <String xml:space="preserve">external</String>
+                                    <String xml:space="preserve">internal</String>
+                                    </String-array>
+                                    </entry>
+                                    </serializableOrderedMap>
+                                </field>
+                                <field name="documentTypePattern">
+                                    <String xml:space="preserve">BroadBook 2.0</String>
+                                </field>
+                                <field name="conditionSetName">
+                                    <String xml:space="preserve">Internal and external</String>
+                                </field>
+                            </profileConditionsSetInfo>
+                        </profileConditionsSetInfo-array>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">spell.check.options</String>
+                        <spellCheckOptions>
+                            <field name="automaticSpellCheck">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="spellCheckInComments">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="spellCheckInAttributeValues">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="spellCheckInText">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="spellCheckInCDATA">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="language">
+                                <String xml:space="preserve">en</String>
+                            </field>
+                            <field name="caseSensitive">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="ignoreMixedCase">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="ignoreAcronyms">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="ignoreDigits">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="ignoreDuplicates">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="ignoreURL">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="checkPunctuation">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="allowCompound">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="allowPrefixes">
+                                <Boolean xml:space="preserve">false</Boolean>
+                            </field>
+                            <field name="allowFileExtensions">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="obeyLangAttributes">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="langAttrMissingUseDefault">
+                                <Boolean xml:space="preserve">true</Boolean>
+                            </field>
+                            <field name="ignoreSpellCheckElements">
+                                <String-array>
+                                    <String xml:space="preserve">programlisting</String>
+                                    <String xml:space="preserve">code</String>
+                                    <String xml:space="preserve">action</String>
+                                    <String xml:space="preserve">arg</String>
+                                    <String xml:space="preserve">classname</String>
+                                    <String xml:space="preserve">cmdsynopsis</String>
+                                    <String xml:space="preserve">code</String>
+                                    <String xml:space="preserve">command</String>
+                                    <String xml:space="preserve">computeroutput</String>
+                                    <String xml:space="preserve">database</String>
+                                    <String xml:space="preserve">email</String>
+                                    <String xml:space="preserve">envar</String>
+                                    <String xml:space="preserve">exceptionname</String>
+                                    <String xml:space="preserve">filename</String>
+                                    <String xml:space="preserve">function</String>
+                                    <String xml:space="preserve">functsynopsis</String>
+                                    <String xml:space="preserve">interfacename</String>
+                                    <String xml:space="preserve">invpartnumber</String>
+                                    <String xml:space="preserve">remark</String>
+                                    <String xml:space="preserve">keyword</String>
+                                    <String xml:space="preserve">literal</String>
+                                    <String xml:space="preserve">methodname</String>
+                                    <String xml:space="preserve">ooclass</String>
+                                    <String xml:space="preserve">ooexception</String>
+                                    <String xml:space="preserve">oointerface</String>
+                                    <String xml:space="preserve">parameter</String>
+                                    <String xml:space="preserve">programlisting</String>
+                                    <String xml:space="preserve">property</String>
+                                    <String xml:space="preserve">sgmltag</String>
+                                    <String xml:space="preserve">systemitem</String>
+                                    <String xml:space="preserve">userinput</String>
+                                    <String xml:space="preserve">varname</String>
+                                    <String xml:space="preserve">*[@localize = 'no']</String>
+                                </String-array>
+                            </field>
+                            <field name="preferredChecker">
+                                <Integer xml:space="preserve">1</Integer>
+                            </field>
+                        </spellCheckOptions>
+                    </entry>
+                    <entry>
+                        <String xml:space="preserve">user.role</String>
+                        <Integer xml:space="preserve">1</Integer>
+                    </entry>
+                </map>
+            </serialized>
+        </options>
+    </meta>
+    <projectTree name="rc-example">
+        <folder path="src/"/>
+        <folder path="target/docbkx/pdf/"/>
+        <file name="pom.xml"/>
+    </projectTree>
+</project>
