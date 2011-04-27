@@ -41,11 +41,12 @@
             <plugin>
                 <groupId>com.rackspace.cloud.api</groupId>
                 <artifactId>clouddocs-maven-plugin</artifactId>
-                <version>1.0.2-SNAPSHOT</version>
+                <version>1.0.4-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
