@@ -209,6 +209,7 @@
     </chapter>
     <chapter>
         <title>Concepts</title>
+        <?dbhtml stop-chunking?>
         <para> To use the DNS API effectively, you should understand several key concepts: </para>
         <section>
             <title>DNS</title>
@@ -263,6 +264,7 @@
         </note>
         <section>
             <title>Authentication</title>
+            <?dbhtml stop-chunking?>
             <para> Each ReST request against the DNS service requires the inclusion of a specific
                 authorization token HTTP x-header, defined as <code>X-Auth-Token</code>. Customers
                 obtain this token by first using the Rackspace Cloud Authentication Service and
@@ -271,7 +273,7 @@
                 entry point to all Rackspace Cloud APIs. It is accessible at
                 <link xlink:href="https://auth.api.rackspacecloud.com/v1.0">https://auth.api.rackspacecloud.com/v1.0</link>.
             </para>
-            <simplesect>
+            <section>
                 <title>Request</title>
                 <para>
                     To authenticate, you must supply your username and API access key in x-headers:
@@ -302,8 +304,8 @@ X-Auth-User: jdoe
 X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89
                     </literallayout>
                 </example>
-            </simplesect>
-            <simplesect>
+            </section>
+            <section>
                 <title>Response</title>
                 <para> If authentication is successful, an HTTP status <returnvalue>204 (No
                     Content)</returnvalue> is returned with an <code>X-Auth-Token</code> header;
@@ -333,7 +335,7 @@ Content-Type: text/plain; charset=UTF-8
                     re-authenticate after receiving a <errorcode>401
                         (Unauthorized)</errorcode> response.
                 </para>
-            </simplesect>
+            </section>
         </section>
         <section>
             <title>Service Access/Endpoints</title>
