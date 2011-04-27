@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2011-04-04</pubdate>
+        <pubdate>2011-04-27</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -121,6 +121,33 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td colspan="1" align="center">Apr. 27, 2011</td>
+                            <td colspan="4">
+                                <itemizedlist spacing="compact">
+                                    <listitem>
+                                    <para>Added 201 response code to Create Domains.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Deleted reference to load balancers from Section
+                                        3.2.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Modified reference to the twitter account rackcloud, which
+                                        has been merged with the rackspace twitter account.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Modified incorrect endpoint ord.dns.api.rackspacecloud.com
+                                        to dns.api.rackspacecloud.com.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Modified incorrect URI
+                                            /domains<emphasis>domainId</emphasis> to
+                                            /domains/<emphasis>domainId</emphasis>. </para>
+                                </listitem>
+                                </itemizedlist>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="1" align="center">Apr. 4, 2011</td>
                             <td colspan="4">
                                 <itemizedlist spacing="compact">
@@ -168,12 +195,9 @@
                     >http://www.rackspace.com/cloud</link>. This site also offers links to
                 Rackspace's official support channels, including knowledge base articles, forums,
                 phone, chat, and email. </para>
-            <para>You can also follow Rackspace updates and announcements via twitter at
-                <link
-                    xlink:href="http://www.twitter.com/rackcloud"
-                    >http://www.twitter.com/rackcloud
-                </link>.
-            </para>
+            <para>You can also follow Rackspace updates and announcements via twitter at <link
+                    xlink:href="http://www.twitter.com/rackspace"
+                    >http://www.twitter.com/rackspace</link>. </para>
             <para>
                 This API uses standard HTTP 1.1 response codes as documented at 
                 <link
@@ -313,9 +337,8 @@ Content-Type: text/plain; charset=UTF-8
         </section>
         <section>
             <title>Service Access/Endpoints</title>
-            <para>The DNS service is a regionalized service, which allows for the caller to select a
-                region into which a load balancer is to be provisioned. DNS is therefore responsible
-                for appropriate replication, caching, and overall maintenance of DNS data across
+            <para>The DNS service is a regionalized service. DNS is therefore responsible for
+                appropriate replication, caching, and overall maintenance of DNS data across
                 regional boundaries to other DNS servers.</para>
             <para>To determine which region to operate against, select an endpoint from below.
                 Replace the sample account ID number, <parameter>1234</parameter>, with your actual account number returned
@@ -465,7 +488,7 @@ Content-Type: text/plain; charset=UTF-8
                     machine-processable regular expression. The regular expression boundary matcher
                     '^' takes effect after the root URI path. For example, the regular expression
                         ^/v1.0/<parameter>1234</parameter>/domains would match the bolded portion of
-                    the following URI: https://ord.dns.api.rackspacecloud.com<emphasis role="bold"
+                    the following URI: https://dns.api.rackspacecloud.com<emphasis role="bold"
                         >/v1.0/1234/domains</emphasis>. </para>
                 <table rules="all">
                     <caption>Default Rate Limits</caption>
@@ -571,82 +594,82 @@ Content-Type: text/plain; charset=UTF-8
                         <td colspan="2">/version</td>
                         <td colspan="2">List version information for specific components of the 
                             API service.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/version</td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/version</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains</td>
                         <td colspan="2">List all account domains.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains</td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/detail</td>
                         <td colspan="2">List all account domains and their detailed 
                             information.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains/detail</td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains/detail</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter></td>
                         <td colspan="2">List details for a specific domain.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter>1234</parameter>/<?sbr?>domains/<parameter>765437</parameter></td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter>1234</parameter>/<?sbr?>domains/<parameter>765437</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&POST;</td>
                         <td colspan="2">/domains</td>
                         <td colspan="2">Create a new domain.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter>1234</parameter><?sbr?>/domains</td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter>1234</parameter><?sbr?>/domains</td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
-                        <td colspan="2">/domains<?sbr?><parameter>domainId</parameter></td>
+                        <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
                         <td colspan="2">Modify the configuration of a domain.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter><?sbr?>/domains/<?sbr?><parameter>765437</parameter></td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter><?sbr?>/domains/<?sbr?><parameter>765437</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2">/domains</td>
                         <td colspan="2">Modify multiple domains.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains</td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="2">/domains<?sbr?><parameter>domainId</parameter></td>
+                        <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
                         <td colspan="2">Remove a domain.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains/<parameter>765437</parameter></td>
+                        <td colspan="3"
+                                >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains/<parameter>765437</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
-                            >/domains<?sbr?><parameter>domainId</parameter>?<?sbr?>deleteSubdomains=<?sbr?>true</td>
+                            >/domains<?sbr?>/<parameter>domainId</parameter>?<?sbr?>deleteSubdomains=<?sbr?>true</td>
                         <td colspan="2">Remove a domain and all its subdomains.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains/<parameter>765437</parameter>?deleteSubdomains=true</td>
+                        <td colspan="3"
+                            >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/<?sbr?>v1.0/<parameter>1234</parameter>/domains/<parameter>765437</parameter>?deleteSubdomains=true</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                             >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter></td>
                         <td colspan="2">Remove multiple domains.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains?id=<parameter>765437</parameter>&amp;id=<parameter>765438</parameter></td>
+                        <td colspan="3"
+                            >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/<?sbr?>v1.0/<parameter>1234</parameter>/domains?id=<parameter>765437</parameter>&amp;id=<parameter>765438</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                             >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
                         <td colspan="2">Remove multiple domains and their subdomains.</td>
-                        <td 
-                            colspan="3">https://ord.<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter>1234</parameter>/domains?id=<parameter>765437</parameter>&amp;id=<parameter>765438</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
+                        <td colspan="3"
+                            >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/<?sbr?>v1.0/<parameter>1234</parameter>/domains?id=<parameter>765437</parameter>&amp;id=<parameter>765438</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -802,9 +825,8 @@ Content-Type: text/plain; charset=UTF-8
                         </tr>
                     </tbody>
                 </informaltable>
-                <simpara>
-                    Normal Response Code(s):
-                    <returnvalue>200</returnvalue>, <returnvalue>202</returnvalue>, 
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                        <returnvalue>201</returnvalue>, <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), domainExistsFault (<errorcode>409</errorcode>),
@@ -1094,7 +1116,7 @@ Content-Type: text/plain; charset=UTF-8
                     </tbody>
                 </informaltable>
                 <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
-                    <returnvalue>202</returnvalue>
+                        <returnvalue>202</returnvalue>
                 </para>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                     <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
