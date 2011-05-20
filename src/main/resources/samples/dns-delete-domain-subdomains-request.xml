@@ -1,1 +1,1 @@
-http://localhost/cxf/dns/434705/domains/344344?deleteSubdomains=true
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/344344?deleteSubdomains=true

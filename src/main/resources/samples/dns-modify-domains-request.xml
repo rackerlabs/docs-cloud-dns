@@ -1,4 +1,4 @@
-http://localhost/cxf/dns/434705/domains/
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
     <domain id="2610338" ttl="9200" emailAddress="hostmaster@newzone.com">
     </domain>

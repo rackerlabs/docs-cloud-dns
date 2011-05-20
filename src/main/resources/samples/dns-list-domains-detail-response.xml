@@ -14,7 +14,6 @@
             <record ttl="5000" data="2001:db8:1f70:0:999:de8:7648:6e8" name="quadA.bbunitteststatic3.com" type="AAAA" id="94"/>
             <record ttl="5000" data="Default text vAlue" name="bbunitteststatic3.com" type="TXT" id="226409"/>
             <record ttl="5000" data="foo.bbunitteststatic3.com" name="fqdn.bbunitteststatic3.com" type="CNAME" id="9573348"/>
-            <record ttl="5000" data="sub.bbunitteststatic3.com" name="pub.bbunitteststatic3.com" type="DNAME" id="10"/>
             <record priority="1" ttl="5000" data="sipserver.bbunitteststatic3.com" name="sip.bbunitteststatic3.com" type="SRV" id="7318"/>
         </records>
     </domain>

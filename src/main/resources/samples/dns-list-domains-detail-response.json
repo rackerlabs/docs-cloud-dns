@@ -57,12 +57,6 @@
                "type":"CNAME",
                "id":"9573348"
             },{
-               "ttl":"5000",
-               "data":"sub.bbunitteststatic3.com",
-               "name":"pub.bbunitteststatic3.com",
-               "type":"DNAME",
-               "id":"10"
-            },{
               "priority":"1",
               "ttl":"5000",
               "data":"sipserver.bbunitteststatic3.com",

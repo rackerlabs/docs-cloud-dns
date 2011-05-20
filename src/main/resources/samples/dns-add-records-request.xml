@@ -1,4 +1,4 @@
-http://localhost/cxf/dns/v1.0/440369/domains/2610338/records/
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/2610338/records/
 <records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
     <record type="CNAME" data="dev.bbunittestacct2static3.com" name="sub.bbunittestacct2static3.com"/>
     <record type="A" data="172.23.2.212" name="bbunittestacct2static3.com"/>
