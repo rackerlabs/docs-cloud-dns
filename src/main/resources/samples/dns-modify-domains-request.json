@@ -1,0 +1,16 @@
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+
+{
+   "domains":{
+      "domain":[
+         {
+            "id":2718881,
+            "ttl":9200
+         },
+         {
+            "id":2718881,
+            "comment":"Optional comment"
+         }
+      ]
+   }
+}

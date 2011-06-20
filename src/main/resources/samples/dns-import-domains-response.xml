@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+	xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+	<domain comment="Optional Domain Comment" created="2011-05-29T15:32:07-05:00"
+		updated="2011-05-29T15:32:07-05:00" emailAddress="hostmaster@rackspace.com"
+		ttl="7000" name="whowhat1021.com" accountId="440369" id="2720934">
+		<records>
+			<record created="2011-05-29T15:32:08-05:00" updated="2011-05-29T15:32:08-05:00"
+				ttl="7000" data="72.77.26.210" name="whowhat1021.com" type="A"
+				id="A-6818392" />
+			<record created="2011-05-29T15:32:10-05:00" updated="2011-05-29T15:32:10-05:00"
+				ttl="7000" data="ns.rackspace.com" name="whowhat1021.com" type="NS"
+				id="NS-6242509" />
+			<record created="2011-05-29T15:32:11-05:00" updated="2011-05-29T15:32:11-05:00"
+				ttl="7000" data="ns2.rackspace.com" name="whowhat1021.com" type="NS"
+				id="NS-6242510" />
+			<record created="2011-05-29T15:32:12-05:00" updated="2011-05-29T15:32:12-05:00"
+				ttl="86400" data="whowhat1021.com" name="www.whowhat1021.com" type="CNAME"
+				id="CNAME-9777211" />
+		</records>
+	</domain>
+</domains>

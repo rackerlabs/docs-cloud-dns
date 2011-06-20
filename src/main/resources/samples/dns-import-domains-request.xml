@@ -1,0 +1,12 @@
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/import
+
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
+	<domain comment="Optional Domain Comment">
+		<contents>whowhat1021.com. 7000 IN SOA ns.rackspace.com.
+			hostmaster.rackspace.com. (1304406823 7000 7000 1814400 7000)
+			whowhat1021.com. 7000 IN A 72.77.26.210
+			whowhat1021.com. 7000 IN NS ns.rackspace.com.
+			whowhat1021.com. 7000 IN NS ns2.rackspace.com.
+			www.whowhat1021.com. 86400 IN CNAME whowhat1021.com.</contents>
+	</domain>
+</domains> 
