@@ -1,2 +1,5 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains/2610338/records/6500365/
-<record data="172.23.2.214" name="bbunittestacct2static3.com"  ttl="4544" type="A">
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/2720150/records/MX-3150315
+
+	<record data="mail.testingorwhat3.com" name="testingorwhat3.com"
+		ttl="4544">
+	</record>

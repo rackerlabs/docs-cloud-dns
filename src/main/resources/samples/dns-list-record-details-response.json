@@ -1,11 +1,9 @@
 {
-  "records" : {
-    "record" : [ {
-      "id" : 6012691,
-      "type" : "NS",
-      "name" : "bbunittestacct2static3.com",
-      "data" : "dns1.stabletransit.com",
-      "ttl" : 5400
-    } ]
-  }
+   "name":"testingorwhat3.com",
+   "id":"A-6817754",
+   "type":"A",
+   "data":"172.11.122.24",
+   "updated":"2011-05-19T13:07:08.000+0000",
+   "ttl":5771,
+   "created":"2011-05-18T19:53:09.000+0000"
 }
