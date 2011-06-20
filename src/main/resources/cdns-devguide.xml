@@ -318,7 +318,7 @@
         </section>
         <section>
             <title>Subdomain</title>
-            <para> Subdomains are domains within a parent domain, and subdomains do not have to be
+            <para>Subdomains are domains within a parent domain, and subdomains do not have to be
                 registered. Subdomains allow you to better organize content on your website by
                 breaking down a large domain with many records into smaller, more manageable pieces.
                 Subdomains can themselves have subdomains, so third-level, fourth-level,
@@ -1588,6 +1588,56 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <title>Delete Domains and Subdomains Response (Failure): JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+        </section>
+        <section>
+            <title>Subdomains</title>
+            <section>
+                <title>List Subdomains</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="3">URI</td>
+                            <td colspan="2">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="3">/domains/<parameter>domainId</parameter>/subdomains</td>
+                            <td colspan="2">List domains that are subdomains of the given
+                                domain.</td>
+                        </tr>
+                   
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue></simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound
+                    (<errorcode>404</errorcode>)</simpara>
+                <example>
+                    <title>List Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Subdomains Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Subdomains Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.json" parse="text"/></programlisting>
                 </example>
             </section>
         </section>
