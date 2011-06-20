@@ -28,6 +28,7 @@
             </pluginRepositories>
         </profile>
     </profiles>
+    
     <build>
         <resources>
             <resource>
@@ -65,6 +66,48 @@
                     <highlightSource>false</highlightSource>
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
+			<plugin>
+                <!-- this is not needed for the documentation, but sure helps when importing this project to eclipse! -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<preparationGoals>clean install</preparationGoals>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+    <scm>
+        <url>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</url>
+        <developerConnection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</developerConnection>
+        <connection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</connection>
+    </scm>
+    
+    <distributionManagement>
+        <snapshotRepository>
+            <id>repos.rackspace.cloud.snapshots</id>
+            <name>Internal RC Snapshot Maven Repo</name>
+            <url>http://172.17.16.59/m2/content/repositories/snapshots/</url>
+
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+
+        <repository>
+            <id>repos.rackspace.cloud.releases</id>
+            <name>Internal RC Releases Maven Repo</name>
+            <url>http://172.17.16.59/m2/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
 </project>
