@@ -84,6 +84,37 @@
 					<preparationGoals>clean install</preparationGoals>
 				</configuration>
 			</plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide/content/images</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources/images</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <generateProjectInfo>false</generateProjectInfo>
+                    <generateReports>false</generateReports>
+                    <inputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide</inputDirectory>
+                </configuration>
+            </plugin>
+
 		</plugins>
 	</build>
 
@@ -94,6 +125,7 @@
         <connection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</connection>
     </scm>
     
+    <url>http://site.mosso.com/${project.groupId}/${artifactId}/${project.version}/</url>
     <distributionManagement>
         <snapshotRepository>
             <id>repos.rackspace.cloud.snapshots</id>
@@ -108,6 +140,12 @@
             <name>Internal RC Releases Maven Repo</name>
             <url>http://172.17.16.59/m2/content/repositories/releases/</url>
         </repository>
+        
+        <site>
+            <id>mosso-sites</id>
+            <url>dav:http://site.mosso.com/webdav/${project.groupId}/${artifactId}/${project.version}/</url>
+        </site>
+        
     </distributionManagement>
 
 </project>
