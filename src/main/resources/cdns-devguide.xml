@@ -136,6 +136,10 @@
                                     <para>Updated all examples to reflect latest API changes.</para>
                                 </listitem>
                                 <listitem>
+                                    <para>Updated section <xref linkend="subdomain"/> that explains
+                                        what a subdomain is.</para>
+                                </listitem>
+                                <listitem>
                                     <para>Added new <xref linkend="basic_domain_details"/> that
                                         describes how to request only basic information for domain
                                         details.</para>
@@ -145,6 +149,10 @@
                                         use comments for domains and records.</para>
                                 </listitem>
                                 <listitem>
+                                    <para>Added new <xref linkend="pagination"/>that describes how
+                                        paging works.</para>
+                                </listitem>
+                                <listitem>
                                     <para>Added new <xref linkend="import_domain"/> that describes
                                         how to use import domain to create a domain.</para>
                                 </listitem>
@@ -152,6 +160,10 @@
                                     <para>Added new <xref linkend="export_domain"/> that describes
                                         how to use export domain to provide the BIND 9 formatted
                                         contents of the requested domain.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Add new <xref linkend="using_subdomains"/> that describes
+                                        how to use subdomains.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
@@ -316,13 +328,12 @@
             <para> A domain is an entity/container of all DNS-related information containing one or
                 more records. </para>
         </section>
-        <section>
+        <section xml:id="subdomain">
             <title>Subdomain</title>
-            <para>Subdomains are domains within a parent domain, and subdomains do not have to be
-                registered. Subdomains allow you to better organize content on your website by
-                breaking down a large domain with many records into smaller, more manageable pieces.
-                Subdomains can themselves have subdomains, so third-level, fourth-level,
-                fifth-level, and deeper levels of nesting are possible. </para>
+            <para>Subdomains are domains within a parent domain, and subdomains cannot be
+                registered. Subdomains allow you to delegate domains. Subdomains can themselves have
+                subdomains, so third-level, fourth-level, fifth-level, and deeper levels of nesting
+                are possible. </para>
         </section>
         <section>
             <title>Record</title>
@@ -776,24 +787,24 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 the starting point for the return data. It is important to note that offset
                     <emphasis>must</emphasis> be a multiple of the limit (or zero), otherwise a Bad
                 Request Exception will be thrown. Both limit and offset are specified via request
-                parameters on the URI, and both apply only to GET calls. If unspecified, they
+                parameters on the URI, and both apply only to &GET; calls. If unspecified, they
                 default to <code>LIMIT=100</code>, and <code>offset=0</code>. See the examples that
                 follow.</para>
             <example>
-                <title>Limits and Offsets for Paging Calls</title>
+                <title>Examples of Limits and Offsets for Paging Calls</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">
   ....\domains?limit=50              -- returns the first 50 domains, that is: 1 - 50 
-  ....\domains?limit=50&amp;offset=50    -- returns the  domains 51-100 
-  ....\domains?limit=25&amp;offset=50    -- returns the  domains 51-75  
-  ....\domains?limit=25              -- returns   the  domains 1-25  
+  ....\domains?limit=50&amp;offset=50    -- returns the domains 51-100 
+  ....\domains?limit=25&amp;offset=50    -- returns the domains 51-75  
+  ....\domains?limit=25              -- returns the domains 1-25  
   ....\domains?limit=25&amp;offset=5     -- returns Bad Request Exception; offset must be a multiple of the limit or 0  
   ....\domains?offset=5              -- returns Bad Request Exception; offset must be a multiple of the limit or 0  
   ....\domains?offset=200            -- returns back the 201-300th domains if they exist (default limit of 100 applies) 
   ....\domains                       -- returns the current maximum items allowable (currently 100) 
 </programlisting>
             </example>
-            <para>Pagination affects the calls listed in the following table: </para>
+            <para>Pagination applies only to the calls listed in the following table: </para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -845,25 +856,25 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para>In any paginated returned result, there is now also a
                         <code>totalEntries</code> attribute representing the total number of entries
                     there are for this item type. If the number of items requested in the
-                        <guilabel>GET</guilabel> call is less then the total number of items for
+                        &GET; call is less then the total number of items for
                     this type, then there will be pagination links (either/or forward and backward)
                     specifying how to get to the next or previous set of records. Note these link
                     elements only show up if there are items available in the corresponding link.
-                    Please see the following examples for clarification: </para>
+                    See the following examples for details: </para>
                 <example>
-                    <title>totalEntries Attribute Request: XML</title>
+                    <title>List Domains Request with limit: XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3
 </programlisting>
                 </example>
                 <example>
-                    <title>totalEntries Attribute Request: JSON</title>
+                    <title>List Domains Request with limit:  JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3 
 </programlisting>
                 </example>
                 <example>
-                    <title>totalEntries Attribute Response: XML</title>
+                    <title>List Domains Response with totalEntries: XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  &lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="95"&gt; 
     &lt;domain id="2718534" accountId="440369" name="apr26a.performance.com"/&gt;  &lt;domain
@@ -873,7 +884,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
 </programlisting>
                 </example>
                 <example>
-                    <title>totalEntries Attribute Response: XML</title>
+                    <title>List Domains Response with totalEntries: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">{"domains":[ 
     {"name":"apr26a.performance.com","id":2718534,"accountId":440369}, 
@@ -887,23 +898,23 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para> In the previous two response examples, note that <code>totalEntries=95</code>
                     and that a link has been provided to retrieve the next 3 results
                         (<code>limit=3</code>) in the link element identified by the attribute
-                    rel="next". </para>
+                        <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
                 <para>The following example shows links to both previous and next results in the
                     responses:</para>
                 <example>
-                    <title>totalEntries Attribute Request: XML</title>
+                    <title>List Domains Request with limit and offset: XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=3
 </programlisting>
                 </example>
                 <example>
-                    <title>totalEntries Attribute Request: JSON</title>
+                    <title>List Domains Request with limit and offset: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=3 
 </programlisting>
                 </example>
                 <example>
-                    <title>totalEntries Attribute Response: XML</title>
+                    <title>List Domains Response with Links to previous and next: XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  &lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="95"&gt; 
     &lt;domain id="2718983" accountId="440369" name="cwc201005021438.com"/&gt;  &lt;domain
@@ -913,7 +924,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
     &lt;/domains&gt; </programlisting>
                 </example>
                 <example>
-                    <title>totalEntries Attribute Response: XML</title>
+                    <title>List Domains Response with Links to previous and next: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">{"domains":[ 
     {"name":"cwc201005021438.com","id":2718983,"accountId":440369}, 
@@ -929,11 +940,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     and two links have been provided to:<itemizedlist>
                         <listitem>
                             <para>Retrieve the next 3 results (<code>limit=3</code>) in the link
-                                element identified by the attribute rel="next"</para>
+                                element identified by the attribute <code>rel="next"</code> (XML) or
+                                    <code>"rel":"next"</code> (JSON)</para>
                         </listitem>
                         <listitem>
                             <para>Retrieve the previous 3 results in the link element identified by
-                                the attribute rel="previous" </para>
+                                the attribute <code>rel="previous"</code> (XML) or
+                                    <code>"rel":"previous"</code> (JSON) </para>
                         </listitem>
                     </itemizedlist></para>
             </section>
@@ -1763,7 +1776,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
             </section>
         </section>
-        <section>
+        <section xml:id="using_subdomains">
             <title>Subdomains</title>
             <section>
                 <title>List Subdomains</title>
@@ -1923,11 +1936,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
                             <td colspan="3">List all records configured for the domain. SOA cannot be modified.</td>
                         </tr>
-                        <tr>
-                            <td colspan="1">&GET;</td>
-                            <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
-                            <td colspan="3">List details for a specific record.</td>
-                        </tr>
                     </tbody>
                 </informaltable>
                 <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
@@ -1958,26 +1966,51 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="javascript"><xi:include href="samples/dns-list-records-response.json" parse="text"/></programlisting>
             </example>
-            <example>
-                <title>List Record Details Request: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.xml" parse="text"/></programlisting>
-            </example>
+            </section>
+            <section>
+                <title>List Record Details</title>
+                <informaltable rules="all">
+                    <thead align="center">
+                        <tr>
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                        <td colspan="3">List details for a specific record.</td>
+                    </tr>
+                </informaltable>
+                <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                        <returnvalue>202</returnvalue>
+                </para>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <example>
+                    <title>List Record Details Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.xml" parse="text"/></programlisting>
+                </example>
                 <example>
                     <title>List Record Details Request: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.json" parse="text"/></programlisting>
                 </example>
-            <example>
-                <title>List Record Details Response: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-list-record-details-response.xml" parse="text"/></programlisting>
-            </example>
-            <example>
-                <title>List Record Details Response: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="javascript"><xi:include href="samples/dns-list-record-details-response.json" parse="text"/></programlisting>
-            </example>
+                <example>
+                    <title>List Record Details Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-record-details-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Record Details Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-record-details-response.json" parse="text"/></programlisting>
+                </example>
             </section>
             <?hard-pagebreak?>
             <section>
