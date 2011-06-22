@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <domain name="sub1.rtb201104281842.com" id="2719879"/>  
+</domains>

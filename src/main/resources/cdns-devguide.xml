@@ -1157,116 +1157,70 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=rtb201104281842.com">https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=rtb201104281842.com</link></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.xml" parse="text"/></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=rtb201104281842.com">https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=rtb201104281842.com</link></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.json" parse="text"/></programlisting>
                     </example>
                     <para><?rax-fo keep-with-next?> The response matches one domain and four
                         subdomains:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
-&lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt; 
-    &lt;domain name="rtb201104281842.com" id="2719878"&gt;        
-        &lt;subdomains&gt; 
-             &lt;domain name="sub1.rtb201104281842.com" id="2719879"/&gt; 
-             &lt;domain name="sub2.rtb201104281842.com" id="2719880"/&gt; 
-             &lt;domain name="sub3.rtb201104281842.com" id="2719881"/&gt; 
-             &lt;domain name="sub4.rtb201104281842.com" id="2719882"/&gt; 
-         &lt;/subdomains&gt;
-    &lt;/domain&gt;
-&lt;/domains&gt;</programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.xml" parse="text"/></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml">{ 
-  "domains" : { 
-    "domain" : [ { 
-      "id" : 2719879, 
-      "name" : "sub1.rtb201104281842.com" 
-    }, { 
-      "id" : 2719880, 
-      "name" : "sub2.rtb201104281842.com" 
-    }, { 
-      "id" : 2719881, 
-      "name" : "sub3.rtb201104281842.com" 
-    }, { 
-      "id" : 2719882, 
-      "name" : "sub4.rtb201104281842.com" 
-    } ] 
-  } 
-}</programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"/></programlisting>
                     </example>
                     <para> In the following example, the specified search name is
                             <code>sub1.rtb201104281842.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=sub1.rtb201104281842.com">https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=sub1.rtb201104281842.com</link></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.xml" parse="text"/></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=sub1.rtb201104281842.com">https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=sub1.rtb201104281842.com</link></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.json" parse="text"/></programlisting>
                     </example>
                     <para>The response matches one domain:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
-&lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
-    &lt;domain name="sub1.rtb201104281842.com" id="2719879"/&gt;  
-&lt;/domains&gt;</programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.xml" parse="text"/></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml">{ 
-  "domains" : { 
-    "domain" : [ { 
-      "id" : 2719879, 
-      "name" : "sub1.rtb201104281842.com" 
-    } ] 
-  } 
-} </programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"/></programlisting>
                     </example>
                     <para> In the following example, the specified search name is
                             <code>2.rtb201104281842.com</code>: </para>
                     <example>
                         <title>Filter by Partial Name Request: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=2.rtb201104281842.com">https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=2.rtb201104281842.com</link></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.xml" parse="text"/></programlisting>
                     </example>
                     <example>
                         <title>Filter by Partial Name Request: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=2.rtb201104281842.com">https://dns.api.rackspacecloud.com/v1.0/1234/domains/?name=2.rtb201104281842.com</link></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"/></programlisting>
                     </example>
                     <para>The response matches one domain:</para>
                     <example>
                         <title>Filter by Partial Name Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
-&lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;      
-    &lt;domain name="sub2.rtb201104281842.com" id="2719880"/&gt;  
-&lt;/domains&gt;</programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.xml" parse="text"/></programlisting>
                     </example>
                     <example>
                         <title>Filter by Partial Name Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml">{ 
-  "domains" : { 
-    "domain" : [ { 
-      "id" : 2719880, 
-      "name" : "sub2.rtb201104281842.com" 
-    } ] 
-  } 
-}</programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.json" parse="text"/></programlisting>
                     </example>
                 </section>
             </section>
