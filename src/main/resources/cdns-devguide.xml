@@ -80,7 +80,7 @@
         <para>The following figure shows an overview of Cloud DNS Infrastructure:</para>
         <para><inlinemediaobject>
                 <imageobject>
-                    <imagedata fileref="images/DNS_Architecture_Overview_v1_0.jpg" contentwidth="6in"/>
+                    <imagedata fileref="images/Cloud_DNS_Infographic-1.png" contentwidth="6in"/>
                 </imageobject>
             </inlinemediaobject></para>
         <para> We welcome feedback, comments, and bug reports at <link
@@ -1307,12 +1307,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <example>
                         <title>List Basic Domain Details Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-basic-response.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"/>
                     </example>
                     <example>
                         <title>List Basic Domain Details Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-basic-response.json" parse="text"/>
+                        <programlisting language="xml">
 </programlisting>
                     </example>
                 </section>
