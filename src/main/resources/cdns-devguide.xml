@@ -872,36 +872,22 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <example>
                     <title>List Domains Request with limit: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3
-</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-request.xml" parse="text"/></programlisting>
                 </example>
                 <example>
                     <title>List Domains Request with limit:  JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3 
-</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-request.json" parse="text"/></programlisting>
                 </example>
                 <example>
                     <title>List Domains Response with totalEntries: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  &lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="95"&gt; 
-    &lt;domain id="2718534" accountId="440369" name="apr26a.performance.com"/&gt;  &lt;domain
-    id="2718341" accountId="440369" name="bbunittestacct2static3.com"/&gt;  &lt;domain
-    id="2719323" accountId="440369" name="config.com"/&gt;  &lt;ns2:link href="http://localhost:9001/v1.0/440369/domains?limit=3&amp;amp;offset=3" rel="next"/&gt; 
-    &lt;/domains&gt; 
-</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-response.xml" parse="text"/></programlisting>
                 </example>
                 <example>
                     <title>List Domains Response with totalEntries: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">{"domains":[ 
-    {"name":"apr26a.performance.com","id":2718534,"accountId":440369}, 
-    {"name":"bbunittestacct2static3.com","id":2718341,"accountId":440369}, 
-    {"name":"config.com","id":2719323,"accountId":440369}  ], 
-    "totalEntries":95,  
-    "links":[  
-    {"href":"http://localhost:9001/v1.0/440369/domains?limit=3&amp;offset=3","rel":"next"}  
-]}</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-response.json" parse="text"/></programlisting>
                 </example>
                 <para> In the previous two response examples, note that <code>totalEntries=95</code>
                     and that a link has been provided to retrieve the next 3 results
@@ -912,37 +898,24 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <example>
                     <title>List Domains Request with limit and offset: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=3
-</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-offset-request.xml" parse="text"/></programlisting>
                 </example>
                 <example>
                     <title>List Domains Request with limit and offset: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=3 
-</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-offset-request.json" parse="text"/></programlisting>
                 </example>
                 <example>
-                    <title>List Domains Response with Links to previous and next: XML</title>
+                    <title>List Domains Response with Links to previous and next Results:
+                        XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  &lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="95"&gt; 
-    &lt;domain id="2718983" accountId="440369" name="cwc201005021438.com"/&gt;  &lt;domain
-    id="2720228" accountId="440369" name="cwc20110524.com"/&gt;  &lt;domain id="2722346"
-    accountId="440369" name="cwc201106151320.com"/&gt;  &lt;ns2:link href="http://localhost:9001/v1.0/440369/domains?limit=3&amp;amp;offset=0" rel="previous"/&gt; 
-    &lt;ns2:link href="http://localhost:9001/v1.0/440369/domains?limit=3&amp;amp;offset=6" rel="next"/&gt; 
-    &lt;/domains&gt; </programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-offset-response.xml" parse="text"/></programlisting>
                 </example>
                 <example>
-                    <title>List Domains Response with Links to previous and next: JSON</title>
+                    <title>List Domains Response with Links to previous and next Results:
+                        JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">{"domains":[ 
-    {"name":"cwc201005021438.com","id":2718983,"accountId":440369}, 
-    {"name":"cwc20110524.com","id":2720228,"accountId":440369}, 
-    {"name":"cwc201106151320.com","id":2722346,"accountId":440369}  ], 
-    "totalEntries":95,
-    "links":[  
-    {"href":"http://localhost:9001/v1.0/440369/domains?limit=3&amp;offset=0","rel":"previous"},
-    {"href":"http://localhost:9001/v1.0/440369/domains?limit=3&amp;offset=6","rel":"next"}  
-]}</programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-offset-response.json" parse="text"/></programlisting>
                 </example>
                 <para> In the previous two response examples, note that <code>totalEntries=95</code>
                     and two links have been provided to:<itemizedlist>

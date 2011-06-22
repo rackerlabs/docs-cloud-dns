@@ -1,0 +1,9 @@
+{"domains":[ 
+    {"name":"cwc201005021438.com","id":2718983,"accountId":440369}, 
+    {"name":"cwc20110524.com","id":2720228,"accountId":440369}, 
+    {"name":"cwc201106151320.com","id":2722346,"accountId":440369}  ], 
+    "totalEntries":95,
+    "links":[  
+    {"href":"http://localhost:9001/v1.0/440369/domains?limit=3&offset=0","rel":"previous"},
+    {"href":"http://localhost:9001/v1.0/440369/domains?limit=3&offset=6","rel":"next"}  
+]}
