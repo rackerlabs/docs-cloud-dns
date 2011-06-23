@@ -2273,13 +2273,15 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.xml" parse="text"/></programlisting>
                 </example>
-                <remark>Mike- remember to reference new example from Randall (in repository): </remark>
+                <remark>Mike- remember to reference new example from Randall (in repository):
+                    dns-remove-records-failure-response.xml </remark>
                 <example>
                     <title>Delete Records Response (Failure): JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
                 </example>
-                <remark>Mike- remember to reference new example from Randall (in repository): </remark>
+                <remark>Mike- remember to reference new example from Randall (in repository):
+                    dns-remove-records-failure-response.json</remark>
             </section>
         </section>
         <?hard-pagebreak?>
