@@ -975,9 +975,24 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter></td>
-                        <td colspan="2">List details for a specific domain.</td>
+                        <td colspan="2">List details for a specific domain. By default this call
+                            displays information for records but not subdomains.</td>
                         <td colspan="3"
                                     >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter>/<?sbr?>domains/<parameter>765437</parameter></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2"
+                                >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<?sbr?><code>true</code>
+                            or
+                                <code>false</code>&amp;<?sbr?><parameter>showSubdomains</parameter>=<code>true</code> or<?sbr?>
+                            <code>false</code></td>
+                        <td colspan="2">List details for a specific domain, using the
+                                <parameter>showRecords</parameter> and
+                                <parameter>showSubdomains</parameter> parameters whether or not to
+                            request information for records and subdomains.</td>
+                        <td colspan="3"
+                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter>/<?sbr?>domains/<parameter>765437</parameter>?<parameter>showRecords</parameter>=<code>true</code><?sbr?>&amp;<parameter>showSubdomains</parameter><?sbr?>=<code>true</code></td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
@@ -1245,8 +1260,20 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/domains/<parameter>domainId</parameter></td>
-                            <td colspan="3">List details of the specified domain. Display all
-                                details, including records. </td>
+                            <td colspan="3">List details of the specified domain, with record
+                                information but without subdomains. </td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2"
+                                    >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<code>true</code>
+                                or
+                                    <?sbr?><?sbr?><code>false</code>&amp;<parameter>showSubdomains</parameter> =<?sbr?>
+                                <code>true</code>or<code>false</code></td>
+                            <td colspan="3">List details of the specified domain. Display details,
+                                as specified by the <parameter>showRecords</parameter> and
+                                    <parameter>showSubdomains</parameter> parameters. </td>
                             <td colspan="2">XML, JSON</td>
                         </tr>
                     </tbody>
@@ -2232,6 +2259,27 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
                 </example>
+                <note>
+                    <para> Transactionally, delete operations behave differently than other
+                        operations in that deletes are never rolled back on exceptions, and multiple
+                        deletes in the same request do not fail as a group. Instead, each delete is
+                        attempted even if one or more fail. The response for a delete request in
+                        which one or more items fail contains information regarding which items
+                        failed as well as information regarding specific issues that caused the
+                        failure(s). See the examples below:</para>
+                </note>
+                <example>
+                    <title>Delete Records Response (Failure): XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.xml" parse="text"/></programlisting>
+                </example>
+                <remark>Mike- remember to reference new example from Randall (in repository): </remark>
+                <example>
+                    <title>Delete Records Response (Failure): JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
+                </example>
+                <remark>Mike- remember to reference new example from Randall (in repository): </remark>
             </section>
         </section>
         <?hard-pagebreak?>
