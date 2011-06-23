@@ -836,7 +836,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<replaceable>domainID</replaceable></td>
                         <td colspan="3">List details of the specified domain. Display all details,
-                            including records.</td>
+                            including records. Applies to the records and subdomains lists.</td>
                     </tr>
                
                     <tr>
@@ -1740,9 +1740,19 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.xml" parse="text"/></programlisting>
                 </example>
                 <example>
+                    <title>Delete Domain Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
                     <title>Delete Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.json" parse="text"/></programlisting>
                 </example>
                 <example>
                     <title>Delete Domain and Subdomains Request: XML</title>
@@ -1750,9 +1760,19 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.xml" parse="text"/></programlisting>
                 </example>
                 <example>
+                    <title>Delete Domain and Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
                     <title>Delete Domains and Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains and Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.json" parse="text"/></programlisting>
                 </example>
                 <note>
                     <para> Transactionally, delete operations behave differently than other
