@@ -133,16 +133,19 @@
                                             linkend="overview"/>.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Updated all examples to reflect latest API changes.</para>
+                                    <para>Updated all examples to reflect the latest API
+                                        changes.</para>
                                 </listitem>
                                 <listitem>
                                     <para>Updated section <xref linkend="subdomain"/> that explains
                                         what a subdomain is.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Added new <xref linkend="basic_domain_details"/> that
-                                        describes how to request only basic information for domain
-                                        details.</para>
+                                    <para>Updated section <xref linkend="list_domain_details"/> with
+                                        information about the <code>showRecords</code> and
+                                            <code>showSubdomains</code> parameters that control the
+                                        information that is returned for records and
+                                        subdomains.</para>
                                 </listitem>
                                 <listitem>
                                     <para>Added new <xref linkend="comments"/> that describes how to
@@ -861,14 +864,17 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </informaltable>
             <section>
                 <title>totalEntries Attribute</title>
-                <para>In any paginated returned result, there is now also a
-                        <code>totalEntries</code> attribute representing the total number of entries
-                    there are for this item type. If the number of items requested in the
-                        &GET; call is less then the total number of items for
-                    this type, then there will be pagination links (either/or forward and backward)
-                    specifying how to get to the next or previous set of records. Note these link
-                    elements only show up if there are items available in the corresponding link.
-                    See the following examples for details: </para>
+                <para>In any paginated returned result, there is a <code>totalEntries</code>
+                    attribute representing the total number of entries there are for this item type.
+                    If the number of items requested in the &GET; call is less then the total number
+                    of items for this type, then there will be pagination links
+                        <code>previous</code> and/or <code>next</code>, specifying how to get to the
+                    previous or next set of records. </para>
+                <note>
+                    <para>The <code>previous</code> and/or <code>next</code> link elements are
+                        displayed only if there are items available in the corresponding link. See
+                        the following examples for details: </para>
+                </note>
                 <example>
                     <title>List Domains Request with limit: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1224,7 +1230,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </example>
                 </section>
             </section>
-            <section>
+            <section xml:id="list_domain_details">
                 <title>List Domain Details</title>
                 <informaltable rules="all">
                     <thead>
@@ -1263,59 +1269,96 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref
                             linkend="pagination"/>.</para>
                 </note>
+                <para>Two parameters are available to specify the information about subdomains and
+                    records to be returned by the list domain details call:<itemizedlist>
+                        <listitem>
+                            <para><code>showRecords</code> - if this parameter is set to
+                                    <code>true</code>, then information about records is returned;
+                                if this parameter is set to <code>false</code>, then information
+                                about records is not returned.</para>
+                        </listitem>
+                        <listitem>
+                            <para><code>showSubdomains</code> - if this parameter is set to
+                                    <code>true</code>, then information about subdomains is
+                                returned; if this parameter is set to <code>false</code>, then
+                                information about subdomains is not returned.</para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>The following examples show the default parameter settings
+                        (<code>showRecords</code>=<code>true</code>,
+                        <code>showSubdomains</code>=<code>false</code>) for the list domain details
+                    call. This call returns information with records but no information about
+                    subdomains. Since these parameter values are the defaults, this call works the
+                    same way if both of the parameters are omitted.</para>
                 <example>
-                    <title>List Domain Details Request: XML</title>
+                    <title>List Domain Details with Records, no Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.xml" parse="text"/></programlisting>
                 </example>
                 <example>
-                    <title>List Domain Details Request: JSON</title>
+                    <title>List Domain Details with Records, no Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.json" parse="text"/></programlisting>
                 </example>
                 <example>
-                    <title>List Domain Details Response: XML</title>
+                    <title>List Domain Details with Records, no Subdomains Response: XML</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.xml" parse="text"/></programlisting>
                 </example>
                 <example>
-                    <title>List Domain Details Response: JSON</title>
+                    <title>List Domain Details with Records, no Subdomains Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.json" parse="text"/></programlisting>
                 </example>
-                <section xml:id="basic_domain_details">
-                    <title>Basic Domain Details<?sbr?></title>
-                    <para> The examples in the previous section illustrate retrieving all details
-                        for a domain. By specifying that only <emphasis>basic</emphasis> details
-                        should be returned, however, the response is much quicker, since it does not
-                        include record and subdomain information. To specify that only basic details
-                        are requested, add the <code>basic</code> parameter to the details request
-                        and set the parameter to <code>true</code>, as shown in the following
-                        examples:</para>
-                    <example>
-                        <title>List Basic Domain Details Request: XML</title>
-                        <?dbfo keep-together="always"?>
-                        <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains/2610368?basic=true  
-</programlisting>
-                    </example>
-                    <example>
-                        <title>List Basic Domain Details Request: JSON</title>
-                        <?dbfo keep-together="always"?>
-                        <programlisting language="xml">https://dns.api.rackspacecloud.com/v1.0/1234/domains/2610368?basic=true  
-</programlisting>
-                    </example>
-                    <example>
-                        <title>List Basic Domain Details Response: XML</title>
-                        <?dbfo keep-together="always"?>
-                        <programlisting language="xml"/>
-                    </example>
-                    <example>
-                        <title>List Basic Domain Details Response: JSON</title>
-                        <?dbfo keep-together="always"?>
-                        <programlisting language="xml">
-</programlisting>
-                    </example>
-                </section>
+                <para>The following examples show the parameter settings to return information for
+                    both records and subdomains (<code>showSubdomains</code>=<code>true</code>,
+                        <code>showRecords</code>=<code>true</code>) for the list domain details
+                    call:</para>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.json" parse="text"/></programlisting>
+                </example>
+                <para>The following examples show the parameter settings to return basic information
+                    only, without records or subdomains
+                        (<code>showSubdomains</code>=<code>false</code>,
+                        <code>showRecords</code>=<code>false</code>) for the list domain details
+                    call:</para>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.json" parse="text"/></programlisting>
+                </example>
             </section>
             <?hard-pagebreak?>
             <section xml:id="export_domain">
