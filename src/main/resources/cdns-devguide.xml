@@ -137,14 +137,14 @@
                                         changes.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Updated section <xref linkend="subdomain"/> that explains
-                                        what a subdomain is.</para>
+                                    <para>Updated <xref linkend="subdomain"/> that explains what a
+                                        subdomain is.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Updated section <xref linkend="list_domain_details"/> with
+                                    <para>Updated <xref linkend="list_domain_details"/> with
                                         information about the <code>showRecords</code> and
-                                            <code>showSubdomains</code> parameters that control the
-                                        information that is returned for records and
+                                            <code>showSubdomains</code> parameters that control
+                                        which information is returned for records and
                                         subdomains.</para>
                                 </listitem>
                                 <listitem>
@@ -165,8 +165,8 @@
                                         contents of the requested domain.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Add new <xref linkend="using_subdomains"/> that describes
-                                        how to use subdomains.</para>
+                                    <para>Added new <xref linkend="using_subdomains"/> that
+                                        describes how to use subdomains.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
@@ -289,11 +289,9 @@
         </section>
         <section>
             <title>Additional Resources</title>
-            <para>You can download the most current versions of other API-related
-                documents from <link
-                    xlink:href="http://docs.rackspacecloud.com/api/">
-                    http://docs.rackspacecloud.com/api/</link>.
-            </para>
+            <para>You can download the most current versions of other API-related documents from
+                    <link xlink:href="http://docs.rackspace.com/api/"
+                        >http://docs.rackspace.com/api/</link>. </para>
             <para>For information about Rackspace Cloud products, refer to <link
                     xlink:href="http://www.rackspace.com/cloud/"
                     >http://www.rackspace.com/cloud</link>. This site also offers links to
@@ -756,6 +754,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="samples/dns-example-response-w-comment.json" parse="text"/></programlisting>
             </example>
+            <remark>Mike- ensure that the 2 comment examples match.</remark>
             <para>Notes for comments:<itemizedlist>
                     <listitem>
                         <para>Are limited to 160 characters each</para>
@@ -787,12 +786,15 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 retrieve a specified subset of a large data set. Pagination has two key concepts:
                 limit and offset. <emphasis>Limit</emphasis> is the restriction on the maximum
                 number of items for that type that can be returned. <emphasis>Offset</emphasis> is
-                the starting point for the return data. It is important to note that offset
-                    <emphasis>must</emphasis> be a multiple of the limit (or zero), otherwise a Bad
-                Request Exception will be thrown. Both limit and offset are specified via request
-                parameters on the URI, and both apply only to &GET; calls. If unspecified, they
-                default to <code>LIMIT=100</code>, and <code>offset=0</code>. See the examples that
-                follow.</para>
+                the starting point for the return data. For example, an offset of 50 specifies that
+                the items that are returned should start with item number 51 (since the numbering is
+                one-based). </para>
+            <para>It is important to note that offset <emphasis>must</emphasis> be a multiple of the
+                limit (or zero), otherwise a Bad Request Exception will be thrown. Both limit and
+                offset are specified via request parameters on the URI. The parameters are named
+                    <code>limit</code> and <code>offset</code> respectively, and both apply only to
+                &GET; calls. If unspecified, they default to <code>limit=100</code> and
+                    <code>offset=0</code>. See the examples that follow.</para>
             <example>
                 <title>Examples of Limits and Offsets for Paging Calls</title>
                 <?dbfo keep-together="always"?>
@@ -856,12 +858,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2"
-                                >/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                                >/domains/<replaceable>domainID</replaceable>/records/<replaceable>recordId</replaceable></td>
                         <td colspan="3">List details for a specific record.</td>
                     </tr>
                     
                 </tbody>
             </informaltable>
+            <para>See the following section for examples of paged List Domains calls.</para>
             <section>
                 <title>totalEntries Attribute</title>
                 <para>In any paginated returned result, there is a <code>totalEntries</code>
@@ -873,7 +876,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <note>
                     <para>The <code>previous</code> and/or <code>next</code> link elements are
                         displayed only if there are items available in the corresponding link. See
-                        the following examples for details: </para>
+                        the following examples for details.</para>
                 </note>
                 <example>
                     <title>List Domains Request with limit: XML</title>
@@ -900,7 +903,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         (<code>limit=3</code>) in the link element identified by the attribute
                         <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
                 <para>The following example shows links to both previous and next results in the
-                    responses:</para>
+                    responses, since the request specified to start with the fourth item in the
+                    collection (<code>offset=3</code>):</para>
                 <example>
                     <title>List Domains Request with limit and offset: XML</title>
                     <?dbfo keep-together="always"?>
@@ -989,8 +993,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <code>false</code></td>
                         <td colspan="2">List details for a specific domain, using the
                                 <parameter>showRecords</parameter> and
-                                <parameter>showSubdomains</parameter> parameters whether or not to
-                            request information for records and subdomains.</td>
+                                <parameter>showSubdomains</parameter> parameters that specify
+                            whether to request information for records and subdomains.</td>
                         <td colspan="3"
                                     >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter>/<?sbr?>domains/<parameter>765437</parameter>?<parameter>showRecords</parameter>=<code>true</code><?sbr?>&amp;<parameter>showSubdomains</parameter><?sbr?>=<code>true</code></td>
                     </tr>
@@ -1154,12 +1158,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <section xml:id="search_domains_w_filters">
                     <title>Search Domains with Filtering</title>
                     <para> As illustrated by the examples above, the List Domains operation provides
-                        a list of all DNS domains manageable by a given account. The type of
-                        information displayed is controlled by whether or not detailed information
-                        has been requested. Filtering the search to limit the results returned can
-                        be performed by specifying additional parameters. For example,
-                            <code>?name=hoola.com</code> matches <code>hoola.com</code> and similar
-                        names such as <code>main.hoola.com</code> and <code>sub.hoola.com</code>. </para>
+                        a list of all DNS domains manageable by a given account. Filtering the
+                        search to limit the results returned can be performed by using the
+                            <code>name</code> parameter on the List Domains call. For example,
+                            <?sbr?><code>?name=hoola.com</code> matches <code>hoola.com</code> and
+                        similar names such as <code>main.hoola.com</code> and
+                            <code>sub.hoola.com</code>. </para>
                     <note>
                         <para> The pattern matching always starts from the left side of the search
                             string provided. Therefore <code>?name=hoola.com</code> matches
@@ -1296,8 +1300,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref
                             linkend="pagination"/>.</para>
                 </note>
-                <para>Two parameters are available to specify the information about subdomains and
-                    records to be returned by the list domain details call:<itemizedlist>
+                <para><?rax-fo keep-with-next?> Two parameters are available to specify the
+                    information about subdomains and records to be returned by the List Domain
+                    Details call:<itemizedlist>
                         <listitem>
                             <para><code>showRecords</code> - if this parameter is set to
                                     <code>true</code>, then information about records is returned;
@@ -1313,7 +1318,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </itemizedlist></para>
                 <para>The following examples show the default parameter settings
                         (<code>showRecords</code>=<code>true</code>,
-                        <code>showSubdomains</code>=<code>false</code>) for the list domain details
+                        <code>showSubdomains</code>=<code>false</code>) for the List Domain Details
                     call. This call returns information with records but no information about
                     subdomains. Since these parameter values are the defaults, this call works the
                     same way if both of the parameters are omitted.</para>
@@ -1339,7 +1344,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <para>The following examples show the parameter settings to return information for
                     both records and subdomains (<code>showSubdomains</code>=<code>true</code>,
-                        <code>showRecords</code>=<code>true</code>) for the list domain details
+                        <code>showRecords</code>=<code>true</code>) for the List Domain Details
                     call:</para>
                 <example>
                     <title>List Domain Details with Records and Subdomains Request: XML</title>
@@ -1362,9 +1367,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.json" parse="text"/></programlisting>
                 </example>
                 <para>The following examples show the parameter settings to return basic information
-                    only, without records or subdomains
-                        (<code>showSubdomains</code>=<code>false</code>,
-                        <code>showRecords</code>=<code>false</code>) for the list domain details
+                    only, without records or subdomains (<code>showRecords</code>=<code>false</code>
+                    and <code>showSubdomains</code>=<code>false</code>) for the List Domain Details
                     call:</para>
                 <example>
                     <title>List Domain Details, no Records, no Subdomains Request: XML</title>
@@ -1575,7 +1579,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     response. Failures in the validation process are non-recoverable and require the
                     caller to correct the cause of the failure and &POST; the request again. </para>
                 <para> For all practical purposes, a successful import domain operation creates a
-                    domain, and is therefore similar in response to a create domain call. </para>
+                    domain, and is therefore similar in response to a Create Domain call. </para>
                 <note>
                     <para> DNS record propagation may take up to 15 minutes.</para>
                 </note>
@@ -1760,7 +1764,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <code>deleteSubdomains</code> parameter. Utilizing the optional
                         <code>deleteSubdomains</code> parameter on domains without subdomains does
                     not result in a failure. When a domain is deleted, any and all configuration
-                    data is immediately purged and is not recoverable via the API. </para>
+                    data is immediately purged and is not recoverable via the API. So on a
+                    successful delete, subsequent requests for the deleted object should return
+                    notFound (<errorcode>404</errorcode>).</para>
                 <example>
                     <title>Delete Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1801,15 +1807,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.json" parse="text"/></programlisting>
                 </example>
-                <note>
-                    <para> Transactionally, delete operations behave differently than other
-                        operations in that deletes are never rolled back on exceptions, and multiple
-                        deletes in the same request do not fail as a group. Instead, each delete is
-                        attempted even if one or more fail. The response for a delete request in
-                        which one or more items fail contains information regarding which items
-                        failed as well as information regarding specific issues that caused the
-                        failure(s). See the examples below:</para>
-                </note>
+                <para>Transactionally, delete operations behave differently than other operations in
+                    that deletes are never rolled back on exceptions, and multiple deletes in the
+                    same request do not fail as a group. Instead, each delete is attempted even if
+                    one or more fail. The response for a delete request in which one or more items
+                    fail contains information regarding which items failed as well as information
+                    regarding specific issues that caused the failure(s). See the examples that
+                    follow.</para>
                 <example>
                     <title>Delete Domains and Subdomains Response (Failure): XML</title>
                     <?dbfo keep-together="always"?>
@@ -1820,6 +1824,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
                 </example>
+                <para>In the previous two response examples, the requested domain objects could not
+                    be deleted, since they were not found.</para>
             </section>
         </section>
         <section xml:id="using_subdomains">
@@ -2037,11 +2043,15 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <td colspan="3">Description</td>
                         </tr>
                     </thead>
-                    <tr>
-                        <td colspan="1">&GET;</td>
-                        <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
-                        <td colspan="3">List details for a specific record.</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                            <td colspan="3">List details for a specific record.</td>
+                        </tr>
+                    </tbody>
+                    
+                    
                 </informaltable>
                 <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
                         <returnvalue>202</returnvalue>
@@ -2259,15 +2269,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
                 </example>
-                <note>
-                    <para> Transactionally, delete operations behave differently than other
-                        operations in that deletes are never rolled back on exceptions, and multiple
-                        deletes in the same request do not fail as a group. Instead, each delete is
-                        attempted even if one or more fail. The response for a delete request in
-                        which one or more items fail contains information regarding which items
-                        failed as well as information regarding specific issues that caused the
-                        failure(s). See the examples below:</para>
-                </note>
+                <para>Transactionally, delete operations behave differently than other operations in
+                    that deletes are never rolled back on exceptions, and multiple deletes in the
+                    same request do not fail as a group. Instead, each delete is attempted even if
+                    one or more fail. The response for a delete request in which one or more items
+                    fail contains information regarding which items failed as well as information
+                    regarding specific issues that caused the failure(s). See the examples that
+                    follow.</para>
                 <example>
                     <title>Delete Records Response (Failure): XML</title>
                     <?dbfo keep-together="always"?>
@@ -2281,7 +2289,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
                 </example>
                 <remark>Mike- remember to reference new example from Randall (in repository):
-                    dns-remove-records-failure-response.json</remark>
+                    dns-remove-records-failure-response.json. Also need to add a sentence describing
+                    why the deletes failed?</remark>
             </section>
         </section>
         <?hard-pagebreak?>
