@@ -1,32 +1,77 @@
 {
-  "domains" : {
-    "domain" : [ {
-      "id" : 2610338,
-      "name" : "bbunittestacct2static3.com"
-    }, {
-      "id" : 2610368,
-      "name" : "demodomainwithsubs.com",
-      "subdomains" : {
-        "domain" : [ {
-          "id" : 2610369,
-          "name" : "sub.demodomainwithsubs.com"
-        } ]
-      }
-    }, {
-      "id" : 2610326,
-      "name" : "domainremoverecord.com"
-    }, {
-      "id" : 2610424,
-      "name" : "demo.dayjson.org",
-      "subdomains" : {
-        "domain" : [ {
-          "id" : 2610425,
-          "name" : "sub.demo.dayjson.org"
-        } ]
-      }
-    }, {
-      "id" : 2575497,
-      "name" : "cwc201101201654.com"
-    }]
-  }
+	"domains":[
+	    {
+	        "name":"may23b.com",
+	        "id":2720220,
+	        "accountId":1234,
+	        "updated":"2011-06-06T20:40:32.000+0000",
+	        "created":"2011-05-23T20:01:36.000+0000"
+	    },{
+	        "name":"rtb0007.com",
+	        "id":2725511,
+	        "comment":"Optional domain comment...",
+	        "accountId":1234,
+	        "updated":"2011-06-24T01:23:15.000+0000",
+	        "created":"2011-06-24T01:12:51.000+0000"
+	    },{
+	        "name":"rtb201105260459.com",
+	        "id":2720587,
+	        "accountId":1234,
+	        "updated":"2011-06-21T19:37:36.000+0000",
+	        "created":"2011-05-26T22:34:25.000+0000"
+	    },{
+	        "name":"rtb20110531.com",
+	        "id":2720985,
+	        "accountId":1234,
+	        "updated":"2011-05-31T20:28:24.000+0000",
+	        "created":"2011-05-31T20:28:24.000+0000"
+	    },{
+	        "name":"rtb201106201531.com",
+	        "id":2724506,
+	        "accountId":1234,
+	        "updated":"2011-06-20T20:32:27.000+0000",
+	        "created":"2011-06-20T20:32:27.000+0000"
+	    },{
+	        "name":"rtb201106231316.com",
+	        "id":2725334,
+	        "accountId":1234,
+	        "updated":"2011-06-23T18:21:34.000+0000",
+	        "created":"2011-06-23T18:21:33.000+0000"
+	    },{
+	        "name":"rtb201106231317.com",
+	        "id":2725339,
+	        "accountId":1234,
+	        "updated":"2011-06-23T18:35:21.000+0000",
+	        "created":"2011-06-23T18:35:20.000+0000"
+	    },{
+	        "name":"secondlevel434706.com",
+	        "id":2725352,
+	        "accountId":1234,
+	        "updated":"2011-06-23T20:21:06.000+0000",
+	        "created":"2011-06-23T19:24:27.000+0000"
+	    },{
+	        "name":"sub.cwc201005021438.com",
+	        "id":2718984,
+	        "accountId":1234,
+	        "updated":"2011-05-03T14:47:32.000+0000",
+	        "created":"2011-05-03T14:47:30.000+0000"
+	    },{
+	        "name":"sub0.cwc201106151320.com",
+	        "id":2722347,
+	        "comment":"added a comment",
+	        "accountId":1234,
+	        "updated":"2011-06-21T15:54:31.000+0000",
+	        "created":"2011-06-15T19:02:07.000+0000"
+	    }
+	],
+	"totalEntries":110,
+	"links":[
+	    {
+	        "href":"https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&offset=10",
+	        "rel":"previous"
+	    },{
+	        "href":"https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=10&offset=30",
+	        "rel":"next"
+	    }
+	]
 }

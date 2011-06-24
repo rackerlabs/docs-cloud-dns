@@ -1,0 +1,17 @@
+{
+	"name":"rtb0007.com",
+	"id":2725511,
+	"comment":"Optional domain comment...",
+	"accountId":1234,
+	"nameservers":[
+	    {
+	        "name":"ns.rackspace.com"
+	    },{
+	        "name":"ns1.rackspace.com"
+	    }
+	],
+	"updated":"2011-06-24T01:12:54.000+0000",
+	"ttl":3600,
+	"emailAddress":"sample@rackspace.com",
+	"created":"2011-06-24T01:12:51.000+0000"
+}

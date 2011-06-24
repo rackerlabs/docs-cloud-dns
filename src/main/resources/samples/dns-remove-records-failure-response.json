@@ -1,0 +1,16 @@
+{
+	"message":"One or more items could not be deleted.",
+	"code":500,
+	"details":"See errors list for details.",
+	"failedItems":{
+		"faults":[{
+			"message":"Object not Found.",
+			"code":404,
+			"details":"Domain ID: 2725343; Record ID: 111111111"
+		},{
+	    	"message":"Object not Found.",
+	    	"code":404,
+	    	"details":"Domain ID: 2725343; Record ID: 222222222"
+		}]
+	}
+}
