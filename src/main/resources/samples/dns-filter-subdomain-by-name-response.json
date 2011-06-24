@@ -1,8 +1,13 @@
-{ 
-  "domains" : { 
-    "domain" : [ { 
-      "id" : 2719879, 
-      "name" : "sub1.rtb201104281842.com" 
-    } ] 
-  } 
-} 
+{
+    "domains":[
+        
+    {     
+      "name":"sub1.secondlevel434706.com",
+      "id":2725782,
+      "updated":"2011-06-24T20:48:40.000+0000",
+      "created":"2011-06-24T20:48:40.000+0000"
+    }
+  ],
+  
+  "totalEntries":1
+}

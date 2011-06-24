@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
-    <domain name="secondlevel434705.com" accountId="434705" id="2610501">
-        <records>
-            <record ttl="86400" data="172.11.122.24" name="secondlevel434705.com"
-                type="A" id="6500342" />
-            <record priority="2" ttl="5000" data="mail.secondlevel434705.com"
-                name="secondlevel434705.com" type="MX" id="3012592" />
-        </records>
-    </domain>
+	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+	<domain id="2725352" accountId="440369" name="secondlevel434706.com"
+		ttl="5600" emailAddress="hostmaster@secondlevel434706.com" updated="2011-06-23T19:24:27Z"
+		created="2011-06-23T19:24:27Z">
+		<nameservers>
+			<nameserver name="ns.rackspace.com" />
+			<nameserver name="ns1.rackspace.com" />
+		</nameservers>
+		<recordsList>
+			<record id="A-6822966" type="A" name="secondlevel434706.com"
+				data="172.11.122.24" ttl="5600" updated="2011-06-23T19:24:28Z"
+				created="2011-06-23T19:24:28Z" />
+			<record id="MX-3151211" type="MX" name="secondlevel434706.com"
+				data="mail.secondlevel434706.com" ttl="5000" priority="2"
+				updated="2011-06-23T19:24:29Z" created="2011-06-23T19:24:29Z" />
+		</recordsList>
+	</domain>
+	<domain id="2725353" accountId="440369" name="thirdlevel434706.com"
+		ttl="5600" emailAddress="hostmaster@thirdlevel434706.com" updated="2011-06-23T19:24:30Z"
+		created="2011-06-23T19:24:29Z">
+		<nameservers>
+			<nameserver name="ns.rackspace.com" />
+			<nameserver name="ns1.rackspace.com" />
+		</nameservers>
+		<recordsList>
+			<record id="A-6822967" type="A" name="thirdlevel434706.com"
+				data="172.11.122.104" ttl="5600" updated="2011-06-23T19:24:31Z"
+				created="2011-06-23T19:24:31Z" />
+			<record id="MX-3151212" type="MX" name="thirdlevel434706.com"
+				data="mail.thirdlevel434706.com" ttl="5000" priority="2"
+				updated="2011-06-23T19:24:32Z" created="2011-06-23T19:24:32Z" />
+		</recordsList>
+	</domain>
+	<domain id="2725354" accountId="440369" name="thirdlevel434706.net"
+		ttl="5600" emailAddress="hostmaster@thirdlevel434706.net" updated="2011-06-23T19:24:32Z"
+		created="2011-06-23T19:24:32Z">
+		<nameservers>
+			<nameserver name="ns.rackspace.com" />
+			<nameserver name="ns1.rackspace.com" />
+		</nameservers>
+		<recordsList>
+			<record id="A-6822968" type="A" name="thirdlevel434706.net"
+				data="172.11.122.104" ttl="5600" updated="2011-06-23T19:24:34Z"
+				created="2011-06-23T19:24:34Z" />
+			<record id="MX-3151213" type="MX" name="thirdlevel434706.net"
+				data="mail.thirdlevel434706.net" ttl="5000" priority="2"
+				updated="2011-06-23T19:24:35Z" created="2011-06-23T19:24:35Z" />
+		</recordsList>
+	</domain>
 </domains>

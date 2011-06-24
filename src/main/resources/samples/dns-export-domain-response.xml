@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domain xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"
-	contentType="BIND_9" accountId="440369" id="2718341">
-	<contents>bbunittestacct2static3.com. 5400 IN SOA ns1.rackspace.com.
-		email.bbunittestACCT2static3.com. 1303486949 5403 5400 5401 5402
-		bbunittestacct2static3.com. 5400 IN NS dns1.stabletransit.com.
-		bbunittestacct2static3.com. 5400 IN NS dns2.stabletransit.com.
-	</contents>
+	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	id="2725352" accountId="440369" contentType="BIND_9">
+	<contents>secondlevel434706.com. 5600 IN SOA ns1.rackspace.com.
+		hostmaster.secondlevel434706.com. 1308860466 5600 5600 5600 5600
+		secondlevel434706.com. 5600 IN A 172.11.122.24
+		secondlevel434706.com. 5600 IN A 172.23.2.212
+		secondlevel434706.com. 5600 IN NS dns1.stabletransit.com.
+		secondlevel434706.com. 5600 IN NS dns2.stabletransit.com.
+		secondlevel434706.com. 5000 IN MX 2 mail.secondlevel434706.com.
+		sub.secondlevel434706.com. 5600 IN CNAME dev.secondlevel434706.com.
+</contents>
 </domain>
