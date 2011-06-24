@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+{
+	"domains":[
+	    {
+	        "name":"sub1.rtb0007.com",
+	        "id":2725257,
+	        "comment":"testing subs and records flags",
+	        "updated":"2011-06-23T03:09:34.000+0000",
+	        "created":"2011-06-23T03:09:33.000+0000"
+	    }
+	],
+	"totalEntries":1
+=======
+{ 
+  "domains" : { 
+    "domain" : [ { 
+      "id" : 2719880, 
+      "name" : "sub2.rtb201104281842.com" 
+    } ] 
+  } 
+>>>>>>> c15442fe9491b303f78d43a323ddded2960f0701
+}

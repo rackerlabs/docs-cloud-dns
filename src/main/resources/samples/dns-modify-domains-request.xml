@@ -1,7 +1,6 @@
 https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-    <domain id="2610338" ttl="9200" emailAddress="hostmaster@newzone.com">
-    </domain>
-    <domain id="2610428" ttl="8800" emailAddress="changed@cloneddomain.com">
-    </domain>
+	<domain id="2718881" ttl="9200"></domain>
+	<domain id="2718881" comment="Optional comment"></domain>
 </domains>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<<<<<<< HEAD
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+         xmlns:ns2="http://www.w3.org/2005/Atom"
+         totalEntries="110">
+    <domain id="2720220" accountId="1234" name="may23b.com"
+        updated="2011-06-06T20:40:32Z" created="2011-05-23T20:01:36Z" />
+    <domain id="2725511" accountId="1234" name="rtb0007.com"
+        updated="2011-06-24T01:23:15Z" created="2011-06-24T01:12:51Z"
+        comment="Optional domain comment..." />
+    <domain id="2720587" accountId="1234" name="rtb201105260459.com"
+        updated="2011-06-21T19:37:36Z" created="2011-05-26T22:34:25Z" />
+    <domain id="2720985" accountId="1234" name="rtb20110531.com"
+        updated="2011-05-31T20:28:24Z" created="2011-05-31T20:28:24Z" />
+    <domain id="2724506" accountId="1234" name="rtb201106201531.com"
+        updated="2011-06-20T20:32:27Z" created="2011-06-20T20:32:27Z" />
+    <domain id="2725334" accountId="1234" name="rtb201106231316.com"
+        updated="2011-06-23T18:21:34Z" created="2011-06-23T18:21:33Z" />
+    <domain id="2725339" accountId="1234" name="rtb201106231317.com"
+        updated="2011-06-23T18:35:21Z" created="2011-06-23T18:35:20Z" />
+    <domain id="2725352" accountId="1234" name="secondlevel434706.com"
+        updated="2011-06-23T20:21:06Z" created="2011-06-23T19:24:27Z" />
+    <domain id="2718984" accountId="1234" name="sub.cwc201005021438.com"
+        updated="2011-05-03T14:47:32Z" created="2011-05-03T14:47:30Z" />
+    <domain id="2722347" accountId="1234" name="sub0.cwc201106151320.com"
+        updated="2011-06-21T15:54:31Z" created="2011-06-15T19:02:07Z"
+        comment="added a comment" />
+    <ns2:link
+        href="https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=10&amp;offset=10"
+        rel="previous" />
+    <ns2:link
+        href="https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=10&amp;offset=30"
+        rel="next" />
+=======
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <domain emailAddress="email@bbunitteststatic3.com" ttl="5400" name="bbunitteststatic3.com" id="2610217">
+        <nameservers>
+            <nameserver name="ns.rackspace.com"/>
+            <nameserver name="ns1.rackspace.com"/>
+        </nameservers>
+        <records>
+            <record ttl="5000" data="ns2.racKspAce.com" name="bbunitteststatic3.com" type="NS" id="NS-6012416"/>
+            <record priority="1" ttl="5000" data="mail.bbunitteststatic3.com" name="bbunitteststatic3.com" type="MX" id="MX-3012531"/>
+            <record ttl="5000" data="111.111.111.111" name="singleA.bbunitteststatic3.com" type="A" id="A-6500179"/>
+            <record ttl="5000" data="2001:db8:1f70:0:999:de8:7648:6e8" name="quadA.bbunitteststatic3.com" type="AAAA" id="AAAA-94"/>
+            <record ttl="5000" data="Default text vAlue" name="bbunitteststatic3.com" type="TXT" id="TXT-226409"/>
+            <record ttl="5000" data="foo.bbunitteststatic3.com" name="fqdn.bbunitteststatic3.com" type="CNAME" id="CNAME-9573348"/>
+            <record priority="1" ttl="5000" data="sipserver.bbunitteststatic3.com" name="sip.bbunitteststatic3.com" type="SRV" id="SRV-7318"/>
+        </records>
+    </domain>
+>>>>>>> c15442fe9491b303f78d43a323ddded2960f0701
+</domains>

@@ -1,9 +1,21 @@
 https://dns.api.rackspacecloud.com/v1.0/1234/domains/
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-    <domain  name="secondlevel434705.com" ttl="5600" emailAddress="hostmaster@secondlevel434705.com" >
+    <domain name="secondlevel434705.com" ttl="5600" emailAddress="hostmaster@secondlevel434705.com" >
         <records>
             <record type="A" data="172.11.122.24" name="secondlevel434705.com"/>
             <record type="MX" data="mail.secondlevel434705.com" priority="2" ttl="5000" name="secondlevel434705.com"/>
+        </records>
+    </domain>
+    <domain name="thirdlevel434705.com" ttl="5600" emailAddress="hostmaster@thirdlevel434705.com" >
+        <records>
+            <record type="A" data="172.11.122.104" name="thirdlevel434705.com"/>
+            <record type="MX" data="mail.thirdlevel434705.com" priority="2" ttl="5000" name="thirdlevel434705.com"/>
+        </records>
+    </domain>
+    <domain name="thirdlevel434705.net" ttl="5600" emailAddress="hostmaster@thirdlevel434705.net" >
+        <records>
+            <record type="A" data="172.11.122.104" name="thirdlevel434705.net"/>
+            <record type="MX" data="mail.thirdlevel434705.net" priority="2" ttl="5000" name="thirdlevel434705.net"/>
         </records>
     </domain>
 </domains>

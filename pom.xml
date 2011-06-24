@@ -3,7 +3,7 @@
 
     <groupId>com.rackspace.cloud.dns.api</groupId>
     <artifactId>dns-docs</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Cloud DNS API Docs</name>
     <profiles>
@@ -28,6 +28,7 @@
             </pluginRepositories>
         </profile>
     </profiles>
+    
     <build>
         <resources>
             <resource>
@@ -41,7 +42,7 @@
             <plugin>
                 <groupId>com.rackspace.cloud.api</groupId>
                 <artifactId>clouddocs-maven-plugin</artifactId>
-                <version>1.0.4-SNAPSHOT</version>
+                <version>1.0.4</version>
                 <executions>
                     <execution>
                         <goals>
@@ -65,6 +66,95 @@
                     <highlightSource>false</highlightSource>
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
+			<plugin>
+                <!-- this is not needed for the documentation, but sure helps when importing this project to eclipse! -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<preparationGoals>clean install</preparationGoals>
+				</configuration>
+			</plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide/content/images</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources/images</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <generateProjectInfo>false</generateProjectInfo>
+                    <generateReports>false</generateReports>
+                    <inputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide</inputDirectory>
+                </configuration>
+            </plugin>
+
+		</plugins>
+        <extensions>
+            <extension>
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-webdav</artifactId>
+              <version>1.0-beta-2</version>
+            </extension>
+        </extensions>
+	</build>
+
+
+    <scm>
+        <url>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</url>
+        <developerConnection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</developerConnection>
+        <connection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</connection>
+    </scm>
+    
+    <url>http://site.mosso.com/${project.groupId}/${artifactId}/${project.version}/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>repos.rackspace.cloud.snapshots</id>
+            <name>Internal RC Snapshot Maven Repo</name>
+            <url>http://172.17.16.59/m2/content/repositories/snapshots/</url>
+
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+
+        <repository>
+            <id>repos.rackspace.cloud.releases</id>
+            <name>Internal RC Releases Maven Repo</name>
+            <url>http://172.17.16.59/m2/content/repositories/releases/</url>
+        </repository>
+        
+        <site>
+            <id>mosso-sites</id>
+            <url>dav:http://site.mosso.com/webdav/${project.groupId}/${artifactId}/${project.version}/</url>
+        </site>
+        
+    </distributionManagement>
+
 </project>

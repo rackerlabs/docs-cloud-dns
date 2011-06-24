@@ -1,4 +1,4 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains?id=1111111&id=2722786&id=111114&includeSubdomains=true
+https://dns.api.rackspacecloud.com/v1.0/1234/domains?id=1111111&id=2722786&id=111114&deleteSubdomains=true
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <deleteFault xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="500">

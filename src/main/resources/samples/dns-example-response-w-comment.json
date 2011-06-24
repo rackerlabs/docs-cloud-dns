@@ -1,0 +1,22 @@
+{
+"domains" : {
+"domain" : [ {
+"id" : 2719879,
+"name" : "sub1.rtb201104281842.com",
+"comment": "a domain Level comment"
+} ]
+}
+
+ 
+{
+"records" : {
+"record" : [ {
+"id" : 6012691,
+"type" : "NS",
+"name" : "bbunittestacct2static3.com",
+"data" : "dns1.stabletransit.com",
+"ttl" : 5400,
+"comment":"a record comment"
+} ]
+}
+} 

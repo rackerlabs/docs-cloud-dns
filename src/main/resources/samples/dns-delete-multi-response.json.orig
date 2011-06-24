@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+https://dns.api.rackspacecloud.com/v1.0/1234/domains?id=1111111&id=2722786&id=111114&includeSubdomains=true
+=======
+https://dns.api.rackspacecloud.com/v1.0/1234/domains?id=1111111&id=2722786&id=111114&deleteSubdomains=true
+>>>>>>> c15442fe9491b303f78d43a323ddded2960f0701
+
+{
+   "failedItems":{
+      "faults":[{
+         "message":"Object not Found.",
+         "code":404,
+         "details":"Domain ID: 1111111"
+      },{
+         "message":"Object not Found.",
+         "code":404,
+         "details":"Domain ID: 111114"
+     }]
+  },
+  "message":"One or more items could not be deleted.",
+  "code":500,
+  "details":"See errors list for details."
+}

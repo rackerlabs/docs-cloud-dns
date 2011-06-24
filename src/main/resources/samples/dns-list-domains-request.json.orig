@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&offset=20
+=======
+https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+>>>>>>> c15442fe9491b303f78d43a323ddded2960f0701

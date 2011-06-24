@@ -1,0 +1,8 @@
+{
+   "domain":{
+      "id":2718341,
+      "contentType":"BIND_9",
+      "contents":"bbunittestacct2static3.com.\t5400\tIN\tSOA\tns1.rackspace.com. email.bbunittestACCT2static3.com. 1303486949 5403 5400 5401 5402\nbbunittestacct2static3.com.\t5400\tIN\tNS\tdns1.stabletransit.com.\nbbunittestacct2static3.com.\t5400\tIN\tNS\tdns2.stabletransit.com.\n",
+      "accountId":440369
+   }
+}

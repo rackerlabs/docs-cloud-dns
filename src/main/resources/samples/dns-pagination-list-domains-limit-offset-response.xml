@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="95"> 
+    <domain id="2718983" accountId="440369" name="cwc201005021438.com"/>  <domain
+    id="2720228" accountId="440369" name="cwc20110524.com"/>  <domain id="2722346"
+    accountId="440369" name="cwc201106151320.com"/>  <ns2:link href="http://localhost:9001/v1.0/440369/domains?limit=3&amp;offset=0" rel="previous"/> 
+    <ns2:link href="http://localhost:9001/v1.0/440369/domains?limit=3&amp;offset=6" rel="next"/> 
+    </domains> 

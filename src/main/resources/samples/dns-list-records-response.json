@@ -1,23 +1,42 @@
 {
-  "records" : {
-    "record" : [ {
-      "id" : 6012691,
-      "type" : "NS",
-      "name" : "bbunittestacct2static3.com",
-      "data" : "dns1.stabletransit.com",
-      "ttl" : 5400
-    }, {
-      "id" : 6012692,
-      "type" : "NS",
-      "name" : "bbunittestacct2static3.com",
-      "data" : "dns2.stabletransit.com",
-      "ttl" : 5400
-    }, {
-      "id" : 2610338,
-      "type" : "SOA",
-      "name" : "bbunittestacct2static3.com",
-      "data" : "ns1.rackspace.com hostmaster@newzone.com 1299008840",
-      "ttl" : 9500
-    } ]
-  }
+   "records":[
+      {
+         "name":"testingorwhat3.com",
+         "id":"A-6817754",
+         "type":"A",
+         "data":"172.11.122.24",
+         "updated":"2011-05-19T13:07:08.000+0000",
+         "ttl":5771,
+         "created":"2011-05-18T19:53:09.000+0000"
+      },
+      {
+         "name":"testingorwhat3.com",
+         "id":"NS-6240782",
+         "type":"NS",
+         "data":"dns1.stabletransit.com",
+         "updated":"2011-05-18T19:53:07.000+0000",
+         "ttl":7801,
+         "created":"2011-05-18T19:53:07.000+0000"
+      },
+      {
+         "name":"testingorwhat3.com",
+         "id":"NS-6240783",
+         "type":"NS",
+         "data":"dns2.stabletransit.com",
+         "updated":"2011-05-18T19:53:07.000+0000",
+         "ttl":7801,
+         "created":"2011-05-18T19:53:07.000+0000"
+      },
+      {
+         "name":"testingorwhat3.com",
+         "priority":2,
+         "id":"MX-3150315",
+         "type":"MX",
+         "comment":"firstMXcomment",
+         "data":"mail.testingorwhat3.com",
+         "updated":"2011-05-18T19:53:10.000+0000",
+         "ttl":7801,
+         "created":"2011-05-18T19:53:10.000+0000"
+      }
+   ]
 }

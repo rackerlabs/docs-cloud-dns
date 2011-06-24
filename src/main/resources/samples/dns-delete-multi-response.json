@@ -1,4 +1,4 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains?id=1111111&id=2722786&id=111114&includeSubdomains=true
+https://dns.api.rackspacecloud.com/v1.0/1234/domains?id=1111111&id=2722786&id=111114&deleteSubdomains=true
 
 {
    "failedItems":{

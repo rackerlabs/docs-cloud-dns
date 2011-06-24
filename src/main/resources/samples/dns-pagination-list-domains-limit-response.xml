@@ -1,0 +1,6 @@
+https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="95"> 
+    <domain id="2718534" accountId="440369" name="apr26a.performance.com"/>  <domain
+    id="2718341" accountId="440369" name="bbunittestacct2static3.com"/>  <domain
+    id="2719323" accountId="440369" name="config.com"/>  <ns2:link href="http://localhost:9001/v1.0/440369/domains?limit=3&amp;offset=3" rel="next"/> 
+    </domains> 
