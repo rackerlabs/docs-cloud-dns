@@ -1,17 +1,7 @@
-{
-    "domains":[
-        {
-            "name":"sub0.example.com",
-            "id":2722347,
-            "updated":"2011-06-15T19:02:08.000+0000",
-            "created":"2011-06-15T19:02:07.000+0000"
-        },
-        {
-            "name":"sub1.example.com",
-            "id":2722348,
-            "updated":"2011-06-15T19:02:08.000+0000",
-            "created":"2011-06-15T19:02:08.000+0000"
-        }
-    ],
-    "totalEntries":41
+{ "domains" : [ { "created" : "2011-04-22T15:42:29.000+0000",
+        "id" : 2718342,
+        "name" : "sub1.bbunittestacct2static3.com",
+        "updated" : "2011-04-22T15:42:29.000+0000"
+      } ],
+  "totalEntries" : 1
 }

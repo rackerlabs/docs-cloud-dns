@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<subdomains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom"
-    totalEntries="2">
-    <domain id="2722347" name="sub0.example.com" updated="2011-06-15T14:02:08-05:00" created="2011-06-15T14:02:07-05:00" />
-    <domain id="2722348" name="sub1.example.com" updated="2011-06-15T14:02:08-05:00" created="2011-06-15T14:02:08-05:00" />
+<subdomains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	totalEntries="1">
+	<domain id="2718342" name="sub1.bbunittestacct2static3.com"
+		updated="2011-04-22T10:42:29-05:00" created="2011-04-22T10:42:29-05:00" />
 </subdomains>

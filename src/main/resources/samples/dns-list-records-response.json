@@ -1,42 +1,38 @@
-{
-   "records":[
-      {
-         "name":"testingorwhat3.com",
-         "id":"A-6817754",
-         "type":"A",
-         "data":"172.11.122.24",
-         "updated":"2011-05-19T13:07:08.000+0000",
-         "ttl":5771,
-         "created":"2011-05-18T19:53:09.000+0000"
+{ "records" : [ { "comment" : "null",
+        "created" : "2011-05-03T14:47:29.000+0000",
+        "data" : "172.11.122.24",
+        "id" : "A-6816724",
+        "name" : "cwc201005021438.com",
+        "ttl" : 86400,
+        "type" : "A",
+        "updated" : "2011-05-03T14:47:29.000+0000"
       },
-      {
-         "name":"testingorwhat3.com",
-         "id":"NS-6240782",
-         "type":"NS",
-         "data":"dns1.stabletransit.com",
-         "updated":"2011-05-18T19:53:07.000+0000",
-         "ttl":7801,
-         "created":"2011-05-18T19:53:07.000+0000"
+      { "created" : "2011-05-03T14:47:26.000+0000",
+        "data" : "dns1.stabletransit.com",
+        "id" : "NS-6238362",
+        "name" : "cwc201005021438.com",
+        "ttl" : 5600,
+        "type" : "NS",
+        "updated" : "2011-05-03T14:47:26.000+0000"
       },
-      {
-         "name":"testingorwhat3.com",
-         "id":"NS-6240783",
-         "type":"NS",
-         "data":"dns2.stabletransit.com",
-         "updated":"2011-05-18T19:53:07.000+0000",
-         "ttl":7801,
-         "created":"2011-05-18T19:53:07.000+0000"
+      { "created" : "2011-05-03T14:47:26.000+0000",
+        "data" : "dns2.stabletransit.com",
+        "id" : "NS-6238363",
+        "name" : "cwc201005021438.com",
+        "ttl" : 5600,
+        "type" : "NS",
+        "updated" : "2011-05-03T14:47:26.000+0000"
       },
-      {
-         "name":"testingorwhat3.com",
-         "priority":2,
-         "id":"MX-3150315",
-         "type":"MX",
-         "comment":"firstMXcomment",
-         "data":"mail.testingorwhat3.com",
-         "updated":"2011-05-18T19:53:10.000+0000",
-         "ttl":7801,
-         "created":"2011-05-18T19:53:10.000+0000"
+      { "comment" : "null",
+        "created" : "2011-05-03T14:47:28.000+0000",
+        "data" : "mail.cwc201005021438.com",
+        "id" : "MX-3150172",
+        "name" : "cwc201005021438.com",
+        "priority" : 2,
+        "ttl" : 5000,
+        "type" : "MX",
+        "updated" : "2011-05-03T14:47:28.000+0000"
       }
-   ]
+    ],
+  "totalEntries" : 4
 }

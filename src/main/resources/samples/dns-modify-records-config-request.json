@@ -1,8 +1,7 @@
 https://dns.api.rackspacecloud.com/v1.0/1234/domains/2720150/records/
 
 {
-   "records":{
-      "record":[
+   "records":[
          {
             "id":"MX-3150315",
             "data":"mail.testingorwhat3.com",
@@ -14,5 +13,4 @@ https://dns.api.rackspacecloud.com/v1.0/1234/domains/2720150/records/
             "comment":"a comment string"
          }
       ]
-   }
 }
