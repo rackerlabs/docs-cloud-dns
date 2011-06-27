@@ -1,49 +1,53 @@
 https://dns.api.rackspacecloud.com/v1.0/1234/domains/
 {
    "domains":[ {
-         "name":"secondlevel434705.com",
-         "emailAddress":"hostmaster@secondlevel434705.com",
-         "records":[ {
+         "name":"secondlevel434706.com",
+         "emailAddress":"hostmaster@secondlevel434706.com",
+         "recordsList": {
+               "records":[   
+            {
                "ttl":86400,
                "data":"172.11.122.24",
-               "name":"secondlevel434705.com",
+               "name":"secondlevel434706.com",
                "type":"A"
             },{
                "priority": 2,
                "ttl":5000,
-               "data":"mail.secondlevel434705.com",
-               "name":"secondlevel434705.com",
+               "data":"mail.secondlevel434706.com",
+               "name":"secondlevel434706.com",
                "type":"MX"
-            } ]
+            } ]}
          },{
-         "name":"thirdlevel434705.com",
-         "emailAddress":"hostmaster@thirdlevel434705.com",
-         "records":[ {
+         "name":"thirdlevel434706.com",
+         "emailAddress":"hostmaster@thirdlevel434706.com",
+         "recordsList": { 
+             "records" :[       
+           {
                "ttl":86400,
                "data":"172.11.122.104",
-               "name":"thirdlevel434705.com",
+               "name":"thirdlevel434706.com",
                "type":"A"
             },{
                "priority": 2,
                "ttl":5000,
-               "data":"mail.thirdlevel434705.com",
-               "name":"thirdlevel434705.com",
+               "data":"mail.thirdlevel434706.com",
+               "name":"thirdlevel434706.com",
                "type":"MX"
-            } ]
+            } ] }
          },{
-         "name":"thirdlevel434705.org",
-         "emailAddress":"hostmaster@thirdlevel434705.org",
-         "records":[ {
+         "name":"thirdlevel434706.org",
+         "emailAddress":"hostmaster@thirdlevel434706.org",
+         "recordsList": { "records":[ {
                "ttl":86400,
                "data":"172.11.122.104",
-               "name":"thirdlevel434705.org",
+               "name":"thirdlevel434706.org",
                "type":"A"
             },{
                "priority": 2,
                "ttl":5000,
-               "data":"mail.thirdlevel434705.org",
-               "name":"thirdlevel434705.org",
+               "data":"mail.thirdlevel434706.org",
+               "name":"thirdlevel434706.org",
                "type":"MX"
-            } ]
+            } ] }
          } ]
 }

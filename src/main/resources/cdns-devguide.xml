@@ -32,7 +32,7 @@
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
       version="5.0" status="draft">
-    <title>Cloud DNS Developer Guide</title>
+    <title>Cloud DNS BETA Developer Guide</title>
     <?rax status.bar.text="CONFIDENTIAL"?>
     <info>
         <author>
@@ -50,7 +50,7 @@
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
-        <productname>Cloud DNS</productname>
+        <productname>Cloud DNS BETA</productname>
         <pubdate>2011-06-28</pubdate>
         <legalnotice role="rs-api">
             <annotation>
@@ -156,13 +156,13 @@
                                         paging works.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Added new <xref linkend="import_domain"/> that describes
-                                        how to use import domain to create a domain.</para>
-                                </listitem>
-                                <listitem>
                                     <para>Added new <xref linkend="export_domain"/> that describes
                                         how to use export domain to provide the BIND 9 formatted
                                         contents of the requested domain.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added new <xref linkend="import_domain"/> that describes
+                                        how to use import domain to create a domain.</para>
                                 </listitem>
                                 <listitem>
                                     <para>Added new <xref linkend="using_subdomains"/> that
@@ -192,9 +192,9 @@
                                         to be valid URLs.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Removed the following API operations for domains (and
-                                        their corresponding examples) that are no longer supported
-                                        from <xref linkend="Domains"/>:<itemizedlist
+                                    <para>Removed the following API calls for domains (and their
+                                        corresponding examples) that are no longer supported from
+                                            <xref linkend="Domains"/>:<itemizedlist
                                             spacing="compact">
                                             <listitem>
                                                 <para>
@@ -220,8 +220,8 @@
                                 </listitem>
                                 <listitem>
                                     <para>Added notes about Time To Live (TTL) values for
-                                        create/modify operations for domains and add/modify
-                                        operations for records.</para>
+                                        create/modify calls for domains and add/modify calls for
+                                        records.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
@@ -300,7 +300,7 @@
             <para>You can also follow Rackspace updates and announcements via twitter at <link
                     xlink:href="http://www.twitter.com/rackspace"
                     >http://www.twitter.com/rackspace</link>. </para>
-            <para> This API uses standard HTTP 1.1 response codes as documented at <link
+            <para>This API uses standard HTTP 1.1 response codes as documented at <link
                     xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
                     >http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
         </section>
@@ -406,7 +406,7 @@ X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89</literallayout>
                     additional Cloud Service headers are returned along with
                         <code>X-Auth-Token</code>, but they are not applicable to the DNS service.
                     An HTTP status of <errorcode>401 (Unauthorized)</errorcode> is returned if
-                    authentication fails. All operations against the DNS service must include the
+                    authentication fails. All calls against the DNS service must include the
                         <code>X-Auth-Token</code> header as noted above.</para>
                 <example>
                     <title>Authentication Response</title>
@@ -466,13 +466,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <title>Request/Response Types</title>
             <para> The DNS API supports both the JSON and XML data serialization formats. The
                 request format is specified using the <code>Content-Type</code> header and is
-                required for operations that have a request body. The response format can be
-                specified in requests either by using the <code>Accept</code> header or by adding an
-                <code>.xml</code> or <code>.json</code> extension to the request URI. Note that it is possible for a response
-                to be serialized using a format different from the request. If
-                no response format is specified, JSON is the default. If conflicting formats are
-                specified using both an <code>Accept</code> header and a query extension, the query
-                extension takes precedence. </para>
+                required for calls that have a request body. The response format can be specified in
+                requests either by using the <code>Accept</code> header or by adding an
+                    <code>.xml</code> or <code>.json</code> extension to the request URI. Note that
+                it is possible for a response to be serialized using a format different from the
+                request. If no response format is specified, JSON is the default. If conflicting
+                formats are specified using both an <code>Accept</code> header and a query
+                extension, the query extension takes precedence. </para>
             <table rules="all">
                 <caption>Response Formats</caption>
                 <?dbfo keep-together="always"?>
@@ -509,9 +509,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <para>&PUT;, &POST;, and &DELETE; calls are <emphasis>asynchronous</emphasis>, however,
                 since they may take some time to process. Therefore they return 202 ACCEPTED
                 responses containing information with a callback URL, which allows the progress,
-                status, and/or response information of the operation to be retrieved at a later
-                point in time. The asynchronous response body will look similar to the following
-                examples, depending on the format requested:</para>
+                status, and/or response information of the call to be retrieved at a later point in
+                time. The asynchronous response body will look similar to the following examples,
+                depending on the format requested:</para>
             <example>
                 <title>202 ACCEPTED Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -553,20 +553,20 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </tbody>
             </table>
             <note>
-                <para>The status for asynchronous operations is retained for up to 24 hours.</para>
+                <para>The status for asynchronous calls is retained for up to 24 hours.</para>
             </note>
             <para>When a request is made to the callback URL provided and the job is still running,
                 another <returnvalue>202</returnvalue> ACCEPTED response is returned with the same
                 information as the previous one. If the request is complete, the response will be as
-                if the original call returned as normal, without waiting. For example, if a create
-                domain request was issued and a 202 asynchronous response was returned, the response
+                if the original call returned as normal, without waiting. For example, if a Create
+                Domain request was issued and a 202 asynchronous response was returned, the response
                 from querying the callback URL for a completed successful domain creation would be a
                     <returnvalue>200</returnvalue> OK and contain the information for the created
                 domain. See <xref linkend="create_domains_resp"/> for a specific example.</para>
             <para>If an error occurs during the processing of the create request, querying the
                 callback URL will return the details of the error, as if the original call returned
-                the error response. For example, if a validation error occurs during the create
-                domain request above, the response from querying the callback URL would be a
+                the error response. For example, if a validation error occurs during the Create
+                Domain request above, the response from querying the callback URL would be a
                     <returnvalue>400</returnvalue> BAD REQUEST and contain details regarding the
                 specific validation error.</para>
             <note>
@@ -579,8 +579,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <para>The description of each &PUT;, &POST;, and &DELETE; request identifies the
                 response codes that can indicate success or error for that request. For example, see
                 the paragraphs in <xref linkend="create_domains"/> immediately below the table for a
-                list of the successful and error response codes for the POST /domains
-                operation.</para>
+                list of the successful and error response codes for the POST /domains call.</para>
         </section>
            <section>
             <title>Content Compression</title>
@@ -770,13 +769,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             comment=""</para>
                     </listitem>
                     <listitem>
-                        <para>Come back on all <guilabel>GET</guilabel> calls for both domain and
+                        <para>Come back on all &GET; calls for both domain and
                             records regardless of whether the call is a single or multiple call, and
                             regardless of whether it is a detail or non-detail call</para>
                     </listitem>
                 </itemizedlist></para>
-            <para>In summary, all create domain and create record(s) and all modify domain and
-                modify record(s) calls can take an optional comment (<code>comment="value of
+            <para>In summary, all Create Domain and Create Record(s) and all Modify Domain and
+                Modify Record(s) calls can take an optional comment (<code>comment="value of
                     comment"</code>). In other words, all these request calls can have an optional
                 comment attribute.</para>
         </section>
@@ -788,7 +787,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 number of items for that type that can be returned. <emphasis>Offset</emphasis> is
                 the starting point for the return data. For example, an offset of 50 specifies that
                 the items that are returned should start with item number 51 (since the numbering is
-                one-based). </para>
+                one-based) in the collection. </para>
             <para>It is important to note that offset <emphasis>must</emphasis> be a multiple of the
                 limit (or zero), otherwise a Bad Request Exception will be thrown. Both limit and
                 offset are specified via request parameters on the URI. The parameters are named
@@ -872,7 +871,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     If the number of items requested in the &GET; call is less then the total number
                     of items for this type, then there will be pagination links
                         <code>previous</code> and/or <code>next</code>, specifying how to get to the
-                    previous or next set of records. </para>
+                    previous and/or next set of records. </para>
                 <note>
                     <para>The <code>previous</code> and/or <code>next</code> link elements are
                         displayed only if there are items available in the corresponding link. See
@@ -930,12 +929,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para> In the previous two response examples, note that <code>totalEntries=95</code>
                     and two links have been provided to:<itemizedlist>
                         <listitem>
-                            <para>Retrieve the next 3 results (<code>limit=3</code>) in the link
+                            <para>Retrieve the next 3 results (<code>limit=3</code>) via the link
                                 element identified by the attribute <code>rel="next"</code> (XML) or
                                     <code>"rel":"next"</code> (JSON)</para>
                         </listitem>
                         <listitem>
-                            <para>Retrieve the previous 3 results in the link element identified by
+                            <para>Retrieve the previous 3 results via the link element identified by
                                 the attribute <code>rel="previous"</code> (XML) or
                                     <code>"rel":"previous"</code> (JSON) </para>
                         </listitem>
@@ -1123,13 +1122,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>, <errorcode>406</errorcode>), notFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
-                <para> These operations provide a list of all DNS domains manageable by a given
-                    account. The resulting list is flat, and does not break the domains down
-                    hierarchically by subdomain. All representative domains are included in the
-                    list, even if a domain is conceptually a subdomain of another domain in the
-                    list.</para>
+                <para> These calls provide a list of all DNS domains manageable by a given account.
+                    The resulting list is flat, and does not break the domains down hierarchically
+                    by subdomain. All representative domains are included in the list, even if a
+                    domain is conceptually a subdomain of another domain in the list.</para>
                 <note>
-                    <para>This call returns by default a maximum of 100 items at a time if no
+                    <para>These calls return by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref
@@ -1157,9 +1155,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <section xml:id="search_domains_w_filters">
                     <title>Search Domains with Filtering</title>
-                    <para> As illustrated by the examples above, the List Domains operation provides
-                        a list of all DNS domains manageable by a given account. Filtering the
-                        search to limit the results returned can be performed by using the
+                    <para> As illustrated by the examples above, the List Domains call provides a
+                        list of all DNS domains manageable by a given account. Filtering the search
+                        to limit the results returned can be performed by using the
                             <code>name</code> parameter on the List Domains call. For example,
                             <?sbr?><code>?name=hoola.com</code> matches <code>hoola.com</code> and
                         similar names such as <code>main.hoola.com</code> and
@@ -1289,10 +1287,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
-                <para> This operation provides the detailed output for a specific domain configured
-                    and associated with an account. This operation is not capable of returning
-                    details for a domain that has been deleted. </para>
-                <para>This operation does not require a request body.</para>
+                <para> This call provides the detailed output for a specific domain configured and
+                    associated with an account. This call is not capable of returning details for a
+                    domain that has been deleted. </para>
+                <para>This call does not require a request body.</para>
                 <note>
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
@@ -1423,14 +1421,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
-                <para>This operation provides the BIND (Berkeley Internet Name Domain) 9 formatted
-                    contents of the requested domain. This operation is for a
-                        <emphasis>single</emphasis> domain only, and as such, does not traverse up
-                    or down the domain hierarchy for details (that is, no subdomain information is
-                    provided). </para>
+                <para>This call provides the BIND (Berkeley Internet Name Domain) 9 formatted
+                    contents of the requested domain. This call is for a <emphasis>single</emphasis>
+                    domain only, and as such, does not traverse up or down the domain hierarchy for
+                    details (that is, no subdomain information is provided). </para>
                 <note>
-                    <para> This operation is not capable of returning anything for a domain that has
-                        been deleted. </para>
+                    <para> This call is not capable of returning anything for a domain that has been
+                        deleted. </para>
                 </note>
                 <note>
                     <para linkend="import_domain_request_xml"> The BIND 9 formatted contents of the
@@ -1488,10 +1485,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     serviceUnavailable (<errorcode>503</errorcode>), unauthorized
                         (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
                     notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
-                <para> This operation provisions one or more new DNS domains under the account
-                    specified, based on the configuration defined in the request object. If the
-                    corresponding request cannot be fulfilled due to insufficient or invalid data,
-                    an <code>HTTP</code>
+                <para> This call provisions one or more new DNS domains under the account specified,
+                    based on the configuration defined in the request object. If the corresponding
+                    request cannot be fulfilled due to insufficient or invalid data, an
+                        <code>HTTP</code>
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
@@ -1506,7 +1503,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             SOA minTTL (3600 seconds) is used as the default. When a record is added
                             without a specified TTL, it will receive the domain TTL by default. When
                             the domain and/or record TTL is supplied by the user, either via a
-                            create or update operation, the TTL values must be 300 seconds or
+                            create or update call, the TTL values must be 300 seconds or
                             more.</para>
                     </note><note>
                         <para>Subdomains are managed in separate zone files in the DNS system and
@@ -1570,16 +1567,16 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     serviceUnavailable (<errorcode>503</errorcode>), unauthorized
                         (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
                     notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
-                <para> This operation provisions a new DNS domain under the account specified by the
-                    BIND 9 formatted file configuration contents defined in the request object.  If
-                    the corresponding request cannot be fulfilled due to insufficient or invalid
-                    data, an <code>HTTP</code>
+                <para> This call provisions a new DNS domain under the account specified by the BIND
+                    9 formatted file configuration contents defined in the request object.  If the
+                    corresponding request cannot be fulfilled due to insufficient or invalid data,
+                    an <code>HTTP</code>
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
                     caller to correct the cause of the failure and &POST; the request again. </para>
-                <para> For all practical purposes, a successful import domain operation creates a
-                    domain, and is therefore similar in response to a Create Domain call. </para>
+                <para> For all practical purposes, a successful Import Domain call creates a domain,
+                    and is therefore similar in response to a Create Domain call. </para>
                 <note>
                     <para> DNS record propagation may take up to 15 minutes.</para>
                 </note>
@@ -1670,9 +1667,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
-                <para>This operation modifies DNS domain(s) attributes only. Records cannot be
-                    added, modified, or removed. Only the TTL and email address attributes of a
-                    domain can be modified. </para>
+                <para>This call modifies DNS domain(s) attributes only. Records cannot be added,
+                    modified, or removed. Only the TTL and email address attributes of a domain can
+                    be modified. </para>
                 <para>If a request cannot be fulfilled due to insufficient or invalid data, an
                         <code>HTTP</code>
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
@@ -1684,8 +1681,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </note>
                 <note>
                     <para>When the domain and/or record TTL is supplied by the user, either via a
-                        create or update operation, the TTL values must be 300 seconds or
-                        more.</para>
+                        create or update call, the TTL values must be 300 seconds or more.</para>
                 </note>
                 <example>
                     <title>Modify Domain Request: XML</title>
@@ -1757,16 +1753,16 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
-                <para> This operation removes one or more specified domains from the account; when a
+                <para> This call removes one or more specified domains from the account; when a
                     domain is deleted, its immediate resource records are also deleted from the
                     account. By default, if a deleted domain had subdomains, each subdomain becomes
                     a root domain and is not deleted; this can be overridden by the optional
                         <code>deleteSubdomains</code> parameter. Utilizing the optional
                         <code>deleteSubdomains</code> parameter on domains without subdomains does
-                    not result in a failure. When a domain is deleted, any and all configuration
-                    data is immediately purged and is not recoverable via the API. So on a
-                    successful delete, subsequent requests for the deleted object should return
-                    notFound (<errorcode>404</errorcode>).</para>
+                    not result in a failure. When a domain is deleted, any and all domain data is
+                    immediately purged and is not recoverable via the API. So on a successful
+                    delete, subsequent requests for the deleted object should return notFound
+                        (<errorcode>404</errorcode>).</para>
                 <example>
                     <title>Delete Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1807,11 +1803,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.json" parse="text"/></programlisting>
                 </example>
-                <para>Transactionally, delete operations behave differently than other operations in
-                    that deletes are never rolled back on exceptions, and multiple deletes in the
-                    same request do not fail as a group. Instead, each delete is attempted even if
-                    one or more fail. The response for a delete request in which one or more items
-                    fail contains information regarding which items failed as well as information
+                <para>Transactionally, delete calls behave differently than other calls in that
+                    deletes are never rolled back on exceptions, and multiple deletes in the same
+                    request do not fail as a group. Instead, each delete is attempted even if one or
+                    more fail. The response for a delete request in which one or more items fail
+                    contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
                 <example>
@@ -1856,7 +1852,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound
                     (<errorcode>404</errorcode>)</simpara>
-                <para> This operation provides a list of all DNS domains that are subdomains of the
+                <para> This call provides a list of all DNS domains that are subdomains of the
                     specified domain. The resulting list is flat, and does not break the domains
                     down hierarchically by subdomain.</para>
                 <note>
@@ -2124,8 +2120,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <note>
                     <para> When a domain and/or record are created, and no TTL (Time To Live) is
                         specified, a default value of 3600 seconds is used. When the domain and/or
-                        record TTL is supplied by the user, either via a create or update operation,
-                        the TTL values must be 300 seconds or more.</para>
+                        record TTL is supplied by the user, either via a create or update call, the
+                        TTL values must be 300 seconds or more.</para>
                 </note>
                 <example>
                     <title>Add Records Request: XML</title>
@@ -2187,8 +2183,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     overLimit (<errorcode>413</errorcode>) </simpara>
                 <note>
                     <para> When the domain and/or record TTL is supplied by the user, either via a
-                        create or update operation, the TTL values must be 300 seconds or
-                        more.</para>
+                        create or update call, the TTL values must be 300 seconds or more.</para>
                 </note>
                 <example>
                     <title>Modify Record Configuration Request: XML</title>
@@ -2249,6 +2244,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>When a record is deleted, any and all record data is immediately purged and is
+                    not recoverable via the API. So on a successful delete, subsequent requests for
+                    the deleted record should return notFound (<errorcode>404</errorcode>).</para>
                 <example>
                     <title>Remove Record Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2269,11 +2267,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
                 </example>
-                <para>Transactionally, delete operations behave differently than other operations in
-                    that deletes are never rolled back on exceptions, and multiple deletes in the
-                    same request do not fail as a group. Instead, each delete is attempted even if
-                    one or more fail. The response for a delete request in which one or more items
-                    fail contains information regarding which items failed as well as information
+                <para>Transactionally, delete calls behave differently than other calls in that
+                    deletes are never rolled back on exceptions, and multiple deletes in the same
+                    request do not fail as a group. Instead, each delete is attempted even if one or
+                    more fail. The response for a delete request in which one or more items fail
+                    contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
                 <example>
@@ -2289,8 +2287,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
                 </example>
                 <remark>Mike- remember to reference new example from Randall (in repository):
-                    dns-remove-records-failure-response.json. Also need to add a sentence describing
-                    why the deletes failed?</remark>
+                    dns-remove-records-failure-response.json. Also need to check the sentence below
+                    describing why the deletes failed to make sure it is correct?</remark>
+                <para>In the previous two response examples, the requested record objects could not
+                    be deleted, since they were not found.</para>
             </section>
         </section>
         <?hard-pagebreak?>

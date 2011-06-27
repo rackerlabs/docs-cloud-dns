@@ -1,17 +1,22 @@
 {
-  "records" : {
-    "record" : [ {
-      "id" : 9573517,
-      "type" : "CNAME",
-      "name" : "sub.bbunittestacct2static3.com",
-      "data" : "dev.bbunittestacct2static3.com",
-      "ttl" : 86400
-    }, {
-      "id" : 6500365,
-      "type" : "A",
-      "name" : "bbunittestacct2static3.com",
-      "data" : "172.23.2.212",
-      "ttl" : 86400
-    } ]
-  }
+    "records":[
+        {
+            "name":"sub.secondlevel434706.com",
+            "id":"CNAME-9778030",
+            "type":"CNAME",
+            "data":"dev.secondlevel434706.com",
+            "updated":"2011-06-24T20:12:33.000+0000",
+            "ttl":3600,
+            "created":"2011-06-24T20:12:33.000+0000"
+        },
+        {
+            "name":"secondlevel434706.com",
+            "id":"A-6823144",
+            "type":"A",
+            "data":"172.23.2.212",
+            "updated":"2011-06-24T20:12:34.000+0000",
+            "ttl":3600,
+            "created":"2011-06-24T20:12:34.000+0000"
+        }
+    ]
 }

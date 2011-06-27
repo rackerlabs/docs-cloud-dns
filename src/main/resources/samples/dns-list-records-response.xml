@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
-	<record created="2011-05-18T14:53:09-05:00" updated="2011-05-19T08:07:08-05:00"
-		ttl="5771" data="172.11.122.24" name="testingorwhat3.com" type="A"
-		id="A-6817754" />
-	<record created="2011-05-18T14:53:07-05:00" updated="2011-05-18T14:53:07-05:00"
-		ttl="7801" data="dns1.stabletransit.com" name="testingorwhat3.com"
-		type="NS" id="NS-6240782" />
-	<record created="2011-05-18T14:53:07-05:00" updated="2011-05-18T14:53:07-05:00"
-		ttl="7801" data="dns2.stabletransit.com" name="testingorwhat3.com"
-		type="NS" id="NS-6240783" />
-	<record comment="firstMXcomment" created="2011-05-18T14:53:10-05:00"
-		updated="2011-05-18T14:53:10-05:00" priority="2" ttl="7801"
-		data="mail.testingorwhat3.com" name="testingorwhat3.com" type="MX"
-		id="MX-3150315" />
-</records>
+<recordsList xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	totalEntries="4">
+	<record id="A-6816724" type="A" name="cwc201005021438.com" data="172.11.122.24"
+		ttl="86400" updated="2011-05-03T09:47:29-05:00" created="2011-05-03T09:47:29-05:00"
+		comment="null" />
+	<record id="NS-6238362" type="NS" name="cwc201005021438.com"
+		data="dns1.stabletransit.com" ttl="5600" updated="2011-05-03T09:47:26-05:00"
+		created="2011-05-03T09:47:26-05:00" />
+	<record id="NS-6238363" type="NS" name="cwc201005021438.com"
+		data="dns2.stabletransit.com" ttl="5600" updated="2011-05-03T09:47:26-05:00"
+		created="2011-05-03T09:47:26-05:00" />
+	<record id="MX-3150172" type="MX" name="cwc201005021438.com"
+		data="mail.cwc201005021438.com" ttl="5000" priority="2"
+		updated="2011-05-03T09:47:28-05:00" created="2011-05-03T09:47:28-05:00"
+		comment="null" />
+</recordsList>

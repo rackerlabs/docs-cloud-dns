@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0">
-    <record ttl="86400" data="dev.bbunittestacct2static3.com" name="sub.bbunittestacct2static3.com"
-        type="CNAME" id="9573515" />
-    <record ttl="86400" data="172.23.2.212" name="bbunittestacct2static3.com"
-        type="A" id="6500361" />
-</records>
+<recordsList xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	totalEntries="6">
+	<record id="CNAME-9778005" type="CNAME" name="sub.secondlevel434706.com"
+		data="dev.secondlevel434706.com" ttl="5600" updated="2011-06-23T20:21:05Z"
+		created="2011-06-23T20:21:05Z" />
+	<record id="A-6822969" type="A" name="secondlevel434706.com"
+		data="172.23.2.212" ttl="5600" updated="2011-06-23T20:21:06Z" created="2011-06-23T20:21:06Z" />		
+
+	<record id="A-6822966" type="A" name="secondlevel434706.com"
+		data="172.11.122.24" ttl="5600" updated="2011-06-23T19:24:28Z"
+		created="2011-06-23T19:24:28Z" />
+	<record id="NS-6251662" type="NS" name="secondlevel434706.com"
+		data="dns1.stabletransit.com" ttl="5600" updated="2011-06-23T19:24:27Z"
+		created="2011-06-23T19:24:27Z" />
+	<record id="NS-6251663" type="NS" name="secondlevel434706.com"
+		data="dns2.stabletransit.com" ttl="5600" updated="2011-06-23T19:24:27Z"
+		created="2011-06-23T19:24:27Z" />
+	<record id="MX-3151211" type="MX" name="secondlevel434706.com"
+		data="mail.secondlevel434706.com" ttl="5000" priority="2"
+		updated="2011-06-23T19:24:29Z" created="2011-06-23T19:24:29Z" />
+
+</recordsList>

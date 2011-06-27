@@ -1,1 +1,13 @@
-need new .json example
+{ 
+        "records":[   
+            {
+               "data":"dev.secondlevel434706.com",
+               "name":"sub.secondlevel434706.com",
+               "type":"CNAME"
+            },{
+               "data":"172.23.2.212",
+               "name":"secondlevel434706.com",
+               "type":"A"
+            } 
+       ]
+}
