@@ -33,7 +33,7 @@
       xmlns:html="http://www.w3.org/1999/xhtml"
       version="5.0" status="draft">
     <title>Cloud DNS BETA Developer Guide</title>
-    <?rax status.bar.text="CONFIDENTIAL"?>
+    
     <info>
         <author>
             <personname>
@@ -753,7 +753,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="samples/dns-example-response-w-comment.json" parse="text"/></programlisting>
             </example>
-            <remark>Mike- ensure that the 2 comment examples match.</remark>
             <para>Notes for comments:<itemizedlist>
                     <listitem>
                         <para>Are limited to 160 characters each</para>
@@ -1315,11 +1314,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         </listitem>
                     </itemizedlist></para>
                 <para>The following examples show the default parameter settings
-                        (<code>showRecords</code>=<code>true</code>,
-                        <code>showSubdomains</code>=<code>false</code>) for the List Domain Details
-                    call. This call returns information with records but no information about
-                    subdomains. Since these parameter values are the defaults, this call works the
-                    same way if both of the parameters are omitted.</para>
+                        (<code>showRecords</code>=<code>true&amp;</code><code>showSubdomains</code>=<code>false</code>)
+                    for the List Domain Details call. This call returns information with records but
+                    no information about subdomains. Since these parameter values are the defaults,
+                    this call works the same way if both of the parameters are omitted.</para>
                 <example>
                     <title>List Domain Details with Records, no Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1341,9 +1339,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.json" parse="text"/></programlisting>
                 </example>
                 <para>The following examples show the parameter settings to return information for
-                    both records and subdomains (<code>showSubdomains</code>=<code>true</code>,
-                        <code>showRecords</code>=<code>true</code>) for the List Domain Details
-                    call:</para>
+                    both records and subdomains
+                        (<code>showSubdomains</code>=<code>true&amp;</code><code>showRecords</code>=<code>true</code>)
+                    for the List Domain Details call:</para>
                 <example>
                     <title>List Domain Details with Records and Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1365,9 +1363,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.json" parse="text"/></programlisting>
                 </example>
                 <para>The following examples show the parameter settings to return basic information
-                    only, without records or subdomains (<code>showRecords</code>=<code>false</code>
-                    and <code>showSubdomains</code>=<code>false</code>) for the List Domain Details
-                    call:</para>
+                    only, without records or subdomains
+                        (<code>showRecords</code>=<code>false&amp;</code><code>showSubdomains</code>=<code>false</code>)
+                    for the List Domain Details call:</para>
                 <example>
                     <title>List Domain Details, no Records, no Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1530,9 +1528,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="auto"?>
                     <programlisting language="samples/dns-create-domains-response.json"><xi:include href="samples/dns-create-domains-response.json" parse="text"/></programlisting>
                 </example>
-                <para>
-                    <remark>Reviewer:  Need new example for previous call.</remark>
-                </para>
             </section>
             <?hard-pagebreak?>
             <section xml:id="import_domain">
@@ -2133,7 +2128,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-add-records-request.json" parse="text"/></programlisting>
                 </example>
-                <remark>Need new .json example for previous item.</remark>
                 <example>
                     <title>Add Records Response: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2277,18 +2271,22 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <example>
                     <title>Delete Records Response (Failure): XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.xml" parse="text"/></programlisting>
                 </example>
                 <remark>Mike- remember to reference new example from Randall (in repository):
-                    dns-remove-records-failure-response.xml </remark>
+                    dns-remove-records-failure-response.xml. DONE, but now it appears that the
+                    Domain ID for the request 2720150 does not match the id for the response
+                    2725343.</remark>
                 <example>
                     <title>Delete Records Response (Failure): JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"/></programlisting>
                 </example>
                 <remark>Mike- remember to reference new example from Randall (in repository):
                     dns-remove-records-failure-response.json. Also need to check the sentence below
-                    describing why the deletes failed to make sure it is correct?</remark>
+                    describing why the deletes failed to make sure it is correct? DONE, but now it
+                    appears that the Domain ID for the request 2720150 does not match the id for the
+                    response 2725343.</remark>
                 <para>In the previous two response examples, the requested record objects could not
                     be deleted, since they were not found.</para>
             </section>
