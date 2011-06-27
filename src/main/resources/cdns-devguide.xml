@@ -1147,7 +1147,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <example>
                     <title>List Domains Response: JSON</title>
-                    <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.json" parse="text"/></programlisting>
                 </example>
                 <section xml:id="search_domains_w_filters">
@@ -1219,8 +1218,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"/></programlisting>
                     </example>
-                    <para> In the following example, the specified search name is
-                            <code>2.rtb201104281842.com</code>: </para>
+                    <para>
+                        <?rax-fo keep-with-next?>In the following example, the specified search
+                        name is <code>2.rtb201104281842.com</code>: </para>
                     <example>
                         <title>Filter by Partial Name Request: XML</title>
                         <?dbfo keep-together="always"?>
