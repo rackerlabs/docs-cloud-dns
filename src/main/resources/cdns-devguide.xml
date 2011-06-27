@@ -1101,8 +1101,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                                 Display IDs and names only.</td>
                             <td colspan="2">XML, JSON</td>
                         </tr>
-                    </tbody>
-                    <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/domains/?name=<parameter>domainName</parameter></td>
