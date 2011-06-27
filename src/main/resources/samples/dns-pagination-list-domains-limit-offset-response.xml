@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom"
 	totalEntries="112">
 	<domain id="2718983" accountId="440369" name="cwc201005021438.com"
 		updated="2011-05-03T09:47:29-05:00" created="2011-05-03T09:47:26-05:00" />

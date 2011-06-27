@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom"
 	totalEntries="1">
 	<domain id="2725551" name="sub1.secondlevel434706.com" updated="2011-06-24T16:02:21Z"
 		created="2011-06-24T16:02:20Z" />

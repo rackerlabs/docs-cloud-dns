@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domain xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom"
 	id="2725557" accountId="440369" name="sub4.secondlevel434706.com" ttl="5600"
 	emailAddress="hostmaster@sub4.secondlevel434706.com" updated="2011-06-24T16:23:27Z"
 	created="2011-06-24T16:23:25Z" comment="This is the FOURTH subdomain of secondlevel434706.com">

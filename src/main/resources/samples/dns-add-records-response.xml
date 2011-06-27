@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <recordsList xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom"
 	totalEntries="6">
 	<record id="CNAME-9778005" type="CNAME" name="sub.secondlevel434706.com"
 		data="dev.secondlevel434706.com" ttl="5600" updated="2011-06-23T20:21:05Z"
