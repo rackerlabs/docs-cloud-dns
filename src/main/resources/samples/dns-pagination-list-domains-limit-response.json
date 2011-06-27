@@ -19,7 +19,7 @@
         "updated" : "2011-05-04T19:05:38.000+0000"
       }
     ],
-  "links" : [ { "href" : "http://[::1]/v1.0/440369/domains?limit=3&offset=3",
+  "links" : [ { "href" : "https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=3&offset=3",
         "rel" : "next"
       } ],
   "totalEntries" : 112

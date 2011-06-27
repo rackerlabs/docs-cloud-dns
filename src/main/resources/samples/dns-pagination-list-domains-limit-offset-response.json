@@ -17,10 +17,10 @@
         "updated" : "2011-06-15T19:02:06.000+0000"
       }
     ],
-  "links" : [ { "href" : "http://[::1]/v1.0/440369/domains?limit=3&offset=0",
+  "links" : [ { "href" : "https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=3&offset=0",
         "rel" : "previous"
       },
-      { "href" : "http://[::1]/v1.0/440369/domains?limit=3&offset=6",
+      { "href" : "https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=3&offset=6",
         "rel" : "next"
       }
     ],

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	xmlns:ns2="http://www.w3.org/2005/Atom"
 	totalEntries="112">
 	<domain id="2718534" accountId="440369" name="apr26a.performance.com"
 		updated="2011-06-13T15:41:57-05:00" created="2011-04-26T11:50:46-05:00"
@@ -10,6 +10,6 @@
 		comment="This one too all in the same call" />
 	<domain id="2719323" accountId="440369" name="config.com"
 		updated="2011-05-04T14:05:38-05:00" created="2011-05-04T13:54:47-05:00" />
-	<ns2:link href="http://[::1]/v1.0/440369/domains?limit=3&amp;offset=3"
+	<ns2:link href="https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=3&amp;offset=3"
 		rel="next" />
 </domains>
