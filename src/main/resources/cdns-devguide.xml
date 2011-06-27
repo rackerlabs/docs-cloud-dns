@@ -75,7 +75,7 @@
             customers. Interactions with Rackspace Cloud DNS occur programmatically via the
             Rackspace Cloud DNS API as described in this Cloud DNS Developer Guide.</para>
         <note>
-            <para> DNS record propagation may take up to 15 minutes. </para>
+            <para> DNS propagation may take up to 15 minutes. </para>
         </note>
         <para>The following figure shows an overview of Cloud DNS Infrastructure:</para>
         <para><inlinemediaobject>
@@ -83,8 +83,11 @@
                     <imagedata fileref="images/Cloud_DNS_Infographic-1.png" contentwidth="6in"/>
                 </imageobject>
             </inlinemediaobject></para>
-        <para> We welcome feedback, comments, and bug reports at <link
-                xlink:href="mailto:dnsbeta@rackspacecloud.com">dnsbeta@rackspacecloud.com</link>. </para>
+        <para>We welcome feedback, comments, and bug reports at <link
+                xlink:href="http://feedback.rackspacecloud.com"
+                >http://feedback.rackspacecloud.com</link>.</para>
+        <para>Issues and bug reports can be directed to your support team via ticket, chat, email,
+            or phone.</para>
         <section>
             <title>Intended Audience</title>
             <para> This Guide is intended to assist software developers who want to develop
@@ -99,7 +102,7 @@
                     <para>General operating principles of DNS</para>
                 </listitem>
                 <listitem>
-                    <para>ReSTful web services</para>
+                    <para>RESTful web services</para>
                 </listitem>
                 <listitem>
                     <para>HTTP/1.1 conventions</para>
@@ -152,7 +155,7 @@
                                         use comments for domains and records.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Added new <xref linkend="pagination"/>that describes how
+                                    <para>Added new <xref linkend="pagination"/> that describes how
                                         paging works.</para>
                                 </listitem>
                                 <listitem>
@@ -346,12 +349,18 @@
         </section>
         <section>
             <title>Domain Owner</title>
-            <para> The domain owner is the entity that owns the domain information.</para>
+            <para> Within RackSpace DNS, the account which creates the domain is the domain
+                owner.</para>
+            <note>
+                <para>Domain registration is currently outside the scope of the RackSpace DNS API.
+                    Any references to ownership and management of domain information is only
+                    relevant within the context of the RackSpace DNS system.</para>
+            </note>
         </section>
     </chapter>
     <chapter>
         <title>General API Information</title>
-        <para> The DNS Service API is implemented using a ReSTful web service interface. Like other
+        <para> The DNS Service API is implemented using a RESTful web service interface. Like other
             products in the Rackspace Cloud suite, the DNS Service shares a common token-based
             authentication system that allows seamless access between products and services. </para>
         <note>
@@ -365,10 +374,10 @@
                 authorization token HTTP x-header, defined as <code>X-Auth-Token</code>. Customers
                 obtain this token by first using the Rackspace Cloud Authentication Service and
                 supplying a valid username and API access key. </para>
-            <para> The Rackspace Cloud Authentication Service is a ReSTful web service. It is the
-                entry point to all Rackspace Cloud APIs. It is accessible at
-                <link xlink:href="https://auth.api.rackspacecloud.com/v1.0">https://auth.api.rackspacecloud.com/v1.0</link>.
-            </para>
+            <para> The Rackspace Cloud Authentication Service is a RESTful web service. It is the
+                entry point to all Rackspace Cloud APIs. It is accessible at <link
+                    xlink:href="https://auth.api.rackspacecloud.com/v1.0"
+                    >https://auth.api.rackspacecloud.com/v1.0</link>. </para>
             <section>
                 <title>Request</title>
                 <para>
@@ -555,6 +564,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <note>
                 <para>The status for asynchronous calls is retained for up to 24 hours.</para>
             </note>
+            <note>
+                <para>If a request body does not pass initial validation or an error condition
+                    arises, you may receive an immediate error response from the request.</para>
+            </note>
             <para>When a request is made to the callback URL provided and the job is still running,
                 another <returnvalue>202</returnvalue> ACCEPTED response is returned with the same
                 information as the previous one. If the request is complete, the response will be as
@@ -642,14 +655,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 are thresholds that are reset after a certain amount
                 of time passes. Absolute limits are fixed.
             </para>
-            <note>
-                <para>
-                    If the default limits are too low for your
-                    particular application, please contact Rackspace
-                    Cloud support to request an increase.  All
-                    requests require reasonable justification.
-                </para>
-            </note>
             <section>
                 <title>Rate Limits</title>
                 <para> We specify rate limits in terms of both a human-readable wild-card URI and a
@@ -768,9 +773,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             comment=""</para>
                     </listitem>
                     <listitem>
-                        <para>Come back on all &GET; calls for both domain and
-                            records regardless of whether the call is a single or multiple call, and
-                            regardless of whether it is a detail or non-detail call</para>
+                        <para>Are returned on &GET; calls for both domain and records regardless of
+                            whether the call is a single or multiple call, and regardless of whether
+                            it is a detail or non-detail call</para>
                     </listitem>
                 </itemizedlist></para>
             <para>In summary, all Create Domain and Create Record(s) and all Modify Domain and
@@ -820,23 +825,21 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/</td>
-                        <td colspan="3">List all domains manageable by the account specified.
-                            Display IDs and names only.</td>
+                        <td colspan="3">List all domains manageable by the account specified. </td>
                     </tr>
                 
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/?name=<replaceable>domainName</replaceable></td>
                         <td colspan="3">Filter domains by domain name: list all domains manageable
-                            by the account specified that match the name domainName. Display IDs and
-                            names only.</td>
+                            by the account specified that match the name domainName.</td>
                     </tr>
                
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<replaceable>domainID</replaceable></td>
-                        <td colspan="3">List details of the specified domain. Display all details,
-                            including records. Applies to the records and subdomains lists.</td>
+                        <td colspan="3">List details of the specified domain. Applies to the records
+                            and subdomains lists.</td>
                     </tr>
                
                     <tr>
@@ -849,28 +852,22 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<replaceable>domainID</replaceable>/records</td>
-                        <td colspan="3">List all records configured for the domain. SOA cannot be
-                            modified.</td>
+                        <td colspan="3">List all records configured for the domain.</td>
                     </tr>
                 
-                    <tr>
-                        <td colspan="1">&GET;</td>
-                        <td colspan="2"
-                                >/domains/<replaceable>domainID</replaceable>/records/<replaceable>recordId</replaceable></td>
-                        <td colspan="3">List details for a specific record.</td>
-                    </tr>
+                    
                     
                 </tbody>
             </informaltable>
             <para>See the following section for examples of paged List Domains calls.</para>
             <section>
-                <title>totalEntries Attribute</title>
-                <para>In any paginated returned result, there is a <code>totalEntries</code>
-                    attribute representing the total number of entries there are for this item type.
-                    If the number of items requested in the &GET; call is less then the total number
-                    of items for this type, then there will be pagination links
-                        <code>previous</code> and/or <code>next</code>, specifying how to get to the
-                    previous and/or next set of records. </para>
+                <title>Pagination Elements and Attributes</title>
+                <para>For any collection in a result, there is a <code>totalEntries</code> attribute
+                    representing the total number of entries there are for this item type. If the
+                    number of items requested in the &GET; call is less then the total number of
+                    items for this type, then there will be pagination links <code>previous</code>
+                    and/or <code>next</code>, specifying how to get to the previous and/or next set
+                    of records. </para>
                 <note>
                     <para>The <code>previous</code> and/or <code>next</code> link elements are
                         displayed only if there are items available in the corresponding link. See
@@ -925,8 +922,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-offset-response.json" parse="text"/></programlisting>
                 </example>
-                <para> In the previous two response examples, note that <code>totalEntries=95</code>
-                    and two links have been provided to:<itemizedlist>
+                <para>
+                    <?rax-fo keep-with-next?> In the previous two response examples, note that
+                        <code>totalEntries=95</code> and two links have been provided to:<itemizedlist>
                         <listitem>
                             <para>Retrieve the next 3 results (<code>limit=3</code>) via the link
                                 element identified by the attribute <code>rel="next"</code> (XML) or
@@ -953,7 +951,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="1">Verb</td>
                         <td colspan="2">URI</td>
                         <td colspan="2">Description</td>
-                        <td colspan="3">Example Call</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -961,8 +958,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains</td>
                         <td colspan="2">List all account domains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
@@ -971,105 +966,70 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             manageable by the account specified that match the name
                             <parameter>domainName</parameter>. Display IDs and names
                             only.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/?name=rtb201104281842.com</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter></td>
                         <td colspan="2">List details for a specific domain. By default this call
                             displays information for records but not subdomains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter>/<?sbr?>domains/<parameter>765437</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2"
-                                >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<?sbr?><code>true</code>
-                            or
-                                <code>false</code>&amp;<?sbr?><parameter>showSubdomains</parameter>=<code>true</code> or<?sbr?>
-                            <code>false</code></td>
+                                >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<?sbr?><code>[true|false]&amp;<?sbr?></code><parameter>showSubdomains</parameter>=<code>[true|false]</code><?sbr?></td>
                         <td colspan="2">List details for a specific domain, using the
                                 <parameter>showRecords</parameter> and
                                 <parameter>showSubdomains</parameter> parameters that specify
                             whether to request information for records and subdomains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter>/<?sbr?>domains/<parameter>765437</parameter>?<parameter>showRecords</parameter>=<code>true</code><?sbr?>&amp;<parameter>showSubdomains</parameter><?sbr?>=<code>true</code></td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter>/export</td>
                         <td colspan="2">Export details of the specified domain.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter>/<?sbr?>domains/<parameter>765437</parameter>/export</td>
                     </tr>
                     <tr>
                         <td colspan="1">&POST;</td>
                         <td colspan="2">/domains</td>
                         <td colspan="2">Create a new domain.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<?sbr?><parameter><replaceable>1234</replaceable></parameter><?sbr?>/domains</td>
                     </tr>
                     <tr>
                         <td colspan="1">&POST;</td>
                         <td colspan="2">/domains/import</td>
                         <td colspan="2"> Import a new domain with the configuration specified by
                             the request.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/import
-                            &lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-                            &lt;domain comment="Optional Domain Comment">
-                            &lt;contents>whowhat1021.com. 7000 IN SOA ns.rackspace.com.
-                            hostmaster.rackspace.com. (1304406823 7000 7000 1814400 7000)
-                            whowhat1021.com. 7000 IN A 72.77.26.210    whowhat1021.com. 7000 IN NS
-                            ns.rackspace.com.    whowhat1021.com. 7000 IN NS ns2.rackspace.com.
-                            www.whowhat1021.com. 86400 IN CNAME whowhat1021.com.&lt;/contents>
-                            &lt;/domain> &lt;/domains> </td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
                         <td colspan="2">Modify the configuration of a domain.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter><replaceable>1234</replaceable></parameter><?sbr?>/domains/<?sbr?><parameter>765437</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2">/domains</td>
                         <td colspan="2">Modify multiple domains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
                         <td colspan="2">Remove a domain.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/<parameter>765437</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                             >/domains<?sbr?>/<parameter>domainId</parameter>?<?sbr?>deleteSubdomains=<?sbr?>true</td>
                         <td colspan="2">Remove a domain and all its subdomains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/<?sbr?>v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/<parameter>765437</parameter>?deleteSubdomains=true</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                                 >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter></td>
                         <td colspan="2">Remove multiple domains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/<?sbr?>v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains?id=<parameter>765437</parameter>&amp;id=<parameter>765438</parameter></td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                                 >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
                         <td colspan="2">Remove multiple domains and their subdomains.</td>
-                        <td colspan="3"
-                                    >https://<?sbr?>dns.<?sbr?>api.<?sbr?>rackspacecloud.<?sbr?>com/<?sbr?>v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains?id=<parameter>765437</parameter>&amp;id=<parameter>765438</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -1159,20 +1119,14 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         similar names such as <code>main.hoola.com</code> and
                             <code>sub.hoola.com</code>. </para>
                     <note>
-                        <para> The pattern matching always starts from the left side of the search
-                            string provided. Therefore <code>?name=hoola.com</code> matches
-                                <code>main.hoola.com</code>, however it does not match
-                                <code>hoola.com.au</code>. </para>
-                    </note>
-                    <note>
                         <para>This call returns by default a maximum of 100 items at a time if no
                                 <code>limit</code> is specified. To navigate the collection
                             returned, the parameters <code>limit</code> and <code>offset</code> can
                             be set in the URI (for example: <code>limit=10&amp;offset=0</code>), as
                             described in <xref linkend="pagination"/>.</para>
                     </note>
-                    <para>In the following example, the specified search name is
-                            <code>rtb201104281842.com</code>:</para>
+                    <para><?rax-fo keep-with-next?> In the following example, the specified search
+                        name is <code>rtb201104281842.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1474,6 +1428,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <para> This call returns an asynchronous response, as described in <xref
                             linkend="sync_asynch_responses"/>.</para>
                 </note>
+                <note>
+                    <para> Subdomains are also created the same way as domains.</para>
+                </note>
                 <simpara> Normal Response Code(s): <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
@@ -1493,7 +1450,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             domain. This is an atomic operation: if there is a failure in creation
                             of even a single record, the entire process will fail. </para>
                     </note><note>
-                        <para> DNS record propagation may take up to 15 minutes. </para>
+                        <para> DNS propagation may take up to 15 minutes. </para>
                     </note><note>
                         <para>When a domain is created, and no Time To Live (TTL) is specified, the
                             SOA minTTL (3600 seconds) is used as the default. When a record is added
@@ -1571,7 +1528,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para> For all practical purposes, a successful Import Domain call creates a domain,
                     and is therefore similar in response to a Create Domain call. </para>
                 <note>
-                    <para> DNS record propagation may take up to 15 minutes.</para>
+                    <para> DNS propagation may take up to 15 minutes.</para>
                 </note>
                 <note>
                     <para> This process allows multiple records to be created along with the domain.
@@ -1646,7 +1603,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tbody>
                 </informaltable>
                 <note>
-                    <para> DNS record propagation may take up to 15 minutes. </para>
+                    <para> DNS propagation may take up to 15 minutes. </para>
                 </note>
                 <note>
                     <para> These calls return an asynchronous response, as described in <xref
@@ -1871,7 +1828,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.xml" parse="text"/></programlisting>
                 </example>
                 <example>
-                    <title>List Subdomains Response: XML</title>
+                    <title>List Subdomains Response: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.json" parse="text"/></programlisting>
                 </example>
@@ -1888,7 +1845,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="1">Verb</td>
                         <td colspan="2">URI</td>
                         <td colspan="2">Description</td>
-                        <td colspan="3">Example Call</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -1897,67 +1853,41 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
                         <td colspan="2">List all records configured for the domain. SOA cannot be
                             modified.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2720150/records/</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2"
                                 >/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
                         <td colspan="2">List details for a specific record.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2720150/records/A-6817754</td>
                     </tr>
                     <tr>
                         <td colspan="1">&POST;</td>
                         <td colspan="2"
                                 >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records</td>
                         <td colspan="2">Add new record(s) to the domain.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2610338/records/
-                            &lt;records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-                            &lt;record type="CNAME" data="dev.bbunittestacct2static3.com"
-                            name="sub.bbunittestacct2static3.com"/>     &lt;record type="A"
-                            data="172.23.2.212" name="bbunittestacct2static3.com"/>
-                            &lt;/records></td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2"
                                 >/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
                         <td colspan="2">Modify the configuration of a record in the domain.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2720150/records/MX-3150315
-                            &lt;record data="mail.testingorwhat3.com" name="testingorwhat3.com"
-                            ttl="4544">  &lt;/record></td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
                         <td colspan="2">Modify the configuration of records in the domain.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2720150/records/
-                            &lt;records xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-                            &lt;record id="MX-3150315" data="mail.testingorwhat3.com"
-                            name="testingorwhat3.com"   ttl="4544">  &lt;/record>  &lt;record
-                            id="NS-6240783" comment="a comment string">  &lt;/record>
-                            &lt;/records></td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                                 >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records/<parameter><replaceable>recordId</replaceable></parameter></td>
                         <td colspan="2">Remove a record from the domain.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2720150/records/MX-3150315</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                                 >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records?id=<parameter><replaceable>recordId1</replaceable></parameter><?sbr?>&amp;id=<parameter><replaceable>recordId2</replaceable></parameter></td>
                         <td colspan="2">Remove multiple records from the domain.</td>
-                        <td colspan="3"
-                                    >https://dns.api.rackspacecloud.com/v1.0/<parameter><replaceable>1234</replaceable></parameter>/domains/2720150/records/?id=A-6817754&amp;id=NS-6240783</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -2050,13 +1980,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
-                <note>
-                    <para>This call returns by default a maximum of 100 items at a time if no
-                            <code>limit</code> is specified. To navigate the collection returned,
-                        the parameters <code>limit</code> and <code>offset</code> can be set in the
-                        URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref
-                            linkend="pagination"/>.</para>
-                </note>
                 <example>
                     <title>List Record Details Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2111,10 +2034,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
                     overLimit (<errorcode>413</errorcode>) </simpara>
                 <note>
-                    <para> When a domain and/or record are created, and no TTL (Time To Live) is
-                        specified, a default value of 3600 seconds is used. When the domain and/or
-                        record TTL is supplied by the user, either via a create or update call, the
-                        TTL values must be 300 seconds or more.</para>
+                    <para> When a domain is are created, and no TTL (Time To Live) is specified, a
+                        default value of 3600 seconds is used. The domain's TTL value is inherited
+                        by the record. When the domain and/or record TTL is supplied by the user,
+                        either via a create or update call, the TTL values must be 300 seconds or
+                        more.</para>
                 </note>
                 <example>
                     <title>Add Records Request: XML</title>
@@ -2271,20 +2195,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.xml" parse="text"/></programlisting>
                 </example>
-                <remark>Mike- remember to reference new example from Randall (in repository):
-                    dns-remove-records-failure-response.xml. DONE, but now it appears that the
-                    Domain ID for the request 2720150 does not match the id for the response
-                    2725343.</remark>
                 <example>
                     <title>Delete Records Response (Failure): JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"/></programlisting>
                 </example>
-                <remark>Mike- remember to reference new example from Randall (in repository):
-                    dns-remove-records-failure-response.json. Also need to check the sentence below
-                    describing why the deletes failed to make sure it is correct? DONE, but now it
-                    appears that the Domain ID for the request 2720150 does not match the id for the
-                    response 2725343.</remark>
                 <para>In the previous two response examples, the requested record objects could not
                     be deleted, since they were not found.</para>
             </section>
