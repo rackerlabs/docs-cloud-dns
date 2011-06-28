@@ -25,9 +25,9 @@
         updated="2011-06-21T15:54:31Z" created="2011-06-15T19:02:07Z"
         comment="added a comment" />
     <ns2:link
-        href="https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=10&amp;offset=10"
+        href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&amp;offset=10"
         rel="previous" />
     <ns2:link
-        href="https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=10&amp;offset=30"
+        href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&amp;offset=30"
         rel="next" />
 </domains>

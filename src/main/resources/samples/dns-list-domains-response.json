@@ -70,7 +70,7 @@
 	        "href":"https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&offset=10",
 	        "rel":"previous"
 	    },{
-	        "href":"https://dns.api.rackspacecloud.com/v1.0/440369/domains?limit=10&offset=30",
+	        "href":"https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&offset=30",
 	        "rel":"next"
 	    }
 	]
