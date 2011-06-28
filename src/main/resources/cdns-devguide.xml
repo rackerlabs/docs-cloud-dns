@@ -2201,7 +2201,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"/></programlisting>
                 </example>
                 <para>In the previous two response examples, the requested record objects could not
-                    be deleted, since they were not found.</para>
+                    be ßd, since they were not found.</para>
             </section>
         </section>
         <?hard-pagebreak?>
