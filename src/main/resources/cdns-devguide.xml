@@ -349,12 +349,12 @@
         </section>
         <section>
             <title>Domain Owner</title>
-            <para> Within RackSpace DNS, the account which creates the domain is the domain
+            <para> Within Rackspace DNS, the account which creates the domain is the domain
                 owner.</para>
             <note>
-                <para>Domain registration is currently outside the scope of the RackSpace DNS API.
+                <para>Domain registration is currently outside the scope of the Rackspace DNS API.
                     Any references to ownership and management of domain information is only
-                    relevant within the context of the RackSpace DNS system.</para>
+                    relevant within the context of the Rackspace DNS system.</para>
             </note>
         </section>
     </chapter>
@@ -1115,7 +1115,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         list of all DNS domains manageable by a given account. Filtering the search
                         to limit the results returned can be performed by using the
                             <code>name</code> parameter on the List Domains call. For example,
-                            <?sbr?><code>?name=hoola.com</code> matches <code>hoola.com</code> and
+                        <?sbr?><code>?&#xfeff;name=hoola.com</code> matches <code>hoola.com</code> and
                         similar names such as <code>main.hoola.com</code> and
                             <code>sub.hoola.com</code>. </para>
                     <note>
@@ -1149,8 +1149,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"/></programlisting>
                     </example>
-                    <para> In the following example, the specified search name is
-                            <code>sub1.rtb201104281842.com</code>:</para>
+                    <para><?rax-fo keep-with-next?>  In the following example, the specified search
+                        name is <code>sub1.rtb201104281842.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1185,7 +1185,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para>The response matches one domain:</para>
+                    <para><?rax-fo keep-with-next?> The response matches one domain:</para>
                     <example>
                         <title>Filter by Partial Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1333,7 +1333,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="auto"?>
                     <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.xml" parse="text"/></programlisting>
                 </example>
-                <example>
+                <example><?dbfo keep-together="always"?>
                     <title>List Domain Details, no Records, no Subdomains Response: JSON</title>
                     <?dbfo keep-together="auto"?>
                     <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.json" parse="text"/></programlisting>
@@ -1394,7 +1394,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.json" parse="text"/></programlisting>
                 </example>
-                <example>
+                <example><?dbfo keep-together="always"?>
                     <title>Export Domain Response: XML</title>
                     <?dbfo keep-together="auto"?>
                     <programlisting language="xml"><xi:include href="samples/dns-export-domain-response.xml" parse="text"/></programlisting>
@@ -2201,7 +2201,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"/></programlisting>
                 </example>
                 <para>In the previous two response examples, the requested record objects could not
-                    be ßd, since they were not found.</para>
+                    be deleted, since they were not found.</para>
             </section>
         </section>
         <?hard-pagebreak?>
