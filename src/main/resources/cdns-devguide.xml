@@ -159,6 +159,11 @@
                                         paging works.</para>
                                 </listitem>
                                 <listitem>
+                                    <para>Added new <xref linkend="supported_record_types"/> that
+                                        lists the record types currently supported by Rackspace
+                                        Cloud DNS.</para>
+                                </listitem>
+                                <listitem>
                                     <para>Added new <xref linkend="export_domain"/> that describes
                                         how to use export domain to provide the BIND 9 formatted
                                         contents of the requested domain.</para>
@@ -937,6 +942,41 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         </listitem>
                     </itemizedlist></para>
             </section>
+        </section>
+        <section xml:id="supported_record_types"><?dbfo keep-together="always"?>
+            <title>Supported Record Types</title>
+            <para> Rackspace Cloud DNS currently supports the following record types:<itemizedlist>
+                    <listitem>
+                        <para>A</para>
+                    </listitem>
+                    <listitem>
+                        <para>AAAA</para>
+                    </listitem>
+                    <listitem>
+                        <para>CNAME</para>
+                    </listitem>
+                    <listitem>
+                        <para>MX</para>
+                    </listitem>
+                    <listitem>
+                        <para>NS</para>
+                    </listitem>
+                    <listitem>
+                        <para>TXT</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>DKIM</para>
+                            </listitem>
+                            <listitem>
+                                <para>SPF</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </itemizedlist><itemizedlist>
+                    <listitem>
+                        <para>SRV</para>
+                    </listitem>
+                </itemizedlist></para>
         </section>
     </chapter>
     <chapter>
