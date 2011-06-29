@@ -472,6 +472,30 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </para>
         </section>
         <section>
+            <title>API Version Information</title>
+            <para>Every response from the DNS service includes custom headers that identify the specific version
+            of the api that is in use.
+            </para>
+            <table rules="all">
+                <caption>API Version Headers</caption>
+                <?dbfo keep-together="always"?>
+                <thead>
+                    <tr align="center">
+                        <td>Header Name</td>
+                        <td>Description</td>
+                        <td>Example Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>X-API-VERSION</td>
+                        <td>The deployed version of the DNS service; used to identify releases; should correspond to the contract version in the url (i.e. v1.0)</td>
+                        <td>1.0.8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
             <title>Request/Response Types</title>
             <para> The DNS API supports both the JSON and XML data serialization formats. The
                 request format is specified using the <code>Content-Type</code> header and is
