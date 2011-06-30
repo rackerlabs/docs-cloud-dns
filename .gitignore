@@ -3,3 +3,4 @@ src/main/.DS_Store
 .classpath
 .project
 .settings/
+.DS_Store
