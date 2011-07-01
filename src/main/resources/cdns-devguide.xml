@@ -483,15 +483,17 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </para>
             <section>
                 <title>Contract Version</title>
-                <para>
-                    The contract version denotes the data model and behavior that the api supports. The requested contract version
-                    is included in all request URLs. Different contract versions of the API may be available at any given time and
-                    are not guaranteed to be compatible with one another.    
-                    <example>
-                        <title>Example Request url (contract version in <emphasis role="strong">bold</emphasis>)</title>
+                <para> The contract version denotes the data model and behavior that the api
+                    supports. The requested contract version is included in all request URLs.
+                    Different contract versions of the API may be available at any given time and
+                    are not guaranteed to be compatible with one another. <example>
+                        <title>Example Request url (contract version in <emphasis role="strong"
+                                >bold</emphasis>)</title>
                         <programlisting>https://dns.api.rackspacecloud.com/<emphasis role="strong">v1.0</emphasis>/1234/domains</programlisting>
                     </example>
-                    <note>This document pertains to contract version 1.0</note>
+                    <note>
+                        <para>This document pertains to contract version 1.0</para>
+                    </note>
                 </para>
             </section>
             <section>
@@ -1011,14 +1013,17 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>A Record : XML</title>
-                                <programlisting language="xml">&lt;record id="A-123" type="A" name="example.foo.com" data="123.456.78.9" ttl="86400"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para><programlisting language="xml">&lt;record id="A-123" type="A" name="example.foo.com" data="123.456.78.9" ttl="86400"/&gt;</programlisting></para>
+                                
+                            </formalpara>
+                            <formalpara>
                                 <title>A Record : JSON</title>
-                                <programlisting language="json">{ "id" : "A-123", "type" : "A", "name" : "example.foo.com", "data" : "123.456.78.9", "ttl" : 86400 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting language="json">{ "id" : "A-123", "type" : "A", "name" : "example.foo.com", "data" : "123.456.78.9", "ttl" : 86400 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                     <tr>
@@ -1027,14 +1032,18 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>AAAA Record : XML</title>
-                                <programlisting language="xml">&lt;record id="AAAA-123" type="AAAA" name="example.foo.com" data="4321:0:1:2:3:4:567:89ab" ttl="86400"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para>
+                                    <programlisting language="xml">&lt;record id="AAAA-123" type="AAAA" name="example.foo.com" data="4321:0:1:2:3:4:567:89ab" ttl="86400"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
                                 <title>AAAA Record : JSON</title>
-                                <programlisting language="json">{ "id" : "AAAA-123", "type" : "AAAA", "name" : "example.foo.com", "data" : "4321:0:1:2:3:4:567:89ab", "ttl" : 86400 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting language="json">{ "id" : "AAAA-123", "type" : "AAAA", "name" : "example.foo.com", "data" : "4321:0:1:2:3:4:567:89ab", "ttl" : 86400 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                     <tr>
@@ -1043,14 +1052,18 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>CNAME Record : XML</title>
-                                <programlisting language="xml">&lt;record id="CNAME-123" type="A" name="www.example.foo.com" data="example.foo.com" ttl="86400"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para>
+                                    <programlisting language="xml">&lt;record id="CNAME-123" type="A" name="www.example.foo.com" data="example.foo.com" ttl="86400"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
                                 <title>CNAME Record : JSON</title>
-                                <programlisting language="json">{ "id" : "CNAME-123", "type" : "A", "name" : "www.example.foo.com", "data" : "example.foo.com", "ttl" : 86400 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting language="json">{ "id" : "CNAME-123", "type" : "A", "name" : "www.example.foo.com", "data" : "example.foo.com", "ttl" : 86400 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                     <tr>
@@ -1059,14 +1072,18 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>MX Record : XML</title>
-                                <programlisting language="xml">&lt;record id="MX-123" priority="10" type="MX" name="example.foo.com" data="mail.example.foo.com" ttl="3600"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para>
+                                    <programlisting language="xml">&lt;record id="MX-123" priority="10" type="MX" name="example.foo.com" data="mail.example.foo.com" ttl="3600"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
                                 <title>MX Record : JSON</title>
-                                <programlisting language="json">{ "id" : "MX-123", "priority" : 10, "type" : "MX", "name" : "example.foo.com", "data" : "mail.example.foo.com", "ttl" : 3600 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting language="json">{ "id" : "MX-123", "priority" : 10, "type" : "MX", "name" : "example.foo.com", "data" : "mail.example.foo.com", "ttl" : 3600 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                     <tr>
@@ -1075,14 +1092,18 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>NS Record : XML</title>
-                                <programlisting>&lt;record id="NS-123" type="NS" name="example.foo.com" data="ns1.foo.com" ttl="54000"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para>
+                                    <programlisting>&lt;record id="NS-123" type="NS" name="example.foo.com" data="ns1.foo.com" ttl="54000"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
                                 <title>NS Record : JSON</title>
-                                <programlisting>{ "id" : "NS-123", "type" : "NS" "name" : "example.foo.com", "data" : "ns1.foo.com", "ttl" : 54000 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting>{ "id" : "NS-123", "type" : "NS" "name" : "example.foo.com", "data" : "ns1.foo.com", "ttl" : 54000 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                     <tr>
@@ -1091,22 +1112,27 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>TXT Record : XML</title>
-                                <programlisting>&lt;record id="TXT-123" type="TXT" name="example.foo.com" data="Some example text" ttl="3600"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para>
+                                    <programlisting>&lt;record id="TXT-123" type="TXT" name="example.foo.com" data="Some example text" ttl="3600"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
                                 <title>TXT Record : JSON</title>
-                                <programlisting>{ "id" : "TXT-123", "type" : "TXT", "name" : "example.foo.com", "data" : "Some example text", "ttl" : 3600 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting>{ "id" : "TXT-123", "type" : "TXT", "name" : "example.foo.com", "data" : "Some example text", "ttl" : 3600 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <note>
-                                <code>DKIM</code> and <code>SPF</code> records are supported using <code>TXT</code> records
-                                with appropriately formatted data fields.
-                             </note>
+                                <para><code>DKIM</code> and <code>SPF</code> records are supported
+                                    using <code>TXT</code> records with appropriately formatted data
+                                    fields. </para>
+                            </note>
                         </td>
                     </tr>
                     <tr>
@@ -1115,14 +1141,18 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <example>
+                            <formalpara>
                                 <title>SRV Record : XML</title>
-                                <programlisting>&lt;record id="SRV-123" type="SRV" name="_tcp._sip.example.foo.com" priority="30" data="1 3443 sip.foo.com" ttl="86400"/&gt;</programlisting>
-                            </example>
-                            <example>
+                                <para>
+                                    <programlisting>&lt;record id="SRV-123" type="SRV" name="_tcp._sip.example.foo.com" priority="30" data="1 3443 sip.foo.com" ttl="86400"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
                                 <title>SRV Record : JSON</title>
-                                <programlisting>{ "id" : "SRV-123", "type" : "SRV", "name" : "_tcp._sip.example.foo.com", "priority" : 30, "data" : "1 3443 sip.foo.com", "ttl" : 86400 }</programlisting>
-                            </example>
+                                <para>
+                                    <programlisting>{ "id" : "SRV-123", "type" : "SRV", "name" : "_tcp._sip.example.foo.com", "priority" : 30, "data" : "1 3443 sip.foo.com", "ttl" : 86400 }</programlisting>
+                                </para>
+                            </formalpara>
                         </td>
                     </tr>
                 </tbody>
