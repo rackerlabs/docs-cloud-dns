@@ -809,7 +809,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     subdomains + 90 records. Additional records and/or subdomains could be created
                     for the domain in subsequent calls.</para>
             </section>
-            </section>
+        </section>
         <section xml:id="datetimeformat">
             <title>Date/Time Format</title>
             <para>
@@ -842,7 +842,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <td>Two digit day of month</td>
                         </tr>
                         <tr>
-                            <td>'T'</td>
+                            <td>T</td>
                             <td>Separator for date/time</td>
                         </tr>
                         <tr>
