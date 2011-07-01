@@ -1009,7 +1009,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <tbody>
                     <tr>
                         <td>A</td> 
-                        <td>Maps an IPV4 addresses to a domain</td>
+                        <td>Maps an IPV4 address to a domain</td>
                     </tr>
                     <tr>
                         <td colspan="2">
