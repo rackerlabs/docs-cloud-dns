@@ -518,7 +518,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <td>The deployed version of the DNS service. This is used to identify
                             releases, and it should correspond to the contract version in the URL
                             (that is, v1.0).</td>
-                            <td>1.0.8</td>
+                            <td>X-API-VERSION=1.0.8</td>
                         </tr>
                     </tbody>
                 </table>
