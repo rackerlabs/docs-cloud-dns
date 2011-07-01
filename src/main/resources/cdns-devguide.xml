@@ -132,13 +132,13 @@
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para> Added new <xref linkend="datetimeformat"/> that describes
-                                        the date/time format used by the DNS service. </para>
-                                </listitem>
-                                <listitem>
                                     <para> Added new <xref linkend="DNS_service_versions"/> that
                                         describes the contract and build information for the API.
                                     </para>
+                                </listitem>
+                                <listitem>
+                                    <para> Added new <xref linkend="datetimeformat"/> that describes
+                                        the date/time format used by the DNS service. </para>
                                 </listitem>
                                 <listitem>
                                     <para> Added new <xref linkend="supported_record_types"/> with a
