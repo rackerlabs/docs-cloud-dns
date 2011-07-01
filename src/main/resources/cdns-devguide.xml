@@ -128,6 +128,22 @@
                 </thead>
                 <tbody>
                     <tr align="left">
+                        <td colspan="1">Jul. 7, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para> Added new <xref linkend="DNS_service_versions"/> that
+                                        describes the contract and build information for the API.
+                                    </para>
+                                </listitem>
+                                <listitem>
+                                    <para> Added new <xref linkend="supported_record_types"/> with a
+                                        table of supported DNS record types. </para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr>
+                    <tr align="left">
                         <td colspan="1">June 28, 2011</td>
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
@@ -476,14 +492,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </table>
             </para>
         </section>
-        <section>
+        <section xml:id="DNS_service_versions">
             <title>DNS Service Versions</title>
-            <para>
-                The DNS service version defines the contract and build information for the api.
-            </para>
+            <para> The DNS service version defines the contract and build information for the API. </para>
             <section>
                 <title>Contract Version</title>
-                <para> The contract version denotes the data model and behavior that the api
+                <para> The contract version denotes the data model and behavior that the API
                     supports. The requested contract version is included in all request URLs.
                     Different contract versions of the API may be available at any given time and
                     are not guaranteed to be compatible with one another. <example>
@@ -492,16 +506,15 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <programlisting>https://dns.api.rackspacecloud.com/<emphasis role="strong">v1.0</emphasis>/1234/domains</programlisting>
                     </example>
                     <note>
-                        <para>This document pertains to contract version 1.0</para>
+                        <para>This document pertains to contract version 1.0.</para>
                     </note>
                 </para>
             </section>
             <section>
                 <title>API Version Headers</title>
-                <para>Every response from the DNS service includes custom headers that identify the specific release version
-                of the api that is in use. This information is used to assist in diagnosing issues
-                and should be included in any support request.
-                </para>
+                <para>Every response from the DNS service includes custom headers that identify the
+                    specific release version of the API that is in use. This information is used to
+                    assist in diagnosing issues and should be included in any support request. </para>
                 <table rules="all">
                     <caption>API Version Headers</caption>
                     <?dbfo keep-together="always"?>
@@ -1052,7 +1065,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="supported_record_types"><?dbfo keep-together="always"?>
             <title>Supported Record Types</title>
-            <para>The Rackspace Cloud DNS service supports the following record types:</para>
+            <para>The Rackspace Cloud DNS service supports the record types listed in the following
+                table:</para>
             
             <table rules="all">
                 <caption>Rackspace Cloud DNS Supported Record Types</caption>
