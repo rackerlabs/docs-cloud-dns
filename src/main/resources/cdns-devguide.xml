@@ -797,6 +797,65 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     for the domain in subsequent calls.</para>
             </section>
             </section>
+        <section xml:id="datetimeformat">
+            <title>Date/Time Format</title>
+            <para>
+                The DNS service uses an ISO-8601 compliant date format for the display and consumption of date/time values.
+                <example>
+                    <title>DNS Service Date/Time Format</title>
+                    <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
+                    May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:
+                    <programlisting>2011-05-19T08:07:08-05:00</programlisting>
+                </example>
+                <table rules="all">
+                    <caption>Explanation of Date/Time Format Codes</caption>
+                    <thead>
+                        <tr>
+                            <td>Code</td>
+                            <td>Desription</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>yyyy</td>
+                            <td>Four digit year</td>
+                        </tr>
+                        <tr>
+                            <td>MM</td>
+                            <td>Two digit month</td>
+                        </tr>
+                        <tr>
+                            <td>dd</td>
+                            <td>Two digit day of month</td>
+                        </tr>
+                        <tr>
+                            <td>'T'</td>
+                            <td>Separator for date/time</td>
+                        </tr>
+                        <tr>
+                            <td>HH</td>
+                            <td>Two digit hour of day (00-23)</td>
+                        </tr>
+                        <tr>
+                            <td>mm</td>
+                            <td>Two digit minutes of hour</td>
+                        </tr>
+                        <tr>
+                            <td>ss</td>
+                            <td>Two digit seconds of the minute</td>
+                        </tr>
+                        <tr>
+                            <td>SSS</td>
+                            <td>Three digit milliseconds of the second</td>
+                        </tr>
+                        <tr>
+                            <td>Z</td>
+                            <td>RFC-822 timezone</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </para>
+        </section>
         <section xml:id="comments">
             <title>Comments</title>
             <para> Comments are supported for domains and records and their requests and responses.
