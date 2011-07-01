@@ -132,6 +132,10 @@
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
+                                    <para> Added new <xref linkend="datetimeformat"/> that describes
+                                        the date/time format used by the DNS service. </para>
+                                </listitem>
+                                <listitem>
                                     <para> Added new <xref linkend="DNS_service_versions"/> that
                                         describes the contract and build information for the API.
                                     </para>
@@ -814,10 +818,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <title>Date/Time Format</title>
             <para>
                 The DNS service uses an ISO-8601 compliant date format for the display and consumption of date/time values.
+                </para>
                 <example>
                     <title>DNS Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
-                    May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:
+                    <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:</para>
                     <programlisting>2011-05-19T08:07:08-05:00</programlisting>
                 </example>
                 <table rules="all">
@@ -867,7 +872,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         </tr>
                     </tbody>
                 </table>
-            </para>
+            
         </section>
         <section xml:id="comments">
             <title>Comments</title>
