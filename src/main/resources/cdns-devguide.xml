@@ -31,7 +31,8 @@
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
-      version="5.0" status="draft">
+      version="5.0">
+    <?rax status.bar.text="BETA"?>
     <title>Cloud DNS BETA Developer Guide</title>
     
     <info>
