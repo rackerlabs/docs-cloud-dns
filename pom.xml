@@ -50,6 +50,11 @@
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
+			<configuration>
+			  <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
+			  <enableDisqus>0</enableDisqus>
+			  <enableGoogleAnalytics>0</enableGoogleAnalytics>
+			</configuration>
                     </execution>
                 </executions>
                 <dependencies>
