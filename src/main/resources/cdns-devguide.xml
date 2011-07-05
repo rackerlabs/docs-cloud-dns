@@ -78,12 +78,18 @@
         <note>
             <para> DNS propagation may take up to 15 minutes. </para>
         </note>
-        <para>The following figure shows an overview of Cloud DNS Infrastructure:</para>
-        <para><inlinemediaobject>
-                <imageobject>
-                    <imagedata fileref="images/Cloud_DNS_Infographic-1.png" contentwidth="6in"/>
-                </imageobject>
-            </inlinemediaobject></para>
+        <para>The following figure shows an overview of Cloud DNS Infrastructure:
+	<informalfigure>
+	  <mediaobject>
+	    <imageobject role="fo">
+	      <imagedata fileref="images/Cloud_DNS_Infographic-1.svg" contentwidth="6in"/>
+	    </imageobject>
+	    <imageobject role="html">
+	      <imagedata fileref="images/Cloud_DNS_Infographic-1.png"/>
+	    </imageobject>	    
+	  </mediaobject>
+	</informalfigure>
+	</para>
         <para>We welcome feedback, comments, and bug reports at <link
                 xlink:href="http://feedback.rackspacecloud.com"
                 >http://feedback.rackspacecloud.com</link>.</para>
