@@ -1072,8 +1072,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="supported_record_types"><?dbfo keep-together="always"?>
             <title>Supported Record Types</title>
-            <para>The Rackspace Cloud DNS service supports the record types listed in the following
-                table:</para>
+            <para>The Rackspace Cloud DNS Service supports the record types listed in the following
+                table.</para>
             
             <table rules="all">
                 <caption>Rackspace Cloud DNS Supported Record Types</caption>
