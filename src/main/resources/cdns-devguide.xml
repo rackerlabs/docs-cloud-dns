@@ -139,7 +139,7 @@
                                 </listitem>
                                 <listitem>
                                     <para> Added new <xref linkend="datetimeformat"/> that describes
-                                        the date/time format used by the DNS service. </para>
+                                        the date/time format used by the DNS Service. </para>
                                 </listitem>
                                 <listitem>
                                     <para> Added new <xref linkend="supported_record_types"/> with a
@@ -823,56 +823,57 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <example>
                     <title>DNS Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
+                <para>See the table below for a description of the date/time format codes.</para>
                     <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:</para>
                     <programlisting>2011-05-19T08:07:08-05:00</programlisting>
                 </example>
-                <table rules="all">
-                    <caption>Explanation of Date/Time Format Codes</caption>
-                    <thead>
-                        <tr>
-                            <td>Code</td>
-                            <td>Desription</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>yyyy</td>
-                            <td>Four digit year</td>
-                        </tr>
-                        <tr>
-                            <td>MM</td>
-                            <td>Two digit month</td>
-                        </tr>
-                        <tr>
-                            <td>dd</td>
-                            <td>Two digit day of month</td>
-                        </tr>
-                        <tr>
-                            <td>T</td>
-                            <td>Separator for date/time</td>
-                        </tr>
-                        <tr>
-                            <td>HH</td>
-                            <td>Two digit hour of day (00-23)</td>
-                        </tr>
-                        <tr>
-                            <td>mm</td>
-                            <td>Two digit minutes of hour</td>
-                        </tr>
-                        <tr>
-                            <td>ss</td>
-                            <td>Two digit seconds of the minute</td>
-                        </tr>
-                        <tr>
-                            <td>SSS</td>
-                            <td>Three digit milliseconds of the second</td>
-                        </tr>
-                        <tr>
-                            <td>Z</td>
-                            <td>RFC-822 timezone</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table rules="all">
+                <caption>Explanation of Date/Time Format Codes</caption>
+                <thead>
+                    <tr>
+                        <td>Code</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>yyyy</td>
+                        <td>Four digit year</td>
+                    </tr>
+                    <tr>
+                        <td>MM</td>
+                        <td>Two digit month</td>
+                    </tr>
+                    <tr>
+                        <td>dd</td>
+                        <td>Two digit day of month</td>
+                    </tr>
+                    <tr>
+                        <td>T</td>
+                        <td>Separator for date/time</td>
+                    </tr>
+                    <tr>
+                        <td>HH</td>
+                        <td>Two digit hour of day (00-23)</td>
+                    </tr>
+                    <tr>
+                        <td>mm</td>
+                        <td>Two digit minutes of hour</td>
+                    </tr>
+                    <tr>
+                        <td>ss</td>
+                        <td>Two digit seconds of the minute</td>
+                    </tr>
+                    <tr>
+                        <td>SSS</td>
+                        <td>Three digit milliseconds of the second</td>
+                    </tr>
+                    <tr>
+                        <td>Z</td>
+                        <td>RFC-822 timezone</td>
+                    </tr>
+                </tbody>
+            </table>
             
         </section>
         <section xml:id="comments">
