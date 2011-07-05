@@ -104,6 +104,10 @@
                             <resources>
                                 <resource>
                                     <directory>${basedir}/src/main/resources/images</directory>
+				    <excludes>
+				      <exclude>**/*.ai</exclude>
+				      <exclude>**/*.svg</exclude>
+				    </excludes>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
