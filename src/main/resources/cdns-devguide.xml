@@ -632,7 +632,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="1">jobID</td>
+                        <td colspan="1">jobId</td>
                         <td colspan="4">An identifier for the specific request.</td>
                     </tr>
                     <tr>
