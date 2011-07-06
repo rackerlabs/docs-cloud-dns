@@ -139,7 +139,10 @@
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para> Added new <xref linkend="DNS_service_versions"/> that
+                                    <para>Released for Public Beta.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added new <xref linkend="DNS_service_versions"/> that
                                         describes the contract and build information for the API.
                                     </para>
                                 </listitem>
