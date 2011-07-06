@@ -1399,6 +1399,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref
                             linkend="pagination"/>.</para>
                 </note>
+                <para> In the examples that follow, the request is made for a <code>limit</code> of
+                        <code>10</code> records, starting at <code>offset</code>
+                    <code>20</code> (record 21).</para>
                 <example>
                     <title>List Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1418,6 +1421,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <title>List Domains Response: JSON</title>
                     <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.json" parse="text"/></programlisting>
                 </example>
+                <note>
+                    <para>Since the current set of 10 records in the previous response examples
+                        begins at <code>offset=20</code>, note that the <code>previous</code> link
+                        points to a group of 10 records starting at <code>offset=10</code>, while
+                        the <code>next</code> link points to a group of 10 records starting at
+                            <code>offset=30</code>.</para>
+                </note>
                 <section xml:id="search_domains_w_filters">
                     <title>Search Domains with Filtering</title>
                     <para> As illustrated by the examples above, the List Domains call provides a
