@@ -1034,10 +1034,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-response.json" parse="text"/></programlisting>
                 </example>
-                <para> In the previous two response examples, note that <code>totalEntries=95</code>
-                    and that a link has been provided to retrieve the next 3 results
-                        (<code>limit=3</code>) in the link element identified by the attribute
-                        <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
+                <para> In the previous two response examples, note that
+                        <code>totalEntries=112</code> and that a link has been provided to retrieve
+                    the next 3 results (<code>limit=3</code>) in the link element identified by the
+                    attribute <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
                 <para>The following example shows links to both previous and next results in the
                     responses, since the request specified to start with the fourth item in the
                     collection (<code>offset=3</code>):</para>
@@ -1065,7 +1065,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <para>
                     <?rax-fo keep-with-next?> In the previous two response examples, note that
-                        <code>totalEntries=95</code> and two links have been provided to:<itemizedlist>
+                        <code>totalEntries=112</code> and two links have been provided to:<itemizedlist>
                         <listitem>
                             <para>Retrieve the next 3 results (<code>limit=3</code>) via the link
                                 element identified by the attribute <code>rel="next"</code> (XML) or
@@ -1435,7 +1435,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             described in <xref linkend="pagination"/>.</para>
                     </note>
                     <para><?rax-fo keep-with-next?> In the following example, the specified search
-                        name is <code>rtb201104281842.com</code>:</para>
+                        name is <code>secondlevel434706.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1446,8 +1446,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?> The response matches one domain and four
-                        subdomains:</para>
+                    <para><?rax-fo keep-with-next?> The response matches one domain:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1458,8 +1457,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"/></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?>  In the following example, the specified search
-                        name is <code>sub1.rtb201104281842.com</code>:</para>
+                    <para><?rax-fo keep-with-next?> In the following example, the specified search
+                        name is <code>sub1.secondlevel434706.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1470,7 +1469,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para>The response matches one domain:</para>
+                    <para>The response matches one subdomain:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1482,8 +1481,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"/></programlisting>
                     </example>
                     <para>
-                        <?rax-fo keep-with-next?>In the following example, the specified search
-                        name is <code>2.rtb201104281842.com</code>: </para>
+                        <?rax-fo keep-with-next?>In the following example, the specified search name
+                        is <code>sub1.rtb000</code>: </para>
                     <example>
                         <title>Filter by Partial Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1494,7 +1493,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?> The response matches one domain:</para>
+                    <para><?rax-fo keep-with-next?> The response matches one subdomain:</para>
                     <example>
                         <title>Filter by Partial Name Response: XML</title>
                         <?dbfo keep-together="always"?>
