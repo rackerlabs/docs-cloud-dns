@@ -52,8 +52,7 @@
                         <phase>generate-sources</phase>
 			<configuration>
 			  <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
-			  <enableDisqus>0</enableDisqus>
-			  <enableGoogleAnalytics>0</enableGoogleAnalytics>
+			  <enableDisqus>1</enableDisqus>
 			</configuration>
                     </execution>
                 </executions>
