@@ -2,7 +2,7 @@
 <domain xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
 	xmlns:ns2="http://www.w3.org/2005/Atom"
 	id="2725352" accountId="1234" contentType="BIND_9">
-	<contents>secondlevel434706.com. 5600 IN SOA ns1.rackspace.com.
+	<contents>secondlevel434706.com. 5600 IN SOA ns.rackspace.com.
 		hostmaster.secondlevel434706.com. 1308860466 5600 5600 5600 5600
 		secondlevel434706.com. 5600 IN A 172.11.122.24
 		secondlevel434706.com. 5600 IN A 172.23.2.212

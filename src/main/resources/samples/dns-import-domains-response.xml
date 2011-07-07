@@ -5,7 +5,7 @@
         created="2011-06-24T01:01:58Z" comment="Optional domain comment">
         <nameservers>
             <nameserver name="ns.rackspace.com" />
-            <nameserver name="ns1.rackspace.com" />
+            <nameserver name="ns2.rackspace.com" />
         </nameservers>
         <recordsList>
             <record id="A-6822993" type="A" name="rtb0007.com"

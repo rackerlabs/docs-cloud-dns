@@ -5,6 +5,6 @@
     created="2011-06-24T01:12:51Z" comment="Optional domain comment...">
     <nameservers>
         <nameserver name="ns.rackspace.com" />
-        <nameserver name="ns1.rackspace.com" />
+        <nameserver name="ns2.rackspace.com" />
     </nameservers>
 </domain>

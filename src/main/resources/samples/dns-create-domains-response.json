@@ -9,7 +9,7 @@
                     "name":"ns.rackspace.com"
                 },
                 {
-                    "name":"ns1.rackspace.com"
+                    "name":"ns2.rackspace.com"
                 }
             ],
             "updated":"2011-06-24T19:49:53.000+0000",
@@ -49,7 +49,7 @@
                     "name":"ns.rackspace.com"
                 },
                 {
-                    "name":"ns1.rackspace.com"
+                    "name":"ns2.rackspace.com"
                 }
             ],
             "updated":"2011-06-24T19:49:57.000+0000",
@@ -89,7 +89,7 @@
                     "name":"ns.rackspace.com"
                 },
                 {
-                    "name":"ns1.rackspace.com"
+                    "name":"ns2.rackspace.com"
                 }
             ],
             "updated":"2011-06-24T19:50:00.000+0000",

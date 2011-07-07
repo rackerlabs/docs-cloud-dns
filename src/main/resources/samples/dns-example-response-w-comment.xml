@@ -6,7 +6,7 @@
 	created="2011-06-24T16:23:25Z" comment="This is the FOURTH subdomain of secondlevel434706.com">
 	<nameservers>
 		<nameserver name="ns.rackspace.com" />
-		<nameserver name="ns1.rackspace.com" />
+		<nameserver name="ns2.rackspace.com" />
 	</nameservers>
 	<recordsList totalEntries="3">
 		<record id="A-6823060" type="A" name="sub4.secondlevel434706.com"

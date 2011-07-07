@@ -2,7 +2,7 @@ https://dns.api.rackspacecloud.com/v1.0/1234/domains/import
 
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
     <domain comment="Optional domain comment...">
-        <contents>rtb0007.com.      3600 	IN	SOA	ns1.rackspace.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600
+        <contents>rtb0007.com.      3600 	IN	SOA	ns.rackspace.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600
 rtb0007.com.		86400	IN	A	110.11.12.16
 rtb0007.com.		3600	IN	MX	5 mail2.rtb0007.com.
 www.rtb0007.com.	5400	IN	CNAME	rtb0007.com.
