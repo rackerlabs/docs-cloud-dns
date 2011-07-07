@@ -98,8 +98,8 @@
         <section xml:id="Intended_Audience-d1e122">
             <title>Intended Audience</title>
             <para> This Guide is intended to assist software developers who want to develop
-                applications using the DNS Service API. To use the information provided here, you
-                should first have a general understanding of the DNS service. You should also be
+                applications using the Cloud DNS Service API. To use the information provided here,
+                you should first have a general understanding of the DNS service. You should also be
                 familiar with: </para>
             <itemizedlist spacing="compact">
                 <listitem>
@@ -142,13 +142,19 @@
                                     <para>Released for Public Beta.</para>
                                 </listitem>
                                 <listitem>
+                                    <para>Added information in <xref linkend="Authentication-d1e647"
+                                        /> that describes accessing the Authentication Service,
+                                        based on whether your account is US-based or UK-based.
+                                    </para>
+                                </listitem>
+                                <listitem>
                                     <para>Added new <xref linkend="DNS_service_versions"/> that
                                         describes the contract and build information for the API.
                                     </para>
                                 </listitem>
                                 <listitem>
                                     <para> Added new <xref linkend="datetimeformat"/> that describes
-                                        the date/time format used by the DNS Service. </para>
+                                        the date/time format used by the DNS service. </para>
                                 </listitem>
                                 <listitem>
                                     <para> Added new <xref linkend="supported_record_types"/> with a
@@ -405,43 +411,81 @@
         <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
-            <para> Each ReST request against the DNS service requires the inclusion of a specific
-                authorization token HTTP x-header, defined as <code>X-Auth-Token</code>. Customers
-                obtain this token by first using the Rackspace Cloud Authentication Service and
-                supplying a valid username and API access key. </para>
-            <para> The Rackspace Cloud Authentication Service is a RESTful web service. It is the
-                entry point to all Rackspace Cloud APIs. It is accessible at <link
-                    xlink:href="https://auth.api.rackspacecloud.com/v1.0"
-                    >https://auth.api.rackspacecloud.com/v1.0</link>. </para>
+            <para> Every ReST request against the DNS Service requires the inclusion of a specific
+                authorization token, supplied by the <code>X-Auth-Token</code> HTTP header.
+                Customers obtain this token by first using the Rackspace Cloud Authentication
+                Service and supplying a valid username and API access key. </para>
             <section>
                 <title>Request</title>
-                <para>
-                    To authenticate, you must supply your username and API access key in x-headers:
+                <para> The Rackspace Cloud Authentication Service serves as the entry point to all
+                Rackspace Cloud APIs and is itself a RESTful web service. </para>
+                <para> To access the Authentication Service, you must know whether your account is
+                    US-based or UK-based: 
                 </para>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            US-based accounts authenticate through <link xlink:href="https://auth.api.rackspacecloud.com/v1.0">https://auth.api.rackspacecloud.com/v1.0</link>.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            UK-based accounts authenticate through <link xlink:href="https://lon.auth.api.rackspacecloud.com/v1.0">https://lon.auth.api.rackspacecloud.com/v1.0</link>.
+                        </para>
+                    </listitem>
+                </itemizedlist>
                 <para>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>
-                                Use your Rackspace Cloud
-                                username as the username for the API. Place it in the
-                                <code>X-Auth-User</code> x-header.
-                            </para>
-                        </listitem>
-                        <listitem>
-                            <para> Obtain your API access key from the Rackspace Cloud Control
-                                Panel in the Your Account | API Access section. Place it in the
-                                <code>X-Auth-Key</code> x-header. </para>
-                        </listitem>
-                    </itemizedlist>
+                    Your account may be based in either the US or the UK; this is not determined
+                    by your physical location but by the location of the Rackspace retail site which
+                    was used to create your account: 
                 </para>
-                <example>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            If your account was
+                            created via <link xlink:href="http://www.rackspacecloud.com">http://www.rackspacecloud.com</link>, it is a US-based account.
+                        </para>   
+                    </listitem>
+                    <listitem>
+                        <para>
+                            If your account was
+                            created via <link xlink:href="http:/www.rackspace.co.uk">http:/www.rackspace.co.uk</link>, it is a UK-based account.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+                <para>
+                    If you are unsure how your account was created, use the Rackspace contact
+                    information at either site to ask for help.
+                </para>
+                <simplesect>
                     <title>Authentication Request</title>
+                    <para>
+                        To authenticate, you must supply your username and API access key in x-headers:
+                    </para>
+                    <para>
+                        <itemizedlist spacing="compact">
+                            <listitem>
+                                <para>
+                                    Use your Rackspace Cloud
+                                    username as the username for the API. Place it in the
+                                    <code>X-Auth-User</code> x-header.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> Obtain your API access key from the Rackspace Cloud Control Panel in the Your
+                                    Account | API Access section. Place it in the <code>X-Auth-Key</code> x-header. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                <example>
+                    <title>Authentication Request (US-based Account)</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">GET /v1.0 HTTP/1.1
 Host: auth.api.rackspacecloud.com
 X-Auth-User: jdoe
 X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89</literallayout>
                 </example>
+                    </simplesect>
             </section>
             <section xml:id="Response-d1e711">
                 <title>Response</title>
@@ -508,7 +552,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="DNS_service_versions">
             <title>DNS Service Versions</title>
-            <para> The DNS service version defines the contract and build information for the API. </para>
+            <para> The Cloud DNS Service version defines the contract and build information for the
+                API. </para>
             <section xml:id="Contract_Version-d1e825">
                 <title>Contract Version</title>
                 <para> The contract version denotes the data model and behavior that the API
@@ -526,9 +571,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </section>
             <section xml:id="API_Version_Headers-d1e855">
                 <title>API Version Headers</title>
-                <para>Every response from the DNS service includes custom headers that identify the
-                    specific release version of the API that is in use. This information is used to
-                    assist in diagnosing issues and should be included in any support request. </para>
+                <para>Every response from the Cloud DNS Service includes custom headers that
+                    identify the specific release version of the API that is in use. This
+                    information is used to assist in diagnosing issues and should be included in any
+                    support request. </para>
                 <table rules="all">
                     <caption>API Version Headers</caption>
                     <?dbfo keep-together="always"?>
@@ -542,9 +588,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tbody>
                         <tr>
                             <td>X-API-VERSION</td>
-                            <td>The deployed version of the DNS service. This is used to identify
-                            releases, and it should correspond to the contract version in the URL
-                            (that is, v1.0).</td>
+                            <td>The deployed version of the Cloud DNS Service. This is used to
+                                identify releases, and it should correspond to the contract version
+                                in the URL (that is, v1.0).</td>
                             <td>X-API-VERSION=1.0.8</td>
                         </tr>
                     </tbody>
