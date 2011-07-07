@@ -95,7 +95,7 @@
                 >http://feedback.rackspacecloud.com</link>.</para>
         <para>Issues and bug reports can be directed to your support team via ticket, chat, email,
             or phone.</para>
-        <section>
+        <section xml:id="Intended_Audience-d1e122">
             <title>Intended Audience</title>
             <para> This Guide is intended to assist software developers who want to develop
                 applications using the DNS Service API. To use the information provided here, you
@@ -120,7 +120,7 @@
             </itemizedlist>
         </section>
         <?hard-pagebreak?>
-        <section>
+        <section xml:id="Document_Change_History-d1e166">
             <title>Document Change History</title>
             <para>This version of the Developer Guide replaces and
             obsoletes all previous versions.  The most recent changes
@@ -325,7 +325,7 @@
                 </tbody>
             </table>
         </section>
-        <section>
+        <section xml:id="Additional_Resources-d1e532">
             <title>Additional Resources</title>
             <para>You can download the most current versions of other API-related documents from
                     <link xlink:href="http://docs.rackspace.com/api/"
@@ -343,11 +343,11 @@
                     >http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="Concepts-d1e563">
         <title>Concepts</title>
         <?dbhtml stop-chunking?>
         <para> To use the DNS API effectively, you should understand several key concepts: </para>
-        <section>
+        <section xml:id="DNS-d1e573">
             <title>DNS</title>
             <para> The Domain Name System (DNS) is a system by which internet domain name-to-address
                 and address-to-name resolutions are determined. All domains and their components,
@@ -362,7 +362,7 @@
             </para>
             </note>
         </section>
-        <section>
+        <section xml:id="Domain-d1e588">
             <title>Domain</title>
             <para> A domain is an entity/container of all DNS-related information containing one or
                 more records. </para>
@@ -374,7 +374,7 @@
                 subdomains, so third-level, fourth-level, fifth-level, and deeper levels of nesting
                 are possible. </para>
         </section>
-        <section>
+        <section xml:id="Record-d1e607">
             <title>Record</title>
             <para> A DNS record belongs to a particular domain and is used to specify information
                 about the domain. There are several types of DNS records. Each record type contains
@@ -382,7 +382,7 @@
                 exchange (MX) records, which specify the mail server for a particular domain, and
                 name server (NS) records, which specify the authoritative name servers for a domain. </para>
         </section>
-        <section>
+        <section xml:id="Domain_Owner-d1e616">
             <title>Domain Owner</title>
             <para> Within Rackspace DNS, the account which creates the domain is the domain
                 owner.</para>
@@ -393,7 +393,7 @@
             </note>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="General_API_Information-d1e633">
         <title>General API Information</title>
         <para> The DNS Service API is implemented using a RESTful web service interface. Like other
             products in the Rackspace Cloud suite, the DNS Service shares a common token-based
@@ -402,7 +402,7 @@
             <para> All requests to authenticate against and operate the service are performed using
                 SSL over HTTP (HTTPS) on TCP port 443. </para>
         </note>
-        <section>
+        <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
             <para> Each ReST request against the DNS service requires the inclusion of a specific
@@ -443,7 +443,7 @@ X-Auth-User: jdoe
 X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89</literallayout>
                 </example>
             </section>
-            <section>
+            <section xml:id="Response-d1e711">
                 <title>Response</title>
                 <para> If authentication is successful, an HTTP status <returnvalue>204 (No
                         Content)</returnvalue> is returned with an <code>X-Auth-Token</code> header;
@@ -473,7 +473,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </para>
             </section>
         </section>
-        <section>
+        <section xml:id="Service_Access_Endpoints-d1e753">
             <title>Service Access/Endpoints</title>
             <para>The DNS service is a regionalized service. DNS is therefore responsible for
                 appropriate replication, caching, and overall maintenance of DNS data across
@@ -509,7 +509,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         <section xml:id="DNS_service_versions">
             <title>DNS Service Versions</title>
             <para> The DNS service version defines the contract and build information for the API. </para>
-            <section>
+            <section xml:id="Contract_Version-d1e825">
                 <title>Contract Version</title>
                 <para> The contract version denotes the data model and behavior that the API
                     supports. The requested contract version is included in all request URLs.
@@ -524,7 +524,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </note>
                 </para>
             </section>
-            <section>
+            <section xml:id="API_Version_Headers-d1e855">
                 <title>API Version Headers</title>
                 <para>Every response from the DNS service includes custom headers that identify the
                     specific release version of the API that is in use. This information is used to
@@ -551,7 +551,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </table>
             </section>
         </section>
-        <section>
+        <section xml:id="Request_Response_Types-d1e903">
             <title>Request/Response Types</title>
             <para> The DNS API supports both the JSON and XML data serialization formats. The
                 request format is specified using the <code>Content-Type</code> header and is
@@ -674,7 +674,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 the paragraphs in <xref linkend="create_domains"/> immediately below the table for a
                 list of the successful and error response codes for the POST /domains call.</para>
         </section>
-           <section>
+           <section xml:id="Content_Compression-d1e1120">
             <title>Content Compression</title>
             <para> Request and response body data may be encoded with gzip compression to accelerate
                 interactive performance of API calls and responses. This is controlled using the
@@ -705,7 +705,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </tbody>
             </table>
         </section>
-        <section>
+        <section xml:id="Persistent_Connections-d1e1187">
             <title>Persistent Connections</title>
             <para>
                 By default, the API supports persistent connections
@@ -724,7 +724,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </note>
         </section>
         <?hard-pagebreak?>
-        <section>
+        <section xml:id="Limits-d1e1208">
             <title>Limits</title>
             <para>
                 All accounts, by default, have a preconfigured set of
@@ -735,7 +735,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 are thresholds that are reset after a certain amount
                 of time passes. Absolute limits are fixed.
             </para>
-            <section>
+            <section xml:id="Rate_Limits-d1e1222">
                 <title>Rate Limits</title>
                 <para> We specify rate limits in terms of both a human-readable wild-card URI and a
                     machine-processable regular expression. The regular expression boundary matcher
@@ -813,7 +813,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <code>Reply-After</code> header to notify the client when they can attempt
                     to try again. </para>
             </section>
-            <section>
+            <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
                 <para> &POST; and &PUT; calls are limited to the creation or modification of a
                     maximum of 100 entities per call where an entity is defined as a record, domain,
@@ -1001,7 +1001,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </tbody>
             </informaltable>
             <para>See the following section for examples of paged List Domains calls.</para>
-            <section>
+            <section xml:id="Pagination_Elements_and_Attributes-d1e1754">
                 <title>Pagination Elements and Attributes</title>
                 <para>For any collection in a result, there is a <code>totalEntries</code> attribute
                     representing the total number of entries there are for this item type. If the
@@ -1248,7 +1248,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </table>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="API_Operations-d1e2264">
         <title>API Operations</title>
         <section xml:id="Domains">
             <title>Domains</title>
@@ -1897,7 +1897,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="javascript"><xi:include href="samples/dns-import-domains-response.json" parse="text"/></programlisting>
                 </example>
             </section>
-            <section>
+            <section xml:id="Modify_Domain_s_-d1e3848">
                 <title>Modify Domain(s)</title>
                 <informaltable rules="all">
                     <thead>
@@ -1972,7 +1972,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.json" parse="text"/></programlisting>
                 </example>
             </section>
-            <section>
+            <section xml:id="Remove_Domain_s_-d1e4022">
                 <title>Remove Domain(s)</title>
                 <informaltable rules="all">
                     <thead>
@@ -2094,7 +2094,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="using_subdomains">
             <title>Subdomains</title>
-            <section>
+            <section xml:id="List_Subdomains-d1e4295">
                 <title>List Subdomains</title>
                 <informaltable rules="all">
                     <thead>
@@ -2153,7 +2153,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </section>
         </section>
         <?hard-pagebreak?>
-        <section>
+        <section xml:id="Records-d1e4435">
             <title>Records</title>
             <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
                 should be replaced by your authenticated account ID. </para>
@@ -2216,7 +2216,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
                 unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
                 notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara> 
-            <section>
+            <section xml:id="List_Records-d1e4629">
                 <title>List Records</title>
                 <informaltable rules="all">
                     <thead>
@@ -2270,7 +2270,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <programlisting language="javascript"><xi:include href="samples/dns-list-records-response.json" parse="text"/></programlisting>
             </example>
             </section>
-            <section>
+            <section xml:id="List_Record_Details-d1e4770">
                 <title>List Record Details</title>
                 <informaltable rules="all">
                     <thead align="center">
@@ -2320,7 +2320,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
             </section>
             <?hard-pagebreak?>
-            <section>
+            <section xml:id="Add_Records-d1e4895">
                 <title>Add Records</title>
                 <informaltable rules="all">
                     <thead align="center">
@@ -2380,7 +2380,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>                
             </section>
             <?hard-pagebreak?>
-            <section>
+            <section xml:id="Modify_Records-d1e5033">
                 <title>Modify Records</title>
                 <informaltable rules="all">
                     <thead align="center">
@@ -2441,7 +2441,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
             </section>
             <?hard-pagebreak?>
-            <section>
+            <section xml:id="Remove_Records-d1e5188">
                 <title>Remove Records</title>
                 <informaltable rules="all">
                     <thead align="center">
