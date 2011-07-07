@@ -31,7 +31,8 @@
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
-      version="5.0" status="draft">
+      version="5.0">
+    <?rax status.bar.text="BETA"?>
     <title>Cloud DNS BETA Developer Guide</title>
     
     <info>
@@ -77,22 +78,28 @@
         <note>
             <para> DNS propagation may take up to 15 minutes. </para>
         </note>
-        <para>The following figure shows an overview of Cloud DNS Infrastructure:</para>
-        <para><inlinemediaobject>
-                <imageobject>
-                    <imagedata fileref="images/Cloud_DNS_Infographic-1.png" contentwidth="6in"/>
-                </imageobject>
-            </inlinemediaobject></para>
+        <para>The following figure shows an overview of Cloud DNS Infrastructure:
+	<informalfigure>
+	  <mediaobject>
+	    <imageobject role="fo">
+	      <imagedata fileref="images/Cloud_DNS_Infographic-1.svg" contentwidth="6in"/>
+	    </imageobject>
+	    <imageobject role="html">
+	      <imagedata fileref="images/Cloud_DNS_Infographic-1.png"/>
+	    </imageobject>	    
+	  </mediaobject>
+	</informalfigure>
+	</para>
         <para>We welcome feedback, comments, and bug reports at <link
                 xlink:href="http://feedback.rackspacecloud.com"
                 >http://feedback.rackspacecloud.com</link>.</para>
         <para>Issues and bug reports can be directed to your support team via ticket, chat, email,
             or phone.</para>
-        <section>
+        <section xml:id="Intended_Audience-d1e122">
             <title>Intended Audience</title>
             <para> This Guide is intended to assist software developers who want to develop
-                applications using the DNS Service API. To use the information provided here, you
-                should first have a general understanding of the DNS service. You should also be
+                applications using the Cloud DNS Service API. To use the information provided here,
+                you should first have a general understanding of the DNS service. You should also be
                 familiar with: </para>
             <itemizedlist spacing="compact">
                 <listitem>
@@ -113,7 +120,7 @@
             </itemizedlist>
         </section>
         <?hard-pagebreak?>
-        <section>
+        <section xml:id="Document_Change_History-d1e166">
             <title>Document Change History</title>
             <para>This version of the Developer Guide replaces and
             obsoletes all previous versions.  The most recent changes
@@ -132,9 +139,22 @@
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para> Added new <xref linkend="DNS_service_versions"/> that
+                                    <para>Released for Public Beta.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added information in <xref linkend="Authentication-d1e647"
+                                        /> that describes accessing the Authentication Service,
+                                        based on whether your account is US-based or UK-based.
+                                    </para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added new <xref linkend="DNS_service_versions"/> that
                                         describes the contract and build information for the API.
                                     </para>
+                                </listitem>
+                                <listitem>
+                                    <para> Added new <xref linkend="datetimeformat"/> that describes
+                                        the date/time format used by the DNS service. </para>
                                 </listitem>
                                 <listitem>
                                     <para> Added new <xref linkend="supported_record_types"/> with a
@@ -311,7 +331,7 @@
                 </tbody>
             </table>
         </section>
-        <section>
+        <section xml:id="Additional_Resources-d1e532">
             <title>Additional Resources</title>
             <para>You can download the most current versions of other API-related documents from
                     <link xlink:href="http://docs.rackspace.com/api/"
@@ -329,11 +349,11 @@
                     >http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="Concepts-d1e563">
         <title>Concepts</title>
         <?dbhtml stop-chunking?>
         <para> To use the DNS API effectively, you should understand several key concepts: </para>
-        <section>
+        <section xml:id="DNS-d1e573">
             <title>DNS</title>
             <para> The Domain Name System (DNS) is a system by which internet domain name-to-address
                 and address-to-name resolutions are determined. All domains and their components,
@@ -348,7 +368,7 @@
             </para>
             </note>
         </section>
-        <section>
+        <section xml:id="Domain-d1e588">
             <title>Domain</title>
             <para> A domain is an entity/container of all DNS-related information containing one or
                 more records. </para>
@@ -360,7 +380,7 @@
                 subdomains, so third-level, fourth-level, fifth-level, and deeper levels of nesting
                 are possible. </para>
         </section>
-        <section>
+        <section xml:id="Record-d1e607">
             <title>Record</title>
             <para> A DNS record belongs to a particular domain and is used to specify information
                 about the domain. There are several types of DNS records. Each record type contains
@@ -368,7 +388,7 @@
                 exchange (MX) records, which specify the mail server for a particular domain, and
                 name server (NS) records, which specify the authoritative name servers for a domain. </para>
         </section>
-        <section>
+        <section xml:id="Domain_Owner-d1e616">
             <title>Domain Owner</title>
             <para> Within Rackspace DNS, the account which creates the domain is the domain
                 owner.</para>
@@ -379,7 +399,7 @@
             </note>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="General_API_Information-d1e633">
         <title>General API Information</title>
         <para> The DNS Service API is implemented using a RESTful web service interface. Like other
             products in the Rackspace Cloud suite, the DNS Service shares a common token-based
@@ -388,48 +408,86 @@
             <para> All requests to authenticate against and operate the service are performed using
                 SSL over HTTP (HTTPS) on TCP port 443. </para>
         </note>
-        <section>
+        <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
-            <para> Each ReST request against the DNS service requires the inclusion of a specific
-                authorization token HTTP x-header, defined as <code>X-Auth-Token</code>. Customers
-                obtain this token by first using the Rackspace Cloud Authentication Service and
-                supplying a valid username and API access key. </para>
-            <para> The Rackspace Cloud Authentication Service is a RESTful web service. It is the
-                entry point to all Rackspace Cloud APIs. It is accessible at <link
-                    xlink:href="https://auth.api.rackspacecloud.com/v1.0"
-                    >https://auth.api.rackspacecloud.com/v1.0</link>. </para>
+            <para> Every ReST request against the DNS Service requires the inclusion of a specific
+                authorization token, supplied by the <code>X-Auth-Token</code> HTTP header.
+                Customers obtain this token by first using the Rackspace Cloud Authentication
+                Service and supplying a valid username and API access key. </para>
             <section>
                 <title>Request</title>
-                <para>
-                    To authenticate, you must supply your username and API access key in x-headers:
+                <para> The Rackspace Cloud Authentication Service serves as the entry point to all
+                Rackspace Cloud APIs and is itself a RESTful web service. </para>
+                <para> To access the Authentication Service, you must know whether your account is
+                    US-based or UK-based: 
                 </para>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            US-based accounts authenticate through <link xlink:href="https://auth.api.rackspacecloud.com/v1.0">https://auth.api.rackspacecloud.com/v1.0</link>.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            UK-based accounts authenticate through <link xlink:href="https://lon.auth.api.rackspacecloud.com/v1.0">https://lon.auth.api.rackspacecloud.com/v1.0</link>.
+                        </para>
+                    </listitem>
+                </itemizedlist>
                 <para>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>
-                                Use your Rackspace Cloud
-                                username as the username for the API. Place it in the
-                                <code>X-Auth-User</code> x-header.
-                            </para>
-                        </listitem>
-                        <listitem>
-                            <para> Obtain your API access key from the Rackspace Cloud Control
-                                Panel in the Your Account | API Access section. Place it in the
-                                <code>X-Auth-Key</code> x-header. </para>
-                        </listitem>
-                    </itemizedlist>
+                    Your account may be based in either the US or the UK; this is not determined
+                    by your physical location but by the location of the Rackspace retail site which
+                    was used to create your account: 
                 </para>
-                <example>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            If your account was
+                            created via <link xlink:href="http://www.rackspacecloud.com">http://www.rackspacecloud.com</link>, it is a US-based account.
+                        </para>   
+                    </listitem>
+                    <listitem>
+                        <para>
+                            If your account was
+                            created via <link xlink:href="http:/www.rackspace.co.uk">http:/www.rackspace.co.uk</link>, it is a UK-based account.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+                <para>
+                    If you are unsure how your account was created, use the Rackspace contact
+                    information at either site to ask for help.
+                </para>
+                <simplesect>
                     <title>Authentication Request</title>
+                    <para>
+                        To authenticate, you must supply your username and API access key in x-headers:
+                    </para>
+                    <para>
+                        <itemizedlist spacing="compact">
+                            <listitem>
+                                <para>
+                                    Use your Rackspace Cloud
+                                    username as the username for the API. Place it in the
+                                    <code>X-Auth-User</code> x-header.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para> Obtain your API access key from the Rackspace Cloud Control Panel in the Your
+                                    Account | API Access section. Place it in the <code>X-Auth-Key</code> x-header. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                <example>
+                    <title>Authentication Request (US-based Account)</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">GET /v1.0 HTTP/1.1
 Host: auth.api.rackspacecloud.com
 X-Auth-User: jdoe
 X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89</literallayout>
                 </example>
+                    </simplesect>
             </section>
-            <section>
+            <section xml:id="Response-d1e711">
                 <title>Response</title>
                 <para> If authentication is successful, an HTTP status <returnvalue>204 (No
                         Content)</returnvalue> is returned with an <code>X-Auth-Token</code> header;
@@ -459,7 +517,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </para>
             </section>
         </section>
-        <section>
+        <section xml:id="Service_Access_Endpoints-d1e753">
             <title>Service Access/Endpoints</title>
             <para>The DNS service is a regionalized service. DNS is therefore responsible for
                 appropriate replication, caching, and overall maintenance of DNS data across
@@ -494,8 +552,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="DNS_service_versions">
             <title>DNS Service Versions</title>
-            <para> The DNS service version defines the contract and build information for the API. </para>
-            <section>
+            <para> The Cloud DNS Service version defines the contract and build information for the
+                API. </para>
+            <section xml:id="Contract_Version-d1e825">
                 <title>Contract Version</title>
                 <para> The contract version denotes the data model and behavior that the API
                     supports. The requested contract version is included in all request URLs.
@@ -510,11 +569,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </note>
                 </para>
             </section>
-            <section>
+            <section xml:id="API_Version_Headers-d1e855">
                 <title>API Version Headers</title>
-                <para>Every response from the DNS service includes custom headers that identify the
-                    specific release version of the API that is in use. This information is used to
-                    assist in diagnosing issues and should be included in any support request. </para>
+                <para>Every response from the Cloud DNS Service includes custom headers that
+                    identify the specific release version of the API that is in use. This
+                    information is used to assist in diagnosing issues and should be included in any
+                    support request. </para>
                 <table rules="all">
                     <caption>API Version Headers</caption>
                     <?dbfo keep-together="always"?>
@@ -528,16 +588,16 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tbody>
                         <tr>
                             <td>X-API-VERSION</td>
-                            <td>The deployed version of the DNS service. This is used to identify
-                            releases, and it should correspond to the contract version in the URL
-                            (that is, v1.0).</td>
+                            <td>The deployed version of the Cloud DNS Service. This is used to
+                                identify releases, and it should correspond to the contract version
+                                in the URL (that is, v1.0).</td>
                             <td>X-API-VERSION=1.0.8</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
         </section>
-        <section>
+        <section xml:id="Request_Response_Types-d1e903">
             <title>Request/Response Types</title>
             <para> The DNS API supports both the JSON and XML data serialization formats. The
                 request format is specified using the <code>Content-Type</code> header and is
@@ -618,7 +678,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="1">jobID</td>
+                        <td colspan="1">jobId</td>
                         <td colspan="4">An identifier for the specific request.</td>
                     </tr>
                     <tr>
@@ -660,7 +720,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 the paragraphs in <xref linkend="create_domains"/> immediately below the table for a
                 list of the successful and error response codes for the POST /domains call.</para>
         </section>
-           <section>
+           <section xml:id="Content_Compression-d1e1120">
             <title>Content Compression</title>
             <para> Request and response body data may be encoded with gzip compression to accelerate
                 interactive performance of API calls and responses. This is controlled using the
@@ -691,7 +751,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </tbody>
             </table>
         </section>
-        <section>
+        <section xml:id="Persistent_Connections-d1e1187">
             <title>Persistent Connections</title>
             <para>
                 By default, the API supports persistent connections
@@ -710,7 +770,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </note>
         </section>
         <?hard-pagebreak?>
-        <section>
+        <section xml:id="Limits-d1e1208">
             <title>Limits</title>
             <para>
                 All accounts, by default, have a preconfigured set of
@@ -721,7 +781,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 are thresholds that are reset after a certain amount
                 of time passes. Absolute limits are fixed.
             </para>
-            <section>
+            <section xml:id="Rate_Limits-d1e1222">
                 <title>Rate Limits</title>
                 <para> We specify rate limits in terms of both a human-readable wild-card URI and a
                     machine-processable regular expression. The regular expression boundary matcher
@@ -799,7 +859,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <code>Reply-After</code> header to notify the client when they can attempt
                     to try again. </para>
             </section>
-            <section>
+            <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
                 <para> &POST; and &PUT; calls are limited to the creation or modification of a
                     maximum of 100 entities per call where an entity is defined as a record, domain,
@@ -814,60 +874,62 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <title>Date/Time Format</title>
             <para>
                 The DNS service uses an ISO-8601 compliant date format for the display and consumption of date/time values.
+                </para>
                 <example>
                     <title>DNS Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
-                    May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:
+                <para>See the table below for a description of the date/time format codes.</para>
+                    <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:</para>
                     <programlisting>2011-05-19T08:07:08-05:00</programlisting>
                 </example>
-                <table rules="all">
-                    <caption>Explanation of Date/Time Format Codes</caption>
-                    <thead>
-                        <tr>
-                            <td>Code</td>
-                            <td>Desription</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>yyyy</td>
-                            <td>Four digit year</td>
-                        </tr>
-                        <tr>
-                            <td>MM</td>
-                            <td>Two digit month</td>
-                        </tr>
-                        <tr>
-                            <td>dd</td>
-                            <td>Two digit day of month</td>
-                        </tr>
-                        <tr>
-                            <td>T</td>
-                            <td>Separator for date/time</td>
-                        </tr>
-                        <tr>
-                            <td>HH</td>
-                            <td>Two digit hour of day (00-23)</td>
-                        </tr>
-                        <tr>
-                            <td>mm</td>
-                            <td>Two digit minutes of hour</td>
-                        </tr>
-                        <tr>
-                            <td>ss</td>
-                            <td>Two digit seconds of the minute</td>
-                        </tr>
-                        <tr>
-                            <td>SSS</td>
-                            <td>Three digit milliseconds of the second</td>
-                        </tr>
-                        <tr>
-                            <td>Z</td>
-                            <td>RFC-822 timezone</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </para>
+            <table rules="all">
+                <caption>Explanation of Date/Time Format Codes</caption>
+                <thead>
+                    <tr>
+                        <td>Code</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>yyyy</td>
+                        <td>Four digit year</td>
+                    </tr>
+                    <tr>
+                        <td>MM</td>
+                        <td>Two digit month</td>
+                    </tr>
+                    <tr>
+                        <td>dd</td>
+                        <td>Two digit day of month</td>
+                    </tr>
+                    <tr>
+                        <td>T</td>
+                        <td>Separator for date/time</td>
+                    </tr>
+                    <tr>
+                        <td>HH</td>
+                        <td>Two digit hour of day (00-23)</td>
+                    </tr>
+                    <tr>
+                        <td>mm</td>
+                        <td>Two digit minutes of hour</td>
+                    </tr>
+                    <tr>
+                        <td>ss</td>
+                        <td>Two digit seconds of the minute</td>
+                    </tr>
+                    <tr>
+                        <td>SSS</td>
+                        <td>Three digit milliseconds of the second</td>
+                    </tr>
+                    <tr>
+                        <td>Z</td>
+                        <td>RFC-822 timezone</td>
+                    </tr>
+                </tbody>
+            </table>
+            
         </section>
         <section xml:id="comments">
             <title>Comments</title>
@@ -985,7 +1047,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </tbody>
             </informaltable>
             <para>See the following section for examples of paged List Domains calls.</para>
-            <section>
+            <section xml:id="Pagination_Elements_and_Attributes-d1e1754">
                 <title>Pagination Elements and Attributes</title>
                 <para>For any collection in a result, there is a <code>totalEntries</code> attribute
                     representing the total number of entries there are for this item type. If the
@@ -1018,10 +1080,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-pagination-list-domains-limit-response.json" parse="text"/></programlisting>
                 </example>
-                <para> In the previous two response examples, note that <code>totalEntries=95</code>
-                    and that a link has been provided to retrieve the next 3 results
-                        (<code>limit=3</code>) in the link element identified by the attribute
-                        <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
+                <para> In the previous two response examples, note that
+                        <code>totalEntries=112</code> and that a link has been provided to retrieve
+                    the next 3 results (<code>limit=3</code>) in the link element identified by the
+                    attribute <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
                 <para>The following example shows links to both previous and next results in the
                     responses, since the request specified to start with the fourth item in the
                     collection (<code>offset=3</code>):</para>
@@ -1049,7 +1111,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <para>
                     <?rax-fo keep-with-next?> In the previous two response examples, note that
-                        <code>totalEntries=95</code> and two links have been provided to:<itemizedlist>
+                        <code>totalEntries=112</code> and two links have been provided to:<itemizedlist>
                         <listitem>
                             <para>Retrieve the next 3 results (<code>limit=3</code>) via the link
                                 element identified by the attribute <code>rel="next"</code> (XML) or
@@ -1065,8 +1127,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="supported_record_types"><?dbfo keep-together="always"?>
             <title>Supported Record Types</title>
-            <para>The Rackspace Cloud DNS service supports the record types listed in the following
-                table:</para>
+            <para>The Rackspace Cloud DNS Service supports the record types listed in the following
+                table.</para>
             
             <table rules="all">
                 <caption>Rackspace Cloud DNS Supported Record Types</caption>
@@ -1232,7 +1294,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </table>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="API_Operations-d1e2264">
         <title>API Operations</title>
         <section xml:id="Domains">
             <title>Domains</title>
@@ -1383,6 +1445,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref
                             linkend="pagination"/>.</para>
                 </note>
+                <para> In the examples that follow, the request is made for a <code>limit</code> of
+                        <code>10</code> records, starting at <code>offset</code>
+                    <code>20</code> (record 21).</para>
                 <example>
                     <title>List Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -1402,6 +1467,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <title>List Domains Response: JSON</title>
                     <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.json" parse="text"/></programlisting>
                 </example>
+                <note>
+                    <para>Since the current set of 10 records in the previous response examples
+                        begins at <code>offset=20</code>, note that the <code>previous</code> link
+                        points to a group of 10 records starting at <code>offset=10</code>, while
+                        the <code>next</code> link points to a group of 10 records starting at
+                            <code>offset=30</code>.</para>
+                </note>
                 <section xml:id="search_domains_w_filters">
                     <title>Search Domains with Filtering</title>
                     <para> As illustrated by the examples above, the List Domains call provides a
@@ -1419,7 +1491,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             described in <xref linkend="pagination"/>.</para>
                     </note>
                     <para><?rax-fo keep-with-next?> In the following example, the specified search
-                        name is <code>rtb201104281842.com</code>:</para>
+                        name is <code>secondlevel434706.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1430,8 +1502,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?> The response matches one domain and four
-                        subdomains:</para>
+                    <para><?rax-fo keep-with-next?> The response matches one domain:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1442,8 +1513,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"/></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?>  In the following example, the specified search
-                        name is <code>sub1.rtb201104281842.com</code>:</para>
+                    <para><?rax-fo keep-with-next?> In the following example, the specified search
+                        name is <code>sub1.secondlevel434706.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1454,7 +1525,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para>The response matches one domain:</para>
+                    <para>The response matches one subdomain:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1466,8 +1537,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"/></programlisting>
                     </example>
                     <para>
-                        <?rax-fo keep-with-next?>In the following example, the specified search
-                        name is <code>2.rtb201104281842.com</code>: </para>
+                        <?rax-fo keep-with-next?>In the following example, the specified search name
+                        is <code>sub1.rtb000</code>: </para>
                     <example>
                         <title>Filter by Partial Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1478,7 +1549,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"/></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?> The response matches one domain:</para>
+                    <para><?rax-fo keep-with-next?> The response matches one subdomain:</para>
                     <example>
                         <title>Filter by Partial Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -1872,7 +1943,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="javascript"><xi:include href="samples/dns-import-domains-response.json" parse="text"/></programlisting>
                 </example>
             </section>
-            <section>
+            <section xml:id="Modify_Domain_s_-d1e3848">
                 <title>Modify Domain(s)</title>
                 <informaltable rules="all">
                     <thead>
@@ -1947,7 +2018,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.json" parse="text"/></programlisting>
                 </example>
             </section>
-            <section>
+            <section xml:id="Remove_Domain_s_-d1e4022">
                 <title>Remove Domain(s)</title>
                 <informaltable rules="all">
                     <thead>
@@ -2069,7 +2140,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
         </section>
         <section xml:id="using_subdomains">
             <title>Subdomains</title>
-            <section>
+            <section xml:id="List_Subdomains-d1e4295">
                 <title>List Subdomains</title>
                 <informaltable rules="all">
                     <thead>
@@ -2128,7 +2199,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </section>
         </section>
         <?hard-pagebreak?>
-        <section>
+        <section xml:id="Records-d1e4435">
             <title>Records</title>
             <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
                 should be replaced by your authenticated account ID. </para>
@@ -2191,7 +2262,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
                 unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
                 notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara> 
-            <section>
+            <section xml:id="List_Records-d1e4629">
                 <title>List Records</title>
                 <informaltable rules="all">
                     <thead>
@@ -2245,7 +2316,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <programlisting language="javascript"><xi:include href="samples/dns-list-records-response.json" parse="text"/></programlisting>
             </example>
             </section>
-            <section>
+            <section xml:id="List_Record_Details-d1e4770">
                 <title>List Record Details</title>
                 <informaltable rules="all">
                     <thead align="center">
@@ -2295,7 +2366,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
             </section>
             <?hard-pagebreak?>
-            <section>
+            <section xml:id="Add_Records-d1e4895">
                 <title>Add Records</title>
                 <informaltable rules="all">
                     <thead align="center">
@@ -2355,7 +2426,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>                
             </section>
             <?hard-pagebreak?>
-            <section>
+            <section xml:id="Modify_Records-d1e5033">
                 <title>Modify Records</title>
                 <informaltable rules="all">
                     <thead align="center">
@@ -2416,7 +2487,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
             </section>
             <?hard-pagebreak?>
-            <section>
+            <section xml:id="Remove_Records-d1e5188">
                 <title>Remove Records</title>
                 <informaltable rules="all">
                     <thead align="center">

@@ -50,6 +50,10 @@
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
+			<configuration>
+			  <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
+			  <enableDisqus>1</enableDisqus>
+			</configuration>
                     </execution>
                 </executions>
                 <dependencies>
@@ -99,6 +103,10 @@
                             <resources>
                                 <resource>
                                     <directory>${basedir}/src/main/resources/images</directory>
+				    <excludes>
+				      <exclude>**/*.ai</exclude>
+				      <exclude>**/*.svg</exclude>
+				    </excludes>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>

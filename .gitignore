@@ -4,3 +4,5 @@ src/main/.DS_Store
 .project
 .settings/
 .DS_Store
+publish.sh
+
