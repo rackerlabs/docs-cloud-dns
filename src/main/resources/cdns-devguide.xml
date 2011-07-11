@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-07-07</pubdate>
+        <pubdate>2011-07-08</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -135,6 +135,15 @@
                 </thead>
                 <tbody>
                     <tr align="left">
+                        <td colspan="1">Jul. 8, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Updated default nameserver values.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr><tr align="left">
                         <td colspan="1">Jul. 7, 2011</td>
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
@@ -879,7 +888,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <title>DNS Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
                 <para>See the table below for a description of the date/time format codes.</para>
-                    <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would look like:</para>
+                    <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would have the following
+                    format:</para>
                     <programlisting>2011-05-19T08:07:08-05:00</programlisting>
                 </example>
             <table rules="all">
