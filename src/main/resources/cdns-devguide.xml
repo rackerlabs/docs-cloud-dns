@@ -1190,13 +1190,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <formalpara>
                                 <title>CNAME Record : XML</title>
                                 <para>
-                                    <programlisting language="xml">&lt;record id="CNAME-123" type="A" name="www.example.foo.com" data="example.foo.com" ttl="86400"/&gt;</programlisting>
+                                    <programlisting language="xml">&lt;record id="CNAME-123" type="CNAME" name="www.example.foo.com" data="example.foo.com" ttl="86400"/&gt;</programlisting>
                                 </para>
                             </formalpara>
                             <formalpara>
                                 <title>CNAME Record : JSON</title>
                                 <para>
-                                    <programlisting language="json">{ "id" : "CNAME-123", "type" : "A", "name" : "www.example.foo.com", "data" : "example.foo.com", "ttl" : 86400 }</programlisting>
+                                    <programlisting language="json">{ "id" : "CNAME-123", "type" : "CNAME", "name" : "www.example.foo.com", "data" : "example.foo.com", "ttl" : 86400 }</programlisting>
                                 </para>
                             </formalpara>
                         </td>
