@@ -135,6 +135,22 @@
                 </thead>
                 <tbody>
                     <tr align="left">
+                        <td colspan="1">Jul. xx, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Fixed "type" for CNAME records in <xref
+                                            linkend="supported_record_types"/>.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added information in <xref
+                                            linkend="Service_Access_Endpoints-d1e753"/> about how to
+                                        access the account id returned by the authentication
+                                        response.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr><tr align="left">
                         <td colspan="1">Jul. 8, 2011</td>
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
@@ -505,7 +521,7 @@ X-Auth-Key: a86850deb2742ec3cb41518e26aa2d89</literallayout>
                     An HTTP status of <errorcode>401 (Unauthorized)</errorcode> is returned if
                     authentication fails. All calls against the DNS service must include the
                         <code>X-Auth-Token</code> header as noted above.</para>
-                <example>
+                <example xml:id="authentication_response_example">
                     <title>Authentication Response</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">HTTP/1.1 204 No Content
@@ -532,9 +548,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 appropriate replication, caching, and overall maintenance of DNS data across
                 regional boundaries to other DNS servers.</para>
             <para>To determine which region to operate against, select an endpoint from the table
-                below. Replace the sample account ID number, <parameter>1234</parameter>, with your
-                actual account number returned as part of the authentication service response.
-                    <table rules="all">
+                below.</para>
+            <para>
+                <table rules="all">
                     <caption>Regionalized Service Endpoints</caption>
                     <thead>
                         <tr align="center">
@@ -558,6 +574,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tbody>
                 </table>
             </para>
+            <para>Replace the sample account ID number, <parameter>1234</parameter>, with your
+                actual account number returned as part of the authentication service response. You
+                will find the actual account number after the final '/' in the
+                    <code>X-Server-Management-Url</code> header returned by the authentication
+                response. In <xref linkend="authentication_response_example"/>, the account id is
+                1234, as you can see from the header <code>X-Server-Management-Url:
+                    https://servers.api.rackspacecloud.com/v1.0/1234</code>.</para>
         </section>
         <section xml:id="DNS_service_versions">
             <title>DNS Service Versions</title>
