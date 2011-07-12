@@ -490,11 +490,8 @@
                     <para>
                         <itemizedlist spacing="compact">
                             <listitem>
-                                <para>
-                                    Use your Rackspace Cloud
-                                    username as the username for the API. Place it in the
-                                    <code>X-Auth-User</code> x-header.
-                                </para>
+                                <para> Use your Rackspace Cloud username as the username for the
+                                    API. Place it in the <code>X-Auth-User</code> x-header.</para>
                             </listitem>
                             <listitem>
                                 <para> Obtain your API access key from the Rackspace Cloud Control Panel in the Your
