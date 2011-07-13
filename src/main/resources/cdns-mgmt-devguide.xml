@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+        <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="img/Check_mark_23x20_02.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
+
+        <!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="img/Arrow_east.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
+]>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:m="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      version="5.0">
+    
+    <?rax title.font.size="35px" subtitle.font.size="20px"?>
+    <title>Cloud DNS BETA Developer Guide for Service Management</title>
+    <?rax status.bar.text="RAX INTERNAL"?>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>Rackspace Cloud</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2010</year>
+            <year>2011</year>
+            <holder>Rackspace US, Inc.</holder>
+        </copyright>
+        <releaseinfo>API v1.0 BETA</releaseinfo>
+        <productname>Cloud DNS BETA</productname>
+        <pubdate>2011-09-02</pubdate>
+        <legalnotice role="rs-api">
+            <annotation>
+                <remark>Copyright details are filled in by the template.</remark>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This document is intended for software developers interested in developing service
+                management applications using the using the Rackspace Cloud DNS Application
+                Programming Interface (<abbrev>API</abbrev>). </para>
+        </abstract>
+    <cover>
+        <para>this is a placeholder for the front cover</para>
+    </cover>
+    <cover>
+        <para>this is a placeholder for the back cover</para>
+    </cover>
+    </info>
+    <chapter xml:id="overview">
+        <title>Overview</title>
+        <para> Rackspace Cloud DNS is a Domain Name System (DNS) available to Rackspace Cloud
+            customers. Interactions with Rackspace Cloud DNS occur programmatically via the
+            Rackspace Cloud DNS API as described in this Cloud DNS Developer Guide for Service
+            Management.</para>
+        <note>
+            <para> DNS propagation may take up to 15 minutes. </para>
+        </note>
+        <para>The following figure shows an overview of Cloud DNS Infrastructure:
+	<informalfigure>
+	  <mediaobject>
+	    <imageobject role="fo">
+	      <imagedata fileref="images/Cloud_DNS_Infographic-1.svg" contentwidth="6in"/>
+	    </imageobject>
+	    <imageobject role="html">
+	      <imagedata fileref="images/Cloud_DNS_Infographic-1.png"/>
+	    </imageobject>	    
+	  </mediaobject>
+	</informalfigure>
+	</para>
+        <para>We welcome feedback, comments, and bug reports at <link
+                xlink:href="http://feedback.rackspacecloud.com"
+                >http://feedback.rackspacecloud.com</link>.</para>
+        <para>Issues and bug reports can be directed to your support team via ticket, chat, email,
+            or phone.</para>
+        <section xml:id="Intended_Audience-d1e122">
+            <title>Intended Audience</title>
+            <para> This Guide is intended to assist software developers who want to develop
+                applications using the Rackspace Cloud DNS Service Management API. To use the
+                information provided here, you should first have a general understanding of the DNS
+                service. You should also be familiar with: </para>
+            <itemizedlist spacing="compact">
+                <listitem>
+                    <para>DNS terminology</para>
+                </listitem>
+                <listitem>
+                    <para>General operating principles of DNS</para>
+                </listitem>
+                <listitem>
+                    <para>RESTful web services</para>
+                </listitem>
+                <listitem>
+                    <para>HTTP/1.1 conventions</para>
+                </listitem>
+                <listitem>
+                    <para>JSON and/or XML data serialization formats</para>
+                </listitem>
+            </itemizedlist>
+            <para>You should also be familiar with the way the Cloud DNS Service API works. For
+                information, refer to the <citetitle>Cloud DNS Developer Guide</citetitle>.</para>
+        </section>
+        <?hard-pagebreak?>
+        <section xml:id="Document_Change_History-d1e166">
+            <title>Document Change History</title>
+            <para>This version of the Developer Guide replaces and
+            obsoletes all previous versions.  The most recent changes
+            are described in the table below:</para>
+            <table rules="all">
+                <caption>Document Change History</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Revision Date</td>
+                        <td colspan="4">Summary of Changes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1">Sept. 2, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Initial version to be published.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+        <section xml:id="Additional_Resources-d1e532">
+            <title>Additional Resources</title>
+            <para>You can download the most current versions of other API-related documents from
+                    <link xlink:href="http://docs.rackspace.com/api/"
+                        >http://docs.rackspace.com/api/</link>. </para>
+            <para>For information about Rackspace Cloud products, refer to <link
+                    xlink:href="http://www.rackspace.com/cloud/"
+                    >http://www.rackspace.com/cloud</link>. This site also offers links to
+                Rackspace's official support channels, including knowledge base articles, forums,
+                phone, chat, and email. </para>
+            <para>You can also follow Rackspace updates and announcements via twitter at <link
+                    xlink:href="http://www.twitter.com/rackspace"
+                    >http://www.twitter.com/rackspace</link>. </para>
+            <para>This API uses standard HTTP 1.1 response codes as documented at <link
+                    xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
+                    >http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
+        </section>
+    </chapter>
+    <chapter xml:id="Concepts-d1e563">
+        <title>Concepts</title>
+        <?dbhtml stop-chunking?>
+        <para> To use the DNS API effectively, you should understand several key concepts: </para>
+        <section xml:id="DNS-d1e573">
+            <title>DNS</title>
+            <para> The Domain Name System (DNS) is a system by which internet domain name-to-address
+                and address-to-name resolutions are determined. All domains and their components,
+                such as mail servers, utilize DNS to resolve to the appropriate locations. DNS
+                servers are usually set up in a master-slave relationship such that failure of the
+                master invokes the slave. DNS servers may also be clustered or  replicated such that
+                changes made to one DNS server are automatically propagated to other active servers. </para>
+            <note>
+            <para>
+                DNS understands only ASCII, so the Cloud DNS Service provides conversion between UTF-8 and ASCII on all calls into the
+                system. 
+            </para>
+            </note>
+        </section>
+        <section xml:id="Domain-d1e588">
+            <title>Domain</title>
+            <para> A domain is an entity/container of all DNS-related information containing one or
+                more records. </para>
+        </section>
+        <section xml:id="subdomain">
+            <title>Subdomain</title>
+            <para>Subdomains are domains within a parent domain, and subdomains cannot be
+                registered. Subdomains allow you to delegate domains. Subdomains can themselves have
+                subdomains, so third-level, fourth-level, fifth-level, and deeper levels of nesting
+                are possible. </para>
+        </section>
+        <section xml:id="Record-d1e607">
+            <title>Record</title>
+            <para> A DNS record belongs to a particular domain and is used to specify information
+                about the domain. There are several types of DNS records. Each record type contains
+                particular information used to describe that record's purpose. Examples include mail
+                exchange (MX) records, which specify the mail server for a particular domain, and
+                name server (NS) records, which specify the authoritative name servers for a domain. </para>
+        </section>
+        <section xml:id="Domain_Owner-d1e616">
+            <title>Domain Owner</title>
+            <para> Within Rackspace DNS, the account which creates the domain is the domain
+                owner.</para>
+            <note>
+                <para>Domain registration is currently outside the scope of the Rackspace DNS API.
+                    Any references to ownership and management of domain information is only
+                    relevant within the context of the Rackspace DNS system.</para>
+            </note>
+        </section>
+    </chapter>
+    <chapter xml:id="General_API_Information-d1e633">
+        <title>Management API Operations</title>
+        <para>These API operations relate to administration of the environment that enables and
+            supports the DNS service for all customers. The scope of these operations is wide,
+            relating to the overall operating environment rather than to a single customer. Rackers
+            might perform these operations to examine or alter the overall operational
+            environment.</para>
+        <section xml:id="Authentication-d1e647">
+            <title>Domains</title>
+            <?dbhtml stop-chunking?>
+            <section>
+                <title>Search Domains</title>
+                <para> This operation allows for searching for a domain by full or partial name. </para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/search?name=<parameter>domainName</parameter></td>
+                            <td colspan="4">Find all domains that match the specified domain
+                                name.</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/search?name=rackspace </td>
+                        </tr>
+                        
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para><?rax-fo keep-with-next?> In the following example, the specified search name
+                    is <code>rackspace</code>:</para>
+                <example>
+                    <title>Search Domains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">https://dns.api.mgmt.rackspacecloud.com/v1.0/search?name=rackspace</programlisting>
+                </example>
+                <example>
+                    <title>Search Domains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">https://dns.api.mgmt.rackspacecloud.com/v1.0/search?name=rackspace</programlisting>
+                </example>
+                <example>
+                    <title>Search Domains Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">&lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
+   &lt;domain name="rackspace.com" id="2610338" accountId="12345"/&gt;
+   &lt;domain name="myrackspace.com" id="2610368" accountId="1122334"&gt;
+      &lt;subdomains&gt;
+         &lt;domain name="sub.myrackspace.com" id="2610369"accountId="1122334"/&gt;
+      &lt;/subdomains&gt;
+   &lt;/domain&gt;
+   &lt;domain name="dns.heyrackspace.com" id="2610326"accountId="12345"/&gt;
+   &lt;domain name="apidemorackspace.org" id="2610424" accountId="12333"&gt;
+      &lt;subdomains&gt;
+         &lt;domain name="foo.apidemorackspace.org" id="2610425" accountId="12333"/&gt;
+      &lt;/subdomains&gt;
+   &lt;/domain&gt;
+   &lt;domain name="example.demoatrackspaceday.org" id="2575497" accountId="12345"/&gt;
+&lt;/domains&gt;</programlisting>
+                </example>
+                <example>
+                    <title>Search Domains Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">{
+  "domains" : {
+    "domain" : [ {
+      "id" : 2610338,
+      "name" : "rackspace.com",
+      "accountId" : 12345
+    }, {
+      "id" : 2610368,
+      "name" : "myrackspace.com",
+      "accountId" : 1122334,
+      "subdomains" : {
+        "domain" : [ {
+          "id" : 2610369,
+          "name" : "sub.myrackspace.com",
+          "accountId" : 1122334
+        } ]
+      }
+    }, {
+      "id" : 2610326,
+      "name" : "dns.heyrackspace.com",
+      "accountId" : 12345
+    }, {
+      "id" : 2610424,
+      "name" : "apidemorackspace.org",
+      "accountId" : 12333,
+      "subdomains" : {
+        "domain" : [ {
+          "id" : 2610425,
+          "name" : "foo.apidemorackspace.org",
+          "accountId" : 12333
+        } ]
+      }
+    }, {
+      "id" : 2575497,
+      "name" : "example.demoatrackspaceday.org",
+      "accountId" : 12345
+    }]
+  }
+}</programlisting>
+                </example>
+                <para> The domain is listed if its name contains the string "rackspace" anywhere in
+                    the name. </para>
+            </section>
+        </section>
+        <?hard-pagebreak?>
+    </chapter>
+    <chapter xml:id="API_Operations-d1e2264">
+        <title>Extended Customer API Operations</title>
+        <para>These API operations relate to support of DNS service activities on behalf of a
+            specific customer. The scope of these operations is narrow, relating to the needs of a
+            single customer. A customer might directly request these operations but only Rackers are
+            authorized to perform them. Rackers might also perform these operations to limit or
+            terminate a specific customer's activities when that customer appears to be disrupting
+            the overall operational environment.</para>
+        <para>These operations for the DNS Service Management API typically return some additional
+            fields of information, as compared with the Service API.</para>
+        <section xml:id="Domains">
+            <title>Domains</title>
+            <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
+                should be replaced by your authenticated account ID. </para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="2">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains</td>
+                        <td colspan="2">List all account domains.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains/?name=<parameter>domainName</parameter></td>
+                        <td colspan="2">Filter domains by domain name: list all domains
+                            manageable by the account specified that match the name
+                            <parameter>domainName</parameter>. Display IDs and names
+                            only.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains/<parameter>domainId</parameter></td>
+                        <td colspan="2">List details for a specific domain. By default this call
+                            displays information for records but not subdomains.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2"
+                                >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<?sbr?><code>[true|false]&amp;<?sbr?></code><parameter>showSubdomains</parameter>=<code>[true|false]</code><?sbr?></td>
+                        <td colspan="2">List details for a specific domain, using the
+                                <parameter>showRecords</parameter> and
+                                <parameter>showSubdomains</parameter> parameters that specify
+                            whether to request information for records and subdomains.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains/<parameter>domainId</parameter>/export</td>
+                        <td colspan="2">Export details of the specified domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2">/domains</td>
+                        <td colspan="2">Create a new domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2">/domains/import</td>
+                        <td colspan="2"> Import a new domain with the configuration specified by
+                            the request.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&PUT;</td>
+                        <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
+                        <td colspan="2">Modify the configuration of a domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&PUT;</td>
+                        <td colspan="2">/domains</td>
+                        <td colspan="2">Modify multiple domains.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
+                        <td colspan="2">Remove a domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2"
+                            >/domains<?sbr?>/<parameter>domainId</parameter>?<?sbr?>deleteSubdomains=<?sbr?>true</td>
+                        <td colspan="2">Remove a domain and all its subdomains.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2"
+                                >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter></td>
+                        <td colspan="2">Remove multiple domains.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2"
+                                >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
+                        <td colspan="2">Remove multiple domains and their subdomains.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                    <returnvalue>202</returnvalue>, and for remove domain(s) also
+                    <returnvalue>204</returnvalue>
+            </simpara>
+            <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                    <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
+                unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
+                notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+            <?hard-pagebreak?>
+            <section xml:id="list_domains">
+                <title>List Domains</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr>
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="2">Representations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains</td>
+                            <td colspan="3">List all domains manageable by the account specified.
+                                Display IDs and names only.</td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/?name=<parameter>domainName</parameter></td>
+                            <td colspan="3">Filter domains by domain name: list all domains
+                                manageable by the account specified that match the name
+                                    <parameter>domainName</parameter>. Display IDs and names
+                                only.</td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>, <errorcode>406</errorcode>), notFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para> These calls provide a list of all DNS domains manageable by a given account.
+                    The resulting list is flat, and does not break the domains down hierarchically
+                    by subdomain. All representative domains are included in the list, even if a
+                    domain is conceptually a subdomain of another domain in the list.</para>
+                <note>
+                    <para>These calls return by default a maximum of 100 items at a time if no
+                            <code>limit</code> is specified. To navigate the collection returned,
+                        the parameters <code>limit</code> and <code>offset</code> can be set in the
+                        URI (for example: <code>limit=10&amp;offset=0</code>).</para>
+                </note>
+                <para> In the examples that follow, the request is made for a <code>limit</code> of
+                        <code>10</code> records, starting at <code>offset</code>
+                    <code>20</code> (record 21).</para>
+                <example>
+                    <title>List Domains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domains Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domains Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.json" parse="text"/></programlisting>
+                </example>
+                <note>
+                    <para>Since the current set of 10 records in the previous response examples
+                        begins at <code>offset=20</code>, note that the <code>previous</code> link
+                        points to a group of 10 records starting at <code>offset=10</code>, while
+                        the <code>next</code> link points to a group of 10 records starting at
+                            <code>offset=30</code>.</para>
+                </note>
+                <section xml:id="search_domains_w_filters">
+                    <title>Search Domains with Filtering</title>
+                    <para> As illustrated by the examples above, the List Domains call provides a
+                        list of all DNS domains manageable by a given account. Filtering the search
+                        to limit the results returned can be performed by using the
+                            <code>name</code> parameter on the List Domains call. For example,
+                        <?sbr?><code>?&#xfeff;name=hoola.com</code> matches <code>hoola.com</code> and
+                        similar names such as <code>main.hoola.com</code> and
+                            <code>sub.hoola.com</code>. </para>
+                    <note>
+                        <para>This call returns by default a maximum of 100 items at a time if no
+                                <code>limit</code> is specified. To navigate the collection
+                            returned, the parameters <code>limit</code> and <code>offset</code> can
+                            be set in the URI (for example:
+                            <code>limit=10&amp;offset=0</code>).</para>
+                    </note>
+                    <para><?rax-fo keep-with-next?> In the following example, the specified search
+                        name is <code>secondlevel434706.com</code>:</para>
+                    <example>
+                        <title>Filter by Fully Qualified Domain Name Request: XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.xml" parse="text"/></programlisting>
+                    </example>
+                    <example>
+                        <title>Filter by Fully Qualified Domain Name Request: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.json" parse="text"/></programlisting>
+                    </example>
+                    <para><?rax-fo keep-with-next?> The response matches one domain:</para>
+                    <example>
+                        <title>Filter by Fully Qualified Domain Name Response: XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.xml" parse="text"/></programlisting>
+                    </example>
+                    <example>
+                        <title>Filter by Fully Qualified Domain Name Response: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"/></programlisting>
+                    </example>
+                    <para><?rax-fo keep-with-next?> In the following example, the specified search
+                        name is <code>sub1.secondlevel434706.com</code>:</para>
+                    <example>
+                        <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.xml" parse="text"/></programlisting>
+                    </example>
+                    <example>
+                        <title>Filter by Fully Qualified Subdomain Name Request: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.json" parse="text"/></programlisting>
+                    </example>
+                    <para>The response matches one subdomain:</para>
+                    <example>
+                        <title>Filter by Fully Qualified Subdomain Name Response: XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.xml" parse="text"/></programlisting>
+                    </example>
+                    <example>
+                        <title>Filter by Fully Qualified Subdomain Name Response: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"/></programlisting>
+                    </example>
+                    <para>
+                        <?rax-fo keep-with-next?>In the following example, the specified search name
+                        is <code>sub1.rtb000</code>: </para>
+                    <example>
+                        <title>Filter by Partial Name Request: XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.xml" parse="text"/></programlisting>
+                    </example>
+                    <example>
+                        <title>Filter by Partial Name Request: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"/></programlisting>
+                    </example>
+                    <para><?rax-fo keep-with-next?> The response matches one subdomain:</para>
+                    <example>
+                        <title>Filter by Partial Name Response: XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.xml" parse="text"/></programlisting>
+                    </example>
+                    <example>
+                        <title>Filter by Partial Name Response: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.json" parse="text"/></programlisting>
+                    </example>
+                </section>
+            </section>
+            <section xml:id="list_domain_details">
+                <title>List Domain Details</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="2">Representations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter></td>
+                            <td colspan="3">List details of the specified domain, with record
+                                information but without subdomains. </td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2"
+                                    >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<code>true</code>
+                                or
+                                    <?sbr?><?sbr?><code>false</code>&amp;<parameter>showSubdomains</parameter> =<?sbr?>
+                                <code>true</code>or<code>false</code></td>
+                            <td colspan="3">List details of the specified domain. Display details,
+                                as specified by the <parameter>showRecords</parameter> and
+                                    <parameter>showSubdomains</parameter> parameters. </td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <para> This call provides the detailed output for a specific domain configured and
+                    associated with an account. This call is not capable of returning details for a
+                    domain that has been deleted. </para>
+                <para>This call does not require a request body.</para>
+                <note>
+                    <para>This call returns by default a maximum of 100 items at a time if no
+                            <code>limit</code> is specified. To navigate the collection returned,
+                        the parameters <code>limit</code> and <code>offset</code> can be set in the
+                        URI (for example: <code>limit=10&amp;offset=0</code>).</para>
+                </note>
+                <para><?rax-fo keep-with-next?> Two parameters are available to specify the
+                    information about subdomains and records to be returned by the List Domain
+                    Details call:<itemizedlist>
+                        <listitem>
+                            <para><code>showRecords</code> - if this parameter is set to
+                                    <code>true</code>, then information about records is returned;
+                                if this parameter is set to <code>false</code>, then information
+                                about records is not returned.</para>
+                        </listitem>
+                        <listitem>
+                            <para><code>showSubdomains</code> - if this parameter is set to
+                                    <code>true</code>, then information about subdomains is
+                                returned; if this parameter is set to <code>false</code>, then
+                                information about subdomains is not returned.</para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>The following examples show the default parameter settings
+                        (<code>showRecords</code>=<code>true&amp;</code><code>showSubdomains</code>=<code>false</code>)
+                    for the List Domain Details call. This call returns information with records but
+                    no information about subdomains. Since these parameter values are the defaults,
+                    this call works the same way if both of the parameters are omitted.</para>
+                <example>
+                    <title>List Domain Details with Records, no Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records, no Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records, no Subdomains Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records, no Subdomains Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.json" parse="text"/></programlisting>
+                </example>
+                <para>The following examples show the parameter settings to return information for
+                    both records and subdomains
+                        (<code>showSubdomains</code>=<code>true&amp;</code><code>showRecords</code>=<code>true</code>)
+                    for the List Domain Details call:</para>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details with Records and Subdomains Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.json" parse="text"/></programlisting>
+                </example>
+                <para>The following examples show the parameter settings to return basic information
+                    only, without records or subdomains
+                        (<code>showRecords</code>=<code>false&amp;</code><code>showSubdomains</code>=<code>false</code>)
+                    for the List Domain Details call:</para>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Details, no Records, no Subdomains Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example><?dbfo keep-together="always"?>
+                    <title>List Domain Details, no Records, no Subdomains Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <?hard-pagebreak?>
+            <section xml:id="export_domain">
+                <title>Export Domain</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="2">Representations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/export</td>
+                            <td colspan="3">Export details of the specified domain.</td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> This call returns an asynchronous response.</para>
+                </note>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>This call provides the BIND (Berkeley Internet Name Domain) 9 formatted
+                    contents of the requested domain. This call is for a <emphasis>single</emphasis>
+                    domain only, and as such, does not traverse up or down the domain hierarchy for
+                    details (that is, no subdomain information is provided). </para>
+                <note>
+                    <para> This call is not capable of returning anything for a domain that has been
+                        deleted. </para>
+                </note>
+                <note>
+                    <para linkend="import_domain_request_xml"> The BIND 9 formatted contents of the
+                        requested domain will have no comments listed for the domain or for the
+                        records of the domain being exported.</para>
+                </note>
+                <example>
+                    <title>Export Domain Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Export Domain Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.json" parse="text"/></programlisting>
+                </example>
+                <example><?dbfo keep-together="always"?>
+                    <title>Export Domain Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Export Domain Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-export-domain-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <section xml:id="create_domains">
+                <title>Create Domain(s)</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2">/domains</td>
+                            <td colspan="3">Create a new domain with the configuration defined by
+                                the request.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> This call returns an asynchronous response.</para>
+                </note>
+                <note>
+                    <para> Subdomains are also created the same way as domains.</para>
+                </note>
+                <simpara> Normal Response Code(s): <returnvalue>202</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), domainExistsFault (<errorcode>409</errorcode>),
+                    serviceUnavailable (<errorcode>503</errorcode>), unauthorized
+                        (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
+                    notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para> This call provisions one or more new DNS domains under the account specified,
+                    based on the configuration defined in the request object. If the corresponding
+                    request cannot be fulfilled due to insufficient or invalid data, an
+                        <code>HTTP</code>
+                    <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
+                    with information regarding the nature of the failure in the body of the
+                    response. Failures in the validation process are non-recoverable and require the
+                    caller to correct the cause of the failure and &POST; the request again. <note>
+                        <para> This process allows multiple records to be created along with the
+                            domain. This is an atomic operation: if there is a failure in creation
+                            of even a single record, the entire process will fail. </para>
+                    </note><note>
+                        <para> DNS propagation may take up to 15 minutes. </para>
+                    </note><note>
+                        <para>When a domain is created, and no Time To Live (TTL) is specified, the
+                            SOA minTTL (3600 seconds) is used as the default. When a record is added
+                            without a specified TTL, it will receive the domain TTL by default. When
+                            the domain and/or record TTL is supplied by the user, either via a
+                            create or update call, the TTL values must be 300 seconds or
+                            more.</para>
+                    </note><note>
+                        <para>Subdomains are managed in separate zone files in the DNS system and
+                            will add some overhead to domain management.</para>
+                    </note>
+                </para>
+                <example>
+                    <title>Create Domain(s) Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Create Domain(s) Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-request.json" parse="text"/></programlisting>
+                </example>
+                <example xml:id="create_domains_resp">
+                    <title>Create Domain(s) Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Create Domain(s) Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="samples/dns-create-domains-response.json"><xi:include href="samples/dns-create-domains-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <?hard-pagebreak?>
+            <section xml:id="import_domain">
+                <title>Import Domain</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="2">Representations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2">/domains/import</td>
+                            <td colspan="3"> Import a new domain with the configuration specified by
+                                the request.</td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> This call returns an asynchronous response.</para>
+                </note>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                        <returnvalue>202</returnvalue></simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), domainExistsFault (<errorcode>409</errorcode>),
+                    serviceUnavailable (<errorcode>503</errorcode>), unauthorized
+                        (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
+                    notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para> This call provisions a new DNS domain under the account specified by the BIND
+                    9 formatted file configuration contents defined in the request object.  If the
+                    corresponding request cannot be fulfilled due to insufficient or invalid data,
+                    an <code>HTTP</code>
+                    <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
+                    with information regarding the nature of the failure in the body of the
+                    response. Failures in the validation process are non-recoverable and require the
+                    caller to correct the cause of the failure and &POST; the request again. </para>
+                <para> For all practical purposes, a successful Import Domain call creates a domain,
+                    and is therefore similar in response to a Create Domain call. </para>
+                <note>
+                    <para> DNS propagation may take up to 15 minutes.</para>
+                </note>
+                <note>
+                    <para> This process allows multiple records to be created along with the domain.
+                        This is an atomic operation, so if there is a failure in the creation of
+                        even a single record, the entire process will fail.</para>
+                </note>
+                <para> Ensure that the BIND 9 formatted file configuration contents are valid by
+                    ensuring that records are placed on separate lines with no other white space
+                    characters other than a single space or tab between the values. For example,
+                    there should be no tabs or extra spaces before the start of any record, and
+                    after every record there should be a newline character at the end. Otherwise the
+                    user will receive an <code>HTTP</code>
+                    <returnvalue>400 (Bad Request)</returnvalue> error response with the message
+                    "The request could not be understood by the server due to malformed
+                    syntax."</para>
+                <note>
+                    <para linkend="import_domain_request_xml"> The domain can have a comment
+                        attribute specified in the import domain request (see <xref
+                            linkend="import_domain_request_xml"/>), and that comment is transferred
+                        to the new domain. However the domain contents cannot have comments
+                        specified in them. For example, no record level comments can be used in the
+                        import domain request.</para>
+                </note>
+                <note>
+                    <para linkend="import_domain_request_xml">The normal bind rules apply to any
+                        imported bind file, and in particular, records without a specified TTL will
+                        receive the domain TTL as the default. If the domain TTL is not specified,
+                        the SOA minTTL (3600 seconds) is used as the default instead.</para>
+                </note>
+                <example xml:id="import_domain_request_xml">
+                    <title>Import Domain Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Import Domain Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Import Domain Response: XML</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Import Domain Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-import-domains-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <section xml:id="Modify_Domain_s_-d1e3848">
+                <title>Modify Domain(s)</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&PUT;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter></td>
+                            <td colspan="3">Modify the configuration of a domain.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&PUT;</td>
+                            <td colspan="2">/domains</td>
+                            <td colspan="3">Modify the configurations of multiple domains.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> DNS propagation may take up to 15 minutes. </para>
+                </note>
+                <note>
+                    <para> These calls return an asynchronous response.</para>
+                </note>
+                <simpara>Normal Response Code(s): <returnvalue>204</returnvalue>,
+                        <returnvalue>202</returnvalue>
+                </simpara>
+                <simpara>Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>This call modifies DNS domain(s) attributes only. Records cannot be added,
+                    modified, or removed. Only the TTL and email address attributes of a domain can
+                    be modified. </para>
+                <para>If a request cannot be fulfilled due to insufficient or invalid data, an
+                        <code>HTTP</code>
+                    <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
+                    with information regarding the nature of the failure in the body of the
+                    response. Failures in the validation process are non-recoverable and require the
+                    caller to correct the cause of the failure and POST the request again. </para>
+                <note>
+                    <para>A domain's <code>id</code> is immutable. </para>
+                </note>
+                <note>
+                    <para>When the domain and/or record TTL is supplied by the user, either via a
+                        create or update call, the TTL values must be 300 seconds or more.</para>
+                </note>
+                <example>
+                    <title>Modify Domain Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domain-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Modify Domain Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domain-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Modify Domains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Modify Domains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <section xml:id="Remove_Domain_s_-d1e4022">
+                <title>Remove Domain(s)</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="3">URI</td>
+                            <td colspan="2">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="3">/domains/<parameter>domainId</parameter></td>
+                            <td colspan="2">Remove a domain from an account.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="3"
+                                    >/domains?id=<parameter>domainId1</parameter><?sbr?>&amp;id=<parameter>domainId2</parameter></td>
+                            <td colspan="2">Remove multiple domains from an account.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="3"
+                                >/domains/<parameter>domainId</parameter>?deleteSubdomains=true</td>
+                            <td colspan="2">Remove a domain and its subdomains from an account.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="3"
+                                    >/domains/?id=<parameter>domainId1</parameter><?sbr?>&amp;id=<parameter>domainId2</parameter><?sbr?>&amp;deleteSubdomains=true</td>
+                            <td colspan="2">Remove multiple domains and their subdomains from an
+                                account.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> These calls return an asynchronous response.</para>
+                </note>
+                <simpara> Normal Response Code(s): <returnvalue>204</returnvalue>,
+                        <returnvalue>202</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <para> This call removes one or more specified domains from the account; when a
+                    domain is deleted, its immediate resource records are also deleted from the
+                    account. By default, if a deleted domain had subdomains, each subdomain becomes
+                    a root domain and is not deleted; this can be overridden by the optional
+                        <code>deleteSubdomains</code> parameter. Utilizing the optional
+                        <code>deleteSubdomains</code> parameter on domains without subdomains does
+                    not result in a failure. When a domain is deleted, any and all domain data is
+                    immediately purged and is not recoverable via the API. So on a successful
+                    delete, subsequent requests for the deleted object should return notFound
+                        (<errorcode>404</errorcode>).</para>
+                <example>
+                    <title>Delete Domain Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domain Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domain and Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domain and Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains and Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains and Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <para>Transactionally, delete calls behave differently than other calls in that
+                    deletes are never rolled back on exceptions, and multiple deletes in the same
+                    request do not fail as a group. Instead, each delete is attempted even if one or
+                    more fail. The response for a delete request in which one or more items fail
+                    contains information regarding which items failed as well as information
+                    regarding specific issues that caused the failure(s). See the examples that
+                    follow.</para>
+                <example>
+                    <title>Delete Domains and Subdomains Response (Failure): XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Domains and Subdomains Response (Failure): JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
+                </example>
+                <para>In the previous two response examples, the requested domain objects could not
+                    be deleted, since they were not found.</para>
+            </section>
+        </section>
+        <section xml:id="using_subdomains">
+            <title>Subdomains</title>
+            <section xml:id="List_Subdomains-d1e4295">
+                <title>List Subdomains</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="3">URI</td>
+                            <td colspan="2">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="3">/domains/<parameter>domainId</parameter>/subdomains</td>
+                            <td colspan="2">List domains that are subdomains of the specified
+                                domain.</td>
+                        </tr>
+                   
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue></simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound
+                    (<errorcode>404</errorcode>)</simpara>
+                <para> This call provides a list of all DNS domains that are subdomains of the
+                    specified domain. The resulting list is flat, and does not break the domains
+                    down hierarchically by subdomain.</para>
+                <note>
+                    <para>This call returns by default a maximum of 100 items at a time if no
+                            <code>limit</code> is specified. To navigate the collection returned,
+                        the parameters <code>limit</code> and <code>offset</code> can be set in the
+                        URI (for example: <code>limit=10&amp;offset=0</code>).</para>
+                </note>
+                <example>
+                    <title>List Subdomains Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Subdomains Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Subdomains Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Subdomains Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+        </section>
+        <?hard-pagebreak?>
+        <section xml:id="Records-d1e4435">
+            <title>Records</title>
+            <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
+                should be replaced by your authenticated account ID. </para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="2">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
+                        <td colspan="2">List all records configured for the domain. SOA cannot be
+                            modified.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2"
+                                >/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                        <td colspan="2">List details for a specific record.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2"
+                                >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records</td>
+                        <td colspan="2">Add new record(s) to the domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&PUT;</td>
+                        <td colspan="2"
+                                >/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                        <td colspan="2">Modify the configuration of a record in the domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&PUT;</td>
+                        <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
+                        <td colspan="2">Modify the configuration of records in the domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2"
+                                >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records/<parameter><replaceable>recordId</replaceable></parameter></td>
+                        <td colspan="2">Remove a record from the domain.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2"
+                                >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records?id=<parameter><replaceable>recordId1</replaceable></parameter><?sbr?>&amp;id=<parameter><replaceable>recordId2</replaceable></parameter></td>
+                        <td colspan="2">Remove multiple records from the domain.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                    <returnvalue>202</returnvalue>,  and for remove record(s) also
+                    <returnvalue>204</returnvalue></simpara>
+            <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                    <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
+                unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
+                notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara> 
+            <section xml:id="List_Records-d1e4629">
+                <title>List Records</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center" >
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
+                            <td colspan="3">List all records configured for the domain. SOA cannot be modified.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                    <returnvalue>202</returnvalue>
+                </para>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <note>
+                    <para>This call returns by default a maximum of 100 items at a time if no
+                            <code>limit</code> is specified. To navigate the collection returned,
+                        the parameters <code>limit</code> and <code>offset</code> can be set in the
+                        URI (for example: <code>limit=10&amp;offset=0</code>).</para>
+                </note>
+            <example>
+                <title>List Records Request: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="samples/dns-list-records-request.xml" parse="text"/></programlisting>
+            </example>
+                <example>
+                    <title>List Records Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-records-request.json" parse="text"/></programlisting>
+                </example>
+            <example>
+                <title>List Records Response: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="samples/dns-list-records-response.xml" parse="text"/></programlisting>
+            </example>
+            <example>
+                <title>List Records Response: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="javascript"><xi:include href="samples/dns-list-records-response.json" parse="text"/></programlisting>
+            </example>
+            </section>
+            <section xml:id="List_Record_Details-d1e4770">
+                <title>List Record Details</title>
+                <informaltable rules="all">
+                    <thead align="center">
+                        <tr>
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                            <td colspan="3">List details for a specific record.</td>
+                        </tr>
+                    </tbody>
+                    
+                    
+                </informaltable>
+                <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                        <returnvalue>202</returnvalue>
+                </para>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <example>
+                    <title>List Record Details Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Record Details Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Record Details Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-record-details-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>List Record Details Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-record-details-response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <?hard-pagebreak?>
+            <section xml:id="Add_Records-d1e4895">
+                <title>Add Records</title>
+                <informaltable rules="all">
+                    <thead align="center">
+                        <tr>
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2"
+                                    >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records</td>
+                            <td colspan="3">Add new record(s) to the domain.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> This call returns an asynchronous response.</para>
+                </note>
+                <para> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                        <returnvalue>202</returnvalue>
+                </para>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <note>
+                    <para> When a domain is are created, and no TTL (Time To Live) is specified, a
+                        default value of 3600 seconds is used. The domain's TTL value is inherited
+                        by the record. When the domain and/or record TTL is supplied by the user,
+                        either via a create or update call, the TTL values must be 300 seconds or
+                        more.</para>
+                </note>
+                <example>
+                    <title>Add Records Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="samples/dns-add-records-request.xml" parse="text"/></programlisting>
+                    </example>
+                <example>
+                    <title>Add Records Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-add-records-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Add Records Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-add-records-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Add Records Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="javascript"><xi:include href="samples/dns-add-records-response.json" parse="text"/></programlisting>
+                </example>                
+            </section>
+            <?hard-pagebreak?>
+            <section xml:id="Modify_Records-d1e5033">
+                <title>Modify Records</title>
+                <informaltable rules="all">
+                    <thead align="center">
+                        <tr>
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&PUT;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
+                            <td colspan="3">Modify the configuration of a record in the domain.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&PUT;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
+                            <td colspan="3">Modify the configuration of records in the domain.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> This call returns an asynchronous response.</para>
+                </note>
+                <simpara> Normal Response Code(s): <returnvalue>204</returnvalue>,
+                    <returnvalue>202</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <note>
+                    <para> When the domain and/or record TTL is supplied by the user, either via a
+                        create or update call, the TTL values must be 300 seconds or more.</para>
+                </note>
+                <example>
+                    <title>Modify Record Configuration Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-record-config-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Modify Record Configuration Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-record-config-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Modify Records Configuration Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-records-config-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Modify Records Configuration Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-records-config-request.json" parse="text"/></programlisting>
+                </example>
+            </section>
+            <?hard-pagebreak?>
+            <section xml:id="Remove_Records-d1e5188">
+                <title>Remove Records</title>
+                <informaltable rules="all">
+                    <thead align="center">
+                        <tr>
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="2"
+                                    >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records/<parameter><replaceable>recordId</replaceable></parameter></td>
+                            <td colspan="3">Remove a record from the domain.</td>
+                        </tr> 
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="2"
+                                    >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records?id=<parameter><replaceable>recordId1</replaceable></parameter><?sbr?>&amp;id=<parameter><replaceable>recordId2</replaceable></parameter></td>
+                            <td colspan="3">Remove multiple records from the domain.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> These calls return an asynchronous response.</para>
+                </note>
+                <para> Normal Response Code(s): <returnvalue>204</returnvalue>,
+                    <returnvalue>202</returnvalue>
+                </para>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>When a record is deleted, any and all record data is immediately purged and is
+                    not recoverable via the API. So on a successful delete, subsequent requests for
+                    the deleted record should return notFound (<errorcode>404</errorcode>).</para>
+                <example>
+                    <title>Remove Record Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-record-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Remove Record Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-record-request.json" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Remove Records Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Remove Records Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
+                </example>
+                <para>Transactionally, delete calls behave differently than other calls in that
+                    deletes are never rolled back on exceptions, and multiple deletes in the same
+                    request do not fail as a group. Instead, each delete is attempted even if one or
+                    more fail. The response for a delete request in which one or more items fail
+                    contains information regarding which items failed as well as information
+                    regarding specific issues that caused the failure(s). See the examples that
+                    follow.</para>
+                <example>
+                    <title>Delete Records Response (Failure): XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.xml" parse="text"/></programlisting>
+                </example>
+                <example>
+                    <title>Delete Records Response (Failure): JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"/></programlisting>
+                </example>
+                <para>In the previous two response examples, the requested record objects could not
+                    be deleted, since they were not found.</para>
+            </section>
+        </section>
+        <?hard-pagebreak?>
+    </chapter>
+</book>
