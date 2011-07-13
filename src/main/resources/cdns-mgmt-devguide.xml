@@ -260,7 +260,7 @@
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
-                <para><?rax-fo keep-with-next?> In the following example, the specified search name
+                <para><?rax-fo keep-with-next?> In the following examples, the specified search name
                     is <code>rackspace</code>:</para>
                 <example>
                     <title>Search Domains Request: XML</title>
@@ -350,6 +350,8 @@
             the overall operational environment.</para>
         <para>These operations for the DNS Service Management API typically return some additional
             fields of information, as compared with the Service API.</para>
+        <remark>Need to add a reference table with each call, the extra fields that are added, and
+            their descriptions.</remark>
         <section xml:id="Domains">
             <title>Domains</title>
             <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
