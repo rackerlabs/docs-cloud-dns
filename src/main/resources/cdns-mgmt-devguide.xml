@@ -349,9 +349,10 @@
             terminate a specific customer's activities when that customer appears to be disrupting
             the overall operational environment.</para>
         <para>These operations for the DNS Service Management API typically return some additional
-            fields of information, as compared with the Service API.</para>
-        <remark>Need to add a reference table with each call, the extra fields that are added, and
-            their descriptions.</remark>
+            fields of information, as compared with the Service API. Refer to the following sections
+            for details.</para>
+        <remark>Need to add a reference table for each call, with the extra fields that are added
+            for that call, and their descriptions.</remark>
         <section xml:id="Domains">
             <title>Domains</title>
             <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
@@ -1610,6 +1611,8 @@
                 </example>
                 <para>In the previous two response examples, the requested record objects could not
                     be deleted, since they were not found.</para>
+                <remark>Do we need to add an appendix to this doc with the HTTP Response Codes in
+                    the wiki page?</remark>
             </section>
         </section>
         <?hard-pagebreak?>
