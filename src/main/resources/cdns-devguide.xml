@@ -26,15 +26,15 @@
               </inlinemediaobject>'>
 ]>
 <book xmlns="http://docbook.org/ns/docbook"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      xmlns:svg="http://www.w3.org/2000/svg"
-      xmlns:m="http://www.w3.org/1998/Math/MathML"
-      xmlns:html="http://www.w3.org/1999/xhtml"
-      version="5.0">
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml" xml:id="cdns-devguide"
+    version="5.0">
     <?rax status.bar.text="BETA"?>
     <title>Cloud DNS BETA Developer Guide</title>
-    
+
     <info>
         <author>
             <personname>
@@ -424,7 +424,7 @@
                 authorization token, supplied by the <code>X-Auth-Token</code> HTTP header.
                 Customers obtain this token by first using the Rackspace Cloud Authentication
                 Service and supplying a valid username and API access key. </para>
-            <section>
+            <section xml:id="request">
                 <title>Request</title>
                 <para> The Rackspace Cloud Authentication Service serves as the entry point to all
                 Rackspace Cloud APIs and is itself a RESTful web service. </para>
