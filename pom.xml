@@ -45,6 +45,18 @@
                 <version>1.0.4</version>
                 <executions>
                     <execution>
+		      <id>g1</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+			<configuration>
+			  <includes>cdns-mgmt-devguide.xml</includes>
+			  <enableDisqus>0</enableDisqus>
+			</configuration>
+                    </execution>
+                    <execution>
+		      <id>g2</id>
                         <goals>
                             <goal>generate-pdf</goal>
                             <goal>generate-webhelp</goal>
@@ -53,24 +65,17 @@
 			<configuration>
 			  <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
 			  <enableDisqus>1</enableDisqus>
+			  <includes>cdns-devguide.xml</includes>
 			</configuration>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.docbook</groupId>
-                        <artifactId>docbook-xml</artifactId>
-                        <version>4.4</version>
-                        <scope>runtime</scope>
-                    </dependency>
-                </dependencies>
                 <configuration>
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>src/main/resources</sourceDirectory>
-                    <highlightSource>false</highlightSource>
+		    <highlightSource>false</highlightSource>
                 </configuration>
             </plugin>
-			<plugin>
+	    <plugin>
                 <!-- this is not needed for the documentation, but sure helps when importing this project to eclipse! -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
