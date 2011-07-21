@@ -148,6 +148,12 @@
                                         access the account id returned by the authentication
                                         response.</para>
                                 </listitem>
+                                <listitem>
+                                    <para>Added new <xref linkend="Domain_Limits"/>.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added new <xref linkend="Record_Limits"/>.</para>
+                                </listitem>
                             </itemizedlist>
                         </td>
                     </tr><tr align="left">
@@ -897,6 +903,58 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     across the domain and subdomains. This would total 100 entities: 1 domain + 9
                     subdomains + 90 records. Additional records and/or subdomains could be created
                     for the domain in subsequent calls.</para>
+            </section>
+            <section xml:id="Domain_Limits">
+                <title>Domain Limits</title>
+                <para>By default users may have up to 100 domains per Cloud account (including
+                    sub-domains). When a user submits a request to create new domains and/or
+                    sub-domains, the system will only accept the request if the total number of
+                    existing plus requested domains and sub-domains is within the account domain
+                    limit. If the total exceeds the account domain limit, the entire request will be
+                    rejected and the following message will be returned: </para>
+                <para>
+                    <programlisting>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  code="400"&gt;
+  &lt;message&gt;The request could not be understood by the server due to malformed syntax.&lt;/message&gt;
+  &lt;details&gt;Limit of 100 domains has been reached.&lt;/details&gt;
+&lt;/badRequest&gt; </programlisting>
+                </para>
+                <note>
+                    <para>Any domains/sub-domains or records that are submitted in any request that
+                        causes domain limits to be exceeded will not be provisioned and the entire
+                        request will be rejected. </para>
+                </note>
+                <note>
+                    <para>The account domain limit applies to any API request that can be used to
+                        create a domain and/or sub-domain. An account may have a non-default limit
+                        if determined necessary by Support. </para>
+                </note>
+            </section>
+            <section xml:id="Record_Limits">
+                <title>Record Limits</title>
+                <para> By default users may have up to 5000 records per domain per Cloud account.
+                    When a user submits a request to create one or more new records, the system will
+                    only accept the request if the total number of existing plus requested records
+                    is within the account record limit. If the total number of records on a
+                    specified domain exceeds the record limit, the entire request will be rejected
+                    and the following message will be returned: </para>
+                <para>
+                    <programlisting>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  code="400"&gt;
+  &lt;message&gt;The request could not be understood by the server due to malformed syntax.&lt;/message&gt;
+  &lt;details&gt;Limit of  5000 records per domain has been  reached.&lt;/details&gt;
+&lt;/badRequest&gt; </programlisting>
+                </para>
+                <note>
+                    <para> Any domains/sub-domains or records that are submitted in any request that
+                        causes record limits to be exceeded will not be provisioned and the entire
+                        request will be rejected. </para>
+                </note>
+                <note>
+                    <para> The limits apply to any API request that can be used to create one or
+                        more records. An account may have a non-default record limit if determined
+                        necessary by Support. </para>
+                </note>
             </section>
         </section>
         <section xml:id="datetimeformat">
