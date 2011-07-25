@@ -2512,7 +2512,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="javascript"><xi:include href="samples/dns-add-records-response.json" parse="text"/></programlisting>
                 </example>
-                <section>
+                <section xml:id="Wildcard_Records">
                     <title>Wildcard Records</title>
                     <para>Users can add one or more <emphasis>wildcard</emphasis> records to any
                         domain or sub-domain on their account. For information on the intent and use
