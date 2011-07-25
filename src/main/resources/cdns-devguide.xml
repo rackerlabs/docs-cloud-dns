@@ -2511,7 +2511,25 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <title>Add Records Response: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="javascript"><xi:include href="samples/dns-add-records-response.json" parse="text"/></programlisting>
-                </example>                
+                </example>
+                <section>
+                    <title>Wildcard Records</title>
+                    <para>Users can add one or more <emphasis>wildcard</emphasis> records to any
+                        domain or sub-domain on their account. For information on the intent and use
+                        of wildcard records, see the DNS literature including RFC 1034, section
+                        4.3.3, and RFC 4595.</para>
+                    <para>Wildcards are supported for A, AAAA, CNAME, MX, SRV and TXT record
+                        types.</para>
+                    <note>
+                        <para>Wildcards are not supported for NS records. It is invalid to use a
+                            wildcard in an NS record.</para>
+                    </note>
+                    <para>A valid wildcard DNS record is specified by using an asterisk
+                            ("<code>*</code>") as the leftmost part of a record name, for example
+                            <code>*.example.com</code>. An asterisk in any other part of a record
+                        name is invalid. Only the asterisk ("<code>*</code>") is accepted as a
+                        wildcard character. </para>
+                </section>                
             </section>
             <?hard-pagebreak?>
             <section xml:id="Modify_Records-d1e5033">
