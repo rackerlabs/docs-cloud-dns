@@ -154,6 +154,9 @@
                                 <listitem>
                                     <para>Added new <xref linkend="Record_Limits"/>.</para>
                                 </listitem>
+                                <listitem>
+                                    <para>Added new <xref linkend="DNS_faults"/>.</para>
+                                </listitem>
                             </itemizedlist>
                         </td>
                     </tr><tr align="left">
@@ -1380,6 +1383,199 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                 </tbody>
             </table>
+        </section>
+        <section xml:id="DNS_faults">
+            <title>Faults</title>
+            <para> When an error occurs, the DNS Service returns a fault object containing an HTTP
+                error response code that denotes the type of error. In the body of the response, the
+                system will return additional information about the fault. </para>
+            <para>The following table lists possible fault types with their associated error
+                codes.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="2">Fault Type</td>
+                        <td colspan="2">Associated Error Code</td>
+                        <td colspan="2">Expected in All Requests</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2"><code>dnsFault</code></td>
+                        <td colspan="2">500, as well as any of the following others:</td>
+                        <td colspan="2">Yes </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>serviceUnavailable</code></td>
+                        <td colspan="2">503</td>
+                        <td colspan="2">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>unauthorized</code></td>
+                        <td colspan="2">401</td>
+                        <td colspan="2">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>badRequest</code></td>
+                        <td colspan="2">400</td>
+                        <td colspan="2">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>itemNotFound</code></td>
+                        <td colspan="2">404</td>
+                        <td colspan="2"/>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>overLimit</code></td>
+                        <td colspan="2">413</td>
+                        <td colspan="2"/>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>itemAlreadyExists</code></td>
+                        <td colspan="2">409</td>
+                        <td colspan="2"/>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>deleteFault</code></td>
+                        <td colspan="2">500 and nested other fault codes</td>
+                        <td colspan="2"/>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>internalServerError</code></td>
+                        <td colspan="2">500</td>
+                        <td colspan="2"/>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>The base of all fault types is <code>dnsFault</code>. From an XML schema
+                perspective, all API faults are extensions of the base fault type
+                    <code>dnsFault</code>. When working with a system such as JAXB that binds XML to
+                actual classes, <code>dnsFault</code> can be used as a catch-all if there is no
+                interest in distinguishing between individual fault types.</para>
+            <para><code>dnsFault</code> has the structure and elements shown below. All other fault
+                types extend <code>dnsFault</code>. Currently only fault types
+                    <code>badRequest</code> and <code>deleteFault</code> actually add additional
+                elements to their structure as compared to the parent <code>dnsFault</code>. These
+                two fault types are described later. </para>
+            <example>
+                <title>Example Fault Response: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+&lt;dnsFault xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="500">
+     &lt;message>Main fault&lt;/message>
+     &lt;details>Error Details&lt;/details>
+&lt;/dnsFault></programlisting>
+            </example>
+            <example>
+                <title>Example Fault Response: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">{
+  "dnsFault" : {
+     "code" : 500,
+     "message" : "Main fault",
+     "details" : "Error Details"
+   }
+}</programlisting>
+            </example>
+            <para> The error code is returned in the body of the response for convenience. The
+                message section returns a human-readable message that is appropriate for display to
+                the end user. The details section is optional and may contain information, such as a
+                stack trace, useful for tracking down an error. The detail section may or may not be
+                appropriate for display to an end user. </para>
+            <para>The fault's root element (for example, <code>dnsFault</code>) may change depending
+                on the type of error. <code>badRequest</code> fault adds a
+                    <code>&lt;validationErrors></code> element that contains a list of error
+                messages for invalid requests. The first two <code>badRequest</code> examples show
+                errors when the request structure is wrong.</para>
+            <example>
+                <title>Example badRequest Fault on Request Structure Errors: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="400">
+     &lt;message>The request could not be processed.&lt;/message>
+     &lt;details>Unexpected close tag &lt;/domains>; expected &lt;/domain>.
+     &lt;/details>
+&lt;/badRequest></programlisting>
+            </example>
+            <example>
+                <title>Example badRequest Fault on Request Structure Errors: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">{
+    "badRequest" :
+     {
+        "message":"The request could not be processed.",
+        "code":400,
+        "details":"Unexpected close tag &lt;/domains>; expected &lt;/domain>."
+     }
+}</programlisting>
+            </example>
+            <para> The next two <code>badRequest</code> examples show validation errors.</para>
+            <example>
+                <title>Example badRequest Fault on Validation Errors: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="400">
+     &lt;validationErrors>
+          &lt;messages>Must provide a name for each domain.&lt;/messages>
+          &lt;messages>null is not a valid domain name.&lt;/messages>
+     &lt;/validationErrors>
+&lt;/badRequest></programlisting>
+            </example>
+            <example>
+                <title>Example badRequest Fault on Validation Errors: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">{
+    "badRequest" :
+      {
+       "validationErrors":
+        {
+          "messages":
+            [
+              "Must provide a name for each domain.",
+              "null is not a valid domain name."
+            ]
+        },
+        "code":400
+     }
+}</programlisting>
+            </example>
+            <para><code>deleteFault</code> adds a <code>&lt;failedItems></code> element that
+                contains details on entities that could not be deleted.</para>
+            <example>
+                <title>Example deleteFault: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+&lt;deleteFault xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="500">
+     &lt;message>One or more items could not be deleted.&lt;/message>
+     &lt;details>See errors list for details.&lt;/details>
+     &lt;failedItems>
+          &lt;fault code="503">
+               &lt;message>The DNS API is currently not available.&lt;/message>
+               &lt;details>Domain ID: 123&lt;/details>
+          &lt;/fault>
+     &lt;/failedItems>
+&lt;/deleteFault></programlisting>
+            </example>
+            <example>
+                <title>Example deleteFault: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml">{
+    "failedItems":
+     {
+        "faults":
+         [
+          {
+            "message":"The DNS API is currently not available.",
+            "code":503,
+            "details":"Domain ID: 123"
+          }
+         ]
+     },
+     "message":"One or more items could not be deleted.",
+     "code":500,
+     "details":"See errors list for details."
+}</programlisting>
+            </example>
         </section>
     </chapter>
     <chapter xml:id="API_Operations-d1e2264">
