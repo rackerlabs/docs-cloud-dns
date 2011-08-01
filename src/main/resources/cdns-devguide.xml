@@ -884,7 +884,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                             <td colspan="1">&DELETE;</td>
                             <td colspan="2">/v1.0/*</td>
                             <td colspan="2">^/v1.0/.*</td>
-                            <td colspan="1">50/second</td>
+                            <td colspan="1">50/minute</td>
                         </tr>
                     </tbody>
                 </table>
