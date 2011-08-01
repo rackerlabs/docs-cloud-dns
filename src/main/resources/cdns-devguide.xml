@@ -2042,6 +2042,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.json" parse="text"/></programlisting>
                 </example>
+                <note>
+                    <para> The following examples show the <emphasis>final</emphasis> successful
+                        response for the asynchronous call. Refer to <xref
+                            linkend="sync_asynch_responses"/> for a description of how the
+                        asynchronous call works.</para>
+                </note>
                 <example><?dbfo keep-together="always"?>
                     <title>Export Domain Response: XML</title>
                     <?dbfo keep-together="auto"?>
@@ -2222,6 +2228,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.json" parse="text"/></programlisting>
                 </example>
+                <note>
+                    <para> The following examples show the <emphasis>final</emphasis> successful
+                        response for the asynchronous call. Refer to <xref
+                            linkend="sync_asynch_responses"/> for a description of how the
+                        asynchronous call works.</para>
+                </note>
                 <example>
                     <title>Import Domain Response: XML</title>
                     <?dbfo keep-together="auto"?>
@@ -2704,6 +2716,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-add-records-request.json" parse="text"/></programlisting>
                 </example>
+                <note>
+                    <para> The following examples show the <emphasis>final</emphasis> successful
+                        response for the asynchronous call. Refer to <xref
+                            linkend="sync_asynch_responses"/> for a description of how the
+                        asynchronous call works.</para>
+                </note>
                 <example>
                     <title>Add Records Response: XML</title>
                     <?dbfo keep-together="always"?>
