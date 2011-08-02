@@ -149,6 +149,10 @@
                                         response.</para>
                                 </listitem>
                                 <listitem>
+                                    <para>Updated table of Default Rate Limits in <xref
+                                            linkend="Rate_Limits-d1e1222"/></para>
+                                </listitem>
+                                <listitem>
                                     <para>Added new <xref linkend="Domain_Limits"/>.</para>
                                 </listitem>
                                 <listitem>
@@ -827,6 +831,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         ^/v1.0/<parameter>1234</parameter>/domains would match the bolded portion of
                     the following URI: https://dns.api.rackspacecloud.com<emphasis role="bold"
                         >/v1.0/1234/domains</emphasis>. </para>
+                <para>The following table specifies the default rate limits for all api operations
+                    for all &GET;, &POST;, &PUT;, and &DELETE; of domains, subdomains, or records: </para>
                 <table rules="all">
                     <caption>Default Rate Limits</caption>
                     <thead>
@@ -840,50 +846,56 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">5/second</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">100/minute</td>
                         </tr>
                         <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">  /v\d+\.\d+/\d+/status/*  </td>
+                            <td colspan="2">  /v\d+\.\d+/(\d+/status).*  </td>
+                            <td colspan="1">5/second</td>
+                        </tr>
+                        <tr>
                             <td colspan="1">&POST;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">2/second</td>
                         </tr>
                         <tr>
                             <td colspan="1">&POST;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">25/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&PUT;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">5/second</td>
                         </tr>
                         <tr>
                             <td colspan="1">&PUT;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">50/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&DELETE;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">2/second</td>
                         </tr>
                         <tr>
                             <td colspan="1">&DELETE;</td>
-                            <td colspan="2">/v1.0/*</td>
-                            <td colspan="2">^/v1.0/.*</td>
+                            <td colspan="2"> /v\d+\.\d+/* </td>
+                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
                             <td colspan="1">50/minute</td>
                         </tr>
                     </tbody>
@@ -895,7 +907,14 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para> If you exceed the thresholds established for your account, a <errorcode>413
                         (Rate Control)</errorcode> HTTP response will be returned with a
                         <code>Reply-After</code> header to notify the client when they can attempt
-                    to try again. </para>
+                    to try again. <note>
+                        <para>The third entry in the Default Rate Limits table above is for simple
+                            STATUS calls after a POST or PUT, to retrieve the status details, for
+                            example: <link
+                                xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
+                                >https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</link>.
+                            This status call has a limit of 5 requests per second. </para>
+                    </note></para>
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
