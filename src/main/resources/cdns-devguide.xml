@@ -831,7 +831,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         ^/v1.0/<parameter>1234</parameter>/domains would match the bolded portion of
                     the following URI: https://dns.api.rackspacecloud.com<emphasis role="bold"
                         >/v1.0/1234/domains</emphasis>. </para>
-                <para>The following table specifies the default rate limits for all api operations
+                <para>The following table specifies the default rate limits for all API operations
                     for all &GET;, &POST;, &PUT;, and &DELETE; calls for domains, subdomains, or
                     records: </para>
                 <table rules="all">
@@ -907,8 +907,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     second because the rate limit for any &POST; is 2 per second. </para>
                 <para> If you exceed the thresholds established for your account, a <errorcode>413
                         (Rate Control)</errorcode> HTTP response will be returned with a
-                        <code>Reply-After</code> header to notify the client when they can attempt
-                    to try again. <note>
+                        <code>Reply-After</code> header to notify the client when it can attempt to
+                    try again. <note>
                         <para>The third entry in the Default Rate Limits table above is for simple
                             STATUS calls after a &POST; or &PUT;, to retrieve the status details,
                             for example: <link
