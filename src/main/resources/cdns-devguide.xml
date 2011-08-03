@@ -909,8 +909,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <code>Reply-After</code> header to notify the client when they can attempt
                     to try again. <note>
                         <para>The third entry in the Default Rate Limits table above is for simple
-                            STATUS calls after a POST or PUT, to retrieve the status details, for
-                            example: <link
+                            STATUS calls after a &POST; or &PUT;, to retrieve the status details,
+                            for example: <link
                                 xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
                                 >https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</link>.
                             This status call has a limit of 5 requests per second. </para>
