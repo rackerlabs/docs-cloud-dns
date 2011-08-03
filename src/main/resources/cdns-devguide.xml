@@ -159,7 +159,18 @@
                                     <para>Added new <xref linkend="Record_Limits"/>.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Added new <xref linkend="DNS_faults"/>.</para>
+                                    <para>Added new <xref linkend="DNS_faults"/> and replaced the
+                                        following faults throughout the manual:</para>
+                                    <itemizedlist spacing="compact">
+                                        <listitem>
+                                            <para><code>notFound</code> with
+                                                  <code>itemNotFound</code></para>
+                                        </listitem>
+                                        <listitem>
+                                            <para><code>domainExistsFault</code> with
+                                                  <code>itemAlreadyExists</code></para>
+                                        </listitem>
+                                    </itemizedlist>
                                 </listitem>
                             </itemizedlist>
                         </td>
