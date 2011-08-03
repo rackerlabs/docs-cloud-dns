@@ -832,7 +832,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     the following URI: https://dns.api.rackspacecloud.com<emphasis role="bold"
                         >/v1.0/1234/domains</emphasis>. </para>
                 <para>The following table specifies the default rate limits for all api operations
-                    for all &GET;, &POST;, &PUT;, and &DELETE; of domains, subdomains, or records: </para>
+                    for all &GET;, &POST;, &PUT;, and &DELETE; calls for domains, subdomains, or
+                    records: </para>
                 <table rules="all">
                     <caption>Default Rate Limits</caption>
                     <thead>
