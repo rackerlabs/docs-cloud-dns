@@ -1415,55 +1415,74 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Fault Type</td>
-                        <td colspan="2">Associated Error Code</td>
-                        <td colspan="2">Expected in All Requests</td>
+                        <td colspan="1">Associated Error Code</td>
+                        <td colspan="3">Description</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td colspan="2"><code>dnsFault</code></td>
-                        <td colspan="2">500, as well as any of the following others:</td>
-                        <td colspan="2">Yes </td>
+                        <td colspan="1">500, as well as any of the following others:</td>
+                        <td colspan="3">Generic catch-all. Should not be seen as often as the
+                            specific faults below. See the <code>&lt;details></code> element for
+                            more specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>serviceUnavailable</code></td>
-                        <td colspan="2">503</td>
-                        <td colspan="2">Yes</td>
+                        <td colspan="1">503</td>
+                        <td colspan="3">The request could not be processed because back-end services
+                            were temporarily unavailable. This condition should be temporary;
+                            contact support if the error persists.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>unauthorized</code></td>
-                        <td colspan="2">401</td>
-                        <td colspan="2">Yes</td>
+                        <td colspan="1">401</td>
+                        <td colspan="3">User is not authorized to access the API functionality in
+                            question. User may not have authenticated to the API. If you feel you
+                            should have access to the API functionality, contact support.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>badRequest</code></td>
-                        <td colspan="2">400</td>
-                        <td colspan="2">Yes</td>
+                        <td colspan="1">400</td>
+                        <td colspan="3">The request is missing one or more elements, or the values
+                            of some elements are invalid. See the <code>&lt;details></code> element
+                            or <code>&lt;validationErrors></code> element for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>itemNotFound</code></td>
-                        <td colspan="2">404</td>
-                        <td colspan="2"/>
+                        <td colspan="1">404</td>
+                        <td colspan="3">The back-end services did not find anything matching the
+                            Request-URI.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>overLimit</code></td>
-                        <td colspan="2">413</td>
-                        <td colspan="2"/>
+                        <td colspan="1">413</td>
+                        <td colspan="3">Either the number of entities in the request is larger than
+                            allowed limits, or the user has exceeded allowable request rate limits.
+                            See the <code>&lt;details></code> element for more specifics. Contact
+                            support if you think you need higher request rate limits.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>itemAlreadyExists</code></td>
-                        <td colspan="2">409</td>
-                        <td colspan="2"/>
+                        <td colspan="1">409</td>
+                        <td colspan="3">The back-end services could not complete the request due to
+                            a conflict with the current state of the resource. Possibly, user is
+                            trying to create an entity that already exists. See the
+                                <code>&lt;details></code> element for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>deleteFault</code></td>
-                        <td colspan="2">500 and nested other fault codes</td>
-                        <td colspan="2"/>
+                        <td colspan="1">500 and nested other fault codes</td>
+                        <td colspan="3">The back-end services could not successfully delete some of
+                            a number of entities requested to be deleted. See the
+                                <code>&lt;failedItems></code> element for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>internalServerError</code></td>
-                        <td colspan="2">500</td>
-                        <td colspan="2"/>
+                        <td colspan="1">500</td>
+                        <td colspan="3">The back-end services encountered an unexpected condition
+                            that prevented it from fulfilling the request. See the
+                                <code>&lt;details></code> element for specifics.</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -1490,11 +1509,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <title>Example Fault Response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
-  "dnsFault" : {
-     "code" : 500,
-     "message" : "Main fault",
-     "details" : "Error Details"
-   }
+  "message" : "Main fault",
+  "code" : 500,
+  "details" : "Error Details"
 }</programlisting>
             </example>
             <para> The error code is returned in the body of the response for convenience. The
@@ -1521,12 +1538,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <title>Example badRequest Fault on Request Structure Errors: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
-    "badRequest" :
-     {
-        "message":"The request could not be processed.",
-        "code":400,
-        "details":"Unexpected close tag &lt;/domains>; expected &lt;/domain>."
-     }
+  "message":"The request could not be processed.",
+  "code":400,
+  "details":"Unexpected close tag &lt;/domains>; expected &lt;/domain>."
 }</programlisting>
             </example>
             <para> The next two <code>badRequest</code> examples show validation errors.</para>
@@ -1545,18 +1559,15 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <title>Example badRequest Fault on Validation Errors: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
-    "badRequest" :
-      {
-       "validationErrors":
-        {
-          "messages":
-            [
-              "Must provide a name for each domain.",
-              "null is not a valid domain name."
-            ]
-        },
-        "code":400
-     }
+  "validationErrors":
+  {
+    "messages":
+    [
+      "Must provide a name for each domain.",
+      "null is not a valid domain name."
+    ]
+  },
+  "code":400
 }</programlisting>
             </example>
             <para><code>deleteFault</code> adds a <code>&lt;failedItems></code> element that
@@ -1699,7 +1710,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                     <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
                 unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
-                notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                itemNotFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
             <?hard-pagebreak?>
             <section xml:id="list_domains">
                 <title>List Domains</title>
@@ -1736,8 +1747,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>, <errorcode>406</errorcode>), notFound
-                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>, <errorcode>406</errorcode>),
+                    itemNotFound (<errorcode>404</errorcode>), overLimit
+                    (<errorcode>413</errorcode>) </simpara>
                 <para> These calls provide a list of all DNS domains manageable by a given account.
                     The resulting list is flat, and does not break the domains down hierarchically
                     by subdomain. All representative domains are included in the list, even if a
@@ -1904,8 +1916,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <para> This call provides the detailed output for a specific domain configured and
                     associated with an account. This call is not capable of returning details for a
                     domain that has been deleted. </para>
@@ -2037,8 +2049,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <para>This call provides the BIND (Berkeley Internet Name Domain) 9 formatted
                     contents of the requested domain. This call is for a <emphasis>single</emphasis>
                     domain only, and as such, does not traverse up or down the domain hierarchy for
@@ -2108,10 +2120,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Normal Response Code(s): <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
-                        <errorcode>500</errorcode>), domainExistsFault (<errorcode>409</errorcode>),
+                        <errorcode>500</errorcode>), itemAlreadyExists (<errorcode>409</errorcode>),
                     serviceUnavailable (<errorcode>503</errorcode>), unauthorized
                         (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
-                    notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                    itemNotFound (<errorcode>404</errorcode>), overLimit
+                    (<errorcode>413</errorcode>) </simpara>
                 <para> This call provisions one or more new DNS domains under the account specified,
                     based on the configuration defined in the request object. If the corresponding
                     request cannot be fulfilled due to insufficient or invalid data, an
@@ -2193,10 +2206,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
                         <returnvalue>202</returnvalue></simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
-                        <errorcode>500</errorcode>), domainExistsFault (<errorcode>409</errorcode>),
+                        <errorcode>500</errorcode>), itemAlreadyExists (<errorcode>409</errorcode>),
                     serviceUnavailable (<errorcode>503</errorcode>), unauthorized
                         (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
-                    notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                    itemNotFound (<errorcode>404</errorcode>), overLimit
+                    (<errorcode>413</errorcode>) </simpara>
                 <para> This call provisions a new DNS domain under the account specified by the BIND
                     9 formatted file configuration contents defined in the request object.  If the
                     corresponding request cannot be fulfilled due to insufficient or invalid data,
@@ -2301,8 +2315,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara>Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <para>This call modifies DNS domain(s) attributes only. Records cannot be added,
                     modified, or removed. Only the TTL and email address attributes of a domain can
                     be modified. </para>
@@ -2387,8 +2401,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <para> This call removes one or more specified domains from the account; when a
                     domain is deleted, its immediate resource records are also deleted from the
                     account. By default, if a deleted domain had subdomains, each subdomain becomes
@@ -2397,7 +2411,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <code>deleteSubdomains</code> parameter on domains without subdomains does
                     not result in a failure. When a domain is deleted, any and all domain data is
                     immediately purged and is not recoverable via the API. So on a successful
-                    delete, subsequent requests for the deleted object should return notFound
+                    delete, subsequent requests for the deleted object should return itemNotFound
                         (<errorcode>404</errorcode>).</para>
                 <example>
                     <title>Delete Domain Request: XML</title>
@@ -2486,8 +2500,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound
-                    (<errorcode>404</errorcode>)</simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>)</simpara>
                 <para> This call provides a list of all DNS domains that are subdomains of the
                     specified domain. The resulting list is flat, and does not break the domains
                     down hierarchically by subdomain.</para>
@@ -2583,7 +2597,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                     <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
                 unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
-                notFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara> 
+                itemNotFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara> 
             <section xml:id="List_Records-d1e4629">
                 <title>List Records</title>
                 <informaltable rules="all">
@@ -2608,8 +2622,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <note>
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
@@ -2664,8 +2678,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <example>
                     <title>List Record Details Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2717,8 +2731,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <note>
                     <para> When a domain is are created, and no TTL (Time To Live) is specified, a
                         default value of 3600 seconds is used. The domain's TTL value is inherited
@@ -2805,8 +2819,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <note>
                     <para> When the domain and/or record TTL is supplied by the user, either via a
                         create or update call, the TTL values must be 300 seconds or more.</para>
@@ -2868,11 +2882,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
-                    badRequest (<errorcode>400</errorcode>), notFound (<errorcode>404</errorcode>),
-                    overLimit (<errorcode>413</errorcode>) </simpara>
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <para>When a record is deleted, any and all record data is immediately purged and is
                     not recoverable via the API. So on a successful delete, subsequent requests for
-                    the deleted record should return notFound (<errorcode>404</errorcode>).</para>
+                    the deleted record should return itemNotFound
+                    (<errorcode>404</errorcode>).</para>
                 <example>
                     <title>Remove Record Request: XML</title>
                     <?dbfo keep-together="always"?>
