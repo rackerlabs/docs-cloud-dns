@@ -1420,8 +1420,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <para> When an error occurs, the DNS Service returns a fault object containing an HTTP
                 error response code that denotes the type of error. In the body of the response, the
                 system will return additional information about the fault. </para>
-            <para>The following table lists possible fault types with their associated error
-                codes.</para>
+            <para>The following table lists possible fault types with their associated error codes
+                and descriptions.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1435,8 +1435,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="2"><code>dnsFault</code></td>
                         <td colspan="1">500, as well as any of the following others:</td>
                         <td colspan="3">Generic catch-all. Should not be seen as often as the
-                            specific faults below. See the <code>&lt;details></code> element for
-                            more specifics.</td>
+                            specific faults below. See the <code>details</code> element for more
+                            specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>serviceUnavailable</code></td>
@@ -1448,16 +1448,16 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tr>
                         <td colspan="2"><code>unauthorized</code></td>
                         <td colspan="1">401</td>
-                        <td colspan="3">User is not authorized to access the API functionality in
-                            question. User may not have authenticated to the API. If you feel you
+                        <td colspan="3">The user is not authorized to access the API functionality
+                            in question. The user may not have authenticated to the API. If the user
                             should have access to the API functionality, contact support.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>badRequest</code></td>
                         <td colspan="1">400</td>
                         <td colspan="3">The request is missing one or more elements, or the values
-                            of some elements are invalid. See the <code>&lt;details></code> element
-                            or <code>&lt;validationErrors></code> element for specifics.</td>
+                            of some elements are invalid. See the <code>details</code> element or
+                                <code>validationErrors</code> element for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>itemNotFound</code></td>
@@ -1470,30 +1470,30 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="1">413</td>
                         <td colspan="3">Either the number of entities in the request is larger than
                             allowed limits, or the user has exceeded allowable request rate limits.
-                            See the <code>&lt;details></code> element for more specifics. Contact
-                            support if you think you need higher request rate limits.</td>
+                            See the <code>details</code> element for more specifics. Contact support
+                            if you think you need higher request rate limits.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>itemAlreadyExists</code></td>
                         <td colspan="1">409</td>
                         <td colspan="3">The back-end services could not complete the request due to
-                            a conflict with the current state of the resource. Possibly, user is
+                            a conflict with the current state of the resource. Possibly, the user is
                             trying to create an entity that already exists. See the
-                                <code>&lt;details></code> element for specifics.</td>
+                                <code>details</code> element for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>deleteFault</code></td>
                         <td colspan="1">500 and nested other fault codes</td>
                         <td colspan="3">The back-end services could not successfully delete some of
                             a number of entities requested to be deleted. See the
-                                <code>&lt;failedItems></code> element for specifics.</td>
+                                <code>failedItems</code> element for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>internalServerError</code></td>
                         <td colspan="1">500</td>
                         <td colspan="3">The back-end services encountered an unexpected condition
                             that prevented it from fulfilling the request. See the
-                                <code>&lt;details></code> element for specifics.</td>
+                                <code>details</code> element for specifics.</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -1527,14 +1527,15 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </example>
             <para> The error code is returned in the body of the response for convenience. The
                 message section returns a human-readable message that is appropriate for display to
-                the end user. The details section is optional and may contain information, such as a
-                stack trace, useful for tracking down an error. The detail section may or may not be
-                appropriate for display to an end user. </para>
+                the end user. The <code>details</code> section is optional and may contain
+                information, such as a stack trace, useful for tracking down an error. The
+                    <code>details</code> section may or may not be appropriate for display to an end
+                user. </para>
             <para>The fault's root element (for example, <code>dnsFault</code>) may change depending
                 on the type of error. <code>badRequest</code> fault adds a
-                    <code>&lt;validationErrors></code> element that contains a list of error
-                messages for invalid requests. The first two <code>badRequest</code> examples show
-                errors when the request structure is wrong.</para>
+                    <code>validationErrors</code> element that contains a list of error messages for
+                invalid requests. The first two <code>badRequest</code> examples show errors when
+                the request structure is wrong:</para>
             <example>
                 <title>Example badRequest Fault on Request Structure Errors: XML</title>
                 <?dbfo keep-together="always"?>
@@ -1554,7 +1555,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
   "details":"Unexpected close tag &lt;/domains>; expected &lt;/domain>."
 }</programlisting>
             </example>
-            <para> The next two <code>badRequest</code> examples show validation errors.</para>
+            <para> The next two <code>badRequest</code> examples show validation errors:</para>
             <example>
                 <title>Example badRequest Fault on Validation Errors: XML</title>
                 <?dbfo keep-together="always"?>
@@ -1581,8 +1582,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
   "code":400
 }</programlisting>
             </example>
-            <para><code>deleteFault</code> adds a <code>&lt;failedItems></code> element that
-                contains details on entities that could not be deleted.</para>
+            <para><code>deleteFault</code> adds a <code>failedItems</code> element that contains
+                details on entities that could not be deleted:</para>
             <example>
                 <title>Example deleteFault: XML</title>
                 <?dbfo keep-together="always"?>
