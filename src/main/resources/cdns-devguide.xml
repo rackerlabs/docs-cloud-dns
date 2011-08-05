@@ -1525,12 +1525,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
   "details" : "Error Details"
 }</programlisting>
             </example>
-            <para> The error code is returned in the body of the response for convenience. The
-                message section returns a human-readable message that is appropriate for display to
-                the end user. The <code>details</code> section is optional and may contain
-                information, such as a stack trace, useful for tracking down an error. The
-                    <code>details</code> section may or may not be appropriate for display to an end
-                user. </para>
+            <para> The error code (<code>code</code>) is returned in the body of the response for
+                convenience. The <code>message</code> element returns a human-readable message that
+                is appropriate for display to the end user. The <code>details</code> element is
+                optional and may contain information, such as a stack trace, that is useful for
+                tracking down an error. The <code>details</code> element may or may not be
+                appropriate for display to an end user, depending on the role and experience of the
+                end user.</para>
             <para>The fault's root element (for example, <code>dnsFault</code>) may change depending
                 on the type of error. <code>badRequest</code> fault adds a
                     <code>validationErrors</code> element that contains a list of error messages for
