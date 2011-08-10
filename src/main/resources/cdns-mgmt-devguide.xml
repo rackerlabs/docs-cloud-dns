@@ -338,6 +338,178 @@
                     the name. </para>
             </section>
         </section>
+        <section xml:id="general_limits">
+            <title>Limits</title>
+            <para>
+                These API operations allow for the listing of rate and static limit groups within the system. The details
+                of a particular group cannot be changed via the API.
+            </para>
+            <para>
+                A user's limit group assignments determine the extent to which the user may excersize the
+                public API. These limit groups can determine things like how many requests a user can make in a 
+                particular time interval or how many domains they are allowed to create.
+            </para>
+            <section>
+                <title>List Limit Groups</title>
+                <para>This operation displays all limit groups of all types.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits</td>
+                            <td colspan="4">List all limit groups.</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits 
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>List Limit Groups Response: XML</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+                <example>
+                    <title>List Limit Groups Response: JSON</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+            <section>
+                <title>List Limit Group Types</title>
+                <para>This operation displays the different limit group types. A customer is assigned to one group of each type.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits/types</td>
+                            <td colspan="4">List all limit group types</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>List Limit Group Types Response: XML</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+                <example>
+                    <title>List Limit Group Types Response: JSON</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+            <section>
+                <title>List Limit Groups of a Specified Type</title>
+                <para>This operation displays all the limit groups of a specified type.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits/types/<parameter>type</parameter></td>
+                            <td colspan="4">List all limit groups of a specified type</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types/rate_limit
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>List Limit Groups of Type Response: XML</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+                <example>
+                    <title>List Limit Groups of Type Response: JSON</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+            <section>
+                <title>Show Details for a Limit Group</title>
+                <para>This operation displays details of a specified group</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits/<parameter>group</parameter></td>
+                            <td colspan="4">List details of the specified group</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/default_customer_group
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>Show Group Details Response: XML</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+                <example>
+                    <title>Show Group Details Response: JSON</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+        </section>
         <?hard-pagebreak?>
     </chapter>
     <chapter xml:id="API_Operations-d1e2264">
@@ -353,6 +525,165 @@
             for details.</para>
         <remark>Need to add a reference table for each call, with the extra fields that are added
             for that call, and their descriptions.</remark>
+        <section xml:id="user_limits">
+            <title>User Limits</title>
+            <para>
+                These API operations allow for the listing of a user's assigned limit groups as well as for 
+                managing those assignments.
+            </para>
+            <section>
+                <title>List User's Assigned Limit Groups</title>
+                <para>This operation displays the limit groups to which a customer has been assigned.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/<parameter>1234</parameter>/limits</td>
+                            <td colspan="4">List a user's assigned limit groups</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>List Assigned Groups Response: XML</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+                <example>
+                    <title>List Assigned Groups Response: JSON</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+            <section>
+                <title>List User's Assigned Limit Group of a Specified Type</title>
+                <para>This operation displays limit group of the specified type to which a customer has been assigned.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>type</parameter></td>
+                            <td colspan="4">List a user's assigned limit group for the specified type of limit.</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/rate_limit
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>List Assigned Group of Type Response: XML</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+                <example>
+                    <title>List Assigned Group of Type Response: JSON</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+            <section>
+                <title>Assign User to a Limit Group</title>
+                <para>This operation assigns a user to a specific limit group.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&PUT;</td>
+                            <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>name</parameter></td>
+                            <td colspan="4">Assign a user to a specific limit group.</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/high_limit_customer_group
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>201</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>List Assigned Group of Type Request</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+            <section>
+                <title>Return User to the Default Group for a Specific Type</title>
+                <para>This operation removes the specified user from any custom-assigned groups and returns them to the default group for the specified type.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="4">Description</td>
+                            <td colspan="4">Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>type</parameter></td>
+                            <td colspan="4">Assign the user to the default group for the specified type.</td>
+                            <td colspan="4">
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/rate_limit
+                            </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara>
+                    Normal Response Code(s): <returnvalue>201</returnvalue>
+                </simpara>
+                <simpara>
+                    Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                            serviceUnavailable (<errorcode>503</errorcode>), 
+                                            unauthorized (<errorcode>401</errorcode>)
+                </simpara>
+                <example>
+                    <title>Assign Default Group Request</title>
+                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                </example>
+            </section>
+        </section>
         <section xml:id="Domains">
             <title>Domains</title>
             <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
