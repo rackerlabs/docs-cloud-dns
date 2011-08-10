@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-08-09</pubdate>
+        <pubdate>2011-08-10</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -133,7 +133,16 @@
                         <td colspan="4">Summary of Changes</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody><tr align="left">
+                    <td colspan="1">Aug. 10, 2011</td>
+                    <td colspan="4"
+                        ><itemizedlist spacing="compact">
+                            <listitem>
+                                <para>Updated default domain and record limits.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </td>
+                </tr>
                     <tr align="left">
                         <td colspan="1">Aug. 9, 2011</td>
                         <td colspan="4"
@@ -940,7 +949,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </section>
             <section xml:id="Domain_Limits">
                 <title>Domain Limits</title>
-                <para>By default users may have up to 100 domains per Cloud account (including
+                <para>By default users may have up to 500 domains per Cloud account (including
                     sub-domains). When a user submits a request to create new domains and/or
                     sub-domains, the system will only accept the request if the total number of
                     existing plus requested domains and sub-domains is within the account domain
@@ -950,7 +959,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  code="400"&gt;
   &lt;message&gt;The request could not be understood by the server due to malformed syntax.&lt;/message&gt;
-  &lt;details&gt;Limit of 100 domains has been reached.&lt;/details&gt;
+  &lt;details&gt;Limit of 500 domains has been reached.&lt;/details&gt;
 &lt;/badRequest&gt; </programlisting>
                 </para>
                 <note>
@@ -966,7 +975,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </section>
             <section xml:id="Record_Limits">
                 <title>Record Limits</title>
-                <para> By default users may have up to 5000 records per domain per Cloud account.
+                <para> By default users may have up to 500 records per domain per Cloud account.
                     When a user submits a request to create one or more new records, the system will
                     only accept the request if the total number of existing plus requested records
                     is within the account record limit. If the total number of records on a
@@ -976,7 +985,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <programlisting>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  code="400"&gt;
   &lt;message&gt;The request could not be understood by the server due to malformed syntax.&lt;/message&gt;
-  &lt;details&gt;Limit of  5000 records per domain has been  reached.&lt;/details&gt;
+  &lt;details&gt;Limit of 500 records per domain has been  reached.&lt;/details&gt;
 &lt;/badRequest&gt; </programlisting>
                 </para>
                 <note>
