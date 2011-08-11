@@ -143,12 +143,24 @@
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para>Initial version to be published.</para>
+                                    <para>Initial version published.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
                     </tr>
-                    
+                    <tr align="left">
+                        <td colspan="1">Aug. X, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Added <xref linkend="general_limits"/>.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Added <xref linkend="user_limits"/></para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr> 
                 </tbody>
             </table>
         </section>
@@ -340,18 +352,34 @@
         </section>
         <section xml:id="general_limits">
             <title>Limits</title>
-            <para>
-                These API operations allow for the listing of rate and static limit groups within the system. The details
-                of a particular group cannot be changed via the API.
-            </para>
-            <para>
-                A user's limit group assignments determine the extent to which the user may excersize the
-                public API. These limit groups can determine things like how many requests a user can make in a 
-                particular time interval or how many domains they are allowed to create.
-            </para>
-            <section>
+            <para>There are two types of limits:<itemizedlist>
+                    <listitem>
+                        <para><emphasis>absolute</emphasis> limits &ndash; limits that are fixed
+                            (such as domain and record limits), and once exceeded cannot
+                            reset</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>dynamic</emphasis> limits &ndash; limits that reset after a
+                            period of time (such as rate limits)</para>
+                    </listitem>
+                </itemizedlist>Each user belongs to multiple <emphasis>limit groups</emphasis> that
+                define what these limits are. For example, a rate group is a specific type of limit
+                group (whose type is <code>rate_limit</code>), which specifies how many requests a
+                user can make in a particular time interval.</para>
+            <para> The only operations permitted via the API are viewing the limit groups and
+                assigning users to limit groups. You cannot change the limit group values via the
+                API, nor can you add or delete limit groups.</para>
+            <para> A user's limit group assignments determine the extent to which the user is
+                allowed to exercise the public API. Limit group assignments can determine things
+                like how many requests a user can make in a particular time interval (dynamic rate
+                limit) or how many domains a user can create (absolute limit). For information about
+                viewing and managing the assignments to limit groups, refer to <xref
+                    linkend="user_limits"/>.</para>
+            <para>The API operations described in this section list the absolute and dynamic limit
+                groups for the system. </para>
+            <section xml:id="list_limit_groups">
                 <title>List Limit Groups</title>
-                <para>This operation displays all limit groups of all types.</para>
+                <para>This operation displays all the limit groups of all types.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -389,9 +417,10 @@
                     <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
                 </example>
             </section>
-            <section>
+            <section xml:id="limit_group_types">
                 <title>List Limit Group Types</title>
-                <para>This operation displays the different limit group types. A customer is assigned to one group of each type.</para>
+                <para>This operation displays the different limit group types. A customer is
+                    assigned to one limit group of each type.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -405,7 +434,7 @@
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/types</td>
-                            <td colspan="4">List all limit group types</td>
+                            <td colspan="4">List all limit group types.</td>
                             <td colspan="4">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types
                             </td>
@@ -429,9 +458,9 @@
                     <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
                 </example>
             </section>
-            <section>
+            <section xml:id="limit_groups_of_specified_type">
                 <title>List Limit Groups of a Specified Type</title>
-                <para>This operation displays all the limit groups of a specified type.</para>
+                <para>This operation displays all the limit groups of the specified type.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -445,7 +474,7 @@
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/types/<parameter>type</parameter></td>
-                            <td colspan="4">List all limit groups of a specified type</td>
+                            <td colspan="4">List all limit groups of a specified type.</td>
                             <td colspan="4">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types/rate_limit
                             </td>
@@ -469,9 +498,9 @@
                     <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
                 </example>
             </section>
-            <section>
+            <section xml:id="show_limit_group_details">
                 <title>Show Details for a Limit Group</title>
-                <para>This operation displays details of a specified group</para>
+                <para>This operation displays the details for a specified limit group.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -485,7 +514,7 @@
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/<parameter>group</parameter></td>
-                            <td colspan="4">List details of the specified group</td>
+                            <td colspan="4">List details of the specified group.</td>
                             <td colspan="4">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/default_customer_group
                             </td>
@@ -516,10 +545,10 @@
         <title>Extended Customer API Operations</title>
         <para>These API operations relate to support of DNS service activities on behalf of a
             specific customer. The scope of these operations is narrow, relating to the needs of a
-            single customer. A customer might directly request these operations but only Rackers are
-            authorized to perform them. Rackers might also perform these operations to limit or
-            terminate a specific customer's activities when that customer appears to be disrupting
-            the overall operational environment.</para>
+            single customer. A customer might directly request these operations, however only
+            Rackers are authorized to perform them. Rackers might also perform these operations to
+            limit or terminate a specific customer's activities when that customer appears to be
+            disrupting the overall operational environment.</para>
         <para>These operations for the DNS Service Management API typically return some additional
             fields of information, as compared with the Service API. Refer to the following sections
             for details.</para>
@@ -527,13 +556,14 @@
             for that call, and their descriptions.</remark>
         <section xml:id="user_limits">
             <title>User Limits</title>
-            <para>
-                These API operations allow for the listing of a user's assigned limit groups as well as for 
-                managing those assignments.
-            </para>
-            <section>
+            <para> The API operations described in this section list a user's assigned limit groups
+                and manage those limit group assignments. A user is assigned to a set of default
+                limit groups (one of each type) when the account is created. Using the API
+                operations in this section, users can be custom-assigned to different groups and/or
+                returned to default groups.</para>
+            <section xml:id="list_users_assigned_limit_groups">
                 <title>List User's Assigned Limit Groups</title>
-                <para>This operation displays the limit groups to which a customer has been assigned.</para>
+                <para>This operation displays the limit groups to which a user is assigned.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -547,7 +577,7 @@
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/<parameter>1234</parameter>/limits</td>
-                            <td colspan="4">List a user's assigned limit groups</td>
+                            <td colspan="4">List a user's assigned limit groups.</td>
                             <td colspan="4">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits
                             </td>
@@ -571,9 +601,10 @@
                     <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
                 </example>
             </section>
-            <section>
+            <section xml:id="list_users_assigned_limit_group_of_specified_type">
                 <title>List User's Assigned Limit Group of a Specified Type</title>
-                <para>This operation displays limit group of the specified type to which a customer has been assigned.</para>
+                <para>This operation displays the limit group of the specified type to which the
+                    user has been assigned.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -611,9 +642,9 @@
                     <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
                 </example>
             </section>
-            <section>
+            <section xml:id="assign_user_to_limit_group">
                 <title>Assign User to a Limit Group</title>
-                <para>This operation assigns a user to a specific limit group.</para>
+                <para>This operation assigns a user to a specified limit group.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -627,7 +658,7 @@
                         <tr align="left">
                             <td colspan="1">&PUT;</td>
                             <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>name</parameter></td>
-                            <td colspan="4">Assign a user to a specific limit group.</td>
+                            <td colspan="4">Assign a user to a specified limit group.</td>
                             <td colspan="4">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/high_limit_customer_group
                             </td>
@@ -643,13 +674,15 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
-                    <title>List Assigned Group of Type Request</title>
+                    <title>Assign User to Limit Group Request</title>
                     <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
                 </example>
             </section>
-            <section>
+            <section xml:id="return_user_to_default_group_for_specific_type">
                 <title>Return User to the Default Group for a Specific Type</title>
-                <para>This operation removes the specified user from any custom-assigned groups and returns them to the default group for the specified type.</para>
+                <para>This operation removes the specified user from any custom-assigned groups
+                    (groups to which they have been assigned using the Assign User to a Limit Group
+                    call) and returns them to the default group for the specified type.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
