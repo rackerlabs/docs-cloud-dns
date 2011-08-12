@@ -31,6 +31,7 @@
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
+      xml:id="cdns-mgmt"
       version="5.0">
     
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
@@ -871,21 +872,21 @@
                 <example>
                     <title>List Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domains Response: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domains Response: JSON</title>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <note>
                     <para>Since the current set of 10 records in the previous response examples
@@ -915,46 +916,46 @@
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.json" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <para><?rax-fo keep-with-next?> The response matches one domain:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-domain-by-name-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <para><?rax-fo keep-with-next?> In the following example, the specified search
                         name is <code>sub1.secondlevel434706.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.json" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <para>The response matches one subdomain:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-name-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <para>
                         <?rax-fo keep-with-next?>In the following example, the specified search name
@@ -962,23 +963,23 @@
                     <example>
                         <title>Filter by Partial Name Request: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <example>
                         <title>Filter by Partial Name Request: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <para><?rax-fo keep-with-next?> The response matches one subdomain:</para>
                     <example>
                         <title>Filter by Partial Name Response: XML</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <example>
                         <title>Filter by Partial Name Response: JSON</title>
                         <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.json" parse="text"/></programlisting>
+                        <programlisting language="xml"><xi:include href="samples/dns-filter-subdomain-by-partial-name-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                 </section>
             </section>
@@ -1056,22 +1057,22 @@
                 <example>
                     <title>List Domain Details with Records, no Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details with Records, no Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details with Records, no Subdomains Response: XML</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details with Records, no Subdomains Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-no-subdomains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>The following examples show the parameter settings to return information for
                     both records and subdomains
@@ -1080,22 +1081,22 @@
                 <example>
                     <title>List Domain Details with Records and Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details with Records and Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details with Records and Subdomains Response: XML</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details with Records and Subdomains Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-with-records-and-subdomains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>The following examples show the parameter settings to return basic information
                     only, without records or subdomains
@@ -1104,22 +1105,22 @@
                 <example>
                     <title>List Domain Details, no Records, no Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details, no Records, no Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Domain Details, no Records, no Subdomains Response: XML</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example><?dbfo keep-together="always"?>
                     <title>List Domain Details, no Records, no Subdomains Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-domain-details-no-records-no-subdomains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <?hard-pagebreak?>
@@ -1169,22 +1170,22 @@
                 <example>
                     <title>Export Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Export Domain Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example><?dbfo keep-together="always"?>
                     <title>Export Domain Response: XML</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-export-domain-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Export Domain Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-export-domain-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-export-domain-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="create_domains">
@@ -1247,22 +1248,22 @@
                 <example>
                     <title>Create Domain(s) Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Create Domain(s) Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example xml:id="create_domains_resp">
                     <title>Create Domain(s) Response: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-create-domains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Create Domain(s) Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="samples/dns-create-domains-response.json"><xi:include href="samples/dns-create-domains-response.json" parse="text"/></programlisting>
+                    <programlisting language="samples/dns-create-domains-response.json"><xi:include href="samples/dns-create-domains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <?hard-pagebreak?>
@@ -1341,22 +1342,22 @@
                 <example xml:id="import_domain_request_xml">
                     <title>Import Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Import Domain Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Import Domain Response: XML</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-import-domains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Import Domain Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-import-domains-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-import-domains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="Modify_Domain_s_-d1e3848">
@@ -1415,22 +1416,22 @@
                 <example>
                     <title>Modify Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-domain-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domain-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Modify Domain Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-domain-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domain-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Modify Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Modify Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-domains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="Remove_Domain_s_-d1e4022">
@@ -1494,42 +1495,42 @@
                 <example>
                     <title>Delete Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domain Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domain and Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domain and Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domain-subdomains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domains and Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domains and Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-domains-subdomains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
@@ -1541,12 +1542,12 @@
                 <example>
                     <title>Delete Domains and Subdomains Response (Failure): XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Domains and Subdomains Response (Failure): JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-delete-multi-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>In the previous two response examples, the requested domain objects could not
                     be deleted, since they were not found.</para>
@@ -1592,22 +1593,22 @@
                 <example>
                     <title>List Subdomains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Subdomains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Subdomains Response: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Subdomains Response: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-subdomains-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
         </section>
@@ -1710,22 +1711,22 @@
             <example>
                 <title>List Records Request: XML</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-list-records-request.xml" parse="text"/></programlisting>
+                <programlisting language="xml"><xi:include href="samples/dns-list-records-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
                 <example>
                     <title>List Records Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-records-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-records-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             <example>
                 <title>List Records Response: XML</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-list-records-response.xml" parse="text"/></programlisting>
+                <programlisting language="xml"><xi:include href="samples/dns-list-records-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <example>
                 <title>List Records Response: JSON</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="javascript"><xi:include href="samples/dns-list-records-response.json" parse="text"/></programlisting>
+                <programlisting language="javascript"><xi:include href="samples/dns-list-records-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             </section>
             <section xml:id="List_Record_Details-d1e4770">
@@ -1759,22 +1760,22 @@
                 <example>
                     <title>List Record Details Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Record Details Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml">  <xi:include href="samples/dns-list-record-details-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Record Details Response: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-list-record-details-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-list-record-details-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Record Details Response: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-list-record-details-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-list-record-details-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <?hard-pagebreak?>
@@ -1818,22 +1819,22 @@
                 <example>
                     <title>Add Records Request: XML</title>
                     <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-add-records-request.xml" parse="text"/></programlisting>
+                <programlisting language="xml"><xi:include href="samples/dns-add-records-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                 <example>
                     <title>Add Records Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-add-records-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-add-records-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Add Records Response: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-add-records-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-add-records-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Add Records Response: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="javascript"><xi:include href="samples/dns-add-records-response.json" parse="text"/></programlisting>
+                    <programlisting language="javascript"><xi:include href="samples/dns-add-records-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>                
             </section>
             <?hard-pagebreak?>
@@ -1878,22 +1879,22 @@
                 <example>
                     <title>Modify Record Configuration Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-record-config-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-record-config-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Modify Record Configuration Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-record-config-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-record-config-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Modify Records Configuration Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-records-config-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-records-config-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Modify Records Configuration Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-modify-records-config-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-modify-records-config-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <?hard-pagebreak?>
@@ -1939,22 +1940,22 @@
                 <example>
                     <title>Remove Record Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-remove-record-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-record-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Remove Record Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-remove-record-request.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-record-request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Remove Records Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Remove Records Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
@@ -1966,12 +1967,12 @@
                 <example>
                     <title>Delete Records Response (Failure): XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.xml" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Delete Records Response (Failure): JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"/></programlisting>
+                    <programlisting language="xml"><xi:include href="samples/dns-remove-records-failure-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>In the previous two response examples, the requested record objects could not
                     be deleted, since they were not found.</para>
