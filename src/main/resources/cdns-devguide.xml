@@ -76,7 +76,7 @@
             customers. Interactions with Rackspace Cloud DNS occur programmatically via the
             Rackspace Cloud DNS API as described in this Cloud DNS Developer Guide.</para>
         <note>
-            <para> DNS propagation may take up to 15 minutes. </para>
+            <para> DNS propagation may take up to 15 minutes.</para>
         </note>
         <para>The following figure shows an overview of Cloud DNS Infrastructure:
 	<informalfigure>
