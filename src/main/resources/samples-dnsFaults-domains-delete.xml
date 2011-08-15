@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deleteFault xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="500">
+    <message>One or more items could not be deleted.</message>
+    <details>See errors list for details.</details>
+    <failedItems>
+        <fault code="404">
+            <message>Object not Found.</message>
+            <details>Domain ID: 1111111</details>
+        </fault>
+        <fault code="404">
+            <message>Object not Found.</message>
+            <details>Domain ID: 111114</details>
+        </fault>
+    </failedItems>
+</deleteFault>

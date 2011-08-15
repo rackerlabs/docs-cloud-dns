@@ -1,0 +1,25 @@
+POST https://dns.api.rackspacecloud.com/v1.0/1234/domains
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 1316
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domains xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.org/2005/Atom">
+    <domain name="example.com" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment...">
+        <recordsList>
+            <record type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"/>
+            <record type="A" name="example.com" data="192.0.2.17" ttl="86400"/>
+            <record type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600"/>
+            <record type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600"/>
+            <record type="MX" name="example.com" data="mail.example.com" ttl="3600" priority="5"/>
+            <record type="CNAME" name="www.example.com" data="example.com" ttl="5400" comment="This is a comment on the CNAME record"/>
+        </recordsList>
+        <subdomains>
+            <domain name="sub1.example.com" comment="1st sample subdomain"/>
+            <domain name="sub2.example.com" comment="1st sample subdomain"/>
+            <domain name="north.example.com"/>
+            <domain name="south.example.com" comment="Final sample subdomain"/>
+        </subdomains>
+    </domain>
+</domains>

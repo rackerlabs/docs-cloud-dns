@@ -1,5 +1,0 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains/2720150/records/MX-3150315
-
-	<record data="mail.testingorwhat3.com" name="testingorwhat3.com"
-		ttl="4544">
-	</record>

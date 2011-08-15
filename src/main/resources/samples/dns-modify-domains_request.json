@@ -1,0 +1,17 @@
+PUT https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 221
+
+{
+  "domains" : [ {
+    "id" : 2725233,
+    "comment" : "Optional domain comment...",
+    "emailAddress" : "sample@rackspace.com",
+    "ttl" : 3600
+  }, {
+    "id" : 2725257,
+    "comment" : "1st sample subdomain"
+  } ]
+}

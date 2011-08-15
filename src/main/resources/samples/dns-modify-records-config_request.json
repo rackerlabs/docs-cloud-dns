@@ -1,0 +1,17 @@
+PUT https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725233/records
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 221
+
+{
+  "records" : [ {
+    "name" : "example.com",
+    "id" : "MX-3151218",
+    "data" : "mail.example.com",
+    "ttl" : 3600
+  }, {
+    "id" : "CNAME-9778009",
+    "comment" : "This is a comment on the CNAME record"
+  } ]
+}

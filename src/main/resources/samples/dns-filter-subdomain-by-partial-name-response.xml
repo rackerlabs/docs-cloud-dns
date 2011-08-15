@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" totalEntries="1">
-    <domain id="2725257" name="sub1.rtb0007.com" updated="2011-06-23T03:09:34Z"
-        created="2011-06-23T03:09:33Z" comment="testing subs and records flags" />
-</domains>

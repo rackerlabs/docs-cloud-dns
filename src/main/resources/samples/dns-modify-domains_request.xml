@@ -1,0 +1,11 @@
+PUT https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 405
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domains xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.org/2005/Atom">
+    <domain id="2725233" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment..."/>
+    <domain id="2725257" comment="1st sample subdomain"/>
+</domains>

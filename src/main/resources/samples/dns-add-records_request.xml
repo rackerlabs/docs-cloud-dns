@@ -1,0 +1,15 @@
+POST https://dns.api.rackspacecloud.com/v1.0/1234/domains/com.rackspace.cloud.dns.api:dns-docs:jar:1.0.1-SNAPSHOT/records
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 777
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordslist xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.org/2005/Atom">
+    <record type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"/>
+    <record type="A" name="example.com" data="192.0.2.17" ttl="86400"/>
+    <record type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600"/>
+    <record type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600"/>
+    <record type="MX" name="example.com" data="mail.example.com" ttl="3600" priority="5"/>
+    <record type="CNAME" name="www.example.com" data="example.com" ttl="5400" comment="This is a comment on the CNAME record"/>
+</recordslist>

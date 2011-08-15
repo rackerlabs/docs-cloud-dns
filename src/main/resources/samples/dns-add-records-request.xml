@@ -1,5 +1,0 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725352/records/
-<recordsList xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
-    <record type="CNAME" data="dev.secondlevel434706.com" name="sub.secondlevel434706.com"/>
-    <record type="A" data="172.23.2.212" name="secondlevel434706.com"/>
-</recordsList>

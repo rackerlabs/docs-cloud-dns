@@ -39,6 +39,671 @@
             </resource>
         </resources>
         <plugins>
+        
+        	<!--+++++++++++++++++++++++++++++++++-->
+        	<!--+++++++++++++++++++++++++++++++++-->        	
+			<!-- BEGIN Samples Generation Config -->
+        	<!--+++++++++++++++++++++++++++++++++-->			
+			<!--+++++++++++++++++++++++++++++++++-->
+            <plugin>
+                <groupId>com.rackspace.cloud.dns.maven.plugin</groupId>
+                <artifactId>generate-samples-maven-plugin</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <dependencies>
+                	<dependency>
+                		<groupId>com.rackspace.cloud.act</groupId>
+                		<artifactId>service</artifactId>
+                		<version>1.0.0.1</version>
+                	</dependency>
+                	<dependency>
+                	    <groupId>com.rackspace.cloud.dns.api.common</groupId>
+                		<artifactId>dns-api-common</artifactId>
+                		<version>1.0.8-SNAPSHOT</version>
+                	</dependency>
+                	<dependency>
+                		<groupId>com.rackspace.cloud.dns.api</groupId>
+                		<artifactId>public-rest-service</artifactId>
+                		<version>1.0.10-SNAPSHOT</version>                	
+                	</dependency>
+                </dependencies>                
+                <executions>
+					<execution>
+		      			<id>g6</id>
+                        <goals>
+                            <goal>generate-samples</goal>
+                        </goals>
+                        <phase>generate-sources</phase>                
+                
+		                <configuration>
+		                    <namespace>http://docs.rackspacecloud.com/dns/api/v1.0</namespace>
+		                    <displayResults>true</displayResults>
+		                    <modules>
+		                        <module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
+		                        <module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule" />
+		                    </modules>
+		                    <outputDir>${basedir}/src/main/resources/samples</outputDir>
+		                    <urlBase>https://dns.api.rackspacecloud.com/v1.0</urlBase>
+		                    <generateJson>true</generateJson>
+		                    <generateXml>true</generateXml>
+		                    <requestHeaders>
+		                        <requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+		                    </requestHeaders>
+		                    <responseHeaders>
+		                        <responseHeader>X-API-VERSION: 1.0.8</responseHeader>
+		                    </responseHeaders>
+		                    <sources>
+
+		                       	<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+								<!-- API BEANS OUTPUTS - domains, domain, links etc    -->
+								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->                   
+		                        <source>
+		                            <data>${basedir}/src/main/resources/samples.xml</data>
+		                            <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+		                            <outputs>
+		                            
+										<!-- dns-list-domain-details-with-records-and-subdomains-request.json -->
+										<!-- dns-list-domain-details-with-records-and-subdomains-request.xml -->
+										<!-- dns-list-domain-details-with-records-and-subdomains-response.json -->
+										<!-- dns-list-domain-details-with-records-and-subdomains-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-list-domain-details-with-records-and-subdomains</nameBase>
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}?showRecords=true&amp;showSubdomains=true</path>
+		                                    <responseBody>
+												<base>domains[0]</base>
+		                                    </responseBody>
+		                                </output>
+		                                
+										<!-- dns-create-domains-request.json -->
+										<!-- dns-create-domains-request.xml -->
+										<!-- dns-create-domains-response.json -->
+										<!-- dns-create-domains-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-create-domains</nameBase>
+		                                    <path>/${domains[0].accountId}/domains</path>
+		                                    <requestType>POST</requestType>
+		                                    <statusCode>202</statusCode>
+		                                        <filters>
+		                                        	<filter>domains[0].accountId</filter>
+		                                            <filter>domains[0].id</filter>
+		                                            <filter>domains[0].updated</filter>
+		                                            <filter>domains[0].created</filter>
+		                                            <filter>domains[0].recordsList.totalEntries</filter>
+		                                            <filter>domains[0].recordsList.records.id</filter>
+		                                            <filter>domains[0].recordsList.records.updated</filter>
+		                                            <filter>domains[0].recordsList.records.created</filter>
+		                                            <filter>domains[0].subdomains.totalEntries</filter>
+		                                            <filter>domains[0].subdomains.domains.id</filter>
+		                                            <filter>domains[0].subdomains.domains.nameservers</filter>
+		                                            <filter>domains[0].subdomains.domains.updated</filter>
+		                                            <filter>domains[0].subdomains.domains.created</filter>
+		                                            <filter>domains[9]</filter>
+		                                            <filter>domains[8]</filter>
+		                                            <filter>domains[7]</filter>
+		                                            <filter>domains[6]</filter>
+		                                            <filter>domains[5]</filter>
+		                                            <filter>domains[4]</filter>
+		                                            <filter>domains[3]</filter>
+		                                            <filter>domains[2]</filter>
+		                                            <filter>domains[1]</filter>
+		                                            <filter>links</filter>
+		                                        </filters>                                    
+		                                    <requestBody>
+		                                    	<filters>
+		                                    		<filter>domains[0].nameservers</filter>
+		                                    		<filter>totalEntries</filter>
+		                                    	</filters>
+		                                    </requestBody>
+		                                    <responseBody/>
+		                                </output>
+		                                
+		                              	<!-- dns-add-records-request.json -->
+										<!-- dns-add-records-request.xml -->
+										<!-- dns-add-records-response.json -->
+										<!-- dns-add-records-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-add-records</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}/records</path>
+		                                    <requestType>POST</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <filters>
+		                                        <filter>accountId</filter>
+		                                    </filters>
+		                                    <requestBody>
+		                                        <base>recordsList</base>
+		                                        <filters>
+		                                            <filter>totalEntries</filter>
+		                                            <filter>records.id</filter>
+		                                            <filter>records.updated</filter>
+		                                            <filter>records.created</filter>
+		                                        </filters>
+		                                    </requestBody>
+		                                    <responseBody>
+		                                        <base>recordsList</base>                                
+		                                    </responseBody>
+		                                </output>
+		 
+		                                <!-- dns-list-domain-details-no-records-no-subdomains-request.json -->
+										<!-- dns-list-domain-details-no-records-no-subdomains-request.xml -->
+										<!-- dns-list-domain-details-no-records-no-subdomains-response.json -->
+										<!-- dns-list-domain-details-no-records-no-subdomains-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-list-domain-details-no-records-no-subdomains</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}?showRecords=false&amp;showSubdomains=false</path>
+		                                    <filters>
+		                                        <filter>recordsList</filter>
+												<filter>subdomains</filter>
+		                                    </filters>
+		                                    <responseBody />
+		                                </output>
+		                                
+										<!-- dns-list-domain-details-with-records-no-subdomains-request.json -->
+										<!-- dns-list-domain-details-with-records-no-subdomains-request.xml -->
+										<!-- dns-list-domain-details-with-records-no-subdomains-response.json -->
+										<!-- dns-list-domain-details-with-records-no-subdomains-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-list-domain-details-with-records-no-subdomains</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}?showRecords=true&amp;showSubdomains=false</path>
+		                                    <filters>
+												<filter>subdomains</filter>
+		                                    </filters>
+		                                    <responseBody />
+		                                </output>
+		
+		
+										<!-- dns-list-domains-request.json -->
+										<!-- dns-list-domains-request.xml -->
+										<!-- dns-list-domains-response.json -->
+										<!-- dns-list-domains-response.xml -->
+										<!-- https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&offset=20 -->
+		                                <output>
+		                                    <nameBase>dns-list-domains</nameBase>
+		                                    <path>/${domains[0].accountId}/domains?limit=10&amp;offset=20</path>
+		                                    <filters>
+		                                    	<filter>domains[0].nameservers</filter>
+		                                    	<filter>domains[0].recordsList</filter>
+												<filter>domains[0].subdomains</filter>
+		                                    </filters>
+		                                    <responseBody>
+		                                    	<filters>
+		                                    		<filter>domains[5]</filter>
+		                                    		<filter>links[4]</filter>
+		                                    		<filter>links[3]</filter>
+		                                    		<filter>links[2]</filter>
+		                                    	</filters>
+		                                    </responseBody>
+		                                </output>
+		
+										<!-- dns-list-records-request.json -->
+										<!-- dns-list-records-request.xml -->
+										<!-- dns-list-records-response.json -->
+										<!-- dns-list-records-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-list-records</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}/records</path>
+		                                    <filters>
+		                                    	<filter>nameservers</filter>
+												<filter>subdomains</filter>
+		                                    </filters>
+		                                    <responseBody>
+		                                    	<base>recordsList</base>
+		                                    </responseBody>
+		                                  
+		                                </output>		
+				
+		
+		 
+										<!-- dns-list-record-details-request.json -->
+										<!-- dns-list-record-details-request.xml -->
+										<!-- dns-list-record-details-response.json -->
+										<!-- dns-list-record-details-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-list-record-details</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}/records/${recordsList.records[1].id}</path>
+											<responseBody>
+												<base>recordsList.records[1]</base>
+											</responseBody>
+		                                </output>
+		                                
+										<!-- dns-list-subdomains-request.json -->
+										<!-- dns-list-subdomains-request.xml -->
+										<!-- dns-list-subdomains-response.json -->
+										<!-- dns-list-subdomains-response.xml -->
+		                                 <output>
+		                                    <nameBase>dns-list-subdomains</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}/subdomains</path>
+											<responseBody>
+											    <base>subdomains</base>
+											</responseBody>
+		                                </output>       
+				
+										<!-- TODO: How to change totalEntries to 1 -->
+										<!-- dns-filter-domain-by-name-request.json -->
+										<!-- dns-filter-domain-by-name-request.xml -->
+										<!-- dns-filter-domain-by-name-response.json -->
+										<!-- dns-filter-domain-by-name-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-filter-domain-by-name</nameBase>
+		                                    <path>/${domains[6].accountId}/domains?name=${domains[6].name}</path>
+		                                	<responseBody>
+		                                		<filters>
+		                                			 <filter>domains[6].accountId</filter>
+		                                		<!-- filter out all but domain[6]. filter in reverse order as items move up the list when you start from top -->
+		                                			<filter>domains[9]</filter>
+		                                 			<filter>domains[8]</filter>
+		                                 			<filter>domains[7]</filter>
+		                                			<filter>domains[5]</filter>
+		                                 			<filter>domains[4]</filter>
+		                                 			<filter>domains[3]</filter>
+		                                			<filter>domains[2]</filter>
+		                                 			<filter>domains[1]</filter>
+		                                 			<filter>domains[0]</filter>
+		                                			<filter>links</filter>                                  			                               			
+		                                		</filters>
+		                                    </responseBody>
+		                                </output>
+		                                
+		                                <!-- How to change totalEntries to 1 on domains element -->
+										<!-- dns-filter-subdomain-by-name-request.json -->
+										<!-- dns-filter-subdomain-by-name-request.xml -->
+										<!-- dns-filter-subdomain-by-name-response.json -->
+										<!-- dns-filter-subdomain-by-name-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-filter-subdomain-by-name</nameBase>
+		                                    <path>/${domains[0].accountId}/domains?name=${domains[1].name}</path>
+		                                	<responseBody>
+		                                		<filters>
+		                                			<filter>domains[9]</filter>
+		                                 			<filter>domains[8]</filter>
+		                                 			<filter>domains[7]</filter>
+		                                			<filter>domains[6]</filter>
+		                                			<filter>domains[5]</filter>
+		                                 			<filter>domains[4]</filter>
+		                                 			<filter>domains[3]</filter>
+		                                			<filter>domains[2]</filter>
+		                                			<filter>domains[1].accountId</filter>
+		                                			<filter>domains[0]</filter>
+		                                			<filter>links</filter>
+		                                		</filters> 
+		                                    </responseBody>
+		                                </output>								
+								
+										<!-- TODO: How to change totalEntries to 1 on domains element  -->
+										<!-- dns-filter-subdomain-by-partial-name-request.json -->
+										<!-- dns-filter-subdomain-by-partial-name-request.xml -->
+										<!-- dns-filter-subdomain-by-partial-name-response.json -->
+										<!-- dns-filter-subdomain-by-partial-name-response.xml -->				
+		                                <output>
+		                                    <nameBase>dns-filter-subdomain-by-partial-name</nameBase>
+		                                    <path>/${domains[0].accountId}/domains?name=sub1.exam</path>
+		                                	<responseBody>
+		                                		<filters>
+		                                			<filter>domains[9]</filter>
+		                                 			<filter>domains[8]</filter>
+		                                 			<filter>domains[7]</filter>
+		                                			<filter>domains[6]</filter>
+		                                			<filter>domains[5]</filter>
+		                                 			<filter>domains[4]</filter>
+		                                 			<filter>domains[3]</filter>
+		                                			<filter>domains[2]</filter>
+		                                			<filter>domains[1].accountId</filter>
+		                                			<filter>domains[0]</filter>
+		                                			<filter>links</filter>
+		                                		</filters> 
+		                                    </responseBody>
+		                                </output>
+		                                
+		                                <!-- dns-delete-domain-request.json -->
+										<!-- dns-delete-domain-request.xml -->
+		                                <output>
+		                                	<nameBase>dns-delete-domain</nameBase>
+		                                	<base>domains[3]</base>
+		                                	<path>/${accountId}/domains/${id}</path>
+		                                	<requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                </output>								
+		        
+								        <!-- dns-delete-domain-subdomains-request.json -->
+										<!-- dns-delete-domain-subdomains-request.xml -->
+		                                <output>
+		                                	<nameBase>dns-delete-domain-subdomains</nameBase>
+		                                	<base>domains[3]</base>
+		                                	<path>/${accountId}/domains/${id}?deleteSubdomains=true</path>
+		                                	<requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                </output>
+		                                
+										<!-- dns-delete-domains-request.json -->
+										<!-- dns-delete-domains-request.xml -->		                               
+		                                <output>
+		                                	<nameBase>dns-delete-domains</nameBase>
+		                                	<path>/${domains[0].accountId}/domains?id=${domains[0].id}&amp;id=${domains[1].id}</path>
+		                                	<requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                </output>
+		                                
+		                                
+										<!-- dns-delete-domains-subdomains-request.json -->
+										<!-- dns-delete-domains-subdomains-request.xml -->
+		                                <output>
+		                                	<nameBase>dns-delete-domains-subdomains</nameBase>
+		                                	<path>/${domains[0].accountId}/domains?id=${domains[0].id}&amp;id=${domains[1].id}&amp;deleteSubdomains=true</path>
+		                                	<requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                </output>
+									
+										
+										<!-- dns-remove-record-request.json -->
+										<!-- dns-remove-record-request.xml -->
+		                                <output>
+		                                	<nameBase>dns-remove-record</nameBase>
+		                                	<base>domains[0]</base>
+		                                	<path>/${accountId}/domains/${id}/records/${recordsList.records[4].id}</path>
+		                                	<requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                </output>                    
+		                    
+		                    
+										<!-- dns-remove-records-request.json -->
+										<!-- dns-remove-records-request.xml -->
+		                                <output>
+		                                	<nameBase>dns-remove-records</nameBase>
+		                                	<base>domains[0]</base>
+		                                	<path>/${accountId}/domains/${id}/records/?id=${recordsList.records[0].id}&amp;id=111111111&amp;id=222222222&amp;id=${recordsList.records[2].id}</path>
+		                                	<requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                </output>                 				     
+		
+										<!-- dns-pagination-list-domains-limit-request.json -->
+										<!-- dns-pagination-list-domains-limit-request.xml -->
+										<!-- dns-pagination-list-domains-limit-response.json -->
+										<!-- dns-pagination-list-domains-limit-response.xml -->
+		                                <output>
+		                                	<nameBase>dns-pagination-list-domains-limit</nameBase>
+		                                	<path>/${domains[0].accountId}/domains?limit=3</path>
+		                                    <statusCode>200</statusCode>
+		                                    <responseBody>
+		                                		<filters>
+		                                			<filter>domains[9]</filter>
+		                                 			<filter>domains[8]</filter>
+		                                 			<filter>domains[7]</filter>
+		                                			<filter>domains[6]</filter>
+		                                			<filter>domains[5]</filter>
+		                                 			<filter>domains[4]</filter>
+		                                 			<filter>domains[0]</filter>
+		                                			<filter>links[4]</filter>
+		                                			<filter>links[3]</filter>                                 			
+		                                			<filter>links[1]</filter>
+		                                			<filter>links[0]</filter>
+		                                		</filters>                                     
+		                                    </responseBody>
+		                                </output>		
+		
+										<!-- dns-pagination-list-domains-limit-offset-request.json -->
+										<!-- dns-pagination-list-domains-limit-offset-request.xml -->
+										<!-- dns-pagination-list-domains-limit-offset-response.json -->
+										<!-- dns-pagination-list-domains-limit-offset-response.xml -->
+		                                <output>
+		                                	<nameBase>dns-pagination-list-domains-limit-offset</nameBase>
+		                                	<path>/${domains[0].accountId}/domains?limit=3&amp;offset=3</path>
+		                                    <statusCode>200</statusCode>
+		                                    <responseBody>
+		                                		<filters>
+		                                			<filter>domains[9]</filter>
+		                                 			<filter>domains[8]</filter>
+		                                 			<filter>domains[7]</filter>
+		                                			<filter>domains[6]</filter>
+		                                			<filter>domains[5]</filter>
+		                                 			<filter>domains[4]</filter>
+		                                 			<filter>domains[0]</filter>
+													<filter>links[2]</filter>                                			
+		                                			<filter>links[1]</filter>
+		                                			<filter>links[0]</filter>
+		                                		</filters>                                     
+		                                    </responseBody>
+		                                </output>
+		
+		
+										<!-- dns-example-response-w-comment.json -->
+										<!-- dns-example-response-w-comment.xml -->
+										<!-- NOTE: no need for request here. Just sample of what response with comment looks like  -->
+										<!-- NOTE: How to get rid of the generated request files or make it empty -->
+		                                <output>
+		                                	<nameBase>dns-example-response-w-comment</nameBase>
+		                                    <statusCode>200</statusCode>
+		                                    <responseBody>
+		                                       <base>domains[0]</base>                                    
+		                                    </responseBody>
+		                                </output>
+		                                   
+										<!-- dns-export-domain-request.json -->
+										<!-- dns-export-domain-request.xml -->
+										<!-- dns-export-domain-response.json -->
+										<!-- dns-export-domain-response.xml -->                                  
+		                                <output>
+		                                   <nameBase>dns-export-domain</nameBase>
+		                                   <base>domains[5]</base>
+		                                   <path>/${accountId}/domains/${id}/export</path>
+		                                   <statusCode>202</statusCode>
+		                                   <responseBody>
+		                                   		<filters>
+		                                   			<filter>name</filter>
+		                                   			<filter>created</filter>
+		                                   			<filter>updated</filter>
+		                                   		</filters>
+		                                   </responseBody>
+		                               </output>   
+		
+										<!-- dns-modify-domain-request.json -->
+										<!-- dns-modify-domain-request.xml -->
+		                                <output>
+		                                    <nameBase>dns-modify-domain</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}</path>
+		                                    <requestType>PUT</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <filters>
+		                                        <filter>accountId</filter>
+		                                    </filters>
+		                                    <requestBody>
+		                                        <filters>
+		                                        	<filter>nameservers</filter>
+		                                        	<filter>recordsList</filter>
+		                                        	<filter>subdomains</filter>
+		                                            <filter>id</filter>
+		                                            <filter>name</filter>
+		                                            <filter>accountId</filter>
+		                                            <filter>updated</filter>
+		                                            <filter>created</filter>
+		                                        </filters>
+		                                    </requestBody>
+		                                </output>								
+																		
+										<!-- dns-modify-domains-request.json -->
+										<!-- dns-modify-domains-request.xml -->
+		                                <output>
+		                                    <nameBase>dns-modify-domains</nameBase>
+		                                    <path>/${domains[0].accountId}/domains/</path>
+		                                    <requestType>PUT</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <requestBody>
+		                                        <filters>
+		                                        	<filter>totalEntries</filter>
+		                                			<filter>domains[9]</filter>
+		                                 			<filter>domains[8]</filter>
+		                                 			<filter>domains[7]</filter>
+		                                			<filter>domains[6]</filter>
+		                                			<filter>domains[5]</filter>
+		                                 			<filter>domains[4]</filter>
+		                                 			<filter>domains[3]</filter>
+		                                 			<filter>domains[2]</filter>
+		                                 			<filter>domains[0].nameservers</filter>
+		                                 			<filter>domains[0].recordsList</filter>
+		                                 			<filter>domains[0].subdomains</filter>
+		                                 			<filter>domains[0].name</filter>
+		                                            <filter>domains[0].accountId</filter>
+		                                            <filter>domains[0].updated</filter>
+		                                            <filter>domains[0].created</filter>
+		                                            <filter>domains[1].name</filter>
+		                                            <filter>domains[1].accountId</filter>
+		                                            <filter>domains[1].updated</filter>
+		                                            <filter>domains[1].created</filter>
+													<filter>links</filter>
+		                                        </filters>
+		                                    </requestBody>
+		                                </output>								
+										
+										<!-- dns-modify-record-config-request.json -->
+										<!-- dns-modify-record-config-request.xml -->
+		                                <output>
+		                                    <nameBase>dns-modify-record-config</nameBase>
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}/records/${domains[0].recordsList.records[4].id}</path>
+		                                    <requestType>PUT</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <requestBody>
+		                                    	<base>domains[0].recordsList.records[4]</base>
+		                                        <filters>
+		                                			<filter>id</filter>
+		                                 			<filter>priority</filter>
+		                                 			<filter>updated</filter>
+		                                			<filter>created</filter>
+		                                			<filter>type</filter>
+		                                        </filters>
+		                                    </requestBody>
+		                                </output>								
+		
+										<!-- TODO: Resolve capitalization issue with recordsList  -->
+										<!-- dns-modify-records-config-request.json -->
+										<!-- dns-modify-records-config-request.xml -->                  
+		                                <output>
+		                                    <nameBase>dns-modify-records-config</nameBase>
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}/records</path>
+		                                    <requestType>PUT</requestType>
+		                                    <requestBody>
+		                                    	<base>domains[0].recordsList</base>
+		                                        <filters>
+		                                        	<filter>totalEntries</filter>
+		                                 			<filter>records[4].priority</filter>
+		                                 			<filter>records[4].updated</filter>
+		                                			<filter>records[4].created</filter>
+		                                			<filter>records[4].type</filter>
+		                                 			<filter>records[5].priority</filter>
+		                                 			<filter>records[5].updated</filter>
+		                                			<filter>records[5].created</filter>
+		                                			<filter>records[5].type</filter>
+		                                			<filter>records[5].name</filter>
+		                                			<filter>records[5].data</filter>
+		                                			<filter>records[5].ttl</filter>
+		                                			<filters>records[3]</filters>
+		                                        	<filters>records[2]</filters>
+		                                        	<filters>records[1]</filters>
+		                                        	<filters>records[0]</filters>                                   			
+		                                        </filters>
+		                                    </requestBody>
+		                                </output>                                        
+		 
+									 	<!-- dns-list-domain-details-basic-response.json -->
+										<!-- dns-list-domain-details-basic-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-list-domain-details-basic</nameBase>
+		                                    <base>domains[0]</base>
+		                                    <path>/${accountId}/domains/${id}</path>
+		                                    <filters>
+		                                    	<filter>accountId</filter>
+		                                    	<filter>nameservers</filter>
+		                                        <filter>recordsList</filter>
+												<filter>subdomains</filter>
+		                                    </filters>
+		                                    <responseBody />
+		                                </output>								                                                                                                  
+		                            </outputs>
+		                        </source>
+		                       
+		                      	
+		                       	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+								<!-- SPECIAL CASES - import domains needs separate samples file   -->
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+		                        <source>
+		                        	<data>${basedir}/src/main/resources/samples-import-domains.xml</data>
+		                        	<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+		                        	<outputs>
+			                            <!-- dns-import-domains-request.json -->
+										<!-- dns-import-domains-request.xml -->
+										<!-- dns-import-domains-response.json -->
+										<!-- dns-import-domains-response.xml -->
+		                                <output>
+		                                    <nameBase>dns-import-domains</nameBase>
+		                                    <path>/${domains[0].accountId}/domains/import</path>
+		                                    <requestType>POST</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <filters>
+		                                    	<filter>totalEntries</filter>
+		                                    </filters>
+		                                   	<requestBody>
+		                                   		<filters>
+		                                   			<filter>domains[1]</filter>
+		                                   		</filters>
+		                                   	</requestBody>
+		                                    <responseBody>
+		                                   		<filters>
+		                                   			<filter>domains[1].recordsList.totalEntries</filter>
+		                                   			<filter>domains[0]</filter>
+		                                   		</filters>                                    
+		                                    </responseBody>
+		                                </output>                                                        
+		                        	</outputs>
+		                        </source>
+		                                          
+		                       	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+								<!-- API FAULTS OUTPUTS - deleteFault, badRequest, dnsFault, etc  -->
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+		                        <source>
+		                            <data>${basedir}/src/main/resources/samples-dnsFaults-domains-delete.xml</data>
+		                            <beanPackage>com.rackspace.cloud.dns.api.faults</beanPackage>
+		                            <outputs>
+		                                                            
+		                                <!-- dns-delete-multi-response.json -->
+										<!-- dns-delete-multi-response.xml -->                   							
+		                                <output>
+		                                	<nameBase>dns-delete-multi</nameBase>
+			                                <requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <responseBody/>
+		                                </output>					
+		                            </outputs>
+		                        </source>
+		                         <source>
+		                            <data>${basedir}/src/main/resources/samples-dnsFaults-records-delete.xml</data>
+		                            <beanPackage>com.rackspace.cloud.dns.api.faults</beanPackage>
+		                            <outputs>
+		                                                            
+										<!-- dns-remove-records-failure-response.json -->
+										<!-- dns-remove-records-failure-response.xml -->                   							
+		                                <output>
+		                                	<nameBase>dns-remove-records-failure</nameBase>
+			                                <requestType>DELETE</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <responseBody/>
+		                                </output>         									
+		                            </outputs>
+		                        </source>
+		                                                       
+		                    </sources>
+		                </configuration>
+            		</execution>
+            	</executions>
+            </plugin>
+        	<!--+++++++++++++++++++++++++++++++++-->
+        	<!--+++++++++++++++++++++++++++++++++-->        	
+			<!-- END Samples Generation Config   -->
+			<!--+++++++++++++++++++++++++++++++++-->
+        	<!--+++++++++++++++++++++++++++++++++-->
+
             <plugin>
                 <groupId>com.rackspace.cloud.api</groupId>
                 <artifactId>clouddocs-maven-plugin</artifactId>
@@ -75,7 +740,7 @@
 		    <highlightSource>false</highlightSource>
                 </configuration>
             </plugin>
-	    <plugin>
+	    	<plugin>
                 <!-- this is not needed for the documentation, but sure helps when importing this project to eclipse! -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -129,7 +794,6 @@
                     <inputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide</inputDirectory>
                 </configuration>
             </plugin>
-
 		</plugins>
         <extensions>
             <extension>

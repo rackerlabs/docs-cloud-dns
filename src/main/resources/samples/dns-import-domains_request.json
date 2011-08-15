@@ -1,0 +1,17 @@
+POST https://dns.api.rackspacecloud.com/v1.0/1234/domains/import
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 514
+
+{
+  "domains" : [ {
+    "name" : "example.net",
+    "id" : 2725339,
+    "contentType" : "BIND_9",
+    "contents" : "\n    \t\texample.net. 3600 IN SOA ns.rackspace.com.\n\t\t\tsample@rackspace.com. 1308874739 3600 3600 3600 3600\n\t\t\texample.net. 86400 IN A 110.11.12.16\n\t\t\texample.net. 3600 IN MX 5 mail2.example.net.\n\t\t\twww.example.net. 5400 IN CNAME example.net.\t\t\n\t\t",
+    "updated" : "2011-06-23T18:35:21.000+0000",
+    "accountId" : 1234,
+    "created" : "2011-06-23T18:35:20.000+0000"
+  } ]
+}

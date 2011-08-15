@@ -1,7 +1,0 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains/2720150/
-
-{
-      "ttl":9500,
-      "comment" : "Optional comment", 
-      "emailAddress":"hostmaster@newzone.com"
-}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom"
+    totalEntries="114">
+    <domain id="2725233" accountId="1234" name="example.com" updated="2011-06-24T01:23:15Z" created="2011-06-24T01:12:51Z"
+        comment="Optional domain comment..." ttl="3600" emailAddress="sample@rackspace.com">
+        <nameservers>
+            <nameserver name="ns.rackspace.com" />
+            <nameserver name="ns2.rackspace.com" />
+        </nameservers>
+        <recordsList totalEntries="6">
+            <record id="A-6817754" type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"
+                updated="2011-05-19T08:07:08-05:00" created="2011-05-18T14:53:09-05:00" />
+            <record id="A-6822994" type="A" name="example.com" data="192.0.2.17" ttl="86400" updated="2011-06-24T01:12:52Z"
+                created="2011-06-24T01:12:52Z" />
+            <record id="NS-6251982" type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600"
+                updated="2011-06-24T01:12:51Z" created="2011-06-24T01:12:51Z" />
+            <record id="NS-6251983" type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600"
+                updated="2011-06-24T01:12:51Z" created="2011-06-24T01:12:51Z" />
+            <record id="MX-3151218" type="MX" name="example.com" data="mail.example.com" ttl="3600" priority="5"
+                updated="2011-06-24T01:12:53Z" created="2011-06-24T01:12:53Z" />
+            <record id="CNAME-9778009" type="CNAME" name="www.example.com" data="example.com" ttl="5400"
+                updated="2011-06-24T01:12:54Z" created="2011-06-24T01:12:54Z" comment="This is a comment on the CNAME record" />
+        </recordsList>
+        <subdomains totalEntries="4">
+            <domain id="2725257" name="sub1.example.com" updated="2011-06-23T03:09:34Z" created="2011-06-23T03:09:33Z"
+                comment="1st sample subdomain" />
+            <domain id="2725258" name="sub2.example.com" updated="2011-06-23T03:52:55Z" created="2011-06-23T03:52:55Z"
+                comment="1st sample subdomain" />
+            <domain id="2725260" name="north.example.com" updated="2011-06-23T03:53:10Z" created="2011-06-23T03:53:09Z" />
+            <domain id="2725261" name="south.example.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z"
+                comment="Final sample subdomain" />
+        </subdomains>
+    </domain>
+    <domain id="2725257" accountId="1234" name="sub1.example.com" updated="2011-06-23T03:09:34Z" created="2011-06-23T03:09:33Z"
+        comment="1st sample subdomain" />
+    <domain id="2725258" accountId="1234" name="sub2.example.com" updated="2011-06-23T03:52:55Z" created="2011-06-23T03:52:55Z"
+        comment="1st sample subdomain" />
+    <domain id="2725260" accountId="1234" name="north.example.com" updated="2011-06-23T03:53:10Z" created="2011-06-23T03:53:09Z" />
+    <domain id="2725261" accountId="1234" name="south.example.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z"
+        comment="Final sample subdomain" />
+
+    <domain id="2725339" accountId="1234" name="example.net" updated="2011-06-23T18:35:21Z" created="2011-06-23T18:35:20Z" contentType="BIND_9">
+    		<contents>
+    		example.net. 3600 IN SOA ns.rackspace.com.
+			sample@rackspace.com. 1308874739 3600 3600 3600 3600
+			example.net. 86400 IN A 110.11.12.16
+			example.net. 3600 IN MX 5 mail2.example.net.
+			www.example.net. 5400 IN CNAME example.net.
+			example.net. 5600 IN NS dns1.stabletransit.com.
+			example.net. 5600 IN NS dns2.stabletransit.com.			
+		</contents>
+	</domain>
+    <domain id="2725352" accountId="1234" name="region2.example.net" updated="2011-06-23T20:21:06Z" created="2011-06-23T19:24:27Z" />
+    <domain id="2718984" accountId="1234" name="example.org" updated="2011-05-03T14:47:32Z" created="2011-05-03T14:47:30Z" />
+    <domain id="2722346" accountId="1234" name="rackspace.example" updated="2011-06-21T15:54:31Z" created="2011-06-15T19:02:07Z"/>
+    <domain id="2722347" accountId="1234" name="dnsaas.example" updated="2011-06-21T15:54:31Z" created="2011-06-15T19:02:07Z"
+        comment="Sample comment" />        
+    <ns2:link href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&amp;offset=10" rel="previous" />
+    <ns2:link href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&amp;offset=30" rel="next" />
+    <ns2:link href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=3" rel="next" />
+    <ns2:link href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=0" rel="previous" />
+    <ns2:link href="https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=3&amp;offset=6" rel="next" />    
+</domains>

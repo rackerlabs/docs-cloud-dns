@@ -1,5 +1,0 @@
-https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725511
-
-OR
-
-https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725511?showRecords=true&showSubdomains=false

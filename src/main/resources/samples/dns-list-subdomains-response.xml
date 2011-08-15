@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<subdomains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-	xmlns:ns2="http://www.w3.org/2005/Atom"
-	totalEntries="1">
-	<domain id="2718342" name="sub1.bbunittestacct2static3.com"
-		updated="2011-04-22T10:42:29-05:00" created="2011-04-22T10:42:29-05:00" />
-</subdomains>
