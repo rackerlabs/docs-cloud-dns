@@ -18,12 +18,23 @@
                     <name>Rackspace Research Repository</name>
                     <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
                 </repository>
+                <repository>
+                    <id>cs-maven-n01.mosso</id>
+                    <name>CS Maven Repository</name>
+                    <url>http://cs-maven-n01.wc1.dfw1.stabletransit.com/m2/content/groups/all-rel</url>                
+                </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
                     <id>rackspace-research</id>
                     <name>Rackspace Research Repository</name>
                     <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+                </pluginRepository>
+     
+                <pluginRepository>
+                    <id>cs-maven-n01.mosso</id>
+                    <name>CS Maven Repository</name>
+                    <url>http://cs-maven-n01.wc1.dfw1.stabletransit.com/m2/content/groups/all-rel</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
@@ -48,7 +59,7 @@
             <plugin>
                 <groupId>com.rackspace.cloud.dns.maven.plugin</groupId>
                 <artifactId>generate-samples-maven-plugin</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>1.0.0</version>
                 <dependencies>
                 	<dependency>
                 		<groupId>com.rackspace.cloud.act</groupId>
@@ -58,12 +69,12 @@
                 	<dependency>
                 	    <groupId>com.rackspace.cloud.dns.api.common</groupId>
                 		<artifactId>dns-api-common</artifactId>
-                		<version>1.0.8-SNAPSHOT</version>
+                		<version>1.0.7</version>
                 	</dependency>
                 	<dependency>
                 		<groupId>com.rackspace.cloud.dns.api</groupId>
                 		<artifactId>public-rest-service</artifactId>
-                		<version>1.0.10-SNAPSHOT</version>                	
+                		<version>1.0.9</version>                	
                 	</dependency>
                 </dependencies>                
                 <executions>
