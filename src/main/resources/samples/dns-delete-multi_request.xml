@@ -1,5 +1,0 @@
-DELETE https://dns.api.rackspacecloud.com/v1.0
-Accept: application/xml
-X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
-Content-Type: application/xml
-Content-Length: 0

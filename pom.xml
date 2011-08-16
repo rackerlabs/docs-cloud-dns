@@ -74,7 +74,13 @@
                 	<dependency>
                 		<groupId>com.rackspace.cloud.dns.api</groupId>
                 		<artifactId>public-rest-service</artifactId>
-                		<version>1.0.9</version>                	
+                		<version>1.0.9</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.infinispan</groupId>
+                                <artifactId>infinispan-core</artifactId>
+                            </exclusion>
+                        </exclusions>                	
                 	</dependency>
                 </dependencies>                
                 <executions>
@@ -87,12 +93,11 @@
                 
 		                <configuration>
 		                    <namespace>http://docs.rackspacecloud.com/dns/api/v1.0</namespace>
-		                    <displayResults>true</displayResults>
 		                    <modules>
 		                        <module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
 		                        <module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule" />
 		                    </modules>
-		                    <outputDir>${basedir}/src/main/resources/samples</outputDir>
+		                    <outputDir>${project.build.directory}/samples</outputDir>
 		                    <urlBase>https://dns.api.rackspacecloud.com/v1.0</urlBase>
 		                    <generateJson>true</generateJson>
 		                    <generateXml>true</generateXml>
@@ -716,39 +721,65 @@
         	<!--+++++++++++++++++++++++++++++++++-->
 
             <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide/content/images</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources/images</directory>
+                                    <excludes>
+                                        <exclude>**/*.ai</exclude>
+                                        <exclude>**/*.svg</exclude>
+                                    </excludes>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.rackspace.cloud.api</groupId>
                 <artifactId>clouddocs-maven-plugin</artifactId>
                 <version>1.0.4</version>
                 <executions>
                     <execution>
-		      <id>g1</id>
+                        <id>g1</id>
                         <goals>
                             <goal>generate-pdf</goal>
                         </goals>
                         <phase>generate-sources</phase>
-			<configuration>
-			  <includes>cdns-mgmt-devguide.xml</includes>
-			  <enableDisqus>0</enableDisqus>
-			</configuration>
+                        <configuration>
+                            <includes>cdns-mgmt-devguide.xml</includes>
+                            <enableDisqus>0</enableDisqus>
+                        </configuration>
                     </execution>
                     <execution>
-		      <id>g2</id>
+                        <id>g2</id>
                         <goals>
                             <goal>generate-pdf</goal>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-			<configuration>
-			  <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
-			  <enableDisqus>1</enableDisqus>
-			  <includes>cdns-devguide.xml</includes>
-			</configuration>
+                        <configuration>
+                            <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
+                            <enableDisqus>1</enableDisqus>
+                            <includes>cdns-devguide.xml</includes>
+                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>src/main/resources</sourceDirectory>
-		    <highlightSource>false</highlightSource>
+                    <highlightSource>false</highlightSource>
                 </configuration>
             </plugin>
 	    	<plugin>
@@ -769,32 +800,6 @@
 					<preparationGoals>clean install</preparationGoals>
 				</configuration>
 			</plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide/content/images</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/src/main/resources/images</directory>
-				    <excludes>
-				      <exclude>**/*.ai</exclude>
-				      <exclude>**/*.svg</exclude>
-				    </excludes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
