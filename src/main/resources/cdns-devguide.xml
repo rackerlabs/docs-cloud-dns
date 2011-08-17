@@ -2846,6 +2846,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <para> When the domain and/or record TTL is supplied by the user, either via a
                         create or update call, the TTL values must be 300 seconds or more.</para>
                 </note>
+                <para>The only attributes that you can modify on a
+                    record (during a &PUT;) are the <code>data</code>,
+                        <code>ttl</code>, and <code>comment</code>
+                    attributes. However, the <code>name</code>
+                    attribute of the record must always be specified
+                    in the modify request as well.</para>
                 <example>
                     <title>Modify Record Configuration Request: XML</title>
                     <?dbfo keep-together="always"?>
