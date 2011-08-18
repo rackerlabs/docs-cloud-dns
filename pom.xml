@@ -178,15 +178,15 @@
 										<!-- dns-add-records-response.xml -->
 		                                <output>
 		                                    <nameBase>dns-add-records</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}/records</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}/records</path>
 		                                    <requestType>POST</requestType>
 		                                    <statusCode>202</statusCode>
 		                                    <filters>
-		                                        <filter>accountId</filter>
+		                                        <filter>domains[0].accountId</filter>
 		                                    </filters>
 		                                    <requestBody>
-		                                        <base>recordsList</base>
+		                                        <base>domains[0].recordsList</base>
 		                                        <filters>
 		                                            <filter>totalEntries</filter>
 		                                            <filter>records.id</filter>
@@ -195,7 +195,7 @@
 		                                        </filters>
 		                                    </requestBody>
 		                                    <responseBody>
-		                                        <base>recordsList</base>                                
+		                                        <base>domains[0].recordsList</base>                                
 		                                    </responseBody>
 		                                </output>
 		 
@@ -205,13 +205,15 @@
 										<!-- dns-list-domain-details-no-records-no-subdomains-response.xml -->
 		                                <output>
 		                                    <nameBase>dns-list-domain-details-no-records-no-subdomains</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}?showRecords=false&amp;showSubdomains=false</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}?showRecords=false&amp;showSubdomains=false</path>
 		                                    <filters>
-		                                        <filter>recordsList</filter>
-												<filter>subdomains</filter>
+		                                        <filter>domains[0].recordsList</filter>
+												<filter>domains[0].subdomains</filter>
 		                                    </filters>
-		                                    <responseBody />
+		                                    <responseBody>
+		                                    	<base>domains[0]</base>
+		                                    </responseBody>
 		                                </output>
 		                                
 										<!-- dns-list-domain-details-with-records-no-subdomains-request.json -->
@@ -220,12 +222,14 @@
 										<!-- dns-list-domain-details-with-records-no-subdomains-response.xml -->
 		                                <output>
 		                                    <nameBase>dns-list-domain-details-with-records-no-subdomains</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}?showRecords=true&amp;showSubdomains=false</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}?showRecords=true&amp;showSubdomains=false</path>
 		                                    <filters>
-												<filter>subdomains</filter>
+												<filter>domains[0].subdomains</filter>
 		                                    </filters>
-		                                    <responseBody />
+		                                    <responseBody>
+		                                    	<base>domains[0]</base>
+		                                    </responseBody>
 		                                </output>
 		
 		
@@ -258,14 +262,14 @@
 										<!-- dns-list-records-response.xml -->
 		                                <output>
 		                                    <nameBase>dns-list-records</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}/records</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}/records</path>
 		                                    <filters>
-		                                    	<filter>nameservers</filter>
-												<filter>subdomains</filter>
+		                                    	<filter>domains[0].nameservers</filter>
+												<filter>domains[0].subdomains</filter>
 		                                    </filters>
 		                                    <responseBody>
-		                                    	<base>recordsList</base>
+		                                    	<base>domains[0].recordsList</base>
 		                                    </responseBody>
 		                                  
 		                                </output>		
@@ -278,10 +282,10 @@
 										<!-- dns-list-record-details-response.xml -->
 		                                <output>
 		                                    <nameBase>dns-list-record-details</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}/records/${recordsList.records[1].id}</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}/records/${domains[0].recordsList.records[1].id}</path>
 											<responseBody>
-												<base>recordsList.records[1]</base>
+												<base>domains[0].recordsList.records[1]</base>
 											</responseBody>
 		                                </output>
 		                                
@@ -291,10 +295,10 @@
 										<!-- dns-list-subdomains-response.xml -->
 		                                 <output>
 		                                    <nameBase>dns-list-subdomains</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}/subdomains</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}/subdomains</path>
 											<responseBody>
-											    <base>subdomains</base>
+											    <base>domains[0].subdomains</base>
 											</responseBody>
 		                                </output>       
 				
@@ -378,8 +382,8 @@
 										<!-- dns-delete-domain-request.xml -->
 		                                <output>
 		                                	<nameBase>dns-delete-domain</nameBase>
-		                                	<base>domains[3]</base>
-		                                	<path>/${accountId}/domains/${id}</path>
+		                                	<!-- <base>domains[3]</base> -->
+		                                	<path>/${domains[3].accountId}/domains/${domains[3].id}</path>
 		                                	<requestType>DELETE</requestType>
 		                                    <statusCode>202</statusCode>
 		                                </output>								
@@ -388,8 +392,8 @@
 										<!-- dns-delete-domain-subdomains-request.xml -->
 		                                <output>
 		                                	<nameBase>dns-delete-domain-subdomains</nameBase>
-		                                	<base>domains[3]</base>
-		                                	<path>/${accountId}/domains/${id}?deleteSubdomains=true</path>
+		                                	<!-- <base>domains[3]</base> -->
+		                                	<path>/${domains[3].accountId}/domains/${domains[3].id}?deleteSubdomains=true</path>
 		                                	<requestType>DELETE</requestType>
 		                                    <statusCode>202</statusCode>
 		                                </output>
@@ -418,8 +422,8 @@
 										<!-- dns-remove-record-request.xml -->
 		                                <output>
 		                                	<nameBase>dns-remove-record</nameBase>
-		                                	<base>domains[0]</base>
-		                                	<path>/${accountId}/domains/${id}/records/${recordsList.records[4].id}</path>
+		                                	<!-- <base>domains[0]</base> -->
+		                                	<path>/${domains[0].accountId}/domains/${domains[0].id}/records/${domains[0].recordsList.records[4].id}</path>
 		                                	<requestType>DELETE</requestType>
 		                                    <statusCode>202</statusCode>
 		                                </output>                    
@@ -429,8 +433,8 @@
 										<!-- dns-remove-records-request.xml -->
 		                                <output>
 		                                	<nameBase>dns-remove-records</nameBase>
-		                                	<base>domains[0]</base>
-		                                	<path>/${accountId}/domains/${id}/records/?id=${recordsList.records[0].id}&amp;id=111111111&amp;id=222222222&amp;id=${recordsList.records[2].id}</path>
+		                                	<!-- <base>domains[0]</base> -->
+		                                	<path>/${domains[0].accountId}/domains/${domains[0].id}/records/?id=${domains[0].recordsList.records[0].id}&amp;id=111111111&amp;id=222222222&amp;id=${domains[0].recordsList.records[2].id}</path>
 		                                	<requestType>DELETE</requestType>
 		                                    <statusCode>202</statusCode>
 		                                </output>                 				     
@@ -503,10 +507,11 @@
 										<!-- dns-export-domain-response.xml -->                                  
 		                                <output>
 		                                   <nameBase>dns-export-domain</nameBase>
-		                                   <base>domains[5]</base>
-		                                   <path>/${accountId}/domains/${id}/export</path>
+		                                   <!-- <base>domains[5]</base> -->
+		                                   <path>/${domains[5].accountId}/domains/${domains[5].id}/export</path>
 		                                   <statusCode>202</statusCode>
 		                                   <responseBody>
+		                                   		<base>domains[5]</base>
 		                                   		<filters>
 		                                   			<filter>name</filter>
 		                                   			<filter>created</filter>
@@ -519,14 +524,15 @@
 										<!-- dns-modify-domain-request.xml -->
 		                                <output>
 		                                    <nameBase>dns-modify-domain</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}</path>
 		                                    <requestType>PUT</requestType>
 		                                    <statusCode>202</statusCode>
 		                                    <filters>
-		                                        <filter>accountId</filter>
+		                                        <filter>domains[0].accountId</filter>
 		                                    </filters>
 		                                    <requestBody>
+		                                    	<base>domains[0]</base>
 		                                        <filters>
 		                                        	<filter>nameservers</filter>
 		                                        	<filter>recordsList</filter>
@@ -612,7 +618,6 @@
 		                                 			<filter>records[5].updated</filter>
 		                                			<filter>records[5].created</filter>
 		                                			<filter>records[5].type</filter>
-		                                			<filter>records[5].name</filter>
 		                                			<filter>records[5].data</filter>
 		                                			<filter>records[5].ttl</filter>
 		                                			<filters>records[3]</filters>
@@ -627,15 +632,17 @@
 										<!-- dns-list-domain-details-basic-response.xml -->
 		                                <output>
 		                                    <nameBase>dns-list-domain-details-basic</nameBase>
-		                                    <base>domains[0]</base>
-		                                    <path>/${accountId}/domains/${id}</path>
+		                                    <!-- <base>domains[0]</base> -->
+		                                    <path>/${domains[0].accountId}/domains/${domains[0].id}</path>
 		                                    <filters>
-		                                    	<filter>accountId</filter>
-		                                    	<filter>nameservers</filter>
-		                                        <filter>recordsList</filter>
-												<filter>subdomains</filter>
+		                                    	<filter>domains[0].accountId</filter>
+		                                    	<filter>domains[0].nameservers</filter>
+		                                        <filter>domains[0].recordsList</filter>
+												<filter>domains[0].subdomains</filter>
 		                                    </filters>
-		                                    <responseBody />
+		                                    <responseBody>
+		                                    	<base>domains[0]</base>
+		                                    </responseBody>
 		                                </output>								                                                                                                  
 		                            </outputs>
 		                        </source>
