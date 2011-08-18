@@ -2755,11 +2755,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <note>
-                    <para> When a domain is are created, and no TTL (Time To Live) is specified, a
-                        default value of 3600 seconds is used. The domain's TTL value is inherited
-                        by the record. When the domain and/or record TTL is supplied by the user,
-                        either via a create or update call, the TTL values must be 300 seconds or
-                        more.</para>
+                    <para> When a domain is created, and no TTL (Time
+                        To Live) is specified, a default value of 3600
+                        seconds is used. The domain's TTL value is
+                        inherited by the record. When the domain
+                        and/or record TTL is supplied by the user,
+                        either via a create or update call, the TTL
+                        values must be 300 seconds or more.</para>
                 </note>
                 <example>
                     <title>Add Records Request: XML</title>
