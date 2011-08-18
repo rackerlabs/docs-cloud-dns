@@ -137,6 +137,12 @@
                     <td colspan="1">Aug. 10, 2011</td>
                     <td colspan="4"
                         ><itemizedlist spacing="compact">
+                                <listitem>
+                                   <para>Added information that the
+                                   <code>name</code> parameter is
+                                   required for modify record(s) API
+                                   calls.</para>
+                                </listitem>
                             <listitem>
                                 <para>Updated default domain and record limits.</para>
                             </listitem>
@@ -1073,7 +1079,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </example>
             <example>
                 <title>Example Response with Comments: JSON</title>
-                <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-response-w-comment_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <para>Notes for comments:<itemizedlist>
@@ -2178,7 +2183,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <example>
                     <title>Create Domain(s) Request: JSON</title>
-                    <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-create-domains_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <note>
@@ -2555,7 +2559,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
             </section>
         </section>
-        <?hard-pagebreak?>
         <section xml:id="Records-d1e4435">
             <title>Records</title>
             <para>In the following examples, <parameter><replaceable>1234</replaceable></parameter>
@@ -2669,7 +2672,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </example>
             <example>
                 <title>List Records Response: JSON</title>
-                <?dbfo keep-together="always"?>
                 <programlisting language="javascript"><xi:include href="../../../target/samples/dns-list-records_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             </section>
@@ -2786,7 +2788,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 </example>
                 <example>
                     <title>Add Records Response: JSON</title>
-                    <?dbfo keep-together="always"?>
                     <programlisting language="javascript"><xi:include href="../../../target/samples/dns-add-records_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <section xml:id="Wildcard_Records">
