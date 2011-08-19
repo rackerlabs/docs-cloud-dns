@@ -278,74 +278,22 @@
                 <example>
                     <title>Search Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">https://dns.api.mgmt.rackspacecloud.com/v1.0/search?name=rackspace</programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-search-domains_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-search-domains_request.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Search Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">https://dns.api.mgmt.rackspacecloud.com/v1.0/search?name=rackspace</programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-search-domains_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-search-domains_request.json</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Search Domains Response: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">&lt;domains xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
-   &lt;domain name="rackspace.com" id="2610338" accountId="12345"/&gt;
-   &lt;domain name="myrackspace.com" id="2610368" accountId="1122334"&gt;
-      &lt;subdomains&gt;
-         &lt;domain name="sub.myrackspace.com" id="2610369"accountId="1122334"/&gt;
-      &lt;/subdomains&gt;
-   &lt;/domain&gt;
-   &lt;domain name="dns.heyrackspace.com" id="2610326"accountId="12345"/&gt;
-   &lt;domain name="apidemorackspace.org" id="2610424" accountId="12333"&gt;
-      &lt;subdomains&gt;
-         &lt;domain name="foo.apidemorackspace.org" id="2610425" accountId="12333"/&gt;
-      &lt;/subdomains&gt;
-   &lt;/domain&gt;
-   &lt;domain name="example.demoatrackspaceday.org" id="2575497" accountId="12345"/&gt;
-&lt;/domains&gt;</programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-search-domains_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-search-domains_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Search Domains Response: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml">{
-  "domains" : {
-    "domain" : [ {
-      "id" : 2610338,
-      "name" : "rackspace.com",
-      "accountId" : 12345
-    }, {
-      "id" : 2610368,
-      "name" : "myrackspace.com",
-      "accountId" : 1122334,
-      "subdomains" : {
-        "domain" : [ {
-          "id" : 2610369,
-          "name" : "sub.myrackspace.com",
-          "accountId" : 1122334
-        } ]
-      }
-    }, {
-      "id" : 2610326,
-      "name" : "dns.heyrackspace.com",
-      "accountId" : 12345
-    }, {
-      "id" : 2610424,
-      "name" : "apidemorackspace.org",
-      "accountId" : 12333,
-      "subdomains" : {
-        "domain" : [ {
-          "id" : 2610425,
-          "name" : "foo.apidemorackspace.org",
-          "accountId" : 12333
-        } ]
-      }
-    }, {
-      "id" : 2575497,
-      "name" : "example.demoatrackspaceday.org",
-      "accountId" : 12345
-    }]
-  }
-}</programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-search-domains_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-search-domains_response.json</xi:fallback></xi:include></programlisting>
                 </example>
                 <para> The domain is listed if its name contains the string "rackspace" anywhere in
                     the name. </para>

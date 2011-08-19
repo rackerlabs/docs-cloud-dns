@@ -82,6 +82,11 @@
                             </exclusion>
                         </exclusions>                	
                 	</dependency>
+                    <dependency>
+                        <groupId>com.rackspace.cloud.dns.api.mgmt</groupId>
+                        <artifactId>dns-mgmt-rest-service</artifactId>
+                        <version>1.0.7</version>
+                    </dependency>
                 </dependencies>                
                 <executions>
 					<execution>
@@ -105,7 +110,7 @@
 		                        <requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 		                    </requestHeaders>
 		                    <responseHeaders>
-		                        <responseHeader>X-API-VERSION: 1.0.8</responseHeader>
+		                        <responseHeader>X-API-VERSION: 1.0.9</responseHeader>
 		                    </responseHeaders>
 		                    <sources>
 
@@ -719,6 +724,49 @@
 		                    </sources>
 		                </configuration>
             		</execution>
+                    
+                    <!--++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--++++++++++++++++++++++++++++++++++++++++++++-->            
+                    <!--  Management API Samples Generation Config  -->
+                    <!--++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--++++++++++++++++++++++++++++++++++++++++++++-->
+                    
+                    <execution>
+                        <id>management-sample-generation</id>
+                        <goals>
+                            <goal>generate-samples</goal>
+                        </goals>
+                        <phase>generate-sources</phase>                
+                
+                        <configuration>
+                            <namespace>http://docs.rackspacecloud.com/dns/api/management/v1.0</namespace>
+                            <modules>
+                                <module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
+                                <module implementation="com.rackspace.cloud.dns.api.management.helpers.json.MgmtJsonModule" />
+                            </modules>
+                            <outputDir>${project.build.directory}/samples</outputDir>
+                            <urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase>
+                            <generateJson>true</generateJson>
+                            <generateXml>true</generateXml>
+                            <responseHeaders>
+                                <responseHeader>X-API-VERSION: 1.0.7</responseHeader>
+                            </responseHeaders>
+                            <sources>
+                                <source>
+                                    <data>${basedir}/src/main/resources/mgmt-samples.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>mgmt-dns-search-domains</nameBase>
+                                            <path>/seachDomains?name=rackspace</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody/>
+                                        </output>                                                        
+                                    </outputs>
+                                </source>
+                            </sources>
+                        </configuration>
+                    </execution>
             	</executions>
             </plugin>
         	<!--+++++++++++++++++++++++++++++++++-->
