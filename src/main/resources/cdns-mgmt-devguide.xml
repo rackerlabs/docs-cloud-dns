@@ -358,12 +358,22 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
+                    <title>List Limit Groups Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-groups_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-groups_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limit Groups Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-groups_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-groups_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
                     <title>List Limit Groups Response: XML</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-groups_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-groups_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Limit Groups Response: JSON</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-groups_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-groups_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="limit_group_types">
@@ -399,12 +409,22 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
+                    <title>List Limit Group Types Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-types_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-types_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limit Group Types Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-types_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-types_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
                     <title>List Limit Group Types Response: XML</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-types_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-types_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Limit Group Types Response: JSON</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-types_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-types_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="limit_groups_of_specified_type">
@@ -439,12 +459,22 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
+                    <title>List Limit Groups of Type Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-type-groups_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limit Groups of Type Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-type-groups_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
                     <title>List Limit Groups of Type Response: XML</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-type-groups_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Limit Groups of Type Response: JSON</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-type-groups_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="show_limit_group_details">
@@ -479,12 +509,22 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
+                    <title>Show Group Details Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-group_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-group_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Show Group Details Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-group_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-group_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
                     <title>Show Group Details Response: XML</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-group_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-group_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Show Group Details Response: JSON</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-limit-group_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-limit-group_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
         </section>

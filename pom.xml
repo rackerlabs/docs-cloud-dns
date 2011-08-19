@@ -69,12 +69,12 @@
                 	<dependency>
                 	    <groupId>com.rackspace.cloud.dns.api.common</groupId>
                 		<artifactId>dns-api-common</artifactId>
-                		<version>1.0.7</version>
+                		<version>1.0.8-SNAPSHOT</version>
                 	</dependency>
                 	<dependency>
                 		<groupId>com.rackspace.cloud.dns.api</groupId>
                 		<artifactId>public-rest-service</artifactId>
-                		<version>1.0.9</version>
+                		<version>1.0.10-SNAPSHOT</version>
                         <exclusions>
                             <exclusion>
                                 <groupId>org.infinispan</groupId>
@@ -85,7 +85,7 @@
                     <dependency>
                         <groupId>com.rackspace.cloud.dns.api.mgmt</groupId>
                         <artifactId>dns-mgmt-rest-service</artifactId>
-                        <version>1.0.7</version>
+                        <version>1.0.8-SNAPSHOT</version>
                     </dependency>
                 </dependencies>                
                 <executions>
@@ -110,7 +110,7 @@
 		                        <requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 		                    </requestHeaders>
 		                    <responseHeaders>
-		                        <responseHeader>X-API-VERSION: 1.0.9</responseHeader>
+		                        <responseHeader>X-API-VERSION: 1.0.10-SNAPSHOT</responseHeader>
 		                    </responseHeaders>
 		                    <sources>
 
@@ -749,7 +749,7 @@
                             <generateJson>true</generateJson>
                             <generateXml>true</generateXml>
                             <responseHeaders>
-                                <responseHeader>X-API-VERSION: 1.0.7</responseHeader>
+                                <responseHeader>X-API-VERSION: 1.0.8-SNAPSHOT</responseHeader>
                             </responseHeaders>
                             <sources>
                                 <source>
@@ -764,11 +764,59 @@
                                         </output>                                                        
                                     </outputs>
                                 </source>
+                                <source>
+                                    <data>${basedir}/src/main/resources/mgmt-limit-samples.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>mgmt-dns-list-limit-groups</nameBase>
+                                            <path>/limits</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody/>
+                                        </output>
+                                        <output>
+                                            <nameBase>mgmt-dns-list-limit-type-groups</nameBase>
+                                            <path>/limits/types/rate_limit</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>groupLimits[9]</filter>
+                                                    <filter>groupLimits[8]</filter>
+                                                    <filter>groupLimits[7]</filter>
+                                                    <filter>groupLimits[6]</filter>
+                                                    <filter>groupLimits[5]</filter>
+                                                    <filter>groupLimits[4]</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>mgmt-dns-list-limit-group</nameBase>
+                                            <path>/limits/default_customer_group</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody>
+                                                <base>groupLimits[0]</base>                                            
+                                            </responseBody>
+                                        </output>                                                        
+                                    </outputs>
+                                </source>
+                                <source>
+                                    <data>${basedir}/src/main/resources/mgmt-limit-types-samples.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>mgmt-dns-list-limit-types</nameBase>
+                                            <path>/limits/types</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody/>
+                                        </output>                                                        
+                                    </outputs>
+                                </source>
                             </sources>
                         </configuration>
                     </execution>
             	</executions>
             </plugin>
+            
         	<!--+++++++++++++++++++++++++++++++++-->
         	<!--+++++++++++++++++++++++++++++++++-->        	
 			<!-- END Samples Generation Config   -->
