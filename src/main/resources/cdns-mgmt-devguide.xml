@@ -582,12 +582,22 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
+                    <title>List Assigned Groups Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Assigned Groups Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
                     <title>List Assigned Groups Response: XML</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Assigned Groups Response: JSON</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="list_users_assigned_limit_group_of_specified_type">
@@ -623,12 +633,22 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
+                    <title>List Assigned Group of Type Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group-type_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group-type_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Assigned Group of Type Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group-type_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group-type_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
                     <title>List Assigned Group of Type Response: XML</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group-type_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group-type_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Assigned Group of Type Response: JSON</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group-type_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group-type_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="assign_user_to_limit_group">
@@ -655,7 +675,7 @@
                     </tbody>
                 </informaltable>
                 <simpara>
-                    Normal Response Code(s): <returnvalue>201</returnvalue>
+                    Normal Response Code(s): <returnvalue>204</returnvalue>
                 </simpara>
                 <simpara>
                     Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
@@ -663,8 +683,13 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
-                    <title>Assign User to Limit Group Request</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <title>Assign User to Limit Group Request:</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-update-user-group_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-update-user-group_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Assign User to Limit Group Response</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-update-user-group_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-update-user-group_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="return_user_to_default_group_for_specific_type">
@@ -693,7 +718,7 @@
                     </tbody>
                 </informaltable>
                 <simpara>
-                    Normal Response Code(s): <returnvalue>201</returnvalue>
+                    Normal Response Code(s): <returnvalue>204</returnvalue>
                 </simpara>
                 <simpara>
                     Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
@@ -701,8 +726,13 @@
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
                 <example>
-                    <title>Assign Default Group Request</title>
-                    <para>UPDATE THIS WITH GENERATED EXAMPLE!</para>
+                    <title>Assign Default Group Request:</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-delete-user-group_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-delete-user-group_request.json</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Assign Default Group Response</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-delete-user-group_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-delete-user-group_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
         </section>

@@ -1,0 +1,99 @@
+<ns1:groupLimits
+    xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>default_customer_group</ns1:name>
+        <ns1:description>Default customer group limits</ns1:description>
+        <ns1:type>rate_limit</ns1:type>
+        <ns1:limitUnit></ns1:limitUnit>
+        <ns1:limitValue>10</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>low_limit_customer_group</ns1:name>
+        <ns1:description>Customer Group with full but low limits
+        </ns1:description>
+        <ns1:type>rate_limit</ns1:type>
+        <ns1:limitUnit></ns1:limitUnit>
+        <ns1:limitValue>1</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>high_limit_customer_group</ns1:name>
+        <ns1:description>Customer Group with full and high limits
+        </ns1:description>
+        <ns1:type>rate_limit</ns1:type>
+        <ns1:limitUnit></ns1:limitUnit>
+        <ns1:limitValue>100</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>restricted_group</ns1:name>
+        <ns1:description>Customer Group with partial priveledges and
+            very low limits</ns1:description>
+        <ns1:type>rate_limit</ns1:type>
+        <ns1:limitUnit></ns1:limitUnit>
+        <ns1:limitValue>1</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>default_domain_limit_group</ns1:name>
+        <ns1:description>Default domain limit group</ns1:description>
+        <ns1:type>domain_limit</ns1:type>
+        <ns1:limitUnit>domains</ns1:limitUnit>
+        <ns1:limitValue>500</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>default_domain_record_limit</ns1:name>
+        <ns1:description>Default domain record limit group
+        </ns1:description>
+        <ns1:type>domain_record_limit</ns1:type>
+        <ns1:limitUnit>records per domain</ns1:limitUnit>
+        <ns1:limitValue>500</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>high_domain_limit_group</ns1:name>
+        <ns1:description>High domain limit group</ns1:description>
+        <ns1:type>domain_limit</ns1:type>
+        <ns1:limitUnit>domains</ns1:limitUnit>
+        <ns1:limitValue>1000</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>high_domain_record_limit</ns1:name>
+        <ns1:description>High domain record limit group
+        </ns1:description>
+        <ns1:type>domain_record_limit</ns1:type>
+        <ns1:limitUnit>records per domain</ns1:limitUnit>
+        <ns1:limitValue>1000</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>unlimited_domain_limit_group</ns1:name>
+        <ns1:description>Unlimited domain limit group</ns1:description>
+        <ns1:type>domain_limit</ns1:type>
+        <ns1:limitUnit>domains</ns1:limitUnit>
+        <ns1:limitValue>-1</ns1:limitValue>
+    </ns1:groupLimit>
+    <ns1:groupLimit xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
+        xmlns:ns2="http://www.w3.org/2005/Atom"
+        xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <ns1:name>unlimited_domain_record_limit</ns1:name>
+        <ns1:description>Unlimited domain record limit group
+        </ns1:description>
+        <ns1:type>domain_record_limit</ns1:type>
+        <ns1:limitUnit>records per domain</ns1:limitUnit>
+        <ns1:limitValue>-1</ns1:limitValue>
+    </ns1:groupLimit>
+</ns1:groupLimits>

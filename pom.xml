@@ -796,7 +796,43 @@
                                             <responseBody>
                                                 <base>groupLimits[0]</base>                                            
                                             </responseBody>
-                                        </output>                                                        
+                                        </output>
+                                        <output>
+                                            <nameBase>mgmt-dns-list-user-group</nameBase>
+                                            <path>/1234/limits</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>groupLimits[9]</filter>
+                                                    <filter>groupLimits[8]</filter>
+                                                    <filter>groupLimits[7]</filter>
+                                                    <filter>groupLimits[6]</filter>
+                                                    <filter>groupLimits[3]</filter>
+                                                    <filter>groupLimits[2]</filter>
+                                                    <filter>groupLimits[1]</filter>
+                                                </filters>                                           
+                                            </responseBody>
+                                        </output>    
+                                        <output>
+                                            <nameBase>mgmt-dns-list-user-group-type</nameBase>
+                                            <path>/1234/limits/rate_limit</path>
+                                            <statusCode>200</statusCode>
+                                            <responseBody>
+                                                <base>groupLimits[0]</base>                                        
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>mgmt-dns-update-user-group</nameBase>
+                                            <path>/1234/limits/high_limit_customer_group</path>
+                                            <statusCode>204</statusCode>
+                                            <requestType>PUT</requestType>
+                                        </output>
+                                        <output>
+                                            <nameBase>mgmt-dns-delete-user-group</nameBase>
+                                            <path>/1234/limits/rate_limit</path>
+                                            <statusCode>204</statusCode>
+                                            <requestType>DELETE</requestType>
+                                        </output>                                                    
                                     </outputs>
                                 </source>
                                 <source>
