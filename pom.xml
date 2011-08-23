@@ -6,6 +6,15 @@
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Cloud DNS API Docs</name>
+    
+    <properties>
+        <com.rackspace.cloud.dns.maven.plugin.version>1.0.0</com.rackspace.cloud.dns.maven.plugin.version>
+        <com.rackspace.cloud.act.version>1.0.1-SNAPSHOT</com.rackspace.cloud.act.version>
+        <com.rackspace.cloud.dns.api.common.version>1.0.8-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
+        <com.rackspace.cloud.dns.api.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.version>
+        <com.rackspace.cloud.dns.api.mgmt.version>1.0.8-SNAPSHOT</com.rackspace.cloud.dns.api.mgmt.version>
+    </properties>
+    
     <profiles>
         <profile>
             <id>Rackspace Research Repositories</id>
@@ -64,17 +73,17 @@
                 	<dependency>
                 		<groupId>com.rackspace.cloud.act</groupId>
                 		<artifactId>service</artifactId>
-                		<version>1.0.0.1</version>
+                		<version>${com.rackspace.cloud.act.version}</version>
                 	</dependency>
                 	<dependency>
                 	    <groupId>com.rackspace.cloud.dns.api.common</groupId>
                 		<artifactId>dns-api-common</artifactId>
-                		<version>1.0.8-SNAPSHOT</version>
+                		<version>${com.rackspace.cloud.dns.api.common.version}</version>
                 	</dependency>
                 	<dependency>
                 		<groupId>com.rackspace.cloud.dns.api</groupId>
                 		<artifactId>public-rest-service</artifactId>
-                		<version>1.0.10-SNAPSHOT</version>
+                		<version>${com.rackspace.cloud.dns.api.version}</version>
                         <exclusions>
                             <exclusion>
                                 <groupId>org.infinispan</groupId>
@@ -85,7 +94,7 @@
                     <dependency>
                         <groupId>com.rackspace.cloud.dns.api.mgmt</groupId>
                         <artifactId>dns-mgmt-rest-service</artifactId>
-                        <version>1.0.8-SNAPSHOT</version>
+                        <version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
                     </dependency>
                 </dependencies>                
                 <executions>
@@ -110,7 +119,7 @@
 		                        <requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 		                    </requestHeaders>
 		                    <responseHeaders>
-		                        <responseHeader>X-API-VERSION: 1.0.10-SNAPSHOT</responseHeader>
+		                        <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
 		                    </responseHeaders>
 		                    <sources>
 
@@ -690,6 +699,41 @@
 		                       	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 								<!-- API FAULTS OUTPUTS - deleteFault, badRequest, dnsFault, etc  -->
 								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-async.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>                                             
+                                        <output>
+                                            <nameBase>dns-async</nameBase>
+                                            <statusCode>202</statusCode>
+                                            <responseBody/>
+                                        </output>                   
+                                    </outputs>
+                                </source>
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-async-success.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>                                             
+                                        <output>
+                                            <nameBase>dns-async-success</nameBase>
+                                            <responseBody/>
+                                        </output>                   
+                                    </outputs>
+                                </source>
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-async-error.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>                                             
+                                        <output>
+                                            <nameBase>dns-async-error</nameBase>
+                                            <responseBody/>
+                                        </output>                   
+                                    </outputs>
+                                </source>
+                                
 		                        <source>
 		                            <data>${basedir}/src/main/resources/samples-dnsFaults-domains-delete.xml</data>
 		                            <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
@@ -700,7 +744,7 @@
 		                                <output>
 		                                	<nameBase>dns-delete-multi</nameBase>
 			                                <requestType>DELETE</requestType>
-		                                    <statusCode>202</statusCode>
+		                                    <statusCode>204</statusCode>
 		                                    <responseBody/>
 		                                </output>					
 		                            </outputs>
@@ -749,7 +793,7 @@
                             <generateJson>true</generateJson>
                             <generateXml>true</generateXml>
                             <responseHeaders>
-                                <responseHeader>X-API-VERSION: 1.0.8-SNAPSHOT</responseHeader>
+                                <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
                             </responseHeaders>
                             <sources>
                                 <source>
