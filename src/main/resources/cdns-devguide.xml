@@ -713,9 +713,40 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 since they may take some time to process. Therefore they return 202 ACCEPTED
                 responses containing information with a callback URL, which allows the progress,
                 status, and/or response information of the call to be retrieved at a later point in
-                time. The asynchronous response body will look similar to the following examples,
-                depending on the format requested:
+                time.
             </para>
+            <para>When the status of a request is queried (via a <code>callbackUrl</code> supplied by the API), only basic information
+                  regarding the status of the job is returned by default. If more detail is desired, any status URL may include an optional
+                  <code>showDetails</code> query parameter that will display more information regarding the original request.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="2">Representations</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">
+                            /status/<parameter>jobId</parameter>?<?sbr?><parameter>showDetails</parameter>=<code>[true|false]</code>
+                        </td>
+                        <td colspan="3">List status of the specified asyncronous request. Display details,
+                            as specified by the <parameter>showDetails</parameter> parameter.
+                        </td>
+                        <td colspan="2">XML, JSON</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+            </simpara>
+            <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                    <errorcode>500</errorcode>), serviceUnavailable
+                (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                badRequest (<errorcode>400</errorcode>), itemNotFound
+                    (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
             <para>The following table shows the attributes for asynchronous responses:</para>
             <table rules="all">
                 <caption>Attributes for Asynchronous Responses</caption>
@@ -724,43 +755,53 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <tr align="center">
                         <td colspan="1">Attribute</td>
                         <td colspan="4">Description</td>
+                        <td colspan="1">Inclusion</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td colspan="1">jobId</td>
                         <td colspan="4">An identifier for the specific request.</td>
+                        <td colspan="1">Basic and Detail</td>
                     </tr>
                     <tr>
                         <td colspan="1">callbackUrl</td>
                         <td colspan="4">Resource locator for querying the status of the request.</td>
+                        <td colspan="1">Basic and Detail</td>
                     </tr>
                     <tr>
                         <td colspan="1">status</td>
                         <td colspan="4">An indicator of the request status; RUNNING, COMPLETED, or ERROR.</td>
+                        <td colspan="1">Basic and Detail</td>
                     </tr>
                     <tr>
                         <td colspan="1">requestUrl</td>
                         <td colspan="4">The url of the original request.</td>
+                        <td colspan="1">Detail only</td>
                     </tr>
                     <tr>
                         <td colspan="1">verb</td>
                         <td colspan="4">The type of the original request; PUT, POST, or DELETE</td>
+                        <td colspan="1">Detail only</td>
                     </tr>
                     <tr>
                         <td colspan="1">request</td>
                         <td colspan="4">The original request data, if any.</td>
+                        <td colspan="1">Detail only</td>
                     </tr>
                     <tr>
                         <td colspan="1">response</td>
                         <td colspan="4">The results of a COMPLETE operation, if any.</td>
+                        <td colspan="1">Detail only</td>
                     </tr>
                     <tr>
                         <td colspan="1">error</td>
                         <td colspan="4">The results of an ERROR operation.</td>
+                        <td colspan="1">Detail only</td>
                     </tr>
                 </tbody>
             </table>
+            <para>The asynchronous response body will look similar to the following examples, depending on the format and level of detail requested:</para>
             <note>
                 <para>The results of asynchronous calls are retained for up to 24 hours.</para>
             </note>
@@ -774,7 +815,6 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
-            
             <note>
                 <para>If a request body does not pass initial validation or an error condition
                     arises, you may receive an immediate error response from the request.</para>
@@ -784,14 +824,24 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 information as the previous one.</para>
             <para>If the request is successful, the response contains the results of the operation.</para>
             <example>
-                <title>Success Asynchronous Response: XML</title>
+                <title>Basic Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <example>
-                <title>Success Asynchronous Response: JSON</title>
+                <title>Basic Success Asynchronous Response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Detail Success Asynchronous Response: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Detail Success Asynchronous Response: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <note>
                   <para>Examples of successful responses in the rest of this guide only demonstrate the contents of the asyncronous response attribute.
@@ -800,14 +850,24 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <para>If an error occurs as a result processing the original request, querying the
                 callback URL will return the details of the error</para>
             <example>
-                <title>Error Asynchronous Response: XML</title>
+                <title>Basic Error Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <example>
-                <title>Error Asynchronous Response: JSON</title>
+                <title>Basic Error Asynchronous Response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Detail Error Asynchronous Response: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error-detail_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Detail Error Asynchronous Response: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error-detail_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <note>
                 <para>Examples of error responses in the rest of this guide only demonstrate the contents of the asyncronous error attribute.

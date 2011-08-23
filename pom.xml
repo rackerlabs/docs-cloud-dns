@@ -718,6 +718,18 @@
                                     <outputs>                                             
                                         <output>
                                             <nameBase>dns-async-success</nameBase>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>verb</filter>
+                                                    <filter>requestUrl</filter>
+                                                    <filter>request</filter>
+                                                    <filter>response</filter>
+                                                    <filter>error</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-async-success-detail</nameBase>
                                             <responseBody/>
                                         </output>                   
                                     </outputs>
@@ -728,9 +740,21 @@
                                     <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
                                     <outputs>                                             
                                         <output>
-                                            <nameBase>dns-async-error</nameBase>
+                                            <nameBase>dns-async-error-detail</nameBase>
                                             <responseBody/>
-                                        </output>                   
+                                        </output> 
+                                        <output>
+                                            <nameBase>dns-async-error</nameBase>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>verb</filter>
+                                                    <filter>requestUrl</filter>
+                                                    <filter>request</filter>
+                                                    <filter>response</filter>
+                                                    <filter>error</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>                  
                                     </outputs>
                                 </source>
                                 
