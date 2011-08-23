@@ -692,7 +692,7 @@
 								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 		                        <source>
 		                            <data>${basedir}/src/main/resources/samples-dnsFaults-domains-delete.xml</data>
-		                            <beanPackage>com.rackspace.cloud.dns.api.faults</beanPackage>
+		                            <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
 		                            <outputs>
 		                                                            
 		                                <!-- dns-delete-multi-response.json -->
@@ -707,7 +707,7 @@
 		                        </source>
 		                         <source>
 		                            <data>${basedir}/src/main/resources/samples-dnsFaults-records-delete.xml</data>
-		                            <beanPackage>com.rackspace.cloud.dns.api.faults</beanPackage>
+		                            <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
 		                            <outputs>
 		                                                            
 										<!-- dns-remove-records-failure-response.json -->
