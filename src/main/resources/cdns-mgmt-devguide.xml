@@ -551,7 +551,7 @@
                     the additional data for the relevent data types.</para>
                 <informaltable rules="all">
                     <thead>
-                        <tr>
+                        <tr align="center">
                             <td colspan="4">Data Type</td>
                         </tr>
                         <tr align="center">
@@ -560,12 +560,67 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr align="left">
+                        <tr align="center">
                             <td colspan="4">Domain</td>
                         </tr>
                         <tr>
-                            <td colspan="1">OWNER</td>
-                            <td colspan="3">The owner ID</td>
+                            <td colspan="1">nameServer</td>
+                            <td colspan="3">The domain's primary name server</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">refresh</td>
+                            <td colspan="3">How long a secondary DNS server should wait before 
+                                querying the primary DNS server for changes to the domain</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">retry</td>
+                            <td colspan="3">How long a secondary DNS server should wait before
+                                it retrys a failed query for changes to the domain</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">minTTL</td>
+                            <td colspan="3">The minimum TTL value for all of the domain's records</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">expiry</td>
+                            <td colspan="3">How long before a secondary server stops responding
+                                to queries for the domain without successful update from the
+                                primary DNS server</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">serialNumber</td>
+                            <td colspan="3">The revision number of the domain</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">updateRetry</td>
+                            <td colspan="3">NOTE: CHECK WITH AUTOHOST<remark>CHECK WITH AUTOHOST</remark></td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">externalOwnerId</td>
+                            <td colspan="3">NOTE: CHECK WITH AUTOHOST<remark>CHECK WITH AUTOHOST</remark></td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">createdBy</td>
+                            <td colspan="3">The customer number or the Racker username of the person
+                                creating the domain</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">updatedBy</td>
+                            <td colspan="3">The customer number or the Racker username of the last person
+                                to modify the domain</td>
+                        </tr>
+                        <tr align="center">
+                            <td colspan="4">Record</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">createdBy</td>
+                            <td colspan="3">The customer number or the Racker username of the person
+                                creating the record</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">updatedBy</td>
+                            <td colspan="3">The customer number or the Racker username of the last person
+                                to modify the record</td>
                         </tr>
                     </tbody>
                 </informaltable>
