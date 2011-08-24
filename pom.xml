@@ -963,7 +963,7 @@
                         <goals>
                             <goal>generate-pdf</goal>
                         </goals>
-                        <phase>generate-sources</phase>
+                        <phase>compile</phase>
                         <configuration>
                             <includes>cdns-mgmt-devguide.xml</includes>
                             <enableDisqus>0</enableDisqus>

@@ -133,7 +133,18 @@
                         <td colspan="4">Summary of Changes</td>
                     </tr>
                 </thead>
-                <tbody><tr align="left">
+                <tbody>
+                <tr align="left">
+                    <td colspan="1">Aug. 23, 2011</td>
+                    <td colspan="4">
+                        <itemizedlist spacing="compact">
+                            <listitem>
+                               <para>Updated &quot;Synchronous and Asynchronous Responses&quot; section to reflect API changes.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </td>
+                </tr>
+                <tr align="left">
                     <td colspan="1">Aug. 10, 2011</td>
                     <td colspan="4"
                         ><itemizedlist spacing="compact">
