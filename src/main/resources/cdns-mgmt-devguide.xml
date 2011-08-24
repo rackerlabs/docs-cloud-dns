@@ -303,9 +303,10 @@
             <title>Limits</title>
             <para>There are two types of limits:<itemizedlist>
                     <listitem>
-                        <para><emphasis>absolute</emphasis> limits &ndash; limits that are fixed
-                            (such as domain and record limits), and once exceeded cannot
-                            reset</para>
+                        <para><emphasis>absolute</emphasis> limits
+                            &ndash; limits that are fixed (such as
+                            domain and record limits), and once
+                            exceeded, cannot reset</para>
                     </listitem>
                     <listitem>
                         <para><emphasis>dynamic</emphasis> limits &ndash; limits that reset after a
@@ -333,17 +334,17 @@
                     <thead>
                         <tr align="center">
                             <td colspan="1">Verb</td>
-                            <td colspan="2">URI</td>
-                            <td colspan="4">Description</td>
-                            <td colspan="4">Example</td>
+                            <td colspan="1">URI</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="5">Example</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/limits</td>
-                            <td colspan="4">List all limit groups.</td>
-                            <td colspan="4">
+                            <td colspan="1">/limits</td>
+                            <td colspan="3">List all limit groups.</td>
+                            <td colspan="5">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits 
                             </td>
                         </tr>
@@ -385,16 +386,16 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="4">Description</td>
-                            <td colspan="4">Example</td>
+                            <td colspan="2">Description</td>
+                            <td colspan="5">Example</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/types</td>
-                            <td colspan="4">List all limit group types.</td>
-                            <td colspan="4">
+                            <td colspan="2">List all limit group types.</td>
+                            <td colspan="5">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types
                             </td>
                         </tr>
@@ -435,16 +436,16 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="4">Description</td>
-                            <td colspan="4">Example</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="5">Example</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/types/<parameter>type</parameter></td>
-                            <td colspan="4">List all limit groups of a specified type.</td>
-                            <td colspan="4">
+                            <td colspan="3">List all limit groups of a specified type.</td>
+                            <td colspan="5">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types/rate_limit
                             </td>
                         </tr>
@@ -485,16 +486,16 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="4">Description</td>
-                            <td colspan="4">Example</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="5">Example</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/<parameter>group</parameter></td>
-                            <td colspan="4">List details of the specified group.</td>
-                            <td colspan="4">
+                            <td colspan="3">List details of the specified group.</td>
+                            <td colspan="5">
                                 https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/default_customer_group
                             </td>
                         </tr>
@@ -540,10 +541,13 @@
             disrupting the overall operational environment.</para>
         <section>
             <title>Public API Extensions</title>
-            <para>All operations avaliable to customers via the public API are duplicated in the Cloud
-            DNS Management API but with various extensions. Rather than duplicate the information in 
-            the public api specification, please refer to the Cloud DNS Public API documentation for 
-            details.</para>
+            <para>All operations available to customers via the public
+                API (and described in the <citetitle>Cloud DNS
+                    Developer Guide</citetitle>) are duplicated in the
+                Cloud DNS Management API but with various extensions.
+                Rather than duplicate the information in the public
+                API specification, please see the <citetitle>Cloud DNS
+                    Developer Guide</citetitle> for details.</para>
             <section>
                 <title>Additional Data Extensions</title>
                 <para>User-centric operations for the Cloud DNS Management API typically return some additional
