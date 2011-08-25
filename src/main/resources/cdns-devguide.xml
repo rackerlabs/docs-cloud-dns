@@ -744,9 +744,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <td colspan="2">
                             /status/<parameter>jobId</parameter>?<?sbr?><parameter>showDetails</parameter>=<code>[true|false]</code>
                         </td>
-                        <td colspan="3">List status of the specified asyncronous request. Display details,
-                            as specified by the <parameter>showDetails</parameter> parameter.
-                        </td>
+                        <td colspan="3">List status of the specified
+                            asynchronous request. Display details, as
+                            specified by the
+                                <parameter>showDetails</parameter>
+                            parameter. </td>
                         <td colspan="2">XML, JSON</td>
                     </tr>
                 </tbody>
@@ -782,7 +784,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="1">status</td>
-                        <td colspan="4">An indicator of the request status; RUNNING, COMPLETED, or ERROR.</td>
+                        <td colspan="4">An indicator of the request
+                            status: RUNNING, COMPLETED, or ERROR.</td>
                         <td colspan="1">Basic and Detail</td>
                     </tr>
                     <tr>
@@ -792,7 +795,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                     <tr>
                         <td colspan="1">verb</td>
-                        <td colspan="4">The type of the original request; PUT, POST, or DELETE</td>
+                        <td colspan="4">The type of the original
+                            request: PUT, POST, or DELETE.</td>
                         <td colspan="1">Detail only</td>
                     </tr>
                     <tr>
@@ -858,8 +862,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                   <para>Examples of successful responses in the rest of this guide only demonstrate the contents of the asyncronous response attribute.
                   Additional attributes and elements have been omitted for clarity.</para>
             </note>
-            <para>If an error occurs as a result processing the original request, querying the
-                callback URL will return the details of the error</para>
+            <para>If an error occurs as a result of processing the
+                original request, querying the callback URL will
+                return the details of the error.</para>
             <example>
                 <title>Basic Error Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
