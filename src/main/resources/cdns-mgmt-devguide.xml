@@ -559,9 +559,12 @@
                 for details.</para>
             <section xml:id="additional_data_extensions">
                 <title>Additional Data Extensions</title>
-                <para>User-centric operations for the Cloud DNS Management API typically return some additional
-                    fields of information not available to users of the public API. The tables below detail
-                    the additional data for the relevent data types.</para>
+                <para>User-centric operations for the Cloud DNS
+                    Management API typically return some additional
+                    fields of information not available to users of
+                    the public API. The table below details the
+                    additional data for the relevant data
+                    types.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
