@@ -1041,7 +1041,10 @@
     <url>http://site.mosso.com/${project.groupId}/${artifactId}/${project.version}/</url>
 
     <distributionManagement>
-            
+        <site>
+             <id>mosso-sites</id>
+             <url>dav:http://site.mosso.com/webdav/${project.groupId}/${artifactId}/${project.version}/</url>
+        </site>    
         <snapshotRepository>
            <id>rackspacecloud-snapshots</id>
            <name>Internal RC Snapshot Maven Repo</name>
