@@ -886,8 +886,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error-detail_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <note>
-                <para>Examples of error responses in the rest of this guide only demonstrate the contents of the asyncronous error attribute.
-                  Additional attributes and elements have been omitted for clarity.</para>
+                <para>Examples of error responses in the rest of this
+                    guide only demonstrate the contents of the
+                    asynchronous error attribute. Additional
+                    attributes and elements have been omitted for
+                    clarity.</para>
             </note>
         </section>
            <section xml:id="Content_Compression-d1e1120">
