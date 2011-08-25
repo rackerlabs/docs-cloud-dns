@@ -966,8 +966,10 @@
                         </goals>
                         <phase>compile</phase>
                         <configuration>
+                            <pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
                             <includes>cdns-mgmt-devguide.xml</includes>
                             <enableDisqus>0</enableDisqus>
+			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
                         </configuration>
                     </execution>
                     <execution>
@@ -981,6 +983,7 @@
                             <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
                             <enableDisqus>1</enableDisqus>
                             <includes>cdns-devguide.xml</includes>
+			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
                         </configuration>
                     </execution>
                 </executions>
