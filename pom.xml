@@ -30,7 +30,7 @@
                 <repository>
                     <id>cs-maven-n01.mosso</id>
                     <name>CS Maven Repository</name>
-                    <url>http://cs-maven-n01.wc1.dfw1.stabletransit.com/m2/content/groups/all-rel</url>                
+                    <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/groups/all-rel/</url>                
                 </repository>
             </repositories>
             <pluginRepositories>
@@ -43,7 +43,7 @@
                 <pluginRepository>
                     <id>cs-maven-n01.mosso</id>
                     <name>CS Maven Repository</name>
-                    <url>http://cs-maven-n01.wc1.dfw1.stabletransit.com/m2/content/groups/all-rel</url>
+                    <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/groups/all-rel/</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
