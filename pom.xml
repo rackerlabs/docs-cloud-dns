@@ -28,9 +28,14 @@
                     <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
                 </repository>
                 <repository>
-                    <id>cs-maven-n01.mosso</id>
+                    <id>Rackspace All Releases</id>
                     <name>CS Maven Repository</name>
                     <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/groups/all-rel/</url>                
+                </repository>
+                <repository>
+                    <id>Rackspace Internal Snapshots</id>
+                    <name>CS Maven Repository</name>
+                    <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/snapshots/</url>
                 </repository>
             </repositories>
             <pluginRepositories>
