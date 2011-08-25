@@ -1033,32 +1033,27 @@
 
 
     <scm>
-        <url>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</url>
-        <developerConnection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</developerConnection>
-        <connection>scm:git:ssh://git@git.wc1.dfw1.stabletransit.com/dns-docs.git</connection>
+        <url>scm:git:git@grepo-n01.cloudplatform.rackspace.net:dns-docs</url>
+        <developerConnection>scm:git:git@grepo-n01.cloudplatform.rackspace.net:dns-docs</developerConnection>
+        <connection>scm:git:git@grepo-n01.cloudplatform.rackspace.net:dns-docs</connection>
     </scm>
     
     <url>http://site.mosso.com/${project.groupId}/${artifactId}/${project.version}/</url>
+
     <distributionManagement>
+            
         <snapshotRepository>
-            <id>repos.rackspace.cloud.snapshots</id>
-            <name>Internal RC Snapshot Maven Repo</name>
-            <url>http://172.17.16.59/m2/content/repositories/snapshots/</url>
+           <id>rackspacecloud-snapshots</id>
+           <name>Internal RC Snapshot Maven Repo</name>
+           <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/snapshots</url>
+           <uniqueVersion>false</uniqueVersion>
+       </snapshotRepository>
 
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-
-        <repository>
-            <id>repos.rackspace.cloud.releases</id>
-            <name>Internal RC Releases Maven Repo</name>
-            <url>http://172.17.16.59/m2/content/repositories/releases/</url>
-        </repository>
-        
-        <site>
-            <id>mosso-sites</id>
-            <url>dav:http://site.mosso.com/webdav/${project.groupId}/${artifactId}/${project.version}/</url>
-        </site>
-        
-    </distributionManagement>
+       <repository>
+           <id>rackspacecloud-releases</id>
+           <name>Internal RC Releases Maven Repo</name>
+           <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/releases/</url>
+       </repository>
+   </distributionManagement>
 
 </project>
