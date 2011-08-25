@@ -301,7 +301,7 @@
         </section>
         <section xml:id="general_limits">
             <title>Limits</title>
-            <para>There are two types of limits:<itemizedlist>
+            <para>There are two types of limits:<itemizedlist spacing="compact">
                     <listitem>
                         <para><emphasis>absolute</emphasis> limits
                             &ndash; limits that are fixed (such as
@@ -316,9 +316,15 @@
                 define what these limits are. For example, a rate group is a specific type of limit
                 group (whose type is <code>rate_limit</code>), which specifies how many requests a
                 user can make in a particular time interval.</para>
-            <para> The only operations permitted via the API are viewing the limit groups and
-                assigning users to limit groups. You cannot change the limit group values via the
-                API, nor can you add or delete limit groups.</para>
+            <para> The only operations permitted via the API are:<itemizedlist spacing="compact">
+                    <listitem>
+                        <para>Viewing the limit groups</para>
+                    </listitem>
+                    <listitem>
+                        <para>Assigning users to limit groups</para>
+                    </listitem>
+                </itemizedlist>  You cannot change the limit group values via the API, nor can you
+                add or delete limit groups.</para>
             <para> A user's limit group assignments determine the extent to which the user is
                 allowed to exercise the public API. Limit group assignments can determine things
                 like how many requests a user can make in a particular time interval (dynamic rate
@@ -544,11 +550,14 @@
             <para>All operations available to customers via the public
                 API (and described in the <citetitle>Cloud DNS
                     Developer Guide</citetitle>) are duplicated in the
-                Cloud DNS Management API but with various extensions.
-                Rather than duplicate the information in the public
-                API specification, please see the <citetitle>Cloud DNS
-                    Developer Guide</citetitle> for details.</para>
-            <section>
+                Cloud DNS Management API, but with various extensions
+                (described in <xref
+                    linkend="additional_data_extensions"/>). Rather
+                than duplicate the information in the public API
+                specification in this document, please refer to the
+                    <citetitle>Cloud DNS Developer Guide</citetitle>
+                for details.</para>
+            <section xml:id="additional_data_extensions">
                 <title>Additional Data Extensions</title>
                 <para>User-centric operations for the Cloud DNS Management API typically return some additional
                     fields of information not available to users of the public API. The tables below detail
@@ -565,7 +574,7 @@
                     </thead>
                     <tbody>
                         <tr align="center">
-                            <td colspan="4">Domain</td>
+                            <th colspan="4">Domain</th>
                         </tr>
                         <tr>
                             <td colspan="1">nameServer</td>
@@ -578,8 +587,10 @@
                         </tr>
                         <tr>
                             <td colspan="1">retry</td>
-                            <td colspan="3">How long a secondary DNS server should wait before
-                                it retrys a failed query for changes to the domain</td>
+                            <td colspan="3">How long a secondary DNS
+                                server should wait before retrying a
+                                failed query for changes to the
+                                domain</td>
                         </tr>
                         <tr>
                             <td colspan="1">minTTL</td>
@@ -614,7 +625,7 @@
                                 to modify the domain</td>
                         </tr>
                         <tr align="center">
-                            <td colspan="4">Record</td>
+                            <th colspan="4">Record</th>
                         </tr>
                         <tr>
                             <td colspan="1">createdBy</td>
@@ -630,15 +641,22 @@
                 </informaltable>
             </section>
             <section>
-                <title>A Note About Asyncronous Responses</title>
-                <para>Refer to the section on syncronous versus asyncronous responses in the public Cloud DNS 
-                    API documentation for how the Cloud DNS API handles potentially long-running operations. 
-                    Unlike asyncronous operations in the public API, however, status monitor URLs
-                    in the Cloud DNS Management API do not include an account id segment. The original request
-                    URL containing the account id is still available in the asyncronous response if the request
-                    was user-centric.</para>
+                <title>A Note About Asynchronous Responses</title>
+                <para>Refer to the <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
+                        >section on synchronous versus asynchronous
+                        responses</link> in the public Cloud DNS API
+                    documentation for information about how the Cloud
+                    DNS API handles potentially long-running
+                    operations. Unlike asynchronous operations in the
+                    public API, however, status monitor URLs in the
+                    Cloud DNS Management API do not include an account
+                    id segment. The original request URL containing
+                    the account id is still available in the
+                    asynchronous response if the request was
+                    user-centric.</para>
                     <example>
-                        <title>Status Monitor URL:</title>
+                        <title>Status Monitor URL</title>
                         <programlisting>https://dns.api.mgmt.rackspacecloud.com/v1.0/status/<parameter>jobId</parameter></programlisting>
                     </example>
             </section>
