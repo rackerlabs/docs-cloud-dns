@@ -962,9 +962,9 @@
                         <id>g1</id>
                         <goals>
                             <goal>generate-pdf</goal>
-                        	<goal>generate-webhelp</goal>
+                            <goal>generate-webhelp</goal>
                         </goals>
-                        <phase>compile</phase>
+                        <phase>generate-sources</phase>
                         <configuration>
                             <pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
                             <includes>cdns-mgmt-devguide.xml</includes>
