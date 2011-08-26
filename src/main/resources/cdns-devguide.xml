@@ -845,12 +845,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para>If a request body does not pass initial validation or an error condition
                     arises, you may receive an immediate error response from the request.</para>
             </note>
-            <para>When a request is made to the callback URL provided and the job is still running,
-                another <returnvalue>202</returnvalue> ACCEPTED response is returned with the same
-                information as the previous one.</para>
-            <para>If the request is successful, the
-                    <code>response</code> contains the results of the
-                operation.</para>
+            <para>Next you need to make a request to the callback URL
+                provided to get the status information. If you use the
+                callback URL <emphasis>without</emphasis> specifying
+                the query parameter <code>showDetails=true</code>,
+                only basic information is requested.</para>
             <example>
                 <title>Basic Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
@@ -861,6 +860,14 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
+            <para>When a request is made to the callback URL provided
+                and the job is still running, another
+                    <returnvalue>202</returnvalue> ACCEPTED response
+                is returned with the same information as the previous
+                one.</para>
+            <para> If the request is successful, the
+                    <code>status</code> is
+                <code>COMPLETED</code>:</para>
             <example>
                 <title>Basic Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -871,6 +878,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
+            <para>If you specified the query parameter
+                    <code>showDetails=true</code> for the callback
+                URL, detailed information is requested:</para>
             <example>
                 <title>Detail Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
@@ -881,6 +891,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
+            <para>If the request is successful, this includes the
+                    <code>response</code>,  which contains the results
+                of the operation:</para>
             <example>
                 <title>Detail Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
