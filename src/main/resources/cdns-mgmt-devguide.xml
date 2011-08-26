@@ -559,11 +559,13 @@
                 for details.</para>
             <section xml:id="additional_data_extensions">
                 <title>Additional Data Extensions</title>
-                <para>User-centric operations for the Cloud DNS
-                    Management API typically return some additional
-                    fields of information not available to users of
-                    the public API. The table below details the
-                    additional data for the relevant data
+                <para><emphasis>User-centric</emphasis> operations
+                    (that is, operations requested by the Management
+                    API user on behalf of a customer) for the Cloud
+                    DNS Management API typically return some
+                    additional fields of information not available to
+                    users of the public API. The table below details
+                    the additional data for the relevant data
                     types.</para>
                 <informaltable rules="all">
                     <thead>
@@ -648,20 +650,32 @@
                 <para>Refer to the <link
                         xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
                         >section on synchronous versus asynchronous
-                        responses</link> in the public Cloud DNS API
-                    documentation for information about how the Cloud
-                    DNS API handles potentially long-running
-                    operations. Unlike asynchronous operations in the
-                    public API, however, status monitor URLs in the
-                    Cloud DNS Management API do not include an account
-                    id segment. The original request URL containing
-                    the account id is still available in the
-                    asynchronous response if the request was
-                    user-centric.</para>
+                        responses</link> in the <citetitle>Cloud DNS
+                        Developer Guide</citetitle> for information
+                    about how the Cloud DNS API handles potentially
+                    long-running operations. Unlike asynchronous
+                    operations in the public API, however, status
+                    monitor URLs in the Cloud DNS Management API do
+                    not include an account id segment: </para>
                     <example>
                         <title>Status Monitor URL</title>
                         <programlisting>https://dns.api.mgmt.rackspacecloud.com/v1.0/status/<parameter>jobId</parameter></programlisting>
                     </example>
+                <para>The original request URL containing the account
+                    id (<code>1234</code> in the following example) is
+                    still available in the asynchronous response if
+                    the request was user-centric:</para>
+                <example>
+                    <title>Fragment from Asynchronous Response Showing
+                        requestURL with Account Id</title>
+                    <programlisting>&lt;requestUrl>https://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl></programlisting>
+                </example>
+                <para>However if the request was
+                        <emphasis>not</emphasis> user-centric (such as
+                    absolute limits and domain search), then the
+                    account id is not available, since the request was
+                    not performed by the Management API user on behalf
+                    of a customer. </para>
             </section>
         </section>
         <section xml:id="user_limits">
