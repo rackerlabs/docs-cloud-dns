@@ -760,7 +760,8 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                 badRequest (<errorcode>400</errorcode>), itemNotFound
                     (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
-            <para>The following table shows the attributes for asynchronous responses:</para>
+            <para>The following table shows the complete set of
+                attributes for asynchronous responses:</para>
             <table rules="all">
                 <caption>Attributes for Asynchronous Responses</caption>
                 <?dbfo keep-together="always"?>
@@ -837,7 +838,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             <para>When a request is made to the callback URL provided and the job is still running,
                 another <returnvalue>202</returnvalue> ACCEPTED response is returned with the same
                 information as the previous one.</para>
-            <para>If the request is successful, the response contains the results of the operation.</para>
+            <para>If the request is successful, the
+                    <code>response</code> contains the results of the
+                operation.</para>
             <example>
                 <title>Basic Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -859,8 +862,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <note>
-                  <para>Examples of successful responses in the rest of this guide only demonstrate the contents of the asyncronous response attribute.
-                  Additional attributes and elements have been omitted for clarity.</para>
+                  <para>Examples of successful responses in the rest
+                    of this guide only demonstrate the
+                        <emphasis>contents</emphasis> of the
+                    asynchronous <code>response</code> attribute.
+                    Additional attributes and elements have been
+                    omitted for clarity.</para>
             </note>
             <para>If an error occurs as a result of processing the
                 original request, querying the callback URL will
@@ -887,10 +894,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </example>
             <note>
                 <para>Examples of error responses in the rest of this
-                    guide only demonstrate the contents of the
-                    asynchronous error attribute. Additional
-                    attributes and elements have been omitted for
-                    clarity.</para>
+                    guide only show the <emphasis>contents</emphasis>
+                    of the asynchronous <code>error</code> attribute.
+                    Additional attributes and elements have been
+                    omitted for clarity.</para>
             </note>
         </section>
            <section xml:id="Content_Compression-d1e1120">
