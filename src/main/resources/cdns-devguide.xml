@@ -135,6 +135,16 @@
                 </thead>
                 <tbody>
                 <tr align="left">
+                    <td colspan="1">Aug. 26, 2011</td>
+                    <td colspan="4">
+                        <itemizedlist spacing="compact">
+                            <listitem>
+                               <para>Added request examples to Asynchronous Response section</para>
+                            </listitem>
+                        </itemizedlist>
+                    </td>
+                </tr>
+                <tr align="left">
                     <td colspan="1">Aug. 23, 2011</td>
                     <td colspan="4">
                         <itemizedlist spacing="compact">
@@ -842,6 +852,16 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     <code>response</code> contains the results of the
                 operation.</para>
             <example>
+                <title>Basic Success Asynchronous Request: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_request.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_request.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Basic Success Asynchronous Request: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
                 <title>Basic Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
@@ -850,6 +870,16 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <title>Basic Success Asynchronous Response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Detail Success Asynchronous Request: XML</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_request.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_request.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+            </example>
+            <example>
+                <title>Detail Success Asynchronous Request: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <example>
                 <title>Detail Success Asynchronous Response: XML</title>

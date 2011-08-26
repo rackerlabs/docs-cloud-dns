@@ -723,6 +723,7 @@
                                     <outputs>                                             
                                         <output>
                                             <nameBase>dns-async-success</nameBase>
+                                            <path>/1234/status/${jobId}</path>
                                             <responseBody>
                                                 <filters>
                                                     <filter>verb</filter>
@@ -735,6 +736,7 @@
                                         </output>
                                         <output>
                                             <nameBase>dns-async-success-detail</nameBase>
+                                            <path>/1234/status/${jobId}?showDetail=true</path>
                                             <responseBody/>
                                         </output>                   
                                     </outputs>
@@ -746,10 +748,12 @@
                                     <outputs>                                             
                                         <output>
                                             <nameBase>dns-async-error-detail</nameBase>
+                                            <path>/1234/status/${jobId}?showDetail=true</path>
                                             <responseBody/>
                                         </output> 
                                         <output>
                                             <nameBase>dns-async-error</nameBase>
+                                            <path>/1234/status/${jobId}</path>
                                             <responseBody>
                                                 <filters>
                                                     <filter>verb</filter>
