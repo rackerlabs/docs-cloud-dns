@@ -919,12 +919,10 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </note>
             <para>If an error occurs as a result of processing the
                 original request, querying the callback URL will
-                return the information about the error. If the
-                callback URL is used without specifying the query
-                parameter <code>showDetails=true</code>, only basic
-                information is requested.  Use the query parameter
-                    <code>showDetails=true</code> to request detailed
-                information.</para>
+                return the information about the error. If you use the
+                callback URL without specifying the query parameter
+                    <code>showDetails=true</code>, only basic
+                information is provided:</para>
             <example>
                 <title>Basic Error Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -935,6 +933,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
+            <para>If you use the callback URL with the query parameter
+                    <code>showDetails=true</code>, then detailed
+                information is provided:</para>
             <example>
                 <title>Detail Error Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
