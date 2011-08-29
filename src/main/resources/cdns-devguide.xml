@@ -152,7 +152,9 @@
                     <td colspan="4">
                         <itemizedlist spacing="compact">
                             <listitem>
-                               <para>Updated &quot;Synchronous and Asynchronous Responses&quot; section to reflect API changes.</para>
+                               <para>Updated <xref
+                                   linkend="sync_asynch_responses"/>
+                                   to reflect API changes.</para>
                             </listitem>
                         </itemizedlist>
                     </td>
