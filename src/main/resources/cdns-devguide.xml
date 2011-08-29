@@ -830,7 +830,9 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     </tr>
                 </tbody>
             </table>
-            <para>The asynchronous response body will look similar to the following examples, depending on the format and level of detail requested:</para>
+            <para>The asynchronous response body will look similar to
+                the following examples, depending on the format and
+                level of detail requested.</para>
             <note>
                 <para>The results of asynchronous calls are retained for up to 24 hours.</para>
             </note>
@@ -852,7 +854,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 provided to get the status information. If you use the
                 callback URL <emphasis>without</emphasis> specifying
                 the query parameter <code>showDetails=true</code>,
-                only basic information is requested.</para>
+                only basic information is requested:</para>
             <example>
                 <title>Basic Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
@@ -917,7 +919,12 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
             </note>
             <para>If an error occurs as a result of processing the
                 original request, querying the callback URL will
-                return the details of the error.</para>
+                return the information about the error. If the
+                callback URL is used without specifying the query
+                parameter <code>showDetails=true</code>, only basic
+                information is requested.  Use the query parameter
+                    <code>showDetails=true</code> to request detailed
+                information.</para>
             <example>
                 <title>Basic Error Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
