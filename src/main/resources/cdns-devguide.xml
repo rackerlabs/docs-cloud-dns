@@ -135,7 +135,7 @@
                 </thead>
                 <tbody>
                 <tr align="left">
-                    <td colspan="1">Aug. 26, 2011</td>
+                    <td colspan="1">Aug. 30, 2011</td>
                     <td colspan="4">
                         <itemizedlist spacing="compact">
                             <listitem>
@@ -850,7 +850,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                 <para>If a request body does not pass initial validation or an error condition
                     arises, you may receive an immediate error response from the request.</para>
             </note>
-            <para>Next you need to make a request to the callback URL
+            <para>Next, you need to make a request to the callback URL
                 provided to get the status information. If you use the
                 callback URL <emphasis>without</emphasis> specifying
                 the query parameter <code>showDetails=true</code>,

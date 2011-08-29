@@ -54,7 +54,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-09-02</pubdate>
+        <pubdate>2011-08-30</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -139,9 +139,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr align="left">
-                        <td colspan="1">Sept. 2, 2011</td>
-                        <td colspan="4"
+                    <tr align="left" security="writeronly">
+                        <td colspan="1" >Sept. 2, 2011</td>
+                        <td colspan="4" 
                             ><itemizedlist spacing="compact">
                                 <listitem>
                                     <para>Initial version published.</para>
@@ -150,11 +150,17 @@
                         </td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">Aug. X, 2011</td>
+                        <td colspan="1">Aug. 30, 2011</td>
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para>Added <xref linkend="general_limits"/>.</para>
+                                   <para>Added <xref
+                                   linkend="general_limits"/>.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Added <xref
+                                   linkend="Public_API_Extensions"
+                                   />.</para>
                                 </listitem>
                                 <listitem>
                                     <para>Added <xref linkend="user_limits"/></para>
@@ -545,7 +551,7 @@
             Rackers are authorized to perform them. Rackers might also perform these operations to
             limit or terminate a specific customer's activities when that customer appears to be
             disrupting the overall operational environment.</para>
-        <section>
+        <section xml:id="Public_API_Extensions">
             <title>Public API Extensions</title>
             <para>All operations available to customers via the public
                 API (and described in the <citetitle>Cloud DNS
@@ -649,9 +655,9 @@
             </section>
             <section>
                 <title>A Note About Asynchronous Responses</title>
-                <para>Refer to the <link
+                <para>Refer to <link
                         xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
-                        >section on synchronous versus asynchronous
+                        >synchronous versus asynchronous
                         responses</link> in the <citetitle>Cloud DNS
                         Developer Guide</citetitle> for information
                     about how the Cloud DNS API handles potentially
