@@ -965,7 +965,7 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         <emphasis>all</emphasis> job requests for an
                     account. You can also filter the information
                     requested by using the following optional boolean
-                    request parameters for the request:<itemizedlist>
+                    request parameters for the request:<itemizedlist spacing="compact">
                         <listitem>
                             <para>showErrors &ndash; if
                                    <code>true</code>, specifies that
