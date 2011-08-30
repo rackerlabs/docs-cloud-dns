@@ -955,6 +955,92 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     Additional attributes and elements have been
                     omitted for clarity.</para>
             </note>
+<section>
+                <title>Viewing Status of All Job
+                    Requests<?sbr?></title>
+                <para>As well as viewing status for a
+                        <emphasis>particular job ID</emphasis>, as
+                    described in the previous section, you can also
+                    view status information for
+                        <emphasis>all</emphasis> job requests for an
+                    account. You can also filter the information
+                    requested by using the following optional boolean
+                    request parameters for the request:<itemizedlist>
+                        <listitem>
+                            <para>showErrors &ndash; if
+                                   <code>true</code>, specifies that
+                                errors are shown</para>
+                        </listitem>
+                        <listitem>
+                            <para>showRunning &ndash; if
+                                   <code>true</code>, specifies that
+                                jobs still running are shown</para>
+                        </listitem>
+                        <listitem>
+                            <para>showCompleted &ndash; if
+                                   <code>true</code>, specifies that
+                                completed jobs are shown</para>
+                        </listitem>
+                    </itemizedlist>In addition, paging request
+                    parameters <code>limit</code> and
+                        <code>offset</code> can also be supplied for
+                    the request. </para>
+                <para>The default values for these request parameters
+                    (if they are not specified) are:</para>
+                <itemizedlist 
+                    spacing="compact">
+                    <listitem>
+                        <para><code>showErrors=true</code></para>
+                    </listitem>
+                    <listitem>
+                        <para><code>showRunning=true</code>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para><code>showCompleted=true</code>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para><code>limit=100</code></para>
+                    </listitem>
+                    <listitem>
+                        <para><code>offset=0</code></para>
+                    </listitem>
+                </itemizedlist>
+                <para>By omitting the job ID from the request, you can
+                    request information on all job IDs for the
+                    account. By default (with no query parameters
+                    specified) information is requested for all
+                    errors, running jobs, and completed jobs:</para>
+                <example>
+                    <title>Get Status for All Jobs Asynchronous
+                        Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-job-status_request.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-job-status_request.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Get Status for All Jobs Asynchronous
+                        Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-job-status_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-job-status_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <para>The response lists all the user's jobs that have
+                    had errors, followed by those still running, and
+                    then those that have completed:</para>
+                <example>
+                    <title>Get Status for All Jobs Asynchronous
+                        Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-job-status_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-job-status_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Get Status for All Jobs Asynchronous
+                        Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-job-status_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-job-status_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+            </section>            
+
         </section>
            <section xml:id="Content_Compression-d1e1120">
             <title>Content Compression</title>
