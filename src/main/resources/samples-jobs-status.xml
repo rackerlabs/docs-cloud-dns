@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asyncJobsStatus xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="12">
+	<asyncResponse>
+		<jobId>1ada58ab-f413-4d7e-a139-19c96eaea8b2</jobId>
+		<callbackUrl>http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2</callbackUrl>
+		<status>COMPLETED</status>
+		<requestUrl>http://dns.api.rackspacecloud.com/v1.0/1234/domains/2764176</requestUrl>
+		<verb>DELETE</verb>
+	</asyncResponse>
+	<asyncResponse>
+		<jobId>34c0160a-6109-4b61-9ea4-1f0513df031b</jobId>
+		<callbackUrl>http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b</callbackUrl>
+		<status>COMPLETED</status>
+		<requestUrl>http://dns.api.rackspacecloud.com/v1.0/1234/domains</requestUrl>
+		<verb>POST</verb>
+		<request>
+			<domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"> 
+   				<domain name="example.com" emailAddress="hostmaster@example.com" ttl="3642"/> 	
+			</domains>
+		</request>
+		<response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="domains">
+			<domain id="2764458" accountId="440369" name="example.com" ttl="3642" emailAddress="hostmaster@example.com" updated="2011-08-29T15:49:53-05:00" created="2011-08-29T15:49:53-05:00">
+				<nameservers>
+					<nameserver name="ns.rackspace.com"/>
+					<nameserver name="ns2.rackspace.com"/>
+				</nameservers>
+			</domain>
+		</response>
+	</asyncResponse>
+</asyncJobsStatus>
