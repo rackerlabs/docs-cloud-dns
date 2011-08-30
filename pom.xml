@@ -36,6 +36,13 @@
                     <id>Rackspace Internal Snapshots</id>
                     <name>CS Maven Repository</name>
                     <url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/snapshots/</url>
+                	<releases>
+                		<enabled>false</enabled>
+                	</releases>
+                	<snapshots>
+                		<enabled>true</enabled>
+                		<updatePolicy>always</updatePolicy>
+                	</snapshots>
                 </repository>
             </repositories>
             <pluginRepositories>
