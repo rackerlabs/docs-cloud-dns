@@ -807,24 +807,45 @@
 
                                          
 
-										<!-- dns-get-job-status-request.json  -->
-										<!-- dns-get-job-status-request.xml   -->
-										<!-- dns-get-job-status-response.json  -->
-										<!-- dns-get-job-status-response.xml   -->
+
 		                         <source>
 		                            <data>${basedir}/src/main/resources/samples-jobs-status.xml</data>
 		                            <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
-		                            <outputs>                  							
+		                            <outputs> 
+			                            <!-- dns-get-jobs-status-with-details-request.json  -->
+										<!-- dns-get-jobs-status-with-details-request.xml   -->
+										<!-- dns-get-jobs-status-with-details-response.json  -->
+										<!-- dns-get-jobs-status-with-details-response.xml   -->                 							
 		                                <output>
-		                                	<nameBase>dns-get-job-status</nameBase>
-		                                	<path>/1234/status</path>
+		                                	<nameBase>dns-get-jobs-status-with-details</nameBase>
+		                                	<path>/1234/status?showDetails=true</path>
 			                                <requestType>GET</requestType>
 		                                    <statusCode>202</statusCode>
 		                                    <responseBody/>
+		                                </output> 
+		                                <!-- dns-get-jobs-status-no-details-request.json  -->
+										<!-- dns-get-jobs-status-no-details-request.xml   -->
+										<!-- dns-get-jobs-status-no-details-response.json  -->
+										<!-- dns-get-jobs-status-no-details-response.xml   -->
+										<output>
+		                                	<nameBase>dns-get-jobs-status-no-details</nameBase>
+		                                	<path>/1234/status</path>
+			                                <requestType>GET</requestType>
+		                                    <statusCode>202</statusCode>
+		                                    <responseBody>
+		                                    	<filters>
+		                                    		<filter>asyncResponses[0].requestUrl</filter>
+		                                    		<filter>asyncResponses[0].verb</filter>
+		                                    		<filter>asyncResponses[1].requestUrl</filter>
+		                                    		<filter>asyncResponses[1].request</filter>
+		                                    		<filter>asyncResponses[1].response</filter>
+		                                    		<filter>asyncResponses[1].verb</filter>
+		                                    	</filters>
+		                                    </responseBody>
 		                                </output>         									
 		                            </outputs>
 		                        </source>
-		                                                       
+		                        		                                                       
 		                    </sources>
 		                </configuration>
             		</execution>

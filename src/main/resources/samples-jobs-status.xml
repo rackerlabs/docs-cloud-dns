@@ -2,14 +2,14 @@
 <asyncJobsStatus xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="12">
 	<asyncResponse>
 		<jobId>1ada58ab-f413-4d7e-a139-19c96eaea8b2</jobId>
-		<callbackUrl>http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2</callbackUrl>
+		<callbackUrl>http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2?showDetails=true</callbackUrl>
 		<status>COMPLETED</status>
 		<requestUrl>http://dns.api.rackspacecloud.com/v1.0/1234/domains/2764176</requestUrl>
 		<verb>DELETE</verb>
 	</asyncResponse>
 	<asyncResponse>
 		<jobId>34c0160a-6109-4b61-9ea4-1f0513df031b</jobId>
-		<callbackUrl>http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b</callbackUrl>
+		<callbackUrl>http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b?showDetails=true</callbackUrl>
 		<status>COMPLETED</status>
 		<requestUrl>http://dns.api.rackspacecloud.com/v1.0/1234/domains</requestUrl>
 		<verb>POST</verb>
