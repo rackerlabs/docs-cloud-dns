@@ -994,6 +994,11 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                                 if <code>true</code>, specifies that
                                 completed jobs are shown</para>
                         </listitem>
+                        <listitem>
+                            <para><code>showDetails</code>&ndash; if
+                                   <code>true</code>, specifies that
+                                job details are shown</para>
+                        </listitem>
                     </itemizedlist>In addition, paging request
                     parameters <code>limit</code> and
                         <code>offset</code> can also be supplied for
