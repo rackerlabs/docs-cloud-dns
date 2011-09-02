@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-08-30</pubdate>
+        <pubdate>2011-09-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -1015,25 +1015,63 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                         </para>
                     </listitem>
                     <listitem>
+                        <para><code>showDetails=false</code></para>
+                    </listitem>
+                    <listitem>
                         <para><code>limit=100</code></para>
                     </listitem>
                     <listitem>
                         <para><code>offset=0</code></para>
                     </listitem>
                 </itemizedlist>
-                <para>By omitting the job ID from the request, you can
-                    request information on all job IDs for the
-                    account. By default (with no query parameters
-                    specified) information is requested for all
-                    errors, running jobs, and completed jobs:</para>
+                <para>By omitting the
+                        <parameter>showDetails</parameter> parameter
+                    from the request (or explicitly setting it to
+                        <code>false</code>), you can request basic
+                    information for all errors, running jobs, and
+                    completed jobs for the account. By default (with
+                    no query parameters specified) only
+                        <emphasis>basic</emphasis> information is
+                    requested:</para>
                 <example>
-                    <title>Get Status for All Jobs Request:
+                    <title>Get Basic Status for All Jobs Request:
+                        XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-no-details_request.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-no-details_request.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Get Basic Status for All Jobs Request:
+                        JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-no-details_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-no-details_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <para>The response lists all the user's jobs that have
+                    had errors, followed by those still running, and
+                    then those that have completed:</para>
+                <example>
+                    <title>Get Basic Status for All Jobs Response:
+                        XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-no-details_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-no-details_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Get Basic Status for All Jobs Response:
+                        JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-no-details_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-no-details_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <para>To get <emphasis>detailed</emphasis> status
+                    information for all jobs, set the
+                        <parameter>showDetails</parameter> parameter
+                    to true (<code>showDetails=true</code>).</para>
+                <example>
+                    <title>Get Detailed Status for All Jobs Request:
                         XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-with-details_request.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-with-details_request.xml<?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
-                    <title>Get Status for All Jobs Request:
+                    <title>Get Detailed Status for All Jobs Request:
                         JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-with-details_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-with-details_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
@@ -1042,13 +1080,13 @@ Content-Type: text/plain; charset=UTF-8</literallayout>
                     had errors, followed by those still running, and
                     then those that have completed:</para>
                 <example>
-                    <title>Get Status for All Jobs Response:
+                    <title>Get Detailed Status for All Jobs Response:
                         XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../target/dns-get-jobs-status-with-details_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-with-details_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-with-details_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-with-details_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
-                    <title>Get Status for All Jobs Response:
+                    <title>Get Detailed Status for All Jobs Response:
                         JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-with-details_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-with-details_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
