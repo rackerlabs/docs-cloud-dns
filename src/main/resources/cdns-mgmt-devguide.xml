@@ -599,7 +599,7 @@
                                 querying the primary DNS server for changes to the domain</td>
                         </tr>
                         <tr>
-                            <td colspan="1">retry</td>
+                            <td colspan="1">updateRetry</td>
                             <td colspan="3">How long a secondary DNS
                                 server should wait before retrying a
                                 failed query for changes to the
@@ -620,12 +620,9 @@
                             <td colspan="3">The revision number of the domain</td>
                         </tr>
                         <tr>
-                            <td colspan="1">updateRetry</td>
-                            <td colspan="3">NOTE: CHECK WITH AUTOHOST<remark>CHECK WITH AUTOHOST</remark></td>
-                        </tr>
-                        <tr>
                             <td colspan="1">externalOwnerId</td>
-                            <td colspan="3">NOTE: CHECK WITH AUTOHOST<remark>CHECK WITH AUTOHOST</remark></td>
+                            <td colspan="3">Product line agnostic identifier for the account owner; 
+                                            relevent to the internal Autohost DNS Engine</td>
                         </tr>
                         <tr>
                             <td colspan="1">createdBy</td>
