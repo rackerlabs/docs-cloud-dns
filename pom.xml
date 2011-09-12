@@ -958,7 +958,16 @@
                                             <path>/1234/limits/rate_limit</path>
                                             <statusCode>204</statusCode>
                                             <requestType>DELETE</requestType>
-                                        </output>                                                    
+                                        </output>
+
+		                                <!-- mgmt-dns-get-jobs-status-no-details-request.json  -->
+										<!-- mgmt-dns-get-jobs-status-no-details-request.xml   -->
+                                         <output>
+                                            <nameBase>mgmt-dns-get-jobs-status-no-details</nameBase>
+                                            <path>/1234/status</path>
+                                            <statusCode>200</statusCode>
+                                        </output>
+                                                                                          
                                     </outputs>
                                 </source>
                                 <source>
