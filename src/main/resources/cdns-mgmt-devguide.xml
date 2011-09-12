@@ -74,10 +74,18 @@
     </info>
     <chapter xml:id="overview">
         <title>Overview</title>
-        <para> Rackspace Cloud DNS is a Domain Name System (DNS) available to Rackspace Cloud
-            customers. Interactions with Rackspace Cloud DNS occur programmatically via the
-            Rackspace Cloud DNS API as described in this Cloud DNS Developer Guide for Service
-            Management.</para>
+        <para> Rackspace Cloud DNS is a Domain Name System (DNS)
+            available to Rackspace Cloud customers. Interactions with
+            Rackspace Cloud DNS occur programmatically via the
+            Rackspace Cloud DNS API as described in this
+                <citetitle>Cloud DNS Developer Guide for Service
+                Management</citetitle>.</para>
+        <para>The API operations described in this manual relate to
+            support of DNS service activities on behalf of a specific
+            customer. The scope of these operations is narrow,
+            relating to the needs of a single customer. A customer
+            might directly request these operations, however only
+            Rackers are authorized to perform them.</para>
         <note>
             <para> DNS propagation may take up to 15 minutes. </para>
         </note>
@@ -100,10 +108,24 @@
             or phone.</para>
         <section xml:id="Intended_Audience-d1e122">
             <title>Intended Audience</title>
-            <para> This Guide is intended to assist software developers who want to develop
-                applications using the Rackspace Cloud DNS Service Management API. To use the
-                information provided here, you should first have a general understanding of the DNS
-                service. You should also be familiar with: </para>
+            <para>Two APIs provide access to Rackspace Cloud DNS: </para>
+            <itemizedlist spacing="compact">
+                <listitem>
+                    <para>The <emphasis>management</emphasis> API,
+                        available only to developers within Rackspace,
+                        is the subject of this document.</para>
+                </listitem>
+                <listitem>
+                    <para>The <emphasis>public</emphasis> API,
+                        available to developers within Rackspace and
+                        Rackspace customers, is the subject of a
+                        companion document, the <citetitle>Cloud DNS
+                            Developer Guide</citetitle>.</para>
+                </listitem>
+            </itemizedlist>
+            <para>To use the information provided here, you should
+                first have a general understanding of the DNS service.
+                You should also be familiar with: </para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para>DNS terminology</para>
@@ -685,7 +707,7 @@
                 <example>
                     <title>Fragment from Asynchronous Response Showing
                         requestURL with Account Id</title>
-                    <programlisting>&lt;requestUrl>https://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl></programlisting>
+                    <programlisting>https://dns.api.rackspacecloud.com/v1.0/1234/domains</programlisting>
                 </example>
                 <para>However if the request was
                         <emphasis>not</emphasis> user-centric (such as
