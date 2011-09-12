@@ -174,7 +174,8 @@
                                    />.</para>
                                 </listitem>
                                 <listitem>
-                                    <para>Added <xref linkend="user_limits"/></para>
+                                    <para>Added <xref
+                                   linkend="user_limits"/>.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
