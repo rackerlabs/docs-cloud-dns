@@ -150,6 +150,17 @@
                         </td>
                     </tr>
                     <tr align="left">
+                        <td colspan="1">Sept. 13, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Added <xref
+                                   linkend="list_users_jobs_status"
+                                   />.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr> <tr align="left">
                         <td colspan="1">Aug. 30, 2011</td>
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
@@ -681,6 +692,25 @@
                     account id is not available, since the request was
                     not performed by the Management API user on behalf
                     of a customer. </para>
+            </section>
+            <section xml:id="list_users_jobs_status">
+                <title>List User's Jobs Status</title>
+                <para>A management API user can list the status for a
+                    customer's jobs in order to support the customer.
+                    Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/viewing_status_all_asynch_jobs.html"
+                        >Viewing Status of All Asynchronous Job
+                        Requests</link> in the <citetitle>Cloud DNS
+                        Developer Guide</citetitle> for information
+                    about jobs status listings. The request URL must
+                    include the user's account id and must be made to
+                    the management API endpoint, as shown in the
+                    example below.</para>
+                <example>
+                    <title>List User's Jobs Status Request:
+                        XML</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
             </section>
         </section>
         <section xml:id="user_limits">
