@@ -705,11 +705,16 @@
                     about jobs status listings. The request URL must
                     include the user's account id and must be made to
                     the management API endpoint, as shown in the
-                    example below.</para>
+                    examples below.</para>
                 <example>
                     <title>List User's Jobs Status Request:
                         XML</title>
                     <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml</xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List User's Jobs Status Request:
+                        JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
         </section>
