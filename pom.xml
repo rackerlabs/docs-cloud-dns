@@ -1100,9 +1100,9 @@
 
 
     <scm>
-        <url>scm:git:git@grepo-n01.cloudplatform.rackspace.net:dns-docs</url>
-        <developerConnection>scm:git:git@grepo-n01.cloudplatform.rackspace.net:dns-docs</developerConnection>
-        <connection>scm:git:git@grepo-n01.cloudplatform.rackspace.net:dns-docs</connection>
+        <url>scm:git:git@repo-n01.cloudplatform.rackspace.net:dns-docs</url>
+        <developerConnection>scm:git:git@repo-n01.cloudplatform.rackspace.net:dns-docs</developerConnection>
+        <connection>scm:git:git@repo-n01.cloudplatform.rackspace.net:dns-docs</connection>
     </scm>
     
     <url>http://site.mosso.com/${project.groupId}/${artifactId}/${project.version}/</url>
