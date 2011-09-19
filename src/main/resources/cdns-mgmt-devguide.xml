@@ -692,10 +692,21 @@
                         responses</link> in the <citetitle>Cloud DNS
                         Developer Guide</citetitle> for information
                     about how the Cloud DNS API handles potentially
-                    long-running operations. Unlike asynchronous
-                    operations in the public API, however, status
-                    monitor URLs in the Cloud DNS Management API do
-                    not include an account id segment: </para>
+                    long-running operations. </para>
+                <para>
+                    <important>
+                        <para>Unlike asynchronous operations in the
+                            public API, however, status monitor URLs
+                            in the Cloud DNS Management API do
+                                <emphasis>not</emphasis> include an
+                            account id segment,
+                                <emphasis>unless</emphasis> the user
+                            is listing the status of a customer's jobs
+                            as discussed in <xref
+                                linkend="list_users_jobs_status"
+                            />.</para>
+                    </important>
+                </para>
                     <example>
                         <title>Status Monitor URL</title>
                         <programlisting>https://dns.api.mgmt.rackspacecloud.com/v1.0/status/<parameter>jobId</parameter></programlisting>
