@@ -273,6 +273,25 @@
             </note>
         </section>
     </chapter>
+    <chapter>
+        <title>General API Information</title>
+        <para>The Cloud DNS Management API is implemented using a RESTful web service interface. Most functions
+        of the customer-facing Cloud DNS API may be accessed on behalf of a customer. The Cloud DNS Management API
+        also extends this functionality to include operations for managing features of the public API as well
+        as additional data fields not available to customers.</para>
+        <section>
+            <title>Authentication</title>
+            <?dbhtml stop-chunking?>
+            <para>Every ReST request against the Cloud DNS Management API requires that the caller be authenticated
+            with HTTP Basic Auth using a valid Rackspace SSO username and password.
+                <note>
+                    Not all Rackspace employees with valid SSO credentials will have access to the Cloud DNS
+                    Managment API. If you cannot access the service and feel that this is in error, please contact
+                    your supervisor and have the appropriate roles added to your account.
+                </note>
+            </para>
+        </section>
+    </chapter>
     <chapter xml:id="General_API_Information-d1e633">
         <title>Management API Operations</title>
         <para>These API operations relate to administration of the environment that enables and

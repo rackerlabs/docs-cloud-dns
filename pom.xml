@@ -10,9 +10,9 @@
     <properties>
         <com.rackspace.cloud.dns.maven.plugin.version>1.0.1</com.rackspace.cloud.dns.maven.plugin.version>
         <com.rackspace.cloud.act.version>1.0.1</com.rackspace.cloud.act.version>
-        <com.rackspace.cloud.dns.api.common.version>1.0.9</com.rackspace.cloud.dns.api.common.version>
-        <com.rackspace.cloud.dns.api.version>1.0.11</com.rackspace.cloud.dns.api.version>
-        <com.rackspace.cloud.dns.api.mgmt.version>1.0.9</com.rackspace.cloud.dns.api.mgmt.version>
+        <com.rackspace.cloud.dns.api.common.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
+        <com.rackspace.cloud.dns.api.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.version>
+        <com.rackspace.cloud.dns.api.mgmt.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.mgmt.version>
     </properties>
     
     <profiles>
@@ -1000,7 +1000,7 @@
                 <executions>
                     <execution>
                         <id>copy-resources</id>
-                        <phase>validate</phase>
+                        <phase>initialize</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
@@ -1013,6 +1013,26 @@
                                         <exclude>**/*.ai</exclude>
                                         <exclude>**/*.svg</exclude>
                                     </excludes>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-auth-samples</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/samples</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources/samples</directory>
+                                    <includes>
+                                        <include>**/*.xml</include>
+                                        <include>**/*.json</include>
+                                    </includes>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
