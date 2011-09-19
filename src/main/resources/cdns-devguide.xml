@@ -2078,6 +2078,13 @@
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
+                        <td colspan="2">/domains/<parameter>domainId</parameter>/changes?<?sbr?><parameter>since</parameter>=<?sbr?><code>[date/time]</code></td>
+                        <td colspan="2">Show all changes to the specified domain since the specified date. The <parameter>since</parameter>
+                                        parameter is optional and defaults to midnight of the current day. See 
+                                        <xref linkend="datetimeformat"/> for how to specify this parameter's value.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter>/export</td>
                         <td colspan="2">Export details of the specified domain.</td>
                     </tr>
@@ -2441,6 +2448,54 @@
                     <title>List Domain Details, no Records, no Subdomains Response: JSON</title>
                     <?dbfo keep-together="auto"?>
                     <programlisting language="javascript"><xi:include href="../../../target/samples/dns-list-domain-details-no-records-no-subdomains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+            </section>
+            <section>
+                <title>List Domain Changes</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                            <td colspan="2">Representations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/changes?<?sbr?><parameter>since</parameter>=<?sbr?><code>[date/time]</code></td>
+                            <td colspan="3">Show all changes to the specified domain since the specified date. The <parameter>since</parameter>
+                                        parameter is optional and defaults to midnight of the current day. See 
+                                        <xref linkend="datetimeformat"/> for how to specify this parameter's value.</td>
+                            <td colspan="2">XML, JSON</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>)</simpara>
+                <example>
+                    <title>List Domain Changes Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-domain-changes_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Changes Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-domain-changes_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Changes Response: XML</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-domain-changes_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Domain Changes Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-domain-changes_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <?hard-pagebreak?>

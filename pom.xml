@@ -134,7 +134,19 @@
 		                        <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
 		                    </responseHeaders>
 		                    <sources>
-
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-changes-since.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-list-domain-changes</nameBase>
+                                            <path>/1234/domains/45678/changes?since=2011-09-13T00:00:00-0500</path>
+                                            <responseBody/>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
 		                       	<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
 								<!-- API BEANS OUTPUTS - domains, domain, links etc    -->
 								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->                   
