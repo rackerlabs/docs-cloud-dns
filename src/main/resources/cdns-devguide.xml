@@ -2791,7 +2791,7 @@
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
                 <para>This call modifies DNS domain(s) attributes only. Records cannot be added,
-                    modified, or removed. Only the TTL and email address attributes of a domain can
+                    modified, or removed. Only the TTL, email address and comment attributes of a domain can
                     be modified. </para>
                 <para>If a request cannot be fulfilled due to insufficient or invalid data, an
                         <code>HTTP</code>
