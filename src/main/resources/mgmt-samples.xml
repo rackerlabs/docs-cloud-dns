@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-    xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"
-    totalEntries="5">
-    <domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999999"
-        name="crackspace.com" updated="2011-04-11T06:52:38Z" created="2011-04-11T06:52:37Z" />
-    <domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999998"
-        name="rackspace.org" updated="2011-08-12T18:48:42Z" created="2011-07-25T19:33:22Z" />
-    <domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999997"
-        name="example.crackspace.com" updated="2010-08-19T01:12:19Z"
-        created="2010-08-19T01:10:08Z" />
-    <domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:type="ns3:domain" externalOwnerId="DC22333" id="8888886"
-        name="mcrackspace.example.com" updated="2010-10-28T22:59:49Z"
-        created="2010-04-21T18:59:05Z" />
-    <domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:type="ns3:domain" externalOwnerId="DC8866554" id="8855667"
-        name="mail.relay.rackspacerox.com" updated="2010-11-18T01:36:44Z"
-        created="2009-12-11T01:02:50Z" />
+	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	totalEntries="5">
+	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999999" name="example.com"
+		updated="2011-04-11T06:52:38Z" created="2011-04-11T06:52:37Z" ttl="5600" emailAddress="hostmaster@example.com">
+		 <nameservers>
+            <nameserver name="ns.rackspace.com" />
+            <nameserver name="ns2.rackspace.com" />
+        </nameservers>
+	</domain>
+	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999998" name="example.org"
+		updated="2011-08-12T18:48:42Z" created="2011-07-25T19:33:22Z" ttl="5600" emailAddress="hostmaster@example.org"/>
+	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999997"
+		name="example.com" updated="2010-08-19T01:12:19Z" created="2010-08-19T01:10:08Z" ttl="5600" emailAddress="hostmaster@example.com"/>
+	<domain xsi:type="ns3:domain" externalOwnerId="DC22333" id="8888886"
+		name="example.com" updated="2010-10-28T22:59:49Z" created="2010-04-21T18:59:05Z" ttl="5600" emailAddress="hostmaster@example.com"/>
+	<domain xsi:type="ns3:domain" externalOwnerId="DC8866554" id="8855667"
+		name="mail.relay.example.com" updated="2010-11-18T01:36:44Z"
+		created="2009-12-11T01:02:50Z" ttl="5600" emailAddress="hostmaster@example.com"/>
 </domains>
