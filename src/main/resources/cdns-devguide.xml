@@ -2472,7 +2472,7 @@
                     <programlisting language="javascript"><xi:include href="../../../target/samples/dns-list-domain-details-no-records-no-subdomains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
-            <section>
+            <section xml:id="List_Domain_Changes">
                 <title>List Domain Changes</title>
                 <informaltable rules="all">
                     <thead>
