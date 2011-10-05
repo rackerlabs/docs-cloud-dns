@@ -980,8 +980,8 @@
             <para>If you use the callback URL
                     <emphasis>without</emphasis> specifying the query
                 parameter <code>showDetails=true</code>, only
-                    <emphasis>basic</emphasis> information is
-                requested:</para>
+                    <emphasis>basic</emphasis> information is returned
+                (jobId, callbackUrl, and status attributes):</para>
             <example>
                 <title>Basic Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
@@ -1013,7 +1013,7 @@
             <para>If you specify the query parameter
                     <code>showDetails=true</code> for the callback
                 URL, <emphasis>detailed</emphasis> information is
-                requested:</para>
+                returned (all attributes) :</para>
             <example>
                 <title>Detail Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
