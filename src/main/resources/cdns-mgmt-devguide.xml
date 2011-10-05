@@ -274,6 +274,25 @@
             </note>
         </section>
     </chapter>
+    <chapter>
+        <title>General API Information</title>
+        <para>The Cloud DNS Management API is implemented using a RESTful web service interface. Most functions
+        of the customer-facing Cloud DNS API may be accessed on behalf of a customer. The Cloud DNS Management API
+        also extends this functionality to include operations for managing features of the public API as well
+        as additional data fields not available to customers.</para>
+        <section>
+            <title>Authentication</title>
+            <?dbhtml stop-chunking?>
+            <para>Every ReST request against the Cloud DNS Management API requires that the caller be authenticated
+            with HTTP Basic Auth using a valid Rackspace SSO username and password.
+                <note>
+                    Not all Rackspace employees with valid SSO credentials will have access to the Cloud DNS
+                    Managment API. If you cannot access the service and feel that this is in error, please contact
+                    your supervisor and have the appropriate roles added to your account.
+                </note>
+            </para>
+        </section>
+    </chapter>
     <chapter xml:id="General_API_Information-d1e633">
         <title>Management API Operations</title>
         <para>These API operations relate to administration of the environment that enables and
@@ -339,6 +358,39 @@
                 <para> The domain is listed if its name contains the string "rackspace" anywhere in
                     the name. </para>
             </section>
+            <section>
+                <title>Create Domain(s)</title>
+                <note>
+                    <para> See section similarly titled in the public API documentation for a description of this API.
+                    </para>
+                </note>
+                <example>
+                    <title>Create Domain(s) Request: XML</title>
+                    <important>
+                      <para>In the Management API, unlike the public API, when submitting XML requests to Create Domain, 
+                      the type of the domain element is from the management schema namespace and has to be explicitly
+                      specified in the request using the type attribute as in the following example. 
+                      This does not apply to json requests to Create Domain.
+                      </para>
+                	</important>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Create Domain(s) Request: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example xml:id="create_domains_resp">
+                    <title>Create Domain(s) Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Create Domain(s) Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="samples/mgmt-dns-create-domains_response.json"><xi:include href="../../../target/samples/mgmt-dns-create-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+            </section>            
         </section>
         <section xml:id="general_limits">
             <title>Limits</title>
