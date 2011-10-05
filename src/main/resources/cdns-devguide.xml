@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-09-06</pubdate>
+        <pubdate>2011-10-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -134,6 +134,34 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr align="left" security="writeronly">
+                        <td colspan="1" >Oct.18, 2011</td>
+                        <td colspan="4">
+                            <itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Initial GA version
+                                   published.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                    <td colspan="1">Oct. 5, 2011</td>
+                    <td colspan="4">
+                        <itemizedlist spacing="compact">
+                            <listitem>
+                                <para>Updated <xref
+                                   linkend="Authentication-d1e647"
+                                   />.</para>
+                            </listitem>
+                                <listitem>
+                                   <para>Updated <xref
+                                   linkend="sync_asynch_responses"
+                                   />.</para>
+                                </listitem>
+                        </itemizedlist>
+                    </td>
+                </tr>
                     <tr align="left">
                         <td colspan="1">Sept. 6, 2011</td>
                         <td colspan="4">
@@ -527,12 +555,12 @@
                 <itemizedlist spacing="compact">
                     <listitem>
                         <para>
-                            US-based accounts authenticate through <link xlink:href="https://auth.api.rackspacecloud.com/v1.0">https://auth.api.rackspacecloud.com/v1.0</link>.
+                            US-based accounts authenticate through <link xlink:href="https://auth.api.rackspacecloud.com/v1.1">https://auth.api.rackspacecloud.com/v1.1</link>.
                         </para>
                     </listitem>
                     <listitem>
                         <para>
-                            UK-based accounts authenticate through <link xlink:href="https://lon.auth.api.rackspacecloud.com/v1.0">https://lon.auth.api.rackspacecloud.com/v1.0</link>.
+                            UK-based accounts authenticate through <link xlink:href="https://lon.auth.api.rackspacecloud.com/v1.1">https://lon.auth.api.rackspacecloud.com/v1.1</link>.
                         </para>
                     </listitem>
                 </itemizedlist>
@@ -840,9 +868,14 @@
                 status, and/or response information of the call to be retrieved at a later point in
                 time.
             </para>
-            <para>When the status of a request is queried (via a <code>callbackUrl</code> supplied by the API), only basic information
-                  regarding the status of the job is returned by default. If more detail is desired, any status URL may include an optional
-                  <code>showDetails</code> query parameter that will display more information regarding the original request.</para>
+            <para>When the status of a request is queried (via a
+                    <code>callbackUrl</code> supplied by the API),
+                only basic information regarding the status of the job
+                is returned by default. If more detail is desired, any
+                status URL may include an optional
+                    <code>showDetails</code> query parameter that will
+                display more information regarding the original
+                request:</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -874,6 +907,16 @@
                 (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                 badRequest (<errorcode>400</errorcode>), itemNotFound
                     (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+            <note>
+                <para>The results of asynchronous calls are retained
+                    for up to 24 hours.</para>
+            </note>
+            <note>
+                <para>If a request body does not pass initial
+                    validation or an error condition arises, you may
+                    receive an immediate error response from the
+                    request.</para>
+            </note>
             <para>The following table shows the complete set of
                 attributes for asynchronous responses:</para>
             <table rules="all">
@@ -932,30 +975,13 @@
                 </tbody>
             </table>
             <para>The asynchronous response body will look similar to
-                the following examples, depending on the format and
-                level of detail requested.</para>
-            <note>
-                <para>The results of asynchronous calls are retained for up to 24 hours.</para>
-            </note>
-            <example>
-                <title>202 ACCEPTED Response: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async_response.xml" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async_response.xml<?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-            <example>
-                <title>202 ACCEPTED Response: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="../../../target/samples/dns-async_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-            <note>
-                <para>If a request body does not pass initial validation or an error condition
-                    arises, you may receive an immediate error response from the request.</para>
-            </note>
-            <para>Next, you need to make a request to the callback URL
-                provided to get the status information. If you use the
-                callback URL <emphasis>without</emphasis> specifying
-                the query parameter <code>showDetails=true</code>,
-                only basic information is requested:</para>
+                the following examples, depending on whether  basic or
+                detailed information is requested.</para>
+            <para>If you use the callback URL
+                    <emphasis>without</emphasis> specifying the query
+                parameter <code>showDetails=true</code>, only
+                    <emphasis>basic</emphasis> information is
+                requested:</para>
             <example>
                 <title>Basic Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
@@ -971,7 +997,7 @@
                     <returnvalue>202</returnvalue> ACCEPTED response
                 is returned with the same information as the previous
                 one.</para>
-            <para> If the request is successful, the
+            <para>If the request is successful, the
                     <code>status</code> is
                 <code>COMPLETED</code>:</para>
             <example>
@@ -984,9 +1010,10 @@
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
-            <para>If you specified the query parameter
+            <para>If you specify the query parameter
                     <code>showDetails=true</code> for the callback
-                URL, detailed information is requested:</para>
+                URL, <emphasis>detailed</emphasis> information is
+                requested:</para>
             <example>
                 <title>Detail Success Asynchronous Request: XML</title>
                 <?dbfo keep-together="always"?>
