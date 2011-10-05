@@ -140,7 +140,8 @@
                     <para>HTTP/1.1 conventions</para>
                 </listitem>
                 <listitem>
-                    <para>JSON and/or XML data serialization formats</para>
+                    <para>JSON and/or XML data serialization
+                        formats</para>
                 </listitem>
             </itemizedlist>
             <para>You should also be familiar with the way the Cloud DNS Service API works. For
