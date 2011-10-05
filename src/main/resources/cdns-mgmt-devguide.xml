@@ -312,7 +312,7 @@
         <section xml:id="Domains-d1e647">
             <title>Domains</title>
             <?dbhtml stop-chunking?>
-            <section>
+            <section xml:id="Search_Domains">
                 <title>Search Domains</title>
                 <para> This operation allows for searching for a domain by full or partial name. </para>
                 <informaltable rules="all">
@@ -758,7 +758,7 @@
                     </tbody>
                 </informaltable>
             </section>
-            <section>
+            <section xml:id="A_Note_About_Asynchronous_Responses">
                 <title>A Note About Asynchronous Responses</title>
                 <para>Refer to <link
                         xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
