@@ -184,7 +184,8 @@
                                 </listitem>
                                 <listitem>
                                    <para>Added <xref
-                                   linkend="Create_Domains"/></para>
+                                   linkend="Notes_on_Namespaces_for_Update_and_Create_Operations"
+                                   /></para>
                                 </listitem>
                             </itemizedlist>
                         </td>
@@ -762,26 +763,50 @@
                 <title>Notes on Namespaces for Update and Create Operations</title>
                 <para> See the following sections in the
                         <citetitle>Cloud DNS Developer
-                        Guide</citetitle> (public API documentation) for a complete description of the API requests: "Create Domain(s)", "Modify Domain(s)", "Add Records" and "Modify Records". </para>
+                        Guide</citetitle> (public API documentation)
+                    for a detailed description of the API requests:
+                        <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/create_domains.html"
+                        >Create Domains</link>, <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Modify_Domain_s_-d1e3848.html"
+                        >Modify Domains</link>, <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Add_Records-d1e4895.html"
+                        >Add Records</link>, and <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Modify_Records-d1e5033.html"
+                        >Modify Records</link>. </para>
                 <important>
-                    <para>In the Management API, when submitting XML requests to Create or Modify
-                        Domain (or record), unlike in the
-                        public API,  the type of the domain and record element are
-                        from the management schema namespace and has
-                        to be explicitly specified in the request
-                        using the <code>type</code> attribute. In the
-                        following create (POST) example, we specify the type of the
-                        domain element as
-                            <code>xsi:type="ns3:domain"</code> and the type of the record element as <code>xsi:type="ns3:record"</code>.
-                        This is because the prefix <code>ns3</code> in the XML request is bound
-                        to the Management API namespace
-                            <code>"http://docs.rackspacecloud.com/dns/api/management/v1.0"</code>
+                    <para>In the Management API, unlike in the public
+                        API, when submitting XML requests to Create /
+                        Modify Domain(s) and Add / Modify Records, the
+                        type of the domain and record element is from
+                        the management schema namespace, and must be
+                        explicitly specified in the request using the
+                            <code>type</code> attribute. </para>
+                    <para>For example in the following Create (POST)
+                        Domain(s) Request: XML, we specify the type of
+                        the domain element as
+                            <code>xsi:type="ns3:domain"</code> and the
+                        type of the record element as
+                            <code>xsi:type="ns3:record"</code>. This
+                        is needed, because the prefix <code>ns3</code>
+                        in the XML request is bound to the Management
+                        API namespace
+                            <code>"http://docs.rackspacecloud.com/dns/api/management/v1.0"</code>,
                         and the prefix <code>xsi</code> is bound to
                         the XMLSchema-instance namespace
                             <code>"http://www.w3.org/2001/XMLSchema-instance"</code>.</para>
-                    <para>Explicitly specifying the type for domain and record elements does <emphasis>not</emphasis> apply to
-                        json requests to Create or Modify Domain or record. </para>
+                    <para>This same technique applies to submitting
+                        all XML requests to Create / Modify Domain(s)
+                        and Add / Modify Records using the Management
+                        API. Refer to the examples that follow.</para>
                 </important>
+                <note>
+                    <para>Explicitly specifying the type for domain
+                        and record elements does
+                            <emphasis>not</emphasis> apply to json
+                        requests to Create / Modify Domain and Add /
+                        Modify Records. </para>
+                </note>
                 <example>
                     <title>Create Domain(s) Request: XML</title>
                     <?dbfo keep-together="always"?>
