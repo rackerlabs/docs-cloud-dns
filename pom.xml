@@ -909,37 +909,35 @@
                                             	</filters>
                                             </responseBody>
                                         </output>
-                                        <!-- mgmt-dns-create-domains-request.json -->
-										<!-- mgmt-dns-create-domains-request.xml -->
-										<!-- mgmt-dns-create-domains-response.json -->
-										<!-- mgmt-dns-create-domains-response.xml -->
+                                  	</outputs>
+                                 </source>
+                                <!-- mgmt-dns-create-domains-request.json -->
+								<!-- mgmt-dns-create-domains-request.xml -->                                 
+                                 <source>
+                                    <data>${basedir}/src/main/resources/mgmt-create-domains-request-sample.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                 	<outputs>
 		                                <output>
-		                                    <nameBase>mgmt-dns-create-domains</nameBase>
+		                                    <nameBase>mgmt-dns-create-domains-req</nameBase>
 		                                    <path>/1234/domains</path>
 		                                    <requestType>POST</requestType>
-		                                    <statusCode>202</statusCode>
-		                                        <filters>
-		                                            <filter>domains[0].id</filter>
-		                                            <filter>domains[0].updated</filter>
-		                                            <filter>domains[0].created</filter>
-		                                            <filter>domains[0].externalOwnerId</filter>
-		                                            <filter>domains[4]</filter>
-		                                            <filter>domains[3]</filter>
-		                                            <filter>domains[2]</filter>
-		                                            <filter>domains[1]</filter>
-		                                        </filters>                                    
-		                                    <requestBody>
-		                                    	<filters>
-		                                    		<filter>totalEntries</filter>
-		                                    		<filter>domains[0].nameservers</filter>
-		                                    	</filters>
-		                                    </requestBody>
-		                                    <responseBody>
-		                                    	<filters>
-		                                    		<filter>totalEntries</filter>
-		                                    	</filters>
-		                                    </responseBody>
-		                                    
+		                                    <statusCode>202</statusCode>                                   
+		                                    <requestBody/>		                                    
+		                                </output>                                                        
+                                    </outputs>
+                                </source>
+                                <!-- mgmt-dns-create-domains-response.json -->
+								<!-- mgmt-dns-create-domains-response.xml -->
+                                <source>
+                                    <data>${basedir}/src/main/resources/mgmt-create-domains-response-sample.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                 	<outputs>
+		                                <output>
+		                                    <nameBase>mgmt-dns-create-domains-res</nameBase>
+		                                    <path>/1234/domains</path>
+		                                    <requestType>POST</requestType>
+		                                    <statusCode>202</statusCode>                                   
+		                                    <responseBody/>		                                    
 		                                </output>                                                        
                                     </outputs>
                                 </source>

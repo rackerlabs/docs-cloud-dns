@@ -367,51 +367,6 @@
                 <para> The domain is listed if its name contains the string "rackspace" anywhere in
                     the name. </para>
             </section>
-            <section xml:id="Create_Domains">
-                <title>Create Domain(s)</title>
-                <para> See the section "Create Domain(s)" in the
-                        <citetitle>Cloud DNS Developer
-                        Guide</citetitle> (public API documentation)
-                    for a complete description of this API request. </para>
-                <important>
-                    <para>When submitting XML requests to Create
-                        Domain in the Management API, unlike in the
-                        public API,  the type of the domain element is
-                        from the management schema namespace and has
-                        to be explicitly specified in the request
-                        using the <code>type</code> attribute. In the
-                        following example, we specify the type of the
-                        domain element as
-                            <code>xsi:type="ns3:domain"</code>,
-                        because the prefix <code>ns3</code> is bound
-                        to the Management API namespace
-                            <code>"http://docs.rackspacecloud.com/dns/api/management/v1.0"</code>
-                        and the prefix <code>xsi</code> is bound to
-                        the XMLSchema-instance namespace
-                            <code>"http://www.w3.org/2001/XMLSchema-instance"</code>.</para>
-                    <para>This does <emphasis>not</emphasis> apply to
-                        json requests to Create Domain. </para>
-                </important>
-                <example>
-                    <title>Create Domain(s) Request: XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <example>
-                    <title>Create Domain(s) Request: JSON</title>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <example xml:id="create_domains_resp">
-                    <title>Create Domain(s) Response: XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <example>
-                    <title>Create Domain(s) Response: JSON</title>
-                    <?dbfo keep-together="auto"?>
-                    <programlisting language="samples/mgmt-dns-create-domains_response.json"><xi:include href="../../../target/samples/mgmt-dns-create-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-            </section>            
         </section>
         <section xml:id="general_limits">
             <title>Limits</title>
@@ -801,6 +756,57 @@
                     not performed by the Management API user on behalf
                     of a customer. </para>
             </section>
+            
+            
+            <section xml:id="Notes_on_Namespaces_for_Update_and_Create_Operations">
+                <title>Notes on Namespaces for Update and Create Operations</title>
+                <para> See the following sections in the
+                        <citetitle>Cloud DNS Developer
+                        Guide</citetitle> (public API documentation) for a complete description of the API requests: "Create Domain(s)", "Modify Domain(s)", "Add Records" and "Modify Records". </para>
+                <important>
+                    <para>In the Management API, when submitting XML requests to Create or Modify
+                        Domain (or record), unlike in the
+                        public API,  the type of the domain and record element are
+                        from the management schema namespace and has
+                        to be explicitly specified in the request
+                        using the <code>type</code> attribute. In the
+                        following create (POST) example, we specify the type of the
+                        domain element as
+                            <code>xsi:type="ns3:domain"</code> and the type of the record element as <code>xsi:type="ns3:record"</code>.
+                        This is because the prefix <code>ns3</code> in the XML request is bound
+                        to the Management API namespace
+                            <code>"http://docs.rackspacecloud.com/dns/api/management/v1.0"</code>
+                        and the prefix <code>xsi</code> is bound to
+                        the XMLSchema-instance namespace
+                            <code>"http://www.w3.org/2001/XMLSchema-instance"</code>.</para>
+                    <para>Explicitly specifying the type for domain and record elements does <emphasis>not</emphasis> apply to
+                        json requests to Create or Modify Domain or record. </para>
+                </important>
+                <example>
+                    <title>Create Domain(s) Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains-req_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Create Domain(s) Request: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains-req_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example xml:id="create_domains_resp">
+                    <title>Create Domain(s) Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains-res_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Create Domain(s) Response: JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="samples/mgmt-dns-create-domains-res_response.json"><xi:include href="../../../target/samples/mgmt-dns-create-domains-res_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+            </section>             
+            
+            
+            
+            
+            
             <section xml:id="list_users_jobs_status">
                 <title>List User's Jobs Status</title>
                 <para>A management API user can list the status for a
