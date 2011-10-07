@@ -8,6 +8,12 @@
             <nameserver name="ns.rackspace.com" />
             <nameserver name="ns2.rackspace.com" />
         </nameservers>
+        <recordsList totalEntries="2">
+            <record xsi:type="ns3:record" id="A-6817754" type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"
+                updated="2011-05-19T08:07:08-05:00" created="2011-05-18T14:53:09-05:00" />
+            <record xsi:type="ns3:record" id="CNAME-9778009" type="CNAME" name="www.example.com" data="example.com" ttl="5400"
+                updated="2011-06-24T01:12:54Z" created="2011-06-24T01:12:54Z" comment="This is a comment on the CNAME record" />
+        </recordsList>        
 	</domain>
 	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999998" name="example.org"
 		updated="2011-08-12T18:48:42Z" created="2011-07-25T19:33:22Z" ttl="5600" emailAddress="hostmaster@example.org"/>

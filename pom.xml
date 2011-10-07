@@ -905,6 +905,7 @@
                                             <responseBody>
                                             	<filters>
                                             		<filter>domains[0].nameservers</filter>
+                                            		<filer>domains[0].recordsList</filer>
                                             	</filters>
                                             </responseBody>
                                         </output>
