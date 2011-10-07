@@ -54,7 +54,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-09-12</pubdate>
+        <pubdate>2011-10-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -167,19 +167,24 @@
                         <td colspan="4" 
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para>Initial version published.</para>
+                                    <para>Initial GA version
+                                   published.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">Sept. 12, 2011</td>
+                        <td colspan="1">Oct. 5, 2011</td>
                         <td colspan="4"
                             ><itemizedlist spacing="compact">
                                 <listitem>
                                     <para>Added <xref
                                    linkend="list_users_jobs_status"
                                    />.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Added <xref
+                                   linkend="Create_Domains"/></para>
                                 </listitem>
                             </itemizedlist>
                         </td>
@@ -274,36 +279,40 @@
             </note>
         </section>
     </chapter>
-    <chapter>
+    <chapter xml:id="General_API_Info">
         <title>General API Information</title>
         <para>The Cloud DNS Management API is implemented using a RESTful web service interface. Most functions
         of the customer-facing Cloud DNS API may be accessed on behalf of a customer. The Cloud DNS Management API
         also extends this functionality to include operations for managing features of the public API as well
         as additional data fields not available to customers.</para>
-        <section>
+        <section xml:id="Authentication_Mgmt">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
-            <para>Every ReST request against the Cloud DNS Management API requires that the caller be authenticated
-            with HTTP Basic Auth using a valid Rackspace SSO username and password.
-                <note>
-                    Not all Rackspace employees with valid SSO credentials will have access to the Cloud DNS
-                    Managment API. If you cannot access the service and feel that this is in error, please contact
-                    your supervisor and have the appropriate roles added to your account.
-                </note>
-            </para>
+            <para>Every ReST request against the Cloud DNS Management
+                API requires that the caller be authenticated with
+                HTTP Basic Auth using a valid Rackspace SSO username
+                and password.  </para>
+            <note>
+                <para>Not all Rackspace employees with valid SSO
+                    credentials will have access to the Cloud DNS
+                    Managment API. If you cannot access the service
+                    and feel that this is in error, please contact
+                    your supervisor and have the appropriate roles
+                    added to your account. </para>
+            </note>
         </section>
     </chapter>
-    <chapter xml:id="General_API_Information-d1e633">
+    <chapter xml:id="Mgmt_API_Information-d1e633">
         <title>Management API Operations</title>
         <para>These API operations relate to administration of the environment that enables and
             supports the DNS service for all customers. The scope of these operations is wide,
             relating to the overall operating environment rather than to a single customer. Rackers
             might perform these operations to examine or alter the overall operational
             environment.</para>
-        <section xml:id="Authentication-d1e647">
+        <section xml:id="Domains-d1e647">
             <title>Domains</title>
             <?dbhtml stop-chunking?>
-            <section>
+            <section xml:id="Search_Domains">
                 <title>Search Domains</title>
                 <para> This operation allows for searching for a domain by full or partial name. </para>
                 <informaltable rules="all">
@@ -358,21 +367,33 @@
                 <para> The domain is listed if its name contains the string "rackspace" anywhere in
                     the name. </para>
             </section>
-            <section>
+            <section xml:id="Create_Domains">
                 <title>Create Domain(s)</title>
-                <note>
-                    <para> See section similarly titled in the public API documentation for a description of this API.
-                    </para>
-                </note>
+                <para> See the section "Create Domain(s)" in the
+                        <citetitle>Cloud DNS Developer
+                        Guide</citetitle> (public API documentation)
+                    for a complete description of this API request. </para>
+                <important>
+                    <para>When submitting XML requests to Create
+                        Domain in the Management API, unlike in the
+                        public API,  the type of the domain element is
+                        from the management schema namespace and has
+                        to be explicitly specified in the request
+                        using the <code>type</code> attribute. In the
+                        following example, we specify the type of the
+                        domain element as
+                            <code>xsi:type="ns3:domain"</code>,
+                        because the prefix <code>ns3</code> is bound
+                        to the Management API namespace
+                            <code>"http://docs.rackspacecloud.com/dns/api/management/v1.0"</code>
+                        and the prefix <code>xsi</code> is bound to
+                        the XMLSchema-instance namespace
+                            <code>"http://www.w3.org/2001/XMLSchema-instance"</code>.</para>
+                    <para>This does <emphasis>not</emphasis> apply to
+                        json requests to Create Domain. </para>
+                </important>
                 <example>
                     <title>Create Domain(s) Request: XML</title>
-                    <important>
-                      <para>In the Management API, unlike the public API, when submitting XML requests to Create Domain, 
-                      the type of the domain element is from the management schema namespace and has to be explicitly
-                      specified in the request using the type attribute as in the following example. 
-                      This does not apply to json requests to Create Domain.
-                      </para>
-                	</important>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-create-domains_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
@@ -737,7 +758,7 @@
                     </tbody>
                 </informaltable>
             </section>
-            <section>
+            <section xml:id="A_Note_About_Asynchronous_Responses">
                 <title>A Note About Asynchronous Responses</title>
                 <para>Refer to <link
                         xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
