@@ -8,7 +8,7 @@
     <name>Cloud DNS API Docs</name>
     
     <properties>
-        <com.rackspace.cloud.dns.maven.plugin.version>1.0.2-SNAPSHOT</com.rackspace.cloud.dns.maven.plugin.version>
+        <com.rackspace.cloud.dns.maven.plugin.version>1.0.2</com.rackspace.cloud.dns.maven.plugin.version>
         <com.rackspace.cloud.act.version>1.0.1</com.rackspace.cloud.act.version>
         <com.rackspace.cloud.dns.api.common.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
         <com.rackspace.cloud.dns.api.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.version>
