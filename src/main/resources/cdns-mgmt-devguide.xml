@@ -782,9 +782,9 @@
                         the management schema namespace, and must be
                         explicitly specified in the request using the
                             <code>type</code> attribute. </para>
-                    <para>For example in the following Create (POST)
-                        Domain(s) Request XML, we specify the type of
-                        the domain element as
+                    <para>In the following example "Create Domain(s)
+                        Request: XML," we specify the type of the
+                        domain element as
                             <code>xsi:type="ns3:domain"</code> and the
                         type of the record element as
                             <code>xsi:type="ns3:record"</code>. This
