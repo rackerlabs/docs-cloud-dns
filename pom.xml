@@ -8,11 +8,12 @@
     <name>Cloud DNS API Docs</name>
     
     <properties>
-        <com.rackspace.cloud.dns.maven.plugin.version>1.0.1</com.rackspace.cloud.dns.maven.plugin.version>
+        <com.rackspace.cloud.dns.maven.plugin.version>1.0.2-SNAPSHOT</com.rackspace.cloud.dns.maven.plugin.version>
         <com.rackspace.cloud.act.version>1.0.1</com.rackspace.cloud.act.version>
         <com.rackspace.cloud.dns.api.common.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
         <com.rackspace.cloud.dns.api.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.version>
         <com.rackspace.cloud.dns.api.mgmt.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.mgmt.version>
+        <com.rackspace.cloud.papi.version>0.9.1</com.rackspace.cloud.papi.version>
     </properties>
     
     <profiles>
@@ -108,8 +109,61 @@
                         <artifactId>dns-mgmt-rest-service</artifactId>
                         <version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>com.rackspace.papi.components</groupId>
+                        <artifactId>rate-limiting</artifactId>
+                        <version>${com.rackspace.cloud.papi.version}</version>
+                    </dependency>
                 </dependencies>                
                 <executions>
+                    <execution>
+                        <id>generate limits examples</id>
+                        <goals>
+                            <goal>generate-samples</goal>
+                        </goals>
+                        <phase>generate-sources</phase>                
+                        <configuration>
+                            <namespace>http://docs.openstack.org/common/api/v1.0</namespace>
+                            <modules>
+                                <module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
+                                <module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule" />
+                            </modules>
+                            <outputDir>${project.build.directory}/samples</outputDir>
+                            <urlBase>https://dns.api.rackspacecloud.com/v1.0</urlBase>
+                            <generateJson>true</generateJson>
+                            <generateXml>true</generateXml>
+                            <requestHeaders>
+                                <requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+                            </requestHeaders>
+                            <responseHeaders>
+                                <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
+                            </responseHeaders>
+                            <sources>
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-limits.xml</data>
+                                    <beanPackage>com.rackspace.papi.components.limits.schema</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-list-limits</nameBase>
+                                            <path>/1234/limits</path>
+                                            <responseBody/>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-example-limit</nameBase>
+                                            <path>/1234/limits/rate_limit</path>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>absolute</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
+                            </sources>
+                        </configuration>
+                    </execution>
 					<execution>
 		      			<id>g6</id>
                         <goals>
@@ -134,6 +188,42 @@
 		                        <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
 		                    </responseHeaders>
 		                    <sources>
+                            
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-limit-types.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <path>/1234/limits/types</path>
+                                            <nameBase>dns-example-limit-types</nameBase>
+                                            <responseBody/>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-over-limit.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-example-domain-limit</nameBase>
+                                            <statusCode>413</statusCode>
+                                            <responseBody/>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-over-record-limit.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-example-record-limit</nameBase>
+                                            <statusCode>413</statusCode>
+                                            <responseBody/>
+                                        </output>
+                                    </outputs>
+                                </source>
                                 
                                 <source>
                                     <data>${basedir}/src/main/resources/samples-changes-since.xml</data>
@@ -914,7 +1004,7 @@
                                         </output>
                                         <output>
                                             <nameBase>mgmt-dns-list-limit-type-groups</nameBase>
-                                            <path>/limits/types/rate_limit</path>
+                                            <path>/groups/types/rate_limit</path>
                                             <statusCode>200</statusCode>
                                             <responseBody>
                                                 <filters>
@@ -929,7 +1019,7 @@
                                         </output>
                                         <output>
                                             <nameBase>mgmt-dns-list-limit-group</nameBase>
-                                            <path>/limits/default_customer_group</path>
+                                            <path>/groups/default_customer_group</path>
                                             <statusCode>200</statusCode>
                                             <responseBody>
                                                 <base>groupLimits[0]</base>                                            
@@ -937,7 +1027,7 @@
                                         </output>
                                         <output>
                                             <nameBase>mgmt-dns-list-user-group</nameBase>
-                                            <path>/1234/limits</path>
+                                            <path>/1234/groups</path>
                                             <statusCode>200</statusCode>
                                             <responseBody>
                                                 <filters>
@@ -953,7 +1043,7 @@
                                         </output>    
                                         <output>
                                             <nameBase>mgmt-dns-list-user-group-type</nameBase>
-                                            <path>/1234/limits/rate_limit</path>
+                                            <path>/1234/groups/rate_limit</path>
                                             <statusCode>200</statusCode>
                                             <responseBody>
                                                 <base>groupLimits[0]</base>                                        
@@ -961,13 +1051,13 @@
                                         </output>
                                         <output>
                                             <nameBase>mgmt-dns-update-user-group</nameBase>
-                                            <path>/1234/limits/high_limit_customer_group</path>
+                                            <path>/1234/groups/high_limit_customer_group</path>
                                             <statusCode>204</statusCode>
                                             <requestType>PUT</requestType>
                                         </output>
                                         <output>
                                             <nameBase>mgmt-dns-delete-user-group</nameBase>
-                                            <path>/1234/limits/rate_limit</path>
+                                            <path>/1234/groups/rate_limit</path>
                                             <statusCode>204</statusCode>
                                             <requestType>DELETE</requestType>
                                         </output>
@@ -988,7 +1078,7 @@
                                     <outputs>
                                         <output>
                                             <nameBase>mgmt-dns-list-limit-types</nameBase>
-                                            <path>/limits/types</path>
+                                            <path>/groups/types</path>
                                             <statusCode>200</statusCode>
                                             <responseBody/>
                                         </output>                                                        

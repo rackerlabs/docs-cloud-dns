@@ -359,7 +359,7 @@
             </section>
         </section>
         <section xml:id="general_limits">
-            <title>Limits</title>
+            <title>Groups and Limits</title>
             <para>There are two types of limits:<itemizedlist spacing="compact">
                     <listitem>
                         <para><emphasis>absolute</emphasis> limits
@@ -375,7 +375,7 @@
                 define what these limits are. For example, a rate group is a specific type of limit
                 group (whose type is <code>rate_limit</code>), which specifies how many requests a
                 user can make in a particular time interval.</para>
-            <para> The only operations permitted via the API are:<itemizedlist spacing="compact">
+            <para> The only extended operations available via the management API are:<itemizedlist spacing="compact">
                     <listitem>
                         <para>Viewing the limit groups</para>
                     </listitem>
@@ -407,10 +407,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="1">/limits</td>
+                            <td colspan="1">/groups</td>
                             <td colspan="3">List all limit groups.</td>
                             <td colspan="5">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits 
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/groups 
                             </td>
                         </tr>
                     </tbody>
@@ -458,10 +458,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/limits/types</td>
+                            <td colspan="2">/groups/types</td>
                             <td colspan="2">List all limit group types.</td>
                             <td colspan="5">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/groups/types
                             </td>
                         </tr>
                     </tbody>
@@ -508,10 +508,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/limits/types/<parameter>type</parameter></td>
+                            <td colspan="2">/groups/types/<parameter>type</parameter></td>
                             <td colspan="3">List all limit groups of a specified type.</td>
                             <td colspan="5">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/types/rate_limit
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/groups/types/rate_limit
                             </td>
                         </tr>
                     </tbody>
@@ -558,10 +558,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/limits/<parameter>group</parameter></td>
+                            <td colspan="2">/groups/<parameter>group</parameter></td>
                             <td colspan="3">List details of the specified group.</td>
                             <td colspan="5">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/limits/default_customer_group
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/groups/default_customer_group
                             </td>
                         </tr>
                     </tbody>
@@ -772,7 +772,7 @@
             </section>
         </section>
         <section xml:id="user_limits">
-            <title>User Limits</title>
+            <title>User Groups</title>
             <para> The API operations described in this section list a user's assigned limit groups
                 and manage those limit group assignments. A user is assigned to a set of default
                 limit groups (one of each type) when the account is created. Using the API
@@ -793,10 +793,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/<parameter>1234</parameter>/limits</td>
+                            <td colspan="2">/<parameter>1234</parameter>/groups</td>
                             <td colspan="4">List a user's assigned limit groups.</td>
                             <td colspan="4">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups
                             </td>
                         </tr>
                     </tbody>
@@ -844,10 +844,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>type</parameter></td>
+                            <td colspan="2">/<parameter>1234</parameter>/groups/<parameter>type</parameter></td>
                             <td colspan="4">List a user's assigned limit group for the specified type of limit.</td>
                             <td colspan="4">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/rate_limit
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups/rate_limit
                             </td>
                         </tr>
                     </tbody>
@@ -894,10 +894,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&PUT;</td>
-                            <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>name</parameter></td>
+                            <td colspan="2">/<parameter>1234</parameter>/groups/<parameter>name</parameter></td>
                             <td colspan="4">Assign a user to a specified limit group.</td>
                             <td colspan="4">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/high_limit_customer_group
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups/high_limit_customer_group
                             </td>
                         </tr>
                     </tbody>
@@ -937,10 +937,10 @@
                     <tbody>
                         <tr align="left">
                             <td colspan="1">&DELETE;</td>
-                            <td colspan="2">/<parameter>1234</parameter>/limits/<parameter>type</parameter></td>
+                            <td colspan="2">/<parameter>1234</parameter>/groups/<parameter>type</parameter></td>
                             <td colspan="4">Assign the user to the default group for the specified type.</td>
                             <td colspan="4">
-                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/limits/rate_limit
+                                https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups/rate_limit
                             </td>
                         </tr>
                     </tbody>

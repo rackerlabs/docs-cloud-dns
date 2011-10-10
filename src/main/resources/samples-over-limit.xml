@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<overLimit code="413" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0">
+    <message>Your account is currently over the limit so your request could not be processed.</message>
+    <details>Limit of 500 domains has been reached.</details>
+</overLimit>

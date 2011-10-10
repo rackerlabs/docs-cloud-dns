@@ -1271,75 +1271,49 @@
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
+                            <td colspan="2">*/status/*</td>
+                            <td colspan="2">^/v\d+\.\d+/\d+/status.*</td>
                             <td colspan="1">5/second</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
+                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">^/v\d+\.\d+/\d+/domains.*</td>
                             <td colspan="1">100/minute</td>
                         </tr>
                         <tr>
-                            <td colspan="1">&GET;</td>
-                            <td colspan="2">  /v\d+\.\d+/\d+/status/*  </td>
-                            <td colspan="2">  /v\d+\.\d+/(\d+/status).*  </td>
-                            <td colspan="1">5/second</td>
-                        </tr>
-                        <tr>
                             <td colspan="1">&POST;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
-                            <td colspan="1">2/second</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">&POST;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
+                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">^/v\d+\.\d+/\d+/domains.*</td>
                             <td colspan="1">25/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&PUT;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
-                            <td colspan="1">5/second</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">&PUT;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
+                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">^/v\d+\.\d+/\d+/domains.*</td>
                             <td colspan="1">50/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&DELETE;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
-                            <td colspan="1">2/second</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">&DELETE;</td>
-                            <td colspan="2"> /v\d+\.\d+/* </td>
-                            <td colspan="2"> /v\d+\.\d+/(\d+/domains).* </td>
+                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">^/v\d+\.\d+/\d+/domains.*</td>
                             <td colspan="1">50/minute</td>
                         </tr>
                     </tbody>
                 </table>
-               <para> Rate limits are applied in order relative to the verb, going from least to
-                    most specific. For example, although the threshold for &POST; to /v1.0/* is 25
-                    per minute, one cannot &POST; to /v1.0/* more than 2 times within a single
-                    second because the rate limit for any &POST; is 2 per second. </para>
                 <para> If you exceed the thresholds established for your account, a <errorcode>413
                         (Rate Control)</errorcode> HTTP response will be returned with a
                         <code>Reply-After</code> header to notify the client when it can attempt to
-                    try again. <note>
-                        <para>The third entry in the Default Rate Limits table above is for simple
-                            STATUS calls after a &POST; or &PUT;, to retrieve the status details,
-                            for example: <link
-                                xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
-                                >https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</link>.
+                        try again. 
+                        <note>
+                            <para>The first entry in the Default Rate Limits table above is for simple
+                            STATUS calls after a &POST;, &PUT;, or &DELETE; to retrieve the status details;
+                            for example: 
+                            <link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d">
+                                https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d
+                            </link>.
                             This status call has a limit of 5 requests per second. </para>
-                    </note></para>
+                        </note></para>
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
@@ -1359,13 +1333,15 @@
                     existing plus requested domains and sub-domains is within the account domain
                     limit. If the total exceeds the account domain limit, the entire request will be
                     rejected and the following message will be returned: </para>
-                <para>
-                    <programlisting>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  code="400"&gt;
-  &lt;message&gt;The request could not be understood by the server due to malformed syntax.&lt;/message&gt;
-  &lt;details&gt;Limit of 500 domains has been reached.&lt;/details&gt;
-&lt;/badRequest&gt; </programlisting>
-                </para>
+                <example>
+                    <title>Example Domain Limit Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-domain-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Example Domain Limit Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-domain-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
                 <note>
                     <para>Any domains/sub-domains or records that are submitted in any request that
                         causes domain limits to be exceeded will not be provisioned and the entire
@@ -1385,13 +1361,15 @@
                     is within the account record limit. If the total number of records on a
                     specified domain exceeds the record limit, the entire request will be rejected
                     and the following message will be returned: </para>
-                <para>
-                    <programlisting>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"  code="400"&gt;
-  &lt;message&gt;The request could not be understood by the server due to malformed syntax.&lt;/message&gt;
-  &lt;details&gt;Limit of 500 records per domain has been  reached.&lt;/details&gt;
-&lt;/badRequest&gt; </programlisting>
-                </para>
+                <example>
+                    <title>Example Domain Record Limit Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-record-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Example Domain Record Limit Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-record-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
                 <note>
                     <para> Any domains/sub-domains or records that are submitted in any request that
                         causes record limits to be exceeded will not be provisioned and the entire
@@ -1402,6 +1380,10 @@
                         more records. An account may have a non-default record limit if determined
                         necessary by Support. </para>
                 </note>
+            </section>
+            <section xml:id="view_limits_ov">
+                <title>Viewing Current Limits</title>
+                <para>Users may view their current Rate, Domain, and Record limits by following the information in section <xref linkend="view_limits"/>.</para>
             </section>
         </section>
         <section xml:id="datetimeformat">
@@ -1415,7 +1397,7 @@
                 <para>See the table below for a description of the date/time format codes.</para>
                     <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would have the following
                     format:</para>
-                    <programlisting>2011-05-19T08:07:08-05:00</programlisting>
+                    <programlisting>2011-05-19T08:07:08-0500</programlisting>
                 </example>
             <table rules="all">
                 <caption>Explanation of Date/Time Format Codes</caption>
@@ -1456,7 +1438,7 @@
                     </tr>
                     <tr>
                         <td>Z</td>
-                        <td>RFC-822 timezone</td>
+                        <td>RFC-822 timezone (offset from GMT)</td>
                     </tr>
                 </tbody>
             </table>
@@ -2030,6 +2012,163 @@
     </chapter>
     <chapter xml:id="API_Operations-d1e2264">
         <title>API Operations</title>
+        <section xml:id="view_limits">
+            <title>Limits</title>
+            <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
+                should be replaced by your authenticated account ID. </para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="2">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/limits</td>
+                        <td colspan="2">List all applicable limits</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/limits/types</td>
+                        <td colspan="2">List the types of limits</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/limits/<parameter>type</parameter></td>
+                        <td colspan="2">List assigned limits of the specified type</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <section>
+                <title>List All Limits</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="2">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits</td>
+                            <td colspan="2">List all applicable limits</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue> </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                                  serviceUnavailable (<errorcode>503</errorcode>),
+                                                  unauthorized (<errorcode>401</errorcode>)</simpara>
+                <example>
+                    <title>List Limits Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-limits_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limits Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-limits_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limits Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-limits_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limits Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-limits_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>                                  
+            </section>
+            <section>
+                <title>List Limit Types</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="2">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits/types</td>
+                            <td colspan="2">List the types of limits</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue> </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                                  serviceUnavailable (<errorcode>503</errorcode>),
+                                                  unauthorized (<errorcode>401</errorcode>)</simpara>
+                <example>
+                    <title>List Limit Types Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit-types_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limit Types Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit-types_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limit Types Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit-types_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Limit Types Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit-types_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>                                  
+            </section>
+            <section>
+                <title>List Specific Limit</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="2">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/limits/<parameter>type</parameter></td>
+                            <td colspan="2">List assigned limits of the specified type</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue> </simpara>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
+                                                  serviceUnavailable (<errorcode>503</errorcode>),
+                                                  unauthorized (<errorcode>401</errorcode>)</simpara>
+                <example>
+                    <title>List Specified Limit Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Specified Limit Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Specified Limit Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List Specified Limit Response: JSON</title>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>                                  
+            </section>
+        </section>
         <section xml:id="Domains">
             <title>Domains</title>
             <para> In the following examples, <parameter><replaceable>1234</replaceable></parameter>
