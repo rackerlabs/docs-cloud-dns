@@ -18,6 +18,14 @@
                         <documentTypeEntry-array>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
+                                    <String>wadl/wadl.framework/WADL</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
                                     <String>rackbook/rackbook.framework/RackBook 1.0</String>
                                 </field>
                                 <field name="enable">
