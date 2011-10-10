@@ -2069,7 +2069,7 @@
                     </tr>
                 </tbody>
             </informaltable>
-            <section>
+            <section xml:id="List_All_Limits">
                 <title>List All Limits</title>
                 <informaltable rules="all">
                     <thead>
@@ -2111,7 +2111,7 @@
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-limits_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>                                  
             </section>
-            <section>
+            <section xml:id="List_Limit_Types">
                 <title>List Limit Types</title>
                 <informaltable rules="all">
                     <thead>
@@ -2153,7 +2153,7 @@
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-limit-types_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>                                  
             </section>
-            <section>
+            <section xml:id="List_Specific_Limit">
                 <title>List Specific Limit</title>
                 <informaltable rules="all">
                     <thead>
