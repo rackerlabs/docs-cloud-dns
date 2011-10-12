@@ -629,8 +629,8 @@
                     <title>Auth Request: XML</title>
                     <programlistingco>
                         <areaspec>
-                            <area xml:id="credentials.xml.user" units="linecolumn" coords="5 32"/>
-                            <area xml:id="credentials.xml.key" units="linecolumn" coords="6 52"/>
+                            <area xml:id="credentials.xml.user" units="linecolumn" coords="5 23"/>
+                            <area xml:id="credentials.xml.key" units="linecolumn" coords="6 18"/>
                         </areaspec>
                         <programlisting language="xml">
 <xi:include href="../../../target/samples/credentials.xml" parse="text"/>
@@ -641,8 +641,8 @@
                     <title>Auth Request: JSON</title>
                     <programlistingco>
                         <areaspec>
-                            <area xml:id="credentials.json.user" units="linecolumn" coords="4 32"/>
-                            <area xml:id="credentials.json.key" units="linecolumn" coords="5 52"/>
+                            <area xml:id="credentials.json.user" units="linecolumn" coords="4 20"/>
+                            <area xml:id="credentials.json.key" units="linecolumn" coords="5 15"/>
                         </areaspec>
                         <programlisting language="javascript">
 <xi:include href="../../../target/samples/credentials.json" parse="text"/>
@@ -657,21 +657,23 @@
                         </para>
                     </callout>
                     <callout arearefs="credentials.xml.key">
-                        <para> The key is your API access key. The key can be obtained from the
-                            Rackspace Cloud Control Panel in the <guimenu>Your Account</guimenu>/
-                            <guimenuitem>API Access</guimenuitem> section. </para>
+                        <para> The key is your API access key. The key
+                            can be obtained from the Rackspace Cloud
+                            Control Panel in the <guimenu>Your
+                                Account</guimenu> / <guimenuitem>API
+                                Access</guimenuitem> section. </para>
                     </callout>
                 </calloutlist>
                 <example>
                     <title>Auth Response: XML</title>
                     <programlistingco>
                         <areaspec>
-                            <area xml:id="auth.xml.token.expires" units="linecolumn" coords="6 45"/>
-                            <area xml:id="auth.xml.sc.s.e.region" units="linecolumn" coords="10 23"/>
-                            <area xml:id="auth.xml.sc.s.e.v1d" units="linecolumn" coords="11 27"/>
-                            <area xml:id="auth.xml.sc.s.e.pu" units="linecolumn" coords="12 20"/>
-                            <area xml:id="auth.xml.sc.s.e.iu" units="linecolumn" coords="13 22"/>
-                            <area xml:id="auth.xml.sc.s.e.nr" units="linecolumn" coords="29 16"/>
+                            <area xml:id="auth.xml.token.expires" units="linecolumn" coords="6 18"/>
+                            <area xml:id="auth.xml.sc.s.e.region" units="linecolumn" coords="10 18"/>
+                            <area xml:id="auth.xml.sc.s.e.v1d" units="linecolumn" coords="11 21"/>
+                            <area xml:id="auth.xml.sc.s.e.pu" units="linecolumn" coords="12 21"/>
+                            <area xml:id="auth.xml.sc.s.e.iu" units="linecolumn" coords="13 23"/>
+                            <area xml:id="auth.xml.sc.s.e.nr" units="linecolumn" coords="29 17"/>
                         </areaspec>
                         <programlisting language="xml">
 <xi:include href="../../../target/samples/auth.xml" parse="text"/>
@@ -682,12 +684,12 @@
                     <title>Auth Response: JSON</title>
                     <programlistingco>
                         <areaspec>
-                            <area xml:id="auth.json.token.expires" units="linecolumn" coords="6 52"/>
-                            <area xml:id="auth.json.sc.s.e.region" units="linecolumn" coords="11 38"/>
-                            <area xml:id="auth.json.sc.s.e.v1d" units="linecolumn" coords="12 40"/>
-                            <area xml:id="auth.json.sc.s.e.pu" units="linecolumn" coords="13 32"/>
-                            <area xml:id="auth.json.sc.s.e.iu" units="linecolumn" coords="14 34"/>
-                            <area xml:id="auth.json.sc.s.e.nr" units="linecolumn" coords="33 31"/>
+                            <area xml:id="auth.json.token.expires" units="linecolumn" coords="6 23"/>
+                            <area xml:id="auth.json.sc.s.e.region" units="linecolumn" coords="11 30"/>
+                            <area xml:id="auth.json.sc.s.e.v1d" units="linecolumn" coords="12 33"/>
+                            <area xml:id="auth.json.sc.s.e.pu" units="linecolumn" coords="13 33"/>
+                            <area xml:id="auth.json.sc.s.e.iu" units="linecolumn" coords="14 35"/>
+                            <area xml:id="auth.json.sc.s.e.nr" units="linecolumn" coords="33 30"/>
                         </areaspec>
                         <programlisting language="javascript">
 <xi:include href="../../../target/samples/auth.json" parse="text"/>
@@ -1410,7 +1412,9 @@
             </section>
             <section xml:id="view_limits_ov">
                 <title>Viewing Current Limits</title>
-                <para>Users may view their current Rate, Domain, and Record limits by following the information in section <xref linkend="view_limits"/>.</para>
+                <para>Users may view their current Rate, Domain, and
+                    Record limits by using the API calls described in
+                        <xref linkend="view_limits"/>.</para>
             </section>
         </section>
         <section xml:id="datetimeformat">

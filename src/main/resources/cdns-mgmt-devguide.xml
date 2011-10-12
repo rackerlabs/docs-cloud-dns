@@ -764,8 +764,8 @@
                 <para> See the following sections in the
                         <citetitle>Cloud DNS Developer
                         Guide</citetitle> (public API documentation)
-                    for a detailed description of the API requests:
-                        <link
+                    for a detailed description of the respective API
+                    requests: <link
                         xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/create_domains.html"
                         >Create Domains</link>, <link
                         xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Modify_Domain_s_-d1e3848.html"
