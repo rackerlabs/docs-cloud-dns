@@ -54,7 +54,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-10-05</pubdate>
+        <pubdate>2011-10-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -163,16 +163,26 @@
                 </thead>
                 <tbody>
                     <tr align="left" security="writeronly">
-                        <td colspan="1" >Sept. 2, 2011</td>
+                        <td colspan="1">Oct. 26, 2011</td>
                         <td colspan="4" 
                             ><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para>Initial GA version
-                                   published.</para>
+                                    <para>Initial GA release.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
                     </tr>
+                    <tr align="left">
+                        <td colspan="1">Oct. 14, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Edited document for
+                                   consistency.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr> 
                     <tr align="left">
                         <td colspan="1">Oct. 5, 2011</td>
                         <td colspan="4"
@@ -315,7 +325,6 @@
             <?dbhtml stop-chunking?>
             <section xml:id="Search_Domains">
                 <title>Search Domains</title>
-                <para> This operation allows for searching for a domain by full or partial name. </para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -343,6 +352,9 @@
                         <errorcode>500</errorcode>), serviceUnavailable
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para><?rax-fo keep-with-next?> This operation
+                    supports searching for a domain by full or partial
+                    name.</para>
                 <para><?rax-fo keep-with-next?> In the following examples, the specified search name
                     is <code>rackspace</code>:</para>
                 <example>
@@ -371,7 +383,8 @@
         </section>
         <section xml:id="general_limits">
             <title>Groups and Limits</title>
-            <para>There are two types of limits:<itemizedlist spacing="compact">
+            <para><?rax-fo keep-together?>There are two types of
+                    limits:<itemizedlist spacing="compact">
                     <listitem>
                         <para><emphasis>absolute</emphasis> limits
                             &ndash; limits that are fixed (such as
@@ -379,13 +392,17 @@
                             exceeded, cannot reset</para>
                     </listitem>
                     <listitem>
-                        <para><emphasis>dynamic</emphasis> limits &ndash; limits that reset after a
-                            period of time (such as rate limits)</para>
+                        <para><emphasis>dynamic</emphasis> limits
+                            &ndash; limits that reset after a period
+                            of time (such as rate limits)</para>
                     </listitem>
-                </itemizedlist>Each user belongs to multiple <emphasis>limit groups</emphasis> that
-                define what these limits are. For example, a rate group is a specific type of limit
-                group (whose type is <code>rate_limit</code>), which specifies how many requests a
-                user can make in a particular time interval.</para>
+                </itemizedlist>Each user belongs to multiple
+                    <emphasis>limit groups</emphasis> that define what
+                these limits are. For example, a rate group is a
+                specific type of limit group (whose type is
+                    <code>rate_limit</code>), which specifies how many
+                requests a user can make in a particular time
+                interval.</para>
             <para> The only extended operations available via the management API are:<itemizedlist spacing="compact">
                     <listitem>
                         <para>Viewing the limit groups</para>
@@ -405,7 +422,6 @@
                 groups for the system. </para>
             <section xml:id="list_limit_groups">
                 <title>List Limit Groups</title>
-                <para>This operation displays all the limit groups of all types.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -434,6 +450,9 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation displays all the limit groups of
+                    all types, as shown in the following
+                    examples:</para>
                 <example>
                     <title>List Limit Groups Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -455,8 +474,6 @@
             </section>
             <section xml:id="limit_group_types">
                 <title>List Limit Group Types</title>
-                <para>This operation displays the different limit group types. A customer is
-                    assigned to one limit group of each type.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -485,6 +502,11 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation displays the different limit
+                    group types. A customer is assigned to one limit
+                    group of each type.</para>
+                <para>Refer to the following examples for the list of
+                    limit group types:</para>
                 <example>
                     <title>List Limit Group Types Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -506,7 +528,6 @@
             </section>
             <section xml:id="limit_groups_of_specified_type">
                 <title>List Limit Groups of a Specified Type</title>
-                <para>This operation displays all the limit groups of the specified type.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -535,6 +556,11 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation displays all the limit groups of
+                    the specified type.</para>
+                <para>The following examples show the requests and
+                    responses for all the limit groups of the type
+                        <code>rate_limit</code>:</para>
                 <example>
                     <title>List Limit Groups of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -556,7 +582,6 @@
             </section>
             <section xml:id="show_limit_group_details">
                 <title>Show Details for a Limit Group</title>
-                <para>This operation displays the details for a specified limit group.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -585,6 +610,11 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation displays the details for a
+                    specified limit group.</para>
+                <para>The following examples show the requests and
+                    responses to show details for the limit group
+                        <code>default_customer_group</code>:</para>
                 <example>
                     <title>Show Group Details Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -782,8 +812,8 @@
                         the management schema namespace, and must be
                         explicitly specified in the request using the
                             <code>type</code> attribute. </para>
-                    <para>In the following example "Create Domain(s)
-                        Request: XML," we specify the type of the
+                    <para>In the following "Create Domain(s) Request:
+                        XML" example, we specify the type of the
                         domain element as
                             <code>xsi:type="ns3:domain"</code> and the
                         type of the record element as
@@ -841,10 +871,10 @@
                         >Viewing Status of All Asynchronous Job
                         Requests</link> in the <citetitle>Cloud DNS
                         Developer Guide</citetitle> for information
-                    about jobs status listings. The request URL must
-                    include the user's account id and must be made to
-                    the management API endpoint, as shown in the
-                    examples below.</para>
+                    about jobs status listings. </para>
+                <para>The request URL must include the user's account
+                    id and must be made to the management API
+                    endpoint, as shown in the examples below:</para>
                 <example>
                     <title>List User's Jobs Status Request:
                         XML</title>
@@ -866,7 +896,6 @@
                 returned to default groups.</para>
             <section xml:id="list_users_assigned_limit_groups">
                 <title>List User's Assigned Limit Groups</title>
-                <para>This operation displays the limit groups to which a user is assigned.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -895,6 +924,11 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation displays the limit groups to
+                    which a user is assigned.</para>
+                <para>The following examples show the requests and
+                    responses to list the limit groups to which the
+                    user <code>1234</code> is assigned:</para>
                 <example>
                     <title>List Assigned Groups Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -916,8 +950,6 @@
             </section>
             <section xml:id="list_users_assigned_limit_group_of_specified_type">
                 <title>List User's Assigned Limit Group of a Specified Type</title>
-                <para>This operation displays the limit group of the specified type to which the
-                    user has been assigned.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -946,6 +978,13 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation displays the limit group of the
+                    specified type to which the user has been
+                    assigned.</para>
+                <para>The following examples show the requests and
+                    responses to list the assigned limit group of type
+                        <code>rate_limit</code> for the user
+                        <code>1234</code>:</para>
                 <example>
                     <title>List Assigned Group of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -967,7 +1006,6 @@
             </section>
             <section xml:id="assign_user_to_limit_group">
                 <title>Assign User to a Limit Group</title>
-                <para>This operation assigns a user to a specified limit group.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -996,6 +1034,12 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation assigns a user to a specified
+                    limit group.</para>
+                <para>The following examples show the requests and
+                    responses to assign the user <code>1234</code> to
+                    the limit group of type
+                        <code>high_limit_customer_group</code>:</para>
                 <example>
                     <title>Assign User to Limit Group Request:</title>
                     <?dbfo keep-together="always"?>
@@ -1008,9 +1052,6 @@
             </section>
             <section xml:id="return_user_to_default_group_for_specific_type">
                 <title>Return User to the Default Group for a Specific Type</title>
-                <para>This operation removes the specified user from any custom-assigned groups
-                    (groups to which they have been assigned using the Assign User to a Limit Group
-                    call) and returns them to the default group for the specified type.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -1039,6 +1080,15 @@
                                             serviceUnavailable (<errorcode>503</errorcode>), 
                                             unauthorized (<errorcode>401</errorcode>)
                 </simpara>
+                <para>This operation removes the specified user from
+                    any custom-assigned groups (groups to which they
+                    have been assigned using the Assign User to a
+                    Limit Group call) and returns them to the default
+                    group for the specified type.</para>
+                <para>The following examples show the requests and
+                    responses to return the user <code>1234</code> to
+                    the default group for the type
+                        <code>rate_limit</code>:</para>
                 <example>
                     <title>Assign Default Group Request:</title>
                     <?dbfo keep-together="always"?>

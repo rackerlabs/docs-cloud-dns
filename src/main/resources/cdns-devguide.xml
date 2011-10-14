@@ -52,7 +52,7 @@
         </copyright>
         <releaseinfo>API v1.0 BETA</releaseinfo>
         <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-10-05</pubdate>
+        <pubdate>2011-10-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -135,16 +135,26 @@
                 </thead>
                 <tbody>
                     <tr align="left" security="writeronly">
-                        <td colspan="1" >Oct.18, 2011</td>
+                        <td colspan="1">Oct. 26, 2011</td>
                         <td colspan="4">
                             <itemizedlist spacing="compact">
                                 <listitem>
-                                    <para>Initial GA version
-                                   published.</para>
+                                    <para>Initial GA release.</para>
                                 </listitem>
                             </itemizedlist>
                         </td>
                     </tr>
+                    <tr align="left">
+                        <td colspan="1">Oct. 14, 2011</td>
+                        <td colspan="4"
+                            ><itemizedlist spacing="compact">
+                                <listitem>
+                                    <para>Edited document for
+                                        consistency.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr> 
                     <tr align="left">
                     <td colspan="1">Oct. 5, 2011</td>
                     <td colspan="4">
@@ -1336,19 +1346,22 @@
                         </tr>
                     </tbody>
                 </table>
-                <para> If you exceed the thresholds established for your account, a <errorcode>413
-                        (Rate Control)</errorcode> HTTP response will be returned with a
-                        <code>Reply-After</code> header to notify the client when it can attempt to
-                        try again. 
-                        <note>
-                            <para>The first entry in the Default Rate Limits table above is for simple
-                            STATUS calls after a &POST;, &PUT;, or &DELETE; to retrieve the status details;
-                            for example: 
-                            <link xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d">
+                <para> If you exceed the thresholds established for
+                    your account, a <errorcode>413</errorcode> HTTP
+                    response will be returned with a
+                        <code>Reply-After</code> header to notify the
+                    client when it can attempt to try again. <note>
+                        <para>The first entry in the Default Rate
+                            Limits table above is for simple STATUS
+                            calls after a &POST;, &PUT;, or &DELETE;
+                            to retrieve the status details; for
+                            example: <link
+                                xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
+                                >
                                 https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d
-                            </link>.
-                            This status call has a limit of 5 requests per second. </para>
-                        </note></para>
+                            </link>. This status call has a limit of 5
+                            requests per second. </para>
+                    </note></para>
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
@@ -1359,68 +1372,89 @@
                     across the domain and subdomains. This would total 100 entities: 1 domain + 9
                     subdomains + 90 records. Additional records and/or subdomains could be created
                     for the domain in subsequent calls.</para>
-            </section>
-            <section xml:id="Domain_Limits">
-                <title>Domain Limits</title>
-                <para>By default users may have up to 500 domains per Cloud account (including
-                    sub-domains). When a user submits a request to create new domains and/or
-                    sub-domains, the system will only accept the request if the total number of
-                    existing plus requested domains and sub-domains is within the account domain
-                    limit. If the total exceeds the account domain limit, the entire request will be
-                    rejected and the following message will be returned: </para>
-                <example>
-                    <title>Example Domain Limit Response: XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-domain-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <example>
-                    <title>Example Domain Limit Response: JSON</title>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-domain-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <note>
-                    <para>Any domains/sub-domains or records that are submitted in any request that
-                        causes domain limits to be exceeded will not be provisioned and the entire
-                        request will be rejected. </para>
-                </note>
-                <note>
-                    <para>The account domain limit applies to any API request that can be used to
-                        create a domain and/or sub-domain. An account may have a non-default limit
-                        if determined necessary by Support. </para>
-                </note>
-            </section>
-            <section xml:id="Record_Limits">
-                <title>Record Limits</title>
-                <para> By default users may have up to 500 records per domain per Cloud account.
-                    When a user submits a request to create one or more new records, the system will
-                    only accept the request if the total number of existing plus requested records
-                    is within the account record limit. If the total number of records on a
-                    specified domain exceeds the record limit, the entire request will be rejected
-                    and the following message will be returned: </para>
-                <example>
-                    <title>Example Domain Record Limit Response: XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-record-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <example>
-                    <title>Example Domain Record Limit Response: JSON</title>
-                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-record-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>
-                <note>
-                    <para> Any domains/sub-domains or records that are submitted in any request that
-                        causes record limits to be exceeded will not be provisioned and the entire
-                        request will be rejected. </para>
-                </note>
-                <note>
-                    <para> The limits apply to any API request that can be used to create one or
-                        more records. An account may have a non-default record limit if determined
-                        necessary by Support. </para>
-                </note>
+                <section xml:id="Domain_Limits">
+                    <title>Domain Limits</title>
+                    <para>By default users may have up to 500 domains
+                        per Cloud account (including sub-domains).
+                        When a user submits a request to create new
+                        domains and/or sub-domains, the system will
+                        only accept the request if the total number of
+                        existing plus requested domains and
+                        sub-domains is within the account domain
+                        limit. If the total exceeds the account domain
+                        limit, the entire request will be rejected and
+                        the following message will be returned: </para>
+                    <example>
+                        <title>Example Domain Limit Response:
+                            XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-domain-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    </example>
+                    <example>
+                        <title>Example Domain Limit Response:
+                            JSON</title>
+                        <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-domain-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    </example>
+                    <note>
+                        <para>Any domains/sub-domains or records that
+                            are submitted in any request that causes
+                            domain limits to be exceeded will not be
+                            provisioned and the entire request will be
+                            rejected. </para>
+                    </note>
+                    <note>
+                        <para>The account domain limit applies to any
+                            API request that can be used to create a
+                            domain and/or sub-domain. An account may
+                            have a non-default limit if determined
+                            necessary by Support. </para>
+                    </note>
+                </section>
+                <section xml:id="Record_Limits">
+                    <title>Record Limits</title>
+                    <para> By default users may have up to 500 records
+                        per domain per Cloud account. When a user
+                        submits a request to create one or more new
+                        records, the system will only accept the
+                        request if the total number of existing plus
+                        requested records is within the account record
+                        limit. If the total number of records on a
+                        specified domain exceeds the record limit, the
+                        entire request will be rejected and the
+                        following message will be returned: </para>
+                    <example>
+                        <title>Example Domain Record Limit Response:
+                            XML</title>
+                        <?dbfo keep-together="always"?>
+                        <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-record-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    </example>
+                    <example>
+                        <title>Example Domain Record Limit Response:
+                            JSON</title>
+                        <programlisting language="xml"><xi:include href="../../../target/samples/dns-example-record-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    </example>
+                    <note>
+                        <para> Any domains/sub-domains or records that
+                            are submitted in any request that causes
+                            record limits to be exceeded will not be
+                            provisioned and the entire request will be
+                            rejected. </para>
+                    </note>
+                    <note>
+                        <para> The limits apply to any API request
+                            that can be used to create one or more
+                            records. An account may have a non-default
+                            record limit if determined necessary by
+                            Support. </para>
+                    </note>
+                </section>
             </section>
             <section xml:id="view_limits_ov">
                 <title>Viewing Current Limits</title>
-                <para>Users may view their current Rate, Domain, and
-                    Record limits by using the API calls described in
-                        <xref linkend="view_limits"/>.</para>
+                <para>Users can view their current rate and absolute
+                    (including domain and record) limits by using the
+                    API calls described in <xref linkend="view_limits"
+                    />.</para>
             </section>
         </section>
         <section xml:id="datetimeformat">
@@ -2058,24 +2092,26 @@
                     <tr align="center">
                         <td colspan="1">Verb</td>
                         <td colspan="2">URI</td>
-                        <td colspan="2">Description</td>
+                        <td colspan="3">Description</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/limits</td>
-                        <td colspan="2">List all applicable limits</td>
+                        <td colspan="3">List all applicable
+                            limits.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/limits/types</td>
-                        <td colspan="2">List the types of limits</td>
+                        <td colspan="3">List the types of limits.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/limits/<parameter>type</parameter></td>
-                        <td colspan="2">List assigned limits of the specified type</td>
+                        <td colspan="3">List assigned limits of the
+                            specified type.</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -2086,14 +2122,15 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="2">Description</td>
+                            <td colspan="3">Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits</td>
-                            <td colspan="2">List all applicable limits</td>
+                            <td colspan="3">List all applicable
+                                limits.</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2101,6 +2138,11 @@
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
                                                   serviceUnavailable (<errorcode>503</errorcode>),
                                                   unauthorized (<errorcode>401</errorcode>)</simpara>
+                <para> This call provides a list of all applicable
+                    limits for the specified account.</para>
+                <para> The following examples show the requests and
+                    corresponding responses to list all limits for the
+                    specified account:</para>
                 <example>
                     <title>List Limits Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2119,7 +2161,10 @@
                 <example>
                     <title>List Limits Response: JSON</title>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-limits_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                </example>                                  
+                </example>
+                <para> For details about the limits information
+                    returned, refer to <xref linkend="Limits-d1e1208"
+                    />.</para>                                  
             </section>
             <section xml:id="List_Limit_Types">
                 <title>List Limit Types</title>
@@ -2128,14 +2173,15 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="2">Description</td>
+                            <td colspan="3">Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/types</td>
-                            <td colspan="2">List the types of limits</td>
+                            <td colspan="3">List the types of
+                                limits.</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2143,6 +2189,11 @@
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
                                                   serviceUnavailable (<errorcode>503</errorcode>),
                                                   unauthorized (<errorcode>401</errorcode>)</simpara>
+                <para> This call provides a list of all applicable
+                    limit types for the specified account.</para>
+                <para> The following examples show the requests and
+                    corresponding responses to list all limit types
+                    for the specified account:</para>
                 <example>
                     <title>List Limit Types Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2170,14 +2221,15 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="2">Description</td>
+                            <td colspan="3">Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/limits/<parameter>type</parameter></td>
-                            <td colspan="2">List assigned limits of the specified type</td>
+                            <td colspan="3">List assigned limits of
+                                the specified type.</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2185,6 +2237,11 @@
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>, <errorcode>500</errorcode>), 
                                                   serviceUnavailable (<errorcode>503</errorcode>),
                                                   unauthorized (<errorcode>401</errorcode>)</simpara>
+                <para> This call provides a list of all applicable
+                    limits for the specified account.</para>
+                <para> The following examples show the requests and
+                    corresponding responses to list all limits for the
+                    specified account:</para>
                 <example>
                     <title>List Specified Limit Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2215,19 +2272,19 @@
                     <tr align="center">
                         <td colspan="1">Verb</td>
                         <td colspan="2">URI</td>
-                        <td colspan="2">Description</td>
+                        <td colspan="3">Description</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains</td>
-                        <td colspan="2">List all account domains.</td>
+                        <td colspan="3">List all account domains.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/?name=<parameter>domainName</parameter></td>
-                        <td colspan="2">Filter domains by domain name: list all domains
+                        <td colspan="3">Filter domains by domain name: list all domains
                             manageable by the account specified that match the name
                             <parameter>domainName</parameter>. Display IDs and names
                             only.</td>
@@ -2235,14 +2292,14 @@
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter></td>
-                        <td colspan="2">List details for a specific domain. By default this call
+                        <td colspan="3">List details for a specific domain. By default this call
                             displays information for records but not subdomains.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2"
                                 >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<?sbr?><code>[true|false]&amp;<?sbr?></code><parameter>showSubdomains</parameter>=<code>[true|false]</code><?sbr?></td>
-                        <td colspan="2">List details for a specific domain, using the
+                        <td colspan="3">List details for a specific domain, using the
                                 <parameter>showRecords</parameter> and
                                 <parameter>showSubdomains</parameter> parameters that specify
                             whether to request information for records and subdomains.</td>
@@ -2250,58 +2307,59 @@
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter>/changes?<?sbr?><parameter>since</parameter>=<?sbr?><code>[date/time]</code></td>
-                        <td colspan="2">Show all changes to the specified domain since the specified date. The <parameter>since</parameter>
-                                        parameter is optional and defaults to midnight of the current day. See 
-                                        <xref linkend="datetimeformat"/> for how to specify this parameter's value.</td>
+                        <td colspan="3">Show all changes to the
+                            specified domain
+                                <parameter>since</parameter> the
+                            specified <code>date/time</code>. </td>
                     </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/domains/<parameter>domainId</parameter>/export</td>
-                        <td colspan="2">Export details of the specified domain.</td>
+                        <td colspan="3">Export details of the specified domain.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&POST;</td>
                         <td colspan="2">/domains</td>
-                        <td colspan="2">Create a new domain.</td>
+                        <td colspan="3">Create a new domain.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&POST;</td>
                         <td colspan="2">/domains/import</td>
-                        <td colspan="2"> Import a new domain with the configuration specified by
+                        <td colspan="3"> Import a new domain with the configuration specified by
                             the request.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
-                        <td colspan="2">Modify the configuration of a domain.</td>
+                        <td colspan="3">Modify the configuration of a domain.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&PUT;</td>
                         <td colspan="2">/domains</td>
-                        <td colspan="2">Modify multiple domains.</td>
+                        <td colspan="3">Modify multiple domains.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2">/domains<?sbr?>/<parameter>domainId</parameter></td>
-                        <td colspan="2">Remove a domain.</td>
+                        <td colspan="3">Remove a domain.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                             >/domains<?sbr?>/<parameter>domainId</parameter>?<?sbr?>deleteSubdomains=<?sbr?>true</td>
-                        <td colspan="2">Remove a domain and all its subdomains.</td>
+                        <td colspan="3">Remove a domain and all its subdomains.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                                 >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter></td>
-                        <td colspan="2">Remove multiple domains.</td>
+                        <td colspan="3">Remove multiple domains.</td>
                     </tr>
                     <tr>
                         <td colspan="1">&DELETE;</td>
                         <td colspan="2"
                                 >/domains?id=<parameter>domainId1</parameter>&amp;<?sbr?>id=<parameter>domainId2</parameter>&amp;<?sbr?>deleteSubdomains=<?sbr?>true</td>
-                        <td colspan="2">Remove multiple domains and their subdomains.</td>
+                        <td colspan="3">Remove multiple domains and their subdomains.</td>
                     </tr>
                 </tbody>
             </informaltable>
@@ -2322,7 +2380,6 @@
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
                             <td colspan="3">Description</td>
-                            <td colspan="2">Representations</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -2331,7 +2388,6 @@
                             <td colspan="2">/domains</td>
                             <td colspan="3">List all domains manageable by the account specified.
                                 Display IDs and names only.</td>
-                            <td colspan="2">XML, JSON</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
@@ -2340,7 +2396,6 @@
                                 manageable by the account specified that match the name
                                     <parameter>domainName</parameter>. Display IDs and names
                                 only.</td>
-                            <td colspan="2">XML, JSON</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2488,7 +2543,6 @@
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
                             <td colspan="3">Description</td>
-                            <td colspan="2">Representations</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -2497,7 +2551,6 @@
                             <td colspan="2">/domains/<parameter>domainId</parameter></td>
                             <td colspan="3">List details of the specified domain, with record
                                 information but without subdomains. </td>
-                            <td colspan="2">XML, JSON</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
@@ -2509,7 +2562,6 @@
                             <td colspan="3">List details of the specified domain. Display details,
                                 as specified by the <parameter>showRecords</parameter> and
                                     <parameter>showSubdomains</parameter> parameters. </td>
-                            <td colspan="2">XML, JSON</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2629,17 +2681,16 @@
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
                             <td colspan="3">Description</td>
-                            <td colspan="2">Representations</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/domains/<parameter>domainId</parameter>/changes?<?sbr?><parameter>since</parameter>=<?sbr?><code>[date/time]</code></td>
-                            <td colspan="3">Show all changes to the specified domain since the specified date. The <parameter>since</parameter>
-                                        parameter is optional and defaults to midnight of the current day. See 
-                                        <xref linkend="datetimeformat"/> for how to specify this parameter's value.</td>
-                            <td colspan="2">XML, JSON</td>
+                            <td colspan="3">Show all changes to the
+                                specified domain
+                                   <parameter>since</parameter> the
+                                specified <code>date/time</code>. </td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2650,6 +2701,17 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>)</simpara>
+                <para>This call shows all changes to the specified
+                    domain since the specified <code>date/time</code>.
+                    The <parameter>since</parameter> parameter is
+                    optional and defaults to midnight of the current
+                    day. See <xref linkend="datetimeformat"/> for
+                    details on how to specify this parameter's
+                    value.</para>
+                <para>The following examples show the requests and
+                    corresponding responses to list the domain changes
+                    since midnight, GMT-5, on September 13,
+                    2011:</para>
                 <example>
                     <title>List Domain Changes Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2678,7 +2740,6 @@
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
                             <td colspan="3">Description</td>
-                            <td colspan="2">Representations</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -2686,7 +2747,6 @@
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/domains/<parameter>domainId</parameter>/export</td>
                             <td colspan="3">Export details of the specified domain.</td>
-                            <td colspan="2">XML, JSON</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -2835,7 +2895,6 @@
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
                             <td colspan="3">Description</td>
-                            <td colspan="2">Representations</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -2844,7 +2903,6 @@
                             <td colspan="2">/domains/import</td>
                             <td colspan="3"> Import a new domain with the configuration specified by
                                 the request.</td>
-                            <td colspan="2">XML, JSON</td>
                         </tr>
                     </tbody>
                 </informaltable>
