@@ -1209,7 +1209,7 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
-                            <enableDisqus>1</enableDisqus>
+                            <enableDisqus>0</enableDisqus>
                             <includes>cdns-devguide.xml</includes>
 			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
                         </configuration>
