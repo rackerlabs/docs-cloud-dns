@@ -10,9 +10,9 @@
     <properties>
         <com.rackspace.cloud.dns.maven.plugin.version>1.0.2</com.rackspace.cloud.dns.maven.plugin.version>
         <com.rackspace.cloud.act.version>1.0.1</com.rackspace.cloud.act.version>
-        <com.rackspace.cloud.dns.api.common.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
-        <com.rackspace.cloud.dns.api.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.version>
-        <com.rackspace.cloud.dns.api.mgmt.version>1.0.10-SNAPSHOT</com.rackspace.cloud.dns.api.mgmt.version>
+        <com.rackspace.cloud.dns.api.common.version>1.0.10</com.rackspace.cloud.dns.api.common.version>
+        <com.rackspace.cloud.dns.api.version>1.0.12</com.rackspace.cloud.dns.api.version>
+        <com.rackspace.cloud.dns.api.mgmt.version>1.0.10</com.rackspace.cloud.dns.api.mgmt.version>
         <com.rackspace.cloud.papi.version>0.9.1</com.rackspace.cloud.papi.version>
     </properties>
     
