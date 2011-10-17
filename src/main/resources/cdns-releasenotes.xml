@@ -408,10 +408,10 @@
 			</listitem>
 			<listitem security="internal">
 				<para>Fix client IP logging behind Zeus</para>
-			</listitem>
-			<listitem security="internal">
 				<remark>Reviewer: do we have a ticket number for the
-					previous issue?</remark></listitem>
+					previous issue?</remark>
+			</listitem>
+			
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-678">DNS-678</link>: Move recordType
 					method from records resource to the accounts resource </para></listitem>
 			<listitem security="internal"><para>Catch appropriate root exception for JSON parse errors</para>
