@@ -423,19 +423,14 @@
 			<listitem security="internal"><para>Fixing illegal argument exception from XML</para></listitem>
 			<listitem security="internal"><para>Fix default status value per GSS input</para></listitem>
 			<listitem security="internal"><para>Fixing URL generation for non-standard port</para></listitem>
-			<listitem security="internal"><para>Removing veracode security CLRF injection flaw</para>
-				<remark>Reviewer: The acronym should be CRLF instead
-					(Carriage Return Line Feed), correct?</remark></listitem>
+			<listitem security="internal"><para>Removing Veracode security CRlF injection flaw</para></listitem>
 			<listitem security="internal"><para>ratelimiting changes to config file for adding async status call</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-722"
-						>DNS-722</link>: Vericode fix - rebuild
+						>DNS-722</link>: Veracode fix - rebuild
 					org/jgroups. Embedding other PowerAPI needed jars
 					instead of inlining to see if it further improves
 					Veracode score (and confirm the application still
-					works).</para>
-				<remark>Reviewer: There are two spellings used in
-					previous sentence: Vericode vs. Veracode. Please
-					resolve.</remark></listitem>
+					works).</para></listitem>
 			<listitem security="internal"><para>Reduce visibility of some logging messages to cut down on noise
 					in production logs. Also updated missing
 					dependency.</para></listitem>
@@ -491,8 +486,7 @@
 	    <listitem>
 	      <para>Pagination – Incorrect error (500) is returned when
 						<code>offset</code> or <code>limit</code> is
-					set with any text or when <code>limit</code> =
-					0</para>
+					set with any text or when <code>limit</code>=0</para>
 	    </listitem>
 	    <listitem>
 	      <para>XML validation is failing; allows domain to be created when trying to create Domain with <tag>records</tag> element instead of <tag>recordsList</tag> element</para>
