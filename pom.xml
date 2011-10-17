@@ -1197,9 +1197,26 @@
                             <pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
                             <includes>cdns-mgmt-devguide.xml</includes>
                             <enableDisqus>0</enableDisqus>
-			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
+			    			<enableGoogleAnalytics>0</enableGoogleAnalytics>
+                        	<security>internal</security>
                         </configuration>
                     </execution>
+                	<execution>
+                		<id>g1.1</id>
+                		<goals>
+                			<goal>generate-pdf</goal>
+                			<goal>generate-webhelp</goal>
+                		</goals>
+                		<phase>initialize</phase>
+                		<configuration>
+                			<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
+                			<includes>cdns-releasenotes.xml</includes>
+                			<enableDisqus>intranet</enableDisqus>
+                			<enableGoogleAnalytics>0</enableGoogleAnalytics>
+                			<security>internal</security>
+                			<chapterAutolabel>0</chapterAutolabel>
+                		</configuration>
+                	</execution>
                     <execution>
                         <id>g2</id>
                         <goals>
@@ -1209,7 +1226,7 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
-                            <enableDisqus>1</enableDisqus>
+                            <enableDisqus>0</enableDisqus>
                             <includes>cdns-devguide.xml</includes>
 			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
                         </configuration>

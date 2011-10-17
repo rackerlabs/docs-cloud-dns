@@ -33,7 +33,7 @@
         xmlns:ns2="http://www.w3.org/2005/Atom"
         xmlns:ns1="http://docs.rackspacecloud.com/dns/api/management/v1.0">
         <ns1:name>restricted_group</ns1:name>
-        <ns1:description>Customer Group with partial priveledges and
+        <ns1:description>Customer Group with partial privileges and
             very low limits</ns1:description>
         <ns1:type>rate_limit</ns1:type>
         <ns1:limitUnit></ns1:limitUnit>
