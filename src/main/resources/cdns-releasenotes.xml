@@ -377,7 +377,7 @@
 						>DNS-693</link>. Converted deleteDomain() to
 					cxf.</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-695">DNS-695</link>: Implement client pooling </para></listitem>
-			<listitem security="internal"><para>fixing dups coming back as service unavailable</para>
+			<listitem security="internal"><para>Fixing dups coming back as service unavailable</para>
 				<remark>Reviewer: do we have a ticket number for the
 					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-469">DNS-469</link>, <link
@@ -402,7 +402,7 @@
 					results in incorrect error response</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-701">DNS-701</link>: Wrong response code
 					when updating domain with invalid record type </para></listitem>
-			<listitem security="internal"><para>fix client ip logging behind zeus</para>
+			<listitem security="internal"><para>Fix client IP logging behind Zeus</para>
 				<remark>Reviewer: do we have a ticket number for the
 					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-678">DNS-678</link>: Move recordType
