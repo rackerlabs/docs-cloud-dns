@@ -400,9 +400,16 @@
 					proper http://docs.rackspacecloud.com/dns/api/v1.0 namespace </para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-710">DNS-710</link>: Invalid Accept header
 					results in incorrect error response</para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-701">DNS-701</link>: Wrong response code
-					when updating domain with invalid record type </para></listitem>
-			<listitem security="internal"><para>Fix client IP logging behind Zeus</para>
+			<listitem security="internal">
+				<para><link
+						xlink:href="https://jira.mosso.com/browse/DNS-701"
+						>DNS-701</link>: Wrong response code when
+					updating domain with invalid record type </para>
+			</listitem>
+			<listitem security="internal">
+				<para>Fix client IP logging behind Zeus</para>
+			</listitem>
+			<listitem security="internal">
 				<remark>Reviewer: do we have a ticket number for the
 					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-678">DNS-678</link>: Move recordType
