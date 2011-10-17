@@ -214,9 +214,11 @@
 		<itemizedlist>
 			<title>Known Issues</title>
 			<listitem>
-				<para>Importing a bind-9 formatted zone file from MyRack to the
-					Rackspace Cloud. Contact support to transfer any
-					domains from Managed to Cloud.</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-644"
+						>DNS-644</link>: Importing a bind-9 formatted
+					zone file from MyRack to the Rackspace Cloud.
+					Contact support to transfer any domains from
+					Managed to Cloud.</para>
 			</listitem>
 			<listitem security="internal">
 				<para><link xlink:href="https://jira.mosso.com/browse/DNS-774"
@@ -423,7 +425,9 @@
 			<listitem security="internal"><para>Fixing illegal argument exception from XML</para></listitem>
 			<listitem security="internal"><para>Fix default status value per GSS input</para></listitem>
 			<listitem security="internal"><para>Fixing URL generation for non-standard port</para></listitem>
-			<listitem security="internal"><para>Removing Veracode security CRlF injection flaw</para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-720"
+						>DNS-720</link>: Removing Veracode security
+					CRLF injection flaw</para></listitem>
 			<listitem security="internal"><para>ratelimiting changes to config file for adding async status call</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-722"
 						>DNS-722</link>: Veracode fix - rebuild
