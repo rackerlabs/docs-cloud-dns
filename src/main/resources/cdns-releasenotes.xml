@@ -35,9 +35,9 @@
 	</abstract>
     </info>
 	<chapter xml:id="cdnsv1.0.12">
-		<title>v1.0.12, 18 October 2011</title>
+		<title>v1.0.12, October 18, 2011</title>
 		<itemizedlist>
-			<title>New features</title>
+			<title>New Features</title>
 			<listitem>
 				<para><link
 						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Authentication-d1e647.html"
@@ -50,20 +50,21 @@
 			</listitem>
 			<listitem>
 				<para>Documentation updates to the <link xlink:href="http://docs.rackspace.com/api/"
-						>developers guide</link></para>
+						>DNS Developer Guide</link></para>
 			</listitem>
 			</itemizedlist>
 		<itemizedlist>
-			<title>Known issues</title>
+			<title>Known Issues</title>
 			<listitem>
-				<para> Importing a bind-9 formatted zone file from MyRack to the Rackspace Cloud.
-					Contact support to transfer any domains from managed to cloud. </para>
+				<para> Importing a bind-9 formatted zone file from MyRack to the
+					Rackspace Cloud. Contact support to transfer any
+					domains from Managed to Cloud. </para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
 			<title>Resources</title>
 			<listitem>
-				<para><link xlink:href="http://docs.rackspace.com/api/">API Developers Guide</link></para>
+				<para><link xlink:href="http://docs.rackspace.com/api/">DNS Developer Guide</link></para>
 			</listitem>
 			<listitem>
 				<para><link xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
@@ -80,87 +81,113 @@
 			</listitem>
 		</itemizedlist>
 		<itemizedlist security="internal">
-			<title>Change details</title>
+			<title>Change Details</title>
 			<listitem>
-				<para>B-04776 Changes Since Support</para>
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=B-04776"
+					>B-04776</link>: Changes Since Support</para>
 			</listitem>
 			<listitem>
-				<para>B-04777 Update to Auth 1.1</para>
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=B-04777"
+					>B-04777</link>: Update to Auth 1.1</para>
 			</listitem>
 			<listitem>
-				<para>B-04890 Mgmt API - Modify domain / record limits</para>
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=B-04890"
+					>B-04890</link>: Mgmt API - Modify domain / record limits</para>
 			</listitem>
 			<listitem>
-				<para>B-04893 Mgmt-API - View the status of customers' jobs</para>
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=B-04893"
+					>B-04893</link>: Mgmt API - View the status of customers' jobs</para>
 			</listitem>
 			<listitem>
-				<para>B-04919 Upgrade PowerAPI to latest version</para>
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=B-04919"
+					>B-04919</link>: Upgrade PowerAPI to latest version</para>
 			</listitem>
 			<listitem>
 				<para>Code cleanup</para>
 			</listitem>
 			<listitem>
-				<para>D-01289 - Non-Paginated Status lists include empty links element D-01290 -
-					Basic/Detail information being returned incorrectly from job status
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=D-01289"
+					>D-01289</link>: Non-Paginated Status lists include
+					empty links element </para>
+			</listitem>
+			<listitem>
+				<para><link xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=D-01290"
+					>D-01290</link>: Basic/Detail information being
+					returned incorrectly from job status
 					resources</para>
 			</listitem>
 			<listitem>
-				<para>Fix D-01268 Subdomains list now returns correct results</para>
+				<para><link
+						xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/advanced?q=D-01268"
+						>D-01268</link>: Subdomain query can return
+					invalid results</para>
 			</listitem>
 		</itemizedlist>
 		</chapter>
 	<chapter xml:id="cdnsv1.0.10">
-		<title>v1.0.10, 06 September 2011</title>
-		<para>These release notes cover new features, bug fixes and known issues for the latest
-			version of Cloud DNS. Don't forget, we encourage you to let us know what you think by
-			visiting our product feedback site.</para>
+		<title>v1.0.10, September 6, 2011</title>
+		<para>These release notes cover new features, bug fixes, and known
+			issues for the latest version of Cloud DNS. Don't forget,
+			we encourage you to let us know what you think by visiting
+			our product feedback site.</para>
 		<itemizedlist>
-			<title>API contract change</title>
+			<title>API Contract Change</title>
 			<para>The following release contains a change to the API that will break the current
 				behavior of asynchronous callbacks and require modifications to your code.</para>
-			<para>Previously, the object returned by the asynchronous call would simply return 202,
-				a job id and status monitor URL when called. If the job succeeded, a 200 response
-				was returned along with the object (or a 204 for delete operations). If the job were
-				to fail, the service returned the error code along with the error object.</para>
-			<para>With this release, the behavior has been modified to return 202, a job id, job
-				status, status monitor url, request verb, request url, and request data (if any). </para>
+			<para>Previously, the object returned by the asynchronous call
+				would simply return 202, a job id, and status monitor
+				URL when called. If the job succeeded, a 200 response
+				was returned along with the object (or a 204 for
+				delete operations). If the job were to fail, the
+				service returned the error code along with the error
+				object.</para>
+			<para>With this release, the behavior has been modified to return
+				202, a job id, job status, status monitor URL, request
+				verb, request URL, and request data (if any). </para>
 			<listitem>
-				<para>When the status monitor url is queried and the job is still running, return
-					202 and: <itemizedlist>
+				<para>When the status monitor URL is queried and the job is still
+					running, return 202 and: <itemizedlist>
 						<listitem>
-							<para>job id, status monitor url, and status (default) OR</para>
+							<para>job id, status monitor URL, and
+								status (default) OR</para>
 						</listitem>
 						<listitem>
-							<para>job id, job status, status monitor url, request verb, request url,
-								and request data (if any) (?showDetails=true)</para>
+							<para>job id, job status, status monitor
+								URL, request verb, request URL, and
+								request data (if any)
+								(?<parameter>showDetails</parameter>=<code>true</code>)</para>
 						</listitem>
 					</itemizedlist></para>
 			</listitem>
 			<listitem>
-				<para>When the status monitor url is queried and the job has succeeded, return a 200
-					and: <itemizedlist>
+				<para>When the status monitor URL is queried and the job has
+					succeeded, return a 200 and: <itemizedlist>
 						<listitem>
-							<para>job id, job status, and status monitor url (default) OR</para>
+							<para>job id, job status, and status
+								monitor URL (default) OR</para>
 						</listitem>
 						<listitem>
-							<para>job id, job status, status monitor url, request verb, request url,
-								request data (if any), and response (if any)
-								(?showDetails=true)</para>
+							<para>job id, job status, status monitor
+								URL, request verb, request URL,
+								request data (if any), and response
+								(if any)
+								(?<parameter>showDetails</parameter>=<code>true</code>)</para>
 						</listitem>
 					</itemizedlist></para>
 			</listitem>
 			<listitem>
-				<para>When the status monitor url is queried and the job has failed, return a 200
-					and: <itemizedlist>
+				<para>When the status monitor URL is queried and the job has
+					failed, return a 200 and: <itemizedlist>
 						<listitem>
-							<para>job id, job status, and status monitor url (default) OR</para>
+							<para>job id, job status, and status
+								monitor URL (default) OR</para>
 						</listitem>
 						<listitem>
-							<para>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</para>
-						</listitem>
-						<listitem>
-							<para> job id, job status, status monitor url, request verb, request
-								url, request data (if any), and error (?showDetails=true) </para>
+							<para> job id, job status, status monitor
+								URL, request verb, request URL,
+								request data (if any), and error
+								(?<parameter>showDetails</parameter>=<code>true</code>)
+							</para>
 						</listitem>
 					</itemizedlist></para>
 			</listitem>
@@ -169,7 +196,7 @@
 				xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
 				>documentation on asynchronous callbacks</link>. </para>
 		<itemizedlist>
-			<title>New features</title>
+			<title>New Features</title>
 			<listitem>
 				<para>API Change - Modifications to asynchronous callback responses</para>
 			</listitem>
@@ -180,32 +207,36 @@
 				<para>Big fixes, including a fix to allow underscores in names through POST requests</para>
 			</listitem>
 			<listitem>
-				<para>Documentation updates to the <link xlink:href="http://docs.rackspace.com/api/">developers
-						guide</link></para>
+				<para>Documentation updates to the <link xlink:href="http://docs.rackspace.com/api/">DNS Developer
+						Guide</link></para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
-			<title>Known issues</title>
+			<title>Known Issues</title>
 			<listitem>
-				<para>Importing a bind-9 formatted zone file from MyRack to the Rackspace Cloud.
-					Contact support to transfer any domains from managed to cloud.</para>
+				<para>Importing a bind-9 formatted zone file from MyRack to the
+					Rackspace Cloud. Contact support to transfer any
+					domains from Managed to Cloud.</para>
 			</listitem>
 			<listitem security="internal">
-				<para><link xlink:href="https://jira.mosso.com/browse/DNS-774">DNS-774</link>:
-					Non-default rate limit groups are not being honored.</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-774"
+						>DNS-774</link>: Non-default rate limit groups
+					are not being honored</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist security="internal">
-			<para>For a detailed list of changes made see the following list:</para>
+			<para>For a detailed list of changes made see the following
+				list:</para>
 			<listitem>
 				<para>Add more detailed logging to xmlrpc calls (debug only)</para>
 			</listitem>
 			<listitem>
-				<para>Changes to have domain and record limit return overlimit rather than Bad
-					Request status</para>
+				<para>Changes to have domain and record limit return overLimit
+					rather than Bad Request status</para>
 			</listitem>
 			<listitem>
-				<para>DNS-622: Service returning 503 when performing GET on domain id under
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-622"
+					>DNS-622</link>: Service returning 503 when performing GET on domain id under
 					2700001</para>
 			</listitem>
 			<listitem>
@@ -213,28 +244,30 @@
 					accounts</para>
 			</listitem>
 			<listitem>
-				<para>add more detailed logging to xmlrpc calls (debug only)</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-772"
+						>DNS-772</link>: As a Cloud DNS user, I need a
+					status page for pending and completed actions so
+					that I can know when my DNS operations have
+					completed</para>
 			</listitem>
 			<listitem>
-				<para>https://jira.mosso.com/browse/DNS-772 - As a Cloud DNS user, I need a status
-					page for pending and completed actions so that I can know when my DNS operations
-					have completed</para>
-			</listitem>
-			<listitem>
-				<para>https://jira.mosso.com/browse/DNS-801 - Only MX and SRV Records should have
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-801"
+					>DNS-801</link>: Only MX and SRV Records should have
 					priority fields</para>
 			</listitem>
 			<listitem>
-				<para>issue DNS-424: Default domain limits
-					https://jira.mosso.com/browse/DNS-424</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-424"
+						>DNS-424</link>: Default domain limits</para>
 			</listitem>
 			<listitem>
-				<para>issue DNS-732: Fix validaiton on post and put records to allow underscore in
-					name https://jira.mosso.com/browse/DNS-732</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-732"
+					>DNS-732</link>: Fix validation on POST and PUT records to allow
+					underscore in name</para>
 			</listitem>
 			<listitem>
-				<para>issue DNS-770: Bad SRV name - passes validation
-					https://jira.mosso.com/browse/DNS-770</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-770"
+						>DNS-770</link>: Bad SRV name - passes
+					validation</para>
 			</listitem>
 			<listitem>
 				<para><link xlink:href="https://jira.mosso.com/browse/DNS-776">DNS-776</link>:
@@ -245,9 +278,9 @@
 					Autohost rejecting A records with priority field set </para>
 			</listitem>
 			<listitem>
-				<para><link xlink:href="https://jira.mosso.com/browse/DNS-794">DNS-791</link>:
-					Update status resources with new behavior and unit tests
-					https://jira.mosso.com/browse/DNS-791</para>
+				<para><link xlink:href="https://jira.mosso.com/browse/DNS-794"
+						>DNS-791</link>: Update status resources with
+					new behavior and unit tests</para>
 			</listitem>
 			<listitem>
 				<para><link xlink:href="https://jira.mosso.com/browse/DNS-794">DNS-794</link>: Add
@@ -275,9 +308,9 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdnsv1.0.9">
-		<title>v1.0.9, 28 June 2011</title>
+		<title>v1.0.9, August 9, 2011</title>
 		<itemizedlist>
-			<title>New features</title>
+			<title>New Features</title>
 			<listitem>
 				<para>Performance improvements</para>
 			</listitem>
@@ -292,46 +325,71 @@
 				<para>Introduced rate limiting for asynchronous callbacks</para>
 			</listitem>
 			<listitem>
-				<para>Documentaton updates to the <link xlink:href="http://docs.rackspace.com/api/"
-						>developers guide</link></para>
+				<para>Documentation updates to the <link
+						xlink:href="http://docs.rackspace.com/api/"
+						>DNS Developer Guide</link></para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
-			<title>Known issues</title>
+			<title>Known Issues</title>
 			<listitem>
-				<para>Importing a bind-9 formatted zone file from MyRack to the Rackspace Cloud.
-					Contact support to transfer any domains from managed to cloud.</para>
+				<para>Importing a bind-9 formatted zone file from MyRack to the
+					Rackspace Cloud. Contact support to transfer any
+					domains from Managed to Cloud.</para>
 			</listitem>
 			<listitem>
-				<para>Records with underscores sent through POST requests (adding records) are
-					validated incorrectly. Validation through PUT requests (modify records) is
-					functioning correctly. Work around this issue by first creating the record
-					without underscores, and subsequently modifying it to include the
-					underscore</para>
+				<para>Records with underscores sent through POST requests (adding
+					records) are validated incorrectly. Validation
+					through PUT requests (modify records) is
+					functioning correctly. Work around this issue by
+					first creating the record without underscores, and
+					subsequently modifying it to include the
+					underscore.</para>
 			</listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-714">DNS-714</link>: Research Spike -
-					Investigate Black box performance issues and areas for improvement </para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-714"
+						>DNS-714</link>: Research Spike - Investigate
+					Black Box performance issues and areas for
+					improvement </para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-424">DNS-424</link>, <link
 						xlink:href="https://jira.mosso.com/browse/DNS-485">DNS-485</link>: Domain
 					and Record Limit implementations</para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-671">DNS-671</link>: When offset or limit
-					is set to "asdf" or any text its throwing 500 Error in Pagination </para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-671"
+						>DNS-671</link>: When offset or limit is set
+					to "asdf" or any text it is throwing 500 Error in
+					Pagination </para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-708">DNS-708</link>: Incorrectly referencing ns1.rackspace.com nameserver </para></listitem>
-			<listitem security="internal"><para>clean up validation errors coming back from blackbox</para></listitem>
+			<listitem security="internal"><para>Clean up validation errors coming back from Black Box</para>
+				<remark>Reviewer: do we have a ticket number for the
+					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-669">DNS-669</link>: Transaction Rollback not working for create domain(s) </para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-644">DNS-644</link>: Importing a zone file
 					exported from myRack is not working</para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-761">DNS-761</link>: @created missing from all namespaces within getCallback call. </para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-724">DNS-724</link>: deleteRecordByID
-					failing with New Build from 07/12.</para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-694">DNS-694</link>: Convert PUTs and POSTs to CXF client <link xlink:href="https://jira.mosso.com/browse/DNS-693">DNS-693</link>. Converted deleteDomain() to cxf</para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-761"
+						>DNS-761</link>: @created missing from all
+					namespaces within getCallback call</para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-724"
+						>DNS-724</link>: deleteRecordByID failing with
+					New Build from 07/12</para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-694"
+						>DNS-694</link>: Convert PUTs and POSTs to CXF
+					client <link
+						xlink:href="https://jira.mosso.com/browse/DNS-693"
+						>DNS-693</link>. Converted deleteDomain() to
+					cxf.</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-695">DNS-695</link>: Implement client pooling </para></listitem>
-			<listitem security="internal"><para>fixing dups coming back as service unavailabel</para></listitem>
+			<listitem security="internal"><para>fixing dups coming back as service unavailable</para>
+				<remark>Reviewer: do we have a ticket number for the
+					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-469">DNS-469</link>, <link
 						xlink:href="https://jira.mosso.com/browse/DNS-487">DNS-487</link>: adding
 					get total calls to adapter layer</para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-759">DNS-759</link>: recordID missing in subdomain record in getCall back call. </para></listitem>
-			<listitem security="internal"><para>fix concurrent mod exception caused by not pulling created records/ domains anymore.</para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-759"
+						>DNS-759</link>: recordID missing in subdomain
+					record in get Callback call</para></listitem>
+			<listitem security="internal"><para>Fix concurrent mod exception caused by not pulling created
+					records / domains anymore</para>
+				<remark>Reviewer: do we have a ticket number for the
+					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-729">DNS-729</link>. System should not
 					perform extra gets on createDomain/createRecord calls</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-736">DNS-736</link>: Caching Account
@@ -344,27 +402,42 @@
 					results in incorrect error response</para></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-701">DNS-701</link>: Wrong response code
 					when updating domain with invalid record type </para></listitem>
-			<listitem security="internal"><para>fix client ip logging behind zeus</para></listitem>
+			<listitem security="internal"><para>fix client ip logging behind zeus</para>
+				<remark>Reviewer: do we have a ticket number for the
+					previous issue?</remark></listitem>
 			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-678">DNS-678</link>: Move recordType
 					method from records resource to the accounts resource </para></listitem>
-			<listitem security="internal"><para>catch appropriate root exception for json parse errors</para></listitem>
-			<listitem security="internal"><para>fix uri helper to properly account for ports and ipv6 addresses</para></listitem>
-			<listitem security="internal"><para>Fixing illegal argument exception from xml</para></listitem>
+			<listitem security="internal"><para>Catch appropriate root exception for JSON parse errors</para>
+				<remark>Reviewer: do we have a ticket number for this
+					issue as well as the following issues
+					below?</remark></listitem>
+			<listitem security="internal"><para>Fix URI helper to properly account for ports and IPV6
+					addresses</para></listitem>
+			<listitem security="internal"><para>Fixing illegal argument exception from XML</para></listitem>
 			<listitem security="internal"><para>Fix default status value per GSS input</para></listitem>
-			<listitem security="internal"><para>Fixing URL generation for non-standard port.</para></listitem>
-			<listitem security="internal"><para>Removing veracode security CLRF injection flaw</para></listitem>
+			<listitem security="internal"><para>Fixing URL generation for non-standard port</para></listitem>
+			<listitem security="internal"><para>Removing veracode security CLRF injection flaw</para>
+				<remark>Reviewer: The acronym should be CRLF instead
+					(Carriage Return Line Feed), correct?</remark></listitem>
 			<listitem security="internal"><para>ratelimiting changes to config file for adding async status call</para></listitem>
-			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-722">DNS-722</link>: Vericode fix -
-					rebuild org/jgroups.  Embedding other powerapi needed jars instead of inlining
-					to see if it further improves Veracode score (and confirm the application still
-					works).</para></listitem>
-			<listitem security="internal"><para>reduce visibility of some logging messages to cut down on noise in production logs. Also updated missing dep.</para></listitem>
+			<listitem security="internal"><para><link xlink:href="https://jira.mosso.com/browse/DNS-722"
+						>DNS-722</link>: Vericode fix - rebuild
+					org/jgroups. Embedding other PowerAPI needed jars
+					instead of inlining to see if it further improves
+					Veracode score (and confirm the application still
+					works).</para>
+				<remark>Reviewer: There are two spellings used in
+					previous sentence: Vericode vs. Veracode. Please
+					resolve.</remark></listitem>
+			<listitem security="internal"><para>Reduce visibility of some logging messages to cut down on noise
+					in production logs. Also updated missing
+					dependency.</para></listitem>
 			
 		</itemizedlist>
 		<itemizedlist>
 			<title>Resources</title>
 			<listitem>
-				<para><link xlink:href="http://docs.rackspace.com/api/">API Developers Guide</link></para>
+				<para><link xlink:href="http://docs.rackspace.com/api/">DNS Developer Guide</link></para>
 			</listitem>
 			<listitem>
 				<para><link xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
@@ -383,35 +456,36 @@
 		
 	</chapter>
     <chapter xml:id="cdnsv1.0">
-      <title>v1.0, 9 August 2011</title>
+      <title>v1.0, June 28, 2011</title>
       <?dbhtml stop-chunking?>
 	  <itemizedlist>
-	    <title>New features</title>	    
+	    <title>New Features</title>	    
 	    <listitem>
-	      <para>REST API with:  </para>
-				<itemizedlist>
-					<listitem>
-						<para>Support for New Record Types</para>
-					</listitem>
-					<listitem>
-						<para>Performance improvements</para>
-					</listitem>
-					<listitem>
-						<para>Comprehensive management capability</para>
-					</listitem>
-					<listitem>
-						<para>Full TTL control</para>
-					</listitem>
-					<listitem>
-						<para>Simplified migration</para>
-					</listitem>
-				</itemizedlist>
-	    </listitem>
+				<para>REST API</para>
+			</listitem>
+			<listitem>
+				<para>Support for new record types</para>
+			</listitem>
+			<listitem>
+				<para>Performance improvements</para>
+			</listitem>
+			<listitem>
+				<para>Comprehensive management capability</para>
+			</listitem>
+			<listitem>
+				<para>Full TTL control</para>
+			</listitem>
+			<listitem>
+				<para>Simplified migration</para>
+			</listitem>
 	  </itemizedlist>
 	  <itemizedlist>
-	    <title>Known issues</title>
+	    <title>Known Issues</title>
 	    <listitem>
-	      <para>Pagination – Incorrect error (500) is returned when offset or limit is set with any text or when limit = 0</para>
+	      <para>Pagination – Incorrect error (500) is returned when
+						<code>offset</code> or <code>limit</code> is
+					set with any text or when <code>limit</code> =
+					0</para>
 	    </listitem>
 	    <listitem>
 	      <para>XML validation is failing; allows domain to be created when trying to create Domain with <tag>records</tag> element instead of <tag>recordsList</tag> element</para>
@@ -423,7 +497,7 @@
     	<itemizedlist>
     		<title>Resources</title>
     		<listitem>
-    			<para><link xlink:href="http://docs.rackspace.com/api/">API Developers Guide</link></para>
+    			<para><link xlink:href="http://docs.rackspace.com/api/">DNS Developer Guide</link></para>
     		</listitem>
     		<listitem>
     			<para><link xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
