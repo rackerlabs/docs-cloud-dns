@@ -505,8 +505,8 @@
                 <para>This operation displays the different limit
                     group types. A customer is assigned to one limit
                     group of each type.</para>
-                <para>Refer to the following examples for the list of
-                    limit group types:</para>
+                <para><?rax-fo keep-with-next?>Refer to the following
+                    examples for the list of limit group types:</para>
                 <example>
                     <title>List Limit Group Types Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -558,9 +558,9 @@
                 </simpara>
                 <para>This operation displays all the limit groups of
                     the specified type.</para>
-                <para>The following examples show the requests and
-                    responses for all the limit groups of the type
-                        <code>rate_limit</code>:</para>
+                <para><?rax-fo keep-with-next?>The following examples
+                    show the requests and responses for all the limit
+                    groups of the type <code>rate_limit</code>:</para>
                 <example>
                     <title>List Limit Groups of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -612,8 +612,9 @@
                 </simpara>
                 <para>This operation displays the details for a
                     specified limit group.</para>
-                <para>The following examples show the requests and
-                    responses to show details for the limit group
+                <para><?rax-fo keep-with-next?>The following examples
+                    show the requests and responses to show details
+                    for the limit group
                         <code>default_customer_group</code>:</para>
                 <example>
                     <title>Show Group Details Request: XML</title>
@@ -941,10 +942,12 @@
                 </example>
                 <example>
                     <title>List Assigned Groups Response: XML</title>
+                    <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group_response.xml" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group_response.xml</xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>List Assigned Groups Response: JSON</title>
+                    <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-list-user-group_response.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-list-user-group_response.json</xi:fallback></xi:include></programlisting>
                 </example>
             </section>
@@ -1036,12 +1039,12 @@
                 </simpara>
                 <para>This operation assigns a user to a specified
                     limit group.</para>
-                <para>The following examples show the requests and
-                    responses to assign the user <code>1234</code> to
-                    the limit group of type
+                <para><?rax-fo keep-with-next?>The following examples
+                    show the request and response to assign the user
+                        <code>1234</code> to the limit group of type
                         <code>high_limit_customer_group</code>:</para>
                 <example>
-                    <title>Assign User to Limit Group Request:</title>
+                    <title>Assign User to Limit Group Request</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-update-user-group_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-update-user-group_request.json</xi:fallback></xi:include></programlisting>
                 </example>
@@ -1085,12 +1088,12 @@
                     have been assigned using the Assign User to a
                     Limit Group call) and returns them to the default
                     group for the specified type.</para>
-                <para>The following examples show the requests and
-                    responses to return the user <code>1234</code> to
+                <para>The following examples show the request and
+                    response to return the user <code>1234</code> to
                     the default group for the type
                         <code>rate_limit</code>:</para>
                 <example>
-                    <title>Assign Default Group Request:</title>
+                    <title>Assign Default Group Request</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/mgmt-dns-delete-user-group_request.json" parse="text"><xi:fallback><?rax fail?>Missing Sample: ../../../target/samples/mgmt-dns-delete-user-group_request.json</xi:fallback></xi:include></programlisting>
                 </example>

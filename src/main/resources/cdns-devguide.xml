@@ -1063,12 +1063,12 @@
                     Additional attributes and elements have been
                     omitted for clarity.</para>
             </note>
-            <para>If an error occurs as a result of processing the
-                original request, querying the callback URL will
-                return the information about the error. If you use the
-                callback URL without specifying the query parameter
-                    <code>showDetails=true</code>, only basic
-                information is provided:</para>
+            <para><?rax-fo keep-with-next?>If an error occurs as a
+                result of processing the original request, querying
+                the callback URL will return the information about the
+                error. If you use the callback URL without specifying
+                the query parameter <code>showDetails=true</code>,
+                only basic information is provided:</para>
             <example>
                 <title>Basic Error Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -1079,7 +1079,8 @@
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-error_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-error_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
-            <para>If you use the callback URL with the query parameter
+            <para><?rax-fo keep-with-next?>If you use the callback
+                URL with the query parameter
                     <code>showDetails=true</code>, then detailed
                 information is provided:</para>
             <example>
@@ -1182,9 +1183,10 @@
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-no-details_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-no-details_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
-                <para>The response lists all the user's jobs that have
-                    had errors, followed by those still running, and
-                    then those that have completed:</para>
+                <para><?rax-fo keep-with-next?>The response lists all
+                    the user's jobs that have had errors, followed by
+                    those still running, and then those that have
+                    completed:</para>
                 <example>
                     <title>Get Basic Status for All Jobs Response:
                         XML</title>
@@ -1197,10 +1199,12 @@
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-no-details_response.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-no-details_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
-                <para>To get <emphasis>detailed</emphasis> status
+                <para><?rax-fo keep-with-next?>To get
+                        <emphasis>detailed</emphasis> status
                     information for all jobs, set the
                         <parameter>showDetails</parameter> parameter
-                    to true (<code>showDetails=true</code>).</para>
+                    to true (<code>showDetails=true</code>):</para>
+                
                 <example>
                     <title>Get Detailed Status for All Jobs Request:
                         XML</title>
@@ -1213,7 +1217,7 @@
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-get-jobs-status-with-details_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-get-jobs-status-with-details_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
-                <para>The response lists all the user's jobs that have
+                <para><?rax-fo keep-with-next?>The response lists all the user's jobs that have
                     had errors, followed by those still running, and
                     then those that have completed:</para>
                 <example>
@@ -1280,7 +1284,6 @@
                 </para>
             </note>
         </section>
-        <?hard-pagebreak?>
         <section xml:id="Limits-d1e1208">
             <title>Limits</title>
             <para>
@@ -1516,8 +1519,10 @@
         </section>
         <section xml:id="comments">
             <title>Comments</title>
-            <para> Comments are supported for domains and records and their requests and responses.
-                See the examples that follow.</para>
+            <para> Comments are supported for domains and records and
+                their requests and responses using the
+                    <code>comment</code> attribute. See the examples
+                that follow.</para>
             <example>
                 <title>Example Response with Comments: XML</title>
                 <?dbfo keep-together="always"?>
@@ -2238,10 +2243,14 @@
                                                   serviceUnavailable (<errorcode>503</errorcode>),
                                                   unauthorized (<errorcode>401</errorcode>)</simpara>
                 <para> This call provides a list of all applicable
-                    limits for the specified account.</para>
+                    limits of the specified
+                        <parameter>type</parameter> for the specified
+                    account.</para>
                 <para> The following examples show the requests and
-                    corresponding responses to list all limits for the
-                    specified account:</para>
+                    corresponding responses to list all applicable
+                    limits of the specified
+                        <parameter>type</parameter> for the specified
+                    account:</para>
                 <example>
                     <title>List Specified Limit Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -2463,8 +2472,9 @@
                             be set in the URI (for example: <code>limit=10&amp;offset=0</code>), as
                             described in <xref linkend="pagination"/>.</para>
                     </note>
-                    <para><?rax-fo keep-with-next?> In the following example, the specified search
-                        name is <code>secondlevel434706.com</code>:</para>
+                    <para><?rax-fo keep-with-next?> In the following
+                        example, the specified search name is
+                            <code>region2.example.net</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Domain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -2486,8 +2496,9 @@
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="../../../target/samples/dns-filter-domain-by-name_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
-                    <para><?rax-fo keep-with-next?> In the following example, the specified search
-                        name is <code>sub1.secondlevel434706.com</code>:</para>
+                    <para><?rax-fo keep-with-next?> In the following
+                        example, the specified search name is
+                            <code>sub1.example.com</code>:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -2498,7 +2509,8 @@
                         <?dbfo keep-together="always"?>
                         <programlisting language="xml"><xi:include href="../../../target/samples/dns-filter-subdomain-by-name_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
-                    <para>The response matches one subdomain:</para>
+                    <para><?rax-fo keep-with-next?>The response
+                        matches one subdomain:</para>
                     <example>
                         <title>Filter by Fully Qualified Subdomain Name Response: XML</title>
                         <?dbfo keep-together="always"?>
@@ -2510,8 +2522,9 @@
                         <programlisting language="xml"><xi:include href="../../../target/samples/dns-filter-subdomain-by-name_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <para>
-                        <?rax-fo keep-with-next?>In the following example, the specified search name
-                        is <code>sub1.rtb000</code>: </para>
+                        <?rax-fo keep-with-next?>In the following
+                        example, the specified search name is
+                            <code>sub1.exam</code>: </para>
                     <example>
                         <title>Filter by Partial Name Request: XML</title>
                         <?dbfo keep-together="always"?>
@@ -2648,8 +2661,9 @@
                     <?dbfo keep-together="auto"?>
                     <programlisting language="javascript"><xi:include href="../../../target/samples/dns-list-domain-details-with-records-and-subdomains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
-                <para>The following examples show the parameter settings to return basic information
-                    only, without records or subdomains
+                <para><?rax-fo keep-with-next?>The following examples
+                    show the parameter settings to return basic
+                    information only, without records or subdomains
                         (<code>showRecords</code>=<code>false&amp;</code><code>showSubdomains</code>=<code>false</code>)
                     for the List Domain Details call:</para>
                 <example>
@@ -2731,7 +2745,6 @@
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-domain-changes_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
-            <?hard-pagebreak?>
             <section xml:id="export_domain">
                 <title>Export Domain</title>
                 <informaltable rules="all">
@@ -3318,7 +3331,9 @@
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/domains/<parameter>domainId</parameter>/records</td>
-                            <td colspan="3">List all records configured for the domain. SOA cannot be modified.</td>
+                            <td colspan="3">List all records
+                                configured for the specified domain.
+                                SOA cannot be modified.</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -3330,6 +3345,8 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>This call lists all records configured for the
+                    specified domain.</para>
                 <note>
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
@@ -3371,7 +3388,9 @@
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/domains/<parameter>domainId</parameter>/records/<parameter>recordId</parameter></td>
-                            <td colspan="3">List details for a specific record.</td>
+                            <td colspan="3">List details for a
+                                specific record in the specified
+                                domain.</td>
                         </tr>
                     </tbody>
                     
@@ -3385,6 +3404,8 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>This call lists details for the specified record
+                    in the specified domain.</para>
                 <example>
                     <title>List Record Details Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -3422,7 +3443,8 @@
                             <td colspan="1">&POST;</td>
                             <td colspan="2"
                                     >/domains/<parameter><replaceable>domainId</replaceable></parameter>/records</td>
-                            <td colspan="3">Add new record(s) to the domain.</td>
+                            <td colspan="3">Add new record(s) to the
+                                specified domain.</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -3438,6 +3460,8 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>This call adds new record(s) to the specified
+                    domain.</para>
                 <note>
                     <para> When a domain is created, and no TTL (Time
                         To Live) is specified, a default value of 3600
@@ -3527,6 +3551,9 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>These calls modify the configuration of a
+                    specified record or multiple records in the
+                    specified domain.</para>
                 <note>
                     <para> When the domain and/or record TTL is supplied by the user, either via a
                         create or update call, the TTL values must be 300 seconds or more.</para>
@@ -3596,6 +3623,8 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                <para>These calls remove a specified record or
+                    multiple records from the specified domain.</para>
                 <para>When a record is deleted, any and all record data is immediately purged and is
                     not recoverable via the API. So on a successful delete, subsequent requests for
                     the deleted record should return itemNotFound
@@ -3628,12 +3657,14 @@
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
                 <example>
-                    <title>Delete Records Response (Failure): XML</title>
+                    <title>Remove Records Response (Failure):
+                        XML</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-remove-records-failure_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
-                    <title>Delete Records Response (Failure): JSON</title>
+                    <title>Remove Records Response (Failure):
+                        JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-remove-records-failure_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
