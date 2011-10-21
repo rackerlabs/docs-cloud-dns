@@ -2,26 +2,26 @@
 <domains xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
 	xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	totalEntries="5">
-	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999999" name="example.com"
+	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999999" name="rackspace.example.com"
 		updated="2011-04-11T06:52:38Z" created="2011-04-11T06:52:37Z" ttl="5600" emailAddress="hostmaster@example.com">
 		 <nameservers>
             <nameserver name="ns.rackspace.com" />
             <nameserver name="ns2.rackspace.com" />
         </nameservers>
         <recordsList totalEntries="2">
-            <record xsi:type="ns3:record" id="A-6817754" type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"
+            <record xsi:type="ns3:record" id="A-6817754" type="A" name="ftp.rackspace.example.com" data="192.0.2.8" ttl="5771"
                 updated="2011-05-19T08:07:08-05:00" created="2011-05-18T14:53:09-05:00" />
-            <record xsi:type="ns3:record" id="CNAME-9778009" type="CNAME" name="www.example.com" data="example.com" ttl="5400"
+            <record xsi:type="ns3:record" id="CNAME-9778009" type="CNAME" name="www.rackspace.example.com" data="rackspace.example.com" ttl="5400"
                 updated="2011-06-24T01:12:54Z" created="2011-06-24T01:12:54Z" comment="This is a comment on the CNAME record" />
         </recordsList>        
 	</domain>
-	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999998" name="example.org"
+	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999998" name="example.rackspace.org"
 		updated="2011-08-12T18:48:42Z" created="2011-07-25T19:33:22Z" ttl="5600" emailAddress="hostmaster@example.org"/>
 	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999997"
-		name="example.com" updated="2010-08-19T01:12:19Z" created="2010-08-19T01:10:08Z" ttl="5600" emailAddress="hostmaster@example.com"/>
+		name="www.rackspace.example.co.uk" updated="2010-08-19T01:12:19Z" created="2010-08-19T01:10:08Z" ttl="5600" emailAddress="hostmaster@example.com"/>
 	<domain xsi:type="ns3:domain" externalOwnerId="DC22333" id="8888886"
-		name="example.com" updated="2010-10-28T22:59:49Z" created="2010-04-21T18:59:05Z" ttl="5600" emailAddress="hostmaster@example.com"/>
+		name="rackspace.test.rackspace.com" updated="2010-10-28T22:59:49Z" created="2010-04-21T18:59:05Z" ttl="5600" emailAddress="hostmaster@example.com"/>
 	<domain xsi:type="ns3:domain" externalOwnerId="DC8866554" id="8855667"
-		name="mail.relay.example.com" updated="2010-11-18T01:36:44Z"
+		name="mail.relay.rackspace.example.com" updated="2010-11-18T01:36:44Z"
 		created="2009-12-11T01:02:50Z" ttl="5600" emailAddress="hostmaster@example.com"/>
 </domains>
