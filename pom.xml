@@ -8,7 +8,7 @@
     <name>Cloud DNS API Docs</name>
     
     <properties>
-        <com.rackspace.cloud.dns.maven.plugin.version>1.0.4</com.rackspace.cloud.dns.maven.plugin.version>
+        <com.rackspace.cloud.dns.maven.plugin.version>1.0.5</com.rackspace.cloud.dns.maven.plugin.version>
         <com.rackspace.cloud.act.version>1.0.1</com.rackspace.cloud.act.version>
         <com.rackspace.cloud.dns.api.common.version>1.0.10</com.rackspace.cloud.dns.api.common.version>
         <com.rackspace.cloud.dns.api.version>1.0.12</com.rackspace.cloud.dns.api.version>
@@ -237,6 +237,55 @@
                                     </outputs>
                                 </source>
                                 
+                                
+                               <source>
+                                    <data>${basedir}/src/main/resources/samples.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <generateXml>false</generateXml>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-response-types-request</nameBase>
+                                            <path>/{{domains[0].accountId}}/domains</path>
+                                            <requestType>POST</requestType>
+                                            <accept>application/xml</accept>                               
+                                            <requestBody>
+                                                <base>domains[0]</base>
+                                                <filters>
+                                                    <filter>id</filter>
+                                                    <filter>accountId</filter>
+                                                    <filter>updated</filter>
+                                                    <filter>created</filter>
+                                                    <filter>nameservers</filter>
+                                                    <filter>comment</filter>
+                                                    <filter>recordsList</filter>
+                                                    <filter>subdomains</filter>
+                                                    <filter>ttl</filter>
+                                                </filters>
+                                            </requestBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-content-type-req-ext</nameBase>
+                                            <path>/{{domains[0].accountId}}/domains.xml</path>
+                                            <requestType>POST</requestType>
+                                            <accept>OMIT</accept>                               
+                                            <requestBody>
+                                                <base>domains[0]</base>
+                                                <filters>
+                                                    <filter>id</filter>
+                                                    <filter>accountId</filter>
+                                                    <filter>updated</filter>
+                                                    <filter>created</filter>
+                                                    <filter>nameservers</filter>
+                                                    <filter>comment</filter>
+                                                    <filter>recordsList</filter>
+                                                    <filter>subdomains</filter>
+                                                    <filter>ttl</filter>
+                                                </filters>
+                                            </requestBody>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
 		                       	<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
 								<!-- API BEANS OUTPUTS - domains, domain, links etc    -->
 								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->                   
@@ -257,6 +306,8 @@
 		                                    </responseBody>
 		                                </output>
 		                                
+                                        
+                                        
 										<!-- dns-create-domains-request.json -->
 										<!-- dns-create-domains-request.xml -->
 										<!-- dns-create-domains-response.json -->
@@ -822,6 +873,17 @@
                                             <nameBase>dns-async</nameBase>
                                             <statusCode>202</statusCode>
                                             <responseBody/>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-content-type-response</nameBase>
+                                            <statusCode>202</statusCode>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>requestUrl</filter>
+                                                    <filter>verb</filter>
+                                                    <filter>request</filter>
+                                                </filters>
+                                            </responseBody>
                                         </output>                   
                                     </outputs>
                                 </source>
