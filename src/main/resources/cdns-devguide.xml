@@ -32,8 +32,7 @@
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml" xml:id="cdns-devguide"
     version="5.0">
-    <?rax status.bar.text="BETA"?>
-    <title>Cloud DNS BETA Developer Guide</title>
+    <title>Cloud DNS Developer Guide</title>
 
     <info>
         <author>
@@ -50,9 +49,9 @@
             <year>2011</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v1.0 BETA</releaseinfo>
-        <productname>Cloud DNS BETA</productname>
-        <pubdate>2011-10-14</pubdate>
+        <releaseinfo>API v1.0</releaseinfo>
+        <productname>Cloud DNS</productname>
+        <pubdate>2011-10-26</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,7 +75,7 @@
             customers. Interactions with Rackspace Cloud DNS occur programmatically via the
             Rackspace Cloud DNS API as described in this Cloud DNS Developer Guide.</para>
         <note>
-            <para> DNS propagation may take up to 15 minutes.</para>
+            <para> DNS propagation may take up to 1 minute.</para>
         </note>
         <para>The following figure shows an overview of Cloud DNS Infrastructure:
 	<informalfigure>
@@ -134,336 +133,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr align="left" security="writeronly">
+                    <tr align="left">
                         <td colspan="1">Oct. 26, 2011</td>
                         <td colspan="4">
                             <itemizedlist spacing="compact">
                                 <listitem>
                                     <para>Initial GA release.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">Oct. 14, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Edited document for
-                                        consistency.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr> 
-                    <tr align="left">
-                    <td colspan="1">Oct. 5, 2011</td>
-                    <td colspan="4">
-                        <itemizedlist spacing="compact">
-                            <listitem>
-                                <para>Updated <xref
-                                   linkend="Authentication-d1e647"
-                                   />.</para>
-                            </listitem>
-                                <listitem>
-                                   <para>Updated <xref
-                                   linkend="sync_asynch_responses"
-                                   />.</para>
-                                </listitem>
-                        </itemizedlist>
-                    </td>
-                </tr>
-                    <tr align="left">
-                        <td colspan="1">Sept. 6, 2011</td>
-                        <td colspan="4">
-                            <itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Added new <xref
-                                   linkend="viewing_status_all_asynch_jobs"
-                                   />.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                <tr align="left">
-                    <td colspan="1">Aug. 30, 2011</td>
-                    <td colspan="4">
-                        <itemizedlist spacing="compact">
-                            <listitem>
-                               <para>Added examples and updated
-                                   information for <xref
-                                   linkend="sync_asynch_responses"
-                                   />.</para>
-                            </listitem>
-                        </itemizedlist>
-                    </td>
-                </tr>
-                <tr align="left">
-                    <td colspan="1">Aug. 23, 2011</td>
-                    <td colspan="4">
-                        <itemizedlist spacing="compact">
-                            <listitem>
-                               <para>Updated <xref
-                                   linkend="sync_asynch_responses"/>
-                                   to reflect API changes.</para>
-                            </listitem>
-                        </itemizedlist>
-                    </td>
-                </tr>
-                <tr align="left">
-                    <td colspan="1">Aug. 10, 2011</td>
-                    <td colspan="4"
-                        ><itemizedlist spacing="compact">
-                                <listitem>
-                                   <para>Added information that the
-                                   <code>name</code> parameter is
-                                   required for modify record(s) API
-                                   calls.</para>
-                                </listitem>
-                            <listitem>
-                                <para>Updated default domain and record limits.</para>
-                            </listitem>
-                        </itemizedlist>
-                    </td>
-                </tr>
-                    <tr align="left">
-                        <td colspan="1">Aug. 9, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Fixed "type" for CNAME records in <xref
-                                            linkend="supported_record_types"/>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added information in <xref
-                                            linkend="Service_Access_Endpoints-d1e753"/> about how to
-                                        access the account id returned by the authentication
-                                        response.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Updated table of Default Rate Limits in <xref
-                                            linkend="Rate_Limits-d1e1222"/>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="Domain_Limits"/>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="Record_Limits"/>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="DNS_faults"/> and replaced the
-                                        following faults throughout the manual:</para>
-                                    <itemizedlist spacing="compact">
-                                        <listitem>
-                                            <para><code>notFound</code> with
-                                                  <code>itemNotFound</code></para>
-                                        </listitem>
-                                        <listitem>
-                                            <para><code>domainExistsFault</code> with
-                                                  <code>itemAlreadyExists</code></para>
-                                        </listitem>
-                                    </itemizedlist>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr><tr align="left">
-                        <td colspan="1">Jul. 8, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Updated default nameserver values.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr><tr align="left">
-                        <td colspan="1">Jul. 7, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Released for Public Beta.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added information in <xref linkend="Authentication-d1e647"
-                                        /> that describes accessing the Authentication Service,
-                                        based on whether your account is US-based or UK-based.
-                                    </para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="DNS_service_versions"/> that
-                                        describes the contract and build information for the API.
-                                    </para>
-                                </listitem>
-                                <listitem>
-                                    <para> Added new <xref linkend="datetimeformat"/> that describes
-                                        the date/time format used by the DNS service. </para>
-                                </listitem>
-                                <listitem>
-                                    <para> Added new <xref linkend="supported_record_types"/> with a
-                                        table of supported DNS record types. </para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">June 28, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Updated DNS architecture diagram in <xref
-                                            linkend="overview"/>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Updated all examples to reflect the latest API
-                                        changes.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Updated <xref linkend="subdomain"/> that explains what a
-                                        subdomain is.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Updated <xref linkend="list_domain_details"/> with
-                                        information about the <code>showRecords</code> and
-                                            <code>showSubdomains</code> parameters that control
-                                        which information is returned for records and
-                                        subdomains.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="comments"/> that describes how to
-                                        use comments for domains and records.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="pagination"/> that describes how
-                                        paging works.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="supported_record_types"/> that
-                                        lists the record types currently supported by Rackspace
-                                        Cloud DNS.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="export_domain"/> that describes
-                                        how to use export domain to provide the BIND 9 formatted
-                                        contents of the requested domain.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="import_domain"/> that describes
-                                        how to use import domain to create a domain.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="using_subdomains"/> that
-                                        describes how to use subdomains.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">May 20, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Added new <xref linkend="sync_asynch_responses"/> that
-                                        describes how to use synchronous and asynchronous API
-                                        calls.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added 404 NOT FOUND error code to all API calls.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added new <xref linkend="search_domains_w_filters"/> that
-                                        describes how to use filtering to search domains.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Corrected invalid URLs containing <code>localhost</code>
-                                        to be valid URLs.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Removed the following API calls for domains (and their
-                                        corresponding examples) that are no longer supported from
-                                            <xref linkend="Domains"/>:<itemizedlist
-                                            spacing="compact">
-                                            <listitem>
-                                                <para>
-                                                  <code>GET /version</code></para>
-                                            </listitem>
-                                            <listitem>
-                                                <para><code>GET /domains/detail</code></para>
-                                            </listitem>
-                                            <listitem>
-                                                <para><code>PUT
-                                                  /domains/records/recordID</code></para>
-                                            </listitem>
-                                        </itemizedlist></para>
-                                </listitem>
-                                <listitem>
-                                    <para>Removed <code>DNAME</code> records, which are no longer
-                                        supported, from List Domains and List Domains Detail
-                                        Responses.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Corrected <xref linkend="create_domains_resp"/> to be a
-                                        valid XML example.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Added notes about Time To Live (TTL) values for
-                                        create/modify calls for domains and add/modify calls for
-                                        records.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">Apr. 27, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Added 201 response code to Create Domains.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Deleted reference to load balancers from Section
-                                        3.2.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Modified reference to the twitter account rackcloud, which
-                                        has been merged with the rackspace twitter account.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Modified incorrect endpoint ord.dns.api.rackspacecloud.com
-                                        to dns.api.rackspacecloud.com.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>Modified incorrect URI
-                                        /domains<emphasis>domainId</emphasis> to
-                                        /domains/<emphasis>domainId</emphasis>. </para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr><tr align="left">
-                        <td colspan="1">Apr. 4, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para> Identified authentication endpoints. </para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr><tr align="left">
-                        <td colspan="1">Mar. 30, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para> Added 406 error code to List Domains. </para>
-                                </listitem>
-                                <listitem>
-                                    <para> Added record ID to code sample for Modify Records.
-                                    </para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr><tr align="left">
-                        <td colspan="1">Mar. 21, 2011</td>
-                        <td colspan="4"
-                            ><itemizedlist spacing="compact">
-                                <listitem>
-                                    <para> Initial release for Private Beta. </para>
                                 </listitem>
                             </itemizedlist>
                         </td>
@@ -873,19 +548,28 @@
                     </tr>
                 </tbody>
             </table>
+            <para>In the request example below,  notice that
+                    <parameter>Content-Type</parameter> is set to
+                    <parameter>application/json</parameter>, but
+                    <parameter>application/xml</parameter> is
+                requested via the <parameter>Accept</parameter>
+                header:</para>
             <example>
                 <title>Request with Headers: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-response-types-request_request.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
+            <para>Therefore an XML response format is returned:</para>
             <example>
                 <title>Response with Headers: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-content-type-response_response.xml" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
-            <para>Notice, in the above example, that the content type is set to <parameter>application/json</parameter> but <parameter>application/xml</parameter> is requested via the <parameter>Accept</parameter> header. 
-            An alternative method of achieving the same result is illustrated below – this time we utilize a URI extension instead of an <parameter>Accept</parameter> header. 
-            </para>
+            <para>An alternative method of achieving the same result
+                is illustrated below. This time we utilize a URI
+                extension (<code>.xml</code>) to request an XML
+                response format instead of an
+                    <parameter>Accept</parameter> header: </para>
             <example>
                 <title>Request with Extension: JSON</title>
                 <?dbfo keep-together="always"?>
@@ -1033,9 +717,9 @@
                     <returnvalue>202</returnvalue> ACCEPTED response
                 is returned with the same information as the previous
                 one.</para>
-            <para>If the request is successful, the
-                    <code>status</code> is
-                <code>COMPLETED</code>:</para>
+            <para><?rax-fo keep-with-next?>If the request is
+                successful, the <code>status</code> is
+                    <code>COMPLETED</code>:</para>
             <example>
                 <title>Basic Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -1060,9 +744,9 @@
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml"><xi:include href="../../../target/samples/dns-async-success-detail_request.json" parse="text"><xi:fallback>Missing code sample ../../../target/samples/dns-async-success-detail_request.json<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
-            <para>If the request is successful, this includes the
-                    <code>response</code>,  which contains the results
-                of the operation:</para>
+            <para><?rax-fo keep-with-next?>If the request is
+                successful, this includes the <code>response</code>,
+                which contains the results of the operation:</para>
             <example>
                 <title>Detail Success Asynchronous Response: XML</title>
                 <?dbfo keep-together="always"?>
@@ -2586,10 +2270,11 @@
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2"
-                                    >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<code>true</code>
+                                   >/domains/<parameter>domainId</parameter>?<?sbr?><parameter>showRecords</parameter>=<code>true</code>
                                 or
-                                    <?sbr?><?sbr?><code>false</code>&amp;<parameter>showSubdomains</parameter> =<?sbr?>
-                                <code>true</code>or<code>false</code></td>
+                                   <?sbr?><?sbr?><code>false</code>&amp;<parameter>showSubdomains</parameter> =<?sbr?>
+                                <code>true</code> or
+                                   <code>false</code></td>
                             <td colspan="3">List details of the specified domain. Display details,
                                 as specified by the <parameter>showRecords</parameter> and
                                     <parameter>showSubdomains</parameter> parameters. </td>
@@ -2878,7 +2563,8 @@
                             domain. This is an atomic operation: if there is a failure in creation
                             of even a single record, the entire process will fail. </para>
                     </note><note>
-                        <para> DNS propagation may take up to 15 minutes. </para>
+                        <para> DNS propagation may take up to 1
+                            minute. </para>
                     </note><note>
                         <para>When a domain is created, and no Time To Live (TTL) is specified, the
                             SOA minTTL (3600 seconds) is used as the default. When a record is added
@@ -2960,7 +2646,8 @@
                 <para> For all practical purposes, a successful Import Domain call creates a domain,
                     and is therefore similar in response to a Create Domain call. </para>
                 <note>
-                    <para> DNS propagation may take up to 15 minutes.</para>
+                    <para> DNS propagation may take up to 1
+                        minute.</para>
                 </note>
                 <note>
                     <para> This process allows multiple records to be created along with the domain.
@@ -3041,7 +2728,7 @@
                     </tbody>
                 </informaltable>
                 <note>
-                    <para> DNS propagation may take up to 15 minutes. </para>
+                    <para> DNS propagation may take up to 1 minute. </para>
                 </note>
                 <note>
                     <para> These calls return an asynchronous response, as described in <xref
