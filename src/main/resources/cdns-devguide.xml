@@ -3218,6 +3218,20 @@
                             <code>*.example.com</code>. An asterisk in any other part of a record
                         name is invalid. Only the asterisk ("<code>*</code>") is accepted as a
                         wildcard character. </para>
+                    <section xml:id="Wildcard_Resolution">
+                        <title>Wildcard Record Resolution</title>
+                        <para>The Cloud DNS infrastructure will only match a wildcard if a label at any level doesn't exist. Consider the following DNS entries:
+                        <example>
+                            <title>Example Wildcard DNS Records</title>
+                            <programlisting>*.example.com  A  127.0.0.1
+images.www.example.com  A  127.0.0.5</programlisting>
+                        </example>
+                        A DNS query for <parameter>www.example.com</parameter> would return a <parameter>NXDOMAIN</parameter> (the name is either unregistered or invalid)
+                        response because <parameter>www.example.com</parameter> is found in another record. In order for <parameter>www.example.com</parameter> to properly resolve,
+                        an explicit record would need to be created for it. Additionally, a DNS query for <parameter>abc.images.www.example.com</parameter> would not resolve unless
+                        an expicit record existed for that name or a wildcard record for <parameter>*.www.example.com</parameter> or <parameter>*.images.www.example.com</parameter>
+                        existed.</para>
+                    </section>
                 </section>                
             </section>
             <?hard-pagebreak?>
