@@ -31,7 +31,22 @@
         <abstract>
 	  <para>This document is intended for software developers interested in developing applications
 				using the Rackspace Cloud DNS. </para>
-	</abstract>
+        </abstract>
+    	<revhistory>
+			<revision>
+				<date>2011-10-28</date>
+				<revdescription>
+					<para security="external">Fixed broken link.</para>
+					<para security="internal">Provide hyperlinks directly to Jira issues.</para>
+				</revdescription>
+			</revision>
+    		<revision>
+    			<date>2011-10-26</date>
+    			<revdescription>
+    				<para>Initial GA release.</para>
+    			</revdescription>
+    		</revision>
+    	</revhistory>
     </info>
 	<chapter xml:id="cdnsv1.0.12">
 		<title>v1.0.12, October 18, 2011</title>
