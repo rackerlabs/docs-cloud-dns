@@ -1275,6 +1275,7 @@
                 			<enableDisqus>1</enableDisqus>
                 			<enableGoogleAnalytics>0</enableGoogleAnalytics>
                 			<chapterAutolabel>0</chapterAutolabel>
+                			<security>internal</security>
                 		</configuration>
                 	</execution>
                     <execution>
@@ -1296,6 +1297,7 @@
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>src/main/resources</sourceDirectory>
                     <highlightSource>false</highlightSource>
+                	<sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
                 </configuration>
             </plugin>
 	    	<plugin>
