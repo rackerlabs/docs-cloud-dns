@@ -1258,10 +1258,9 @@
                         <configuration>
                             <pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
                             <includes>cdns-mgmt-devguide.xml</includes>
-                            <enableDisqus>0</enableDisqus>
+                            <enableDisqus>intranet</enableDisqus>
 			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
 			    <canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
-			    <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
 			</configuration>
                     </execution>
                 	<execution>
@@ -1313,7 +1312,7 @@
                 		<configuration>
                 			<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
                 			<includes>cdns-releasenotes.xml</includes>
-                			<enableDisqus>0</enableDisqus>
+                			<enableDisqus>intranet</enableDisqus>
                 			<enableGoogleAnalytics>1</enableGoogleAnalytics>
                 			<chapterAutolabel>0</chapterAutolabel>
                 			<security>internal</security>
@@ -1340,7 +1339,8 @@
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>src/main/resources</sourceDirectory>
                     <highlightSource>false</highlightSource>
-                	<sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
+		    <sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
+		    <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
                 </configuration>
             </plugin>
 	    	<plugin>
