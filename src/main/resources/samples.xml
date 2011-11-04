@@ -22,21 +22,21 @@
                 updated="2011-06-24T01:12:54Z" created="2011-06-24T01:12:54Z" comment="This is a comment on the CNAME record" />
         </recordsList>
         <subdomains totalEntries="4">
-            <domain id="2725257" name="sub1.example.com" updated="2011-06-23T03:09:34Z" created="2011-06-23T03:09:33Z"
+            <domain id="2725257" name="sub1.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:09:34Z" created="2011-06-23T03:09:33Z"
                 comment="1st sample subdomain" />
-            <domain id="2725258" name="sub2.example.com" updated="2011-06-23T03:52:55Z" created="2011-06-23T03:52:55Z"
+            <domain id="2725258" name="sub2.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:52:55Z" created="2011-06-23T03:52:55Z"
                 comment="1st sample subdomain" />
-            <domain id="2725260" name="north.example.com" updated="2011-06-23T03:53:10Z" created="2011-06-23T03:53:09Z" />
-            <domain id="2725261" name="south.example.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z"
+            <domain id="2725260" name="north.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:53:10Z" created="2011-06-23T03:53:09Z" />
+            <domain id="2725261" name="south.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z"
                 comment="Final sample subdomain" />
         </subdomains>
     </domain>
     <domain id="2725257" accountId="1234" name="sub1.example.com" updated="2011-06-23T03:09:34Z" created="2011-06-23T03:09:33Z"
-        comment="1st sample subdomain" />
+        comment="1st sample subdomain" emailAddress="sample@rackspace.com"/>
     <domain id="2725258" accountId="1234" name="sub2.example.com" updated="2011-06-23T03:52:55Z" created="2011-06-23T03:52:55Z"
-        comment="1st sample subdomain" />
-    <domain id="2725260" accountId="1234" name="north.example.com" updated="2011-06-23T03:53:10Z" created="2011-06-23T03:53:09Z" />
-    <domain id="2725261" accountId="1234" name="south.example.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z"
+        comment="1st sample subdomain" emailAddress="sample@rackspace.com"/>
+    <domain id="2725260" accountId="1234" name="north.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:53:10Z" created="2011-06-23T03:53:09Z" />
+    <domain id="2725261" accountId="1234" name="south.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z"
         comment="Final sample subdomain" />
 
     <domain id="2725339" accountId="1234" name="example.net" updated="2011-06-23T18:35:21Z" created="2011-06-23T18:35:20Z" contentType="BIND_9">
