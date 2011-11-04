@@ -1246,7 +1246,7 @@
             <plugin>
                 <groupId>com.rackspace.cloud.api</groupId>
                 <artifactId>clouddocs-maven-plugin</artifactId>
-                <version>1.0.5</version>
+                <version>1.0.7</version>
                 <executions>
                     <execution>
                         <id>g1</id>
@@ -1258,12 +1258,52 @@
                         <configuration>
                             <pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
                             <includes>cdns-mgmt-devguide.xml</includes>
-                            <enableDisqus>0</enableDisqus>
-			    			<enableGoogleAnalytics>0</enableGoogleAnalytics>
-                        </configuration>
+                            <enableDisqus>intranet</enableDisqus>
+			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
+			    <canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
+			</configuration>
                     </execution>
                 	<execution>
                 		<id>g1.1</id>
+                		<goals>
+                			<goal>generate-webhelp</goal>
+                		</goals>
+                		<phase>initialize</phase>
+                		<configuration>
+                			<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
+                			<includes>cdns-releasenotes.xml</includes>
+                			<enableDisqus>1</enableDisqus>
+                			<enableGoogleAnalytics>1</enableGoogleAnalytics>
+                			<chapterAutolabel>0</chapterAutolabel>
+					<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
+					<postProcess>
+					  <move todir="target/docbkx/webhelp/cdns-releasenotes-external">
+					    <fileset dir="target/docbkx/webhelp/cdns-releasenotes"/>
+					  </move>
+					</postProcess>
+                		</configuration>
+                	</execution>
+                	<execution>
+                		<id>g1.2</id>
+                		<goals>
+                			<goal>generate-pdf</goal>
+                		</goals>
+                		<phase>initialize</phase>
+                		<configuration>
+                			<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
+                			<includes>cdns-releasenotes.xml</includes>
+                			<enableDisqus>1</enableDisqus>
+                			<enableGoogleAnalytics>1</enableGoogleAnalytics>
+                			<chapterAutolabel>0</chapterAutolabel>
+					<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
+					<postProcess>
+					  <move file="target/docbkx/pdf/cdns-releasenotes.pdf" tofile="target/docbkx/pdf/cdns-releasenotes-20111028.pdf"/>
+					</postProcess>
+                		</configuration>
+                	</execution>
+
+                	<execution>
+                		<id>g1.3</id>
                 		<goals>
                 			<goal>generate-pdf</goal>
                 			<goal>generate-webhelp</goal>
@@ -1272,9 +1312,11 @@
                 		<configuration>
                 			<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
                 			<includes>cdns-releasenotes.xml</includes>
-                			<enableDisqus>1</enableDisqus>
-                			<enableGoogleAnalytics>0</enableGoogleAnalytics>
+                			<enableDisqus>intranet</enableDisqus>
+                			<enableGoogleAnalytics>1</enableGoogleAnalytics>
                 			<chapterAutolabel>0</chapterAutolabel>
+                			<security>internal</security>
+					<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
                 		</configuration>
                 	</execution>
                     <execution>
@@ -1288,7 +1330,8 @@
                             <pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
                             <enableDisqus>1</enableDisqus>
                             <includes>cdns-devguide.xml</includes>
-			    <enableGoogleAnalytics>0</enableGoogleAnalytics>
+			    <enableGoogleAnalytics>1</enableGoogleAnalytics>
+			    <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content</canonicalUrlBase>
                         </configuration>
                     </execution>
                 </executions>
@@ -1296,6 +1339,8 @@
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>src/main/resources</sourceDirectory>
                     <highlightSource>false</highlightSource>
+		    <sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
+		    <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
                 </configuration>
             </plugin>
 	    	<plugin>

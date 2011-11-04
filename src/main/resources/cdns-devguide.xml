@@ -51,7 +51,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2011-10-26</pubdate>
+        <pubdate>2011-10-28</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -62,12 +62,30 @@
                 applications using the Rackspace Cloud DNS Application Programming Interface
                     (<abbrev>API</abbrev>). </para>
         </abstract>
-    <cover>
-        <para>this is a placeholder for the front cover</para>
-    </cover>
-    <cover>
-        <para>this is a placeholder for the back cover</para>
-    </cover>
+        <revhistory>
+            <revision>
+                <date>2011-10-28</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added new <xref
+                                linkend="Wildcard_Resolution"
+                            />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2011-10-26</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Initial GA release.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+        </revhistory>
     </info>
     <chapter xml:id="overview">
         <title>Overview</title>
@@ -124,39 +142,7 @@
             <para>This version of the Developer Guide replaces and
             obsoletes all previous versions.  The most recent changes
             are described in the table below:</para>
-            <table rules="all">
-                <caption>Document Change History</caption>
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Revision Date</td>
-                        <td colspan="4">Summary of Changes</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr align="left">
-                        <td colspan="1">Oct. XX, 2011</td>
-                        <td colspan="4">
-                            <itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Added new <xref
-                                   linkend="Wildcard_Resolution"
-                                   />.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">Oct. 26, 2011</td>
-                        <td colspan="4">
-                            <itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>Initial GA release.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <?rax revhistory?>
         </section>
         <section xml:id="Additional_Resources-d1e532">
             <title>Additional Resources</title>
@@ -3235,30 +3221,32 @@
                         <para>The Cloud DNS infrastructure will
                                 <emphasis>only</emphasis> match a
                             wildcard if a label at any level does not
-                            exist. Consider the following DNS entries: <example>
+                            exist. </para>
+                        <para><?rax-fo keep-with-next?>Consider the
+                            following DNS entries: </para>
+                        <example>
                                 <title>Example Wildcard DNS
                                    Records</title>
                                 <programlisting>*.example.com  A  127.0.0.1
 images.www.example.com  A  127.0.0.5</programlisting>
-                            </example> A DNS query for
-                                <code>www.example.com</code>
-                            would return an
-                            <code>NXDOMAIN</code>
-                            response (meaning the name is either
-                            unregistered or invalid), because
-                            <code>www.example.com</code>
-                            is found in another record. In order for
-                            <code>www.example.com</code>
-                            to properly resolve, an explicit record
-                            would need to be created for it.
-                            Additionally, a DNS query for
-                            <code>abc.images.www.example.com</code>
+                        </example> 
+                        <para>A DNS query for
+                                <code>www.example.com</code> would
+                            return an <code>NXDOMAIN</code> response
+                            (meaning the name is either unregistered
+                            or invalid), because
+                                <code>www.example.com</code> is found
+                            in another record. In order for
+                                <code>www.example.com</code> to
+                            properly resolve, an explicit record would
+                            need to be created for it. Additionally, a
+                            DNS query for
+                                <code>abc.images.www.example.com</code>
                             would not resolve unless an explicit
                             record exists for that name, or a wildcard
                             record exists for
-                            <code>*.www.example.com</code>
-                            or
-                            <code>*.images.www.example.com</code>.</para>
+                                <code>*.www.example.com</code> or
+                                <code>*.images.www.example.com</code>.</para>
                     </section>
                 </section>                
             </section>
