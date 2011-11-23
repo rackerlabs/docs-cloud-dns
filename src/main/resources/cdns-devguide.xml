@@ -2595,25 +2595,35 @@
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
-                    caller to correct the cause of the failure and &POST; the request again. <note>
-                        <para> This process allows multiple records to be created along with the
-                            domain. This is an atomic operation: if there is a failure in creation
-                            of even a single record, the entire process will fail. </para>
-                    </note><note>
-                        <para> DNS propagation may take up to 1
-                            minute. </para>
-                    </note><note>
-                        <para>When a domain is created, and no Time To Live (TTL) is specified, the
-                            SOA minTTL (3600 seconds) is used as the default. When a record is added
-                            without a specified TTL, it will receive the domain TTL by default. When
-                            the domain and/or record TTL is supplied by the user, either via a
-                            create or update call, the TTL values must be 300 seconds or
-                            more.</para>
-                    </note><note>
-                        <para>Subdomains are managed in separate zone files in the DNS system and
-                            will add some overhead to domain management.</para>
+                    caller to correct the cause of the failure and &POST; the request again. 
+                    <note>
+                        <title>Notes</title>
+                        <para>Keep the following in mind:
+                        <itemizedlist>
+                            <listitem><para> This process allows multiple records to be created along with the
+                                domain. This is an atomic operation: if there is a failure in creation
+                                of even a single record, the entire process will fail. </para>
+                            </listitem>
+                            <listitem><para> DNS propagation may take up to 1
+                                minute. </para>
+                            </listitem>
+                            <listitem><para>When a domain is created, and no Time To Live (TTL) is specified, the
+                                SOA minTTL (3600 seconds) is used as the default. When a record is added
+                                without a specified TTL, it will receive the domain TTL by default. When
+                                the domain and/or record TTL is supplied by the user, either via a
+                                create or update call, the TTL values must be 300 seconds or
+                                more.</para>
+                            </listitem>
+                            <listitem><para>Subdomains are managed in separate zone files in the DNS system and
+                                will add some overhead to domain management.</para>
+                            </listitem>
+                        </itemizedlist>
+                           
+                        </para>  
                     </note>
                 </para>
+                <para>The following examples show the Create Domain(s)
+                    requests:</para>
                 <example>
                     <title>Create Domain(s) Request: XML</title>
                     <?dbfo keep-together="always"?>
