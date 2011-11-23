@@ -1580,19 +1580,17 @@
                     <tr>
                         <td colspan="2">
                             <note>
-                                <para><code>DKIM</code> and <code>SPF</code> records are supported
-                                    using <code>TXT</code> records with appropriately formatted data
-                                    fields. </para>
-                            </note>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <note>
-                                <para>Invalid quote and slash
-                                   characters are automatically
-                                   removed from TXT records by the DNS
-                                   Service. </para>
+                                <title>Notes</title>
+                                <itemizedlist>
+                                    <listitem><para><code>DKIM</code> and <code>SPF</code> records are supported
+                                        using <code>TXT</code> records with appropriately formatted data
+                                        fields. </para></listitem>
+                                    <listitem><para>Invalid quote and slash
+                                        characters are automatically
+                                        removed from TXT records by the DNS
+                                        Service. </para></listitem>
+                                </itemizedlist>
+                                
                             </note>
                         </td>
                     </tr>
