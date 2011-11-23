@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="12.2">
+<project version="13.1">
     <meta>
         <filters directoryPatterns="" filePatterns="*.fo" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="12.2" xml:space="preserve">
+            <serialized version="13.1" xml:space="preserve">
                 <map>
                     <entry>
                         <String>document.type.only.local.dtds</String>
@@ -18,7 +18,7 @@
                         <documentTypeEntry-array>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>wadl/wadl.framework/WADL</String>
+                                    <String>rackbook/rackbook.framework/RackBook 1.0</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
@@ -26,7 +26,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>rackbook/rackbook.framework/RackBook 1.0</String>
+                                    <String>wadl/wadl.framework/WADL</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
@@ -122,7 +122,31 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
+                                    <String>ncx/ncx.framework/NCX</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
                                     <String>nvdl/nvdl.framework/NVDL</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>xml/xmlcatalog.framework/OASIS XML Catalog</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>ocf/ocf.framework/OCF</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
@@ -146,7 +170,23 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
+                                    <String>opf/opf.framework/OPF</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
                                     <String>relaxng/relaxng.framework/Relax NG</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>true</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>svg/svg.framework/SVG</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
@@ -170,7 +210,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>svg/svg.framework/SVG</String>
+                                    <String>tei/teip5odd.framework/TEI ODD</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
@@ -210,14 +250,6 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>xml/xmlcatalog.framework/OASIS XML Catalog</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>true</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>xmlschema/xmlschema.framework/XML Schema</String>
                                 </field>
                                 <field name="enable">
@@ -243,30 +275,6 @@
                             <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>xslt/xslt.framework/XSLT</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>true</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>ncx/ncx.framework/NCX</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>true</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>ocf/ocf.framework/OCF</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>true</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>opf/opf.framework/OPF</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
@@ -1173,6 +1181,21 @@
                             <field name="automaticSpellCheck">
                                 <Boolean>true</Boolean>
                             </field>
+                            <field name="automaticSpellCheckContentTypes">
+                                <String-array>
+                                    <String>text/html</String>
+                                    <String>text/nvdl</String>
+                                    <String>text/plain</String>
+                                    <String>text/properties</String>
+                                    <String>text/rng</String>
+                                    <String>text/sch</String>
+                                    <String>text/wsdl</String>
+                                    <String>text/xml</String>
+                                    <String>text/xproc</String>
+                                    <String>text/xsd</String>
+                                    <String>text/xsl</String>
+                                </String-array>
+                            </field>
                             <field name="spellCheckInComments">
                                 <Boolean>false</Boolean>
                             </field>
@@ -1265,10 +1288,6 @@
                                 <Integer>1</Integer>
                             </field>
                         </spellCheckOptions>
-                    </entry>
-                    <entry>
-                        <String>user.role</String>
-                        <Integer>1</Integer>
                     </entry>
                 </map>
             </serialized>

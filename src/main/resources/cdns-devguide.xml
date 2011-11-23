@@ -51,7 +51,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2011-11-4</pubdate>
+        <pubdate>2011-12-1</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -63,6 +63,20 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2011-12-1</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added information to <xref
+                                   linkend="supported_record_types"/>
+                                regarding automatic removal of invalid
+                                quote and slash characters from TXT
+                                records.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
                 <revision>
                     <date>2011-11-4</date>
                     <revdescription>
@@ -237,10 +251,12 @@
         <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
-            <para> Every ReST request against the DNS Service requires the inclusion of a specific
-                authorization token, supplied by the <code>X-Auth-Token</code> HTTP header.
-                Customers obtain this token by first using the Rackspace Cloud Authentication
-                Service and supplying a valid username and API access key. </para>
+            <para> Every REST request against the DNS Service requires
+                the inclusion of a specific authorization token,
+                supplied by the <code>X-Auth-Token</code> HTTP header.
+                Customers obtain this token by first using the
+                Rackspace Cloud Authentication Service and supplying a
+                valid username and API access key. </para>
             <section xml:id="request">
                 <title>Geographic Endpoints</title>
                 <para> The Rackspace Cloud Authentication Service serves as the entry point to all
@@ -1567,6 +1583,16 @@
                                 <para><code>DKIM</code> and <code>SPF</code> records are supported
                                     using <code>TXT</code> records with appropriately formatted data
                                     fields. </para>
+                            </note>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <note>
+                                <para>Invalid quote and slash
+                                   characters are automatically
+                                   removed from TXT records by the DNS
+                                   Service. </para>
                             </note>
                         </td>
                     </tr>
