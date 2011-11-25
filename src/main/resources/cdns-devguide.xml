@@ -153,7 +153,7 @@
                     <para>General operating principles of DNS</para>
                 </listitem>
                 <listitem>
-                    <para>RESTful web services</para>
+                    <para>ReSTful web services</para>
                 </listitem>
                 <listitem>
                     <para>HTTP/1.1 conventions</para>
@@ -241,9 +241,11 @@
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
         <title>General API Information</title>
-        <para> The DNS Service API is implemented using a RESTful web service interface. Like other
-            products in the Rackspace Cloud suite, the DNS Service shares a common token-based
-            authentication system that allows seamless access between products and services. </para>
+        <para> The DNS Service API is implemented using a ReSTful web
+            service interface. Like other products in the Rackspace
+            Cloud suite, the DNS Service shares a common token-based
+            authentication system that allows seamless access between
+            products and services. </para>
         <note>
             <para> All requests to authenticate against and operate the service are performed using
                 SSL over HTTP (HTTPS) on TCP port 443. </para>
@@ -251,7 +253,7 @@
         <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
-            <para> Every REST request against the DNS Service requires
+            <para> Every ReST request against the DNS Service requires
                 the inclusion of a specific authorization token,
                 supplied by the <code>X-Auth-Token</code> HTTP header.
                 Customers obtain this token by first using the
@@ -259,8 +261,9 @@
                 valid username and API access key. </para>
             <section xml:id="request">
                 <title>Geographic Endpoints</title>
-                <para> The Rackspace Cloud Authentication Service serves as the entry point to all
-                Rackspace Cloud APIs and is itself a RESTful web service. </para>
+                <para> The Rackspace Cloud Authentication Service
+                    serves as the entry point to all Rackspace Cloud
+                    APIs and is itself a ReSTful web service. </para>
                 <para> To access the Authentication Service, you must know whether your account is
                     US-based or UK-based: 
                 </para>
@@ -2596,32 +2599,47 @@
                     caller to correct the cause of the failure and &POST; the request again. 
                     <note>
                         <title>Notes</title>
-                        <para>Keep the following in mind:
-                        <itemizedlist>
-                            <listitem><para> This process allows multiple records to be created along with the
-                                domain. This is an atomic operation: if there is a failure in creation
-                                of even a single record, the entire process will fail. </para>
-                            </listitem>
-                            <listitem><para> DNS propagation may take up to 1
-                                minute. </para>
-                            </listitem>
-                            <listitem><para>When a domain is created, and no Time To Live (TTL) is specified, the
-                                SOA minTTL (3600 seconds) is used as the default. When a record is added
-                                without a specified TTL, it will receive the domain TTL by default. When
-                                the domain and/or record TTL is supplied by the user, either via a
-                                create or update call, the TTL values must be 300 seconds or
-                                more.</para>
-                            </listitem>
-                            <listitem><para>Subdomains are managed in separate zone files in the DNS system and
-                                will add some overhead to domain management.</para>
-                            </listitem>
-                        </itemizedlist>
-                           
+                        <para>
+                            <itemizedlist>
+                                <listitem>
+                                   <para> This process allows multiple
+                                   records to be created along with
+                                   the domain. This is an atomic
+                                   operation: if there is a failure in
+                                   creation of even a single record,
+                                   the entire process will fail.
+                                   </para>
+                                </listitem>
+                                <listitem>
+                                   <para> DNS propagation may take up
+                                   to 1 minute. </para>
+                                </listitem>
+                                <listitem>
+                                   <para>When a domain is created, and
+                                   no Time To Live (TTL) is specified,
+                                   the SOA minTTL (3600 seconds) is
+                                   used as the default. When a record
+                                   is added without a specified TTL,
+                                   it will receive the domain TTL by
+                                   default. When the domain and/or
+                                   record TTL is supplied by the user,
+                                   either via a create or update call,
+                                   the TTL values must be 300 seconds
+                                   or more.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Subdomains are managed in
+                                   separate zone files in the DNS
+                                   system and will add some overhead
+                                   to domain management.</para>
+                                </listitem>
+                            </itemizedlist>
                         </para>  
                     </note>
                 </para>
                 <para>The following examples show the Create Domain(s)
-                    requests:</para>
+                    requests:<?rax-fo keep-with-next?>
+                </para>
                 <example>
                     <title>Create Domain(s) Request: XML</title>
                     <?dbfo keep-together="always"?>
