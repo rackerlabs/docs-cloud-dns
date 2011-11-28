@@ -63,35 +63,27 @@
 	
 	<chapter xml:id="cdnsv1.0.XX">
 		<title>v1.0.XX, Dec. 1, 2011</title>
-		<para>This version is the initial GA Release for DNS.</para>
+		<para>This version contains bug fixes for DNS.</para>
 		<itemizedlist>
 			<title>New Features</title>
-			<listitem>
-				<para><link
-					xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Authentication-d1e647.html"
-					>Auth 1.1</link> support</para>
-			</listitem>
-			<listitem>
-				<para
-					xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/List_Domain_Changes.html"
-					> List domain changes </para>
-			</listitem>
 			<listitem>
 				<para>Documentation updates to the <link xlink:href="http://docs.rackspace.com/api/"
 					>DNS Developer Guide</link></para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
-			<title>Known Issues</title>
+			<title>Bug Fixes</title>
 			<listitem>
-				<para>Adding a TXT record with a single backslash (\)
-					to a domain invalidates the zone.</para>
+				<para>Enabled SRV records to accept valid service names, including
+					names that contain dashes.</para>
 			</listitem>
 			<listitem>
-				<para>Importing a bind-9 formatted zone file from
-					MyRack to the Rackspace Cloud. Contact support to
-					transfer any domains from Managed to Cloud.
-				</para>
+				<para>Modified record validation to remove unescaped slashes and
+					quotations from TXT records.</para>
+			</listitem>
+			<listitem>
+				<para>Corrected duplicate record errors for manually
+					added nameservers.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
