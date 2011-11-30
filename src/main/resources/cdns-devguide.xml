@@ -388,7 +388,7 @@
                             <area xml:id="auth.xml.sc.s.e.v1d" units="linecolumn" coords="11 21"/>
                             <area xml:id="auth.xml.sc.s.e.pu" units="linecolumn" coords="12 21"/>
                             <area xml:id="auth.xml.sc.s.e.iu" units="linecolumn" coords="13 23"/>
-                            <area xml:id="auth.xml.sc.s.e.nr" units="linecolumn" coords="29 17"/>
+                            <area xml:id="auth.xml.sc.s.e.nr" units="linecolumn" coords="31 21"/>
                         </areaspec>
                         <programlisting language="xml">
 <xi:include href="../../../target/samples/auth.xml" parse="text"/>
@@ -404,7 +404,7 @@
                             <area xml:id="auth.json.sc.s.e.v1d" units="linecolumn" coords="12 33"/>
                             <area xml:id="auth.json.sc.s.e.pu" units="linecolumn" coords="13 33"/>
                             <area xml:id="auth.json.sc.s.e.iu" units="linecolumn" coords="14 35"/>
-                            <area xml:id="auth.json.sc.s.e.nr" units="linecolumn" coords="33 30"/>
+                            <area xml:id="auth.json.sc.s.e.nr" units="linecolumn" coords="36 33"/>
                         </areaspec>
                         <programlisting language="javascript">
 <xi:include href="../../../target/samples/auth.json" parse="text"/>

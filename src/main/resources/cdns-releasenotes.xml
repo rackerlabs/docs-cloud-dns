@@ -64,7 +64,7 @@
 	
 	<chapter xml:id="cdnsv1.0.XX">
 		<title>v1.0.13, Dec. 1, 2011</title>
-		<para>This version contains bug fixes for DNS.</para>
+		<para>This version contains bug fixes for Cloud DNS.</para>
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem>
