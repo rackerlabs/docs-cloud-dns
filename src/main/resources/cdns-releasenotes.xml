@@ -62,7 +62,7 @@
     	</revhistory>
     </info>
 	
-	<chapter xml:id="cdnsv1.0.XX">
+	<chapter xml:id="cdnsv1.0.13">
 		<title>v1.0.13, Dec. 1, 2011</title>
 		<para>This version contains bug fixes for Cloud DNS.</para>
 		<itemizedlist>
