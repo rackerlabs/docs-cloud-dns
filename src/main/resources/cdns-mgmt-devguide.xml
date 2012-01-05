@@ -245,7 +245,7 @@
             <note>
                 <para>Not all Rackspace employees with valid SSO
                     credentials will have access to the Cloud DNS
-                    Managment API. If you cannot access the service
+                    Management API. If you cannot access the service
                     and feel that this is in error, please contact
                     your supervisor and have the appropriate roles
                     added to your account. </para>
