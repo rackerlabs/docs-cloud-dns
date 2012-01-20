@@ -1,0 +1,8 @@
+PUT https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725233/records/"127.0.0.99" 
+Accept: application/xml 
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml 
+Content-Length:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
+<record name="example.com" data="127.0.0.98" ttl="3600" 
+xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.org/2005/Atom"/>

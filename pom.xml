@@ -288,7 +288,8 @@
                                 
 		                       	<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
 								<!-- API BEANS OUTPUTS - domains, domain, links etc    -->
-								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->                   
+								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->    							
+                                               
 		                        <source>
 		                            <data>${basedir}/src/main/resources/samples.xml</data>
 		                            <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
@@ -848,14 +849,34 @@
 		                                    </filters>
 		                                   	<requestBody>
 		                                   		<filters>
-		                                   			<filter>domains[1]</filter>
+                                                <filter>domains[1]</filter>
+                                                <filter>domains[0].Id</filter>
+                                                <filter>domains[0].accountId</filter>
+                                                <filter>domains[0].created</filter>
+                                                <filter>domains[0].updated</filter>
+                                                <filter>domains[0].name</filter>
 		                                   		</filters>
 		                                   	</requestBody>
 		                                    <responseBody>
-		                                   		<filters>
-		                                   			<filter>domains[1].recordsList.totalEntries</filter>
-		                                   			<filter>domains[0]</filter>
-		                                   		</filters>                                    
+		                                   <!--  <base>domains[0].recordsList</base> -->
+		                                   		<filters>  
+		                                   		<filter>domains[0]</filter>
+		                                   		<filter>domains[0].Id</filter>
+		                                   		<filter>domains[0].accountId</filter>
+		                                   		<filter>domains[0].created</filter>
+		                                   		<filter>domains[0].updated</filter>
+		                                   		<filter>domains[0].recordsList.records[0].id</filter>
+		                                   		<filter>domains[0].recordsList.records[0].created</filter>
+		                                   		<filter>domains[0].recordsList.records[0].updated</filter>
+		                                   		<filter>domains[0].recordsList.records[1].id</filter>
+		                                   		<filter>domains[0].recordsList.records[1].created</filter>
+		                                   		<filter>domains[0].recordsList.records[1].updated</filter>
+		                                   		<filter>domains[0].recordsList.records[2].id</filter>
+		                                   		<filter>domains[0].recordsList.records[2].created</filter>
+		                                   		<filter>domains[0].recordsList.records[2].updated</filter>
+		                                   		<!-- <base>domains[0].recordsList</base>
+		                                   		<filter>records[0].id</filter> -->
+		                                   		</filters>         
 		                                    </responseBody>
 		                                </output>                                                        
 		                        	</outputs>
