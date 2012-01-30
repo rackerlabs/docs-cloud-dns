@@ -1106,7 +1106,6 @@
 													<filter>priority</filter>
 													<filter>updated</filter>
 													<filter>created</filter>
-													<filter>type</filter>
 												</filters>
 											</requestBody>
 											<responseBody />

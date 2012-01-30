@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
-<recordsList xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" 
+<recordsList xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" totalEntries="1">
-    <ns3:record id="PTR-6817754" type="PTR" name="rackspace.example.com" data="192.0.2.8" ttl="5771"
-        updated="2011-05-19T08:07:08-05:00" created="2011-05-18T14:53:09-05:00" />
+    <record xsi:type="ns3:record" id="PTR-6817754" type="PTR" name="rackspace.example.com" data="192.0.2.8" ttl="5771"
+        updated="2011-05-19T08:07:08-05:00" created="2011-05-18T14:53:09-05:00" createdBy="Rackspace Cloud" updatedBy="Rackspace Cloud"/>
 </recordsList>        
 <!-- <?xml version="1.0" encoding="UTF-8" standalone="yes"?> -->
 
