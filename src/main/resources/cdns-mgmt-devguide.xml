@@ -434,30 +434,26 @@
 				<example>
 					<title>Search Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-search-domains_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Search Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-search-domains_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<para><?rax-fo keep-with-next?>
 					The domain is listed in
@@ -467,30 +463,26 @@
 				<example>
 					<title>Search Domains Response: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-search-domains_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Search Domains Response: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-search-domains_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 		</section>
@@ -611,56 +603,48 @@
 				<example>
 					<title>List Limit Groups Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-groups_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Groups Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-groups_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Groups Response: XML</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-groups_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Groups Response: JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-groups_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 			<section xml:id="limit_group_types">
@@ -714,56 +698,48 @@
 				<example>
 					<title>List Limit Group Types Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-types_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Group Types Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-types_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Group Types Response: XML</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-types_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Group Types Response: JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-types_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 			<section xml:id="limit_groups_of_specified_type">
@@ -823,56 +799,48 @@
 				<example>
 					<title>List Limit Groups of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-type-groups_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Groups of Type Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-type-groups_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Groups of Type Response: XML</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-type-groups_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Limit Groups of Type Response: JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-type-groups_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 			<section xml:id="show_limit_group_details">
@@ -932,56 +900,48 @@
 				<example>
 					<title>Show Group Details Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-group_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Show Group Details Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-group_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Show Group Details Response: XML</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-group_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Show Group Details Response: JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-limit-group_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 		</section>
@@ -1104,54 +1064,46 @@
 					<example>
 						<title>List PTR Record Details Request: XML</title>
                     <?dbfo keep-together="auto"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-list-ptr-record_request.xml"
 								parse="text">
 								<xi:fallback>
 									Missing code sample! <?rax fail?>
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>List PTR Record Details Request: JSON</title>
                     <?dbfo keep-together="always"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-list-ptr-record_request.json"
 								parse="text">
 								<xi:fallback><?rax fail?>
 									Missing code sample!
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>List PTR Record Details Response: XML</title>
                     <?dbfo keep-together="auto"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-list-ptr-record_response.xml"
 								parse="text">
 								<xi:fallback>
 									Missing code sample! <?rax fail?>
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>List PTR Record Details Response: JSON</title>
                     <?dbfo keep-together="always"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-list-ptr-record_response.json"
 								parse="text">
 								<xi:fallback><?rax fail?>
 									Missing code sample!
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 				</section>
 				<section xml:id="Delete_PTR_Records">
@@ -1223,54 +1175,46 @@
 					<example>
 						<title>Delete PTR Record Request: XML</title>
                     <?dbfo keep-together="auto"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-delete-ptr-record_request.xml"
 								parse="text">
 								<xi:fallback>
 									Missing code sample! <?rax fail?>
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>Delete PTR Record Request: JSON</title>
                     <?dbfo keep-together="always"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-delete-ptr-record_request.json"
 								parse="text">
 								<xi:fallback><?rax fail?>
 									Missing code sample!
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>Delete PTR Record Response: XML</title>
                     <?dbfo keep-together="auto"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-delete-ptr-record_response.xml"
 								parse="text">
 								<xi:fallback>
 									Missing code sample! <?rax fail?>
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>Delete PTR Record Response: JSON</title>
                     <?dbfo keep-together="always"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-delete-ptr-record_response.json"
 								parse="text">
 								<xi:fallback><?rax fail?>
 									Missing code sample!
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 				</section>
 				<section xml:id="Modify_PTR_Records">
@@ -1339,28 +1283,24 @@
 					<example>
 						<title>Modify PTR Record Request: XML</title>
                     <?dbfo keep-together="auto"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-modify-ptr-record_request.xml"
 								parse="text">
 								<xi:fallback>
 									Missing code sample! <?rax fail?>
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 					<example>
 						<title>Modify PTR Record Request: JSON</title>
                     <?dbfo keep-together="always"?>
-						<programlisting language="xml">
-							<xi:include
+						<programlisting language="xml"><xi:include
 								href="../../../target/samples/mgmt-dns-modify-ptr-record_request.json"
 								parse="text">
 								<xi:fallback><?rax fail?>
 									Missing code sample!
 								</xi:fallback>
-							</xi:include>
-						</programlisting>
+							</xi:include></programlisting>
 					</example>
 				</section>
 			</section>
@@ -1624,53 +1564,45 @@
 				<example>
 					<title>Create Domain(s) Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-req_request.xml"
 							parse="text">
 							<xi:fallback>
 								Missing code sample! <?rax fail?>
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Create Domain(s) Request: JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-req_request.json"
 							parse="text">
 							<xi:fallback>
 								Missing code sample! <?rax fail?>
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example xml:id="create_domains_resp">
 					<title>Create Domain(s) Response: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-res_response.xml"
 							parse="text">
 							<xi:fallback>
 								Missing code sample! <?rax fail?>
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Create Domain(s) Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-					<programlisting language="samples/mgmt-dns-create-domains-res_response.json">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-res_response.json"
 							parse="text">
 							<xi:fallback>
 								Missing code sample! <?rax fail?>
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 
@@ -1701,32 +1633,26 @@
 					endpoint, as shown in the examples below:
 				</para>
 				<example>
-					<title>List User's Jobs Status Request:
-						XML</title>
-					<programlisting language="xml">
-						<xi:include
+					<title>List User's Jobs Status Request: XML</title>
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
-					<title>List User's Jobs Status Request:
-						JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<title>List User's Jobs Status Request: JSON</title>
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 		</section>
@@ -1803,58 +1729,50 @@
 				<example>
 					<title>List Assigned Groups Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Assigned Groups Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Assigned Groups Response: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Assigned Groups Response: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 			<section xml:id="list_users_assigned_limit_group_of_specified_type">
@@ -1919,56 +1837,48 @@
 				<example>
 					<title>List Assigned Group of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group-type_request.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Assigned Group of Type Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group-type_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Assigned Group of Type Response: XML</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group-type_response.xml
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>List Assigned Group of Type Response: JSON</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-list-user-group-type_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 			<section xml:id="assign_user_to_limit_group">
@@ -2031,29 +1941,25 @@
 				<example>
 					<title>Assign User to Limit Group Request</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-update-user-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-update-user-group_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Assign User to Limit Group Response</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-update-user-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-update-user-group_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 			<section xml:id="return_user_to_default_group_for_specific_type">
@@ -2123,29 +2029,25 @@
 				<example>
 					<title>Assign Default Group Request</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-delete-user-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-delete-user-group_request.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 				<example>
 					<title>Assign Default Group Response</title>
-					<programlisting language="xml">
-						<xi:include
+					<programlisting language="xml"><xi:include
 							href="../../../target/samples/mgmt-dns-delete-user-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
 								Missing Sample:
 								../../../target/samples/mgmt-dns-delete-user-group_response.json
 							</xi:fallback>
-						</xi:include>
-					</programlisting>
+						</xi:include></programlisting>
 				</example>
 			</section>
 		</section>

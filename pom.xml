@@ -135,12 +135,10 @@
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<requestHeaders>
-								<requestHeader>X-Auth-Token:
-									ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+								<requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 							</requestHeaders>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION:
-									${com.rackspace.cloud.dns.api.version}</responseHeader>
+								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
 							</responseHeaders>
 							<sources>
 
@@ -187,15 +185,12 @@
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<requestHeaders>
-								<requestHeader>X-Auth-Token:
-									ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+								<requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 							</requestHeaders>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION:
-									${com.rackspace.cloud.dns.api.version}</responseHeader>
+								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
 							</responseHeaders>
 							<sources>
-
 								<source>
 									<data>${basedir}/src/main/resources/samples-limit-types.xml</data>
 									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
@@ -853,41 +848,21 @@
 										<!-- dns-import-domains-response.xml -->
 										<output>
 											<nameBase>dns-import-domains</nameBase>
-											<path>/{{domains[0].accountId}}/domains/import</path>
+											<path>/{{domains[1].accountId}}/domains/import</path>
 											<requestType>POST</requestType>
-											<statusCode>202</statusCode>
-											<filters>
-												<filter>totalEntries</filter>
-											</filters>
+											<statusCode>200</statusCode>
+                                                                                        <filters>
+											    <filter>totalEntries</filter>
+                                                                                        </filters>
 											<requestBody>
-												<filters>
-													<filter>domains[1]</filter>
-													<filter>domains[0].Id</filter>
-													<filter>domains[0].accountId</filter>
-													<filter>domains[0].created</filter>
-													<filter>domains[0].updated</filter>
-													<filter>domains[0].name</filter>
-												</filters>
+										            <filters>
+                                                                                                <filter>domains[1]</filter>
+										            </filters>
 											</requestBody>
-											<responseBody>
-												<!-- <base>domains[0].recordsList</base> -->
-												<filters>
-													<filter>domains[0]</filter>
-													<filter>domains[0].Id</filter>
-													<filter>domains[0].accountId</filter>
-													<filter>domains[0].created</filter>
-													<filter>domains[0].updated</filter>
-													<filter>domains[0].recordsList.records[0].id</filter>
-													<filter>domains[0].recordsList.records[0].created</filter>
-													<filter>domains[0].recordsList.records[0].updated</filter>
-													<filter>domains[0].recordsList.records[1].id</filter>
-													<filter>domains[0].recordsList.records[1].created</filter>
-													<filter>domains[0].recordsList.records[1].updated</filter>
-													<filter>domains[0].recordsList.records[2].id</filter>
-													<filter>domains[0].recordsList.records[2].created</filter>
-													<filter>domains[0].recordsList.records[2].updated</filter>
-													<!-- <base>domains[0].recordsList</base> <filter>records[0].id</filter> -->
-												</filters>
+                                                                                        <responseBody>
+                                                                                            <filters>
+                                                                                                <filter>domains[0]</filter>
+                                                                                            </filters>
 											</responseBody>
 										</output>
 									</outputs>
@@ -1072,9 +1047,11 @@
 							<urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase>
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
+                                                        <requestHeaders>
+                                                            <requestHeader>Authentication: Basic 1234abcd44rIrfake</requestHeader>
+                                                        </requestHeaders>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION:
-									${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
+							    <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
 							</responseHeaders>
 							<sources>
 								<source>
