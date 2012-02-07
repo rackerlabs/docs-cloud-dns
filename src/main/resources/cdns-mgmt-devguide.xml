@@ -1033,21 +1033,16 @@
 				<note>
 					<para>
 						Attempting to execute any of these functions on the public
-						API will
-						result in a badRequest (
-						<errorcode>400</errorcode>
-						) error.
+						API will result in a badRequest (<errorcode>400</errorcode>) error.
 					</para>
 				</note>
 				<section xml:id="Create_PTR_Record">
 					<title>Create PTR Record(s)</title>
 					<note>
-						This call will return an asynchronous response as described in
-						<xref linkend="sync_asynch_responses" />
-						.
+						This call will return an asynchronous response.
 					</note>
 					<note>PTR Records are created at the same time the domain they
-						exist in is created (you may, however, add additional PTR Records
+						exist in is created (you may, however, add additional PTR Records at a later time
 						to any domain that you own).</note>
 					<informaltable rules="all">
 						<thead>
@@ -1081,23 +1076,13 @@
 					</para>
 					<simpara>
 						Error Response Code(s): dnsFault (
-						<errorcode>400</errorcode>
-						,
-						<errorcode>500</errorcode>
-						), serviceUnavailable
-						(
-						<errorcode>503</errorcode>
-						), unauthorized (
-						<errorcode>401</errorcode>
-						),
-						badRequest (
-						<errorcode>400</errorcode>
-						), itemNotFound
-						(
-						<errorcode>404</errorcode>
-						), overLimit (
-						<errorcode>413</errorcode>
-						)
+						<errorcode>400</errorcode>,
+						<errorcode>500</errorcode>), serviceUnavailable (
+						<errorcode>503</errorcode> ), unauthorized (
+						<errorcode>401</errorcode> ), badRequest (
+						<errorcode>400</errorcode> ), itemNotFound (
+						<errorcode>404</errorcode> ), overLimit (
+						<errorcode>413</errorcode> )
 					</simpara>
 					<example>
 						<title>Create PTR Record(s) Request: XML</title>

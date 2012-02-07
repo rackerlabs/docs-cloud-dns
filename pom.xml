@@ -1116,7 +1116,7 @@
 											<requestType>GET</requestType>
 											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
 											<responseBody>
-											<base>domains[0].recordsList.record[0]</base>
+											<base>domains[0].recordsList.records[0]</base>
 											</responseBody>
 										</output>
 
