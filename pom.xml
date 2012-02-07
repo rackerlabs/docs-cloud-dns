@@ -135,10 +135,12 @@
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<requestHeaders>
-								<requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+								<requestHeader>X-Auth-Token:
+									ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 							</requestHeaders>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
+								<responseHeader>X-API-VERSION:
+									${com.rackspace.cloud.dns.api.version}</responseHeader>
 							</responseHeaders>
 							<sources>
 
@@ -185,12 +187,15 @@
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<requestHeaders>
-								<requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+								<requestHeader>X-Auth-Token:
+									ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 							</requestHeaders>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
+								<responseHeader>X-API-VERSION:
+									${com.rackspace.cloud.dns.api.version}</responseHeader>
 							</responseHeaders>
 							<sources>
+
 								<source>
 									<data>${basedir}/src/main/resources/samples-limit-types.xml</data>
 									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
@@ -848,21 +853,41 @@
 										<!-- dns-import-domains-response.xml -->
 										<output>
 											<nameBase>dns-import-domains</nameBase>
-											<path>/{{domains[1].accountId}}/domains/import</path>
+											<path>/{{domains[0].accountId}}/domains/import</path>
 											<requestType>POST</requestType>
-											<statusCode>200</statusCode>
-                                                                                        <filters>
-											    <filter>totalEntries</filter>
-                                                                                        </filters>
+											<statusCode>202</statusCode>
+											<filters>
+												<filter>totalEntries</filter>
+											</filters>
 											<requestBody>
-										            <filters>
-                                                                                                <filter>domains[1]</filter>
-										            </filters>
+												<filters>
+													<filter>domains[1]</filter>
+													<filter>domains[0].Id</filter>
+													<filter>domains[0].accountId</filter>
+													<filter>domains[0].created</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].name</filter>
+												</filters>
 											</requestBody>
-                                                                                        <responseBody>
-                                                                                            <filters>
-                                                                                                <filter>domains[0]</filter>
-                                                                                            </filters>
+											<responseBody>
+												<!-- <base>domains[0].recordsList</base> -->
+												<filters>
+													<filter>domains[0]</filter>
+													<filter>domains[0].Id</filter>
+													<filter>domains[0].accountId</filter>
+													<filter>domains[0].created</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].recordsList.records[0].id</filter>
+													<filter>domains[0].recordsList.records[0].created</filter>
+													<filter>domains[0].recordsList.records[0].updated</filter>
+													<filter>domains[0].recordsList.records[1].id</filter>
+													<filter>domains[0].recordsList.records[1].created</filter>
+													<filter>domains[0].recordsList.records[1].updated</filter>
+													<filter>domains[0].recordsList.records[2].id</filter>
+													<filter>domains[0].recordsList.records[2].created</filter>
+													<filter>domains[0].recordsList.records[2].updated</filter>
+													<!-- <base>domains[0].recordsList</base> <filter>records[0].id</filter> -->
+												</filters>
 											</responseBody>
 										</output>
 									</outputs>
@@ -1047,17 +1072,38 @@
 							<urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase>
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
-                                                        <requestHeaders>
-                                                            <requestHeader>Authentication: Basic 1234abcd44rIrfake</requestHeader>
-                                                        </requestHeaders>
 							<responseHeaders>
-							    <responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
+								<responseHeader>X-API-VERSION:
+									${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
 							</responseHeaders>
 							<sources>
 								<source>
 									<data>${basedir}/src/main/resources/mgmt-ptr-samples.xml</data>
 									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
 									<outputs>
+										<output>
+											<nameBase>mgmt-dns-create-ptr-record</nameBase>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<path>/1234/domains</path>
+											<requestBody>
+												<filters>
+													<filter>domains[0].created</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].recordsList.records[0].created</filter>
+													<filter>domains[0].recordsList.records[0].updated</filter>
+													<filter>domains[0].recordsList.records[0].id</filter>
+													<filter>domains[0].recordsList.records[1].created</filter>
+													<filter>domains[0].recordsList.records[1].updated</filter>
+													<filter>domains[0].recordsList.records[1].id</filter>
+													<filter>domains[0].recordsList.records[2].created</filter>
+													<filter>domains[0].recordsList.records[2].updated</filter>
+													<filter>domains[0].recordsList.records[2].id</filter>
+												</filters>
+											</requestBody>
+											<responseBody/>
+										</output>
+
 										<output>
 											<nameBase>mgmt-dns-delete-ptr-record</nameBase>
 											<requestType>DELETE</requestType>
@@ -1069,7 +1115,9 @@
 											<nameBase>mgmt-dns-list-ptr-record</nameBase>
 											<requestType>GET</requestType>
 											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
-											<responseBody/>
+											<responseBody>
+											<base>domains[0].recordsList.record[0]</base>
+											</responseBody>
 										</output>
 
 										<output>
@@ -1077,12 +1125,13 @@
 											<requestType>PUT</requestType>
 											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
 											<requestBody>
-												<base>records[0]</base>
+												<base>domains[0].recordsList.records[0]</base>
 												<filters>
 													<filter>id</filter>
 													<filter>priority</filter>
 													<filter>updated</filter>
 													<filter>created</filter>
+													<filter>type</filter>
 												</filters>
 											</requestBody>
 											<responseBody />
@@ -1293,7 +1342,7 @@
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>1.0.9</version>
+				<version>1.0.7</version>
 				<executions>
 					<execution>
 						<id>g1</id>
