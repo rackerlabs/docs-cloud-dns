@@ -29,5 +29,11 @@
           v1Default="true"
           publicURL="https://servers.api.rackspacecloud.com/v1.0/322781" />
     </service>
+    <service name="cloudServersOpenStack">
+      <endpoint
+          region="DFW"
+          v1Default="false"
+          publicURL="https://dfw.servers.api.rackspacecloud.com/v2/322781" />
+    </service>
   </serviceCatalog>
 </auth>
