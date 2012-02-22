@@ -10,6 +10,10 @@
         <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
         <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
         <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
+        <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
 
         <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
                  <imageobject>
@@ -67,7 +71,11 @@
             <revision>
                 <date>2012-02-22</date>
                 <revdescription>
-                    <itemizedlist>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated endpoints for authentication
+                                for <xref linkend="request"/>.</para>
+                        </listitem>
                         <listitem>
                             <para>Updated Auth Response examples for
                                    <xref linkend="Authenticate-d1e171"
@@ -295,12 +303,12 @@
                 <itemizedlist spacing="compact">
                     <listitem>
                         <para>
-                            US-based accounts authenticate through <link xlink:href="https://auth.api.rackspacecloud.com/v1.1">https://auth.api.rackspacecloud.com/v1.1</link>.
+                            US-based accounts authenticate through <link xlink:href="&ENDPOINT-US;">&ENDPOINT-US;</link>.
                         </para>
                     </listitem>
                     <listitem>
                         <para>
-                            UK-based accounts authenticate through <link xlink:href="https://lon.auth.api.rackspacecloud.com/v1.1">https://lon.auth.api.rackspacecloud.com/v1.1</link>.
+                            UK-based accounts authenticate through <link xlink:href="&ENDPOINT-UK;">&ENDPOINT-UK;</link>.
                         </para>
                     </listitem>
                 </itemizedlist>
