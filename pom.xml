@@ -1431,6 +1431,23 @@
 							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content</canonicalUrlBase>
 						</configuration>
 					</execution>
+					
+					<execution>
+						<id>g3</id>
+						<goals>
+							<goal>generate-pdf</goal>
+							<goal>generate-webhelp</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<pdfUrl>../../../cdns-getting-started-latest.pdf</pdfUrl>
+							<enableDisqus>1</enableDisqus>
+							<includes>cdns-getting-started.xml</includes>
+							<enableGoogleAnalytics>1</enableGoogleAnalytics>
+							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content</canonicalUrlBase>
+						</configuration>
+					</execution>
+					
 				</executions>
 				<configuration>
 					<xincludeSupported>true</xincludeSupported>

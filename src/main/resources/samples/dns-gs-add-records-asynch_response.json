@@ -1,0 +1,15 @@
+HTTP/1.1 202 Accepted
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Fri, 16 Mar 2012 17:16:16 GMT
+Content-Length: 700
+Server: Jetty(7.3.1.v20110307)
+
+{
+  "request": "{\n\"records\": [\n{\n\"name\" : \"ftp.example.com\",\n\"type\" : \"A\",\n\"data\" : \"50.56.207.146\",\n\"ttl\" : 5771\n},\n{\n\"name\" : \"example.com\",\n\"type\" : \"A\",\n\"data\" : \"108.166.67.215\",\n\"ttl\" : 86400\n},\n{\n\"name\" : \"www.example.com\",\n\"type\" : \"CNAME\",\n\"comment\" : \"This is a comment on the CNAME record\",\n\"data\" : \"example.com\",\n\"ttl\" : 5400\n}\n]\n}",
+  "status": "RUNNING",
+  "verb": "POST",
+  "jobId": "e6b78833-2b5e-4c4c-88c6-6aabb55a706b",
+  "callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/status/e6b78833-2b5e-4c4c-88c6-6aabb55a706b",
+  "requestUrl": "http://dns.api.rackspacecloud.com/v1.0/1234/domains/3191338/records"
+}
