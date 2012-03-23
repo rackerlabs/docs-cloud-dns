@@ -38,10 +38,10 @@
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
-        <pubdate>2012-03-xx</pubdate>
+        <pubdate>2012-03-26</pubdate>
         <revhistory>
             <revision>
-                <date>2012-03-xx</date>
+                <date>2012-03-26</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -61,21 +61,14 @@
     </section>
     <section xml:id="DB_Overview">
         <title>Overview</title>
-        <para>Follow the steps described in this guide to use the
-            Rackspace Cloud DNS API and the <trademark>Cloud
-                Servers</trademark> section of the Control Panel to
-            create a DNS configuration for your Rackspace Cloud
-            Servers.</para>
-        <para>For details about using the Cloud DNS API, refer to the
-                <citetitle>Cloud DNS Developer
-            Guide</citetitle>.</para>
-        <para>For more details about the Rackspace Cloud DNS service,
-            refer to <link
+        <para>This guide provides step-by-step instructions for how to
+            properly enter the necessary URLs, using cURL, in order to
+            set up DNS for <trademark>Cloud Servers</trademark> using
+            the Rackspace Cloud DNS API. Additional details about
+            Rackspace Cloud DNS can be found in the <citetitle>Cloud
+                DNS Developer Guide</citetitle> and at <link
                 xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/dns/"
-                >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.This
-            site also offers links to Rackspace's official support
-            channels, including knowledge base articles, forums,
-            phone, chat, and email.</para>
+                >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for Running Examples</title>
             <para>In order to run the examples in this guide, you must
@@ -93,15 +86,15 @@
     </section>
     <section xml:id="Create_Cloud_Server">
         <title>Create a New Cloud Server</title>
-        <note>
-            <para>If you are using existing Cloud Servers on your
-                account, skip Steps 1-5 and go directly to Step 6
-                below.</para>
-        </note>
+        <para>This guide requires two Cloud Servers for setting up DNS
+            using the Cloud DNS API. If you will be using two
+                <emphasis>existing</emphasis> Cloud Servers on your
+            account for this purpose, skip Steps 1-5 and go directly
+            to Step 6 below. Otherwise, follow the steps below:</para>
         <para>Create a Cloud Server using the Cloud Servers section of
             the Control Panel (login here: <link
-                xlink:href="https://manage.rackspacecloud.com/pages/Login.jsp;jsessionid=9AA14CFBD45D76A627F75FD95A854642.cp-n01"
-                >Control Panel Login</link>).</para>
+                xlink:href="https://manage.rackspacecloud.com"
+                >https://manage.rackspacecloud.com</link>).</para>
         <note>
             <para>You can also create a Cloud Server using the Cloud
                 Servers API. Refer to the <citetitle><link
@@ -122,9 +115,9 @@
                         Server</guibutton>.</para>
             </step>
             <step>
-                <para> Select an image from a list of different
-                    operating systems, including Linux Distributions
-                    and Windows Images:</para>
+                <para> Select your preferred image from a list of
+                    different operating systems, including Linux
+                    Distributions and Windows Images:</para>
                 <para><inlinemediaobject>
                         <imageobject>
                             <imagedata
@@ -145,13 +138,12 @@
                     </inlinemediaobject></para>
             </step>
             <step>
-                <para> Create a second Cloud Server by performing
-                    Steps 1-4 again.</para>
+                <para>  Repeat steps 2-4 to create a second Cloud
+                    Server.</para>
             </step>
             <step>
-                <para>Record the IP addresses of your Cloud Servers
-                    below (from the information displayed in the Cloud
-                    Servers section of the Control Panel):<itemizedlist>
+                <para>Record the IP addresses listed for your Cloud
+                    Servers below:<itemizedlist>
                         <listitem>
                             <para>FIRST Cloud Server IP Address =
                                 _______________________________________
@@ -237,11 +229,12 @@
                 </varlistentry>
             </variablelist>
             <note>
-                <para>If you have the tools, you can run the cURL JSON
-                    request examples with the following options to
-                    format the output from cURL: <command>&lt;curl
-                        JSON request example> | python
-                        -mjson.tool</command>.</para>
+                <para>If you have <emphasis role="bold">json.tool</emphasis> in your python
+                    distribution, you can run the cURL JSON request
+                    examples with the following options to format the
+                    output from cURL: <command>&lt;curl JSON request
+                        example> | python
+                    -mjson.tool</command>.</para>
             </note>
         </section>
         <section xml:id="DB_copy_paste_examples">
@@ -975,44 +968,36 @@ com" comment="1st sample subdomain"/>
     <section xml:id="Add_Records">
         <title>Add Records</title>
         <para>In this section, you will add records for your new
-            domain.</para>
-        <para>Assume that you want to add the following
-            records:</para>
+            domain as follows:</para>
         <itemizedlist>
             <listitem>
                 <para>Two A records to map the IPV4 addresses of your
-                    Cloud Servers from <xref
+                    two Cloud Servers that you recorded in <xref
                         linkend="Create_Cloud_Server"/> to the new
-                    domain example.com that you created in <xref
-                        linkend="Create_Domain"/>. Assume that you
-                    want the first Cloud Server to be the ftp server
-                    (ftp.example.com) for your domain, and your second
-                    server to be the domain server. Assume that you
-                    want the ttls to be 5771 for your first Cloud
-                    Server and 86400 for your second Cloud Server.
-                    Copy the IP addresses below: <itemizedlist>
-                        <listitem>
-                            <para>FIRST Cloud Server IP Address =
-                                _______________________________________
-                            </para>
-                        </listitem>
-                        <listitem>
-                            <para>SECOND Cloud Server IP Address =
-                                _______________________________________</para>
-                        </listitem>
-                    </itemizedlist><note>
-                        <para>If you have IPV6 addresses to map, you
-                            need to create AAAA records in addition to
-                            any A records for IPv4 addresses.</para>
-                    </note></para>
+                    domain that you created in <xref
+                        linkend="Create_Domain"/>. </para>
             </listitem>
             <listitem>
                 <para>One CNAME record to create an alias
-                        <code>www.example.com</code> for your domain.
-                    The ttl is 5400. You want the comment field to be
-                    "This is a comment on the CNAME record".</para>
+                    (www.example.com) for your domain with a TTL of
+                    5400 and a comment of “This is a comment on the
+                    CNAME record.”</para>
+            </listitem>
+            <listitem>
+                <para>Make the first Cloud Server the ftp server
+                    (ftp.example.com) for your domain with a TTL of
+                    5571.</para>
+            </listitem>
+            <listitem>
+                <para>Make the second Cloud Server the domain server
+                    with a TTL of 86400.</para>
             </listitem>
         </itemizedlist>
+        <note>
+            <para>If you had IPV6 addresses to map, you would need to
+                create AAAA records in addition to any A records for
+                IPv4 addresses.</para>
+        </note>
         <para xmlns="http://docbook.org/ns/docbook">The following
             examples show the cURL requests for Add Records:</para>
         <example>
@@ -1102,7 +1087,6 @@ w3.org/2005/Atom">
                 JSON</title>
             <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
-        <para>Need to create example for above.</para>
         <para>The following examples show the cURL asynchronous status
             requests for Add Records:</para>
         <example>
@@ -1182,8 +1166,7 @@ w3.org/2005/Atom">
             that the records are added to your domain. See <xref
                 linkend="List_Domain_Details"/> for
             instructions.</para>
-        <para>This concludes the <citetitle>Getting
-                Started</citetitle>. Thank you for using Rackspace
-            Cloud products.</para>
+        <para>This concludes <citetitle>Getting Started</citetitle>.
+            Thank you for using Rackspace Cloud products.</para>
     </section>
 </article>
