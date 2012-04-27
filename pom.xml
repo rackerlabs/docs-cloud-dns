@@ -1455,6 +1455,7 @@
 					<highlightSource>false</highlightSource>
 					<sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
 					<feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+					<socialIcons>1</socialIcons>
 				</configuration>
 			</plugin>
 			<plugin>
