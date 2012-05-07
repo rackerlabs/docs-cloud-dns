@@ -10,10 +10,10 @@
 
 	<properties>
 		<com.rackspace.cloud.dns.maven.plugin.version>1.0.6</com.rackspace.cloud.dns.maven.plugin.version>
-		<com.rackspace.cloud.act.version>1.0.1</com.rackspace.cloud.act.version>
-		<com.rackspace.cloud.dns.api.common.version>1.0.10</com.rackspace.cloud.dns.api.common.version>
-		<com.rackspace.cloud.dns.api.version>1.0.12</com.rackspace.cloud.dns.api.version>
-		<com.rackspace.cloud.dns.api.mgmt.version>1.0.10</com.rackspace.cloud.dns.api.mgmt.version>
+		<com.rackspace.cloud.act.version>1.0.2-SNAPSHOT</com.rackspace.cloud.act.version>
+		<com.rackspace.cloud.dns.api.common.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
+		<com.rackspace.cloud.dns.api.version>1.0.14-SNAPSHOT</com.rackspace.cloud.dns.api.version>
+		<com.rackspace.cloud.dns.api.mgmt.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.mgmt.version>
 		<com.rackspace.cloud.papi.version>0.9.1</com.rackspace.cloud.papi.version>
 	</properties>
 
@@ -62,7 +62,7 @@
 			</pluginRepositories>
 		</profile>
 	</profiles>
-
+    
 	<build>
 		<resources>
 			<resource>
@@ -84,37 +84,38 @@
 				<artifactId>generate-samples-maven-plugin</artifactId>
 				<version>${com.rackspace.cloud.dns.maven.plugin.version}</version>
 				<dependencies>
-					<dependency>
-						<groupId>com.rackspace.cloud.act</groupId>
-						<artifactId>service</artifactId>
-						<version>${com.rackspace.cloud.act.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>com.rackspace.cloud.dns.api.common</groupId>
-						<artifactId>dns-api-common</artifactId>
-						<version>${com.rackspace.cloud.dns.api.common.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>com.rackspace.cloud.dns.api</groupId>
-						<artifactId>public-rest-service</artifactId>
-						<version>${com.rackspace.cloud.dns.api.version}</version>
-						<exclusions>
-							<exclusion>
-								<groupId>org.infinispan</groupId>
-								<artifactId>infinispan-core</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
+<!-- 					<dependency> -->
+<!-- 						<groupId>com.rackspace.cloud.act</groupId> -->
+<!-- 						<artifactId>service</artifactId> -->
+<!-- 						<version>${com.rackspace.cloud.act.version}</version> -->
+<!-- 					</dependency> -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>com.rackspace.cloud.dns.api.common</groupId> -->
+<!-- 						<artifactId>dns-api-common</artifactId> -->
+<!-- 						<version>${com.rackspace.cloud.dns.api.common.version}</version> -->
+<!-- 					</dependency> -->
 					<dependency>
 						<groupId>com.rackspace.cloud.dns.api.mgmt</groupId>
 						<artifactId>dns-mgmt-rest-service</artifactId>
 						<version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
 					</dependency>
-					<dependency>
-						<groupId>com.rackspace.papi.components</groupId>
-						<artifactId>rate-limiting</artifactId>
-						<version>${com.rackspace.cloud.papi.version}</version>
-					</dependency>
+<!-- 					<dependency> -->
+<!-- 						<groupId>com.rackspace.papi.components</groupId> -->
+<!-- 						<artifactId>rate-limiting</artifactId> -->
+<!-- 						<version>${com.rackspace.cloud.papi.version}</version> -->
+<!-- 					</dependency> -->
+                    <dependency>
+                        <groupId>com.rackspace.cloud.dns.api</groupId>
+                        <artifactId>public-rest-service</artifactId>
+                        <version>${com.rackspace.cloud.dns.api.version}</version>
+                        <classifier>classes</classifier>
+<!--                         <exclusions> -->
+<!--                             <exclusion> -->
+<!--                                 <groupId>org.infinispan</groupId> -->
+<!--                                 <artifactId>infinispan-core</artifactId> -->
+<!--                             </exclusion> -->
+<!--                         </exclusions> -->
+                    </dependency>
 				</dependencies>
 				<executions>
 					<execution>
@@ -126,9 +127,8 @@
 						<configuration>
 							<namespace>http://docs.openstack.org/common/api/v1.0</namespace>
 							<modules>
-								<module
-									implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
-								<module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule" />
+								<module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule"/>
+                                <module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule"/>
 							</modules>
 							<outputDir>${project.build.directory}/samples</outputDir>
 							<urlBase>https://dns.api.rackspacecloud.com/v1.0</urlBase>
@@ -178,8 +178,7 @@
 						<configuration>
 							<namespace>http://docs.rackspacecloud.com/dns/api/v1.0</namespace>
 							<modules>
-								<module
-									implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
+								<module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
 								<module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule" />
 							</modules>
 							<outputDir>${project.build.directory}/samples</outputDir>
@@ -187,12 +186,10 @@
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<requestHeaders>
-								<requestHeader>X-Auth-Token:
-									ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+								<requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
 							</requestHeaders>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION:
-									${com.rackspace.cloud.dns.api.version}</responseHeader>
+								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
 							</responseHeaders>
 							<sources>
 
@@ -203,7 +200,7 @@
 										<output>
 											<path>/1234/limits/types</path>
 											<nameBase>dns-example-limit-types</nameBase>
-											<responseBody />
+											<responseBody/>
 										</output>
 									</outputs>
 								</source>
@@ -219,8 +216,6 @@
 										</output>
 									</outputs>
 								</source>
-
-
 
 								<source>
 									<data>${basedir}/src/main/resources/samples-over-record-limit.xml</data>
@@ -245,7 +240,6 @@
 										</output>
 									</outputs>
 								</source>
-
 
 								<source>
 									<data>${basedir}/src/main/resources/samples.xml</data>
@@ -294,6 +288,106 @@
 										</output>
 									</outputs>
 								</source>
+                                
+                                <!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<!-- PTR Examples -->
+								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-ptr.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-list-ptr</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}?href={{link.href}}</path>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-list-ptr-details</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}/{{recordsList.records[0].id}}?href={{link.href}}</path>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-add-ptr</nameBase>
+                                            <path>/1234/rdns</path>
+                                            <requestType>POST</requestType>
+                                            <requestBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[3].id</filter>
+                                                    <filter>recordsList.records[3].created</filter>
+                                                    <filter>recordsList.records[3].updated</filter>
+                                                    <filter>recordsList.records[2].created</filter>
+                                                    <filter>recordsList.records[2].updated</filter>
+                                                    <filter>recordsList.records[2].id</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>
+                                            </requestBody>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>   
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-modify-ptr</nameBase>
+                                            <path>/1234/rdns</path>
+                                            <requestType>PUT</requestType>
+                                            <requestBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5].created</filter>
+                                                    <filter>recordsList.records[5].updated</filter>
+                                                    <filter>recordsList.records[4].created</filter>
+                                                    <filter>recordsList.records[4].updated</filter>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>
+                                            </requestBody>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>   
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-delete-all-ptr</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}?href={{link.href}}</path>
+                                            <requestType>DELETE</requestType>
+                                            <statusCode>204</statusCode>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-delete-one-ptr</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}?href={{link.href}}&amp;ip={{recordsList.records[1].data}}</path>
+                                            <requestType>DELETE</requestType>
+                                            <statusCode>204</statusCode>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
 
 								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 								<!-- API BEANS OUTPUTS - domains, domain, links etc -->
@@ -1073,8 +1167,7 @@
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<responseHeaders>
-								<responseHeader>X-API-VERSION:
-									${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
+								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
 							</responseHeaders>
 							<sources>
 								<source>

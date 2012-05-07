@@ -3636,6 +3636,296 @@ images.www.example.com  A  127.0.0.5</programlisting>
             </section>
         </section>
         <?hard-pagebreak?>
+        <section xml:id="ReverseDNS-123456999">
+            <title>Reverse DNS</title>
+            <para>Cloud DNS supports the management of reverse DNS (PTR) records for Rackspace Cloud devices such as Cloud Load
+            Balancers and <trademark>Cloud Servers</trademark>. In order to manage the PTR records for Rackspace Cloud devices, the service
+            and device resource URI must be specified along with record details. The service is specified using the appropriate service name
+            as returned in the service catalog from the Rackspace Cloud Authentication Service.</para> 
+            <note>The device URI must specify the device itself and not one of its sub-resources.</note>
+            <para>The following Rackspace Cloud services are supported in this version of the Cloud DNS API:</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td>Rackspace Cloud Service</td>
+                        <td>Service Catalog Name</td>
+                        <td>Supported API Version(s)</td>
+                        <td>API Documentation</td>
+                    </tr>
+                </thead>
+                <tbody>
+<!--                     <tr> -->
+<!--                         <td><trademark>Cloud Servers</trademark></td> -->
+<!--                         <td>cloudServers</td> -->
+<!--                         <td>v1.0</td> -->
+<!--                         <td>http://docs.rackspace.com/servers/api/v1.0/cs-devguide/content/index.html</td> -->
+<!--                     </tr> -->
+                    <tr>
+                        <td><trademark>NextGen Cloud Servers (Openstack)</trademark></td>
+                        <td>cloudServersOpenstack</td>
+                        <td>v2</td>
+                        <td>http://www.rackspace.com/cloud/nextgen/details/</td>
+                    </tr>
+                    <tr>
+                        <td><trademark>Cloud Load Balancers</trademark></td>
+                        <td>cloudLoadBalancers</td>
+                        <td>v1.0</td>
+                        <td>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/index.html</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>In the following examples, <parameter><replaceable>1234</replaceable></parameter> should be replaced by your authenticated account ID.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="2">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/1234/rdns/<parameter>service_name</parameter>?href=<parameter>device-resource-uri</parameter></td>
+                        <td colspan="2">List all PTR records configured for a Rackspace Cloud device.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/1234/rdns/<parameter>service_name</parameter>/<parameter>recordId</parameter>?href=<parameter>device-resource-uri</parameter></td>
+                        <td colspan="2">List details for a specific PTR record associated with a Rackspace Cloud device.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2">/1234/rdns</td>
+                        <td colspan="2">Add new PTR record(s) for a Rackspace Cloud device.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&PUT;</td>
+                        <td colspan="2">/1234/rdns</td>
+                        <td colspan="2">Modify one or more PTR records associated with a Rackspace Cloud device.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2">/1234/rdns/<parameter>service-name</parameter>?href=<parameter>device-resource-uri</parameter>&amp;ip=<parameter>optional-ip-address</parameter></td>
+                        <td colspan="2">Remove one or all PTR records associated with a Rackspace Cloud device. Use the optional <parameter>ip</parameter>
+                           query parameter to specify a specific record to delete. Omitting this parameter removes all PTR records associated with the
+                           specified device.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>,
+                    <returnvalue>202</returnvalue>,  and for remove record(s) also
+                    <returnvalue>204</returnvalue></simpara>
+            <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                    <errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>),
+                unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
+                itemNotFound (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+           <para>The examples in the following sections illustrate using Cloud DNS to manage PTR records for Nova Cloud Servers (Openstack). Using 
+           Cloud DNS API to manage other support Rackspace Cloud devices only requires substituing the appropriate service catalog name and device
+           resource URI.</para>
+           <section>
+               <title>List PTR Records</title>
+               <informaltable rules="all">
+                   <thead>
+                       <tr>
+                          <th colspan="2">Verb</th>
+                          <th colspan="4">URI</th>
+                          <th colpan="4">Description</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td colspan="2">&GET;</td>
+                           <td colspan="4">/rdns/<parameter>service-name</parameter>?href=<parameter>device-resource-uri</parameter></td>
+                           <td colspan="4">List all PTR records configured for the specified Cloud device.</td>
+                       </tr>
+                   </tbody>
+               </informaltable>
+               <example>
+                    <title>List PTR Records Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List PTR Records Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>List PTR Records Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>List PTR Records Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>               
+           </section>
+           <section>
+               <title>List PTR Record Details</title>
+               <informaltable rules="all">
+                   <thead>
+                       <tr>
+                          <th colspan="2">Verb</th>
+                          <th colspan="4">URI</th>
+                          <th colpan="4">Description</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td colspan="2">&GET;</td>
+                           <td colspan="4">/rdns/<parameter>service-name</parameter>/<parameter>recordId</parameter>?href=<parameter>device-resource-uri</parameter></td>
+                           <td colspan="4">List details for a specific PTR record associated with the specified Cloud device.</td>
+                       </tr>
+                   </tbody>
+               </informaltable>
+               <example>
+                    <title>List PTR Record Details Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr-details_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>List PTR Record Details Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr-details_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>List PTR Record Details Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr-details_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>List PTR Record Details Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+           </section>
+           <section>
+               <title>Add PTR Records</title>
+               <informaltable rules="all">
+                   <thead>
+                       <tr>
+                          <th colspan="2">Verb</th>
+                          <th colspan="4">URI</th>
+                          <th colpan="4">Description</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td colspan="2">&POST;</td>
+                           <td colspan="4">/rdns</td>
+                           <td colspan="4">Add new PTR record(s) for the specified Cloud device.</td>
+                       </tr>
+                   </tbody>
+               </informaltable>
+               <example>
+                    <title>Add PTR Record Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-add-ptr_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Add PTR Record Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-add-ptr_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>Add PTR Record Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-add-ptr_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>Add PTR Record Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-add-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+           </section>
+           <section>
+               <title>Modify PTR Records</title>
+               <informaltable rules="all">
+                   <thead>
+                       <tr>
+                          <th colspan="2">Verb</th>
+                          <th colspan="4">URI</th>
+                          <th colpan="4">Description</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td colspan="2">&PUT;</td>
+                           <td colspan="4">/rdns</td>
+                           <td colspan="4">Modify one or more PTR records associated with a Rackspace Cloud device.</td>
+                       </tr>
+                   </tbody>
+               </informaltable>
+               <note>The IP address (data) for a PTR record cannot be modified. To change the reverse DNS 
+               for a domain, any existing PTR record(s) must be deleted and new ones created.</note>
+               <example>
+                    <title>Modify PTR Record Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-modify-ptr_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Modify PTR Record Request: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-modify-ptr_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>Modify PTR Record Response: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-modify-ptr_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+                <example>
+                    <title>Modify PTR Record Response: JSON</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-modify-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
+           </section>
+           <section>
+               <title>Remove PTR Records</title>
+               <informaltable rules="all">
+                   <thead>
+                       <tr>
+                          <th colspan="2">Verb</th>
+                          <th colspan="4">URI</th>
+                          <th colpan="4">Description</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td colspan="2">&DELETE;</td>
+                           <td colspan="4">/rdns/<parameter>service-name</parameter>?href=<parameter>device-resource-uri</parameter>&amp;ip=<parameter>optional-ip-address</parameter></td>
+                           <td colspan="4">Remove one or all PTR records associated with a Rackspace Cloud device. Use the optional <parameter>ip</parameter>
+                           query parameter to specify a specific record to delete. Omitting this parameter removes all PTR records associated with the
+                           specified device.</td>
+                       </tr>
+                   </tbody>
+               </informaltable>
+               <example>
+                   <title>Remove All PTR Records Request: XML</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-all-ptr_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove All PTR Records Request: JSON</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-all-ptr_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove All PTR Records Response: XML</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-all-ptr_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove all PTR Records Response: JSON</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-all-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove Specific PTR Record Request: XML</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-one-ptr_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove Specific PTR Record Request: JSON</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-one-ptr_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove Specific PTR Record Response: XML</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-one-ptr_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+               <example>
+                   <title>Remove Specific PTR Record Response: JSON</title>
+                   <programlisting language="xml"><xi:include href="../../../target/samples/dns-delete-one-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+               </example>
+           </section>
+        </section>
     </chapter>
     <glossary>
         <title>Glossary</title>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdns xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom">
+    <ns2:link rel="cloudServersOpenstack" href="https://dfw.servers.api.rackspacecloud.com/v2/1234/servers/0987654321"/>
+    <recordsList>
+        <record id="PTR-000000" type="PTR" name="example.com" ttl="56000" data="192.0.2.6" created="2011-06-24T01:12:51Z" updated="2011-06-24T01:12:51Z"/>
+        <record id="PTR-000001" type="PTR" name="example.com" ttl="56000" data="2001:db8::6" created="2011-06-24T01:12:51Z" updated="2011-06-24T01:12:51Z"/>
+        <record id="PTR-000002" type="PTR" name="example.com" ttl="56000" data="192.0.2.7" created="2011-09-24T01:12:51Z" updated="2011-09-24T01:12:51Z"/>
+        <record id="PTR-000003" type="PTR" name="example.com" ttl="56000" data="2001:db8::7" created="2011-09-24T01:12:51Z" updated="2011-09-24T01:12:51Z"/>
+        <record id="PTR-000000" type="PTR" name="bar.example.com" ttl="86500" data="192.0.2.6" created="2011-06-24T01:12:51Z" updated="2011-09-22T01:12:51Z"/>
+        <record id="PTR-000001" type="PTR" name="bar.example.com" ttl="86500" data="2001:db8::6" created="2011-06-24T01:12:51Z" updated="2011-09-22T01:12:51Z"/>
+    </recordsList>
+</rdns>
