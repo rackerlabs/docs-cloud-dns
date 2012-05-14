@@ -94,11 +94,11 @@
 <!-- 						<artifactId>dns-api-common</artifactId> -->
 <!-- 						<version>${com.rackspace.cloud.dns.api.common.version}</version> -->
 <!-- 					</dependency> -->
-					<dependency>
-						<groupId>com.rackspace.cloud.dns.api.mgmt</groupId>
-						<artifactId>dns-mgmt-rest-service</artifactId>
-						<version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
-					</dependency>
+<!-- 					<dependency> -->
+<!-- 						<groupId>com.rackspace.cloud.dns.api.mgmt</groupId> -->
+<!-- 						<artifactId>dns-mgmt-rest-service</artifactId> -->
+<!-- 						<version>${com.rackspace.cloud.dns.api.mgmt.version}</version> -->
+<!-- 					</dependency> -->
 <!-- 					<dependency> -->
 <!-- 						<groupId>com.rackspace.papi.components</groupId> -->
 <!-- 						<artifactId>rate-limiting</artifactId> -->
@@ -1147,236 +1147,236 @@
 					<!--++++++++++++++++++++++++++++++++++++++++++++ -->
 					<!--++++++++++++++++++++++++++++++++++++++++++++ -->
 
-					<execution>
-						<id>management-sample-generation</id>
-						<goals>
-							<goal>generate-samples</goal>
-						</goals>
-						<phase>generate-sources</phase>
+<!-- 					<execution> -->
+<!-- 						<id>management-sample-generation</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>generate-samples</goal> -->
+<!-- 						</goals> -->
+<!-- 						<phase>generate-sources</phase> -->
 
-						<configuration>
-							<namespace>http://docs.rackspacecloud.com/dns/api/management/v1.0</namespace>
-							<modules>
-								<module
-									implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
-								<module
-									implementation="com.rackspace.cloud.dns.api.management.helpers.json.MgmtJsonModule" />
-							</modules>
-							<outputDir>${project.build.directory}/samples</outputDir>
-							<urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase>
-							<generateJson>true</generateJson>
-							<generateXml>true</generateXml>
-							<responseHeaders>
-								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
-							</responseHeaders>
-							<sources>
-								<source>
-									<data>${basedir}/src/main/resources/mgmt-ptr-samples.xml</data>
-									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
-									<outputs>
-										<output>
-											<nameBase>mgmt-dns-create-ptr-record</nameBase>
-											<requestType>POST</requestType>
-											<statusCode>202</statusCode>
-											<path>/1234/domains</path>
-											<requestBody>
-												<filters>
-													<filter>domains[0].created</filter>
-													<filter>domains[0].updated</filter>
-													<filter>domains[0].recordsList.records[0].created</filter>
-													<filter>domains[0].recordsList.records[0].updated</filter>
-													<filter>domains[0].recordsList.records[0].id</filter>
-													<filter>domains[0].recordsList.records[1].created</filter>
-													<filter>domains[0].recordsList.records[1].updated</filter>
-													<filter>domains[0].recordsList.records[1].id</filter>
-													<filter>domains[0].recordsList.records[2].created</filter>
-													<filter>domains[0].recordsList.records[2].updated</filter>
-													<filter>domains[0].recordsList.records[2].id</filter>
-												</filters>
-											</requestBody>
-											<responseBody/>
-										</output>
+<!-- 						<configuration> -->
+<!-- 							<namespace>http://docs.rackspacecloud.com/dns/api/management/v1.0</namespace> -->
+<!-- 							<modules> -->
+<!-- 								<module -->
+<!-- 									implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" /> -->
+<!-- 								<module -->
+<!-- 									implementation="com.rackspace.cloud.dns.api.management.helpers.json.MgmtJsonModule" /> -->
+<!-- 							</modules> -->
+<!-- 							<outputDir>${project.build.directory}/samples</outputDir> -->
+<!-- 							<urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase> -->
+<!-- 							<generateJson>true</generateJson> -->
+<!-- 							<generateXml>true</generateXml> -->
+<!-- 							<responseHeaders> -->
+<!-- 								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader> -->
+<!-- 							</responseHeaders> -->
+<!-- 							<sources> -->
+<!-- 								<source> -->
+<!-- 									<data>${basedir}/src/main/resources/mgmt-ptr-samples.xml</data> -->
+<!-- 									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage> -->
+<!-- 									<outputs> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-create-ptr-record</nameBase> -->
+<!-- 											<requestType>POST</requestType> -->
+<!-- 											<statusCode>202</statusCode> -->
+<!-- 											<path>/1234/domains</path> -->
+<!-- 											<requestBody> -->
+<!-- 												<filters> -->
+<!-- 													<filter>domains[0].created</filter> -->
+<!-- 													<filter>domains[0].updated</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[0].created</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[0].updated</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[0].id</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[1].created</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[1].updated</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[1].id</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[2].created</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[2].updated</filter> -->
+<!-- 													<filter>domains[0].recordsList.records[2].id</filter> -->
+<!-- 												</filters> -->
+<!-- 											</requestBody> -->
+<!-- 											<responseBody/> -->
+<!-- 										</output> -->
 
-										<output>
-											<nameBase>mgmt-dns-delete-ptr-record</nameBase>
-											<requestType>DELETE</requestType>
-											<statusCode>202</statusCode>
-											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
-										</output>
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-delete-ptr-record</nameBase> -->
+<!-- 											<requestType>DELETE</requestType> -->
+<!-- 											<statusCode>202</statusCode> -->
+<!-- 											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path> -->
+<!-- 										</output> -->
 
-										<output>
-											<nameBase>mgmt-dns-list-ptr-record</nameBase>
-											<requestType>GET</requestType>
-											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
-											<responseBody>
-											<base>domains[0].recordsList.records[0]</base>
-											</responseBody>
-										</output>
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-ptr-record</nameBase> -->
+<!-- 											<requestType>GET</requestType> -->
+<!-- 											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path> -->
+<!-- 											<responseBody> -->
+<!-- 											<base>domains[0].recordsList.records[0]</base> -->
+<!-- 											</responseBody> -->
+<!-- 										</output> -->
 
-										<output>
-											<nameBase>mgmt-dns-modify-ptr-record</nameBase>
-											<requestType>PUT</requestType>
-											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
-											<requestBody>
-												<base>domains[0].recordsList.records[0]</base>
-												<filters>
-													<filter>id</filter>
-													<filter>priority</filter>
-													<filter>updated</filter>
-													<filter>created</filter>
-													<filter>type</filter>
-												</filters>
-											</requestBody>
-											<responseBody />
-										</output>
-									</outputs>
-								</source>
-								<source>
-									<data>${basedir}/src/main/resources/mgmt-samples.xml</data>
-									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
-									<outputs>
-										<!-- mgmt-dns-search-domains-request.json -->
-										<!-- mgmt-dns-search-domains-request.xml -->
-										<!-- mgmt-dns-search-domains-request.response -->
-										<!-- mgmt-dns-search-domains-request.response -->
-										<output>
-											<nameBase>mgmt-dns-search-domains</nameBase>
-											<path>/searchDomains?name=rackspace</path>
-											<statusCode>200</statusCode>
-											<responseBody>
-												<filters>
-													<filter>domains[0].nameservers</filter>
-													<filter>domains[0].recordsList</filter>
-												</filters>
-											</responseBody>
-										</output>
-									</outputs>
-								</source>
-								<!-- mgmt-dns-create-domains-request.json -->
-								<!-- mgmt-dns-create-domains-request.xml -->
-								<source>
-									<data>${basedir}/src/main/resources/mgmt-create-domains-request-sample.xml</data>
-									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
-									<outputs>
-										<output>
-											<nameBase>mgmt-dns-create-domains-req</nameBase>
-											<path>/1234/domains</path>
-											<requestType>POST</requestType>
-											<statusCode>202</statusCode>
-											<requestBody />
-										</output>
-									</outputs>
-								</source>
-								<!-- mgmt-dns-create-domains-response.json -->
-								<!-- mgmt-dns-create-domains-response.xml -->
-								<source>
-									<data>${basedir}/src/main/resources/mgmt-create-domains-response-sample.xml</data>
-									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
-									<outputs>
-										<output>
-											<nameBase>mgmt-dns-create-domains-res</nameBase>
-											<path>/1234/domains</path>
-											<requestType>POST</requestType>
-											<statusCode>202</statusCode>
-											<responseBody />
-										</output>
-									</outputs>
-								</source>
-								<source>
-									<data>${basedir}/src/main/resources/mgmt-limit-samples.xml</data>
-									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
-									<outputs>
-										<output>
-											<nameBase>mgmt-dns-list-limit-groups</nameBase>
-											<path>/limits</path>
-											<statusCode>200</statusCode>
-											<responseBody />
-										</output>
-										<output>
-											<nameBase>mgmt-dns-list-limit-type-groups</nameBase>
-											<path>/groups/types/rate_limit</path>
-											<statusCode>200</statusCode>
-											<responseBody>
-												<filters>
-													<filter>groupLimits[9]</filter>
-													<filter>groupLimits[8]</filter>
-													<filter>groupLimits[7]</filter>
-													<filter>groupLimits[6]</filter>
-													<filter>groupLimits[5]</filter>
-													<filter>groupLimits[4]</filter>
-												</filters>
-											</responseBody>
-										</output>
-										<output>
-											<nameBase>mgmt-dns-list-limit-group</nameBase>
-											<path>/groups/default_customer_group</path>
-											<statusCode>200</statusCode>
-											<responseBody>
-												<base>groupLimits[0]</base>
-											</responseBody>
-										</output>
-										<output>
-											<nameBase>mgmt-dns-list-user-group</nameBase>
-											<path>/1234/groups</path>
-											<statusCode>200</statusCode>
-											<responseBody>
-												<filters>
-													<filter>groupLimits[9]</filter>
-													<filter>groupLimits[8]</filter>
-													<filter>groupLimits[7]</filter>
-													<filter>groupLimits[6]</filter>
-													<filter>groupLimits[3]</filter>
-													<filter>groupLimits[2]</filter>
-													<filter>groupLimits[1]</filter>
-												</filters>
-											</responseBody>
-										</output>
-										<output>
-											<nameBase>mgmt-dns-list-user-group-type</nameBase>
-											<path>/1234/groups/rate_limit</path>
-											<statusCode>200</statusCode>
-											<responseBody>
-												<base>groupLimits[0]</base>
-											</responseBody>
-										</output>
-										<output>
-											<nameBase>mgmt-dns-update-user-group</nameBase>
-											<path>/1234/groups/high_limit_customer_group</path>
-											<statusCode>204</statusCode>
-											<requestType>PUT</requestType>
-										</output>
-										<output>
-											<nameBase>mgmt-dns-delete-user-group</nameBase>
-											<path>/1234/groups/rate_limit</path>
-											<statusCode>204</statusCode>
-											<requestType>DELETE</requestType>
-										</output>
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-modify-ptr-record</nameBase> -->
+<!-- 											<requestType>PUT</requestType> -->
+<!-- 											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path> -->
+<!-- 											<requestBody> -->
+<!-- 												<base>domains[0].recordsList.records[0]</base> -->
+<!-- 												<filters> -->
+<!-- 													<filter>id</filter> -->
+<!-- 													<filter>priority</filter> -->
+<!-- 													<filter>updated</filter> -->
+<!-- 													<filter>created</filter> -->
+<!-- 													<filter>type</filter> -->
+<!-- 												</filters> -->
+<!-- 											</requestBody> -->
+<!-- 											<responseBody /> -->
+<!-- 										</output> -->
+<!-- 									</outputs> -->
+<!-- 								</source> -->
+<!-- 								<source> -->
+<!-- 									<data>${basedir}/src/main/resources/mgmt-samples.xml</data> -->
+<!-- 									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage> -->
+<!-- 									<outputs> -->
+<!-- 										mgmt-dns-search-domains-request.json -->
+<!-- 										mgmt-dns-search-domains-request.xml -->
+<!-- 										mgmt-dns-search-domains-request.response -->
+<!-- 										mgmt-dns-search-domains-request.response -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-search-domains</nameBase> -->
+<!-- 											<path>/searchDomains?name=rackspace</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody> -->
+<!-- 												<filters> -->
+<!-- 													<filter>domains[0].nameservers</filter> -->
+<!-- 													<filter>domains[0].recordsList</filter> -->
+<!-- 												</filters> -->
+<!-- 											</responseBody> -->
+<!-- 										</output> -->
+<!-- 									</outputs> -->
+<!-- 								</source> -->
+<!-- 								mgmt-dns-create-domains-request.json -->
+<!-- 								mgmt-dns-create-domains-request.xml -->
+<!-- 								<source> -->
+<!-- 									<data>${basedir}/src/main/resources/mgmt-create-domains-request-sample.xml</data> -->
+<!-- 									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage> -->
+<!-- 									<outputs> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-create-domains-req</nameBase> -->
+<!-- 											<path>/1234/domains</path> -->
+<!-- 											<requestType>POST</requestType> -->
+<!-- 											<statusCode>202</statusCode> -->
+<!-- 											<requestBody /> -->
+<!-- 										</output> -->
+<!-- 									</outputs> -->
+<!-- 								</source> -->
+<!-- 								mgmt-dns-create-domains-response.json -->
+<!-- 								mgmt-dns-create-domains-response.xml -->
+<!-- 								<source> -->
+<!-- 									<data>${basedir}/src/main/resources/mgmt-create-domains-response-sample.xml</data> -->
+<!-- 									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage> -->
+<!-- 									<outputs> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-create-domains-res</nameBase> -->
+<!-- 											<path>/1234/domains</path> -->
+<!-- 											<requestType>POST</requestType> -->
+<!-- 											<statusCode>202</statusCode> -->
+<!-- 											<responseBody /> -->
+<!-- 										</output> -->
+<!-- 									</outputs> -->
+<!-- 								</source> -->
+<!-- 								<source> -->
+<!-- 									<data>${basedir}/src/main/resources/mgmt-limit-samples.xml</data> -->
+<!-- 									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage> -->
+<!-- 									<outputs> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-limit-groups</nameBase> -->
+<!-- 											<path>/limits</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody /> -->
+<!-- 										</output> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-limit-type-groups</nameBase> -->
+<!-- 											<path>/groups/types/rate_limit</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody> -->
+<!-- 												<filters> -->
+<!-- 													<filter>groupLimits[9]</filter> -->
+<!-- 													<filter>groupLimits[8]</filter> -->
+<!-- 													<filter>groupLimits[7]</filter> -->
+<!-- 													<filter>groupLimits[6]</filter> -->
+<!-- 													<filter>groupLimits[5]</filter> -->
+<!-- 													<filter>groupLimits[4]</filter> -->
+<!-- 												</filters> -->
+<!-- 											</responseBody> -->
+<!-- 										</output> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-limit-group</nameBase> -->
+<!-- 											<path>/groups/default_customer_group</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody> -->
+<!-- 												<base>groupLimits[0]</base> -->
+<!-- 											</responseBody> -->
+<!-- 										</output> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-user-group</nameBase> -->
+<!-- 											<path>/1234/groups</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody> -->
+<!-- 												<filters> -->
+<!-- 													<filter>groupLimits[9]</filter> -->
+<!-- 													<filter>groupLimits[8]</filter> -->
+<!-- 													<filter>groupLimits[7]</filter> -->
+<!-- 													<filter>groupLimits[6]</filter> -->
+<!-- 													<filter>groupLimits[3]</filter> -->
+<!-- 													<filter>groupLimits[2]</filter> -->
+<!-- 													<filter>groupLimits[1]</filter> -->
+<!-- 												</filters> -->
+<!-- 											</responseBody> -->
+<!-- 										</output> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-user-group-type</nameBase> -->
+<!-- 											<path>/1234/groups/rate_limit</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody> -->
+<!-- 												<base>groupLimits[0]</base> -->
+<!-- 											</responseBody> -->
+<!-- 										</output> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-update-user-group</nameBase> -->
+<!-- 											<path>/1234/groups/high_limit_customer_group</path> -->
+<!-- 											<statusCode>204</statusCode> -->
+<!-- 											<requestType>PUT</requestType> -->
+<!-- 										</output> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-delete-user-group</nameBase> -->
+<!-- 											<path>/1234/groups/rate_limit</path> -->
+<!-- 											<statusCode>204</statusCode> -->
+<!-- 											<requestType>DELETE</requestType> -->
+<!-- 										</output> -->
 
-										<!-- mgmt-dns-get-jobs-status-no-details-request.json -->
-										<!-- mgmt-dns-get-jobs-status-no-details-request.xml -->
-										<output>
-											<nameBase>mgmt-dns-get-jobs-status-no-details</nameBase>
-											<path>/1234/status</path>
-											<statusCode>200</statusCode>
-										</output>
+<!-- 										mgmt-dns-get-jobs-status-no-details-request.json -->
+<!-- 										mgmt-dns-get-jobs-status-no-details-request.xml -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-get-jobs-status-no-details</nameBase> -->
+<!-- 											<path>/1234/status</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 										</output> -->
 
-									</outputs>
-								</source>
-								<source>
-									<data>${basedir}/src/main/resources/mgmt-limit-types-samples.xml</data>
-									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
-									<outputs>
-										<output>
-											<nameBase>mgmt-dns-list-limit-types</nameBase>
-											<path>/groups/types</path>
-											<statusCode>200</statusCode>
-											<responseBody />
-										</output>
-									</outputs>
-								</source>
-							</sources>
-						</configuration>
-					</execution>
+<!-- 									</outputs> -->
+<!-- 								</source> -->
+<!-- 								<source> -->
+<!-- 									<data>${basedir}/src/main/resources/mgmt-limit-types-samples.xml</data> -->
+<!-- 									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage> -->
+<!-- 									<outputs> -->
+<!-- 										<output> -->
+<!-- 											<nameBase>mgmt-dns-list-limit-types</nameBase> -->
+<!-- 											<path>/groups/types</path> -->
+<!-- 											<statusCode>200</statusCode> -->
+<!-- 											<responseBody /> -->
+<!-- 										</output> -->
+<!-- 									</outputs> -->
+<!-- 								</source> -->
+<!-- 							</sources> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
 				</executions>
 			</plugin>
 
@@ -1437,21 +1437,21 @@
 				<artifactId>clouddocs-maven-plugin</artifactId>
 				<version>1.0.10</version>
 				<executions>
-					<execution>
-						<id>g1</id>
-						<goals>
-							<goal>generate-pdf</goal>
-							<goal>generate-webhelp</goal>
-						</goals>
-						<phase>generate-sources</phase>
-						<configuration>
-							<pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
-							<includes>cdns-mgmt-devguide.xml</includes>
-							<enableDisqus>intranet</enableDisqus>
-							<enableGoogleAnalytics>0</enableGoogleAnalytics>
-							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
-						</configuration>
-					</execution>
+<!-- 					<execution> -->
+<!-- 						<id>g1</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>generate-pdf</goal> -->
+<!-- 							<goal>generate-webhelp</goal> -->
+<!-- 						</goals> -->
+<!-- 						<phase>generate-sources</phase> -->
+<!-- 						<configuration> -->
+<!-- 							<pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl> -->
+<!-- 							<includes>cdns-mgmt-devguide.xml</includes> -->
+<!-- 							<enableDisqus>intranet</enableDisqus> -->
+<!-- 							<enableGoogleAnalytics>0</enableGoogleAnalytics> -->
+<!-- 							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
 					<execution>
 						<id>g1.1</id>
 						<goals>
