@@ -4,15 +4,15 @@
 
 	<groupId>com.rackspace.cloud.dns.api</groupId>
 	<artifactId>dns-docs</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
 	<packaging>jar</packaging>
 	<name>Cloud DNS API Docs</name>
 
 	<properties>
 		<com.rackspace.cloud.dns.maven.plugin.version>1.0.6</com.rackspace.cloud.dns.maven.plugin.version>
-		<com.rackspace.cloud.act.version>1.0.2-SNAPSHOT</com.rackspace.cloud.act.version>
-		<com.rackspace.cloud.dns.api.common.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.common.version>
-		<com.rackspace.cloud.dns.api.version>1.0.14-SNAPSHOT</com.rackspace.cloud.dns.api.version>
+		<com.rackspace.cloud.act.version>1.0.2</com.rackspace.cloud.act.version>
+		<com.rackspace.cloud.dns.api.common.version>1.0.12</com.rackspace.cloud.dns.api.common.version>
+		<com.rackspace.cloud.dns.api.version>1.0.14</com.rackspace.cloud.dns.api.version>
 		<com.rackspace.cloud.dns.api.mgmt.version>1.0.12-SNAPSHOT</com.rackspace.cloud.dns.api.mgmt.version>
 		<com.rackspace.cloud.papi.version>0.9.1</com.rackspace.cloud.papi.version>
 	</properties>
