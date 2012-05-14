@@ -3770,7 +3770,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
             <para> In the examples that follow for each subsection,
                         <parameter><replaceable>1234</replaceable></parameter>
                 should be replaced by your authenticated account ID. </para>
-           <section>
+           <section xml:id="ReverseDNS-123457000">
                <title>List PTR Records</title>
                <informaltable rules="all">
                    <thead>
@@ -3809,7 +3809,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>               
            </section>
-           <section>
+           <section xml:id="ReverseDNS-123457001">
                <title>List PTR Record Details</title>
                <informaltable rules="all">
                    <thead>
@@ -3845,7 +3845,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-list-ptr-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
            </section>
-           <section>
+           <section xml:id="ReverseDNS-123457003">
                <title>Add PTR Records</title>
                <informaltable rules="all">
                    <thead>
@@ -3881,7 +3881,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-add-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
            </section>
-           <section>
+           <section xml:id="ReverseDNS-123457004">
                <title>Modify PTR Records</title>
                <informaltable rules="all">
                    <thead>
@@ -3919,7 +3919,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="../../../target/samples/dns-modify-ptr_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting></example>
            </section>
-           <section>
+           <section xml:id="ReverseDNS-123457005">
                <title>Remove PTR Records</title>
                <informaltable rules="all">
                    <thead>
