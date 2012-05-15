@@ -1488,6 +1488,8 @@
 							<postProcess>
 								<move file="target/docbkx/pdf/cdns-releasenotes.pdf"
 									tofile="target/docbkx/pdf/cdns-releasenotes-external.pdf" />
+								<move file="target/docbkx/pdf/cdns-releasenotes.fo"
+									tofile="target/docbkx/pdf/cdns-releasenotes-external.fo" />
 							</postProcess>
 						</configuration>
 					</execution>
@@ -1498,7 +1500,7 @@
 							<goal>generate-pdf</goal>
 							<goal>generate-webhelp</goal>
 						</goals>
-						<phase>generate-sources</phase>
+						<phase>initialize</phase>
 						<configuration>
 							<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
 							<includes>cdns-releasenotes.xml</includes>
@@ -1507,6 +1509,12 @@
 							<chapterAutolabel>0</chapterAutolabel>
 							<security>internal</security>
 							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
+							<postProcess>
+								<move file="target/docbkx/pdf/cdns-releasenotes.pdf" failonerror="false" 
+									tofile="target/docbkx/pdf/cdns-releasenotes-internal.pdf" />
+								<move file="target/docbkx/pdf/cdns-releasenotes.fo" failonerror="false" 
+									tofile="target/docbkx/pdf/cdns-releasenotes-internal.fo" />
+							</postProcess>
 						</configuration>
 					</execution>
 					<execution>
