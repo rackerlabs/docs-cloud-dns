@@ -1487,7 +1487,7 @@
 							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
 							<postProcess>
 								<move file="target/docbkx/pdf/cdns-releasenotes.pdf"
-									tofile="target/docbkx/pdf/cdns-releasenotes-20111028.pdf" />
+									tofile="target/docbkx/pdf/cdns-releasenotes-external.pdf" />
 							</postProcess>
 						</configuration>
 					</execution>
