@@ -3317,6 +3317,42 @@
                 <programlisting language="javascript"><xi:include href="../../../target/samples/dns-list-records_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             </section>
+            <section xml:id="Search_Records-e338d7e0">
+                <title>Search Records</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center" >
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/domains/<parameter>domainId</parameter>/records?type=<parameter>record_type</parameter>
+                            &amp;name=<parameter>record_name</parameter>
+                            &amp;data=<parameter>record_data</parameter></td>
+                            <td colspan="3">List all records for the specified domain of the specified type that match the specified <parameter>name</parameter> and/or <parameter>data</parameter></td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para> Normal Response Code(s): <returnvalue>200</returnvalue></para>
+                <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), serviceUnavailable
+                    (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>), itemNotFound
+                        (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
+                 <para>Records can be searched within a domain. The API allows for the caller to supply record type, name, and/or data as query parameters which instruct the system to only return
+                    records of the specified type and matching the specified name and/or data. When searching, the <parameter>type</parameter> must be specified while the <parameter>name</parameter> 
+                    and <parameter>data</parameter> query parameters are optional. The responses from a record search have the same format as the responses shown in <xref linkend="List_Records-d1e4629"/></para>
+                <note>
+                    <para>This call returns by default a maximum of 100 items at a time if no
+                            <code>limit</code> is specified. To navigate the collection returned,
+                        the parameters <code>limit</code> and <code>offset</code> can be set in the
+                        URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref linkend="pagination"/>.</para>
+                </note>
+            </section>
             <section xml:id="List_Record_Details-d1e4770">
                 <title>List Record Details</title>
                 <informaltable rules="all">
