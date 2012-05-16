@@ -36,15 +36,13 @@
 			<revision>
 				<date>2012-05-17</date>
 				<revdescription>
-					<para>Updated for v1.0.xx.</para>
-					<para>.</para>
+					<para>Updated for v1.0.14.</para>
 				</revdescription>
 			</revision>
     		<revision>
     			<date>2011-12-1</date>
     			<revdescription>
 					<para>Several DNS bugs were fixed.</para>
-    				<para>.</para>
     			</revdescription>
     		</revision>
     		<revision>
@@ -67,18 +65,21 @@
     			</revdescription>
     		</revision>
     	</revhistory>
-    </info>
+    </info><chapter xml:id="doc_change_history">
+    	<title>Document Change History</title>
+    	<para>This version of the Developer Guide replaces and obsoletes all
+    		previous versions. The most recent changes are described
+    		in the table below:</para>
+    	<?rax revhistory?>
+    </chapter>
 	<chapter xml:id="cdnsv1.0.xx">
-		<title>v1.0.xx, May 17, 2012</title>
+		<title>v1.0.14, May 17, 2012</title>
 		<para>This version contains the following new features and bug
 			fixes for Cloud DNS:</para>
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem>
-				<para>Added support for PTR records for reverse DNS.
-					Refer to the <link
-						xlink:href="http://docs.rackspace.com/api/"
-						>DNS Developer Guide</link>.</para>
+				<para>Added support for PTR records for reverse DNS.</para>
 			</listitem>
 			<listitem>
 				<para>Added record search by name and/or data.</para>
@@ -114,27 +115,6 @@
 						xlink:href="https://github.com/rackspace/python-clouddns"
 						>Open Source Python Library for Cloud
 						DNS</link></para>
-			</listitem>
-		</itemizedlist>
-		<itemizedlist security="internal">
-			<title>Change Details</title>
-			<listitem>
-				<para><link
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:68751"
-						>D-02108</link>: SRV record validation
-					prevents valid service names</para>
-			</listitem>
-			<listitem>
-				<para><link
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:64409"
-						>D-02001</link>: Cloud DNS allows for
-					unescaped characters in TXT records</para>
-			</listitem>
-			<listitem>
-				<para><link
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:59405"
-						>D-01889</link>: Duplicate Record Error for
-					Manually Added Nameservers</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>

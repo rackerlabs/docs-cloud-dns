@@ -79,6 +79,12 @@
                                 catalog.</para>
                         </listitem>
                         <listitem>
+                            <para>Added record search by name and/or
+                                data. Refer to <xref
+                                   linkend="Search_Records-e338d7e0"
+                                />.</para>
+                        </listitem>
+                        <listitem>
                             <para>Added support for PTR records for
                                 reverse DNS in <xref
                                    linkend="ReverseDNS-123456999"
@@ -3333,7 +3339,11 @@
                             <td colspan="2">/domains/<parameter>domainId</parameter>/records?type=<parameter>record_type</parameter>
                             &amp;name=<parameter>record_name</parameter>
                             &amp;data=<parameter>record_data</parameter></td>
-                            <td colspan="3">List all records for the specified domain of the specified type that match the specified <parameter>name</parameter> and/or <parameter>data</parameter></td>
+                            <td colspan="3">List all records for the
+                                specified domain of the specified type
+                                that match the specified
+                                   <parameter>name</parameter> and/or
+                                   <parameter>data</parameter>.</td>
                         </tr>
                     </tbody>
                 </informaltable>
@@ -3343,9 +3353,19 @@
                     (<errorcode>503</errorcode>), unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), itemNotFound
                         (<errorcode>404</errorcode>), overLimit (<errorcode>413</errorcode>) </simpara>
-                 <para>Records can be searched within a domain. The API allows for the caller to supply record type, name, and/or data as query parameters which instruct the system to only return
-                    records of the specified type and matching the specified name and/or data. When searching, the <parameter>type</parameter> must be specified while the <parameter>name</parameter> 
-                    and <parameter>data</parameter> query parameters are optional. The responses from a record search have the same format as the responses shown in <xref linkend="List_Records-d1e4629"/></para>
+                 <para>Records can be searched within a domain. The
+                    API allows for the caller to supply record type,
+                    name, and/or data as query parameters, which
+                    instruct the system to only return records of the
+                    specified type and matching the specified name
+                    and/or data. When searching, the
+                        <parameter>type</parameter> is
+                        <emphasis>required</emphasis>, while the
+                        <parameter>name</parameter> and
+                        <parameter>data</parameter> query parameters
+                    are optional. The responses from a record search
+                    have the same format as the responses shown in
+                        <xref linkend="List_Records-d1e4629"/>.</para>
                 <note>
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
