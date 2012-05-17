@@ -69,6 +69,19 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2012-07-yy</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated list of supported record
+                                types in <xref
+                                   linkend="supported_record_types"/>
+                                to include PTR records.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2012-05-17</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
@@ -1736,6 +1749,55 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>PTR</td>
+                        <td>Designates a reverse DNS record</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <formalpara>
+                                <title>PTR Record : XML</title>
+                                <para>
+                                    <programlisting>&lt;record id="PTR-000002" type="PTR" name="example.com" data="192.0.2.7" ttl="56000" updated="2011-09-24T01:12:51Z" created="2011-09-24T01:12:51Z"/></programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
+                                <title>PTR Record : JSON</title>
+                                <para>
+                                    <programlisting>{ "name" : "example.com", "id" : "PTR-000002", "type" : "PTR", "data" : "192.0.2.7", "ttl" : 56000, "updated" : "2011-09-24T01:12:51.000+0000", "created" : "2011-09-24T01:12:51.000+0000" }</programlisting>
+                                </para>
+                            </formalpara>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <note>
+                                <para>PTR records can only be managed
+                                   using the /rdns URIs.</para>
+                            </note>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SRV</td>
+                        <td>General service locator record for a domain</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <formalpara>
+                                <title>SRV Record : XML</title>
+                                <para>
+                                    <programlisting>&lt;record id="SRV-123" type="SRV" name="_sip._tcp.example.foo.com" priority="30" data="1 3443 sip.foo.com" ttl="86400"/&gt;</programlisting>
+                                </para>
+                            </formalpara>
+                            <formalpara>
+                                <title>SRV Record : JSON</title>
+                                <para>
+                                    <programlisting>{ "id" : "SRV-123", "type" : "SRV", "name" : "_sip._tcp.example.foo.com", "priority" : 30, "data" : "1 3443 sip.foo.com", "ttl" : 86400 }</programlisting>
+                                </para>
+                            </formalpara>
+                        </td>
+                    </tr>
+                    
+                    <tr>
                         <td>TXT</td>
                         <td>Arbitrary text for a domain record</td>
                     </tr>
@@ -1772,26 +1834,7 @@
                             </note>
                         </td>
                     </tr>
-                    <tr>
-                        <td>SRV</td>
-                        <td>General service locator record for a domain</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <formalpara>
-                                <title>SRV Record : XML</title>
-                                <para>
-                                    <programlisting>&lt;record id="SRV-123" type="SRV" name="_sip._tcp.example.foo.com" priority="30" data="1 3443 sip.foo.com" ttl="86400"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
-                                <title>SRV Record : JSON</title>
-                                <para>
-                                    <programlisting>{ "id" : "SRV-123", "type" : "SRV", "name" : "_sip._tcp.example.foo.com", "priority" : 30, "data" : "1 3443 sip.foo.com", "ttl" : 86400 }</programlisting>
-                                </para>
-                            </formalpara>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
