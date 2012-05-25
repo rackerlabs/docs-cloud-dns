@@ -41,7 +41,7 @@
         <pubdate>2012-05-17</pubdate>
         <revhistory>
             <revision>
-                <date>2012-05-17</date>
+                <date>2012-05-xx</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -50,6 +50,10 @@
                                    linkend="Generating_Auth_Token"/>
                                 to show the latest service
                                 catalog.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated syntax highlighting for all
+                                examples.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -276,7 +280,7 @@
             <example>
                 <title>cURL Authenticate Request: XML</title>
                 <?dbfo keep-together="always"?>
-                <screen><command>curl</command> <option>-i</option> <option>-d</option> \
+                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>  
 &lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
              username="<emphasis role="bold">your_username</emphasis>" 
@@ -289,7 +293,7 @@
                 command syntax have all been escaped with a backslash
                 ('\') to indicate that the command continues on the
                 next line:</para>
-            <screen><command>curl</command> <option>-i</option> <option>-d</option> \
+            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
  
              key="<emphasis role="bold">your_api_key</emphasis>"/>' \
 <option>-H 'Content-Type: application/xml'</option> \
@@ -300,7 +304,7 @@
                     <emphasis>not</emphasis> escaped with a backslash
                 ('\') in order to avoid issues with the xml
                 processing:</para>
-            <screen>'&lt;?xml version="1.0" encoding="UTF-8"?>  
+            <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?>  
 &lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
              username="<emphasis role="bold">your_username</emphasis>" 
              key="<emphasis role="bold">your_api_key</emphasis>"/>' \
@@ -369,7 +373,7 @@
         <example>
             <title>cURL Authenticate Request: XML</title>
             <?dbfo keep-together="always"?>
-            <screen><command>curl</command> <option>-i</option> <option>-d</option> \
+            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>  
 &lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
              username="<emphasis role="bold">your_username</emphasis>" 
@@ -381,7 +385,7 @@
         <example>
             <title>cURL Authenticate Request: JSON</title>
             <?dbfo keep-together="always"?>
-            <programlisting><command>curl</command> <option>-i</option> <option>-d</option> \
+            <programlisting language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '{ 
     "credentials": {  
         "username": "<emphasis role="bold">your_username</emphasis>",  
@@ -397,7 +401,7 @@
         </example>
         <example>
             <title>Authenticate Response: JSON</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/db-auth.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/db-auth.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <note>
             <title>Notes</title>
@@ -623,7 +627,7 @@
             Domain:</para>
         <example>
             <title>cURL Create Domain Request: XML</title>
-            <programlisting><command>curl -i -d</command> \
+            <programlisting language="bash"><command>curl -i -d</command> \
 '&lt;domains xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"
 xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.
 org/2005/Atom">
@@ -644,7 +648,7 @@ com" comment="1st sample subdomain"/>
         </example>
         <example>
             <title>cURL Create Domain Request: JSON</title>
-            <programlisting><command>curl -i -d</command> \
+            <programlisting language="bash"><command>curl -i -d</command> \
 '{
     "domains" : [ {
         "name" : "<emphasis role="bold">your_name</emphasis>_example.com",
@@ -704,13 +708,13 @@ com" comment="1st sample subdomain"/>
         <note>
             <para>The <code>&lt;request></code> in the XML response
                 comes back with the request you sent, with the HTML
-                entities (&amp;lt; &amp;gt; &amp;quot;)
-                encoded.</para>
+                entities encoded (&amp;lt; &amp;gt;
+                &amp;quot;).</para>
         </note>
         <example>
             <title>Create Domain Initial Asynchronous Response:
                 JSON</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <para>Notice that you can see the 202 ACCEPTED responses
             containing information with a callback URL
@@ -736,7 +740,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>cURL Asynchronous Status for Create Domain Request:
                 XML</title>
-            <programlisting><command>curl -i </command> \
+            <programlisting language="bash"><command>curl -i </command> \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/xml'</option> \
 <option>-H 'Accept: application/xml'</option> \            
@@ -745,7 +749,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>cURL Asynchronous Status for Create Domain Request:
                 JSON</title>
-            <programlisting><command>curl -i </command> \
+            <programlisting language="bash"><command>curl -i </command> \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/status/</uri><emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
@@ -801,7 +805,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>Create Domain Final Successful Response:
                 JSON</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <para>Notice that you can see the 200 OK responses containing
             information about the domain/subdomains with status
@@ -840,14 +844,14 @@ com" comment="1st sample subdomain"/>
             Domain Details:</para>
         <example>
             <title>cURL List Domain Details Request : XML</title>
-            <programlisting><command>curl</command> <option>-i</option>  \
+            <programlisting language="bash"><command>curl</command> <option>-i</option>  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
 <option>-H 'Accept: application/xml'</option>  \
 <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis><uri>'</uri></programlisting>
         </example>
         <example>
             <title>cURL List Domain Details Request : JSON</title>
-            <programlisting><command>curl</command> <option>-i</option>  \
+            <programlisting language="bash"><command>curl</command> <option>-i</option>  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
 <option>-H 'Accept: application/json'</option>  \
 <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis><uri>'</uri></programlisting>
@@ -885,7 +889,7 @@ com" comment="1st sample subdomain"/>
             
             <example>
                 <title>List Domain Details Response: JSON</title>
-                <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
         <para>By default, the List Domain Details API call lists
             details of the specified domain, with record information
@@ -924,7 +928,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>cURL List Domain Details with Subdomains, No
                 Records Request : XML</title>
-            <programlisting><command>curl</command> <option>-i</option>  \
+            <programlisting language="bash"><command>curl</command> <option>-i</option>  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
 <option>-H 'Accept: application/xml'</option>  \
 <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis>?showRecords=false&amp;showSubdomains=true<uri>'</uri></programlisting>
@@ -932,7 +936,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>cURL List Domain Details with Subdomains, No
                 Records Request : JSON</title>
-            <programlisting><command>curl</command> <option>-i</option>  \
+            <programlisting language="bash"><command>curl</command> <option>-i</option>  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
 <option>-H 'Accept: application/json'</option>  \
 <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis>?showRecords=false&amp;showSubdomains=true<uri>'</uri></programlisting>
@@ -971,7 +975,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>List Domain Details with Subdomains, No Records
                 Response: JSON</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         </section>
     <section xml:id="Add_Records">
@@ -1011,7 +1015,7 @@ com" comment="1st sample subdomain"/>
             examples show the cURL requests for Add Records:</para>
         <example>
             <title>cURL Add Records Request: XML</title>
-            <programlisting><command>curl</command><option>-i</option> <option>-d</option> \
+            <programlisting language="bash"><command>curl</command><option>-i</option> <option>-d</option> \
 '&lt;?xml version="1.0" ?> 
 &lt;recordsList xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.
 0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.
@@ -1031,7 +1035,7 @@ w3.org/2005/Atom">
         <example>
             <?dbfo keep-together="always"?>
             <title>cURL Add Records Request: JSON</title>
-            <programlisting><command>curl</command> <option>-i</option> <option>-d</option> \
+            <programlisting language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '{
     "records": [
         {
@@ -1094,14 +1098,14 @@ w3.org/2005/Atom">
         <example>
             <title>Add Records Initial Asynchronous Response:
                 JSON</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <para>The following examples show the cURL asynchronous status
             requests for Add Records:</para>
         <example>
             <title>cURL Asynchronous Status for Add Records Request:
                 XML</title>
-            <programlisting><command>curl -i </command> \
+            <programlisting language="bash"><command>curl -i </command> \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/xml'</option> \
 <option>-H 'Accept: application/xml'</option> \            
@@ -1110,7 +1114,7 @@ w3.org/2005/Atom">
         <example>
             <title>cURL Asynchronous Status for Add Records Request:
                 JSON</title>
-            <programlisting><command>curl -i </command> \
+            <programlisting language="bash"><command>curl -i </command> \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/status/</uri><emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
@@ -1144,23 +1148,14 @@ w3.org/2005/Atom">
                         response (must be replaced in the request
                         URL)</para>
                 </listitem>
-                <listitem>
-                    <para>
-                        <note>
-                            <para> The following examples show the
-                                   <emphasis>final</emphasis>
-                                successful response for the
-                                asynchronous call. Refer to <link
-                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
-                                   >http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
-                                for more information about how the
-                                asynchronous call works.</para>
-                        </note>
-                    </para>
-                </listitem>
             </itemizedlist></para>
-        <para>The following examples show the final successful
-            responses for Add Records:</para>
+        <para> The following examples show the
+                <emphasis>final</emphasis> successful response for the
+            asynchronous Add Records call. Refer to <link
+                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
+                >http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
+            for more information about how the asynchronous call
+            works.</para>
         <example>
             <title>cURL Add Records Final Successful Response:
                 XML</title>
@@ -1169,7 +1164,7 @@ w3.org/2005/Atom">
         <example>
             <title>cURL Add Records Final Successful Response:
                 JSON</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <para>You can now call List Domain Details again to confirm
             that the records are added to your domain. See <xref

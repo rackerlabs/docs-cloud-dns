@@ -50,24 +50,30 @@
 		</copyright>
 		<releaseinfo>API v1.0</releaseinfo>
 		<productname>Cloud DNS</productname>
-		<pubdate>2011-10-26</pubdate>
+		<pubdate>2011-05-17</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
 			</annotation>
 		</legalnotice>
 		<abstract>
-			<para>
-				This document is intended for software developers interested in
-				developing service
-				management applications using the using the
-				Rackspace Cloud DNS Application
-				Programming Interface (
-				<abbrev>API</abbrev>
-				).
-			</para>
+			<para> This document is intended for software developers interested
+				in developing service management applications using
+				the Rackspace Cloud DNS Application Programming
+				Interface ( <abbrev>API</abbrev> ). </para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2012-05-xx</date>
+				<revdescription>
+					<itemizedlist spacing="compact">
+						<listitem>
+							<para>Updated syntax highlighting for all
+								examples.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2011-10-26</date>
 				<revdescription>
@@ -448,7 +454,7 @@
 				<example>
 					<title>Search Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_request.json"
 							parse="text">
@@ -481,7 +487,7 @@
 				<example>
 					<title>Search Domains Response: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_response.json"
 							parse="text">
@@ -625,7 +631,7 @@
 				<example>
 					<title>List Limit Groups Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_request.json"
 							parse="text">
@@ -651,7 +657,7 @@
 				</example>
 				<example>
 					<title>List Limit Groups Response: JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_response.json"
 							parse="text">
@@ -728,7 +734,7 @@
 				<example>
 					<title>List Limit Group Types Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_request.json"
 							parse="text">
@@ -754,7 +760,7 @@
 				</example>
 				<example>
 					<title>List Limit Group Types Response: JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_response.json"
 							parse="text">
@@ -837,7 +843,7 @@
 				<example>
 					<title>List Limit Groups of Type Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.json"
 							parse="text">
@@ -863,7 +869,7 @@
 				</example>
 				<example>
 					<title>List Limit Groups of Type Response: JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.json"
 							parse="text">
@@ -946,7 +952,7 @@
 				<example>
 					<title>Show Group Details Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_request.json"
 							parse="text">
@@ -972,7 +978,7 @@
 				</example>
 				<example>
 					<title>Show Group Details Response: JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_response.json"
 							parse="text">
@@ -1162,9 +1168,7 @@
 				</para>
 				<example>
 					<title>Status Monitor URL</title>
-					<programlisting>
-						https://dns.api.mgmt.rackspacecloud.com/v1.0/status/
-						<parameter>jobId</parameter>
+					<programlisting>https://dns.api.mgmt.rackspacecloud.com/v1.0/status/<parameter>jobId</parameter>
 					</programlisting>
 				</example>
 				<para>
@@ -1295,7 +1299,7 @@
 				</example>
 				<example>
 					<title>Create Domain(s) Request: JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-req_request.json"
 							parse="text">
@@ -1321,7 +1325,7 @@
 				<example>
 					<title>Create Domain(s) Response: JSON</title>
                     <?dbfo keep-together="auto"?>
-					<programlisting language="samples/mgmt-dns-create-domains-res_response.json">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-res_response.json"
 							parse="text">
@@ -1376,7 +1380,7 @@
 				<example>
 					<title>List User's Jobs Status Request:
 						JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.json"
 							parse="text">
@@ -1476,7 +1480,7 @@
 				<example>
 					<title>List Assigned Groups Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_request.json"
 							parse="text">
@@ -1504,7 +1508,7 @@
 				<example>
 					<title>List Assigned Groups Response: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_response.json"
 							parse="text">
@@ -1592,7 +1596,7 @@
 				<example>
 					<title>List Assigned Group of Type Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_request.json"
 							parse="text">
@@ -1618,7 +1622,7 @@
 				</example>
 				<example>
 					<title>List Assigned Group of Type Response: JSON</title>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_response.json"
 							parse="text">
@@ -1688,9 +1692,9 @@
 					:
 				</para>
 				<example>
-					<title>Assign User to Limit Group Request</title>
+					<title>Assign User to Limit Group Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-update-user-group_request.json"
 							parse="text">
@@ -1702,8 +1706,8 @@
 					</programlisting>
 				</example>
 				<example>
-					<title>Assign User to Limit Group Response</title>
-					<programlisting language="xml">
+					<title>Assign User to Limit Group Response: JSON</title>
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-update-user-group_response.json"
 							parse="text">
@@ -1780,9 +1784,9 @@
 					:
 				</para>
 				<example>
-					<title>Assign Default Group Request</title>
+					<title>Assign Default Group Request: JSON</title>
                     <?dbfo keep-together="always"?>
-					<programlisting language="xml">
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-delete-user-group_request.json"
 							parse="text">
@@ -1794,8 +1798,8 @@
 					</programlisting>
 				</example>
 				<example>
-					<title>Assign Default Group Response</title>
-					<programlisting language="xml">
+					<title>Assign Default Group Response: JSON</title>
+					<programlisting language="json">
 						<xi:include
 							href="../../../target/samples/mgmt-dns-delete-user-group_response.json"
 							parse="text">
