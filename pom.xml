@@ -1448,9 +1448,6 @@
 								<move todir="target/docbkx/webhelp/cdns-releasenotes-external">
 									<fileset dir="target/docbkx/webhelp/cdns-releasenotes" />
 								</move>
-								<copy todir="target/docbkx/webhelp/cdns-releasenotes-external/content/images">
-								  <fileset dir="src/main/resources/images" includes="**/*.png"/>
-								</copy>
 							</postProcess>
 						</configuration>
 					</execution>
@@ -1496,9 +1493,6 @@
 									tofile="target/docbkx/pdf/cdns-releasenotes-internal.pdf" />
 								<move file="target/docbkx/pdf/cdns-releasenotes.fo" failonerror="false" 
 									tofile="target/docbkx/pdf/cdns-releasenotes-internal.fo" />
-								<copy todir="target/docbkx/webhelp/cdns-releasenotes/content/images">
-								  <fileset dir="src/main/resources/images" includes="**/*.png"/>
-								</copy>
 							</postProcess>
 						</configuration>
 					</execution>
@@ -1531,6 +1525,11 @@
 							<includes>cdns-getting-started.xml</includes>
 							<enableGoogleAnalytics>1</enableGoogleAnalytics>
 							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content</canonicalUrlBase>
+							<postProcess>
+								<copy todir="target/docbkx/webhelp/cdns-getting-started/content/images">
+									<fileset dir="src/main/resources/images" includes="**/*.png"/>
+								</copy>
+							</postProcess>
 						</configuration>
 					</execution>
 					
