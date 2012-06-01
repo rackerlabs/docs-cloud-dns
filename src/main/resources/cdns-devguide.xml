@@ -94,6 +94,11 @@
                             <para>Updated syntax highlighting for all
                                 examples.</para>
                         </listitem>
+                        <listitem>
+                            <para>Added tables of required/optional
+                                attributes for API calls that have a
+                                request body.</para>
+                        </listitem>
                     </itemizedlist>
                 </revdescription>
             </revision>
@@ -2848,6 +2853,49 @@
                         </para>  
                     </note>
                 </para>
+                <table rules="all">
+                    <caption>Required and Optional Attributes for
+                        Create Domain(s)</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">name</td>
+                            <td colspan="3">Specifies the name for the
+                                domain or subdomain. Must be a valid
+                                domain name.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">emailAddress</td>
+                            <td colspan="3">Email address to use for
+                                contacting the domain
+                                administrator.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">ttl</td>
+                            <td colspan="3">If specified, must be
+                                greater than 300. The default value,
+                                if not specified, is
+                                <code>3600</code>.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3">If included, its length
+                                must be less than or equal to 160
+                                characters.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <para>The following examples show the Create Domain(s)
                     requests:<?rax-fo keep-with-next?>
                 </para>
@@ -2951,6 +2999,34 @@
                         receive the domain TTL as the default. If the domain TTL is not specified,
                         the SOA minTTL (3600 seconds) is used as the default instead.</para>
                 </note>
+                <table rules="all">
+                    <caption>Required and Optional Attributes for
+                        Import Domain</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">contentType</td>
+                            <td colspan="3">The content type for the
+                                bind file. Must be specified as
+                                "BIND_9".</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">contents</td>
+                            <td colspan="3">Specifies the valid
+                                configuration contents for the domain
+                                to be imported.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
                 <example xml:id="import_domain_request_xml">
                     <title>Import Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -3031,6 +3107,54 @@
                 <note>
                     <para>When the domain and/or record TTL is supplied by the user, either via a
                         create or update call, the TTL values must be 300 seconds or more.</para>
+                </note>
+                <table rules="all">
+                    <caption>Required and Optional Attributes for
+                        Modify Domain(s)</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">id</td>
+                            <td colspan="3">For modifying
+                                   <emphasis>multiple</emphasis>
+                                domains, the id for each domain must
+                                be specified as an attribute. Note
+                                that for modifying a single domain,
+                                the id is a required parameter at the
+                                end of the API call URI.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">emailAddress</td>
+                            <td colspan="3">Email address to use for
+                                contacting the domain
+                                administrator.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">ttl</td>
+                            <td colspan="3">If specified, must be
+                                greater than 300.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3">If included, its length
+                                must be less than or equal to 160
+                                characters.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <note>
+                    <para><code>name</code> cannot be specified, since
+                        the domain name cannot be modified.</para>
                 </note>
                 <example>
                     <title>Modify Domain Request: XML</title>
@@ -3504,6 +3628,67 @@
                         either via a create or update call, the TTL
                         values must be 300 seconds or more.</para>
                 </note>
+                <table rules="all">
+                    <caption>Required and Optional Attributes for Add
+                        Records</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">type</td>
+                            <td colspan="3">Specifies the record type
+                                to add. </td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">name</td>
+                            <td colspan="3">Specifies the name for the
+                                domain or subdomain. Must be a valid
+                                domain name.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">data</td>
+                            <td colspan="3">The data field for PTR, A,
+                                and AAAA records must be a valid IPv4
+                                or IPv6 IP address</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">priority</td>
+                            <td colspan="3">Required for MX and SRV
+                                records, but forbidden for other
+                                record types. If specified, must be
+                                between 0 and 65535 (inclusive).</td>
+                            <td colspan="1">For MX and SRV records
+                                only</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">ttl</td>
+                            <td colspan="3">If specified, must be
+                                greater than 300. Defaults to the
+                                domain TTL if available, or 3600 if no
+                                TTL is specified.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3">If included, its length
+                                must be less than or equal to 160
+                                characters.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <note>
+                    <para><code>id</code> for the record must not be
+                        specified.</para>
+                </note>
                 <example>
                     <title>Add Records Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -3625,10 +3810,70 @@ images.www.example.com  A  127.0.0.5</programlisting>
                 </note>
                 <para>The only attributes that you can modify on a
                     record (during a &PUT;) are the <code>data</code>,
-                        <code>ttl</code>, and <code>comment</code>
-                    attributes. However, the <code>name</code>
-                    attribute of the record must always be specified
-                    in the modify request as well.</para>
+                        <code>priority</code> (for MX and SRV
+                    records), <code>ttl</code>, and
+                        <code>comment</code> attributes.</para>
+                <table rules="all">
+                    <caption>Required and Optional Attributes for
+                        Modify Records</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">id</td>
+                            <td colspan="3">For modifying
+                                   <emphasis>multiple</emphasis>
+                                records, the id for each record must
+                                be specified as an attribute. Note
+                                that for modifying a single record,
+                                the record id is a required parameter
+                                at the end of the API call URI.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">name</td>
+                            <td colspan="3">Specifies the name for the
+                                domain or subdomain. Must be a valid
+                                domain name. Cannot be modified.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">data</td>
+                            <td colspan="3">The data field is required
+                                for PTR records and must be a valid
+                                IPv4 or IPv6 IP address.</td>
+                            <td colspan="1">For PTR records only</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">priority</td>
+                            <td colspan="3">Can be included for MX and
+                                SRV records, but forbidden for other
+                                record types. If specified, must be
+                                between 0 and 65535 (inclusive).</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">ttl</td>
+                            <td colspan="3">If specified, must be
+                                greater than 300. Defaults to the
+                                domain TTL if available, or 3600 if no
+                                TTL is specified.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3">If included, its length
+                                must be less than or equal to 160
+                                characters.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <example>
                     <title>Modify Record Configuration Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -3953,6 +4198,58 @@ images.www.example.com  A  127.0.0.5</programlisting>
                        </tr>
                    </tbody>
                </informaltable>
+               <table rules="all">
+                    <caption>Required and Optional Attributes for Add
+                        PTR Records</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">type</td>
+                            <td colspan="3">Specifies the record type
+                                as "PTR". </td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">name</td>
+                            <td colspan="3">Specifies the name for the
+                                domain or subdomain. Must be a valid
+                                domain name.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">data</td>
+                            <td colspan="3">The data field for PTR
+                                records must be a valid IPv4 or IPv6
+                                IP address.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                       
+                        <tr>
+                            <td colspan="1">ttl</td>
+                            <td colspan="3">If specified, must be
+                                greater than 300. Defaults to 3600 if
+                                no TTL is specified.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3">If included, its length
+                                must be less than or equal to 160
+                                characters.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <note>
+                    <para><code>id</code> for the record must not be
+                        specified.</para>
+                </note>
                <example>
                     <title>Add PTR Record Request: XML</title>
                     <?dbfo keep-together="always"?>
@@ -3991,6 +4288,47 @@ images.www.example.com  A  127.0.0.5</programlisting>
                </informaltable>
                <note><para>The IP address (data) for a PTR record cannot be modified. To change the reverse DNS 
                    for a domain, any existing PTR record(s) must be deleted and new ones created.</para></note>
+               <table rules="all">
+                    <caption>Required and Optional Attributes for
+                        Modify PTR Records</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">name</td>
+                            <td colspan="3">Specifies the name for the
+                                domain or subdomain. Must be a valid
+                                domain name. Cannot be modified.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">data</td>
+                            <td colspan="3">The data field is required
+                                for PTR records and must be a valid
+                                IPv4 or IPv6 IP address.</td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">ttl</td>
+                            <td colspan="3">If specified, must be
+                                greater than 300. Defaults to 3600 if
+                                no TTL is specified.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3">If included, its length
+                                must be less than or equal to 160
+                                characters.</td>
+                            <td colspan="1">No</td>
+                        </tr>
+                    </tbody>
+                </table>
                <example>
                     <title>Modify PTR Record Request: XML</title>
                     <?dbfo keep-together="always"?>
