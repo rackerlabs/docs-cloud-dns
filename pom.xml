@@ -1448,6 +1448,9 @@
 								<move todir="target/docbkx/webhelp/cdns-releasenotes-external">
 									<fileset dir="target/docbkx/webhelp/cdns-releasenotes" />
 								</move>
+								<copy todir="target/docbkx/webhelp/cdns-releasenotes-external/content/images">
+								  <fileset dir="src/main/resources/images" includes="**/*.png"/>
+								</copy>
 							</postProcess>
 						</configuration>
 					</execution>
@@ -1493,6 +1496,9 @@
 									tofile="target/docbkx/pdf/cdns-releasenotes-internal.pdf" />
 								<move file="target/docbkx/pdf/cdns-releasenotes.fo" failonerror="false" 
 									tofile="target/docbkx/pdf/cdns-releasenotes-internal.fo" />
+								<copy todir="target/docbkx/webhelp/cdns-releasenotes/content/images">
+								  <fileset dir="src/main/resources/images" includes="**/*.png"/>
+								</copy>
 							</postProcess>
 						</configuration>
 					</execution>
