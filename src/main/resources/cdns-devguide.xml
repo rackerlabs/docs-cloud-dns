@@ -56,7 +56,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2012-05-17</pubdate>
+        <pubdate>2012-06-28</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -69,7 +69,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2012-05-xx</date>
+                <date>2012-06-28</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -98,6 +98,11 @@
                             <para>Added tables of required/optional
                                 attributes for API calls that have a
                                 request body.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added notes about creating or
+                                importing a domain that already
+                                exists.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -374,10 +379,10 @@
                         </para>   
                     </listitem>
                     <listitem>
-                        <para>
-                            If your account was
-                            created via <link xlink:href="http:/www.rackspace.co.uk">http:/www.rackspace.co.uk</link>, it is a UK-based account.
-                        </para>
+                        <para> If your account was created via <link
+                                xlink:href="http://www.rackspace.co.uk"
+                                >http://www.rackspace.co.uk</link>, it
+                            is a UK-based account. </para>
                     </listitem>
                 </itemizedlist>
                 <para>
@@ -1276,8 +1281,7 @@
                             example: <link
                                 xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
                                 >
-                                https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d
-                            </link>. This status call has a limit of 5
+                                https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</link>. This status call has a limit of 5
                             requests per second. </para>
                     </note></para>
             </section>
@@ -2818,6 +2822,13 @@
                         <para>
                             <itemizedlist>
                                 <listitem>
+                                   <para> If you attempt to create a
+                                   domain that already exists, the API
+                                   will return an exception saying
+                                   that the domain already exists.
+                                   </para>
+                                </listitem>
+                                <listitem>
                                    <para> This process allows multiple
                                    records to be created along with
                                    the domain. This is an atomic
@@ -2986,18 +2997,45 @@
                     "The request could not be understood by the server due to malformed
                     syntax."</para>
                 <note>
-                    <para linkend="import_domain_request_xml"> The domain can have a comment
-                        attribute specified in the import domain request (see <xref
-                            linkend="import_domain_request_xml"/>), and that comment is transferred
-                        to the new domain. However the domain contents cannot have comments
-                        specified in them. For example, no record level comments can be used in the
-                        import domain request.</para>
-                </note>
-                <note>
-                    <para linkend="import_domain_request_xml">The normal bind rules apply to any
-                        imported bind file, and in particular, records without a specified TTL will
-                        receive the domain TTL as the default. If the domain TTL is not specified,
-                        the SOA minTTL (3600 seconds) is used as the default instead.</para>
+                    <title>Notes</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>If you attempt to import a
+                                   domain that already exists, the API
+                                   will return an exception saying
+                                   that the domain already exists.
+                                   This is the same behavior as when
+                                   you attempt to create a domain that
+                                   already exists.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The domain can have a comment
+                                   attribute specified in the import
+                                   domain request (see <xref
+                                   linkend="import_domain_request_xml"
+                                   />), and that comment is
+                                   transferred to the new domain.
+                                   However the domain contents cannot
+                                   have comments specified in them.
+                                   For example, no record level
+                                   comments can be used in the import
+                                   domain request.</para>
+                            </listitem>
+                            <listitem>
+                                <para
+                                   linkend="import_domain_request_xml"
+                                   >The normal bind rules apply to any
+                                   imported bind file, and in
+                                   particular, records without a
+                                   specified TTL will receive the
+                                   domain TTL as the default. If the
+                                   domain TTL is not specified, the
+                                   SOA minTTL (3600 seconds) is used
+                                   as the default instead.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
                 </note>
                 <table rules="all">
                     <caption>Required and Optional Attributes for
@@ -4082,8 +4120,8 @@ images.www.example.com  A  127.0.0.5</programlisting>
                         <td>cloudServersOpenStack</td>
                         <td>v2</td>
                         <td><link
-                                xlink:href="http://www.rackspace.com/cloud/nextgen/details/"
-                                >http://www.rackspace.com/cloud/nextgen/details/</link></td>
+                            xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/index.html"
+                            >http://docs.rackspace.com/servers/api/v2/cs-devguide/content/index.html</link></td>
                     </tr>
                     <tr>
                         <td>Cloud Load Balancers</td>
