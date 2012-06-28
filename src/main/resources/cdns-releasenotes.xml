@@ -73,7 +73,7 @@
     		in the table below:</para>
     	<?rax revhistory?>
     </chapter>
-	<chapter xml:id="cdnsv1.0.xx">
+	<chapter xml:id="cdnsv1.0.14">
 		<title>v1.0.14, June 28, 2012</title>
 		<para>This version contains the following new features and bug
 			fixes for Cloud DNS:</para>
