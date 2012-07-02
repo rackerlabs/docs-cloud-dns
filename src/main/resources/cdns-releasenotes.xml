@@ -23,7 +23,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-	<pubdate>2012-06-28</pubdate>
+	<pubdate>2012-07-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -34,6 +34,12 @@
 				using the Rackspace Cloud DNS. </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2012-07-02</date>
+				<revdescription>
+					<para>Updated for v1.0.15.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2012-06-28</date>
 				<revdescription>
@@ -73,6 +79,44 @@
     		in the table below:</para>
     	<?rax revhistory?>
     </chapter>
+	<chapter xml:id="cdnsv1.0.15">
+		<title>v1.0.15, Maintenance, July 2, 2012</title>
+		<para>This version contains bug fixes for Cloud DNS.</para>
+		<itemizedlist>
+			<title>Bug Fixes</title>
+			<listitem>
+				<para>Fixed issue to return JSON as the default representation for
+					exceptions, including expired auth response; JSON
+					is returned if Accept header is not specified in
+					the request that caused the exception. Otherwise,
+					the correct XML is returned.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>DNS Developer Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
+						>Product Feedback Forum</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://www.rackspace.com/cloud/blog/2011/07/11/using-rackspace-dnsaas-with-curl-part-1/"
+						>Cloud DNS Tutorial</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="https://github.com/rackspace/python-clouddns"
+						>Open Source Python Library for Cloud
+						DNS</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="cdnsv1.0.14">
 		<title>v1.0.14, June 28, 2012</title>
 		<para>This version contains the following new features and bug
