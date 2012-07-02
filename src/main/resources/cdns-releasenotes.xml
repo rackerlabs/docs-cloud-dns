@@ -89,7 +89,8 @@
 					exceptions, including expired auth response; JSON
 					is returned if Accept header is not specified in
 					the request that caused the exception. Otherwise,
-					the correct XML is returned.</para>
+					the correct representation according to the Accept
+					header (JSON or XML) is returned.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
