@@ -3985,7 +3985,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                 <example>
                     <title>Remove Record Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="json"><xi:include href="../../../target/samples/dns-remove-record_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-remove-record_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Remove Records Request: XML</title>
@@ -3995,7 +3995,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                 <example>
                     <title>Remove Records Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="json"><xi:include href="../../../target/samples/dns-remove-records_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-remove-records_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
