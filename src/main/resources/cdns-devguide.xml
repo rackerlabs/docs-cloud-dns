@@ -215,6 +215,13 @@
     </info>
     <chapter xml:id="overview">
         <title>Overview</title>
+        <info>
+            <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+                <raxm:type>concept</raxm:type>
+                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:priority>1</raxm:priority>
+            </raxm:metadata> 
+        </info>
         <para> Rackspace Cloud <glossterm>DNS</glossterm> is a Domain
             Name System (DNS) available to Rackspace Cloud customers.
             Interactions with Rackspace Cloud DNS occur
@@ -292,6 +299,13 @@
     </chapter>
     <chapter xml:id="Concepts-d1e563">
         <title>Concepts</title>
+        <info>
+            <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+                <raxm:type>concept</raxm:type>
+                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:priority>1</raxm:priority>
+            </raxm:metadata> 
+        </info>
         <?dbhtml stop-chunking?>
         <para> To use the DNS API effectively, you should understand several key concepts: </para>
         <section xml:id="DNS-d1e573">
@@ -342,6 +356,13 @@
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
         <title>General API Information</title>
+        <info>
+            <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+                <raxm:type>concept</raxm:type>
+                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:priority>1</raxm:priority>
+            </raxm:metadata> 
+        </info>
         <para> The DNS Service API is implemented using a ReSTful web
             service interface. Like other products in the Rackspace
             Cloud suite, the DNS Service shares a common token-based
@@ -2143,6 +2164,13 @@
     </chapter>
     <chapter xml:id="API_Operations-d1e2264">
         <title>API Operations</title>
+        <info>
+            <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+                <raxm:type>apiref</raxm:type>
+                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:priority>1</raxm:priority>
+            </raxm:metadata> 
+        </info>
         <section xml:id="view_limits">
             <title>Limits</title>
             <informaltable rules="all">
@@ -4539,6 +4567,13 @@ images.www.example.com  A  127.0.0.5</programlisting>
     </chapter>
     <glossary>
         <title>Glossary</title>
+        <info>
+            <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+                <raxm:type>concept</raxm:type>
+                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:priority>50</raxm:priority>
+            </raxm:metadata> 
+        </info>
         <glossentry xml:id="DNS-d1e017">
             <glossterm>DNS</glossterm>
             <glossdef>

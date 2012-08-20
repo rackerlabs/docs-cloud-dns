@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter version="5.0"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xml:id="cdns-getting-started"
+         >
+        <title>Rackspace Cloud DNS and Servers Tutorial</title>
+        <info>
+            <raxm:metadata
+                xmlns:raxm="http://docs.rackspace.com/api/metadata">
+	      <raxm:type>tutorial</raxm:type>
+	      <raxm:product version="v1.0">cdns</raxm:product>
+	      <raxm:priority>1</raxm:priority>
+            </raxm:metadata>
+        </info>
+        <para>This guide provides step-by-step instructions for how to
+            properly enter the necessary URLs, using cURL, in order to
+            set up DNS for <trademark>Cloud Servers</trademark> using
+            the Rackspace Cloud DNS API. Additional details about
+            Rackspace Cloud DNS can be found in the <citetitle>Cloud
+                DNS Developer Guide</citetitle> at <link
+                xlink:href="http://docs.rackspace.com/"
+                >http://docs.rackspace.com/</link> and at <link
+                xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/dns/"
+                >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
+        <para>In order to run the examples in this guide, you must have
+            the following prerequisites: <itemizedlist
+                spacing="compact">
+                <listitem>
+                    <para>Rackspace Cloud account</para>
+                </listitem>
+                <listitem>
+                    <para>Rackspace Cloud username and password, as
+                        specified during registration</para>
+                </listitem>
+            </itemizedlist></para>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(Create_Cloud_Server)"/>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(DB_Sending_API_Requests)"/>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(Generating_Auth_Token)"/>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(Service_Access_Endpoints-d1e753)"/>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(Create_Domain)"/>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(List_Domain_Details)"/>
+        <xi:include
+            href="cdns-getting-started.xml"
+            xpointer="element(Add_Records)"/>
+
+</chapter>

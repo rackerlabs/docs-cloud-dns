@@ -1,0 +1,1527 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.rackspace.cloud.dns.api</groupId>
+	<artifactId>dns-docs</artifactId>
+	<version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
+	<packaging>jar</packaging>
+	<name>Cloud DNS API Docs</name>
+
+	<properties>
+		<com.rackspace.cloud.dns.maven.plugin.version>1.0.6</com.rackspace.cloud.dns.maven.plugin.version>
+		<com.rackspace.cloud.act.version>1.0.2</com.rackspace.cloud.act.version>
+		<com.rackspace.cloud.dns.api.common.version>1.0.12</com.rackspace.cloud.dns.api.common.version>
+		<com.rackspace.cloud.dns.api.version>1.0.14</com.rackspace.cloud.dns.api.version>
+		<com.rackspace.cloud.dns.api.mgmt.version>1.0.12</com.rackspace.cloud.dns.api.mgmt.version>
+		<com.rackspace.cloud.papi.version>0.9.1</com.rackspace.cloud.papi.version>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>Rackspace Research Repositories</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>rackspace-research</id>
+					<name>Rackspace Research Repository</name>
+					<url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+				</repository>
+				<repository>
+					<id>Rackspace All Releases</id>
+					<name>CS Maven Repository</name>
+					<url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/groups/all-rel/</url>
+				</repository>
+				<repository>
+					<id>Rackspace Internal Snapshots</id>
+					<name>CS Maven Repository</name>
+					<url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/snapshots/</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>rackspace-research</id>
+					<name>Rackspace Research Repository</name>
+					<url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+				</pluginRepository>
+
+				<pluginRepository>
+					<id>cs-maven-n01.mosso</id>
+					<name>CS Maven Repository</name>
+					<url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/groups/all-rel/</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+    
+	<build>
+		<resources>
+			<resource>
+				<directory>target/docbkx/pdf</directory>
+				<excludes>
+					<exclude>**/*.fo</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<!-- BEGIN Samples Generation Config -->
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<plugin>
+				<groupId>com.rackspace.cloud.dns.maven.plugin</groupId>
+				<artifactId>generate-samples-maven-plugin</artifactId>
+				<version>${com.rackspace.cloud.dns.maven.plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.rackspace.cloud.dns.api.mgmt</groupId>
+						<artifactId>dns-mgmt-rest-service</artifactId>
+						<version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
+					</dependency>
+                    <dependency>
+                        <groupId>com.rackspace.cloud.dns.api</groupId>
+                        <artifactId>public-rest-service</artifactId>
+                        <version>${com.rackspace.cloud.dns.api.version}</version>
+                        <classifier>classes</classifier>
+                    </dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>generate limits examples</id>
+						<goals>
+							<goal>generate-samples</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<namespace>http://docs.openstack.org/common/api/v1.0</namespace>
+							<modules>
+								<module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule"/>
+                                <module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule"/>
+							</modules>
+							<outputDir>${project.build.directory}/samples</outputDir>
+							<urlBase>https://dns.api.rackspacecloud.com/v1.0</urlBase>
+							<generateJson>true</generateJson>
+							<generateXml>true</generateXml>
+							<requestHeaders>
+								<requestHeader>X-Auth-Token:
+									ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+							</requestHeaders>
+							<responseHeaders>
+								<responseHeader>X-API-VERSION:
+									${com.rackspace.cloud.dns.api.version}</responseHeader>
+							</responseHeaders>
+							<sources>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-limits.xml</data>
+									<beanPackage>com.rackspace.papi.components.limits.schema</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-list-limits</nameBase>
+											<path>/1234/limits</path>
+											<responseBody />
+										</output>
+										<output>
+											<nameBase>dns-example-limit</nameBase>
+											<path>/1234/limits/rate_limit</path>
+											<responseBody>
+												<filters>
+													<filter>absolute</filter>
+												</filters>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>g6</id>
+						<goals>
+							<goal>generate-samples</goal>
+						</goals>
+						<phase>generate-sources</phase>
+
+						<configuration>
+							<namespace>http://docs.rackspacecloud.com/dns/api/v1.0</namespace>
+							<modules>
+								<module implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
+								<module implementation="com.rackspace.cloud.dns.helpers.PublicJsonModule" />
+							</modules>
+							<outputDir>${project.build.directory}/samples</outputDir>
+							<urlBase>https://dns.api.rackspacecloud.com/v1.0</urlBase>
+							<generateJson>true</generateJson>
+							<generateXml>true</generateXml>
+							<requestHeaders>
+								<requestHeader>X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812</requestHeader>
+							</requestHeaders>
+							<responseHeaders>
+								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.version}</responseHeader>
+							</responseHeaders>
+							<sources>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-limit-types.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
+									<outputs>
+										<output>
+											<path>/1234/limits/types</path>
+											<nameBase>dns-example-limit-types</nameBase>
+											<responseBody/>
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-over-limit.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-example-domain-limit</nameBase>
+											<statusCode>413</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-over-record-limit.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-example-record-limit</nameBase>
+											<statusCode>413</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-changes-since.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-list-domain-changes</nameBase>
+											<path>/1234/domains/45678/changes?since=2011-09-13T00:00:00-0500</path>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<generateXml>false</generateXml>
+									<outputs>
+										<output>
+											<nameBase>dns-response-types-request</nameBase>
+											<path>/{{domains[0].accountId}}/domains</path>
+											<requestType>POST</requestType>
+											<accept>application/xml</accept>
+											<requestBody>
+												<base>domains[0]</base>
+												<filters>
+													<filter>id</filter>
+													<filter>accountId</filter>
+													<filter>updated</filter>
+													<filter>created</filter>
+													<filter>nameservers</filter>
+													<filter>comment</filter>
+													<filter>recordsList</filter>
+													<filter>subdomains</filter>
+													<filter>ttl</filter>
+												</filters>
+											</requestBody>
+										</output>
+										<output>
+											<nameBase>dns-content-type-req-ext</nameBase>
+											<path>/{{domains[0].accountId}}/domains.xml</path>
+											<requestType>POST</requestType>
+											<accept>OMIT</accept>
+											<requestBody>
+												<base>domains[0]</base>
+												<filters>
+													<filter>id</filter>
+													<filter>accountId</filter>
+													<filter>updated</filter>
+													<filter>created</filter>
+													<filter>nameservers</filter>
+													<filter>comment</filter>
+													<filter>recordsList</filter>
+													<filter>subdomains</filter>
+													<filter>ttl</filter>
+												</filters>
+											</requestBody>
+										</output>
+									</outputs>
+								</source>
+                                
+                                <!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<!-- PTR Examples -->
+								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                                <source>
+                                    <data>${basedir}/src/main/resources/samples-ptr.xml</data>
+                                    <beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+                                    <outputs>
+                                        <output>
+                                            <nameBase>dns-list-ptr</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}?href={{link.href}}</path>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-list-ptr-details</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}/{{recordsList.records[0].id}}?href={{link.href}}</path>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                </filters>
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-add-ptr</nameBase>
+                                            <path>/1234/rdns</path>
+                                            <requestType>POST</requestType>
+                                            <requestBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[3].id</filter>
+                                                    <filter>recordsList.records[3].created</filter>
+                                                    <filter>recordsList.records[3].updated</filter>
+                                                    <filter>recordsList.records[2].created</filter>
+                                                    <filter>recordsList.records[2].updated</filter>
+                                                    <filter>recordsList.records[2].id</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>
+                                            </requestBody>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5]</filter>
+                                                    <filter>recordsList.records[4]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>   
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-modify-ptr</nameBase>
+                                            <path>/1234/rdns</path>
+                                            <requestType>PUT</requestType>
+                                            <requestBody>
+                                                <filters>
+                                                    <filter>recordsList.records[5].created</filter>
+                                                    <filter>recordsList.records[5].updated</filter>
+                                                    <filter>recordsList.records[4].created</filter>
+                                                    <filter>recordsList.records[4].updated</filter>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>
+                                            </requestBody>
+                                            <responseBody>
+                                                <filters>
+                                                    <filter>recordsList.records[3]</filter>
+                                                    <filter>recordsList.records[2]</filter>
+                                                    <filter>recordsList.records[1]</filter>
+                                                    <filter>recordsList.records[0]</filter>
+                                                </filters>   
+                                            </responseBody>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-delete-all-ptr</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}?href={{link.href}}</path>
+                                            <requestType>DELETE</requestType>
+                                            <statusCode>204</statusCode>
+                                        </output>
+                                        <output>
+                                            <nameBase>dns-delete-one-ptr</nameBase>
+                                            <path>/1234/rdns/{{link.rel}}?href={{link.href}}&amp;ip={{recordsList.records[1].data}}</path>
+                                            <requestType>DELETE</requestType>
+                                            <statusCode>204</statusCode>
+                                        </output>
+                                    </outputs>
+                                </source>
+                                
+
+								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<!-- API BEANS OUTPUTS - domains, domain, links etc -->
+								<!--+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+								<source>
+									<data>${basedir}/src/main/resources/samples.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+
+										<!-- dns-list-domain-details-with-records-and-subdomains-request.json -->
+										<!-- dns-list-domain-details-with-records-and-subdomains-request.xml -->
+										<!-- dns-list-domain-details-with-records-and-subdomains-response.json -->
+										<!-- dns-list-domain-details-with-records-and-subdomains-response.xml -->
+										<output>
+											<nameBase>dns-list-domain-details-with-records-and-subdomains</nameBase>
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}?showRecords=true&amp;showSubdomains=true</path>
+											<responseBody>
+												<base>domains[0]</base>
+											</responseBody>
+										</output>
+
+
+
+										<!-- dns-create-domains-request.json -->
+										<!-- dns-create-domains-request.xml -->
+										<!-- dns-create-domains-response.json -->
+										<!-- dns-create-domains-response.xml -->
+										<output>
+											<nameBase>dns-create-domains</nameBase>
+											<path>/{{domains[0].accountId}}/domains</path>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<filters>
+												<filter>domains[0].accountId</filter>
+												<filter>domains[0].id</filter>
+												<filter>domains[0].updated</filter>
+												<filter>domains[0].created</filter>
+												<filter>domains[0].recordsList.totalEntries</filter>
+												<filter>domains[0].recordsList.records.id</filter>
+												<filter>domains[0].recordsList.records.updated</filter>
+												<filter>domains[0].recordsList.records.created</filter>
+												<filter>domains[0].subdomains.totalEntries</filter>
+												<filter>domains[0].subdomains.domains.id</filter>
+												<filter>domains[0].subdomains.domains.nameservers</filter>
+												<filter>domains[0].subdomains.domains.updated</filter>
+												<filter>domains[0].subdomains.domains.created</filter>
+												<filter>domains[9]</filter>
+												<filter>domains[8]</filter>
+												<filter>domains[7]</filter>
+												<filter>domains[6]</filter>
+												<filter>domains[5]</filter>
+												<filter>domains[4]</filter>
+												<filter>domains[3]</filter>
+												<filter>domains[2]</filter>
+												<filter>domains[1]</filter>
+												<filter>links</filter>
+											</filters>
+											<requestBody>
+												<filters>
+													<filter>domains[0].nameservers</filter>
+													<filter>totalEntries</filter>
+												</filters>
+											</requestBody>
+											<responseBody />
+										</output>
+
+										<!-- dns-add-records-request.json -->
+										<!-- dns-add-records-request.xml -->
+										<!-- dns-add-records-response.json -->
+										<!-- dns-add-records-response.xml -->
+										<output>
+											<nameBase>dns-add-records</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records</path>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<filters>
+												<filter>domains[0].accountId</filter>
+											</filters>
+											<requestBody>
+												<base>domains[0].recordsList</base>
+												<filters>
+													<filter>totalEntries</filter>
+													<filter>records.id</filter>
+													<filter>records.updated</filter>
+													<filter>records.created</filter>
+												</filters>
+											</requestBody>
+											<responseBody>
+												<base>domains[0].recordsList</base>
+											</responseBody>
+										</output>
+
+										<!-- dns-list-domain-details-no-records-no-subdomains-request.json -->
+										<!-- dns-list-domain-details-no-records-no-subdomains-request.xml -->
+										<!-- dns-list-domain-details-no-records-no-subdomains-response.json -->
+										<!-- dns-list-domain-details-no-records-no-subdomains-response.xml -->
+										<output>
+											<nameBase>dns-list-domain-details-no-records-no-subdomains</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}?showRecords=false&amp;showSubdomains=false</path>
+											<filters>
+												<filter>domains[0].recordsList</filter>
+												<filter>domains[0].subdomains</filter>
+											</filters>
+											<responseBody>
+												<base>domains[0]</base>
+											</responseBody>
+										</output>
+
+										<!-- dns-list-domain-details-with-records-no-subdomains-request.json -->
+										<!-- dns-list-domain-details-with-records-no-subdomains-request.xml -->
+										<!-- dns-list-domain-details-with-records-no-subdomains-response.json -->
+										<!-- dns-list-domain-details-with-records-no-subdomains-response.xml -->
+										<output>
+											<nameBase>dns-list-domain-details-with-records-no-subdomains</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}?showRecords=true&amp;showSubdomains=false</path>
+											<filters>
+												<filter>domains[0].subdomains</filter>
+											</filters>
+											<responseBody>
+												<base>domains[0]</base>
+											</responseBody>
+										</output>
+
+
+										<!-- dns-list-domains-request.json -->
+										<!-- dns-list-domains-request.xml -->
+										<!-- dns-list-domains-response.json -->
+										<!-- dns-list-domains-response.xml -->
+										<!-- https://dns.api.rackspacecloud.com/v1.0/1234/domains?limit=10&offset=20 -->
+										<output>
+											<nameBase>dns-list-domains</nameBase>
+											<path>/{{domains[0].accountId}}/domains?limit=10&amp;offset=20</path>
+											<filters>
+												<filter>domains[0].nameservers</filter>
+												<filter>domains[0].recordsList</filter>
+												<filter>domains[0].subdomains</filter>
+											</filters>
+											<responseBody>
+												<filters>
+													<filter>domains[5]</filter>
+													<filter>links[4]</filter>
+													<filter>links[3]</filter>
+													<filter>links[2]</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+										<!-- dns-list-records-request.json -->
+										<!-- dns-list-records-request.xml -->
+										<!-- dns-list-records-response.json -->
+										<!-- dns-list-records-response.xml -->
+										<output>
+											<nameBase>dns-list-records</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records</path>
+											<filters>
+												<filter>domains[0].nameservers</filter>
+												<filter>domains[0].subdomains</filter>
+											</filters>
+											<responseBody>
+												<base>domains[0].recordsList</base>
+											</responseBody>
+
+										</output>
+
+
+
+										<!-- dns-list-record-details-request.json -->
+										<!-- dns-list-record-details-request.xml -->
+										<!-- dns-list-record-details-response.json -->
+										<!-- dns-list-record-details-response.xml -->
+										<output>
+											<nameBase>dns-list-record-details</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records/{{domains[0].recordsList.records[1].id}}</path>
+											<responseBody>
+												<base>domains[0].recordsList.records[1]</base>
+											</responseBody>
+										</output>
+
+										<!-- dns-list-subdomains-request.json -->
+										<!-- dns-list-subdomains-request.xml -->
+										<!-- dns-list-subdomains-response.json -->
+										<!-- dns-list-subdomains-response.xml -->
+										<output>
+											<nameBase>dns-list-subdomains</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/subdomains</path>
+											<responseBody>
+												<base>domains[0].subdomains</base>
+											</responseBody>
+										</output>
+
+										<!-- TODO: How to change totalEntries to 1 -->
+										<!-- dns-filter-domain-by-name-request.json -->
+										<!-- dns-filter-domain-by-name-request.xml -->
+										<!-- dns-filter-domain-by-name-response.json -->
+										<!-- dns-filter-domain-by-name-response.xml -->
+										<output>
+											<nameBase>dns-filter-domain-by-name</nameBase>
+											<path>/{{domains[6].accountId}}/domains?name={{domains[6].name}}</path>
+											<responseBody>
+												<filters>
+													<filter>domains[6].accountId</filter>
+													<!-- filter out all but domain[6]. filter in reverse order as 
+														items move up the list when you start from top -->
+													<filter>domains[9]</filter>
+													<filter>domains[8]</filter>
+													<filter>domains[7]</filter>
+													<filter>domains[5]</filter>
+													<filter>domains[4]</filter>
+													<filter>domains[3]</filter>
+													<filter>domains[2]</filter>
+													<filter>domains[1]</filter>
+													<filter>domains[0]</filter>
+													<filter>links</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+										<!-- How to change totalEntries to 1 on domains element -->
+										<!-- dns-filter-subdomain-by-name-request.json -->
+										<!-- dns-filter-subdomain-by-name-request.xml -->
+										<!-- dns-filter-subdomain-by-name-response.json -->
+										<!-- dns-filter-subdomain-by-name-response.xml -->
+										<output>
+											<nameBase>dns-filter-subdomain-by-name</nameBase>
+											<path>/{{domains[0].accountId}}/domains?name={{domains[1].name}}</path>
+											<responseBody>
+												<filters>
+													<filter>domains[9]</filter>
+													<filter>domains[8]</filter>
+													<filter>domains[7]</filter>
+													<filter>domains[6]</filter>
+													<filter>domains[5]</filter>
+													<filter>domains[4]</filter>
+													<filter>domains[3]</filter>
+													<filter>domains[2]</filter>
+													<filter>domains[1].accountId</filter>
+													<filter>domains[0]</filter>
+													<filter>links</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+										<!-- TODO: How to change totalEntries to 1 on domains element -->
+										<!-- dns-filter-subdomain-by-partial-name-request.json -->
+										<!-- dns-filter-subdomain-by-partial-name-request.xml -->
+										<!-- dns-filter-subdomain-by-partial-name-response.json -->
+										<!-- dns-filter-subdomain-by-partial-name-response.xml -->
+										<output>
+											<nameBase>dns-filter-subdomain-by-partial-name</nameBase>
+											<path>/{{domains[0].accountId}}/domains?name=sub1.exam</path>
+											<responseBody>
+												<filters>
+													<filter>domains[9]</filter>
+													<filter>domains[8]</filter>
+													<filter>domains[7]</filter>
+													<filter>domains[6]</filter>
+													<filter>domains[5]</filter>
+													<filter>domains[4]</filter>
+													<filter>domains[3]</filter>
+													<filter>domains[2]</filter>
+													<filter>domains[1].accountId</filter>
+													<filter>domains[0]</filter>
+													<filter>links</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+										<!-- dns-delete-domain-request.json -->
+										<!-- dns-delete-domain-request.xml -->
+										<output>
+											<nameBase>dns-delete-domain</nameBase>
+											<!-- <base>domains[3]</base> -->
+											<path>/{{domains[3].accountId}}/domains/{{domains[3].id}}</path>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+										</output>
+
+										<!-- dns-delete-domain-subdomains-request.json -->
+										<!-- dns-delete-domain-subdomains-request.xml -->
+										<output>
+											<nameBase>dns-delete-domain-subdomains</nameBase>
+											<!-- <base>domains[3]</base> -->
+											<path>/{{domains[3].accountId}}/domains/{{domains[3].id}}?deleteSubdomains=true</path>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+										</output>
+
+										<!-- dns-delete-domains-request.json -->
+										<!-- dns-delete-domains-request.xml -->
+										<output>
+											<nameBase>dns-delete-domains</nameBase>
+											<path>/{{domains[0].accountId}}/domains?id={{domains[0].id}}&amp;id={{domains[1].id}}</path>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+										</output>
+
+
+										<!-- dns-delete-domains-subdomains-request.json -->
+										<!-- dns-delete-domains-subdomains-request.xml -->
+										<output>
+											<nameBase>dns-delete-domains-subdomains</nameBase>
+											<path>/{{domains[0].accountId}}/domains?id={{domains[0].id}}&amp;id={{domains[1].id}}&amp;deleteSubdomains=true</path>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+										</output>
+
+
+										<!-- dns-remove-record-request.json -->
+										<!-- dns-remove-record-request.xml -->
+										<output>
+											<nameBase>dns-remove-record</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records/{{domains[0].recordsList.records[4].id}}</path>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+										</output>
+
+
+										<!-- dns-remove-records-request.json -->
+										<!-- dns-remove-records-request.xml -->
+										<output>
+											<nameBase>dns-remove-records</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records/?id={{domains[0].recordsList.records[0].id}}&amp;id=111111111&amp;id=222222222&amp;id={{domains[0].recordsList.records[2].id}}</path>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+										</output>
+
+										<!-- dns-pagination-list-domains-limit-request.json -->
+										<!-- dns-pagination-list-domains-limit-request.xml -->
+										<!-- dns-pagination-list-domains-limit-response.json -->
+										<!-- dns-pagination-list-domains-limit-response.xml -->
+										<output>
+											<nameBase>dns-pagination-list-domains-limit</nameBase>
+											<path>/{{domains[0].accountId}}/domains?limit=3</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<filters>
+													<filter>domains[9]</filter>
+													<filter>domains[8]</filter>
+													<filter>domains[7]</filter>
+													<filter>domains[6]</filter>
+													<filter>domains[5]</filter>
+													<filter>domains[4]</filter>
+													<filter>domains[0]</filter>
+													<filter>links[4]</filter>
+													<filter>links[3]</filter>
+													<filter>links[1]</filter>
+													<filter>links[0]</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+										<!-- dns-pagination-list-domains-limit-offset-request.json -->
+										<!-- dns-pagination-list-domains-limit-offset-request.xml -->
+										<!-- dns-pagination-list-domains-limit-offset-response.json -->
+										<!-- dns-pagination-list-domains-limit-offset-response.xml -->
+										<output>
+											<nameBase>dns-pagination-list-domains-limit-offset</nameBase>
+											<path>/{{domains[0].accountId}}/domains?limit=3&amp;offset=3</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<filters>
+													<filter>domains[9]</filter>
+													<filter>domains[8]</filter>
+													<filter>domains[7]</filter>
+													<filter>domains[6]</filter>
+													<filter>domains[5]</filter>
+													<filter>domains[4]</filter>
+													<filter>domains[0]</filter>
+													<filter>links[2]</filter>
+													<filter>links[1]</filter>
+													<filter>links[0]</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+
+										<!-- dns-example-response-w-comment.json -->
+										<!-- dns-example-response-w-comment.xml -->
+										<!-- NOTE: no need for request here. Just sample of what response 
+											with comment looks like -->
+										<!-- NOTE: How to get rid of the generated request files or make 
+											it empty -->
+										<output>
+											<nameBase>dns-example-response-w-comment</nameBase>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<base>domains[0]</base>
+											</responseBody>
+										</output>
+
+										<!-- dns-export-domain-request.json -->
+										<!-- dns-export-domain-request.xml -->
+										<!-- dns-export-domain-response.json -->
+										<!-- dns-export-domain-response.xml -->
+										<output>
+											<nameBase>dns-export-domain</nameBase>
+											<!-- <base>domains[5]</base> -->
+											<path>/{{domains[5].accountId}}/domains/{{domains[5].id}}/export</path>
+											<statusCode>202</statusCode>
+											<responseBody>
+												<base>domains[5]</base>
+												<filters>
+													<filter>name</filter>
+													<filter>created</filter>
+													<filter>updated</filter>
+												</filters>
+											</responseBody>
+										</output>
+
+										<!-- dns-modify-domain-request.json -->
+										<!-- dns-modify-domain-request.xml -->
+										<output>
+											<nameBase>dns-modify-domain</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}</path>
+											<requestType>PUT</requestType>
+											<statusCode>202</statusCode>
+											<filters>
+												<filter>domains[0].accountId</filter>
+											</filters>
+											<requestBody>
+												<base>domains[0]</base>
+												<filters>
+													<filter>nameservers</filter>
+													<filter>recordsList</filter>
+													<filter>subdomains</filter>
+													<filter>id</filter>
+													<filter>name</filter>
+													<filter>accountId</filter>
+													<filter>updated</filter>
+													<filter>created</filter>
+												</filters>
+											</requestBody>
+										</output>
+
+										<!-- dns-modify-domains-request.json -->
+										<!-- dns-modify-domains-request.xml -->
+										<output>
+											<nameBase>dns-modify-domains</nameBase>
+											<path>/{{domains[0].accountId}}/domains/</path>
+											<requestType>PUT</requestType>
+											<statusCode>202</statusCode>
+											<requestBody>
+												<filters>
+													<filter>totalEntries</filter>
+													<filter>domains[9]</filter>
+													<filter>domains[8]</filter>
+													<filter>domains[7]</filter>
+													<filter>domains[6]</filter>
+													<filter>domains[5]</filter>
+													<filter>domains[4]</filter>
+													<filter>domains[3]</filter>
+													<filter>domains[2]</filter>
+													<filter>domains[0].nameservers</filter>
+													<filter>domains[0].recordsList</filter>
+													<filter>domains[0].subdomains</filter>
+													<filter>domains[0].name</filter>
+													<filter>domains[0].accountId</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].created</filter>
+													<filter>domains[1].name</filter>
+													<filter>domains[1].accountId</filter>
+													<filter>domains[1].updated</filter>
+													<filter>domains[1].created</filter>
+													<filter>links</filter>
+												</filters>
+											</requestBody>
+										</output>
+
+										<!-- dns-modify-record-config-request.json -->
+										<!-- dns-modify-record-config-request.xml -->
+										<output>
+											<nameBase>dns-modify-record-config</nameBase>
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records/{{domains[0].recordsList.records[4].id}}</path>
+											<requestType>PUT</requestType>
+											<statusCode>202</statusCode>
+											<requestBody>
+												<base>domains[0].recordsList.records[4]</base>
+												<filters>
+													<filter>id</filter>
+													<filter>priority</filter>
+													<filter>updated</filter>
+													<filter>created</filter>
+													<filter>type</filter>
+												</filters>
+											</requestBody>
+										</output>
+
+										<!-- TODO: Resolve capitalization issue with recordsList -->
+										<!-- dns-modify-records-config-request.json -->
+										<!-- dns-modify-records-config-request.xml -->
+										<output>
+											<nameBase>dns-modify-records-config</nameBase>
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}/records</path>
+											<requestType>PUT</requestType>
+											<requestBody>
+												<base>domains[0].recordsList</base>
+												<filters>
+													<filter>totalEntries</filter>
+													<filter>records[4].priority</filter>
+													<filter>records[4].updated</filter>
+													<filter>records[4].created</filter>
+													<filter>records[4].type</filter>
+													<filter>records[5].priority</filter>
+													<filter>records[5].updated</filter>
+													<filter>records[5].created</filter>
+													<filter>records[5].type</filter>
+													<filter>records[5].data</filter>
+													<filter>records[5].ttl</filter>
+													<filters>records[3]</filters>
+													<filters>records[2]</filters>
+													<filters>records[1]</filters>
+													<filters>records[0]</filters>
+												</filters>
+											</requestBody>
+										</output>
+
+										<!-- dns-list-domain-details-basic-response.json -->
+										<!-- dns-list-domain-details-basic-response.xml -->
+										<output>
+											<nameBase>dns-list-domain-details-basic</nameBase>
+											<!-- <base>domains[0]</base> -->
+											<path>/{{domains[0].accountId}}/domains/{{domains[0].id}}</path>
+											<filters>
+												<filter>domains[0].accountId</filter>
+												<filter>domains[0].nameservers</filter>
+												<filter>domains[0].recordsList</filter>
+												<filter>domains[0].subdomains</filter>
+											</filters>
+											<responseBody>
+												<base>domains[0]</base>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+
+
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<!-- SPECIAL CASES - import domains needs separate samples file -->
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<source>
+									<data>${basedir}/src/main/resources/samples-import-domains.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<!-- dns-import-domains-request.json -->
+										<!-- dns-import-domains-request.xml -->
+										<!-- dns-import-domains-response.json -->
+										<!-- dns-import-domains-response.xml -->
+										<output>
+											<nameBase>dns-import-domains</nameBase>
+											<path>/{{domains[0].accountId}}/domains/import</path>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<filters>
+												<filter>totalEntries</filter>
+											</filters>
+											<requestBody>
+												<filters>
+													<filter>domains[1]</filter>
+													<filter>domains[0].Id</filter>
+													<filter>domains[0].accountId</filter>
+													<filter>domains[0].created</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].name</filter>
+												</filters>
+											</requestBody>
+											<responseBody>
+												<!-- <base>domains[0].recordsList</base> -->
+												<filters>
+													<filter>domains[0]</filter>
+													<filter>domains[0].Id</filter>
+													<filter>domains[0].accountId</filter>
+													<filter>domains[0].created</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].recordsList.records[0].id</filter>
+													<filter>domains[0].recordsList.records[0].created</filter>
+													<filter>domains[0].recordsList.records[0].updated</filter>
+													<filter>domains[0].recordsList.records[1].id</filter>
+													<filter>domains[0].recordsList.records[1].created</filter>
+													<filter>domains[0].recordsList.records[1].updated</filter>
+													<filter>domains[0].recordsList.records[2].id</filter>
+													<filter>domains[0].recordsList.records[2].created</filter>
+													<filter>domains[0].recordsList.records[2].updated</filter>
+													<!-- <base>domains[0].recordsList</base> <filter>records[0].id</filter> -->
+												</filters>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<!-- API FAULTS OUTPUTS - deleteFault, badRequest, dnsFault, etc -->
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-async.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-async</nameBase>
+											<statusCode>202</statusCode>
+											<responseBody />
+										</output>
+										<output>
+											<nameBase>dns-content-type-response</nameBase>
+											<statusCode>202</statusCode>
+											<responseBody>
+												<filters>
+													<filter>requestUrl</filter>
+													<filter>verb</filter>
+													<filter>request</filter>
+												</filters>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-async-success.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-async-success</nameBase>
+											<path>/1234/status/{{jobId}}</path>
+											<responseBody>
+												<filters>
+													<filter>verb</filter>
+													<filter>requestUrl</filter>
+													<filter>request</filter>
+													<filter>response</filter>
+													<filter>error</filter>
+												</filters>
+											</responseBody>
+										</output>
+										<output>
+											<nameBase>dns-async-success-detail</nameBase>
+											<path>/1234/status/{{jobId}}?showDetails=true</path>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-async-error.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-async-error-detail</nameBase>
+											<path>/1234/status/{{jobId}}?showDetails=true</path>
+											<responseBody />
+										</output>
+										<output>
+											<nameBase>dns-async-error</nameBase>
+											<path>/1234/status/{{jobId}}</path>
+											<responseBody>
+												<filters>
+													<filter>verb</filter>
+													<filter>requestUrl</filter>
+													<filter>request</filter>
+													<filter>response</filter>
+													<filter>error</filter>
+												</filters>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-dnsFaults-domains-delete.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+
+										<!-- dns-delete-multi-response.json -->
+										<!-- dns-delete-multi-response.xml -->
+										<output>
+											<nameBase>dns-delete-multi</nameBase>
+											<requestType>DELETE</requestType>
+											<statusCode>204</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+								<source>
+									<data>${basedir}/src/main/resources/samples-dnsFaults-records-delete.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+
+										<!-- dns-remove-records-failure-response.json -->
+										<!-- dns-remove-records-failure-response.xml -->
+										<output>
+											<nameBase>dns-remove-records-failure</nameBase>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+
+
+
+
+								<source>
+									<data>${basedir}/src/main/resources/samples-jobs-status.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<!-- dns-get-jobs-status-with-details-request.json -->
+										<!-- dns-get-jobs-status-with-details-request.xml -->
+										<!-- dns-get-jobs-status-with-details-response.json -->
+										<!-- dns-get-jobs-status-with-details-response.xml -->
+										<output>
+											<nameBase>dns-get-jobs-status-with-details</nameBase>
+											<path>/1234/status?showDetails=true</path>
+											<requestType>GET</requestType>
+											<statusCode>202</statusCode>
+											<responseBody />
+										</output>
+										<!-- dns-get-jobs-status-no-details-request.json -->
+										<!-- dns-get-jobs-status-no-details-request.xml -->
+										<!-- dns-get-jobs-status-no-details-response.json -->
+										<!-- dns-get-jobs-status-no-details-response.xml -->
+										<output>
+											<nameBase>dns-get-jobs-status-no-details</nameBase>
+											<path>/1234/status</path>
+											<requestType>GET</requestType>
+											<statusCode>202</statusCode>
+											<responseBody>
+												<filters>
+													<filter>asyncResponses[0].requestUrl</filter>
+													<filter>asyncResponses[0].verb</filter>
+													<filter>asyncResponses[1].requestUrl</filter>
+													<filter>asyncResponses[1].request</filter>
+													<filter>asyncResponses[1].response</filter>
+													<filter>asyncResponses[1].verb</filter>
+												</filters>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+
+							</sources>
+						</configuration>
+					</execution>
+
+
+					<!--++++++++++++++++++++++++++++++++++++++++++++ -->
+					<!--++++++++++++++++++++++++++++++++++++++++++++ -->
+					<!-- Management API Samples Generation Config -->
+					<!--++++++++++++++++++++++++++++++++++++++++++++ -->
+					<!--++++++++++++++++++++++++++++++++++++++++++++ -->
+
+					<execution>
+						<id>management-sample-generation</id>
+						<goals>
+							<goal>generate-samples</goal>
+						</goals>
+						<phase>generate-sources</phase>
+
+						<configuration>
+							<namespace>http://docs.rackspacecloud.com/dns/api/management/v1.0</namespace>
+							<modules>
+								<module
+									implementation="com.rackspace.cloud.dns.api.common.helpers.CommonJsonModule" />
+								<module
+									implementation="com.rackspace.cloud.dns.api.management.helpers.json.MgmtJsonModule" />
+							</modules>
+							<outputDir>${project.build.directory}/samples</outputDir>
+							<urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase>
+							<generateJson>true</generateJson>
+							<generateXml>true</generateXml>
+							<responseHeaders>
+								<responseHeader>X-API-VERSION: ${com.rackspace.cloud.dns.api.mgmt.version}</responseHeader>
+							</responseHeaders>
+							<sources>
+								<source>
+									<data>${basedir}/src/main/resources/mgmt-ptr-samples.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>mgmt-dns-create-ptr-record</nameBase>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<path>/1234/domains</path>
+											<requestBody>
+												<filters>
+													<filter>domains[0].created</filter>
+													<filter>domains[0].updated</filter>
+													<filter>domains[0].recordsList.records[0].created</filter>
+													<filter>domains[0].recordsList.records[0].updated</filter>
+													<filter>domains[0].recordsList.records[0].id</filter>
+													<filter>domains[0].recordsList.records[1].created</filter>
+													<filter>domains[0].recordsList.records[1].updated</filter>
+													<filter>domains[0].recordsList.records[1].id</filter>
+													<filter>domains[0].recordsList.records[2].created</filter>
+													<filter>domains[0].recordsList.records[2].updated</filter>
+													<filter>domains[0].recordsList.records[2].id</filter>
+												</filters>
+											</requestBody>
+											<responseBody/>
+										</output>
+
+										<output>
+											<nameBase>mgmt-dns-delete-ptr-record</nameBase>
+											<requestType>DELETE</requestType>
+											<statusCode>202</statusCode>
+											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
+										</output>
+
+										<output>
+											<nameBase>mgmt-dns-list-ptr-record</nameBase>
+											<requestType>GET</requestType>
+											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
+											<responseBody>
+											<base>domains[0].recordsList.records[0]</base>
+											</responseBody>
+										</output>
+
+										<output>
+											<nameBase>mgmt-dns-modify-ptr-record</nameBase>
+											<requestType>PUT</requestType>
+											<path>/1234/domains/9999999/records/PTR-6817754/192.0.2.8</path>
+											<requestBody>
+												<base>domains[0].recordsList.records[0]</base>
+												<filters>
+													<filter>id</filter>
+													<filter>priority</filter>
+													<filter>updated</filter>
+													<filter>created</filter>
+													<filter>type</filter>
+												</filters>
+											</requestBody>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+								<source>
+									<data>${basedir}/src/main/resources/mgmt-samples.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										mgmt-dns-search-domains-request.json
+										mgmt-dns-search-domains-request.xml
+										mgmt-dns-search-domains-request.response
+										mgmt-dns-search-domains-request.response
+										<output>
+											<nameBase>mgmt-dns-search-domains</nameBase>
+											<path>/searchDomains?name=rackspace</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<filters>
+													<filter>domains[0].nameservers</filter>
+													<filter>domains[0].recordsList</filter>
+												</filters>
+											</responseBody>
+										</output>
+									</outputs>
+								</source>
+								mgmt-dns-create-domains-request.json
+								mgmt-dns-create-domains-request.xml
+								<source>
+									<data>${basedir}/src/main/resources/mgmt-create-domains-request-sample.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>mgmt-dns-create-domains-req</nameBase>
+											<path>/1234/domains</path>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<requestBody />
+										</output>
+									</outputs>
+								</source>
+								mgmt-dns-create-domains-response.json
+								mgmt-dns-create-domains-response.xml
+								<source>
+									<data>${basedir}/src/main/resources/mgmt-create-domains-response-sample.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>mgmt-dns-create-domains-res</nameBase>
+											<path>/1234/domains</path>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+								<source>
+									<data>${basedir}/src/main/resources/mgmt-limit-samples.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>mgmt-dns-list-limit-groups</nameBase>
+											<path>/limits</path>
+											<statusCode>200</statusCode>
+											<responseBody />
+										</output>
+										<output>
+											<nameBase>mgmt-dns-list-limit-type-groups</nameBase>
+											<path>/groups/types/rate_limit</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<filters>
+													<filter>groupLimits[9]</filter>
+													<filter>groupLimits[8]</filter>
+													<filter>groupLimits[7]</filter>
+													<filter>groupLimits[6]</filter>
+													<filter>groupLimits[5]</filter>
+													<filter>groupLimits[4]</filter>
+												</filters>
+											</responseBody>
+										</output>
+										<output>
+											<nameBase>mgmt-dns-list-limit-group</nameBase>
+											<path>/groups/default_customer_group</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<base>groupLimits[0]</base>
+											</responseBody>
+										</output>
+										<output>
+											<nameBase>mgmt-dns-list-user-group</nameBase>
+											<path>/1234/groups</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<filters>
+													<filter>groupLimits[9]</filter>
+													<filter>groupLimits[8]</filter>
+													<filter>groupLimits[7]</filter>
+													<filter>groupLimits[6]</filter>
+													<filter>groupLimits[3]</filter>
+													<filter>groupLimits[2]</filter>
+													<filter>groupLimits[1]</filter>
+												</filters>
+											</responseBody>
+										</output>
+										<output>
+											<nameBase>mgmt-dns-list-user-group-type</nameBase>
+											<path>/1234/groups/rate_limit</path>
+											<statusCode>200</statusCode>
+											<responseBody>
+												<base>groupLimits[0]</base>
+											</responseBody>
+										</output>
+										<output>
+											<nameBase>mgmt-dns-update-user-group</nameBase>
+											<path>/1234/groups/high_limit_customer_group</path>
+											<statusCode>204</statusCode>
+											<requestType>PUT</requestType>
+										</output>
+										<output>
+											<nameBase>mgmt-dns-delete-user-group</nameBase>
+											<path>/1234/groups/rate_limit</path>
+											<statusCode>204</statusCode>
+											<requestType>DELETE</requestType>
+										</output>
+
+										mgmt-dns-get-jobs-status-no-details-request.json
+										mgmt-dns-get-jobs-status-no-details-request.xml
+										<output>
+											<nameBase>mgmt-dns-get-jobs-status-no-details</nameBase>
+											<path>/1234/status</path>
+											<statusCode>200</statusCode>
+										</output>
+
+									</outputs>
+								</source>
+								<source>
+									<data>${basedir}/src/main/resources/mgmt-limit-types-samples.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.management.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>mgmt-dns-list-limit-types</nameBase>
+											<path>/groups/types</path>
+											<statusCode>200</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<!-- END Samples Generation Config -->
+			<!--+++++++++++++++++++++++++++++++++ -->
+			<!--+++++++++++++++++++++++++++++++++ -->
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide/content/images</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/resources/images</directory>
+									<excludes>
+										<exclude>**/*.ai</exclude>
+										<exclude>**/*.svg</exclude>
+									</excludes>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-auth-samples</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/samples</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/resources/samples</directory>
+									<includes>
+										<include>**/*.xml</include>
+										<include>**/*.json</include>
+									</includes>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+			  <groupId>com.rackspace.cloud.api</groupId>
+			  <artifactId>clouddocs-maven-plugin</artifactId>
+			  <version>1.5.0-SNAPSHOT</version>
+			  <executions>
+			    <execution>
+			      <id>g2-war</id>
+			      <goals>
+				<goal>generate-xhtml</goal>
+			      </goals>
+			      <phase>generate-sources</phase>
+			      <configuration>
+				<pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
+				<enableDisqus>1</enableDisqus>
+				<includes>cdns-devguide.xml</includes>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content</canonicalUrlBase>
+			      </configuration>
+			    </execution>
+			    <execution>
+			      <id>g3-war</id>
+			      <goals>
+				<goal>generate-xhtml</goal>
+			      </goals>
+			      <phase>generate-sources</phase>
+			      <configuration>
+				<enableDisqus>1</enableDisqus>
+				<includes>cdns-tutorial.xml</includes>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<profileCondition>war</profileCondition>				
+				<chunkSectionDepth>0</chunkSectionDepth>
+				<preProcess>
+				  <copy todir="target/docbkx/xhtml/cdns-tutorial/images">
+				    <fileset dir="src/main/resources/images" includes="**/*.png"/>
+				  </copy>
+				</preProcess>
+			      </configuration>
+			    </execution>
+			  </executions>
+			  <configuration>
+			    <xincludeSupported>true</xincludeSupported>
+			    <sourceDirectory>src/main/resources</sourceDirectory>
+			    <highlightSource>false</highlightSource>
+			    <sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
+			    <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+			    <socialIcons>1</socialIcons>
+			  </configuration>
+			</plugin>
+			<plugin>
+				<!-- this is not needed for the documentation, but sure helps when importing 
+					this project to eclipse! -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<preparationGoals>clean install</preparationGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<generateProjectInfo>false</generateProjectInfo>
+					<generateReports>false</generateReports>
+					<inputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide</inputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+		</extensions>
+	</build>
+
+
+	<scm>
+		<connection>scm:git:ssh://git@github.rackspace.com/cloud-dns/dns-docs.git</connection>
+	</scm>
+
+	<url>http://site.mosso.com/${project.groupId}/${artifactId}/${project.version}/</url>
+
+	<distributionManagement>
+		<site>
+			<id>mosso-sites</id>
+			<url>dav:http://site.mosso.com/webdav/${project.groupId}/${artifactId}/${project.version}/</url>
+		</site>
+		<snapshotRepository>
+			<id>rackspacecloud-snapshots</id>
+			<name>Internal RC Snapshot Maven Repo</name>
+			<url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+
+		<repository>
+			<id>rackspacecloud-releases</id>
+			<name>Internal RC Releases Maven Repo</name>
+			<url>http://cimaster-n01.cloudplatform.rackspace.net:8081/m2/content/repositories/releases/</url>
+		</repository>
+	</distributionManagement>
+
+</project>
