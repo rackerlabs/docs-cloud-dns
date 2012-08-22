@@ -29,10 +29,10 @@ Server: Jetty(7.3.1.v20110307)
             "emailAddress": "sample@rackspace.com",
             "nameservers": [
               {
-                "name": "ns.rackspace.com"
+                "name": "dns1.stabletransit.com"
               },
               {
-                "name": "ns2.rackspace.com"
+                "name": "dns2.stabletransit.com"
               }
             ],
             "created": "2012-03-15T18:08:16.000+0000"
@@ -47,10 +47,10 @@ Server: Jetty(7.3.1.v20110307)
             "emailAddress": "sample@rackspace.com",
             "nameservers": [
               {
-                "name": "ns.rackspace.com"
+                "name": "dns1.stabletransit.com"
               },
               {
-                "name": "ns2.rackspace.com"
+                "name": "dns2.stabletransit.com"
               }
             ],
             "created": "2012-03-15T18:08:16.000+0000"
@@ -62,10 +62,10 @@ Server: Jetty(7.3.1.v20110307)
       "emailAddress": "sample@rackspace.com",
       "nameservers": [
         {
-          "name": "ns.rackspace.com"
+          "name": "dns1.stabletransit.com"
         },
         {
-          "name": "ns2.rackspace.com"
+          "name": "dns2.stabletransit.com"
         }
       ],
       "created": "2012-03-15T18:08:15.000+0000"
