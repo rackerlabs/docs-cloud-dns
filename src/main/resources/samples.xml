@@ -4,8 +4,8 @@
     <domain id="2725233" accountId="1234" name="example.com" updated="2011-06-24T01:23:15Z" created="2011-06-24T01:12:51Z"
         comment="Optional domain comment..." ttl="3600" emailAddress="sample@rackspace.com">
         <nameservers>
-            <nameserver name="ns.rackspace.com" />
-            <nameserver name="ns2.rackspace.com" />
+            <nameserver name="dns1.stabletransit.com" />
+            <nameserver name="dns2.stabletransit.com" />
         </nameservers>
         <recordsList totalEntries="6">
             <record id="A-6817754" type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"
@@ -41,7 +41,7 @@
 
     <domain id="2725339" accountId="1234" name="example.net" updated="2011-06-23T18:35:21Z" created="2011-06-23T18:35:20Z" contentType="BIND_9">
     		<contents>
-    		example.net. 3600 IN SOA ns.rackspace.com.
+    		example.net. 3600 IN SOA dns1.stabletransit.com.
 			sample@rackspace.com. 1308874739 3600 3600 3600 3600
 			example.net. 86400 IN A 110.11.12.16
 			example.net. 3600 IN MX 5 mail2.example.net.

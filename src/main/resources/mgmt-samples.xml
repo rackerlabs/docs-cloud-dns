@@ -5,8 +5,8 @@
 	<domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999999" name="rackspace.example.com"
 		updated="2011-04-11T06:52:38Z" created="2011-04-11T06:52:37Z" ttl="5600" emailAddress="hostmaster@example.com">
 		 <nameservers>
-            <nameserver name="ns.rackspace.com" />
-            <nameserver name="ns2.rackspace.com" />
+            <nameserver name="dns1.stabletransit.com" />
+            <nameserver name="dns2.stabletransit.com" />
         </nameservers>
         <recordsList totalEntries="2">
             <record xsi:type="ns3:record" id="A-6817754" type="A" name="ftp.rackspace.example.com" data="192.0.2.8" ttl="5771"

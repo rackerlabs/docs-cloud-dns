@@ -11,8 +11,8 @@ Server: Jetty(7.3.1.v20110307)
   name="example.com" ttl="3600" emailAddress="sample@rackspace.com" updated="2012-03-15T18:08:15Z" 
   created="2012-03-15T18:08:15Z" comment="Optional domain comment...">
   <nameservers>
-    <nameserver name="ns.rackspace.com"/>
-    <nameserver name="ns2.rackspace.com"/>
+    <nameserver name="dns1.stabletransit.com"/>
+    <nameserver name="dns2.stabletransit.com"/>
   </nameservers>
   <subdomains totalEntries="2">
     <domain id="3191339" name="sub1.example.com" updated="2012-03-15T18:08:16Z" created="2012-03-15T18:08:16Z" comment="1st sample subdomain"/>
