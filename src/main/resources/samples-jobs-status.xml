@@ -21,8 +21,8 @@
 		<response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="domains">
 			<domain id="2764458" accountId="440369" name="example.com" ttl="3642" emailAddress="hostmaster@example.com" updated="2011-08-29T15:49:53-05:00" created="2011-08-29T15:49:53-05:00">
 				<nameservers>
-					<nameserver name="ns.rackspace.com"/>
-					<nameserver name="ns2.rackspace.com"/>
+					<nameserver name="dns1.stabletransit.com"/>
+					<nameserver name="dns2.stabletransit.com"/>
 				</nameservers>
 			</domain>
 		</response>

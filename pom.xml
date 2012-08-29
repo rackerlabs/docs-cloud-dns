@@ -926,7 +926,7 @@
 										<!-- dns-import-domains-response.xml -->
 										<output>
 											<nameBase>dns-import-domains</nameBase>
-											<path>/{{domains[0].accountId}}/domains/import</path>
+											<path>/{{domains[1].accountId}}/domains/import</path>
 											<requestType>POST</requestType>
 											<statusCode>202</statusCode>
 											<filters>

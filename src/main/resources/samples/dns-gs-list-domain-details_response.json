@@ -34,10 +34,10 @@ HTTP/1.1200OKX-API-VERSION: 1.0.13Content-Type: application/jsonDate: Thu,
   "emailAddress": "sample@rackspace.com",
   "nameservers": [
     {
-      "name": "ns.rackspace.com"
+      "name": "dns1.stabletransit.com"
     },
     {
-      "name": "ns2.rackspace.com"
+      "name": "dns2.stabletransit.com"
     }
   ],
   "created": "2012-03-15T18:08:15.000+0000"
