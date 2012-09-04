@@ -58,7 +58,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2012-08-02</pubdate>
+        <pubdate>2012-09-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -70,6 +70,49 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2012-09-05</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for valid
+                                characters that can be used in comment
+                                attributes for domains and records
+                                (refer to <xref linkend="comments"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for CNAME record
+                                labels (refer to <xref
+                                   linkend="supported_record_types"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Adjusted definition of duplicate SRV
+                                records (refer to <xref
+                                   linkend="supported_record_types"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated information for the name
+                                attribute for Modify Records (refer to
+                                   <xref
+                                   linkend="Modify_Records-d1e5033"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added note about the Service Catalog
+                                Name for Next Generation Cloud Servers
+                                powered by OpenStack and the
+                                   <parameter>service-name</parameter>
+                                used in the RDNS API calls (refer to
+                                   <xref
+                                   linkend="ReverseDNS-123456999"/>
+                                for details).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2012-07-20</date>
                 <revdescription>
@@ -1825,6 +1868,21 @@
                                 </para>
                             </formalpara>
                         </td>
+                    </tr><tr>
+                        <td colspan="2">
+                            <note>
+                                <para>A CNAME record label (name) can
+                                   have underscores anywhere in any
+                                   subdomain labels, but not in the
+                                   main domain name of the domain to
+                                   which the record belongs. For
+                                   example, for the domain
+                                   example.com, a CNAME record
+                                   belonging to that domain can have
+                                   the label
+                                   <code>_ab_b_.cd_e.example.com</code></para>
+                            </note>
+                        </td>
                     </tr>
                     <tr>
                         <td>MX</td>
@@ -1914,7 +1972,115 @@
                             </formalpara>
                         </td>
                     </tr>
-                    
+                    <tr>
+                        <td colspan="2">
+                            <note>
+                                <title>Notes</title>
+                                <itemizedlist>
+                                   <listitem>
+                                   <para>The standard format of an SRV
+                                   record is: _service._proto.name TTL
+                                   class SRV priority weight port
+                                   target, for example:
+                                   _sip._tcp.example.com. 86400 IN SRV
+                                   10 60 5060
+                                   bigbox.example.com.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>The DNS API flags two SRV
+                                   records as duplicates if their
+                                   _service, _proto, name, priority,
+                                   and weight match, <emphasis
+                                   role="bold">and</emphasis> both
+                                   records are targeted to the same
+                                   server (host and port combination)
+                                   as well. So, for the domain
+                                   example.com, the DNS API will
+                                   accept the following SRV records
+                                   for the domain and will not flag
+                                   them as duplicates:</para>
+                                   <itemizedlist>
+                                   <listitem>
+                                   <para>_sip._tcp.example.com. 86400
+                                   IN SRV 20 0 5060
+                                   backupbox1.example.com.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>_sip._tcp.example.com. 86400
+                                   IN SRV 20 0 5061
+                                   backupbox1.example.com. </para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>_ftp._tcp.example.com. 86400
+                                   IN SRV 20 0 5062
+                                   backupbox2.example.com.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para> _sip._tcp.example.com. 86400
+                                   IN SRV 20 0 5061
+                                   backupbox2.example.com.</para>
+                                   </listitem>
+                                   </itemizedlist>
+                                   </listitem>
+                                </itemizedlist>
+                                <itemizedlist>
+                                   <listitem>
+                                   <para>The data attribute of an SRV
+                                   record specifies the
+                                   <emphasis>weight</emphasis>,
+                                   <emphasis>port</emphasis>, and
+                                   <emphasis>target</emphasis> of the
+                                   service represented by the record.
+                                   These values are space delimited.
+                                   The DNS API makes the following
+                                   assumptions when parsing the data
+                                   attribute of an SRV record:</para>
+                                   <itemizedlist>
+                                   <listitem>
+                                   <para>The values for the
+                                   <emphasis>weight</emphasis>,
+                                   <emphasis>port</emphasis> and
+                                   <emphasis>target</emphasis> are
+                                   specified in that order.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>If only one field is provided
+                                   in the data attribute, it is
+                                   assumed to be the
+                                   <emphasis>target</emphasis>.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>If two fields are provided in
+                                   the data attribute, it is assumed
+                                   they are the
+                                   <emphasis>port</emphasis> and
+                                   <emphasis>target</emphasis> (in
+                                   that order).</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>If all three fields are
+                                   provided, it is assumed they are
+                                   the <emphasis>weight</emphasis>,
+                                   <emphasis>port</emphasis>, and
+                                   <emphasis>target</emphasis> (in
+                                   that order).</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>If more than three fields are
+                                   provided, it is assumed that the
+                                   first three are the
+                                   <emphasis>weight</emphasis>,
+                                   <emphasis>port</emphasis>, and
+                                   <emphasis>target</emphasis> (in
+                                   that order), and the rest are
+                                   ignored.</para>
+                                   </listitem>
+                                   </itemizedlist>
+                                   </listitem>
+                                </itemizedlist>
+                            </note>
+                        </td>
+                    </tr>
                     <tr>
                         <td>TXT</td>
                         <td>Arbitrary text for a domain record</td>
@@ -3826,8 +3992,8 @@
                             <td colspan="1">priority</td>
                             <td colspan="3">Required for MX and SRV
                                 records, but forbidden for other
-                                record types. If specified, must be
-                                between 0 and 65535 (inclusive).</td>
+                                record types. If specified, must be an
+                                integer from 0 to 65535.</td>
                             <td colspan="1">For MX and SRV records
                                 only</td>
                         </tr>
@@ -4000,10 +4166,23 @@ images.www.example.com  A  127.0.0.5</programlisting>
                         </tr>
                         <tr>
                             <td colspan="1">name</td>
-                            <td colspan="3">Specifies the name for the
-                                domain or subdomain. Must be a valid
-                                domain name. Cannot be modified.</td>
-                            <td colspan="1">No</td>
+                            <td colspan="3">
+                                <para>For record types other than SRV
+                                   records, this specifies the name
+                                   for the domain or subdomain and
+                                   must be a valid domain name. The
+                                   name attribute cannot be
+                                   modified.</para>
+                                <para>For SRV records, this specifies
+                                   the entire service name, which is
+                                   made up of the service, protocol,
+                                   and domain name to which the record
+                                   belongs. The service and protocol
+                                   fields of the service name can be
+                                   modified but not the domain name
+                                   field.</para>
+                            </td>
+                            <td colspan="1">Yes</td>
                         </tr>
                         <tr>
                             <td colspan="1">data</td>
@@ -4016,8 +4195,8 @@ images.www.example.com  A  127.0.0.5</programlisting>
                             <td colspan="1">priority</td>
                             <td colspan="3">Can be included for MX and
                                 SRV records, but forbidden for other
-                                record types. If specified, must be
-                                between 0 and 65535 (inclusive).</td>
+                                record types. If specified, must be an
+                                integer from 0 to 65535.</td>
                             <td colspan="1">No</td>
                         </tr>
                         <tr>
@@ -4258,6 +4437,15 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     </tr>
                 </tbody>
             </informaltable>
+            <note>
+                <para>Although the Service Catalog Name for Next
+                    Generation Cloud Servers powered by OpenStack is
+                    "cloudServersOpenStack", the value that must be
+                    used for <parameter>service-name</parameter> in
+                    the RDNS API calls is "cloudServersOpenstack".
+                    Please refer to the List PTR Records Requests for
+                    examples.</para>
+            </note>
            <para>The examples in the following sections illustrate
                 using Cloud DNS to manage PTR records for Next
                 Generation Cloud Servers powered by OpenStack. Using

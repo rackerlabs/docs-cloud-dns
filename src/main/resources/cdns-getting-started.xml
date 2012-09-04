@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE article [
+<!DOCTYPE book [
         <!-- Some useful entities borrowed from HTML -->
         <!ENTITY ndash  "&#x2013;">
         <!ENTITY mdash  "&#x2014;">
@@ -25,32 +25,45 @@
         <!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
 ]>
 
-<article version="5.0"
+<book version="5.0"
          xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns:xi="http://www.w3.org/2001/XInclude"
          xmlns:svg="http://www.w3.org/2000/svg"
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
-         xml:id="cdns-getting-started"
-         class="specification">
+         xml:id="cdns-getting-started">
+    
+    <?rax title.font.size="35px" subtitle.font.size="20px"?>
+    <title>Rackspace Cloud DNS Getting Started Guide</title>
+    <titleabbrev>Rackspace Cloud DNS and Servers Getting Started Guide</titleabbrev>
 
     <info>
-        <title>Getting Started with Rackspace Cloud DNS and
-            Servers</title>
+        
         <copyright>
             <year>2011</year>
             <year>2012</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
-        <pubdate>2012-08-02</pubdate>
+        <productname>Rackspace Cloud DNS</productname>
+        <pubdate>2012-09-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2012-09-05</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added cover page.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2012-08-02</date>
                 <revdescription>
@@ -106,14 +119,14 @@
             </revision>           
         </revhistory>
     </info>
-    <section xml:id="DB_Doc_Change_History">
+    <chapter xml:id="DB_Doc_Change_History">
         <title>Document Change History</title>
         <para>This version of the Getting Started replaces and
             obsoletes all previous versions. The most recent changes
             are described in the table below:</para>
         <?rax revhistory?>
-    </section>
-    <section xml:id="DB_Overview">
+    </chapter>
+    <chapter xml:id="DB_Overview">
         <title>Overview</title>
         <para>This guide provides step-by-step instructions for how to
             properly enter the necessary URLs, using cURL, in order to
@@ -140,8 +153,8 @@
                     </listitem>
                 </itemizedlist></para>
         </section>
-    </section>
-    <section xml:id="Create_Cloud_Server">
+    </chapter>
+    <chapter xml:id="Create_Cloud_Server">
         <title>Create a New Cloud Server</title>
         <para>This guide requires two Cloud Servers for setting up DNS
             using the Cloud DNS API. If you will be using two
@@ -211,8 +224,8 @@
                     </itemizedlist></para>
             </step>
         </procedure>
-    </section>
-    <section xml:id="DB_Sending_API_Requests">
+    </chapter>
+    <chapter xml:id="DB_Sending_API_Requests">
         <title>Send Requests to the API</title>
         <para>You have several options for sending requests through an
             API: </para>
@@ -374,8 +387,8 @@
                 long line, removing all the backslash line
                 continuation characters.</para>
         </section>
-    </section>
-    <section xml:id="Generating_Auth_Token">
+    </chapter>
+    <chapter xml:id="Generating_Auth_Token">
         <title>Generate an Authentication Token</title>
         <para>You need to generate a token whether you use cURL or a
             ReST client.</para>
@@ -564,8 +577,8 @@
             &DELETE;, &PUT;, and &POST; requests for the Cloud DNS
             API.</para>
         
-    </section>
-    <section xml:id="Service_Access_Endpoints-d1e753">
+    </chapter>
+    <chapter xml:id="Service_Access_Endpoints-d1e753">
         <title>Service Access/Endpoints</title>
         <para>The DNS service is a regionalized service. DNS is
             therefore responsible for appropriate replication,
@@ -573,7 +586,7 @@
             regional boundaries to other DNS servers.</para>
         <para>The information for service endpoints is summarized in
             the table below.</para>
-        <?rax-fo keep-with-next?>
+        
         <para>
             <table rules="all">
                 <caption>Regionalized Service Endpoints</caption>
@@ -621,8 +634,8 @@
                 <xref linkend="Create_Domain"/>. Note that the
                 <code>v1.0</code> component in the URL indicates that
             you are using version 1.0 of the Cloud DNS API.</para>
-    </section>
-    <section xml:id="Create_Domain">
+    </chapter>
+    <chapter xml:id="Create_Domain">
         <title>Create a Domain</title>
         <para> The Create Domain API call provisions one or more new
             DNS domains under the account specified, based on the
@@ -929,9 +942,9 @@ com" comment="1st sample subdomain"/>
             wherever you see the field <emphasis role="bold"
                 >domain_id</emphasis> in the examples in this
             guide.</para>
-    </section>
+    </chapter>
     
-    <section xml:id="List_Domain_Details">
+    <chapter xml:id="List_Domain_Details">
             <title>List Domain Details</title>
             <para>This operation provides detailed output for a
             specific domain configured and associated with your
@@ -1078,8 +1091,8 @@ com" comment="1st sample subdomain"/>
                 Response: JSON</title>
             <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
-        </section>
-    <section xml:id="Add_Records">
+        </chapter>
+    <chapter xml:id="Add_Records">
         <title>Add Records</title>
         <para>In this section, you will add records for your new
             domain as follows:</para>
@@ -1273,5 +1286,5 @@ w3.org/2005/Atom">
             instructions.</para>
         <para>This concludes <citetitle>Getting Started</citetitle>.
             Thank you for using Rackspace Cloud products.</para>
-    </section>
-</article>
+    </chapter>
+</book>

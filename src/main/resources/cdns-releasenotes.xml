@@ -23,7 +23,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-	<pubdate>2012-07-20</pubdate>
+	<pubdate>2012-09-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -34,6 +34,12 @@
 				using the Rackspace Cloud DNS. </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2012-09-05</date>
+				<revdescription>
+					<para>Updated for v1.0.17.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2012-07-20</date>
 				<revdescription>
@@ -85,6 +91,72 @@
     		in the table below:</para>
     	<?rax revhistory?>
     </chapter>
+	<chapter xml:id="cdnsv1.0.17">
+		<title>v1.0.17, September 5, 2012</title>
+		<para>This version contains bug fixes for Cloud DNS.</para>
+		<itemizedlist>
+			<title>Bug Fixes</title>
+			<listitem>
+				<para>SRV records can now be created with weight=0 and/or
+					priority=0. (Valid values are 0 to 65535.)</para>
+			</listitem>
+			<listitem>
+				<para>Adjusted definition of duplicate SRV records. See the SRV
+					information at <link
+						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/supported_record_types.html"
+						>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/supported_record_types.html</link>
+					for details.</para>
+			</listitem>
+			<listitem>
+				<para>CNAME record labels now accept underscores. See
+					the CNAME information at <link
+						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/supported_record_types.html"
+						>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/supported_record_types.html</link>
+					for details.</para>
+			</listitem>
+			<listitem>
+				<para>Domain details now show the correct default name servers (to
+					match what is shown in the data field of the NS
+					records of the domain): dns1.stabletransit.com and
+					dns2.stabletransit.com.</para>
+			</listitem>
+			<listitem>
+				<para>Fixed async call return status to be returned as specified
+					in Table 3.4 "Attributes for Asynchronous
+					Responses" at <link
+						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
+						>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>SPF and DKIM TXT records are now exported and formatted
+					correctly.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>DNS Developer Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
+						>Product Feedback Forum</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://www.rackspace.com/cloud/blog/2011/07/11/using-rackspace-dnsaas-with-curl-part-1/"
+						>Cloud DNS Tutorial</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="https://github.com/rackspace/python-clouddns"
+						>Open Source Python Library for Cloud
+						DNS</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="cdnsv1.0.16" security="internal">
 		<title>v1.0.16, Maintenance, July 20, 2012</title>
 		<para>This version contains bug fixes for Cloud DNS.</para>
