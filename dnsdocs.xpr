@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="13.1">
+<project version="13.2">
     <meta>
         <filters directoryPatterns="" filePatterns="*.fo" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="13.1" xml:space="preserve">
+            <serialized version="13.2" xml:space="preserve">
                 <map>
                     <entry>
                         <String>document.type.only.local.dtds</String>
@@ -26,7 +26,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>wadl/wadl.framework/WADL</String>
+                                    <String>wadl-tools/wadl.framework/WADL</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>true</Boolean>
