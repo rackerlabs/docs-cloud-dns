@@ -58,7 +58,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2012-09-06</pubdate>
+        <pubdate>2012-09-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -70,6 +70,24 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2012-09-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated documentation for Reverse
+                                DNS and examples so that PTR endpoints
+                                for Next Generation Cloud Servers
+                                powered by OpenStack now respect the
+                                appropriate service type
+                                (cloudServersOpenStack) from the
+                                service catalog. Refer to <xref
+                                   linkend="ReverseDNS-123456999"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2012-09-06</date>
                 <revdescription>
@@ -676,7 +694,7 @@
                             services that perform similar functions,
                             whatever those services might be named. In
                             this example, the services named
-                            cloudServers and cloudServersOpenstack are
+                            cloudServers and cloudServersOpenStack are
                             both identified as
                                 <code>type="compute"</code>,
                             identifying them as compute services even
@@ -4442,15 +4460,6 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     </tr>
                 </tbody>
             </informaltable>
-            <note>
-                <para>Although the Service Catalog Name for Next
-                    Generation Cloud Servers powered by OpenStack is
-                    "cloudServersOpenStack", the value that must be
-                    used for <parameter>service-name</parameter> in
-                    the RDNS API calls is "cloudServersOpenstack".
-                    Please refer to the List PTR Records Requests for
-                    examples.</para>
-            </note>
            <para>The examples in the following sections illustrate
                 using Cloud DNS to manage PTR records for Next
                 Generation Cloud Servers powered by OpenStack. Using

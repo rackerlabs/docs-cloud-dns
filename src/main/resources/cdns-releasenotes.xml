@@ -108,7 +108,7 @@
 		<itemizedlist>
 			<title>Bug Fixes</title>
 			<listitem>
-				<para><link
+				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect%3A326264#!/sGZ/assetstream/baseAssetStream/Defect:326264"
 						>D-07599: </link>Fixed issue where some
 					customers do not get back domains when the request
@@ -123,10 +123,11 @@
 					information.</para>
 			</listitem>
 			<listitem>
-				<para>PTR endpoints for Nova Cloud Servers now respect the
-					appropriate service type (cloudServersOpenStack)
-					from the service catalog. Updated documentation
-					for the Reverse DNS API examples. Refer to <link
+				<para>PTR endpoints for Next Generation Cloud Servers™ powered by
+					OpenStack™ now respect the appropriate service
+					type (cloudServersOpenStack) from the service
+					catalog. Updated documentation for Reverse DNS API
+					examples. Refer to <link
 						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/ReverseDNS-123456999.html"
 						>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/ReverseDNS-123456999.html</link>
 					and its subsections for details.</para>
