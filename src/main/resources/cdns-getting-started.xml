@@ -47,13 +47,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2012-09-06</pubdate>
+        <pubdate>2012-10-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2012-10-09</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for cURL
+                                command-line options (see <xref
+                                   linkend="DB_using-curl-cli"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2012-09-06</date>
                 <revdescription>
@@ -294,10 +307,14 @@
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term><option>-X PUT</option></term>
+                    <term><option>-X</option></term>
                     <listitem>
-                        <para>Sends the specified data in a put
-                            request to the HTTP server.</para>
+                        <para>Specifies the request method to use when
+                            communicating with the HTTP server. The
+                            specified request is used instead of the
+                            default method, which is GET. For example,
+                                <code>-X PUT</code> specifies to use
+                            the PUT request method.</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
