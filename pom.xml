@@ -4,7 +4,7 @@
 
 	<groupId>com.rackspace.cloud.dns.api</groupId>
 	<artifactId>dns-docs</artifactId>
-	<version>${com.rackspace.cloud.dns.api.mgmt.version}</version>
+	<version>${com.rackspace.cloud.dns.api.mgmt.version}-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Cloud DNS API Docs</name>
 
@@ -1414,97 +1414,59 @@
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>1.5.0</version>
+				<version>1.6.0</version>
 				<executions>
 					<execution>
-						<id>g1</id>
+						<id>cdns-mgmt-devguide</id>
 						<goals>
-							<goal>generate-pdf</goal>
 							<goal>generate-webhelp</goal>
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
-							<pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
 							<includes>cdns-mgmt-devguide.xml</includes>
 							<enableDisqus>intranet</enableDisqus>
 							<enableGoogleAnalytics>0</enableGoogleAnalytics>
+							<useLatestSuffixInPdfUrl>0</useLatestSuffixInPdfUrl>
 							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
 						</configuration>
 					</execution>
 					<execution>
-						<id>g1.1</id>
+						<id>cdns-releasenotes-internal</id>
 						<goals>
 							<goal>generate-webhelp</goal>
 						</goals>
 						<phase>initialize</phase>
 						<configuration>
-							<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
-							<includes>cdns-releasenotes.xml</includes>
-							<enableDisqus>1</enableDisqus>
-							<enableGoogleAnalytics>1</enableGoogleAnalytics>
-							<chapterAutolabel>0</chapterAutolabel>
-							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
-							<postProcess>
-								<move todir="target/docbkx/webhelp/cdns-releasenotes-external">
-									<fileset dir="target/docbkx/webhelp/cdns-releasenotes" />
-								</move>
-							</postProcess>
-						</configuration>
-					</execution>
-					<execution>
-						<id>g1.2</id>
-						<goals>
-							<goal>generate-pdf</goal>
-						</goals>
-						<phase>initialize</phase>
-						<configuration>
-							<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
-							<includes>cdns-releasenotes.xml</includes>
-							<enableDisqus>1</enableDisqus>
-							<enableGoogleAnalytics>1</enableGoogleAnalytics>
-							<chapterAutolabel>0</chapterAutolabel>
-							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
-							<postProcess>
-								<move file="target/docbkx/pdf/cdns-releasenotes.pdf"
-									tofile="target/docbkx/pdf/cdns-releasenotes-external.pdf" />
-								<move file="target/docbkx/pdf/cdns-releasenotes.fo"
-									tofile="target/docbkx/pdf/cdns-releasenotes-external.fo" />
-							</postProcess>
-						</configuration>
-					</execution>
-
-					<execution>
-						<id>g1.3</id>
-						<goals>
-							<goal>generate-pdf</goal>
-							<goal>generate-webhelp</goal>
-						</goals>
-						<phase>initialize</phase>
-						<configuration>
-							<pdfUrl>../../../cdns-releasenotes-latest.pdf</pdfUrl>
 							<includes>cdns-releasenotes.xml</includes>
 							<enableDisqus>intranet</enableDisqus>
 							<enableGoogleAnalytics>1</enableGoogleAnalytics>
 							<chapterAutolabel>0</chapterAutolabel>
 							<security>internal</security>
+							<useLatestSuffixInPdfUrl>0</useLatestSuffixInPdfUrl>
 							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
-							<postProcess>
-								<move file="target/docbkx/pdf/cdns-releasenotes.pdf" failonerror="false" 
-									tofile="target/docbkx/pdf/cdns-releasenotes-internal.pdf" />
-								<move file="target/docbkx/pdf/cdns-releasenotes.fo" failonerror="false" 
-									tofile="target/docbkx/pdf/cdns-releasenotes-internal.fo" />
-							</postProcess>
 						</configuration>
 					</execution>
 					<execution>
-						<id>g2</id>
+						<id>cdns-releasenotes</id>
 						<goals>
-							<goal>generate-pdf</goal>
+							<goal>generate-webhelp</goal>
+						</goals>
+						<phase>initialize</phase>
+						<configuration>
+							<includes>cdns-releasenotes.xml</includes>
+							<enableDisqus>1</enableDisqus>
+							<enableGoogleAnalytics>1</enableGoogleAnalytics>
+							<chapterAutolabel>0</chapterAutolabel>
+							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
+						</configuration>
+					</execution>
+					<execution>
+						<id>cdns-devguide</id>
+						<goals>
 							<goal>generate-webhelp</goal>
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
-							<pdfUrl>../../../cdns-devguide-latest.pdf</pdfUrl>
 							<enableDisqus>1</enableDisqus>
 							<includes>cdns-devguide.xml</includes>
 							<enableGoogleAnalytics>1</enableGoogleAnalytics>
@@ -1513,29 +1475,21 @@
 					</execution>
 					
 					<execution>
-						<id>g3</id>
+						<id>cdns-getting-started</id>
 						<goals>
-							<goal>generate-pdf</goal>
 							<goal>generate-webhelp</goal>
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
-							<pdfUrl>../../../cdns-getting-started-latest.pdf</pdfUrl>
 							<enableDisqus>1</enableDisqus>
 							<includes>cdns-getting-started.xml</includes>
 							<enableGoogleAnalytics>1</enableGoogleAnalytics>
 							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content</canonicalUrlBase>
-							<postProcess>
-								<copy todir="target/docbkx/webhelp/cdns-getting-started/content/images">
-									<fileset dir="src/main/resources/images" includes="**/*.png"/>
-								</copy>
-							</postProcess>
 						</configuration>
 					</execution>
 					
 				</executions>
 				<configuration>
-					<xincludeSupported>true</xincludeSupported>
 					<sourceDirectory>src/main/resources</sourceDirectory>
 					<highlightSource>false</highlightSource>
 					<sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
@@ -1543,6 +1497,27 @@
 					<socialIcons>1</socialIcons>
 				</configuration>
 			</plugin>
+
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-assembly-plugin</artifactId>
+			  <version>2.3</version>
+			  <configuration>
+			    <descriptors>
+			      <descriptor>includewars.xml</descriptor>
+			    </descriptors>
+			  </configuration>
+			  <executions>
+			    <execution>
+			      <id>assembly</id>
+			      <goals>
+				<goal>single</goal>
+			      </goals>
+			      <phase>package</phase>
+			    </execution>
+			  </executions>
+			</plugin>
+
 			<plugin>
 				<!-- this is not needed for the documentation, but sure helps when importing 
 					this project to eclipse! -->
@@ -1569,7 +1544,7 @@
 				<configuration>
 					<generateProjectInfo>false</generateProjectInfo>
 					<generateReports>false</generateReports>
-					<inputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide</inputDirectory>
+					<inputDirectory>${project.build.directory}/docbkx/webhelp/cdns-devguide-external</inputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
