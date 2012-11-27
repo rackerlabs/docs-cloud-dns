@@ -1427,6 +1427,7 @@
 							<pdfUrl>../../../cdns-mgmt-devguide-latest.pdf</pdfUrl>
 							<includes>cdns-mgmt-devguide.xml</includes>
 							<enableDisqus>intranet</enableDisqus>
+							<security>internal</security>
 							<enableGoogleAnalytics>0</enableGoogleAnalytics>
 							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
 						</configuration>
