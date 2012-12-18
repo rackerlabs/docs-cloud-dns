@@ -58,7 +58,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2012-11-08</pubdate>
+        <pubdate>2012-12-18</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -70,6 +70,24 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2012-12-18</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated status information to
+                                include INITIALIZED (refer to <xref
+                                   linkend="sync_asynch_responses"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added filter criteria for <xref
+                                   linkend="search_domains_w_filters"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2012-11-08</date>
                 <revdescription>
@@ -1104,8 +1122,16 @@
                     </tr>
                     <tr>
                         <td colspan="1">status</td>
-                        <td colspan="4">An indicator of the request
-                            status: RUNNING, COMPLETED, or ERROR.</td>
+                        <td colspan="4">
+                            <para>An indicator of the request status:
+                                INITIALIZED, RUNNING, COMPLETED, or
+                                ERROR.</para>
+                            <note><para>INITIALIZED is the status that
+                                immediately precedes RUNNING and is
+                                the first possible state of a job. It
+                                indicates acceptance of the
+                                job.</para></note>
+                        </td>
                         <td colspan="1">Basic and Detail</td>
                     </tr>
                     <tr>
@@ -2779,6 +2805,17 @@
                         <?sbr?><code>?&#xfeff;name=hoola.com</code> matches <code>hoola.com</code> and
                         similar names such as <code>main.hoola.com</code> and
                             <code>sub.hoola.com</code>. </para>
+                    <para>Filter criteria may consist of:<itemizedlist spacing="compact">
+                            <listitem>
+                                <para>Any letter (A-Za-z)</para></listitem>
+                        <listitem><para>Numbers (0-9)</para></listitem>
+                        <listitem><para>Hyphen ("-")</para></listitem>
+                        <listitem><para>1 to 63 characters</para></listitem>
+                        </itemizedlist></para>
+                    <para>Filter criteria should not include any of
+                        the following characters: ' + , | ! " £ $ %
+                        &amp; / ( ) = ? ^ * ç ° § ; : _ > ] [ @ à, é,
+                        ò</para>
                     <note>
                         <para>This call returns by default a maximum of 100 items at a time if no
                                 <code>limit</code> is specified. To navigate the collection
@@ -3274,10 +3311,16 @@
                     <programlisting language="json"><xi:include href="../../../target/samples/dns-create-domains_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <note>
-                    <para> The following examples show the <emphasis>final</emphasis> successful
-                        response for the asynchronous call. Refer to <xref
-                            linkend="sync_asynch_responses"/> for a description of how the
-                        asynchronous call works.</para>
+                    <para> The following examples show the
+                            <emphasis>final</emphasis> successful
+                        response for the asynchronous call. Refer to
+                            <xref linkend="sync_asynch_responses"/>
+                        for a description of how the asynchronous call
+                        works. Also see <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html"
+                            >http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html</link>
+                        for a detailed example of processing the
+                        Create Domain call.</para>
                 </note>
                 <example xml:id="create_domains_resp">
                     <title>Create Domain(s) Response: XML</title>

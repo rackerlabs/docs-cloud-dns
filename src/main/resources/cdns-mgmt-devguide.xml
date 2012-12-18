@@ -51,7 +51,7 @@
 		</copyright>
 		<releaseinfo>API v1.0</releaseinfo>
 		<productname>Cloud DNS</productname>
-		<pubdate>2011-06-28</pubdate>
+		<pubdate>2012-12-18</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -64,6 +64,18 @@
 				Interface ( <abbrev>API</abbrev> ). </para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2012-12-18</date>
+				<revdescription>
+					<itemizedlist spacing="compact">
+						<listitem>
+							<para>Removed extra spaces at end of sentences in <xref
+								linkend="Additional_Resources-d1e532"
+								/>.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2012-06-28</date>
 				<revdescription>
@@ -209,36 +221,24 @@
 		</section>
 		<section xml:id="Additional_Resources-d1e532">
 			<title>Additional Resources</title>
-			<para>
-				You can download the most current versions of other API-related
-				documents from
-				<link xlink:href="http://docs.rackspace.com/api/">http://docs.rackspace.com/api/
-				</link>
-				.
-			</para>
-			<para>
-				For information about Rackspace Cloud products, refer to
-				<link xlink:href="http://www.rackspace.com/cloud/">http://www.rackspace.com/cloud
-				</link>
-				. This site also offers links to
-				Rackspace's official support
-				channels, including knowledge base articles,
-				forums,
-				phone, chat, and
-				email.
-			</para>
-			<para>
-				You can also follow Rackspace updates and announcements via twitter
-				at
-				<link xlink:href="http://www.twitter.com/rackspace">http://www.twitter.com/rackspace
-				</link>
-				.
-			</para>
+			<para> You can download the most current versions of other
+				API-related documents from <link
+					xlink:href="http://docs.rackspace.com/api/"
+					>http://docs.rackspace.com/api/</link>.</para>
+			<para> For information about Rackspace Cloud products, refer to
+					<link xlink:href="http://www.rackspace.com/cloud/"
+					>http://www.rackspace.com/cloud</link>. This site
+				also offers links to Rackspace's official support
+				channels, including knowledge base articles, forums,
+				phone, chat, and email. </para>
+			<para> You can also follow Rackspace updates and announcements via
+				twitter at <link
+					xlink:href="http://www.twitter.com/rackspace"
+					>http://www.twitter.com/rackspace</link>.</para>
 			<para>
 				This API uses standard HTTP 1.1 response codes as documented at
 				<link xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">
-					http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>
-				.
+					http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>.
 			</para>
 		</section>
 	</chapter>
