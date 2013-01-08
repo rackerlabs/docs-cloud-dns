@@ -4,7 +4,7 @@
 
 	<groupId>com.rackspace.cloud.dns.api</groupId>
 	<artifactId>dns-docs</artifactId>
-	<version>${com.rackspace.cloud.dns.api.mgmt.version}-SNAPSHOT</version>
+	<version>1.0.15-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Cloud DNS API Docs</name>
 
@@ -1496,6 +1496,7 @@
 					<sectionAutolabelMaxDepth>10</sectionAutolabelMaxDepth>
 					<feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
 					<socialIcons>1</socialIcons>
+					<webhelpWar>1</webhelpWar>
 				</configuration>
 			</plugin>
 
