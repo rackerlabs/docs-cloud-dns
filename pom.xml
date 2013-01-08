@@ -4,7 +4,7 @@
 
 	<groupId>com.rackspace.cloud.dns.api</groupId>
 	<artifactId>dns-docs</artifactId>
-	<version>1.0.16</version>
+	<version>1.0.17-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Cloud DNS API Docs</name>
 
