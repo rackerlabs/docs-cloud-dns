@@ -17,19 +17,6 @@
         <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
         <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
 
-        <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-                 <imageobject>
-                  <imagedata fileref="img/Check_mark_23x20_02.svg"
-                             format="SVG" scale="60"/>
-                </imageobject>
-              </inlinemediaobject>'>
-
-        <!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-                 <imageobject>
-                  <imagedata fileref="img/Arrow_east.svg"
-                             format="SVG" scale="60"/>
-                </imageobject>
-              </inlinemediaobject>'>
 ]>
 <book xmlns="http://docbook.org/ns/docbook"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -314,6 +301,7 @@
         </revhistory>
 	<raxm:metadata
 	    xmlns:raxm="http://docs.rackspace.com/api/metadata">
+	  <raxm:displayname>API Developer Guide</raxm:displayname>
 	  <raxm:product version="v1.0">cdns</raxm:product>
 	  <raxm:priority>2</raxm:priority>
 	</raxm:metadata>
@@ -338,12 +326,9 @@
         <para>The following figure shows an overview of Cloud DNS Infrastructure:
 	<informalfigure>
 	  <mediaobject>
-	    <imageobject role="fo">
+	    <imageobject>
 	      <imagedata fileref="images/Cloud_DNS_Infographic-1.svg" contentwidth="6in"/>
 	    </imageobject>
-	    <imageobject role="html">
-	      <imagedata fileref="images/Cloud_DNS_Infographic-1.png"/>
-	    </imageobject>	    
 	  </mediaobject>
 	</informalfigure>
 	</para>
