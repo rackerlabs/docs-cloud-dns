@@ -142,26 +142,23 @@
 			</listitem>
 			<listitem>
 				<para><link security="internal"
-					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:525906"
-						>B-40650: </link> Also update dns-auth-filter
-					- the DNS API extension to the Repose Client Auth
-					filter. This is just so it will catch up with the
-					latest dependencies of the DNS API projects it
-					uses.</para>
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:525906"
+						>B-40650: </link> Updated the DNS API
+					extension to use the latest Repose Client
+					dns-auth-filter.</para>
 			</listitem>
 			<listitem>
 				<para><link security="internal"
-					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A459229"
-						>B-36701: </link> Review Doc Auto Publish
-					modifications. Merge changes by Doc group into
-					master. This is to enable Auto Publishing of DNS
-					API docs by the Documentation Team.</para>
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A459229"
+						>B-36701: </link> Merged with Doc Auto Publish
+					modifications to enable Auto Publishing of DNS API
+					docs by the Documentation Team.</para>
 			</listitem>
 			<listitem>
 				<para><link security="internal"
-					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:449642"
-						>B-36294: </link> Update project
-					generate-samples-maven-plugin to use latest
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:449642"
+						>B-36294: </link> Updated the project
+					generate-samples-maven-plugin to use the latest
 					dependencies.</para>
 			</listitem>
 		</itemizedlist>
