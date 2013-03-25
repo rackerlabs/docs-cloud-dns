@@ -510,6 +510,7 @@
 											</filters>
 											<responseBody>
 												<filters>
+													<filter>domains[0].ttl</filter>
 													<filter>domains[5]</filter>
 													<filter>links[4]</filter>
 													<filter>links[3]</filter>
