@@ -1415,7 +1415,7 @@
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>1.6.0</version>
+				<version>1.7.0</version>
 				<executions>
 					<execution>
 						<id>cdns-mgmt-devguide</id>
@@ -1445,7 +1445,7 @@
 							<chapterAutolabel>0</chapterAutolabel>
 							<security>internal</security>
 							<useLatestSuffixInPdfUrl>0</useLatestSuffixInPdfUrl>
-							<canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
+							<canonicalUrlBase>http://docs-internal.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
 						</configuration>
 					</execution>
 					<execution>
@@ -1459,7 +1459,7 @@
 							<enableDisqus>1</enableDisqus>
 							<enableGoogleAnalytics>1</enableGoogleAnalytics>
 							<chapterAutolabel>0</chapterAutolabel>
-							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenote/content</canonicalUrlBase>
+							<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
 						</configuration>
 					</execution>
 					<execution>
