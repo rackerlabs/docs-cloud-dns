@@ -200,9 +200,9 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="https://github.com/rackspace/python-clouddns"
-						>Open Source Python Library for Cloud
-						DNS</link></para>
+					xlink:href="http://developer.rackspace.com/"
+						>Use Cloud
+						DNS with an SDK</link></para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
