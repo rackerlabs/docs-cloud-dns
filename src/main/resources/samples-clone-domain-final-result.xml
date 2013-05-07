@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:domain xmlns:ns3="http://www.w3.org/2005/Atom"
+	xmlns:ns2="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	id="3586213" accountId="1234" name="clone1.com" ttl="7788"
+	emailAddress="owner@clone1.com" updated="2013-05-06T12:17:35-05:00"
+	created="2013-05-06T12:17:31-05:00"
+	comment="clone1.com is a template domain for cloning others. clone1.com has subdomains - sub1.clone1.com, sub2.clone1.com, sub3.clone1.com">
+	<ns2:nameservers>
+		<ns2:nameserver name="dns1.stabletransit.com" />
+		<ns2:nameserver name="dns2.stabletransit.com" />
+	</ns2:nameservers>
+	<ns2:recordsList totalEntries="7">
+		<ns2:record id="A-9516805" type="A" name="ftp.clone1.com"
+			data="192.0.2.8" ttl="5771" updated="2013-05-06T12:17:32-05:00"
+			created="2013-05-06T12:17:32-05:00" />
+		<ns2:record id="A-9516806" type="A" name="clone1.com" data="192.0.2.17"
+			ttl="86400" updated="2013-05-06T12:17:33-05:00" created="2013-05-06T12:17:33-05:00" />
+		<ns2:record id="NS-8504413" type="NS" name="clone1.com"
+			data="dns1.stabletransit.com" ttl="7788" updated="2013-05-06T12:17:31-05:00"
+			created="2013-05-06T12:17:31-05:00" />
+		<ns2:record id="NS-8504414" type="NS" name="clone1.com"
+			data="dns2.stabletransit.com" ttl="7788" updated="2013-05-06T12:17:31-05:00"
+			created="2013-05-06T12:17:31-05:00" />
+		<ns2:record id="NS-8504415" type="NS" name="clone1.com"
+			data="server1.clone1.com" ttl="3600" updated="2013-05-06T12:17:34-05:00"
+			created="2013-05-06T12:17:34-05:00" />
+		<ns2:record id="MX-4220032" type="MX" name="clone1.com"
+			data="mail.clone1.com" ttl="3600" priority="5"
+			updated="2013-05-06T12:17:35-05:00" created="2013-05-06T12:17:35-05:00" />
+		<ns2:record id="CNAME-11336152" type="CNAME" name="www.clone1.com"
+			data="clone1.com" ttl="5400" updated="2013-05-06T12:17:35-05:00"
+			created="2013-05-06T12:17:35-05:00" comment="This is a comment on the CNAME record" />
+	</ns2:recordsList>
+	<ns2:subdomains totalEntries="3">
+		<ns2:domain id="3586214" name="sub1.clone1.com"
+			emailAddress="administrator@rackspace.com" updated="2013-05-06T12:17:36-05:00"
+			created="2013-05-06T12:17:36-05:00"
+			comment="sub1.clone1.com uses rackspace.com for email domain name. Sister subdomains are sub2.clone1.com, sub3.clone1.com" />
+		<ns2:domain id="3586215" name="sub2.clone1.com"
+			emailAddress="admin@clone1.com" updated="2013-05-06T12:17:37-05:00"
+			created="2013-05-06T12:17:37-05:00"
+			comment="sub1.clone1.com uses parent domain name, clone1.com, for email domain name" />
+		<ns2:domain id="3586216" name="sub3.clone1.com"
+			emailAddress="adm@sub3.clone1.com" updated="2013-05-06T12:17:37-05:00"
+			created="2013-05-06T12:17:37-05:00"
+			comment="sub3.clone1.com uses it's own domain name for email domain name" />
+	</ns2:subdomains>
+</ns2:domain>
