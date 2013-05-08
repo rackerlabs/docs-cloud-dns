@@ -46,7 +46,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2013-04-02</pubdate>
+        <pubdate>2013-05-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -58,6 +58,26 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2013-05-09</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="clone_domain-dle846"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added additional information for the
+                                name attribute in the table of
+                                Required and Optional Attributes for
+                                Modify Records in <xref
+                                   linkend="Modify_Records-d1e5033"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-04-02</date>
                 <revdescription>
@@ -3374,6 +3394,386 @@
                 </example>
             </section>
             <?hard-pagebreak?>
+            <section xml:id="clone_domain-dle846">
+                <title>Clone Domain</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2"
+                                   >/domains/<emphasis>domainId</emphasis>/clone?<emphasis>cloneName</emphasis>=<code>example2.com</code></td>
+                            <td colspan="3">Create specified domain
+                                   (<code>example2.com</code>) by
+                                cloning domain with id
+                                   <emphasis>domainId</emphasis>. All
+                                options assume default value of
+                                   <code>true</code>. See <xref
+                                   linkend="clone_domains_parms_options"
+                                /> for the description of
+                                options.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2"
+                                   >/domains/<emphasis>domainId</emphasis>/clone?<emphasis>cloneName</emphasis>=<code>example2.com</code><?sbr?>&amp;<emphasis>cloneSubdomains</emphasis>=<emphasis>true_or_false</emphasis><?sbr?>&amp;<emphasis>modifyRecordData</emphasis>=<emphasis>true_or_false</emphasis><?sbr?>&amp;<emphasis>modifyEmailAddress</emphasis>=<emphasis>true_or_false</emphasis><?sbr?>&amp;<emphasis>modifyComment</emphasis>=<emphasis>true_or_false</emphasis></td>
+                            <td colspan="3">Create specified domain
+                                   (<code>example2.com</code>) by
+                                cloning domain with id
+                                   <emphasis>domainId</emphasis>.
+                                Options are as specified. See <xref
+                                   linkend="clone_domains_parms_options"
+                                /> for the description of
+                                options.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <note>
+                    <para> This call returns an asynchronous response,
+                        as described in <xref
+                            linkend="sync_asynch_responses"/>. The
+                        AsyncResponse returned will be similar to that
+                        returned for Create Domain but with the
+                        request element absent since the clone request
+                        has no body.</para>
+                </note>
+                <simpara> Normal Response Code(s):
+                        <returnvalue>202</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault
+                        (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>), itemAlreadyExists
+                        (<errorcode>409</errorcode>),
+                    serviceUnavailable (<errorcode>503</errorcode>),
+                    unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>),
+                    itemNotFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
+                <para> This call will duplicate a single existing
+                    domain configuration with a new domain name for
+                    the specified Cloud account. By default, all
+                    records and, optionally, subdomain(s) are
+                    duplicated as well. Both the existing domain
+                    (referred to as the <emphasis>reference</emphasis>
+                    domain) and the new cloned domain must exist under
+                    the same Cloud account. </para>
+                <para>Refer to <xref
+                        linkend="clone_domains_parms_options"/> for
+                    the parameters and options available to specify
+                    how the cloning affects subdomains, comments,
+                    email addresses, and record data.</para>
+                <para security="writeronly">The following table lists the required and
+                    optional attributes for Clone Domain(s):</para>
+                <table rules="all" security="writeronly">
+                    <caption>Modifiable Attributes and Corresponding
+                        Request Options</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Applies To </td>
+                            <td colspan="1">Modified Attribute</td>
+                            <td colspan="3">Request Option that
+                                influences modification</td>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1" rowspan="3"
+                                   ><emphasis role="bold">Domain</emphasis></td>
+                            <td colspan="1">name</td>
+                            <td colspan="3"><para>None.</para>
+                                <para>Replaced in the new domain as
+                                   part of the cloning process and is
+                                   not influenced by any request
+                                   options.</para></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="1">emailAddress</td>
+                            <td colspan="3"
+                                   ><emphasis>modifyEmailAddress</emphasis>.
+                                See <xref
+                                   linkend="clone_domains_parms_options"
+                                /> for how the attribute is
+                                changed.</td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3"
+                                   ><emphasis>modifyComment</emphasis>.
+                                See <xref
+                                   linkend="clone_domains_parms_options"
+                                /> for how the attribute is
+                                changed.</td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="3"
+                                   ><emphasis role="bold">Record</emphasis></td>
+                            <td colspan="1">name</td>
+                            <td colspan="3">
+                                <para>None.</para>
+                                <para>Replaced in the new record as
+                                   part of the cloning process and is
+                                   not influenced by any request
+                                   options.</para>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="1">data</td>
+                            <td colspan="3"
+                                   ><emphasis>modifyRecordData</emphasis>.
+                                See <xref
+                                   linkend="clone_domains_parms_options"
+                                />  for how the attribute is
+                                changed.</td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="1">comment</td>
+                            <td colspan="3"
+                                   ><emphasis>modifyComment</emphasis>.
+                                See <xref
+                                   linkend="clone_domains_parms_options"
+                                /> for how the attribute is
+                                changed.</td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <note>
+                    <title>Notes</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>If the corresponding request
+                                   cannot be fulfilled due to
+                                   insufficient or invalid data, or if
+                                   the reference domain does not
+                                   exist, an HTTP 400 (Bad Request)
+                                   error response will be returned in
+                                   the body of the response with
+                                   information regarding the nature of
+                                   the failure. </para>
+                            </listitem>
+                            <listitem>
+                                <para>Clone Domain is an atomic
+                                   operation. If there is a failure in
+                                   the duplication of a single record
+                                   or subdomain, the entire process
+                                   will fail. Failures are
+                                   non-recoverable and require the
+                                   caller to correct the cause of the
+                                   failure and &POST; the request
+                                   again. </para>
+                            </listitem>
+                            <listitem>
+                                <para>The Clone Domain operation is
+                                   currently supported for domains
+                                   under a given Cloud account. The
+                                   cloned domain must belong to the
+                                   same account as the reference
+                                   domain.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The Clone Domain operation will
+                                   return an exception if the
+                                   operation would result in creating
+                                   a domain that already exists. The
+                                   exception would indicate that the
+                                   domain already exists. </para>
+                            </listitem>
+                            <listitem>
+                                <para>The Clone Domain operation may
+                                   take slightly longer to complete
+                                   than a comparable Create Domain
+                                   request.</para>
+                            </listitem>
+                            <listitem>
+                                <para>PTR records (for Reverse DNS)
+                                   are not represented when a domain
+                                   is created and, therefore, are not
+                                   included when a domain is cloned.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>If your reference domain already
+                                   has both default Rackspace
+                                   Nameserver (NS) records, the cloned
+                                   domain will be created with no
+                                   additional default Rackspace NS
+                                   records. If your reference domain
+                                   lacks one or both of the default
+                                   Rackspace NS records, the cloned
+                                   domain will be created with
+                                   additional Rackspace default NS
+                                   records to make a total of two
+                                   default Rackspace NS records. If
+                                   the presence of default Rackspace
+                                   NS records is not your preference,
+                                   they can be deleted from the cloned
+                                   domain as long as at least one NS
+                                   record remains (Rackspace or
+                                   non-Rackspace).</para>
+                            </listitem>
+                            <listitem>
+                                <para>Any non-default (non-Rackspace)
+                                   NS records in the reference domain
+                                   are cloned and modified in a way
+                                   that is consistent with all other
+                                   record types. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </note>
+                <para> According to the <emphasis>cloneName</emphasis>
+                    specified, the domain name and record name(s) will
+                    automatically be modified and replaced in the new
+                    cloned domain as part of the cloning process and
+                    cannot be influenced by any request options. See
+                    the table below for the parameters and options
+                    available to specify how the cloning affects
+                    subdomains, comments, email addresses, and record
+                    data.</para>
+                <para>The following table lists the parameters and
+                    options for Clone Domain.</para>
+                <table rules="all" xml:id="clone_domains_parms_options">
+                    <caption>Parameters and Options for Clone
+                        Domain</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Parameter/Option Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">cloneName</td>
+                            <td colspan="3">The name of the new
+                                (cloned) domain.</td>
+                            <td colspan="1">Yes.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">cloneSubdomains</td>
+                            <td colspan="3">Recursively clone
+                                subdomains. If set to
+                                   <code>false</code>, then only the
+                                top level domain and its records are
+                                cloned.  Cloned subdomain
+                                configurations are modified the same
+                                way that cloned top level domain
+                                configurations are modified.</td>
+                            <td colspan="1">
+                                <para>No.</para>
+                                <para>Default=<code>true</code>.</para>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">modifyComment</td>
+                            <td colspan="3">Replace occurrences of the
+                                reference domain name with the new
+                                domain name in comments on the cloned
+                                (new) domain.</td>
+                            <td colspan="1">
+                                <para>No.</para>
+                                <para>Default=<code>true</code>.</para>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">modifyEmailAddress</td>
+                            <td colspan="3">Replace occurrences of the
+                                reference domain name with the new
+                                domain name in email addresses on the
+                                cloned (new) domain.</td>
+                            <td colspan="1">
+                                <para>No.</para>
+                                <para>Default=<code>true</code>.</para>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">modifyRecordData</td>
+                            <td colspan="3">Replace occurrences of the
+                                reference domain name with the new
+                                domain name in data fields (of
+                                records) on the cloned (new) domain.
+                                Does not affect NS records.</td>
+                            <td colspan="1">
+                                <para>No.</para>
+                                <para>Default=<code>true</code>.</para>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <para>The following examples show the Clone Domain
+                    requests: </para>
+                <example>
+                    <title>Clone Domain Request: XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Clone Domain Request: JSON</title>
+                    <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <note>
+                    <para>The following examples show the
+                            <emphasis>initial</emphasis> 202 Accepted
+                        response for the asynchronous call and
+                        indicate that the task has been accepted for
+                        processing. Refer to <xref
+                            linkend="sync_asynch_responses"/> for a
+                        description of how the asynchronous call
+                        works.</para>
+                </note>
+                <example>
+                    <title>Initial (202) Clone Domain Response:
+                        XML</title>
+                    <?dbfo keep-together="always"?>
+                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Initial (202) Clone Domain Response:
+                        JSON</title>
+                    <?dbfo keep-together="auto"?>
+                    <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <para>The following are examples of the reference
+                    domain and the resulting cloned domain:</para>
+                <example>
+                    <title> Reference (Existing) Domain seed.com:
+                        XML</title>
+                    
+                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_reference_exist_dom_seed_com.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Resulting (Cloned) Domain clone2seed.com:
+                        XML</title>
+                    
+                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_resulting_cloned_dom_clone2seed_com.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title> Reference (Existing) Domain seed.com:
+                        JSON</title>
+                    
+                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_reference_exist_dom_seed_com.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+                <example>
+                    <title>Resulting (Cloned) Domain clone2seed.com:
+                        JSON</title>
+                    
+                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_resulting_cloned_dom_clone2seed_com.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                </example>
+            </section>
             <section xml:id="import_domain">
                 <title>Import Domain</title>
                 <informaltable rules="all">
@@ -3424,14 +3824,32 @@
                         This is an atomic operation, so if there is a failure in the creation of
                         even a single record, the entire process will fail.</para>
                 </note>
-                <para> Ensure that the BIND 9 formatted file configuration contents are valid by
-                    ensuring that records are placed on separate lines with no other white space
-                    characters other than a single space or tab between the values. For example,
-                    there should be no tabs or extra spaces before the start of any record, and
-                    after every record there should be a newline character at the end. Otherwise the
-                    user will receive an <code>HTTP</code>
-                    <returnvalue>400 (Bad Request)</returnvalue> error response with the message
-                    "The request could not be understood by the server due to malformed
+                <para> Ensure that the BIND 9 formatted file
+                    configuration contents are valid by adhering to
+                    the following rules:<itemizedlist>
+                        <listitem>
+                            <para>Each record starts on a new line and
+                                on the first column.</para>
+                        </listitem>
+                        <listitem>
+                            <para>The attribute values of a record
+                                must be separated by a single blank or
+                                tab. No other white space
+                                characters.</para>
+                        </listitem>
+                        <listitem>
+                            <para>If there are any NS records, the
+                                data field should not be
+                                dns1.stabletransit.com or
+                                dns2.stabletransit.com. They will
+                                result in "duplicate record"
+                                errors.</para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>Not following the above rules strictly will
+                    result in an HTTP 400 (Bad Request) error response
+                    with the message "The request could not be
+                    understood by the server due to malformed
                     syntax."</para>
                 <note>
                     <title>Notes</title>
@@ -4316,9 +4734,13 @@ images.www.example.com  A  127.0.0.5</programlisting>
                                 <para>For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
-                                   must be a valid domain name. The
-                                   name attribute cannot be
-                                   modified.</para>
+                                   must be a valid domain name. If the
+                                   record name attribute is not
+                                   specified, it is assumed that the
+                                   record name is the same as the
+                                   domain name to which the record
+                                   belongs.The name attribute cannot
+                                   be modified.</para>
                                 <para>For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4326,7 +4748,9 @@ images.www.example.com  A  127.0.0.5</programlisting>
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.</para>
+                                   field.  The record name attribute
+                                   must be specified for SRV
+                                   records.</para>
                             </td>
                             <td colspan="1">Yes</td>
                         </tr>

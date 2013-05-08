@@ -24,7 +24,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-	<pubdate>2013-04-02</pubdate>
+	<pubdate>2013-05-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -35,6 +35,12 @@
 				using the Rackspace Cloud DNS. </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2013-05-09</date>
+				<revdescription>
+					<para>Updated for v1.0.24.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-04-02</date>
 				<revdescription>
@@ -134,6 +140,51 @@
     		in the table below:</para>
     	<?rax revhistory?>
     </chapter>
+	<chapter xml:id="cdnsv1.0.24">
+		<title>v1.0.24, May 9, 2013</title>
+		<para>This version contains new features for Cloud DNS.</para>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:544945"
+						>B-41927: </link>Clone Domain. Refer to <link
+						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/clone_domain-dle846.html"
+						>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/clone_domain-dle846.html</link>
+					for details.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/Search.mvc/Advanced?q=B-47882"
+						>B-47882: </link>Activate Sydney for Next Gen
+					Cloud Servers and Cloud Load Balancers PTR
+					management.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>DNS Developer Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
+						>Product Feedback Forum</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://www.rackspace.com/cloud/blog/2011/07/11/using-rackspace-dnsaas-with-curl-part-1/"
+						>Cloud DNS Tutorial</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://developer.rackspace.com/"
+						>Use Cloud DNS with an SDK</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="cdnsv1.0.23">
 		<title>v1.0.23, April 2, 2013</title>
 		<para>This version contains <phrase security="internal">new

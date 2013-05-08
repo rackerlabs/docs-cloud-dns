@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns2:domain xmlns:ns3="http://www.w3.org/2005/Atom"
+    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+    id="3582653" accountId="440369" name="seed.com" ttl="3600"
+    emailAddress="admin@seed.com" updated="2013-04-23T10:55:41-05:00"
+    created="2013-04-23T10:55:35-05:00" comment="This is my domain. seed.com domain...">
+    <ns2:nameservers>
+        <ns2:nameserver name="dns1.stabletransit.com" />
+        <ns2:nameserver name="dns2.stabletransit.com" />
+    </ns2:nameservers>
+    <ns2:recordsList totalEntries="9">
+        <ns2:record id="A-9513815" type="A" name="ftp.seed.com"
+            data="192.0.2.8" ttl="5771" updated="2013-04-23T10:55:36-05:00"
+            created="2013-04-23T10:55:36-05:00" />
+        <ns2:record id="NS-8496940" type="NS" name="seed.com"
+            data="dns1.stabletransit.com" ttl="3600" updated="2013-04-23T10:55:36-05:00"
+            created="2013-04-23T10:55:36-05:00" />
+        <ns2:record id="NS-8496941" type="NS" name="seed.com"
+            data="dns2.stabletransit.com" ttl="3600" updated="2013-04-23T10:55:36-05:00"
+            created="2013-04-23T10:55:36-05:00" />
+        <ns2:record id="NS-8496942" type="NS" name="seed.com"
+            data="ns3.myprivatensseed.com" ttl="3600" updated="2013-04-23T10:55:38-05:00"
+            created="2013-04-23T10:55:38-05:00"
+            comment="Unlike the default rackspace NS reords, the name and data fields on this non-default NS record should be affected by options." />
+        <ns2:record id="MX-4218711" type="MX" name="seed.com" data="mail.seed.com"
+            ttl="3600" priority="5" updated="2013-04-23T10:55:39-05:00" created="2013-04-23T10:55:39-05:00" />
+        <ns2:record id="TXT-473051" type="TXT" name="*.seed.com"
+            data="This is some wildcard record for the seed.com domain" ttl="3600"
+            updated="2013-04-23T10:55:41-05:00" created="2013-04-23T10:55:41-05:00" />
+        <ns2:record id="SRV-20178" type="SRV" name="_sip._tcp.seed.com"
+            data="1 3443 sipserver.seed.com" ttl="86400" priority="30"
+            updated="2013-04-23T10:55:40-05:00" created="2013-04-23T10:55:40-05:00" />
+        <ns2:record id="CNAME-11335258" type="CNAME" name="www.seed.com"
+            data="seed.com" ttl="5400" updated="2013-04-23T10:55:40-05:00"
+            created="2013-04-23T10:55:40-05:00" comment="This is a comment on the CNAME record" />
+        <ns2:record id="AAAA-7750" type="AAAA" name="seed.com"
+            data="4321:0:1:2:3:4:567:89ab" ttl="86400" updated="2013-04-23T10:55:37-05:00"
+            created="2013-04-23T10:55:37-05:00" comment="this Ipv6 address for the seed.com domain" />
+    </ns2:recordsList>
+    <ns2:subdomains totalEntries="6">
+        <ns2:domain id="3582654" name="sub1.seed.com" emailAddress="sample@rackspace.com"
+            updated="2013-04-23T10:55:43-05:00" created="2013-04-23T10:55:41-05:00"
+            comment="sample subdomain named sub1.seed.com under seed.com" />
+        <ns2:domain id="3582655" name="sub11.sub1.seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T10:55:46-05:00"
+            created="2013-04-23T10:55:43-05:00"
+            comment="1st level-2 subdomain named sub11.sub1.seed.com under sub1.seed.com" />
+        <ns2:domain id="3582656" name="sub12.sub1.seed.com"
+            emailAddress="adminsubsub@sub12.sub1.seed.com" updated="2013-04-23T10:55:48-05:00"
+            created="2013-04-23T10:55:46-05:00" />
+        <ns2:domain id="3582657" name="sub13.sub1.seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T10:55:49-05:00"
+            created="2013-04-23T10:55:48-05:00" />
+        <ns2:domain id="3582658" name="sub2.seed.com" emailAddress="sample@rackspace.com"
+            updated="2013-04-23T10:55:50-05:00" created="2013-04-23T10:55:50-05:00"
+            comment="a SISTER subdomain to sub1.seed.com" />
+        <ns2:domain id="3582659" name="sub3.seed.com" emailAddress="sample@rackspace.com"
+            updated="2013-04-23T10:55:51-05:00" created="2013-04-23T10:55:51-05:00" />
+    </ns2:subdomains>
+</ns2:domain>
+

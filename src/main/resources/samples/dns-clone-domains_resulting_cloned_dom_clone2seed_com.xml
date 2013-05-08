@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns2:domain xmlns:ns3="http://www.w3.org/2005/Atom"
+    xmlns:ns2="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+    id="3582900" accountId="440369" name="clone2seed.com" ttl="3600"
+    emailAddress="admin@clone2seed.com" updated="2013-04-23T22:24:04-05:00"
+    created="2013-04-23T22:23:58-05:00" comment="This is my domain. clone2seed.com domain...">
+    <ns2:nameservers>
+        <ns2:nameserver name="dns1.stabletransit.com" />
+        <ns2:nameserver name="dns2.stabletransit.com" />
+    </ns2:nameservers>
+    <ns2:recordsList totalEntries="9">
+        <ns2:record id="A-9514161" type="A" name="ftp.clone2seed.com"
+            data="192.0.2.8" ttl="5771" updated="2013-04-23T22:23:59-05:00"
+            created="2013-04-23T22:23:59-05:00" />
+        <ns2:record id="NS-8497472" type="NS" name="clone2seed.com"
+            data="dns1.stabletransit.com" ttl="3600" updated="2013-04-23T22:23:59-05:00"
+            created="2013-04-23T22:23:59-05:00" />
+        <ns2:record id="NS-8497473" type="NS" name="clone2seed.com"
+            data="dns2.stabletransit.com" ttl="3600" updated="2013-04-23T22:23:59-05:00"
+            created="2013-04-23T22:23:59-05:00" />
+        <ns2:record id="NS-8497474" type="NS" name="clone2seed.com"
+            data="ns3.myprivatensseed.com" ttl="3600" updated="2013-04-23T22:24:00-05:00"
+            created="2013-04-23T22:24:00-05:00"
+            comment="Unlike the default rackspace NS reords, the name and data fields on this non-default NS record should be affected by options." />
+        <ns2:record id="MX-4218777" type="MX" name="clone2seed.com"
+            data="mail.clone2seed.com" ttl="3600" priority="5"
+            updated="2013-04-23T22:24:01-05:00" created="2013-04-23T22:24:01-05:00" />
+        <ns2:record id="TXT-473103" type="TXT" name="*.clone2seed.com"
+            data="This is some wildcard record for the clone2seed.com domain"
+            ttl="3600" updated="2013-04-23T22:24:02-05:00" created="2013-04-23T22:24:02-05:00" />
+        <ns2:record id="SRV-20218" type="SRV" name="_sip._tcp.clone2seed.com"
+            data="1 3443 sipserver.clone2seed.com" ttl="86400" priority="30"
+            updated="2013-04-23T22:24:02-05:00" created="2013-04-23T22:24:02-05:00" />
+        <ns2:record id="CNAME-11335318" type="CNAME" name="www.clone2seed.com"
+            data="clone2seed.com" ttl="5400" updated="2013-04-23T22:24:03-05:00"
+            created="2013-04-23T22:24:03-05:00" comment="This is a comment on the CNAME record" />
+        <ns2:record id="AAAA-7768" type="AAAA" name="clone2seed.com"
+            data="4321:0:1:2:3:4:567:89ab" ttl="86400" updated="2013-04-23T22:24:04-05:00"
+            created="2013-04-23T22:24:04-05:00" comment="this Ipv6 address for the clone2seed.com domain" />
+    </ns2:recordsList>
+    <ns2:subdomains totalEntries="6">
+        <ns2:domain id="3582901" name="sub1.clone2seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T22:24:06-05:00"
+            created="2013-04-23T22:24:04-05:00" comment="sample subdomain named sub1.clone2seed.com under seed.com" />
+        <ns2:domain id="3582902" name="sub11.sub1.clone2seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T22:24:09-05:00"
+            created="2013-04-23T22:24:06-05:00"
+            comment="1st level-2 subdomain named sub11.sub1.clone2seed.com under sub1.seed.com" />
+        <ns2:domain id="3582903" name="sub12.sub1.clone2seed.com"
+            emailAddress="adminsubsub@sub12.sub1.clone2seed.com" updated="2013-04-23T22:24:11-05:00"
+            created="2013-04-23T22:24:09-05:00" />
+        <ns2:domain id="3582904" name="sub13.sub1.clone2seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T22:24:13-05:00"
+            created="2013-04-23T22:24:11-05:00" />
+        <ns2:domain id="3582905" name="sub2.clone2seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T22:24:14-05:00"
+            created="2013-04-23T22:24:13-05:00" comment="a SISTER subdomain to sub1.seed.com" />
+        <ns2:domain id="3582906" name="sub3.clone2seed.com"
+            emailAddress="sample@rackspace.com" updated="2013-04-23T22:24:14-05:00"
+            created="2013-04-23T22:24:14-05:00" />
+    </ns2:subdomains>
+</ns2:domain>
+
