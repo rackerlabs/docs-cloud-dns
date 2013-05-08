@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns2:asyncResponse xmlns:ns3="http://www.w3.org/2005/Atom"
+	xmlns:ns2="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+	<ns2:jobId>52179628-6df6-46a0-bdb3-078769cd0e9d</ns2:jobId>
+	<ns2:callbackUrl>https://dns.api.rackspacecloud.com/v1.0/1234/status/52179628-6df6-46a0-bdb3-078769cd0e9d</ns2:callbackUrl>
+	<ns2:status>RUNNING</ns2:status>
+	<ns2:requestUrl>https://dns.api.rackspacecloud.com/v1.0/1234/domains/3586209/clone?cloneName=clone1.com</ns2:requestUrl>
+	<ns2:verb>POST</ns2:verb>
+</ns2:asyncResponse>

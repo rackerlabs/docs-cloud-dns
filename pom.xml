@@ -915,6 +915,60 @@
 
 
 								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<!-- Clone Domain - use separate samples files.	Some of the 		-->
+								<!-- generated files are extraeneous and will not be used. 			-->
+								<!--  															    -->
+								<!-- These generated files are used: 								-->
+								<!-- 		dns-clone-domain_request.xml 							-->
+								<!-- 		dns-clone-domain_request.json 							-->
+								<!-- 		dns-clone-domain_response.xml 							-->
+								<!-- 		dns-clone-domain_response.json 							-->
+								<!-- 		dns-clone-domain-reference-domain_response.xml 			-->
+								<!-- 		dns-clone-domain-final-result_response.xml 				-->
+								<!-- 		dns-clone-domain-reference-domain_response.json 		-->
+								<!-- 		dns-clone-domain-final-result_response.json				-->
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+								<source>
+									<data>${basedir}/src/main/resources/samples-clone-domain.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-clone-domain</nameBase>
+											<path>/1234/domains/3586209/clone?cloneName=clone1.com</path>
+											<requestType>POST</requestType>
+											<statusCode>202</statusCode>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>
+								<source>
+									<data>${basedir}/src/main/resources/samples-clone-domain-reference-domain.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-clone-domain-reference-domain</nameBase>
+											<path/>
+											<requestType/>
+											<statusCode/>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>								
+								<source>
+									<data>${basedir}/src/main/resources/samples-clone-domain-final-result.xml</data>
+									<beanPackage>com.rackspace.cloud.dns.api.beans</beanPackage>
+									<outputs>
+										<output>
+											<nameBase>dns-clone-domain-final-result</nameBase>
+											<path/>
+											<requestType/>
+											<statusCode/>
+											<responseBody />
+										</output>
+									</outputs>
+								</source>								
+								
+								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 								<!-- SPECIAL CASES - import domains needs separate samples file -->
 								<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 								<source>

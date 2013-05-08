@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns2:domain xmlns:ns3="http://www.w3.org/2005/Atom"
+	xmlns:ns2="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns="http://docs.rackspacecloud.com/dns/api/management/v1.0"
+	id="3586209" accountId="1234" name="cloner.com" ttl="7788"
+	emailAddress="owner@cloner.com" updated="2013-05-06T12:10:55-05:00"
+	created="2013-05-06T12:10:51-05:00"
+	comment="cloner.com is a template domain for cloning others. cloner.com has subdomains - sub1.cloner.com, sub2.cloner.com, sub3.cloner.com">
+	<ns2:nameservers>
+		<ns2:nameserver name="dns1.stabletransit.com" />
+		<ns2:nameserver name="dns2.stabletransit.com" />
+	</ns2:nameservers>
+	<ns2:recordsList totalEntries="7">
+		<ns2:record id="A-9516802" type="A" name="ftp.cloner.com"
+			data="192.0.2.8" ttl="5771" updated="2013-05-06T12:10:52-05:00"
+			created="2013-05-06T12:10:52-05:00" />
+		<ns2:record id="A-9516803" type="A" name="cloner.com" data="192.0.2.17"
+			ttl="86400" updated="2013-05-06T12:10:52-05:00" created="2013-05-06T12:10:52-05:00" />
+		<ns2:record id="NS-8504404" type="NS" name="cloner.com"
+			data="dns1.stabletransit.com" ttl="7788" updated="2013-05-06T12:10:51-05:00"
+			created="2013-05-06T12:10:51-05:00" />
+		<ns2:record id="NS-8504405" type="NS" name="cloner.com"
+			data="dns2.stabletransit.com" ttl="7788" updated="2013-05-06T12:10:51-05:00"
+			created="2013-05-06T12:10:51-05:00" />
+		<ns2:record id="NS-8504406" type="NS" name="cloner.com"
+			data="server1.cloner.com" ttl="3600" updated="2013-05-06T12:10:53-05:00"
+			created="2013-05-06T12:10:53-05:00" />
+		<ns2:record id="MX-4220031" type="MX" name="cloner.com"
+			data="mail.cloner.com" ttl="3600" priority="5"
+			updated="2013-05-06T12:10:54-05:00" created="2013-05-06T12:10:54-05:00" />
+		<ns2:record id="CNAME-11336151" type="CNAME" name="www.cloner.com"
+			data="cloner.com" ttl="5400" updated="2013-05-06T12:10:55-05:00"
+			created="2013-05-06T12:10:55-05:00" comment="This is a comment on the CNAME record" />
+	</ns2:recordsList>
+	<ns2:subdomains totalEntries="3">
+		<ns2:domain id="3586210" name="sub1.cloner.com"
+			emailAddress="administrator@rackspace.com" updated="2013-05-06T12:10:56-05:00"
+			created="2013-05-06T12:10:55-05:00"
+			comment="sub1.cloner.com uses rackspace.com for email domain name. Sister subdomains are sub2.cloner.com, sub3.cloner.com" />
+		<ns2:domain id="3586211" name="sub2.cloner.com"
+			emailAddress="admin@cloner.com" updated="2013-05-06T12:10:56-05:00"
+			created="2013-05-06T12:10:56-05:00"
+			comment="sub1.cloner.com uses parent domain name, cloner.com, for email domain name" />
+		<ns2:domain id="3586212" name="sub3.cloner.com"
+			emailAddress="adm@sub3.cloner.com" updated="2013-05-06T12:10:57-05:00"
+			created="2013-05-06T12:10:57-05:00"
+			comment="sub3.cloner.com uses it's own domain name for email domain name" />
+	</ns2:subdomains>
+</ns2:domain>
