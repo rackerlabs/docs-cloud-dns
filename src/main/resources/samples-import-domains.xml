@@ -4,12 +4,11 @@
     <!-- Import Request  -->
     <domain name="example.net" contentType="BIND_9">
         <contents>
-        example.net. 3600 IN SOA dns1.stabletransit.com.
-            sample@rackspace.com. 1308874739 3600 3600 3600 3600
-            example.net. 86400 IN A 110.11.12.16
-            example.net. 3600 IN MX 5 mail2.example.net.
-            www.example.net. 5400 IN CNAME example.net.		
-        </contents>
+example.net. 3600 IN SOA dns1.stabletransit.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600
+example.net. 86400 IN A 110.11.12.16
+example.net. 3600 IN MX 5 mail2.example.net.
+www.example.net. 5400 IN CNAME example.net.
+</contents>
     </domain>
 	
     <!-- Import Response -->
