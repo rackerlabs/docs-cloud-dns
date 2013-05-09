@@ -3468,88 +3468,6 @@
                     the parameters and options available to specify
                     how the cloning affects subdomains, comments,
                     email addresses, and record data.</para>
-                <para security="writeronly">The following table lists the required and
-                    optional attributes for Clone Domain(s):</para>
-                <table rules="all" security="writeronly">
-                    <caption>Modifiable Attributes and Corresponding
-                        Request Options</caption>
-                    <thead>
-                        <tr>
-                            <td colspan="1">Applies To </td>
-                            <td colspan="1">Modified Attribute</td>
-                            <td colspan="3">Request Option that
-                                influences modification</td>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="1" rowspan="3"
-                                   ><emphasis role="bold">Domain</emphasis></td>
-                            <td colspan="1">name</td>
-                            <td colspan="3"><para>None.</para>
-                                <para>Replaced in the new domain as
-                                   part of the cloning process and is
-                                   not influenced by any request
-                                   options.</para></td>
-                            
-                        </tr>
-                        <tr>
-                            <td colspan="1">emailAddress</td>
-                            <td colspan="3"
-                                   ><emphasis>modifyEmailAddress</emphasis>.
-                                See <xref
-                                   linkend="clone_domains_parms_options"
-                                /> for how the attribute is
-                                changed.</td>
-                            
-                        </tr>
-                        <tr>
-                            <td colspan="1">comment</td>
-                            <td colspan="3"
-                                   ><emphasis>modifyComment</emphasis>.
-                                See <xref
-                                   linkend="clone_domains_parms_options"
-                                /> for how the attribute is
-                                changed.</td>
-                            
-                        </tr>
-                        <tr>
-                            <td colspan="1" rowspan="3"
-                                   ><emphasis role="bold">Record</emphasis></td>
-                            <td colspan="1">name</td>
-                            <td colspan="3">
-                                <para>None.</para>
-                                <para>Replaced in the new record as
-                                   part of the cloning process and is
-                                   not influenced by any request
-                                   options.</para>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td colspan="1">data</td>
-                            <td colspan="3"
-                                   ><emphasis>modifyRecordData</emphasis>.
-                                See <xref
-                                   linkend="clone_domains_parms_options"
-                                />  for how the attribute is
-                                changed.</td>
-                            
-                        </tr>
-                        <tr>
-                            <td colspan="1">comment</td>
-                            <td colspan="3"
-                                   ><emphasis>modifyComment</emphasis>.
-                                See <xref
-                                   linkend="clone_domains_parms_options"
-                                /> for how the attribute is
-                                changed.</td>
-                            
-                        </tr>
-                        
-                    </tbody>
-                </table>
                 <note>
                     <title>Notes</title>
                     <para>
@@ -3719,11 +3637,11 @@
                 <example>
                     <title>Clone Domain Request: XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-clone-domain_request.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Clone Domain Request: JSON</title>
-                    <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="json"><xi:include href="../../../target/samples/dns-clone-domain_request.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <note>
                     <para>The following examples show the
@@ -3739,39 +3657,39 @@
                     <title>Initial (202) Clone Domain Response:
                         XML</title>
                     <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-clone-domain_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
                     <title>Initial (202) Clone Domain Response:
                         JSON</title>
                     <?dbfo keep-together="auto"?>
-                    <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="json"><xi:include href="../../../target/samples/dns-clone-domain_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <para>The following are examples of the reference
                     domain and the resulting cloned domain:</para>
                 <example>
-                    <title> Reference (Existing) Domain seed.com:
+                    <title> Reference (Existing) Domain cloner.com:
                         XML</title>
                     
-                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_reference_exist_dom_seed_com.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-clone-domain-reference-domain_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
-                    <title>Resulting (Cloned) Domain clone2seed.com:
+                    <title>Resulting (Cloned) Domain clone1.com:
                         XML</title>
                     
-                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_resulting_cloned_dom_clone2seed_com.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-clone-domain-final-result_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
-                    <title> Reference (Existing) Domain seed.com:
+                    <title> Reference (Existing) Domain cloner.com:
                         JSON</title>
                     
-                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_reference_exist_dom_seed_com.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-clone-domain-reference-domain_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
                 <example>
-                    <title>Resulting (Cloned) Domain clone2seed.com:
+                    <title>Resulting (Cloned) Domain clone1.com:
                         JSON</title>
                     
-                    <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-clone-domains_resulting_cloned_dom_clone2seed_com.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                    <programlisting language="xml"><xi:include href="../../../target/samples/dns-clone-domain-final-result_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
             </section>
             <section xml:id="import_domain">
@@ -3816,20 +3734,39 @@
                 <para> For all practical purposes, a successful Import Domain call creates a domain,
                     and is therefore similar in response to a Create Domain call. </para>
                 <note>
-                    <para> DNS propagation may take up to 1
-                        minute.</para>
-                </note>
-                <note>
-                    <para> This process allows multiple records to be created along with the domain.
-                        This is an atomic operation, so if there is a failure in the creation of
-                        even a single record, the entire process will fail.</para>
+                    <title>Notes</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>DNS propagation may take up to 1
+                                   minute.</para>
+                            </listitem>
+                            <listitem>
+                                <para>This process allows multiple
+                                   records to be created along with
+                                   the domain. This is an atomic
+                                   operation, so if there is a failure
+                                   in the creation of even a single
+                                   record, the entire process will
+                                   fail.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
                 </note>
                 <para> Ensure that the BIND 9 formatted file
                     configuration contents are valid by adhering to
                     the following rules:<itemizedlist>
                         <listitem>
                             <para>Each record starts on a new line and
-                                on the first column.</para>
+                                on the first column. If a record will
+                                not fit on one line, use the BIND_9
+                                line continuation convention where you
+                                put a left parenthesis and continue
+                                the one record on the next line and
+                                put a right parenthesis when the
+                                record ends. For example,
+                                <programlisting>example2.net. 3600 IN SOA dns1.stabletransit.com. (
+sample@rackspace.com. 1308874739 3600 3600 3600 3600)</programlisting></para>
                         </listitem>
                         <listitem>
                             <para>The attribute values of a record
@@ -3848,9 +3785,9 @@
                     </itemizedlist></para>
                 <para>Not following the above rules strictly will
                     result in an HTTP 400 (Bad Request) error response
-                    with the message "The request could not be
-                    understood by the server due to malformed
-                    syntax."</para>
+                    with messages such as the following: "The request
+                    could not be understood by the server due to
+                    malformed syntax."</para>
                 <note>
                     <title>Notes</title>
                     <para>
