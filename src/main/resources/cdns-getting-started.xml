@@ -194,9 +194,9 @@
             account for this purpose, skip Steps 1-5 and go directly
             to Step 6 below. Otherwise, follow the steps below:</para>
         <para>Create a Cloud Server using the Cloud Servers section of
-            the Control Panel (login here: <link
-                xlink:href="http://mycloud.rackspace.com/">Control
-                Panel Login</link>).</para>
+            the Cloud Control Panel (login here: <link
+                xlink:href="http://mycloud.rackspace.com/">Cloud Control
+                Panel</link>).</para>
         <note>
             <para>You can also create a Cloud Server using the Cloud
                 Servers API. Refer to the <citetitle><link
@@ -205,7 +205,7 @@
                 details.</para>
         </note>
         <procedure>
-            <title>To create a Cloud Server using the Control
+            <title>To create a Cloud Server using the Cloud Control
                 Panel:</title>
             <step>
                 <para>Click <guimenuitem>Servers</guimenuitem> to view
@@ -457,7 +457,7 @@
                             Keys</guimenuitem> section (login here:
                             <link
                             xlink:href="http://mycloud.rackspace.com/"
-                            >Control Panel Login</link>).</para>
+                            >Cloud Control Panel</link>).</para>
                 </listitem>
             </itemizedlist></para>
         <para> To access the Authentication Service, you must know
