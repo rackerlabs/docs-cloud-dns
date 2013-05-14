@@ -46,7 +46,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2013-05-09</pubdate>
+        <pubdate>2013-05-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -58,6 +58,19 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2013-05-14</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added summary table and status codes
+                                for <xref
+                                   linkend="viewing_status_all_asynch_jobs"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-05-09</date>
                 <revdescription>
@@ -1384,6 +1397,52 @@
                         <para><code>offset=0</code></para>
                     </listitem>
                 </itemizedlist>
+                <informaltable rules="all" width="100%">
+                    <col width="10%"/>
+                    <col width="40%"/>
+                    <col width="35%"/>
+                    <col width="15%"/>
+                    
+                    <thead>
+                        <tr align="center">
+                            <td>Verb</td>
+                            <td>URI</td>
+                            <td>Description</td>
+                            <td>Representations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&GET;</td>
+                            <td>
+                                   /status?<?sbr?><parameter>showDetails</parameter>=<code>[true|false]</code>
+                                   &amp;<parameter>showErrors</parameter>=<code>[true|false]</code>
+                                   &amp;<parameter>showRunning</parameter>=<code>[true|false]</code>
+                                   &amp;<parameter>showCompleted</parameter>=<code>[true|false]</code>
+                                   &amp;<parameter>limit</parameter>=<replaceable>int1</replaceable>
+                                   &amp;<parameter>offset</parameter>=<replaceable>int2</replaceable></td>
+                            <td>List status of all
+                                asynchronous job requests for an
+                                account and filter the information
+                                requested by using the optional
+                                boolean request parameters. </td>
+                            <td>XML, JSON</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                
+
+                <simpara> Normal Response Code(s):
+                        <returnvalue>200</returnvalue>
+                </simpara>
+                <simpara> Error Response Code(s): dnsFault
+                        (<errorcode>400</errorcode>,
+                        <errorcode>500</errorcode>),
+                    serviceUnavailable (<errorcode>503</errorcode>),
+                    unauthorized (<errorcode>401</errorcode>),
+                    badRequest (<errorcode>400</errorcode>),
+                    itemNotFound (<errorcode>404</errorcode>),
+                    overLimit (<errorcode>413</errorcode>) </simpara>
                 <para>By omitting the
                         <parameter>showDetails</parameter> parameter
                     from the request (or explicitly setting it to
