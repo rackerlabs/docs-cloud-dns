@@ -1322,7 +1322,7 @@
 									<outputs>
 										<output>
 											<nameBase>mgmt-dns-list-limit-groups</nameBase>
-											<path>/limits</path>
+											<path>/groups</path>
 											<statusCode>200</statusCode>
 											<responseBody />
 										</output>
