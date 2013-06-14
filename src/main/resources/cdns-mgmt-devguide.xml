@@ -432,7 +432,7 @@
 					<title>Search Domains Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -446,7 +446,7 @@
 					<title>Search Domains Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -465,7 +465,7 @@
 					<title>Search Domains Response: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -479,7 +479,7 @@
 					<title>Search Domains Response: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-search-domains_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -609,7 +609,7 @@
 					<title>List Limit Groups Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -623,7 +623,7 @@
 					<title>List Limit Groups Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -636,7 +636,7 @@
 				<example>
 					<title>List Limit Groups Response: XML</title>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -649,7 +649,7 @@
 				<example>
 					<title>List Limit Groups Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-groups_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -712,7 +712,7 @@
 					<title>List Limit Group Types Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -726,7 +726,7 @@
 					<title>List Limit Group Types Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -739,7 +739,7 @@
 				<example>
 					<title>List Limit Group Types Response: XML</title>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -752,7 +752,7 @@
 				<example>
 					<title>List Limit Group Types Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-types_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -821,7 +821,7 @@
 					<title>List Limit Groups of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -835,7 +835,7 @@
 					<title>List Limit Groups of Type Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -848,7 +848,7 @@
 				<example>
 					<title>List Limit Groups of Type Response: XML</title>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -861,7 +861,7 @@
 				<example>
 					<title>List Limit Groups of Type Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-type-groups_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -930,7 +930,7 @@
 					<title>Show Group Details Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -944,7 +944,7 @@
 					<title>Show Group Details Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -957,7 +957,7 @@
 				<example>
 					<title>Show Group Details Response: XML</title>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -970,7 +970,7 @@
 				<example>
 					<title>Show Group Details Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-limit-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1279,7 +1279,7 @@
 					<title>Create Domain(s) Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-req_request.xml"
 							parse="text">
 							<xi:fallback>
@@ -1291,7 +1291,7 @@
 				<example>
 					<title>Create Domain(s) Request: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-req_request.json"
 							parse="text">
 							<xi:fallback>
@@ -1304,7 +1304,7 @@
 					<title>Create Domain(s) Response: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-res_response.xml"
 							parse="text">
 							<xi:fallback>
@@ -1317,7 +1317,7 @@
 					<title>Create Domain(s) Response: JSON</title>
                     <?dbfo keep-together="auto"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-create-domains-res_response.json"
 							parse="text">
 							<xi:fallback>
@@ -1358,7 +1358,7 @@
 					<title>List User's Jobs Status Request:
 						XML</title>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1372,7 +1372,7 @@
 					<title>List User's Jobs Status Request:
 						JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-get-jobs-status-no-details_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1458,7 +1458,7 @@
 					<title>List Assigned Groups Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1472,7 +1472,7 @@
 					<title>List Assigned Groups Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1486,7 +1486,7 @@
 					<title>List Assigned Groups Response: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1500,7 +1500,7 @@
 					<title>List Assigned Groups Response: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1574,7 +1574,7 @@
 					<title>List Assigned Group of Type Request: XML</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_request.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1588,7 +1588,7 @@
 					<title>List Assigned Group of Type Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1601,7 +1601,7 @@
 				<example>
 					<title>List Assigned Group of Type Response: XML</title>
 					<programlisting language="xml">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_response.xml"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1614,7 +1614,7 @@
 				<example>
 					<title>List Assigned Group of Type Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-list-user-group-type_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1686,7 +1686,7 @@
 					<title>Assign User to Limit Group Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-update-user-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1699,7 +1699,7 @@
 				<example>
 					<title>Assign User to Limit Group Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-update-user-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1778,7 +1778,7 @@
 					<title>Assign Default Group Request: JSON</title>
                     <?dbfo keep-together="always"?>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-delete-user-group_request.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
@@ -1791,7 +1791,7 @@
 				<example>
 					<title>Assign Default Group Response: JSON</title>
 					<programlisting language="json">
-						<xi:include
+<xi:include
 							href="../../../target/samples/mgmt-dns-delete-user-group_response.json"
 							parse="text">
 							<xi:fallback><?rax fail?>
