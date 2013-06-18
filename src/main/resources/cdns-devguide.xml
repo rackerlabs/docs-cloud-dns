@@ -4633,10 +4633,12 @@ sample@rackspace.com. 1308874739 3600 3600 3600 3600)</programlisting></para>
                 </example>
                 <section xml:id="Wildcard_Records">
                     <title>Wildcard Records</title>
-                    <para>Users can add one or more <emphasis>wildcard</emphasis> records to any
-                        domain or sub-domain on their account. For information on the intent and use
-                        of wildcard records, see the DNS literature including RFC 1034, section
-                        4.3.3, and RFC 4595.</para>
+                    <para>Users can add one or more
+                            <emphasis>wildcard</emphasis> records to
+                        any domain or sub-domain on their account. For
+                        information on the intent and use of wildcard
+                        records, see the DNS literature including RFC
+                        1034, section 4.3.3, and RFC 4592.</para>
                     <para>Wildcards are supported for A, AAAA, CNAME, MX, SRV and TXT record
                         types.</para>
                     <note>
