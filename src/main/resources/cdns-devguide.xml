@@ -3263,7 +3263,8 @@
                     <para> This call returns an asynchronous response, as described in <xref
                             linkend="sync_asynch_responses"/>.</para>
                 </note>
-                <simpara> Normal Response Code(s): <returnvalue>200</returnvalue>
+                <simpara> Normal Response Code(s):
+                        <returnvalue>202</returnvalue>
                 </simpara>
                 <simpara> Error Response Code(s): dnsFault (<errorcode>400</errorcode>,
                         <errorcode>500</errorcode>), serviceUnavailable
