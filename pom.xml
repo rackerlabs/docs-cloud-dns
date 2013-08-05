@@ -1197,7 +1197,7 @@
 									implementation="com.rackspace.cloud.dns.api.management.helpers.json.MgmtJsonModule" />
 							</modules>
 							<outputDir>${project.build.directory}/samples</outputDir>
-							<urlBase>https://dns.api.mgmt.rackspacecloud.com/v1.0</urlBase>
+							<urlBase>https://admin.dns.api.rackspacecloud.com/v1.0</urlBase>
 							<generateJson>true</generateJson>
 							<generateXml>true</generateXml>
 							<responseHeaders>
