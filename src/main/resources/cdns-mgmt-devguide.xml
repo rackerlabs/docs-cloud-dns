@@ -39,7 +39,7 @@
 		</copyright>
 		<releaseinfo>API v1.0</releaseinfo>
 		<productname>Cloud DNS</productname>
-		<pubdate>2013-07-03</pubdate>
+		<pubdate>2013-08-06</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -52,6 +52,18 @@
 				Interface ( <abbrev>API</abbrev> ). </para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2013-08-06</date>
+				<revdescription>
+					<itemizedlist spacing="compact">
+						<listitem>
+							<para>Corrected service endpoint for
+								Management API calls
+								throughout.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-07-03</date>
 				<revdescription>
@@ -435,7 +447,7 @@
 							<td colspan="4">Find all domains that match the specified domain
 								name.</td>
 							<td colspan="4">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/searchDomains?name=rackspace </td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/searchDomains?name=rackspace </td>
 						</tr>
 
 					</tbody>
@@ -623,8 +635,7 @@
 							<td colspan="1">/groups</td>
 							<td colspan="3">List all limit groups.</td>
 							<td colspan="5">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/groups 
-                            </td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/groups </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -722,8 +733,7 @@
 							<td colspan="2">/groups/types</td>
 							<td colspan="2">List all limit group types.</td>
 							<td colspan="5">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/groups/types
-                            </td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/groups/types </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -828,8 +838,7 @@
 							</td>
 							<td colspan="3">List all limit groups of a specified type.</td>
 							<td colspan="5">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/groups/types/rate_limit
-							</td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/groups/types/rate_limit </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -937,8 +946,7 @@
 							</td>
 							<td colspan="3">List details of the specified group.</td>
 							<td colspan="5">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/groups/default_customer_group
-							</td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/groups/default_customer_group </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -1203,7 +1211,7 @@
 				</para>
 				<example>
 					<title>Status Monitor URL</title>
-					<programlisting>https://dns.api.mgmt.rackspacecloud.com/v1.0/status/<parameter>jobId</parameter>
+					<programlisting>https://admin.dns.api.rackspacecloud.com/v1.0/status/<parameter>jobId</parameter>
 					</programlisting>
 				</example>
 				<para>
@@ -1219,7 +1227,7 @@
 					<title>Fragment from Asynchronous Response Showing
 						requestURL with
 						Account Id</title>
-					<programlisting>https://dns.api.rackspacecloud.com/v1.0/1234/domains
+					<programlisting>https://admin.dns.api.rackspacecloud.com/v1.0/1234/domains
 					</programlisting>
 				</example>
 				<para>
@@ -1465,8 +1473,7 @@
 							</td>
 							<td colspan="4">List a user's assigned limit groups.</td>
 							<td colspan="4">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups
-                            </td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/1234/groups </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -1579,8 +1586,7 @@
 							<td colspan="4">List a user's assigned limit group for the
 								specified type of limit.</td>
 							<td colspan="4">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups/rate_limit
-							</td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/1234/groups/rate_limit </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -1692,8 +1698,7 @@
 							</td>
 							<td colspan="4">Assign a user to a specified limit group.</td>
 							<td colspan="4">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups/high_limit_customer_group
-							</td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/1234/groups/high_limit_customer_group </td>
 						</tr>
 					</tbody>
 				</informaltable>
@@ -1778,8 +1783,7 @@
 							<td colspan="4">Assign the user to the default group for the
 								specified type.</td>
 							<td colspan="4">
-								https://dns.api.mgmt.rackspacecloud.com/v1.0/1234/groups/rate_limit
-							</td>
+								https://admin.dns.api.rackspacecloud.com/v1.0/1234/groups/rate_limit </td>
 						</tr>
 					</tbody>
 				</informaltable>
