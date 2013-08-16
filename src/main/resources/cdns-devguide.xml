@@ -2642,19 +2642,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>dbaas:admin</td>
+                            <td>dnsaas:admin</td>
                             <td> Create, Read, Update, and Delete
                                 permissions across a specific product,
                                 where access is granted</td>
                         </tr>
                         <tr>
-                            <td>dbaas:creator</td>
+                            <td>dnsaas:creator</td>
                             <td> Create, Read and Update permissions
                                 across a specific product, where
                                 access is granted</td>
                         </tr>
                         <tr>
-                            <td>dbaas:observer</td>
+                            <td>dnsaas:observer</td>
                             <td> Read permission across a specific
                                 product, where access is granted</td>
                         </tr>
