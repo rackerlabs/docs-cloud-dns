@@ -46,7 +46,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2013-07-25</pubdate>
+        <pubdate>2013-09-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -59,7 +59,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2013-07-25</date>
+                <date>2013-09-12</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -2574,77 +2574,62 @@
         </section>
         <section xml:id="role_based_access_control">
             <title>Role Based Access Control (RBAC)</title>
-            <para>Role Based Access Control (RBAC) provides a
-                finer-grained access control to the capabilities of
-                Rackspace Cloud Services, including the Cloud DNS API.
-                It is an approach to restricting service capabilities
-                access to authorized users only, thereby providing an
-                additional layer of security. RBAC allows Rackspace
-                Cloud customers to specify which sub-user(s) of their
-                Cloud account have access to which Cloud DNS API
-                service capabilities, based on roles defined by
-                Rackspace (see <xref
+            <para>Role Based Access Control (RBAC) restricts access to
+                the capabilities of Rackspace Cloud services,
+                including the Cloud DNS API, to authorized users only.
+                RBAC enables Rackspace Cloud customers to specify
+                which account users of their Cloud account have access
+                to which Cloud DNS API service capabilities, based on
+                roles defined by Rackspace (see <xref
                     linkend="cloud_dns_roles_capabilities"/>). The
                 permissions to perform certain operations in Cloud DNS
                 API – create, read, update, delete  – are assigned to
                 specific roles, and these roles can be assigned by the
-                Cloud account user to sub-users of the account. </para>
-            <section xml:id="assigning_roles_to_sub-user_accounts">
-                <title>Assigning Roles to Sub-user Accounts</title>
-                <para>The Account Admin (identity:user-admin) can
-                    create sub-users on the account and then assign
-                    roles to the sub-users in order to grant them
-                    specific privileges for accessing the capabilities
-                    of the Cloud DNS Service. There can only be one
-                    user-admin per account, and it is assigned by
-                    default to any Rackspace Cloud account when the
-                    account is created. </para>
-                <para>The Account Admin (identity:user-admin) can
-                    create sub-users on the account and then assign
-                    roles to the sub-users in order to grant them
-                    specific privileges for accessing the capabilities
-                    of the Cloud DNS Service. There can only be one
-                    user-admin per account, and it is assigned by
-                    default to any Rackspace Cloud account when the
-                    account is created. </para>
+                Cloud account admin user to account users of the
+                account. </para>
+            <section xml:id="assigning_roles_to_account_users">
+                <title>Assigning Roles to Account Users</title>
+                <para>The account admin user (identity:user-admin) can
+                    create account users on the account and then
+                    assign roles to the account users. The roles grant
+                    the account users specific permissions for
+                    accessing the capabilities of the Cloud DNS
+                    service. Only one Cloud account admin user is
+                    allowed per account, and it is assigned by default
+                    to any Rackspace Cloud account when the account is
+                    created.</para>
                 <para> See the <citetitle>Cloud Identity Client
                         Developer Guide</citetitle> for information on
-                    how to:<itemizedlist>
+                    how to perform the following tasks:<itemizedlist>
                         <listitem>
-                            <para>Create sub-users (refer to <link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/User_Calls.html"
-                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/User_Calls.html</link>)</para>
+                            <para>Create account users (see <link
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html"
+                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html</link>)</para>
                         </listitem>
                         <listitem>
-                            <para>Assign roles to sub-users (refer to
+                            <para>Assign roles to account users (see
                                    <link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Role_Calls.html"
-                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Role_Calls.html</link>)</para>
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addRole_v2.0_OS-KSADM_roles_.html"
+                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addRole_v2.0_OS-KSADM_roles_.html</link>)</para>
                         </listitem>
                     </itemizedlist></para>
                 <note>
-                    <para>The <emphasis role="italic"
-                            >identity:user-admin</emphasis> role
-                        cannot hold any additional roles, since it
-                        already has full access to all capabilities by
-                        default. </para>
+                    <para>The account admin user (identity:user-admin)
+                        role cannot hold any additional roles because
+                        it already has full access to all capabilities
+                        by default. </para>
                 </note>
             </section>
             <section xml:id="roles_for_cloud_dns">
                 <title>Roles Available for Cloud DNS</title>
-                <para>Currently there are two roles that can be used
-                    to access the Cloud DNS API. These two roles,
-                        <emphasis role="italic">observer</emphasis>
-                    and <emphasis role="italic">admin,</emphasis> are
-                    both global roles and apply across all Rackspace
-                    Cloud Services. The table below itemizes these
-                    roles and their capabilities. The <emphasis
-                        role="italic">admin</emphasis> role gives
-                    create, read, modify, and delete rights on assets.
-                    The <emphasis role="italic">observer</emphasis>
-                    role gives read-only rights on assets. </para>
-                <table rules="all" width="70%" xml:id="cloud_dns_roles_capabilities">
-                    <caption>Cloud DNS Roles and
+                <para>Currently, three roles can be used to access the
+                    Cloud DNS API. These roles, admin, creator, and
+                    observer apply to this specific product. The
+                    following table describes these roles and their
+                    permissions. </para>
+                <table rules="all" width="70%"
+                    xml:id="cloud_dns_roles_capabilities">
+                    <caption>Cloud DNS Product Roles and
                         Capabilities</caption>
                     <col width="30%"/>
                     <col width="70%"/>
@@ -2652,29 +2637,59 @@
                     <thead>
                         <tr align="center">
                             <td>Role Name</td>
-                            <td>Role Capabilities</td>           
+                            <td>Role Permissions</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>observer</td>
-                            <td> Read &ndash; across all Rackspace Cloud
-                                Services </td>                          
+                            <td>dbaas:admin</td>
+                            <td> Create, Read, Update, and Delete
+                                permissions across a specific product,
+                                where access is granted</td>
                         </tr>
                         <tr>
-                            <td>admin</td>
-                            <td> Create, Read, Update, Delete &ndash; across
-                                all Rackspace Cloud Services</td>                     
+                            <td>dbaas:creator</td>
+                            <td> Create, Read and Update permissions
+                                across a specific product, where
+                                access is granted</td>
+                        </tr>
+                        <tr>
+                            <td>dbaas:observer</td>
+                            <td> Read permission across a specific
+                                product, where access is granted</td>
                         </tr>
                     </tbody>
                 </table>
-                <note>
-                    <para>While more than one role can be assigned to
-                        a given sub-user of an account, it is highly
-                        recommended to assign only one role per
-                        sub-user to clearly delineate the intent of the
-                        sub-user. </para>
-                </note>
+                <para>In addition, there are two global roles which
+                    apply to all products. The following table
+                    describes these roles and their
+                    permissions.</para>
+                <table rules="all" width="70%">
+                    <caption>Cloud DNS Global Roles and
+                        Capabilities</caption>
+                    <col width="30%"/>
+                    <col width="70%"/>
+                    <?dbfo keep-together="always"?>
+                    <thead>
+                        <tr align="center">
+                            <td>Role Name</td>
+                            <td>Role Permissions</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>admin</td>
+                            <td> Create, Read, Update, and Delete
+                                permissions across multiple products,
+                                where access is granted</td>
+                        </tr>
+                        <tr>
+                            <td>observer</td>
+                            <td> Read permission across multiple
+                                products, where access is granted</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </section>
     </chapter>
