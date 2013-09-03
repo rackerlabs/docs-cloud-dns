@@ -2584,49 +2584,54 @@
                     linkend="cloud_dns_roles_capabilities"/>). The
                 permissions to perform certain operations in Cloud DNS
                 API – create, read, update, delete  – are assigned to
-                specific roles, and these roles can be assigned by the
-                Cloud account admin user to account users of the
-                account. </para>
+                specific roles. The account owner user assigns these
+                roles, either global (multiproduct) or
+                product-specific (for example Cloud DNS), to account
+                users. </para>
             <section xml:id="assigning_roles_to_account_users">
                 <title>Assigning Roles to Account Users</title>
-                <para>The account admin user (identity:user-admin) can
+                <para>The account owner (identity:user-admin) can
                     create account users on the account and then
-                    assign roles to the account users. The roles grant
-                    the account users specific permissions for
-                    accessing the capabilities of the Cloud DNS
-                    service. Only one Cloud account admin user is
-                    allowed per account, and it is assigned by default
-                    to any Rackspace Cloud account when the account is
-                    created.</para>
+                    assign roles to those users. The roles grant the
+                    account users specific permissions for accessing
+                    the capabilities of the Cloud DNS service. Each
+                    account has only one account owner, and that role
+                    is assigned by default to any Rackspace Cloud
+                    account when the account is created.</para>
                 <para> See the <citetitle>Cloud Identity Client
                         Developer Guide</citetitle> for information on
                     how to perform the following tasks:<itemizedlist>
                         <listitem>
-                            <para>Create account users (see <link
+                            <para><link
                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html"
-                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html</link>)</para>
+                                   >Create account users</link></para>
                         </listitem>
                         <listitem>
-                            <para>Assign roles to account users (see
-                                   <link
+                            <para>
+                                <link
                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addRole_v2.0_OS-KSADM_roles_.html"
-                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addRole_v2.0_OS-KSADM_roles_.html</link>)</para>
+                                   >Assign roles to account
+                                   users</link></para>
+                        </listitem>
+                        <listitem>
+                            <para><link
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__.html"
+                                   >Delete roles from account
+                                   users</link></para>
                         </listitem>
                     </itemizedlist></para>
                 <note>
-                    <para>The account admin user (identity:user-admin)
-                        role cannot hold any additional roles because
-                        it already has full access to all capabilities
-                        by default. </para>
+                    <para>The account owner (identity:user-admin) role
+                        cannot hold any additional roles because it
+                        already has full access to all capabilities. </para>
                 </note>
             </section>
             <section xml:id="roles_for_cloud_dns">
                 <title>Roles Available for Cloud DNS</title>
-                <para>Currently, three roles can be used to access the
-                    Cloud DNS API. These roles, admin, creator, and
-                    observer apply to this specific product. The
-                    following table describes these roles and their
-                    permissions. </para>
+                <para>Three roles (observer, creator, and admin) can
+                    be used to access the Cloud DNS API specifically.
+                    The following table describes these roles and
+                    their permissions.</para>
                 <table rules="all" width="70%"
                     xml:id="cloud_dns_roles_capabilities">
                     <caption>Cloud DNS Product Roles and
@@ -2643,30 +2648,34 @@
                     <tbody>
                         <tr>
                             <td>dnsaas:admin</td>
-                            <td> Create, Read, Update, and Delete
-                                permissions across a specific product,
-                                where access is granted</td>
+                            <td>This role provides Create, Read,
+                                Update, and Delete permissions in
+                                Cloud DNS, where access is
+                                granted.</td>
                         </tr>
                         <tr>
                             <td>dnsaas:creator</td>
-                            <td> Create, Read and Update permissions
-                                across a specific product, where
-                                access is granted</td>
+                            <td>This role provides Create, Read and
+                                Update permissions in Cloud DNS, where
+                                access is granted.</td>
                         </tr>
                         <tr>
                             <td>dnsaas:observer</td>
-                            <td> Read permission across a specific
-                                product, where access is granted</td>
+                            <td>This role provides Read permission in
+                                Cloud DNS, where access is
+                                granted.</td>
                         </tr>
                     </tbody>
                 </table>
-                <para>In addition, there are two global roles which
-                    apply to all products. The following table
+                <para>Additionally, two multiproduct roles apply to
+                    all products. Users with multiproduct roles
+                    inherit access to future products when those
+                    products become RBAC-enabled. The following table
                     describes these roles and their
                     permissions.</para>
                 <table rules="all" width="70%">
-                    <caption>Cloud DNS Global Roles and
-                        Capabilities</caption>
+                    <caption>Multiproduct (Global Roles) and
+                        Permissions</caption>
                     <col width="30%"/>
                     <col width="70%"/>
                     <?dbfo keep-together="always"?>
@@ -2679,17 +2688,90 @@
                     <tbody>
                         <tr>
                             <td>admin</td>
-                            <td> Create, Read, Update, and Delete
-                                permissions across multiple products,
-                                where access is granted</td>
+                            <td>This role provides Create, Read,
+                                Update, and Delete permissions in all
+                                products, where access is
+                                granted.</td>
                         </tr>
                         <tr>
                             <td>observer</td>
-                            <td> Read permission across multiple
-                                products, where access is granted</td>
+                            <td>This role provides Read permission in
+                                all products, where access is
+                                granted.</td>
                         </tr>
                     </tbody>
                 </table>
+            </section>
+            <section version="5.0" xml:id="RBAC_Role_Conflict_3">
+                <title>Resolving Conflicts Between RBAC Multiproduct
+                    vs. Custom (Product-specific) Roles</title>
+                <para> The account owner can set roles for
+                    multiproduct and Cloud DNS scope, and it is
+                    important to understand how any potential
+                    conflicts among these roles are resolved. When two
+                    roles appear to conflict, the role that provides
+                    the more extensive permissions takes precedence.
+                    Therefore, admin roles take precedence over
+                    observer and creator roles, because admin roles
+                    provide more permissions. </para>
+                <para> The following table shows two examples of how
+                    potential conflicts between user roles in the
+                    Control Panel are resolved: </para>
+                <para>
+                    <informaltable rules="all">
+                        <thead>
+                            <tr align="center">
+                                <td>Permission Configuration</td>
+                                <td>View of Permission in the Control
+                                   Panel </td>
+                                <td>Can the User Perform Product Admin
+                                   Functions in the Control
+                                   Panel?</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>User is assigned the following
+                                   roles: multiproduct <emphasis
+                                   role="bold"><emphasis role="bold"
+                                   >observer</emphasis></emphasis> and
+                                   Cloud DNS <emphasis role="bold"
+                                   >admin</emphasis></td>
+                                <td>Appears that the user has only the
+                                   multiproduct <emphasis role="bold"
+                                   >observer</emphasis> role</td>
+                                <td>Yes, for Cloud DNS only. The user
+                                   has the <emphasis role="bold"
+                                   >observer</emphasis> role for the
+                                   rest of the products.</td>
+                            </tr>
+                            <tr>
+                                <td>User is assigned the following
+                                   roles: multiproduct <emphasis
+                                   role="bold">admin</emphasis> and
+                                   Cloud DNS <emphasis role="bold"
+                                   >observer</emphasis></td>
+                                <td>Appears that the user has only the
+                                   multiproduct <emphasis role="bold"
+                                   >admin</emphasis> role</td>
+                                <td>Yes, for all of the products. The
+                                   Cloud DNS <emphasis role="bold"
+                                   >observer</emphasis> role is
+                                   ignored.</td>
+                            </tr>
+                        </tbody>
+                    </informaltable>
+                </para>
+            </section>
+            <section version="5.0" xml:id="RBAC_API_XREF_3">
+                <title>RBAC Permissions Cross-reference to Cloud DNS
+                    API Operations</title>
+                <para> API operations for Cloud DNS may or may not be
+                    available to all roles. To see which operations
+                    are permitted to invoke which calls, please review
+                        <link
+                        xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac"
+                        > the Knowledge Center article</link>.</para>
             </section>
         </section>
     </chapter>
