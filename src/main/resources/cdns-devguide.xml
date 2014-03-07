@@ -64,19 +64,19 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added note about Rackspace Cloud
-                                devices to which you can add PTR
-                                records. See <xref
-                                   linkend="Add_Records-d1e4895"
-                                />.</para>
-                        </listitem>
-                        <listitem>
                             <para>Added note about what happens when
                                 adding or modifying records and one or
                                 more records fail. See <xref
                                    linkend="Add_Records-d1e4895"/> and
                                    <xref
                                    linkend="Modify_Records-d1e5033"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added note about Rackspace Cloud
+                                devices to which you can add PTR
+                                records. See <xref
+                                   linkend="ReverseDNS-123457003"
                                 />.</para>
                         </listitem>
                     </itemizedlist>
@@ -4792,11 +4792,6 @@ sample@rackspace.com. 1308874739 3600 3600 3600 3600)</programlisting></para>
                 <note><title>Notes</title>
                     <itemizedlist>
                         <listitem>
-                            <para>PTR records can only be added for
-                                Rackspace Cloud Servers and Load
-                                Balancers.</para>
-                        </listitem>
-                        <listitem>
                             <para>If you submit a request with
                                 multiple records, and one or more of
                                 those records fails, the entire
@@ -5483,6 +5478,11 @@ images.www.example.com  A  127.0.0.5</programlisting>
                 </table>
                <note><title>Notes</title>
                     <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>PTR records can only be added for
+                                Rackspace Cloud Servers and Load
+                                Balancers.</para>
+                        </listitem>
                         <listitem>
                             <para><code>id</code> for the record must
                                 not be specified.</para>
