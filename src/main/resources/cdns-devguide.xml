@@ -47,7 +47,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2014-03-07</pubdate>
+        <pubdate>2014-05-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -59,6 +59,17 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-05-02</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="dns_propagation"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-03-07</date>
                 <revdescription>
@@ -458,7 +469,8 @@
             programmatically via the Rackspace Cloud DNS API as
             described in this Cloud DNS Developer Guide.</para>
         <note>
-            <para> DNS propagation may take up to 1 minute.</para>
+            <para> Refer to <xref linkend="dns_propagation"/> for
+                information about DNS propagation.</para>
         </note>
         <para>The following figure shows an overview of Cloud DNS Infrastructure:
 	<informalfigure>
@@ -2605,6 +2617,23 @@
             <para> Cloud DNS supports IP addresses both inside and
                 outside the Rackspace-assigned IP ranges.</para>
         </section>
+        <section xml:id="dns_propagation">
+            <title>DNS Propagation</title>
+            <para>Typical DNS propagation to Rackspace name servers
+                (globally) may take up to one minute. This refers to
+                the amount of time it takes after a change
+                (add/delete/update) is made to a customer's records
+                via API, DNS Manager, MyRackspace Customer Portal,
+                Cloud Control, and so forth before the change is live
+                on our name servers.</para>
+            <para>A large amount of changes made simultaneously may
+                take 2-3 minutes. If a new domain is added or an
+                existing domain is deleted, this may take up to a few
+                minutes to propagate to our Rackspace name servers.
+                When changing name servers for a domain, complete
+                propagation will take about 2 days for most domains;
+                this is enforced by the registries.</para>
+        </section>
         <section xml:id="role_based_access_control" security="writeronly">
             <title>Role Based Access Control (RBAC)</title>
             <para>Role Based Access Control (RBAC) restricts access to
@@ -3610,6 +3639,12 @@
                         <para>
                             <itemizedlist>
                                 <listitem>
+                                   <para> Refer to <xref
+                                   linkend="dns_propagation"/> for
+                                   information about DNS
+                                   propagation.</para>
+                                </listitem>
+                                <listitem>
                                    <para> If you attempt to create a
                                    domain that already exists, the API
                                    will return an exception saying
@@ -3624,10 +3659,6 @@
                                    creation of even a single record,
                                    the entire process will fail.
                                    </para>
-                                </listitem>
-                                <listitem>
-                                   <para> DNS propagation may take up
-                                   to 1 minute. </para>
                                 </listitem>
                                 <listitem>
                                    <para>When a domain is created, and
@@ -4078,8 +4109,10 @@
                     <para>
                         <itemizedlist>
                             <listitem>
-                                <para>DNS propagation may take up to 1
-                                   minute.</para>
+                                <para> Refer to <xref
+                                   linkend="dns_propagation"/> for
+                                   information about DNS
+                                   propagation.</para>
                             </listitem>
                             <listitem>
                                 <para>This process allows multiple
@@ -4248,9 +4281,6 @@ sample@rackspace.com. 1308874739 3600 3600 3600 3600)</programlisting></para>
                     </tbody>
                 </informaltable>
                 <note>
-                    <para> DNS propagation may take up to 1 minute. </para>
-                </note>
-                <note>
                     <para> These calls return an asynchronous response, as described in <xref
                             linkend="sync_asynch_responses"/>.</para>
                 </note>
@@ -4271,12 +4301,25 @@ sample@rackspace.com. 1308874739 3600 3600 3600 3600)</programlisting></para>
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
                     caller to correct the cause of the failure and POST the request again. </para>
-                <note>
-                    <para>A domain's <code>id</code> is immutable. </para>
-                </note>
-                <note>
-                    <para>When the domain and/or record TTL is supplied by the user, either via a
-                        create or update call, the TTL values must be 300 seconds or more.</para>
+                <note><title>Notes</title>
+                    <itemizedlist>
+                        <listitem>
+                            <para> Refer to <xref
+                                   linkend="dns_propagation"/> for
+                                information about DNS
+                                propagation.</para>
+                        </listitem>
+                        <listitem>
+                            <para>A domain's <code>id</code> is
+                                immutable. </para>
+                        </listitem>
+                        <listitem>
+                            <para>When the domain and/or record TTL is
+                                supplied by the user, either via a
+                                create or update call, the TTL values
+                                must be 300 seconds or more.</para>
+                        </listitem>
+                    </itemizedlist>
                 </note>
                 <table rules="all">
                     <caption>Required and Optional Attributes for
