@@ -47,7 +47,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2014-05-02</pubdate>
+        <pubdate>2014-05-08</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -59,6 +59,19 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-05-08</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed malformed badRequest Fault on
+                                Request Structure Errors: XML example
+                                in <xref linkend="DNS_faults"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-05-02</date>
                 <revdescription>
@@ -2534,7 +2547,7 @@
                 <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 &lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="400">
      &lt;message>The request could not be processed.&lt;/message>
-     &lt;details>Unexpected close tag &lt;/domains>; expected &lt;/domain>.
+     &lt;details> Unexpected close tag &amp;lt;/domains&amp;gt; expected &amp;lt;/domain&amp;gt;.
      &lt;/details>
 &lt;/badRequest></programlisting>
             </example>
