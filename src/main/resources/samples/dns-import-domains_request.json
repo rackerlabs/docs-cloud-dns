@@ -1,0 +1,12 @@
+POST https://dns.api.rackspacecloud.com/v1.0/1234/domains/import
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 311
+
+{
+  "domains" : [ {
+    "contentType" : "BIND_9",
+    "contents" : "\nexample.net. 3600 IN SOA dns1.stabletransit.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600\nexample.net. 86400 IN A 110.11.12.16\nexample.net. 3600 IN MX 5 mail2.example.net.\nwww.example.net. 5400 IN CNAME example.net.\n"
+  } ]
+}

@@ -1,0 +1,4 @@
+PUT https://admin.dns.api.rackspacecloud.com/v1.0/1234/groups/high_limit_customer_group
+Accept: application/xml
+Content-Type: application/xml
+Content-Length: 0

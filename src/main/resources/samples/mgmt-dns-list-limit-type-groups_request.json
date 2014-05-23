@@ -1,0 +1,4 @@
+GET https://admin.dns.api.rackspacecloud.com/v1.0/groups/types/rate_limit
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0

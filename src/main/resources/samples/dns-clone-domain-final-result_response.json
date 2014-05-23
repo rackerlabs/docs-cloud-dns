@@ -1,0 +1,108 @@
+Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 3325
+
+{
+  "name" : "clone1.com",
+  "id" : 3586213,
+  "comment" : "clone1.com is a template domain for cloning others. clone1.com has subdomains - sub1.clone1.com, sub2.clone1.com, sub3.clone1.com",
+  "updated" : "2013-05-06T17:17:35.000+0000",
+  "nameservers" : [ {
+    "name" : "dns1.stabletransit.com"
+  }, {
+    "name" : "dns2.stabletransit.com"
+  } ],
+  "accountId" : 1234,
+  "recordsList" : {
+    "totalEntries" : 7,
+    "records" : [ {
+      "name" : "ftp.clone1.com",
+      "id" : "A-9516805",
+      "type" : "A",
+      "data" : "192.0.2.8",
+      "updated" : "2013-05-06T17:17:32.000+0000",
+      "ttl" : 5771,
+      "created" : "2013-05-06T17:17:32.000+0000"
+    }, {
+      "name" : "clone1.com",
+      "id" : "A-9516806",
+      "type" : "A",
+      "data" : "192.0.2.17",
+      "updated" : "2013-05-06T17:17:33.000+0000",
+      "ttl" : 86400,
+      "created" : "2013-05-06T17:17:33.000+0000"
+    }, {
+      "name" : "clone1.com",
+      "id" : "NS-8504413",
+      "type" : "NS",
+      "data" : "dns1.stabletransit.com",
+      "updated" : "2013-05-06T17:17:31.000+0000",
+      "ttl" : 7788,
+      "created" : "2013-05-06T17:17:31.000+0000"
+    }, {
+      "name" : "clone1.com",
+      "id" : "NS-8504414",
+      "type" : "NS",
+      "data" : "dns2.stabletransit.com",
+      "updated" : "2013-05-06T17:17:31.000+0000",
+      "ttl" : 7788,
+      "created" : "2013-05-06T17:17:31.000+0000"
+    }, {
+      "name" : "clone1.com",
+      "id" : "NS-8504415",
+      "type" : "NS",
+      "data" : "server1.clone1.com",
+      "updated" : "2013-05-06T17:17:34.000+0000",
+      "ttl" : 3600,
+      "created" : "2013-05-06T17:17:34.000+0000"
+    }, {
+      "name" : "clone1.com",
+      "priority" : 5,
+      "id" : "MX-4220032",
+      "type" : "MX",
+      "data" : "mail.clone1.com",
+      "updated" : "2013-05-06T17:17:35.000+0000",
+      "ttl" : 3600,
+      "created" : "2013-05-06T17:17:35.000+0000"
+    }, {
+      "name" : "www.clone1.com",
+      "id" : "CNAME-11336152",
+      "type" : "CNAME",
+      "comment" : "This is a comment on the CNAME record",
+      "data" : "clone1.com",
+      "updated" : "2013-05-06T17:17:35.000+0000",
+      "ttl" : 5400,
+      "created" : "2013-05-06T17:17:35.000+0000"
+    } ]
+  },
+  "subdomains" : {
+    "domains" : [ {
+      "name" : "sub1.clone1.com",
+      "id" : 3586214,
+      "comment" : "sub1.clone1.com uses rackspace.com for email domain name. Sister subdomains are sub2.clone1.com, sub3.clone1.com",
+      "updated" : "2013-05-06T17:17:36.000+0000",
+      "emailAddress" : "administrator@rackspace.com",
+      "created" : "2013-05-06T17:17:36.000+0000"
+    }, {
+      "name" : "sub2.clone1.com",
+      "id" : 3586215,
+      "comment" : "sub1.clone1.com uses parent domain name, clone1.com, for email domain name",
+      "updated" : "2013-05-06T17:17:37.000+0000",
+      "emailAddress" : "admin@clone1.com",
+      "created" : "2013-05-06T17:17:37.000+0000"
+    }, {
+      "name" : "sub3.clone1.com",
+      "id" : 3586216,
+      "comment" : "sub3.clone1.com uses it's own domain name for email domain name",
+      "updated" : "2013-05-06T17:17:37.000+0000",
+      "emailAddress" : "adm@sub3.clone1.com",
+      "created" : "2013-05-06T17:17:37.000+0000"
+    } ],
+    "totalEntries" : 3
+  },
+  "ttl" : 7788,
+  "emailAddress" : "owner@clone1.com",
+  "created" : "2013-05-06T17:17:31.000+0000"
+}

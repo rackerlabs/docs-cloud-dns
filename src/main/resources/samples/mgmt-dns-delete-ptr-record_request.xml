@@ -1,0 +1,4 @@
+DELETE https://admin.dns.api.rackspacecloud.com/v1.0/1234/domains/9999999/records/PTR-6817754/192.0.2.8
+Accept: application/xml
+Content-Type: application/xml
+Content-Length: 0

@@ -1,0 +1,4 @@
+GET https://admin.dns.api.rackspacecloud.com/v1.0/1234/groups
+Accept: application/xml
+Content-Type: application/xml
+Content-Length: 0

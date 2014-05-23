@@ -1,0 +1,5 @@
+GET https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 0

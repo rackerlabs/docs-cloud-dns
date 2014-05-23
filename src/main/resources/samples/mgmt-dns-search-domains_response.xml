@@ -1,0 +1,14 @@
+Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.15
+Content-Type: application/xml
+Content-Length: 1632
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:domains totalEntries="5" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+    <domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999999" name="rackspace.example.com" ttl="5600" emailAddress="hostmaster@example.com" updated="2011-04-11T06:52:38Z" created="2011-04-11T06:52:37Z" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999998" name="example.rackspace.org" ttl="5600" emailAddress="hostmaster@example.org" updated="2011-08-12T18:48:42Z" created="2011-07-25T19:33:22Z" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <domain xsi:type="ns3:domain" externalOwnerId="DC12345" id="9999997" name="www.rackspace.example.co.uk" ttl="5600" emailAddress="hostmaster@example.com" updated="2010-08-19T01:12:19Z" created="2010-08-19T01:10:08Z" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <domain xsi:type="ns3:domain" externalOwnerId="DC22333" id="8888886" name="rackspace.test.rackspace.com" ttl="5600" emailAddress="hostmaster@example.com" updated="2010-10-28T22:59:49Z" created="2010-04-21T18:59:05Z" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <domain xsi:type="ns3:domain" externalOwnerId="DC8866554" id="8855667" name="mail.relay.rackspace.example.com" ttl="5600" emailAddress="hostmaster@example.com" updated="2010-11-18T01:36:44Z" created="2009-12-11T01:02:50Z" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</ns3:domains>
