@@ -1186,7 +1186,7 @@
             <example>
                 <title>Response with Headers: XML</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="../../../target/samples/dns-content-type-response_response.xml" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
+                <programlisting language="xml"><xi:include href="samples/dns-content-type-response_response.xml" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <para>An alternative method of achieving the same result
                 is illustrated below. This time we utilize a URI
@@ -1196,7 +1196,7 @@
             <example>
                 <title>Request with Extension: XML</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="../../../target/samples/dns-content-type-req-ext_request.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
+                <programlisting language="xml"><xi:include href="samples/dns-content-type-req-ext_request.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
         </section>
         <section xml:id="sync_asynch_responses">
