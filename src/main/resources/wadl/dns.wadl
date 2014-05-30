@@ -2,6 +2,10 @@
 <application xmlns="http://wadl.dev.java.net/2009/02"
              xmlns:xs="http://www.w3.org/2001/XMLSchema"
              xmlns:wadl="http://wadl.dev.java.net/2009/02"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:svg="http://www.w3.org/2000/svg"
+             xmlns:m="http://www.w3.org/1998/Math/MathML"
+             xmlns:html="http://www.w3.org/1999/xhtml"
              xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
    <resources>
       <resource id="_limits_d1e4812" path="/limits">
@@ -524,24 +528,12 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List All Limits">
                <para role="shortdesc">List all applicable
                                 limits.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provides a list of all applicable
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provides a list of all applicable
                     limits for the specified account.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> The following examples show the requests and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> The following examples show the requests and
                     corresponding responses to list all limits for the
                     specified account:</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> For details about the limits information
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> For details about the limits information
                     returned, refer to <xref linkend="Limits-d1e1208"/>.</para>
             </wadl:doc>
             <request>
@@ -575,17 +567,9 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Limit Types">
                <para role="shortdesc">List the types of
                                 limits.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provides a list of all applicable
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provides a list of all applicable
                     limit types for the specified account.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> The following examples show the requests and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> The following examples show the requests and
                     corresponding responses to list all limit types
                     for the specified account:</para>
             </wadl:doc>
@@ -620,19 +604,11 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Specific Limit">
                <para role="shortdesc">List assigned limits of
                                 the specified type.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provides a list of all applicable
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provides a list of all applicable
                     limits of the specified
                         <parameter>type</parameter> for the specified
                     account.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> The following examples show the requests and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> The following examples show the requests and
                     corresponding responses to list all applicable
                     limits of the specified
                         <parameter>type</parameter> for the specified
@@ -669,36 +645,20 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domains">
                <para role="shortdesc">List all domains manageable by the account specified.
                                 Display IDs and names only.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> These calls provide a list of all DNS domains manageable by a given account.
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> These calls provide a list of all DNS domains manageable by a given account.
                     The resulting list is flat, and does not break the domains down hierarchically
                     by subdomain. All representative domains are included in the list, even if a
                     domain is conceptually a subdomain of another domain in the list.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>These calls return by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref linkend="pagination"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> In the examples that follow, the request is made for a <code>limit</code> of
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> In the examples that follow, the request is made for a <code>limit</code> of
                         <code>10</code> records, starting at <code>offset</code>
                     <code>20</code> (record 21).</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>Since the current set of 10 records in the previous response examples
                         begins at <code>offset=20</code>, note that the <code>previous</code> link
                         points to a group of 10 records starting at <code>offset=10</code>, while
@@ -809,42 +769,22 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domains">
                <para role="shortdesc">Filter domains by domain name: list all domains
                                 manageable by the account specified that match the name
-                                    <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">domainName</parameter>. Display IDs and names
+                                    <parameter xmlns:xi="http://www.w3.org/2001/XInclude">domainName</parameter>. Display IDs and names
                                 only.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> These calls provide a list of all DNS domains manageable by a given account.
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> These calls provide a list of all DNS domains manageable by a given account.
                     The resulting list is flat, and does not break the domains down hierarchically
                     by subdomain. All representative domains are included in the list, even if a
                     domain is conceptually a subdomain of another domain in the list.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>These calls return by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref linkend="pagination"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> In the examples that follow, the request is made for a <code>limit</code> of
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> In the examples that follow, the request is made for a <code>limit</code> of
                         <code>10</code> records, starting at <code>offset</code>
                     <code>20</code> (record 21).</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>Since the current set of 10 records in the previous response examples
                         begins at <code>offset=20</code>, note that the <code>previous</code> link
                         points to a group of 10 records starting at <code>offset=10</code>, while
@@ -958,33 +898,17 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domain Details">
                <para role="shortdesc">List details of the specified domain, with record
                                 information but without subdomains. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provides the detailed output for a specific domain configured and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provides the detailed output for a specific domain configured and
                     associated with an account. This call is not capable of returning details for a
                     domain that has been deleted. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call does not require a request body.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call does not require a request body.</para>
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref linkend="pagination"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"><?rax-fo keep-with-next?> Two parameters are available to specify the
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"><?rax-fo keep-with-next?> Two parameters are available to specify the
                     information about subdomains and records to be returned by the List Domain
                     Details call:<itemizedlist>
                         <listitem>
@@ -1003,30 +927,18 @@
                         </listitem>
                     </itemizedlist>
                </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the default parameter settings
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the default parameter settings
                         (<code>showRecords</code>=<code>true&amp;</code>
                   <code>showSubdomains</code>=<code>false</code>)
                     for the List Domain Details call. This call returns information with records but
                     no information about subdomains. Since these parameter values are the defaults,
                     this call works the same way if both of the parameters are omitted.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the parameter settings to return information for
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the parameter settings to return information for
                     both records and subdomains
                         (<code>showSubdomains</code>=<code>true&amp;</code>
                   <code>showRecords</code>=<code>true</code>)
                     for the List Domain Details call:</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"><?rax-fo keep-with-next?>The following examples
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"><?rax-fo keep-with-next?>The following examples
                     show the parameter settings to return basic
                     information only, without records or subdomains
                         (<code>showRecords</code>=<code>false&amp;</code>
@@ -1111,43 +1023,19 @@
    <method id="GET_d1e5695" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domain Details">
                <para role="shortdesc">List details of the specified domain. Display details,
-                                as specified by the <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">showRecords</parameter> and
-                                    <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">showSubdomains</parameter> parameters. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provides the detailed output for a specific domain configured and
+                                as specified by the <parameter xmlns:xi="http://www.w3.org/2001/XInclude">showRecords</parameter> and
+                                    <parameter xmlns:xi="http://www.w3.org/2001/XInclude">showSubdomains</parameter> parameters. </para>
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provides the detailed output for a specific domain configured and
                     associated with an account. This call is not capable of returning details for a
                     domain that has been deleted. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call does not require a request body.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call does not require a request body.</para>
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
                         URI (for example: <code>limit=10&amp;offset=0</code>), as described in <xref linkend="pagination"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"><?rax-fo keep-with-next?> Two parameters are available to specify the
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"><?rax-fo keep-with-next?> Two parameters are available to specify the
                     information about subdomains and records to be returned by the List Domain
                     Details call:<itemizedlist>
                         <listitem>
@@ -1166,30 +1054,18 @@
                         </listitem>
                     </itemizedlist>
                </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the default parameter settings
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the default parameter settings
                         (<code>showRecords</code>=<code>true&amp;</code>
                   <code>showSubdomains</code>=<code>false</code>)
                     for the List Domain Details call. This call returns information with records but
                     no information about subdomains. Since these parameter values are the defaults,
                     this call works the same way if both of the parameters are omitted.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the parameter settings to return information for
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the parameter settings to return information for
                     both records and subdomains
                         (<code>showSubdomains</code>=<code>true&amp;</code>
                   <code>showRecords</code>=<code>true</code>)
                     for the List Domain Details call:</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"><?rax-fo keep-with-next?>The following examples
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"><?rax-fo keep-with-next?>The following examples
                     show the parameter settings to return basic
                     information only, without records or subdomains
                         (<code>showRecords</code>=<code>false&amp;</code>
@@ -1287,32 +1163,16 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domain Changes">
                <para role="shortdesc">Show all changes to the
                                 specified domain
-                                   <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">since</parameter> the
-                                specified <code xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">date/time</code>. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call shows all changes to the specified
+                                   <parameter xmlns:xi="http://www.w3.org/2001/XInclude">since</parameter> the
+                                specified <code xmlns:xi="http://www.w3.org/2001/XInclude">date/time</code>. </para>
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call shows all changes to the specified
                     domain since the specified <code>date/time</code>.
                     The <parameter>since</parameter> parameter is
                     optional and defaults to midnight of the current
                     day. See <xref linkend="datetimeformat"/> for
                     details on how to specify this parameter's
                     value.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the requests and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the requests and
                     corresponding responses to list the domain changes
                     since midnight, GMT-5, on September 13,
                     2011:</para>
@@ -1350,43 +1210,23 @@
    <method id="GET_d1e6221" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Export Domain">
                <para role="shortdesc">Export details of the specified domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call provides the BIND (Berkeley Internet Name Domain) 9 formatted
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call provides the BIND (Berkeley Internet Name Domain) 9 formatted
                     contents of the requested domain. This call is for a <emphasis>single</emphasis>
                     domain only, and as such, does not traverse up or down the domain hierarchy for
                     details (that is, no subdomain information is provided). </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call is not capable of returning anything for a domain that has been
                         deleted. </para>
                 </note>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para linkend="import_domain_request_xml"> The BIND 9 formatted contents of the
                         requested domain will have no comments listed for the domain or for the
                         records of the domain being exported.</para>
                 </note>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> The following examples show the <emphasis>final</emphasis> successful
                         response for the asynchronous call. Refer to <xref linkend="sync_asynch_responses"/> for a description of how the
                         asynchronous call works.</para>
@@ -1423,25 +1263,13 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Create Domain(s)">
                <para role="shortdesc">Create a new domain with the configuration defined by
                                 the request.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> Subdomains are also created the same way as domains.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provisions one or more new DNS domains under the account specified,
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provisions one or more new DNS domains under the account specified,
                     based on the configuration defined in the request object. If the corresponding
                     request cannot be fulfilled due to insufficient or invalid data, an
                         <code>HTTP</code>
@@ -1498,18 +1326,10 @@
                     </note>
                 </para>
                
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the Create Domain(s)
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the Create Domain(s)
                     requests:<?rax-fo keep-with-next?>
                 </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>The following examples show the
                             <emphasis>initial</emphasis> 202 Accepted
                         response for the asynchronous call and
@@ -1553,11 +1373,7 @@
                <wadl:doc>If specified, must be
                                 greater than 300. The default value,
                                 if not specified, is
-                                <code xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <code xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">3600</code>.</wadl:doc>
             </param>
             <param name="comment"
@@ -1578,7 +1394,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.domains[*].name">
                <wadl:doc>Specifies the name for the
                                 domain or subdomain. Must be a valid
                                 domain name.</wadl:doc>
@@ -1587,7 +1403,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@emailAddress">
+                   path="$.domains[*].emailAddress">
                <wadl:doc>Email address to use for
                                 contacting the domain
                                 administrator.</wadl:doc>
@@ -1596,22 +1412,18 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.domains[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. The default value,
                                 if not specified, is
-                                <code xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <code xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">3600</code>.</wadl:doc>
             </param>
             <param name="comment"
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.domains[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -1636,34 +1448,14 @@
    <method id="POST_d1e6687" name="POST">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Clone Domain">
                <para role="shortdesc">Create specified domain
-                                   (<code xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">example2.com</code>) by
+                                   (<code xmlns:xi="http://www.w3.org/2001/XInclude">example2.com</code>) by
                                 cloning domain with id
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:m="http://www.w3.org/1998/Math/MathML"
-                      xmlns:html="http://www.w3.org/1999/xhtml">domainId</emphasis>. All
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude">domainId</emphasis>. All
                                 options assume default value of
-                                   <code xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">true</code>. See <xref xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml"
-                  linkend="clone_domains_parms_options"/> for the description of
+                                   <code xmlns:xi="http://www.w3.org/2001/XInclude">true</code>. See <xref xmlns:xi="http://www.w3.org/2001/XInclude"
+                  linkend="clone_domains_parms_options1"/> for the description of
                                 options.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response,
                         as described in <xref linkend="sync_asynch_responses"/>. The
                         AsyncResponse returned will be similar to that
@@ -1671,11 +1463,7 @@
                         request element absent since the clone request
                         has no body.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call will duplicate a single existing
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call will duplicate a single existing
                     domain configuration with a new domain name for
                     the specified Cloud account. By default, all
                     records and, optionally, subdomain(s) are
@@ -1683,19 +1471,11 @@
                     (referred to as the <emphasis>reference</emphasis>
                     domain) and the new cloned domain must exist under
                     the same Cloud account. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Refer to <xref linkend="clone_domains_parms_options"/> for
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Refer to <xref linkend="clone_domains_parms_options1"/> for
                     the parameters and options available to specify
                     how the cloning affects subdomains, comments,
                     email addresses, and record data.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <title>Notes</title>
                     <para>
                         <itemizedlist>
@@ -1780,11 +1560,7 @@
                         </itemizedlist>
                     </para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> According to the <emphasis>cloneName</emphasis>
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> According to the <emphasis>cloneName</emphasis>
                     specified, the domain name and record name(s) will
                     automatically be modified and replaced in the new
                     cloned domain as part of the cloning process and
@@ -1793,19 +1569,11 @@
                     available to specify how the cloning affects
                     subdomains, comments, email addresses, and record
                     data.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following table lists the parameters and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following table lists the parameters and
                     options for Clone Domain.</para>
-               <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml"
+               <table xmlns:xi="http://www.w3.org/2001/XInclude"
                 rules="all"
-                xml:id="clone_domains_parms_options">
+                xml:id="clone_domains_parms_options1">
                     <caption>Parameters and Options for Clone
                         Domain</caption>
                     <thead>
@@ -1873,17 +1641,9 @@
                         </tr>
                     </tbody>
                 </table>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the Clone Domain
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the Clone Domain
                     requests: </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>The following examples show the
                             <emphasis>initial</emphasis> 202 Accepted
                         response for the asynchronous call and
@@ -1892,68 +1652,9 @@
                         description of how the asynchronous call
                         works.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following are examples of the reference
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following are examples of the reference
                     domain and the resulting cloned domain:</para>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title> Reference (Existing) Domain cloner.com:
-                        XML</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Reference (Existing) Domain cloner.com: XML">
-                        <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.xml"/>
-                     </doc>
-                  </representation>
-                </example>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title>Resulting (Cloned) Domain clone1.com:
-                        XML</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Resulting (Cloned) Domain clone1.com: XML">
-                        <xsdxt:code href="../samples/dns-clone-domain-final-result_response.xml"/>
-                     </doc>
-                  </representation>
-                </example>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title> Reference (Existing) Domain cloner.com:
-                        JSON</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Reference (Existing) Domain cloner.com: JSON">
-                        <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.json"/>
-                     </doc>
-                  </representation>
-                </example>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title>Resulting (Cloned) Domain clone1.com:
-                        JSON</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Resulting (Cloned) Domain clone1.com: JSON">
-                        <xsdxt:code href="../samples/dns-clone-domain-final-result_response.json"/>
-                     </doc>
-                  </representation>
-                </example>
+
             </wadl:doc>
             <request>
                <param style="query"
@@ -1986,34 +1687,46 @@
                      <xsdxt:code href="../samples/dns-clone-domain_response.json"/>
                   </doc>
                </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Reference (Existing) Domain cloner.com: XML">
+                     <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.xml"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Resulting (Cloned) Domain clone1.com: XML">
+                     <xsdxt:code href="../samples/dns-clone-domain-final-result_response.xml"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Reference (Existing) Domain cloner.com: JSON">
+                     <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.json"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Resulting (Cloned) Domain clone1.com: JSON">
+                     <xsdxt:code href="../samples/dns-clone-domain-final-result_response.json"/>
+                  </doc>
+               </representation>
             </response>
          </method>
    <method id="POST_d1e6719" name="POST">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Clone Domain">
                <para role="shortdesc">Create specified domain
-                                   (<code xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">example2.com</code>) by
+                                   (<code xmlns:xi="http://www.w3.org/2001/XInclude">example2.com</code>) by
                                 cloning domain with id
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:m="http://www.w3.org/1998/Math/MathML"
-                      xmlns:html="http://www.w3.org/1999/xhtml">domainId</emphasis>.
-                                Options are as specified. See <xref xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml"
-                  linkend="clone_domains_parms_options"/> for the description of
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude">domainId</emphasis>.
+                                Options are as specified. See <xref xmlns:xi="http://www.w3.org/2001/XInclude"
+                  linkend="clone_domains_parms_options2"/> for the description of
                                 options.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response,
                         as described in <xref linkend="sync_asynch_responses"/>. The
                         AsyncResponse returned will be similar to that
@@ -2021,11 +1734,7 @@
                         request element absent since the clone request
                         has no body.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call will duplicate a single existing
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call will duplicate a single existing
                     domain configuration with a new domain name for
                     the specified Cloud account. By default, all
                     records and, optionally, subdomain(s) are
@@ -2033,19 +1742,11 @@
                     (referred to as the <emphasis>reference</emphasis>
                     domain) and the new cloned domain must exist under
                     the same Cloud account. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Refer to <xref linkend="clone_domains_parms_options"/> for
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Refer to <xref linkend="clone_domains_parms_options2"/> for
                     the parameters and options available to specify
                     how the cloning affects subdomains, comments,
                     email addresses, and record data.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <title>Notes</title>
                     <para>
                         <itemizedlist>
@@ -2130,11 +1831,7 @@
                         </itemizedlist>
                     </para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> According to the <emphasis>cloneName</emphasis>
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> According to the <emphasis>cloneName</emphasis>
                     specified, the domain name and record name(s) will
                     automatically be modified and replaced in the new
                     cloned domain as part of the cloning process and
@@ -2143,19 +1840,11 @@
                     available to specify how the cloning affects
                     subdomains, comments, email addresses, and record
                     data.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following table lists the parameters and
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following table lists the parameters and
                     options for Clone Domain.</para>
-               <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml"
+               <table xmlns:xi="http://www.w3.org/2001/XInclude"
                 rules="all"
-                xml:id="clone_domains_parms_options">
+                xml:id="clone_domains_parms_options2">
                     <caption>Parameters and Options for Clone
                         Domain</caption>
                     <thead>
@@ -2223,17 +1912,9 @@
                         </tr>
                     </tbody>
                 </table>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following examples show the Clone Domain
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the Clone Domain
                     requests: </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>The following examples show the
                             <emphasis>initial</emphasis> 202 Accepted
                         response for the asynchronous call and
@@ -2242,68 +1923,8 @@
                         description of how the asynchronous call
                         works.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">The following are examples of the reference
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following are examples of the reference
                     domain and the resulting cloned domain:</para>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title> Reference (Existing) Domain cloner.com:
-                        XML</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Reference (Existing) Domain cloner.com: XML">
-                        <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.xml"/>
-                     </doc>
-                  </representation>
-                </example>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title>Resulting (Cloned) Domain clone1.com:
-                        XML</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Resulting (Cloned) Domain clone1.com: XML">
-                        <xsdxt:code href="../samples/dns-clone-domain-final-result_response.xml"/>
-                     </doc>
-                  </representation>
-                </example>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title> Reference (Existing) Domain cloner.com:
-                        JSON</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Reference (Existing) Domain cloner.com: JSON">
-                        <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.json"/>
-                     </doc>
-                  </representation>
-                </example>
-               <example xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xmlns:xi="http://www.w3.org/2001/XInclude"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns:m="http://www.w3.org/1998/Math/MathML"
-                  xmlns:html="http://www.w3.org/1999/xhtml">
-                    <title>Resulting (Cloned) Domain clone1.com:
-                        JSON</title>
-                    
-                    <representation xmlns="http://wadl.dev.java.net/2009/02" mediaType="application/xml">
-                     <doc title="Resulting (Cloned) Domain clone1.com: JSON">
-                        <xsdxt:code href="../samples/dns-clone-domain-final-result_response.json"/>
-                     </doc>
-                  </representation>
-                </example>
             </wadl:doc>
             <request>
                <param style="query"
@@ -2353,11 +1974,37 @@
                      <xsdxt:code href="../samples/dns-clone-domain_response.xml"/>
                   </doc>
                </representation>
-            </response>
-            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Initial (202) Clone Domain Response: JSON">
                      <xsdxt:code href="../samples/dns-clone-domain_response.json"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Reference (Existing) Domain cloner.com: XML">
+                     <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.xml"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Resulting (Cloned) Domain clone1.com: XML">
+                     <xsdxt:code href="../samples/dns-clone-domain-final-result_response.xml"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Reference (Existing) Domain cloner.com: JSON">
+                     <xsdxt:code href="../samples/dns-clone-domain-reference-domain_response.json"/>
+                  </doc>
+               </representation>
+               <representation xmlns="http://wadl.dev.java.net/2009/02"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"
+                  mediaType="application/xml">
+                  <doc title="Resulting (Cloned) Domain clone1.com: JSON">
+                     <xsdxt:code href="../samples/dns-clone-domain-final-result_response.json"/>
                   </doc>
                </representation>
             </response>
@@ -2366,18 +2013,10 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Import Domain">
                <para role="shortdesc"> Import a new domain with the configuration specified by
                                 the request.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provisions a new DNS domain under the account specified by the BIND
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provisions a new DNS domain under the account specified by the BIND
                     9 formatted file configuration contents defined in the request object.  If the
                     corresponding request cannot be fulfilled due to insufficient or invalid data,
                     an <code>HTTP</code>
@@ -2385,17 +2024,9 @@
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
                     caller to correct the cause of the failure and <command>POST</command> the request again. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> For all practical purposes, a successful Import Domain call creates a domain,
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> For all practical purposes, a successful Import Domain call creates a domain,
                     and is therefore similar in response to a Create Domain call. </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <title>Notes</title>
                     <para>
                         <itemizedlist>
@@ -2416,11 +2047,7 @@
                         </itemizedlist>
                     </para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> Ensure that the BIND 9 formatted file
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> Ensure that the BIND 9 formatted file
                     configuration contents are valid by adhering to
                     the following rules:<itemizedlist>
                         <listitem>
@@ -2451,20 +2078,12 @@
                         </listitem>
                     </itemizedlist>
                </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Not following the above rules strictly will
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Not following the above rules strictly will
                     result in an HTTP 400 (Bad Request) error response
                     with messages such as the following: "The request
                     could not be understood by the server due to
                     malformed syntax."</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <title>Notes</title>
                     <para>
                         <itemizedlist>
@@ -2502,11 +2121,7 @@
                     </para>
                 </note>
                
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> The following examples show the <emphasis>final</emphasis> successful
                         response for the asynchronous call. Refer to <xref linkend="sync_asynch_responses"/> for a description of how the
                         asynchronous call works.</para>
@@ -2544,7 +2159,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@contentType">
+                   path="$.domains[*].contentType">
                <wadl:doc>The content type for the
                                 bind file. Must be specified as
                                 "BIND_9".</wadl:doc>
@@ -2553,7 +2168,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@contents">
+                   path="$.domains[*].contents">
                <wadl:doc>Specifies the valid
                                 configuration contents for the domain
                                 to be imported.</wadl:doc>
@@ -2578,35 +2193,19 @@
    <method id="PUT_d1e7473" name="PUT">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Modify Domain(s)">
                <para role="shortdesc">Modify the configuration of a domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call modifies DNS domain(s) attributes only. Records cannot be added,
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call modifies DNS domain(s) attributes only. Records cannot be added,
                     modified, or removed. Only the TTL, email address and comment attributes of a domain can
                     be modified. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">If a request cannot be fulfilled due to insufficient or invalid data, an
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">If a request cannot be fulfilled due to insufficient or invalid data, an
                         <code>HTTP</code>
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
                     caller to correct the cause of the failure and POST the request again. </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <title>Notes</title>
                     <itemizedlist>
                         <listitem>
@@ -2627,11 +2226,7 @@
                     </itemizedlist>
                 </note>
                
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>
                      <code>name</code> cannot be specified, since
                         the domain name cannot be modified.</para>
@@ -2648,11 +2243,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -2695,13 +2286,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -2713,7 +2300,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@emailAddress">
+                   path="$.emailAddress">
                <wadl:doc>Email address to use for
                                 contacting the domain
                                 administrator.</wadl:doc>
@@ -2722,7 +2309,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.ttl">
                <wadl:doc>If specified, must be
                                 greater than 300.</wadl:doc>
             </param>
@@ -2730,7 +2317,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -2746,11 +2333,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -2793,13 +2376,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.domains[*].id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -2811,7 +2390,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@emailAddress">
+                   path="$.domains[*].emailAddress">
                <wadl:doc>Email address to use for
                                 contacting the domain
                                 administrator.</wadl:doc>
@@ -2820,7 +2399,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.domains[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300.</wadl:doc>
             </param>
@@ -2828,7 +2407,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.domains[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -2839,35 +2418,19 @@
    <method id="PUT_d1e7488" name="PUT">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Modify Domain(s)">
                <para role="shortdesc">Modify the configurations of multiple domains.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call modifies DNS domain(s) attributes only. Records cannot be added,
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call modifies DNS domain(s) attributes only. Records cannot be added,
                     modified, or removed. Only the TTL, email address and comment attributes of a domain can
                     be modified. </para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">If a request cannot be fulfilled due to insufficient or invalid data, an
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">If a request cannot be fulfilled due to insufficient or invalid data, an
                         <code>HTTP</code>
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
                     caller to correct the cause of the failure and POST the request again. </para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <title>Notes</title>
                     <itemizedlist>
                         <listitem>
@@ -2888,11 +2451,7 @@
                     </itemizedlist>
                 </note>
                
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>
                      <code>name</code> cannot be specified, since
                         the domain name cannot be modified.</para>
@@ -2909,11 +2468,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -2956,13 +2511,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -2974,7 +2525,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@emailAddress">
+                   path="$.emailAddress">
                <wadl:doc>Email address to use for
                                 contacting the domain
                                 administrator.</wadl:doc>
@@ -2983,7 +2534,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.ttl">
                <wadl:doc>If specified, must be
                                 greater than 300.</wadl:doc>
             </param>
@@ -2991,7 +2542,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -3007,11 +2558,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -3054,13 +2601,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.domains[*].id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 domains, the id for each domain must
                                 be specified as an attribute. Note
@@ -3072,7 +2615,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@emailAddress">
+                   path="$.domains[*].emailAddress">
                <wadl:doc>Email address to use for
                                 contacting the domain
                                 administrator.</wadl:doc>
@@ -3081,7 +2624,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.domains[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300.</wadl:doc>
             </param>
@@ -3089,7 +2632,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.domains[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -3100,18 +2643,10 @@
    <method id="DELETE_d1e7755" name="DELETE">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove Domain(s)">
                <para role="shortdesc">Remove a domain from an account.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call removes one or more specified domains from the account; when a
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call removes one or more specified domains from the account; when a
                     domain is deleted, its immediate resource records are also deleted from the
                     account. By default, if a deleted domain had subdomains, each subdomain becomes
                     a root domain and is not deleted; this can be overridden by the optional
@@ -3121,22 +2656,14 @@
                     immediately purged and is not recoverable via the API. So on a successful
                     delete, subsequent requests for the deleted object should return itemNotFound
                         (<errorcode>404</errorcode>).</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Transactionally, delete calls behave differently than other calls in that
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
                     request do not fail as a group. Instead, each delete is attempted even if one or
                     more fail. The response for a delete request in which one or more items fail
                     contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">In the previous two response examples, the requested domain objects could not
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">In the previous two response examples, the requested domain objects could not
                     be deleted, since they were not found.</para>
             </wadl:doc>
             <request>
@@ -3185,18 +2712,10 @@
    <method id="DELETE_d1e7770" name="DELETE">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove Domain(s)">
                <para role="shortdesc">Remove multiple domains from an account.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call removes one or more specified domains from the account; when a
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call removes one or more specified domains from the account; when a
                     domain is deleted, its immediate resource records are also deleted from the
                     account. By default, if a deleted domain had subdomains, each subdomain becomes
                     a root domain and is not deleted; this can be overridden by the optional
@@ -3206,22 +2725,14 @@
                     immediately purged and is not recoverable via the API. So on a successful
                     delete, subsequent requests for the deleted object should return itemNotFound
                         (<errorcode>404</errorcode>).</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Transactionally, delete calls behave differently than other calls in that
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
                     request do not fail as a group. Instead, each delete is attempted even if one or
                     more fail. The response for a delete request in which one or more items fail
                     contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">In the previous two response examples, the requested domain objects could not
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">In the previous two response examples, the requested domain objects could not
                     be deleted, since they were not found.</para>
             </wadl:doc>
             <request>
@@ -3276,18 +2787,10 @@
    <method id="DELETE_d1e7788" name="DELETE">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove Domain(s)">
                <para role="shortdesc">Remove a domain and its subdomains from an account.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call removes one or more specified domains from the account; when a
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call removes one or more specified domains from the account; when a
                     domain is deleted, its immediate resource records are also deleted from the
                     account. By default, if a deleted domain had subdomains, each subdomain becomes
                     a root domain and is not deleted; this can be overridden by the optional
@@ -3297,22 +2800,14 @@
                     immediately purged and is not recoverable via the API. So on a successful
                     delete, subsequent requests for the deleted object should return itemNotFound
                         (<errorcode>404</errorcode>).</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Transactionally, delete calls behave differently than other calls in that
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
                     request do not fail as a group. Instead, each delete is attempted even if one or
                     more fail. The response for a delete request in which one or more items fail
                     contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">In the previous two response examples, the requested domain objects could not
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">In the previous two response examples, the requested domain objects could not
                     be deleted, since they were not found.</para>
             </wadl:doc>
             <request>
@@ -3368,18 +2863,10 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove Domain(s)">
                <para role="shortdesc">Remove multiple domains and their subdomains from an
                                 account.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call removes one or more specified domains from the account; when a
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call removes one or more specified domains from the account; when a
                     domain is deleted, its immediate resource records are also deleted from the
                     account. By default, if a deleted domain had subdomains, each subdomain becomes
                     a root domain and is not deleted; this can be overridden by the optional
@@ -3389,22 +2876,14 @@
                     immediately purged and is not recoverable via the API. So on a successful
                     delete, subsequent requests for the deleted object should return itemNotFound
                         (<errorcode>404</errorcode>).</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Transactionally, delete calls behave differently than other calls in that
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
                     request do not fail as a group. Instead, each delete is attempted even if one or
                     more fail. The response for a delete request in which one or more items fail
                     contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">In the previous two response examples, the requested domain objects could not
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">In the previous two response examples, the requested domain objects could not
                     be deleted, since they were not found.</para>
             </wadl:doc>
             <request>
@@ -3464,30 +2943,12 @@
          </method>
    <method id="GET_d1e8059" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Subdomains">
-               <para role="shortdesc">List <glossterm xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml"
-                       baseform="domain">domains</glossterm> that are <glossterm xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml"
-                       baseform="subdomain">subdomains</glossterm> of the specified
+               <para role="shortdesc">List <glossterm xmlns:xi="http://www.w3.org/2001/XInclude" baseform="domain">domains</glossterm> that are <glossterm xmlns:xi="http://www.w3.org/2001/XInclude" baseform="subdomain">subdomains</glossterm> of the specified
                                 domain.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml"> This call provides a list of all DNS domains that are subdomains of the
+               <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provides a list of all DNS domains that are subdomains of the
                     specified domain. The resulting list is flat, and does not break the domains
                     down hierarchically by subdomain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
@@ -3526,17 +2987,9 @@
                <para role="shortdesc">List all records
                                 configured for the specified domain.
                                 SOA cannot be modified.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call lists all records configured for the
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call lists all records configured for the
                     specified domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
@@ -3575,21 +3028,9 @@
                <para role="shortdesc">List all records for the
                                 specified domain of the specified type
                                 that match the specified
-                                   <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">name</parameter> and/or
-                                   <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">data</parameter>.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Records can be searched within a domain. The
+                                   <parameter xmlns:xi="http://www.w3.org/2001/XInclude">name</parameter> and/or
+                                   <parameter xmlns:xi="http://www.w3.org/2001/XInclude">data</parameter>.</para>
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Records can be searched within a domain. The
                     API allows for the caller to supply record type,
                     name, and/or data as query parameters, which
                     instruct the system to only return records of the
@@ -3602,11 +3043,7 @@
                     are optional. The responses from a record search
                     have the same format as the responses shown in
                         <xref linkend="List_Records-d1e4629"/>.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>This call returns by default a maximum of 100 items at a time if no
                             <code>limit</code> is specified. To navigate the collection returned,
                         the parameters <code>limit</code> and <code>offset</code> can be set in the
@@ -3619,11 +3056,7 @@
                <para role="shortdesc">List details for a
                                 specific record in the specified
                                 domain.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call lists details for the specified record
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call lists details for the specified record
                     in the specified domain.</para>
             </wadl:doc>
             <request>
@@ -3657,24 +3090,12 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Add Records">
                <para role="shortdesc">Add new record(s) to the
                                 specified domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">This call adds new record(s) to the specified
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">This call adds new record(s) to the specified
                     domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <title>Notes</title>
                     <itemizedlist>
                         <listitem>
@@ -3697,20 +3118,12 @@
                     </itemizedlist>
                 </note>
                
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>
                      <code>id</code> for the record must not be
                         specified.</para>
                 </note>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> The following examples show the <emphasis>final</emphasis> successful
                         response for the asynchronous call. Refer to <xref linkend="sync_asynch_responses"/> for a description of how the
                         asynchronous call works.</para>
@@ -3785,7 +3198,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@type">
+                   path="$.records[*].type">
                <wadl:doc>Specifies the record type
                                 to add. </wadl:doc>
             </param>
@@ -3793,7 +3206,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.records[*].name">
                <wadl:doc>Specifies the name for the
                                 domain or subdomain. Must be a valid
                                 domain name.</wadl:doc>
@@ -3802,7 +3215,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@data">
+                   path="$.records[*].data">
                <wadl:doc>The data field for PTR, A,
                                 and AAAA records must be a valid IPv4
                                 or IPv6 IP address</wadl:doc>
@@ -3811,7 +3224,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@priority">
+                   path="$.records[*].priority">
                <wadl:doc>Required for MX and SRV
                                 records, but forbidden for other
                                 record types. If specified, must be an
@@ -3821,7 +3234,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.records[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to the
                                 domain TTL if available, or 3600 if no
@@ -3831,7 +3244,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.records[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -3856,25 +3269,13 @@
    <method id="PUT_d1e9013" name="PUT">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Modify Records">
                <para role="shortdesc">Modify the configuration of a record in the domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">These calls modify the configuration of a
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">These calls modify the configuration of a
                     specified record or multiple records in the
                     specified domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <title>Notes</title>
                     <itemizedlist>
                         <listitem>
@@ -3913,11 +3314,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -3931,11 +3328,7 @@
                    required="true"
                    path="FIXME/@name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -3946,11 +3339,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4010,13 +3399,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4028,13 +3413,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4045,11 +3426,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4066,7 +3443,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@data">
+                   path="$.data">
                <wadl:doc>The data field is required
                                 for PTR records and must be a valid
                                 IPv4 or IPv6 IP address.</wadl:doc>
@@ -4075,7 +3452,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@priority">
+                   path="$.priority">
                <wadl:doc>Can be included for MX and
                                 SRV records, but forbidden for other
                                 record types. If specified, must be an
@@ -4085,7 +3462,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to the
                                 domain TTL if available, or 3600 if no
@@ -4095,7 +3472,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -4109,13 +3486,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4129,11 +3502,7 @@
                    required="true"
                    path="FIXME/@name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4144,11 +3513,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4208,13 +3573,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.records[*].id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4226,13 +3587,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.records[*].name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4243,11 +3600,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4264,7 +3617,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@data">
+                   path="$.records[*].data">
                <wadl:doc>The data field is required
                                 for PTR records and must be a valid
                                 IPv4 or IPv6 IP address.</wadl:doc>
@@ -4273,7 +3626,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@priority">
+                   path="$.records[*].priority">
                <wadl:doc>Can be included for MX and
                                 SRV records, but forbidden for other
                                 record types. If specified, must be an
@@ -4283,7 +3636,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.records[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to the
                                 domain TTL if available, or 3600 if no
@@ -4293,7 +3646,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.records[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -4304,25 +3657,13 @@
    <method id="PUT_d1e9031" name="PUT">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Modify Records">
                <para role="shortdesc">Modify the configuration of records in the domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">These calls modify the configuration of a
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">These calls modify the configuration of a
                     specified record or multiple records in the
                     specified domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <title>Notes</title>
                     <itemizedlist>
                         <listitem>
@@ -4361,11 +3702,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4379,11 +3716,7 @@
                    required="true"
                    path="FIXME/@name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4394,11 +3727,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4458,13 +3787,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4476,13 +3801,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4493,11 +3814,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4514,7 +3831,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@data">
+                   path="$.data">
                <wadl:doc>The data field is required
                                 for PTR records and must be a valid
                                 IPv4 or IPv6 IP address.</wadl:doc>
@@ -4523,7 +3840,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@priority">
+                   path="$.priority">
                <wadl:doc>Can be included for MX and
                                 SRV records, but forbidden for other
                                 record types. If specified, must be an
@@ -4533,7 +3850,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to the
                                 domain TTL if available, or 3600 if no
@@ -4543,7 +3860,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -4559,11 +3876,7 @@
                    required="true"
                    path="FIXME/@id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4577,11 +3890,7 @@
                    required="true"
                    path="FIXME/@name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4592,11 +3901,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4656,13 +3961,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.records[*].id">
                <wadl:doc>For modifying
-                                   <emphasis xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                            xmlns:svg="http://www.w3.org/2000/svg"
-                            xmlns:m="http://www.w3.org/1998/Math/MathML"
-                            xmlns:html="http://www.w3.org/1999/xhtml"
+                                   <emphasis xmlns:xi="http://www.w3.org/2001/XInclude"
                             xmlns="http://docbook.org/ns/docbook">multiple</emphasis>
                                 records, the id for each record must
                                 be specified as an attribute. Note
@@ -4674,13 +3975,9 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.records[*].name">
                <wadl:doc>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For record types other than SRV
                                    records, this specifies the name
                                    for the domain or subdomain and
@@ -4691,11 +3988,7 @@
                                    domain name to which the record
                                    belongs.The name attribute cannot
                                    be modified.</para>
-                                <para xmlns:xlink="http://www.w3.org/1999/xlink"
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:m="http://www.w3.org/1998/Math/MathML"
-                        xmlns:html="http://www.w3.org/1999/xhtml"
+                                <para xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">For SRV records, this specifies
                                    the entire service name, which is
                                    made up of the service, protocol,
@@ -4712,7 +4005,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@data">
+                   path="$.records[*].data">
                <wadl:doc>The data field is required
                                 for PTR records and must be a valid
                                 IPv4 or IPv6 IP address.</wadl:doc>
@@ -4721,7 +4014,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@priority">
+                   path="$.records[*].priority">
                <wadl:doc>Can be included for MX and
                                 SRV records, but forbidden for other
                                 record types. If specified, must be an
@@ -4731,7 +4024,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.records[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to the
                                 domain TTL if available, or 3600 if no
@@ -4741,7 +4034,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.records[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -4752,43 +4045,23 @@
    <method id="DELETE_d1e9326" name="DELETE">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove Records">
                <para role="shortdesc">Remove a record from the domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">These calls remove a specified record or
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">These calls remove a specified record or
                     multiple records from the specified domain.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">When a record is deleted, any and all record data is immediately purged and is
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">When a record is deleted, any and all record data is immediately purged and is
                     not recoverable via the API. So on a successful delete, subsequent requests for
                     the deleted record should return itemNotFound
                     (<errorcode>404</errorcode>).</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Transactionally, delete calls behave differently than other calls in that
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
                     request do not fail as a group. Instead, each delete is attempted even if one or
                     more fail. The response for a delete request in which one or more items fail
                     contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">In the previous two response examples, the requested record objects could not
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">In the previous two response examples, the requested record objects could not
                     be deleted, since they were not found.</para>
             </wadl:doc>
             <request>
@@ -4817,43 +4090,23 @@
    <method id="DELETE_d1e9346" name="DELETE">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove Records">
                <para role="shortdesc">Remove multiple records from the domain.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para> These calls return an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">These calls remove a specified record or
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">These calls remove a specified record or
                     multiple records from the specified domain.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">When a record is deleted, any and all record data is immediately purged and is
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">When a record is deleted, any and all record data is immediately purged and is
                     not recoverable via the API. So on a successful delete, subsequent requests for
                     the deleted record should return itemNotFound
                     (<errorcode>404</errorcode>).</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Transactionally, delete calls behave differently than other calls in that
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Transactionally, delete calls behave differently than other calls in that
                     deletes are never rolled back on exceptions, and multiple deletes in the same
                     request do not fail as a group. Instead, each delete is attempted even if one or
                     more fail. The response for a delete request in which one or more items fail
                     contains information regarding which items failed as well as information
                     regarding specific issues that caused the failure(s). See the examples that
                     follow.</para>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">In the previous two response examples, the requested record objects could not
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">In the previous two response examples, the requested record objects could not
                     be deleted, since they were not found.</para>
             </wadl:doc>
             <request>
@@ -4957,11 +4210,7 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Add PTR Records">
                <para role="shortdesc">Add new PTR record(s) for the specified Cloud device.</para>
                
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <title>Notes</title>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -5007,11 +4256,7 @@
                         </listitem>
                     </itemizedlist>
                 </note>
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Notice in the requests below that the
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Notice in the requests below that the
                         <emphasis>service</emphasis> and
                         <emphasis>device</emphasis> resource URI are
                     specified respectively as the <code>rel</code> and
@@ -5076,7 +4321,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@type">
+                   path="$.recordsList.records[*].type">
                <wadl:doc>Specifies the record type
                                 as "PTR". </wadl:doc>
             </param>
@@ -5084,7 +4329,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.recordsList.records[*].name">
                <wadl:doc>Specifies the name for the
                                 domain or subdomain. Must be a valid
                                 domain name.</wadl:doc>
@@ -5093,7 +4338,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@data">
+                   path="$.recordsList.records[*].data">
                <wadl:doc>The data field for PTR
                                 records must be a valid IPv4 or IPv6
                                 IP address.</wadl:doc>
@@ -5102,7 +4347,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.recordsList.records[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to 3600 if
                                 no TTL is specified.</wadl:doc>
@@ -5111,7 +4356,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.recordsList.records[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -5136,20 +4381,12 @@
    <method id="PUT_d1e9994" name="PUT">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Modify PTR Records">
                <para role="shortdesc">Modify one or more PTR records associated with a Rackspace Cloud device.</para>
-               <note xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">
+               <note xmlns:xi="http://www.w3.org/2001/XInclude">
                   <para>The IP address (data) for a PTR record cannot be modified. To change the reverse DNS 
                    for a domain, any existing PTR record(s) must be deleted and new ones created.</para>
                </note>
                
-               <para xmlns:xlink="http://www.w3.org/1999/xlink"
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns:m="http://www.w3.org/1998/Math/MathML"
-               xmlns:html="http://www.w3.org/1999/xhtml">Notice in the requests below that the
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Notice in the requests below that the
                         <emphasis>service</emphasis> and
                         <emphasis>device</emphasis> resource URI are
                     specified respectively as the <code>rel</code> and
@@ -5222,7 +4459,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@name">
+                   path="$.recordsList.records[*].name">
                <wadl:doc>Specifies the name for the
                                 domain or subdomain. Must be a valid
                                 domain name. Can be modified.</wadl:doc>
@@ -5231,7 +4468,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@id">
+                   path="$.recordsList.records[*].id">
                <wadl:doc>Specifies the unique id of
                                 the record.</wadl:doc>
             </param>
@@ -5239,7 +4476,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@type">
+                   path="$.recordsList.records[*].tye">
                <wadl:doc>Specifies the record type
                                 as "PTR".</wadl:doc>
             </param>
@@ -5247,7 +4484,7 @@
                    style="plain"
                    type="xs:string"
                    required="true"
-                   path="FIXME/@data">
+                   path="$.recordsList.records[*].data">
                <wadl:doc>The data field is required
                                 for PTR records and must be a valid
                                 IPv4 or IPv6 IP address.</wadl:doc>
@@ -5256,7 +4493,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@ttl">
+                   path="$.recordsList.records[*].ttl">
                <wadl:doc>If specified, must be
                                 greater than 300. Defaults to 3600 if
                                 no TTL is specified.</wadl:doc>
@@ -5265,7 +4502,7 @@
                    style="plain"
                    type="xs:string"
                    required="false"
-                   path="FIXME/@comment">
+                   path="$.recordsList.records[*].comment">
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
@@ -5289,11 +4526,7 @@
          </method>
    <method id="DELETE_d1e10208" name="DELETE">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Remove PTR Records">
-               <para role="shortdesc">Remove one or all PTR records associated with a Rackspace Cloud device. Use the optional <parameter xmlns:xlink="http://www.w3.org/1999/xlink"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:svg="http://www.w3.org/2000/svg"
-                       xmlns:m="http://www.w3.org/1998/Math/MathML"
-                       xmlns:html="http://www.w3.org/1999/xhtml">ip</parameter>
+               <para role="shortdesc">Remove one or all PTR records associated with a Rackspace Cloud device. Use the optional <parameter xmlns:xi="http://www.w3.org/2001/XInclude">ip</parameter>
                            query parameter to specify a specific record to delete. Omitting this parameter removes all PTR records associated with the
                            specified device.</para>
             </wadl:doc>
