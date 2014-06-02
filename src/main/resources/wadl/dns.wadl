@@ -4439,28 +4439,28 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete Record: XML request">
                <xsdxt:code
-                  href="../samples/dns-Delete-record_request.xml"/>
+                  href="../samples/dns-delete-record_request.xml"/>
             </wadl:doc>
          </representation>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete Record: JSON request">
                <xsdxt:code
-                  href="../samples/dns-Delete-record_request.json"/>
+                  href="../samples/dns-delete-record_request.json"/>
             </wadl:doc>
          </representation>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete records: XML request">
                <xsdxt:code
-                  href="../samples/dns-Delete-records_request.xml"/>
+                  href="../samples/dns-delete-records_request.xml"/>
             </wadl:doc>
          </representation>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete records: JSON request">
                <xsdxt:code
-                  href="../samples/dns-Delete-records_request.json"/>
+                  href="../samples/dns-delete-records_request.json"/>
             </wadl:doc>
          </representation>
       </request>
@@ -4510,28 +4510,28 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete Record: XML request">
                <xsdxt:code
-                  href="../samples/dns-Delete-record_request.xml"/>
+                  href="../samples/dns-delete-record_request.xml"/>
             </wadl:doc>
          </representation>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete Record: JSON request">
                <xsdxt:code
-                  href="../samples/dns-Delete-record_request.json"/>
+                  href="../samples/dns-delete-record_request.json"/>
             </wadl:doc>
          </representation>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete records: XML request">
                <xsdxt:code
-                  href="../samples/dns-Delete-records_request.xml"/>
+                  href="../samples/dns-delete-records_request.xml"/>
             </wadl:doc>
          </representation>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete records: JSON request">
                <xsdxt:code
-                  href="../samples/dns-Delete-records_request.json"/>
+                  href="../samples/dns-delete-records_request.json"/>
             </wadl:doc>
          </representation>
       </request>
@@ -4826,7 +4826,7 @@
             <param name="id" style="plain" type="xs:string"
                required="true" path="FIXME/@id">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The unique id of the
+                  xml:lang="EN"><para>The unique ID of the
                      record.</para></wadl:doc>
             </param>
             <param name="type" style="plain" type="xs:string"
@@ -4873,7 +4873,7 @@
             <param name="id" style="plain" type="xs:string"
                required="true" path="$.recordsList.records[*].id">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The unique id of the
+                  xml:lang="EN"><para>The unique ID of the
                      record.</para></wadl:doc>
             </param>
             <param name="type" style="plain" type="xs:string"
@@ -4949,7 +4949,7 @@
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
-               title="Delete All PTR records: XML request">
+               title="Delete PTR records: XML request">
                <xsdxt:code
                   href="../samples/dns-delete-all-ptr_request.xml"/>
             </wadl:doc>
@@ -4957,7 +4957,7 @@
          <representation mediaType="application/json">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
-               title="Delete All PTR records: JSON request">
+               title="Delete PTR records: JSON request">
                <xsdxt:code
                   href="../samples/dns-delete-all-ptr_request.json"/>
             </wadl:doc>
@@ -4981,7 +4981,7 @@
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
-               title="Delete All PTR records: XML response">
+               title="Delete PTR records: XML response">
                <xsdxt:code
                   href="../samples/dns-delete-all-ptr_response.xml"/>
             </wadl:doc>
