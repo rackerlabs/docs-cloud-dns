@@ -15,7 +15,7 @@
 	<artifactId>clouddocs-maven-plugin</artifactId>
 	<version>2.0.3</version>
 	<executions>
-	  <execution>
+<!--  	  <execution>
 	    <id>cdns-mgmt-devguide</id>
 	    <goals>
 	      <goal>generate-webhelp</goal>
@@ -60,7 +60,7 @@
 	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
 	    </configuration>
 	  </execution>
-	  <execution>
+	  <execution> 
 	    <id>cdns-devguide</id>
 	    <goals>
 	      <goal>generate-webhelp</goal>
@@ -72,7 +72,7 @@
 	      <enableGoogleAnalytics>1</enableGoogleAnalytics>
 	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content</canonicalUrlBase>
 	    </configuration>
-	  </execution>
+	  </execution> -->
 		
 		<execution>
 			<id>cdns-devguide-w-wadl</id>
@@ -88,7 +88,7 @@
 			</configuration>
 		</execution>
 		
-	  <execution>
+<!--  	  <execution>
 	    <id>cdns-getting-started</id>
 	    <goals>
 	      <goal>generate-webhelp</goal>
@@ -100,7 +100,7 @@
 	      <enableGoogleAnalytics>1</enableGoogleAnalytics>
 	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content</canonicalUrlBase>
 	    </configuration>
-	  </execution>	  
+	  </execution>	  -->
 	</executions>
 	<configuration>
 	  <sourceDirectory>src/main/resources</sourceDirectory>

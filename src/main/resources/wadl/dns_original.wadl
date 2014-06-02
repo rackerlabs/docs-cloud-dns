@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE application [
-    <!ENTITY % common  SYSTEM "common.ent">
-    %common;
-    
-    
-]>
-
-
 <application xmlns="http://wadl.dev.java.net/2009/02"
              xmlns:xs="http://www.w3.org/2001/XMLSchema"
              xmlns:wadl="http://wadl.dev.java.net/2009/02"
@@ -62,16 +53,9 @@
                     authentication service in response to
                     valid credentials.</doc>
          </param>
- <!--         <param name="name"
-            style="query"
-            type="xs:string"
-            required="false">
-            <wadl:doc xmlns="http://docbook.org/ns/docbook">Name of the domain for which to return information.</wadl:doc>
-         </param>  -->
          <method href="#GET_d1e5199"/>
       </resource>
-      
-        <resource id="_domains__d1e5212" path="/domains/">
+      <resource id="_domains__d1e5212" path="/domains/">
          <param name="X-Auth-Token"
                 style="header"
                 type="xs:string"
@@ -80,10 +64,8 @@
                     authentication service in response to
                     valid credentials.</doc>
          </param>
-         
          <method href="#GET_d1e5212"/>
-      </resource> 
-      
+      </resource>
       <resource id="_domains_domainId_d1e5680" path="/domains/{domainId}">
          <param name="X-Auth-Token"
                 style="header"
@@ -97,7 +79,7 @@
                 type="xs:string"
                 required="true"
                 name="domainId">
-            <wadl:doc xmlns="http://docbook.org/ns/docbook">ID for the domain for which to list details.</wadl:doc>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"><!--WRITEME--></wadl:doc>
          </param>
          <method href="#GET_d1e5680"/>
       </resource>
@@ -114,7 +96,7 @@
                 type="xs:string"
                 required="true"
                 name="domainId">
-            <wadl:doc xmlns="http://docbook.org/ns/docbook">ID for the domain for which to list details.</wadl:doc>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"><!--WRITEME--></wadl:doc>
          </param>
          <method href="#GET_d1e5695"/>
       </resource>
@@ -132,7 +114,7 @@
                 type="xs:string"
                 required="true"
                 name="domainId">
-            <wadl:doc xmlns="http://docbook.org/ns/docbook">ID for the domain for which to list details.</wadl:doc>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"><!--WRITEME--></wadl:doc>
          </param>
          <method href="#GET_d1e6068"/>
       </resource>
@@ -149,7 +131,7 @@
                 type="xs:string"
                 required="true"
                 name="domainId">
-            <wadl:doc xmlns="http://docbook.org/ns/docbook">ID for the domain for which to list details.</wadl:doc>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"><!--WRITEME--></wadl:doc>
          </param>
          <method href="#GET_d1e6221"/>
       </resource>
@@ -542,7 +524,6 @@
          <method href="#DELETE_d1e10208"/>
       </resource>
    </resources>
-   
    <method id="GET_d1e4812" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List All Limits">
                <para role="shortdesc">List all applicable
@@ -568,20 +549,19 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:rates">
+               <representation mediaType="application/xml">
                   <doc title="List Limits Response: XML">
                      <xsdxt:code href="../samples/dns-list-limits_response.xml"/>
                   </doc>
                </representation>
-               <representation mediaType="application/json" >
+            </response>
+            <response status="200">
+               <representation mediaType="application/json">
                   <doc title="List Limits Response: JSON">
                      <xsdxt:code href="../samples/dns-list-limits_response.json"/>
                   </doc>
                </representation>
             </response>
-            &commonFaults;
-            &getFaults;
-     
          </method>
    <method id="GET_d1e4939" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Limit Types">
@@ -606,21 +586,19 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:limitTypes">
+               <representation mediaType="application/xml">
                   <doc title="List Limit Types Response: XML">
                      <xsdxt:code href="../samples/dns-example-limit-types_response.xml"/>
                   </doc>
                </representation>
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Limit Types Response: JSON">
                      <xsdxt:code href="../samples/dns-example-limit-types_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
-      
-
          </method>
    <method id="GET_d1e5061" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Specific Limit">
@@ -649,26 +627,24 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:rates">
+               <representation mediaType="application/xml">
                   <doc title="List Specified Limit Response: XML">
                      <xsdxt:code href="../samples/dns-example-limit_response.xml"/>
                   </doc>
                </representation>
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Specified Limit Response: JSON">
                      <xsdxt:code href="../samples/dns-example-limit_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
-   
    <method id="GET_d1e5199" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domains">
                <para role="shortdesc">List all domains manageable by the account specified.
-                  Display IDs and names only. Note that you can use the query parameter name to filter domains by domain name: list all domains
-                  manageable by the account specified that match the name domainName.</para>
+                                Display IDs and names only.</para>
                <para xmlns:xi="http://www.w3.org/2001/XInclude"> These calls provide a list of all DNS domains manageable by a given account.
                     The resulting list is flat, and does not break the domains down hierarchically
                     by subdomain. All representative domains are included in the list, even if a
@@ -689,14 +665,8 @@
                         the <code>next</code> link points to a group of 10 records starting at
                             <code>offset=30</code>.</para>
                 </note>
-               <remark>There is 1 problems with this section:
-                  1) I can't get rid of the generated statement "This operation does not return a reponse body"</remark>
             </wadl:doc>
-      
             <request>
-               <param style="query" type="xs:string" name="name" required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">Specifies the name of the domain for which to list details.</wadl:doc>
-               </param>
                <representation mediaType="application/xml">
                   <doc title="List Domains Request: XML">
                      <xsdxt:code href="../samples/dns-list-domains_request.xml"/>
@@ -739,58 +709,62 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domains">
+               <representation mediaType="application/xml">
                   <doc title="List Domains Response: XML">
                      <xsdxt:code href="../samples/dns-list-domains_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Domains Response: JSON">
                      <xsdxt:code href="../samples/dns-list-domains_response.json"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/xml">
                   <doc title="Filter by Fully Qualified Domain Name Response: XML">
                      <xsdxt:code href="../samples/dns-filter-domain-by-name_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Filter by Fully Qualified Domain Name Response: JSON">
                      <xsdxt:code href="../samples/dns-filter-domain-by-name_response.json"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/xml">
                   <doc title="Filter by Fully Qualified Subdomain Name Response: XML">
                      <xsdxt:code href="../samples/dns-filter-subdomain-by-name_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Filter by Fully Qualified Subdomain Name Response: JSON">
                      <xsdxt:code href="../samples/dns-filter-subdomain-by-name_response.json"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/xml">
                   <doc title="Filter by Partial Name Response: XML">
                      <xsdxt:code href="../samples/dns-filter-subdomain-by-partial-name_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Filter by Partial Name Response: JSON">
                      <xsdxt:code href="../samples/dns-filter-subdomain-by-partial-name_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
-   
    <method id="GET_d1e5212" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domains">
                <para role="shortdesc">Filter domains by domain name: list all domains
@@ -971,19 +945,7 @@
                   <code>showSubdomains</code>=<code>false</code>)
                     for the List Domain Details call:</para>
             </wadl:doc>
-      
-      
             <request>
-               <param style="query" type="xs:string" name="showRecords" required="false">
-                   <wadl:doc xmlns="http://docbook.org/ns/docbook">If this parameter is set to true, then information about records is
-                      returned; if this parameter is set to false, then information about records is not
-                      returned.</wadl:doc>
-               </param>
-               <param style="query" type="xs:string" name="showSubdomains" required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">If this parameter is set to true, then information about subdomains
-                     is returned; if this parameter is set to false, then information about subdomains is not
-                     returned.</wadl:doc>
-               </param>
                <representation mediaType="application/xml">
                   <doc title="List Domain Details with Records, no Subdomains Request: XML">
                      <xsdxt:code href="../samples/dns-list-domain-details-with-records-no-subdomains_request.xml"/>
@@ -1016,47 +978,48 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domain">
+               <representation mediaType="application/xml">
                   <doc title="List Domain Details with Records, no Subdomains Response: XML">
                      <xsdxt:code href="../samples/dns-list-domain-details-with-records-no-subdomains_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Domain Details with Records, no Subdomains Response: JSON">
                      <xsdxt:code href="../samples/dns-list-domain-details-with-records-no-subdomains_response.json"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/xml">
                   <doc title="List Domain Details with Records and Subdomains Response: XML">
                      <xsdxt:code href="../samples/dns-list-domain-details-with-records-and-subdomains_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Domain Details with Records and Subdomains Response: JSON">
                      <xsdxt:code href="../samples/dns-list-domain-details-with-records-and-subdomains_response.json"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/xml">
                   <doc title="List Domain Details, no Records, no Subdomains Response: XML">
                      <xsdxt:code href="../samples/dns-list-domain-details-no-records-no-subdomains_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Domain Details, no Records, no Subdomains Response: JSON">
                      <xsdxt:code href="../samples/dns-list-domain-details-no-records-no-subdomains_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
-   
-   
    <method id="GET_d1e5695" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="List Domain Details">
                <para role="shortdesc">List details of the specified domain. Display details,
@@ -1216,7 +1179,7 @@
             </wadl:doc>
             <request>
                <param style="query" type="xs:string" name="since" required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">Specifies the Date/Time from which the domain changes should be shown.</wadl:doc>
+                  <wadl:doc xmlns="http://docbook.org/ns/docbook"><!--WRITEME--></wadl:doc>
                </param>
                <representation mediaType="application/xml">
                   <doc title="List Domain Changes Request: XML">
@@ -1230,23 +1193,20 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domain">
+               <representation mediaType="application/xml">
                   <doc title="List Domain Changes Response: XML">
                      <xsdxt:code href="../samples/dns-list-domain-changes_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="List Domain Changes Response: JSON">
                      <xsdxt:code href="../samples/dns-list-domain-changes_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
-   
-   
    <method id="GET_d1e6221" name="GET">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Export Domain">
                <para role="shortdesc">Export details of the specified domain.</para>
@@ -1285,22 +1245,20 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domain">
+               <representation mediaType="application/xml">
                   <doc title="Export Domain Response: XML">
                      <xsdxt:code href="../samples/dns-export-domain_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Export Domain Response: JSON">
                      <xsdxt:code href="../samples/dns-export-domain_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
-   
    <method id="POST_d1e6391" name="POST">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Create Domain(s)">
                <para role="shortdesc">Create a new domain with the configuration defined by
@@ -1318,7 +1276,7 @@
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
                     with information regarding the nature of the failure in the body of the
                     response. Failures in the validation process are non-recoverable and require the
-                    caller to correct the cause of the failure and <command>POST</command> the request again. 
+                    caller to correct the cause of the failure and <command>POST</command> the request again.
                     <note>
                         <title>Notes</title>
                         <para>
@@ -1364,7 +1322,7 @@
                                    to domain management.</para>
                                 </listitem>
                             </itemizedlist>
-                        </para>  
+                        </para>
                     </note>
                 </para>
                
@@ -1385,11 +1343,11 @@
                 </note>
             </wadl:doc>
             <request>
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domains">
+               <representation mediaType="application/xml">
                   <doc title="Create Domain(s) Request: XML">
                      <xsdxt:code href="../samples/dns-create-domains_request.xml"/>
                   </doc>
- <!--               <param name="name"
+               <param name="name"
                    style="plain"
                    type="xs:string"
                    required="true"
@@ -1426,7 +1384,7 @@
                <wadl:doc>If included, its length
                                 must be less than or equal to 160
                                 characters.</wadl:doc>
-            </param>  -->
+            </param>
          </representation>
                <representation mediaType="application/json">
                   <doc title="Create Domain(s) Request: JSON">
@@ -1473,29 +1431,27 @@
          </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domains">
+               <representation mediaType="application/xml">
                   <doc title="Create Domain(s) Response: XML">
                      <xsdxt:code href="../samples/dns-create-domains_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Create Domain(s) Response: JSON">
                      <xsdxt:code href="../samples/dns-create-domains_response.json"/>
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
-   
    <method id="POST_d1e6687" name="POST">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Clone Domain">
                <para role="shortdesc">Create specified domain
                                    (<code xmlns:xi="http://www.w3.org/2001/XInclude">example2.com</code>) by
                                 cloning domain with id
                                    <emphasis xmlns:xi="http://www.w3.org/2001/XInclude">domainId</emphasis>. All
-                                options except cloneName assume a default value of
+                                options assume default value of
                                    <code xmlns:xi="http://www.w3.org/2001/XInclude">true</code>. See <xref xmlns:xi="http://www.w3.org/2001/XInclude"
                   linkend="clone_domains_parms_options1"/> for the description of
                                 options.</para>
@@ -1515,7 +1471,7 @@
                     (referred to as the <emphasis>reference</emphasis>
                     domain) and the new cloned domain must exist under
                     the same Cloud account. </para>
-               <para xmlns:xi="http://www.w3.org/2001/XInclude">Refer to the query parameters table for
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">Refer to <xref linkend="clone_domains_parms_options1"/> for
                     the parameters and options available to specify
                     how the cloning affects subdomains, comments,
                     email addresses, and record data.</para>
@@ -1613,11 +1569,11 @@
                     available to specify how the cloning affects
                     subdomains, comments, email addresses, and record
                     data.</para>
-                 <para xmlns:xi="http://www.w3.org/2001/XInclude" security="internal">The following table lists the parameters and
-                    options for Clone Domain.</para> 
-                 <table xmlns:xi="http://www.w3.org/2001/XInclude"
+               <para xmlns:xi="http://www.w3.org/2001/XInclude">The following table lists the parameters and
+                    options for Clone Domain.</para>
+               <table xmlns:xi="http://www.w3.org/2001/XInclude"
                 rules="all"
-                xml:id="clone_domains_parms_options1" security="internal">
+                xml:id="clone_domains_parms_options1">
                     <caption>Parameters and Options for Clone
                         Domain</caption>
                     <thead>
@@ -1640,7 +1596,7 @@
                                 subdomains. If set to
                                    <code>false</code>, then only the
                                 top level domain and its records are
-                                cloned.  Cloned subdomain
+                                cloned. Cloned subdomain
                                 configurations are modified the same
                                 way that cloned top level domain
                                 configurations are modified.</td>
@@ -1684,7 +1640,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>  
+                </table>
                <para xmlns:xi="http://www.w3.org/2001/XInclude">The following examples show the Clone Domain
                     requests: </para>
                <note xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -1702,41 +1658,10 @@
             </wadl:doc>
             <request>
                <param style="query"
-                  type="xs:string"
-                  name="cloneName"
-                  required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">The name of the new (cloned) domain.</wadl:doc>
-               </param>
-               <param style="query"
-                  type="xs:string"
-                  name="cloneSubdomains"
-                  required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">Recursively clone subdomains. If set to false, then only the
-                     top level domain and its records are cloned. Cloned subdomain
-                     configurations are modified the same way that cloned top level
-                     domain configurations are modified.</wadl:doc>
-               </param>
-               <param style="query"
-                  type="xs:string"
-                  name="modifyRecordData"
-                  required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">Replace occurrences of the reference domain name with the new
-                     domain name in data fields (of records) on the cloned (new) domain.
-                     Does not affect NS records.</wadl:doc>
-               </param>
-               <param style="query"
-                  type="xs:string"
-                  name="modifyEmailAddress"
-                  required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">Replace occurrences of the reference domain name with the new
-                     domain name in email addresses on the cloned (new) domain.</wadl:doc>
-               </param>
-               <param style="query"
-                  type="xs:string"
-                  name="modifyComment"
-                  required="false">
-                  <wadl:doc xmlns="http://docbook.org/ns/docbook">Replace occurrences of the reference domain name with the new
-                     domain name in comments on the cloned (new) domain.</wadl:doc>
+                type="xs:string"
+                name="cloneName"
+                required="false">
+                  <wadl:doc xmlns="http://docbook.org/ns/docbook"><!--WRITEME--></wadl:doc>
                </param>
                <representation mediaType="application/xml">
                   <doc title="Clone Domain Request: XML">
@@ -1750,12 +1675,13 @@
                </representation>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:domains">
+               <representation mediaType="application/xml">
                   <doc title="Initial (202) Clone Domain Response: XML">
                      <xsdxt:code href="../samples/dns-clone-domain_response.xml"/>
                   </doc>
                </representation>
-            
+            </response>
+            <response status="200">
                <representation mediaType="application/json">
                   <doc title="Initial (202) Clone Domain Response: JSON">
                      <xsdxt:code href="../samples/dns-clone-domain_response.json"/>
@@ -1790,8 +1716,6 @@
                   </doc>
                </representation>
             </response>
-      &commonFaults;
-      &getFaults;
          </method>
    <method id="POST_d1e6719" name="POST">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Clone Domain">
@@ -1943,7 +1867,7 @@
                                 subdomains. If set to
                                    <code>false</code>, then only the
                                 top level domain and its records are
-                                cloned.  Cloned subdomain
+                                cloned. Cloned subdomain
                                 configurations are modified the same
                                 way that cloned top level domain
                                 configurations are modified.</td>
@@ -2093,7 +2017,7 @@
                     <para> This call returns an asynchronous response, as described in <xref linkend="sync_asynch_responses"/>.</para>
                 </note>
                <para xmlns:xi="http://www.w3.org/2001/XInclude"> This call provisions a new DNS domain under the account specified by the BIND
-                    9 formatted file configuration contents defined in the request object.  If the
+                    9 formatted file configuration contents defined in the request object.  If the
                     corresponding request cannot be fulfilled due to insufficient or invalid data,
                     an <code>HTTP</code>
                     <returnvalue>400 (Bad Request)</returnvalue> error response will be returned
@@ -3423,7 +3347,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -3510,7 +3434,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -3597,7 +3521,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -3684,7 +3608,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -3811,7 +3735,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -3898,7 +3822,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -3985,7 +3909,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -4072,7 +3996,7 @@
                                    belongs. The service and protocol
                                    fields of the service name can be
                                    modified but not the domain name
-                                   field.  The record name attribute
+                                   field. The record name attribute
                                    must be specified for SRV
                                    records.</para>
                             </wadl:doc>
@@ -4458,7 +4382,7 @@
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Modify PTR Records">
                <para role="shortdesc">Modify one or more PTR records associated with a Rackspace Cloud device.</para>
                <note xmlns:xi="http://www.w3.org/2001/XInclude">
-                  <para>The IP address (data) for a PTR record cannot be modified. To change the reverse DNS 
+                  <para>The IP address (data) for a PTR record cannot be modified. To change the reverse DNS
                    for a domain, any existing PTR record(s) must be deleted and new ones created.</para>
                </note>
                
@@ -4664,3 +4588,5 @@
             </response>
          </method>
 </application>
+
+
