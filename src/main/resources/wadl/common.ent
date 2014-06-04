@@ -37,7 +37,7 @@
             <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:deleteFault"/>
             <representation mediaType="application/json"/>
         </response>
-        <response status="500" xmlns="http://wadl.dev.java.net/2009/02">
+        <response status="400 500" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:dnsFault"/>
             <representation mediaType="application/json"/>
         </response>
@@ -66,3 +66,59 @@
             <representation mediaType="application/json"/>
         </response>
            '>
+           
+       <!ENTITY dnsFault
+           ' 
+         <response status="400 500" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:dnsFault"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '> 
+           
+       <!ENTITY serviceUnavailable
+           ' 
+         <response status="503" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:serviceUnavailable"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '>     
+           
+      <!ENTITY unauthorized
+           ' 
+         <response status="401" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:unauthorized"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '> 
+           
+      <!ENTITY badRequest
+           ' 
+         <response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:badRequest"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '> 
+           
+       <!ENTITY itemNotFound
+           ' 
+         <response status="404" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:itemNotFound"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '>     
+           
+      <!ENTITY overLimit
+           ' 
+         <response status="413" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:overLimit"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '>
+           
+      <!ENTITY itemAlreadyExists
+           ' 
+         <response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:itemAlreadyExists"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '>                        

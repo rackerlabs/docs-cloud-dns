@@ -6014,13 +6014,13 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <wadl:method href="#listRecords"/>
                     <wadl:method href="#searchRecords"/>
                     <wadl:method href="#addRecords"/>
-                    <wadl:method href="#updateRecords"/>
                     <wadl:method href="#deleteRecords"/>
+                    <wadl:method href="#updateRecords"/>
                 </wadl:resource>
                 <wadl:resource href="wadl/dns.wadl#recordId">
-                    <wadl:method href="#showRecord"/>
-                    <wadl:method href="#updateRecord"/>
                     <wadl:method href="#deleteRecord"/>
+                    <wadl:method href="#updateRecord"/>
+                    <wadl:method href="#showRecord"/>                 
                 </wadl:resource>
             </wadl:resources>
         </section>
