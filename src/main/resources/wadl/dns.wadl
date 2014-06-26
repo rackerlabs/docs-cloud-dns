@@ -122,6 +122,11 @@
                <resource id="import" path="import">
                   <method href="#importDomain"/>
                </resource>
+               
+               <resource id="search" path="search">
+                  <method href="#searchDomains"/>
+               </resource>
+               
             </resource>
          </resource>
       </resource>
@@ -465,21 +470,24 @@
                />
             </wadl:doc>
          </representation> -->
-      </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; </method>
+      </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; 
+   </method>
+   
    <method id="listDomainsbyName" name="GET">
       <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
          title="List domains by name">
          <para role="shortdesc">Filters domains by domain name: list
-            all domains manageable by the account specified that match
-            the name <parameter
+            all domains manageable by the account specified that <emphasis>exactly match</emphasis>
+            the value of the <parameter
                xmlns:xi="http://www.w3.org/2001/XInclude"
-               >domainName</parameter>. For example,
-            <code>?name=hoola.com</code> matches <code>hoola.com</code> and similar names such as <code>main.hoola.com</code>
-            and <code>sub.hoola.com</code>.</para>
+               >name</parameter> parameter.</para>
          <para>Note that you can use the query parameter <parameter>name</parameter> to
                filter domains by domain name: list all domains manageable
-               by the account specified that match the name
-               domainName.</para>
+               by the account specified that <emphasis>exactly match</emphasis> the fully qualified value of the
+            <parameter
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               >name</parameter> parameter. Note that if there is no exact match, no results are returned. 
+         </para>
          
          
       </wadl:doc>
@@ -539,7 +547,7 @@
                />
             </wadl:doc>
          </representation>
-         <representation mediaType="application/xml">
+     <!--      <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
                title="Filter by Partial Name: XML request">
@@ -556,7 +564,7 @@
                   href="../samples/dns-filter-subdomain-by-partial-name_request.json"
                />
             </wadl:doc>
-         </representation>
+         </representation> -->
       </request>
       
  <!--      <response status="200">
@@ -599,7 +607,8 @@
             </wadl:doc>
          </representation>
       
-         <representation mediaType="application/xml">
+         <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
+            element="dnsaas:domains">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
                title="Filter by Fully Qualified Subdomain Name: XML response">
@@ -617,9 +626,9 @@
                   href="../samples/dns-filter-subdomain-by-name_response.json"
                />
             </wadl:doc>
-         </representation>
+         </representation> 
       
-         <representation mediaType="application/xml">
+    <!--      <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
                title="Filter by Partial Name: XML response">
@@ -629,6 +638,200 @@
             </wadl:doc>
          </representation>
       
+         <representation mediaType="application/json" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
+            element="dnsaas:domains">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_response.json"
+               />
+            </wadl:doc>
+         </representation>  -->
+      </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+   </method>
+   
+   <method id="searchDomains" name="GET">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+         title="Search domains">
+         <para role="shortdesc">Searches domains by domain name: lists all names manageable by the specified account 
+            that have the value of the <parameter
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               >name</parameter> parameter as part of their name.</para>
+         <para>Note that you can use the query parameter <parameter>name</parameter> to
+            search domains by domain name: lists all names manageable by the specified account that have the value of the <parameter
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               >name</parameter> parameter as part of their name.</para>
+         
+         <para>Filter criteria may consist of:<itemizedlist spacing="compact">
+            <listitem>
+               <para>Any letter (A-Za-z)</para></listitem>
+            <listitem><para>Numbers (0-9)</para></listitem>
+            <listitem><para>Hyphen ("-")</para></listitem>
+            <listitem><para>1 to 63 characters</para></listitem>
+         </itemizedlist></para>
+         
+         <para>Filter criteria should not include any of
+            the following characters: ' + , | ! " £ $ %
+            &amp; / ( ) = ? ^ * ç ° § ; : _ > ] [ @ à, é,
+            ò</para>
+         <note>
+            <para>This call returns by default a maximum of 100 items at a time if no
+               <code>limit</code> is specified. To navigate the collection
+               returned, the parameters <code>limit</code> and <code>offset</code> can
+               be set in the URI (for example: <code>limit=10&amp;offset=0</code>), as
+               described in <xref linkend="pagination"/>.</para>
+         </note>
+         
+         
+      </wadl:doc>
+      <request>
+         <param style="query" type="xs:string" name="name"
+            required="false">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"><para>Name of the domain to find.</para></wadl:doc>
+         </param>
+         <!--       <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN" title="List domains: XML request">
+               <xsdxt:code
+                  href="../samples/dns-list-domains_request.xml"/>
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN" title="List domains: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-list-domains_request.json"/>
+            </wadl:doc>
+         </representation> -->
+      <!--     <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: XML request">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_request.json"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: XML request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_request.json"
+               />
+            </wadl:doc>
+         </representation> -->
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: XML request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_request.json"
+               />
+            </wadl:doc>
+         </representation>
+      </request>
+      
+      <!--      <response status="200">
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN" title="List domains: XML response">
+               <xsdxt:code
+                  href="../samples/dns-list-domains_response.xml"/>
+            </wadl:doc>
+         </representation>
+      </response>
+      <response status="200">
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN" title="List domains: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-list-domains_response.json"/>
+            </wadl:doc>
+         </representation>
+      </response> -->
+      <response status="200">
+     <!--     <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
+            element="dnsaas:domains">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: XML response">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_response.xml"
+               />
+            </wadl:doc>
+         </representation>
+         
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_response.json"
+               />
+            </wadl:doc>
+         </representation>
+         
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: XML response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_response.xml"
+               />
+            </wadl:doc>
+         </representation>
+         
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_response.json"
+               />
+            </wadl:doc>
+         </representation> --> 
+         
+         <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
+            element="dnsaas:domains">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: XML response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_response.xml"
+               />
+            </wadl:doc>
+         </representation>
+         
          <representation mediaType="application/json" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"

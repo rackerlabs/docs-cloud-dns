@@ -44,17 +44,32 @@
             <year>2011</year>
             <year>2012</year>
             <year>2013</year>
+            <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2013-12-11</pubdate>
+        <pubdate>2014-06-26</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-06-26</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for locating
+                                your account number (tenant ID) in the
+                                Cloud Control Panel (see <xref
+                                   linkend="Generating_Auth_Token"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-12-11</date>
                 <revdescription>
@@ -644,9 +659,10 @@
                         the Rackspace cloud. To find your tenant ID or
                         cloud account number, locate your username on
                         the upper-right side of the top navigation
-                        pane in the Cloud Control Panel. The tenant ID
-                        or account number is in parentheses just to
-                        the right of your username.</para>
+                        pane in the Cloud Control Panel. Click your
+                        username to display the menu. The tenant ID or
+                        account number is the first item in the
+                        menu.</para>
                 </listitem>
             </itemizedlist></para>
         <para> You can use either of the following endpoints to access

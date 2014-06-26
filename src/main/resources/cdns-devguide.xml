@@ -47,7 +47,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2014-05-08</pubdate>
+        <pubdate>2014-06-26</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -61,6 +61,29 @@
                     (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-06-26</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Rearchitected this DNS Devguide to
+                                be wadl-based, which is now the
+                                standard for all of our API Devguides.
+                                Note that the Devguide has been
+                                refactored as a result, causing some
+                                sections to be renamed and some
+                                sections to be added in the API
+                                Operations Chapter.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added new API call Search Domains.
+                                See <xref
+                                   linkend="GET_searchDomains_v1.0__account__domains_search_domains"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-05-08</date>
                 <revdescription>
@@ -5975,6 +5998,9 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <wadl:method href="#updateDomains"/>
                     <wadl:method href="#deleteDomains"/>
                     <wadl:method href="#deleteDomainsAndSubdomains"/>
+                </wadl:resource>
+                <wadl:resource href="wadl/dns.wadl#search">
+                    <wadl:method href="#searchDomains"/>
                 </wadl:resource>
                 <wadl:resource href="wadl/dns.wadl#domain_id">
                     <wadl:method href="#listDomainsWithoutSubDomains"/>
