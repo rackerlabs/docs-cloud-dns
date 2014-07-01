@@ -47,7 +47,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2014-06-26</pubdate>
+        <pubdate>2014-07-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -61,6 +61,19 @@
                     (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-07-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para linkend="Limits-d1e1208">Updated the
+                                Default Rate Limits table. Refer to
+                                   <xref linkend="Rate_Limits-d1e1222"
+                                /> for details.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-26</date>
                 <revdescription>
@@ -77,7 +90,7 @@
                         </listitem>
                         <listitem>
                             <para>Added new API call Search Domains.
-                                See <xref
+                                 See <xref
                                    linkend="GET_searchDomains_v1.0__account__domains_search_domains"
                                 />.</para>
                         </listitem>
@@ -1789,37 +1802,44 @@
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">*/status/*</td>
-                            <td colspan="2"
-                                >^/v\d+\.\d+/\d+/status.*</td>
+                            <td colspan="2">
+                                .*/v\d+\.\d+/(\d+/status).*</td>
                             <td colspan="1">5/second</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
+                            <td colspan="2">*/domains/search*</td>
+                            <td colspan="2">
+                                .*/v\d+\.\d+/(\d+/domains/search).*</td>
+                            <td colspan="1">5/minute</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&GET;</td>
                             <td colspan="2">*/domains*</td>
-                            <td colspan="2"
-                                >^/v\d+\.\d+/\d+/domains.*</td>
-                            <td colspan="1">100/minute</td>
+                            <td colspan="2">
+                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                            <td colspan="1">60/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&POST;</td>
                             <td colspan="2">*/domains*</td>
-                            <td colspan="2"
-                                >^/v\d+\.\d+/\d+/domains.*</td>
-                            <td colspan="1">25/minute</td>
+                            <td colspan="2">
+                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                            <td colspan="1">20/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&PUT;</td>
                             <td colspan="2">*/domains*</td>
-                            <td colspan="2"
-                                >^/v\d+\.\d+/\d+/domains.*</td>
-                            <td colspan="1">50/minute</td>
+                            <td colspan="2">
+                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                            <td colspan="1">20/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&DELETE;</td>
                             <td colspan="2">*/domains*</td>
-                            <td colspan="2"
-                                >^/v\d+\.\d+/\d+/domains.*</td>
-                            <td colspan="1">50/minute</td>
+                            <td colspan="2">
+                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                            <td colspan="1">10/minute</td>
                         </tr>
                     </tbody>
                 </table>
