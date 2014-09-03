@@ -4517,7 +4517,17 @@
                <emphasis>device</emphasis> resource URI are specified
             respectively as the <code>rel</code> and <code>href</code>
             attributes of the <emphasis>link</emphasis>
-            element.</para>
+            element, as follows:</para>
+         <itemizedlist>
+            <listitem><para><code>rel</code> &ndash; this is the name of the service 
+               (as provided in the serviceCatalog from Identity) from where 
+               the device was created.</para></listitem>
+            <listitem><para><code>href</code> &ndash; this is the URL to the device for which 
+               the PTR record is associated. It was returned when the device was created 
+               and it uniquely identifies the device.</para></listitem>
+            <listitem><para><code>content</code> &ndash; this is currently a place holder 
+               for possible future use.</para></listitem>
+         </itemizedlist>
       </wadl:doc>
       <request>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
