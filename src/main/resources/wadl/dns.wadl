@@ -4779,6 +4779,7 @@
                >ip</parameter> query parameter to specify a specified
             record to delete. Omitting this parameter Deletes all PTR
             records associated with a specified device.</para>
+         <para>Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 for more details and examples of the way that asynchronous responses work.</para>
       </wadl:doc>
       <request>
          <param style="query" type="xs:string" name="href"
@@ -4820,7 +4821,7 @@
             </wadl:doc>
          </representation>
       </request>
-      <response status="200">
+      <response status="202">
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete PTR records: XML response">
