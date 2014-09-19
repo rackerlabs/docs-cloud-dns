@@ -3631,10 +3631,10 @@
                </wadl:doc>
             </param>
             <param name="data" style="plain" type="xs:string"
-               required="false" path="FIXME/@data">
+               required="true" path="FIXME/@data">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>The data field is required for
-                     PTR records and must be a valid IPv4 or IPv6 IP
+                     PTR and TXT records only and must be a valid IPv4 or IPv6 IP
                      address.</para></wadl:doc>
             </param>
             <param name="priority" style="plain" type="xs:string"
@@ -4094,10 +4094,10 @@
                </wadl:doc>
             </param>
             <param name="data" style="plain" type="xs:string"
-               required="false" path="FIXME/@data">
+               required="true" path="FIXME/@data">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>The data field is required for
-                     PTR records and must be a valid IPv4 or IPv6 IP
+                     PTR and TXT records only and must be a valid IPv4 or IPv6 IP
                      address.</para></wadl:doc>
             </param>
             <param name="priority" style="plain" type="xs:string"
@@ -4683,7 +4683,7 @@
                required="true" path="FIXME/@data">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>The data field is required for
-                     PTR records and must be a valid IPv4 or IPv6 IP
+                     PTR and TXT records only and must be a valid IPv4 or IPv6 IP
                      address.</para></wadl:doc>
             </param>
             <param name="ttl" style="plain" type="xs:string"
