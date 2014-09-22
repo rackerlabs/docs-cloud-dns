@@ -4096,7 +4096,7 @@
             <param name="data" style="plain" type="xs:string"
                required="true" path="FIXME/@data">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>TThe data field is required for
+                  xml:lang="EN"><para>The data field is required for
                      PTR and TXT records only. For PTR records, the data field must be a valid IPv4 or IPv6 IP
                      address.</para></wadl:doc>
             </param>
