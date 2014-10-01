@@ -132,7 +132,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated link to the <link
-                                   xlink:href="http://feedback.rackspacecloud.com"
+                                   xlink:href="http://feedback.rackspace.com"
                                    >Product Feedback
                                 Forum</link>.</para>
                         </listitem>
@@ -625,7 +625,7 @@
             </informalfigure>
         </para>
         <para>We welcome feedback, comments, and bug reports at <link
-                xlink:href="http://feedback.rackspacecloud.com"
+                xlink:href="http://feedback.rackspace.com"
                 >Product Feedback Forum</link>.</para>
         <para>Issues and bug reports can be directed to your support
             team via ticket, chat, email, or phone.</para>
