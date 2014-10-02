@@ -47,7 +47,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2014-09-22</pubdate>
+        <pubdate>2014-10-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -61,6 +61,24 @@
                     (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-10-02</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed example for <emphasis role="bold">NS
+                                   Record : JSON</emphasis> in <xref
+                                   linkend="supported_record_types"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated links for <xref
+                                   linkend="assigning_roles_to_account_users"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-09-22</date>
                 <revdescription>
@@ -3002,13 +3020,13 @@
                     <listitem>
                         <para>
                             <link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
                                 >Assign roles to account
                             users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
                                 >Delete roles from account
                                 users</link></para>
                     </listitem>
