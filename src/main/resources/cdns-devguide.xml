@@ -2479,7 +2479,7 @@
                             <formalpara>
                                 <title>NS Record : JSON</title>
                                 <para>
-                                   <programlisting>{ "id" : "NS-123", "type" : "NS" "name" : "example.foo.com", "data" : "ns1.foo.com", "ttl" : 54000 }</programlisting>
+                                   <programlisting>{ "id" : "NS-123", "type" : "NS", "name" : "example.foo.com", "data" : "ns1.foo.com", "ttl" : 54000 }</programlisting>
                                 </para>
                             </formalpara>
                         </td>
