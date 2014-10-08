@@ -1307,7 +1307,8 @@
          <para role="shortdesc">Exports details for a specified
             domain.</para>
          <note><para>This call returns an asynchronous
-            response. See the section "Synchronous and Asynchronous Responses" in the Devguide for details.</para></note>
+            response. Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 for more 
+            details and examples of the way that asynchronous responses work.</para></note>
          <para>This call provides the BIND (Berkeley Internet Name Domain) 9 formatted contents of the
             requested domain. This call is for a single domain only, and as such, does not traverse up or
             down the domain hierarchy for details (that is, no subdomain information is provided).</para>
@@ -1369,7 +1370,8 @@
             configuration defined by the request.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" in the Devguide for more information. </para>
+               response. Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 
+               for more details and examples of the way that asynchronous responses work. </para>
          </note>
          <note>
             <para>Subdomains are also created the same way as
@@ -1575,7 +1577,9 @@
                described in <xref linkend="sync_asynch_responses"/>.-->
                The AsyncResponse returned will be similar to that
                returned for Create domain but with the request element
-               absent because the clone request has no body.</para>
+               absent because the clone request has no body.
+               Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 
+               for more details and examples of the way that asynchronous responses work.</para>        
          </note>
          <para>This call duplicates a single existing domain
             configuration with a new domain name for a specified Cloud
@@ -2161,7 +2165,9 @@
             <para>This call returns an asynchronous
                response<!-- , as
                described in <xref linkend="sync_asynch_responses"
-               />-->.</para>
+               />-->.
+               Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 
+               for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>This call provisions a new DNS domain under the account
             specified by the BIND 9 formatted file configuration
@@ -2327,7 +2333,7 @@
             domain.</para>
          <note>
             <para>This call returns an asynchronous response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in the Devguide for more information.</para>
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>This call modifies DNS domain(s) attributes only.
             records cannot be added, modified, or Deleted. Only the
@@ -2456,10 +2462,13 @@
          <para role="shortdesc">Updates the configurations of multiple
             domains.</para>
          <note>
-            <para>These calls return an asynchronous
+            <para>This call returns an asynchronous
                response<!--  , as
                described in <xref linkend="sync_asynch_responses"
-               />-->.</para>
+               />-->. 
+               Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            </para>
          </note>
          <para>This call modifies DNS domain(s) attributes only.
             records cannot be added, modified, or Deleted. Only the
@@ -2667,10 +2676,13 @@
          <para role="shortdesc">Deletes a domain from an
             account.</para>
          <note>
-            <para>These calls return an asynchronous
+            <para>This call returns an asynchronous
                response<!--  , as
                described in <xref linkend="sync_asynch_responses"
-               />-->.</para>
+               />-->.
+               Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            </para>
          </note>
          <para>This call deletes one or more specified domains from
             the account; when a domain is deleted, its immediate
@@ -2775,10 +2787,13 @@
          <para role="shortdesc">Deletes multiple domains from an
             account.</para>
          <note>
-            <para>These calls return an asynchronous
+            <para>This call returns an asynchronous
                response<!--  , as
                described in <xref linkend="sync_asynch_responses"
-               />-->.</para>
+               />-->.
+               Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            </para>
          </note>
          <para>This call deletes one or more specified domains from
             the account; when a domain is deleted, its immediate
@@ -2893,10 +2908,13 @@
          <para role="shortdesc">Deletes a domain and its subdomains
             from an account.</para>
          <note>
-            <para>These calls return an asynchronous
+            <para>This call returns an asynchronous
                response<!--  , as
                described in <xref linkend="sync_asynch_responses"
-               />-->.</para>
+               />-->.
+               Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            </para>
          </note>
          <para>This call deletes one or more specified domains from
             the account; when a domain is deleted, its immediate
@@ -3006,10 +3024,13 @@
          <para role="shortdesc">Deletes multiple domains and their
             subdomains from an account.</para>
          <note>
-            <para>These calls return an asynchronous
+            <para>This call returns an asynchronous
                response<!--  , as
                described in <xref linkend="sync_asynch_responses"
-               />-->.</para>
+               />-->.
+               Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            </para>
          </note>
          <para>This call deletes one or more specified domains from
             the account; when a domain is deleted, its immediate
@@ -3216,7 +3237,7 @@
             </wadl:doc>
          </representation>
       </request>
-      <response status="200 202">
+      <response status="200">
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:recordsList">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3343,7 +3364,8 @@
             specified domain.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" in the Devguide for details.<!--  , as
+               response. Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
                described in <xref linkend="sync_asynch_responses"
                />--></para>
          </note>
@@ -3530,7 +3552,7 @@
             </param> -->
          </representation> 
       </request>
-      <response status="200 202">
+      <response status="202">
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:records">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3557,7 +3579,8 @@
          
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" in the Devguide for details.<!--  , as
+               response. Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
                described in <xref linkend="sync_asynch_responses"
                />--></para>
          </note>
@@ -3882,7 +3905,8 @@
             in the domain.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" in the Devguide for details.<!--  , as
+               response. Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
                described in <xref linkend="sync_asynch_responses"
                />--></para>
          </note>
@@ -4203,8 +4227,9 @@
          <para role="shortdesc">Deletes a record from the
             domain.</para>
          <note>
-            <para>These calls return an asynchronous
-               response. Refer to section "Synchronous and Asynchronous Responses" in the Devguide for details.<!--  , as
+            <para>This call returns an asynchronous
+               response. Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
                described in <xref linkend="sync_asynch_responses"
                />--></para>
          </note>
@@ -4264,8 +4289,9 @@
          <para role="shortdesc">Deletes multiple records from the
             domain.</para>
          <note>
-            <para>These calls return an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" in the Devguide for details.<!--  , as
+            <para>This call returns an asynchronous
+               response. Refer to the section "Synchronous and Asynchronous Responses" 
+               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
                described in <xref linkend="sync_asynch_responses"
                />--></para>
          </note>
@@ -4357,7 +4383,7 @@
          </representation> 
          
       </request>
-      <response status="202 204"></response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202"></response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <!-- PTR records -->
@@ -4472,6 +4498,11 @@
          title="Add PTR records">
          <para role="shortdesc">Adds one or more PTR record records
             for a specified Cloud device.</para>
+         <note><para>
+            This call returns an asynchronous
+            response. Refer to the section "Synchronous and Asynchronous Responses" 
+            in Chapter 3 for more details and examples of the way that asynchronous responses work.
+         </para></note>
          <note>
             <title>Notes</title>
             <itemizedlist spacing="compact">
@@ -4639,6 +4670,11 @@
          title="Update PTR records">
          <para role="shortdesc">Updates one or more PTR records
             associated with a Rackspace Cloud device.</para>
+         <note><para>
+            This call returns an asynchronous
+            response. Refer to the section "Synchronous and Asynchronous Responses" 
+            in Chapter 3 for more details and examples of the way that asynchronous responses work.
+         </para></note>
          <note>
             <para>The IP address (data) for a PTR record cannot be
                modified. To change the reverse DNS for a domain, any
@@ -4779,7 +4815,9 @@
                >ip</parameter> query parameter to specify a specified
             record to delete. Omitting this parameter Deletes all PTR
             records associated with a specified device.</para>
-         <para>Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 for more details and examples of the way that asynchronous responses work.</para>
+         <note><para>This call returns an asynchronous
+            response. Refer to the section "Synchronous and Asynchronous Responses" 
+            in Chapter 3 for more details and examples of the way that asynchronous responses work.</para></note>
       </wadl:doc>
       <request>
          <param style="query" type="xs:string" name="href"
