@@ -49,13 +49,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2014-06-26</pubdate>
+        <pubdate>2014-10-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-10-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated JSON response for List
+                                domain details call (see <xref
+                                   linkend="List_Domain_Details"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-26</date>
                 <revdescription>
@@ -1336,7 +1349,7 @@ com" comment="1st sample subdomain"/>
         <example>
             <title>List Domain Details with Subdomains, No Records
                 Response: JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-subdomains-no-records-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         </chapter>
     <chapter xml:id="Add_Records">
