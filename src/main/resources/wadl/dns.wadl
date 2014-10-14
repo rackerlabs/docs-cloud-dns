@@ -1480,7 +1480,7 @@
                    path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>If specified, must be
-                                greater than 300. The default value,
+                                greater than or equal to 300. The default value,
                                 if not specified, is
                                 <code xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook">3600</code>.</para></wadl:doc>
@@ -1520,7 +1520,7 @@
                required="false" path="$.domains[*].ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300. The default value, if not specified, is
+                     than or equal to 300. The default value, if not specified, is
                         <code
                         xmlns:xi="http://www.w3.org/2001/XInclude"
                         xmlns="http://docbook.org/ns/docbook"
@@ -2403,7 +2403,7 @@
                required="false" path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300.</para></wadl:doc>
+                     than or equal to 300.</para></wadl:doc>
             </param>
             <param name="comment" style="plain" type="xs:string"
                required="false" path="FIXME/@comment">
@@ -2616,7 +2616,7 @@
                required="false" path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300.</para></wadl:doc>
+                     than or equal to 300.</para></wadl:doc>
             </param>
             <param name="comment" style="plain" type="xs:string"
                required="false" path="FIXME/@comment">
@@ -3445,7 +3445,7 @@
                required="false" path="$.records[*].ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300. Defaults to the domain TTL if
+                     than or equal to 300. Defaults to the domain TTL if
                      available, or 3600 if no TTL is
                   specified.</para></wadl:doc>
             </param>
@@ -3672,7 +3672,7 @@
                required="false" path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300. Defaults to the domain TTL if
+                     than or equal to 300. Defaults to the domain TTL if
                      available, or 3600 if no TTL is
                   specified.</para></wadl:doc>
             </param>
@@ -4136,7 +4136,7 @@
                required="false" path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300. Defaults to the domain TTL if
+                     than or equal to 300. Defaults to the domain TTL if
                      available, or 3600 if no TTL is
                   specified.</para></wadl:doc>
             </param>
@@ -4591,7 +4591,7 @@
                required="false" path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300. Defaults to 3600 if no TTL is
+                     than or equal to 300. Defaults to 3600 if no TTL is
                      specified.</para></wadl:doc>
             </param>
             <param name="comment" style="plain" type="xs:string"
@@ -4726,7 +4726,7 @@
                required="false" path="FIXME/@ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
-                     than 300. Defaults to 3600 if no TTL is
+                     than or equal to 300. Defaults to 3600 if no TTL is
                      specified.</para></wadl:doc>
             </param>
             <param name="comment" style="plain" type="xs:string"
