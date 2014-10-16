@@ -1981,7 +1981,9 @@
                     your account, a <errorcode>413</errorcode> HTTP
                     response will be returned with a
                         <code>Reply-After</code> header to notify the
-                    client when it can attempt to try again. <note>
+                    client when it can attempt to try again. The
+                        <code>Reply-After</code> header is an ISO 8601
+                    Date/Time field, for example "2012-10-10T21:21:15Z".<note>
                         <para>The first entry in the Default Rate
                             Limits table above is for simple STATUS
                             calls after a &POST;, &PUT;, or &DELETE;
