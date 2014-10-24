@@ -1945,7 +1945,7 @@
                             <td colspan="2">*/domains/search*</td>
                             <td colspan="2">
                                 .*/v\d+\.\d+/(\d+/domains/search).*</td>
-                            <td colspan="1">5/minute</td>
+                            <td colspan="1">20/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
