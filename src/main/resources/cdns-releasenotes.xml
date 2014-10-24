@@ -25,7 +25,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-	<pubdate>2014-08-08</pubdate>
+	<pubdate>2014-10-24</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -36,6 +36,27 @@
 				using the Rackspace Cloud DNS. </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2014-10-24</date>
+				<revdescription>
+					<itemizedlist>
+						<listitem>
+							<para>Updated for v1.0.34 / search default rate limit
+								Configuration Change.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2014-10-14</date>
+				<revdescription>
+					<itemizedlist>
+						<listitem>
+							<para>Updated for v1.0.34.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-08-08</date>
 				<revdescription>
@@ -228,6 +249,81 @@
     		in the table below:</para>
     	<?rax revhistory?>
     </chapter>
+	<chapter xml:id="cdnsv1.0.34b">
+		<title>v1.0.34 Configuration Changes, October 24, 2014</title>
+		<para>This version contains configuration changes for Cloud
+			DNS.</para>
+		<itemizedlist>
+			<title>Configuration Changes</title>
+			<listitem>
+				<para xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/1998/Math/MathML"
+					xmlns:html="http://www.w3.org/1999/xhtml">Updated
+					the limit for searching domains from 5 to 20 per
+					minute in the Default Rate Limits table. Refer to
+						<link
+						xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Rate_Limits-d1e1222.html"
+						>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Rate_Limits-d1e1222.html</link>.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>DNS Developer Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://www.rackspace.com/cloud/blog/2011/07/11/using-rackspace-dnsaas-with-curl-part-1/"
+						>Cloud DNS Tutorial</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://developer.rackspace.com/"
+						>Use Cloud DNS with an SDK</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdnsv1.0.34">
+		<title>v1.0.34, October 14, 2014</title>
+		<para>This version contains bug fixes for Cloud DNS.</para>
+		<itemizedlist>
+			<title>Bug Fixes</title>
+			<listitem>
+				<para xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/1998/Math/MathML"
+					xmlns:html="http://www.w3.org/1999/xhtml">Fixed
+					bug for Logging Filter.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>DNS Developer Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://www.rackspace.com/cloud/blog/2011/07/11/using-rackspace-dnsaas-with-curl-part-1/"
+						>Cloud DNS Tutorial</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://developer.rackspace.com/"
+						>Use Cloud DNS with an SDK</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="cdnsv1.0.33">
 		<title>v1.0.33, July 29, 2014</title>
 		<para>This version contains bug fixes for Cloud DNS.</para>
