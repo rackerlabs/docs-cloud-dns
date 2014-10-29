@@ -658,10 +658,17 @@
             that have the value of the <parameter
                xmlns:xi="http://www.w3.org/2001/XInclude"
                >name</parameter> parameter as part of their name.</para>
-         <para>Note that you can use the query parameter <parameter>name</parameter> to
-            search domains by domain name: lists all names manageable by the specified account that have the value of the <parameter
-               xmlns:xi="http://www.w3.org/2001/XInclude"
-               >name</parameter> parameter as part of their name.</para>
+              
+         <note> <title>Notes</title>
+            <itemizedlist>
+               <listitem><para>Use the query parameter <parameter>name</parameter> to
+                  search domains by domain name. This lists all names manageable by the specified account that have the value of the <parameter
+                     xmlns:xi="http://www.w3.org/2001/XInclude"
+                     >name</parameter> parameter as part of their name.</para></listitem>
+               <listitem><para>The value specified for the <parameter>name</parameter> parameter must 
+                  contain at least 3 characters or nothing will be returned by the search.</para></listitem>
+            </itemizedlist>        
+         </note>
          
          <para>Filter criteria may consist of:<itemizedlist spacing="compact">
             <listitem>

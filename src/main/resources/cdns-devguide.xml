@@ -47,7 +47,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Cloud DNS</productname>
-        <pubdate>2014-10-24</pubdate>
+        <pubdate>2014-10-29</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -61,6 +61,21 @@
                     (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-10-29</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added additional information for the
+                                query parameter
+                                <parameter>name</parameter> used
+                                for searching domains. Refer to the
+                                Search domains API operation for
+                                details.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-24</date>
                 <revdescription>
