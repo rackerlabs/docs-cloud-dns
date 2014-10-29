@@ -675,7 +675,7 @@
                <para>Any letter (A-Za-z)</para></listitem>
             <listitem><para>Numbers (0-9)</para></listitem>
             <listitem><para>Hyphen ("-")</para></listitem>
-            <listitem><para>1 to 63 characters</para></listitem>
+            <listitem><para>3 to 63 characters</para></listitem>
          </itemizedlist></para>
          
          <para>Filter criteria should not include any of
