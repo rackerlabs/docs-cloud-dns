@@ -1,10 +1,10 @@
 docs-cloud-dns
-================
-Cloud DNS Documentation
+==============
+Rackspace Cloud DNS Documentation
 
 This github repository contains the source files for the Rackspace Cloud DNS API documentation. 
 
-Contributions are welcome! To suggest changes to the documentation, please submit a Pull Request (https://github.com/rackerlabs/docs-cloud-files/pulls).
+Contributions are welcome! To suggest changes to the documentation, please submit an Issue (https://github.com/rackerlabs/docs-cloud-dns/issues) or Pull Request (https://github.com/rackerlabs/docs-cloud-dns/pulls).
 
 Source files are for the following documents:
 
@@ -12,7 +12,7 @@ Source files are for the following documents:
     o Cloud DNS Developer Guide
     o Cloud DNS Release Notes
     
-You should create your own branch to make changes to the files and then send a Pull Request to have your changes
+You should create your own branch to make changes to this project and then send a Pull Request to have your changes
 reviewed and merged into the master branch as appropriate.
 
 You can use any editor to work with the files. The files that are most likely to be of interest are:
