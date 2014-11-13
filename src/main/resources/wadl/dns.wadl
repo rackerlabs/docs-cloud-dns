@@ -307,7 +307,7 @@
             at <code>offset</code>
             <code>20</code> (record 21).</para>
          <note>
-            <para>because the current set of 10 records in the
+            <para>Because the current set of 10 records in the
                previous response examples begins at
                   <code>offset=20</code>, note that the
                   <code>previous</code> link points to a group of 10
