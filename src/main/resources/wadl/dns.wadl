@@ -1674,7 +1674,7 @@
             the parameters and options available to specify how the
             cloning affects subdomains, comments, email addresses, and
             record data.</para>
-         <para xmlns:xi="http://www.w3.org/2001/XInclude"
+   <!--        <para xmlns:xi="http://www.w3.org/2001/XInclude"
             security="internal">The following table lists the
             parameters and options for Clone domain.</para>
          <table xmlns:xi="http://www.w3.org/2001/XInclude" rules="all"
@@ -1739,9 +1739,9 @@
                   </td>
                </tr>
             </tbody>
-         </table>
+         </table>  -->
          <para>The following examples show the Clone domain
-            requests:</para>
+            requests.</para>
          <note>
             <para>The following examples show the
                   <emphasis>initial</emphasis> 202 Accepted response
@@ -1751,12 +1751,11 @@
                   linkend="sync_asynch_responses"/> for a description
                of how the asynchronous call works.--></para>
          </note>
-         <para>The following are examples of the reference domain and
-            the resulting cloned domain:</para>
+         
       </wadl:doc>
       <request>
          <param style="query" type="xs:string" name="cloneName"
-            required="false">
+            required="true">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"><para>The name of the new (cloned)
                   domain.</para></wadl:doc>
@@ -1764,8 +1763,8 @@
          <param style="query" type="xs:string" name="cloneSubdomains"
             required="false">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
-               xml:lang="EN"><para>Recursively clone subdomains. If
-                  set to false, then only the top level domain and its
+               xml:lang="EN"><para>Recursively clone subdomains. Defaults to <code>true</code>. If
+                  set to <code>false</code>, then only the top level domain and its
                   records are cloned. Cloned subdomain configurations
                   are modified the same way that cloned top level
                   domain configurations are
@@ -1777,7 +1776,7 @@
                xml:lang="EN"><para>Replaces occurrences of the
                   reference domain name with the new domain name in
                   data fields (of records) on the cloned (new) domain.
-                  Does not affect NS records.</para></wadl:doc>
+                  Does not affect NS records. Defaults to <code>true</code>.</para></wadl:doc>
          </param>
          <param style="query" type="xs:string"
             name="modifyEmailAddress" required="false">
@@ -1785,7 +1784,7 @@
                xml:lang="EN"><para>Replaces occurrences of the
                   reference domain name with the new domain name in
                   email addresses on the cloned (new)
-               domain.</para></wadl:doc>
+                  domain. Defaults to <code>true</code>.</para></wadl:doc>
          </param>
          <param style="query" type="xs:string" name="modifyComment"
             required="false">
@@ -1793,7 +1792,7 @@
                xml:lang="EN"><para>Replaces occurrences of the
                   reference domain name with the new domain name in
                   comments on the cloned (new)
-               domain.</para></wadl:doc>
+                  domain. Defaults to <code>true</code>.</para></wadl:doc>
          </param>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1827,6 +1826,8 @@
                title="Initial (202) Clone domain: JSON response">
                <xsdxt:code
                   href="../samples/dns-clone-domain_response.json"/>
+               <para>The following are examples of the reference domain and
+                  the resulting cloned domain:</para>
             </wadl:doc>
          </representation>
          <representation xmlns="http://wadl.dev.java.net/2009/02"
