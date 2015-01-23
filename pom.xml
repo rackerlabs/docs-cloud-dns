@@ -8,12 +8,17 @@
   <packaging>jar</packaging>
   <name>Cloud DNS API Docs</name>
   
+  <parent>
+		<groupId>com.rackspace.cloud.api</groupId>
+		<artifactId>rackspace-docs-parent</artifactId>
+		<version>1.0.0</version>
+  </parent>
+  
   <build>
     <plugins>
       <plugin>
 	<groupId>com.rackspace.cloud.api</groupId>
-	<artifactId>clouddocs-maven-plugin</artifactId>
-	<version>2.1.3</version>
+	<artifactId>rackspace-docs-maven-plugin</artifactId>
 	<executions>
   	  <execution>
 	    <id>cdns-mgmt-devguide</id>
