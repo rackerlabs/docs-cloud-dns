@@ -45,17 +45,33 @@
             <year>2012</year>
             <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2014-10-13</pubdate>
+        <pubdate>2015-02-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2015-02-25</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para linkend="Backup-d1e013">Removed
+                                London endpoint, since we now have one
+                                global endpoint for the Rackspace
+                                Authentication Service. See <xref
+                                   linkend="Generating_Auth_Token"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-13</date>
                 <revdescription>
@@ -678,18 +694,13 @@
                         menu.</para>
                 </listitem>
             </itemizedlist></para>
-        <para> You can use either of the following endpoints to access
-            the Authentication Service, regardless of US or UK
-            identities: </para>
+        <para> Use the following endpoint to access the Authentication
+            Service, regardless of US or UK identities: </para>
         <itemizedlist spacing="compact">
             <listitem>
                 <para><link xlink:href="&ENDPOINT-US-20;"
                         >&ENDPOINT-US-20;</link>
                 </para>
-            </listitem>
-            <listitem>
-                <para><link xlink:href="&ENDPOINT-UK-20;"
-                        >&ENDPOINT-UK-20;</link></para>
             </listitem>
         </itemizedlist>
         <para> Your account may be based in either the US or the UK;
@@ -748,13 +759,6 @@
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python -m json.tool</screen>
         </example>
-        <note>
-            <para>For UK-based accounts, you would need to modify the
-                URL shown in the last line of each of the Authenticate
-                Request examples above to be
-                    <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
-                instead.</para>
-        </note>
         <example>
             <title>Authenticate Response: XML</title>
             <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/db-auth-20.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
@@ -778,10 +782,9 @@
                 <listitem>
                     <para>The information shown in the Authenticate
                         Response examples above is for US-based
-                        accounts. If you authenticate against the
-                        UK-endpoint for auth, you will see the service
-                        catalog information for UK-based
-                        accounts.</para>
+                        accounts. If you have a UK-based account, you
+                        will see the service catalog information for
+                        UK-based accounts.</para>
                 </listitem>
                 <listitem>
                     <para>The <code>id</code> attribute in the
