@@ -62,7 +62,7 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para linkend="Backup-d1e013">Removed
+                            <para>Removed
                                 London endpoint, since we now have one
                                 global endpoint for the Rackspace
                                 Authentication Service. See <xref
