@@ -104,7 +104,7 @@
 	      <includes>cdns-getting-started.xml</includes>
 	      <webhelpDefaultTopic>DNS_Overview.html</webhelpDefaultTopic>
 	      <enableGoogleAnalytics>1</enableGoogleAnalytics>
-	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content</canonicalUrlBase>
+	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/</canonicalUrlBase>
 	    </configuration>
 	  </execution>	  
 	</executions>
