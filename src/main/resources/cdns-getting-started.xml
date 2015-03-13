@@ -242,13 +242,6 @@
 	  <raxm:priority>1</raxm:priority>
 	</raxm:metadata>
     </info>
-    <chapter xml:id="DNS_Doc_Change_History">
-        <title>Document Change History</title>
-        <para>This version of the Getting Started replaces and
-            obsoletes all previous versions. The most recent changes
-            are described in the table below:</para>
-        <?rax revhistory?>
-    </chapter>
     <chapter xml:id="DNS_Overview">
         <title>Overview</title>
         <para>This guide provides step-by-step instructions for how to
@@ -1549,5 +1542,12 @@ w3.org/2005/Atom">
             instructions.</para>
         <para>This concludes <citetitle>Getting Started</citetitle>.
             Thank you for using Rackspace Cloud products.</para>
+    </chapter>
+    <chapter xml:id="DNS_Doc_Change_History">
+        <title>Document Change History</title>
+        <para>This version of the Getting Started replaces and
+            obsoletes all previous versions. The most recent changes
+            are described in the table below:</para>
+        <?rax revhistory?>
     </chapter>
 </book>
