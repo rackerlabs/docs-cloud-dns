@@ -142,8 +142,9 @@
          <para>The following examples show the requests and
             corresponding responses to list all limits for the
             specified account.</para>
-         <!--<para>For details about the limits information returned,
-            refer to <xref linkend="Limits-d1e1208"/>.</para>-->
+         <para>For details about the limits information returned,
+            refer to <link
+               xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Limits-d1e1208.html">Limits</link>.</para>
       </wadl:doc>
       <request>
          <representation mediaType="application/xml">
@@ -298,9 +299,10 @@
                navigate the collection returned, the parameters
                   <code>limit</code> and <code>offset</code> can be
                set in the
-               URI<!--  (for example:
+               URI (for example:
                   <code>limit=10&amp;offset=0</code>), as described in
-                  <xref linkend="pagination"/> -->.</para>
+               <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link>.</para>
          </note>
          <para>In the examples that follow, the request is made for a
                <code>limit</code> of <code>10</code> records, starting
@@ -687,7 +689,8 @@
                <code>limit</code> is specified. To navigate the collection
                returned, the parameters <code>limit</code> and <code>offset</code> can
                be set in the URI (for example: <code>limit=10&amp;offset=0</code>), as
-               described in <xref linkend="pagination"/>.</para>
+               described at <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link>.</para>
          </note>
          
          
@@ -868,8 +871,9 @@
                collection returned, the parameters <code>limit</code>
                and <code>offset</code> can be set in the URI (for
                example:
-               <code>limit=10&amp;offset=0</code>)<!-- , as
-               described in <xref linkend="pagination"/> -->.</para>
+               <code>limit=10&amp;offset=0</code>), as
+               described at <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link>.</para>
          </note>
    <!--      <para>Two parameters are available to specify the information
             about subdomains and records to be returned by the List
@@ -1068,8 +1072,9 @@
                collection returned, the parameters <code>limit</code>
                and <code>offset</code> can be set in the URI (for
                example:
-               <code>limit=10&amp;offset=0</code>)<!-- , as
-               described in <xref linkend="pagination"/> -->.</para>
+               <code>limit=10&amp;offset=0</code>), as
+               described at <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link>.</para>
          </note>
          <para>Two parameters are available to specify the information
             about subdomains and records to be returned by the List
@@ -1314,7 +1319,8 @@
          <para role="shortdesc">Exports details for a specified
             domain.</para>
          <note><para>This call returns an asynchronous
-            response. Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 for more 
+            response. Refer to <link
+               xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more 
             details and examples of the way that asynchronous responses work.</para></note>
          <para>This call provides the BIND (Berkeley Internet Name Domain) 9 formatted contents of the
             requested domain. This call is for a single domain only, and as such, does not traverse up or
@@ -1377,7 +1383,8 @@
             configuration defined by the request.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 
+               response. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> 
                for more details and examples of the way that asynchronous responses work. </para>
          </note>
          <note>
@@ -1397,10 +1404,11 @@
                <command>POST</command> the request again. <note>
                <title>Notes</title>
                <itemizedlist>
-                  <!-- <listitem>
-                     <para>Refer to <xref linkend="dns_propagation"/>
+                  <listitem>
+                     <para>Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/dns_propagation.html">DNS Propagation</link>
                         for information about DNS propagation.</para>
-                  </listitem>-->
+                  </listitem>
                   <listitem>
                      <para>If you attempt to create a domain that
                         already exists, the API will return an
@@ -1440,9 +1448,9 @@
                   <emphasis>initial</emphasis> 202 Accepted response
                for the asynchronous call and indicate that the task
                has been accepted for processing.
-               <!--Refer to <xref
-                  linkend="sync_asynch_responses"/> for a description
-               of how the asynchronous call works. Also-->See
+               Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+               of how the asynchronous call works. Also see
                   <link
                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html"
                   >http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html</link>
@@ -1580,13 +1588,13 @@
             description of options.--></para>
          <note>
             <para>This call returns an asynchronous
-               response<!--, as
-               described in <xref linkend="sync_asynch_responses"/>.-->
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
                The AsyncResponse returned will be similar to that
                returned for Create domain but with the request element
                absent because the clone request has no body.
-               Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 
-               for more details and examples of the way that asynchronous responses work.</para>        
+               </para>        
          </note>
          <para>This call duplicates a single existing domain
             configuration with a new domain name for a specified Cloud
@@ -1747,9 +1755,9 @@
                   <emphasis>initial</emphasis> 202 Accepted response
                for the asynchronous call and indicate that the task
                has been accepted for
-               processing.<!-- Refer to <xref
-                  linkend="sync_asynch_responses"/> for a description
-               of how the asynchronous call works.--></para>
+               processing. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+               of how the asynchronous call works.</para>
          </note>
          
       </wadl:doc>
@@ -2171,11 +2179,10 @@
             configuration specified by the request.</para>
          <note>
             <para>This call returns an asynchronous
-               response<!-- , as
-               described in <xref linkend="sync_asynch_responses"
-               />-->.
-               Refer to the section "Synchronous and Asynchronous Responses" in Chapter 3 
-               for more details and examples of the way that asynchronous responses work.</para>
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
+               </para>
          </note>
          <para>This call provisions a new DNS domain under the account
             specified by the BIND 9 formatted file configuration
@@ -2340,8 +2347,8 @@
          <para role="shortdesc">Updates the configuration of a
             domain.</para>
          <note>
-            <para>This call returns an asynchronous response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.</para>
+            <para>This call returns an asynchronous response. Refer to <link
+               xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>This call modifies DNS domain(s) attributes only.
             records cannot be added, modified, or Deleted. Only the
@@ -2471,11 +2478,9 @@
             domains.</para>
          <note>
             <para>This call returns an asynchronous
-               response<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />-->. 
-               Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
             </para>
          </note>
          <para>This call modifies DNS domain(s) attributes only.
@@ -2493,10 +2498,11 @@
          <note>
             <title>Notes</title>
             <itemizedlist>
-               <!-- <listitem>
-                  <para>Refer to <xref linkend="dns_propagation"/> for
+               <listitem>
+                  <para>Refer to <link
+                     xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/dns_propagation.html">DNS Propagation</link> for
                      information about DNS propagation.</para>
-               </listitem>-->
+               </listitem>
                <listitem>
                   <para>A domain's <code>id</code> is
                      immutable.</para>
@@ -2685,11 +2691,9 @@
             account.</para>
          <note>
             <para>This call returns an asynchronous
-               response<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />-->.
-               Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
             </para>
          </note>
          <para>This call deletes one or more specified domains from
@@ -2796,11 +2800,9 @@
             account.</para>
          <note>
             <para>This call returns an asynchronous
-               response<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />-->.
-               Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
             </para>
          </note>
          <para>This call deletes one or more specified domains from
@@ -2917,12 +2919,10 @@
             from an account.</para>
          <note>
             <para>This call returns an asynchronous
-               response<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />-->.
-               Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.
-            </para>
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
+             </para>
          </note>
          <para>This call deletes one or more specified domains from
             the account; when a domain is deleted, its immediate
@@ -3033,11 +3033,9 @@
             subdomains from an account.</para>
          <note>
             <para>This call returns an asynchronous
-               response<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />-->.
-               Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.
+               response, as
+               described in <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
             </para>
          </note>
          <para>This call deletes one or more specified domains from
@@ -3172,7 +3170,8 @@
                collection returned, the parameters <code>limit</code>
                and <code>offset</code> can be set in the URI (for
                example:
-               <code>limit=10&amp;offset=0</code>). Refer to the section "Pagination" in the Devguide for details.</para>
+               <code>limit=10&amp;offset=0</code>). Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link> for details.</para>
          </note>
       </wadl:doc>
       <request>
@@ -3225,8 +3224,9 @@
                collection returned, the parameters <code>limit</code>
                and <code>offset</code> can be set in the URI (for
                example:
-               <code>limit=10&amp;offset=0</code>)<!--  , as
-               described in <xref linkend="pagination"/> -->.</para>
+               <code>limit=10&amp;offset=0</code>), as
+               described at <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link>.</para>
          </note>
       </wadl:doc>
       <request>
@@ -3291,8 +3291,8 @@
                collection returned, the parameters <code>limit</code>
                and <code>offset</code> can be set in the URI (for
                example:
-               <code>limit=10&amp;offset=0</code>). Refer to the section "Pagination" in the Devguide for details.<!-- , as
-               described in <xref linkend="pagination"/> --></para>
+               <code>limit=10&amp;offset=0</code>). Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link> for details.</para>
          </note>
       </wadl:doc>
       <request>
@@ -3372,10 +3372,8 @@
             specified domain.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />--></para>
+               response. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for details.</para>
          </note>
          <para>This call adds new record(s) to a specified
             domain.</para>
@@ -3407,9 +3405,9 @@
             <para>The following examples show the
                   <emphasis>final</emphasis> successful response for
                the asynchronous
-               call.<!-- Refer to <xref
-                  linkend="sync_asynch_responses"/> for a description
-               of how the asynchronous call works.--></para>
+               call. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+               of how the asynchronous call works.</para>
          </note>
       </wadl:doc>
       <request>
@@ -3587,10 +3585,8 @@
          
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />--></para>
+               response. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>This call updates the configuration for a specified
             record in a specified domain.</para>
@@ -3913,10 +3909,8 @@
             in the domain.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />--></para>
+               response. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>This call updates the configuration of
             records in a specified domain.</para>
@@ -4236,10 +4230,8 @@
             domain.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />--></para>
+               response. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>These calls delete a specified record or multiple
             records from a specified domain.</para>
@@ -4298,10 +4290,8 @@
             domain.</para>
          <note>
             <para>This call returns an asynchronous
-               response. Refer to the section "Synchronous and Asynchronous Responses" 
-               in Chapter 3 for more details and examples of the way that asynchronous responses work.<!--  , as
-               described in <xref linkend="sync_asynch_responses"
-               />--></para>
+               response. Refer to <link
+                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>These calls delete a specified record or multiple
             records from a specified domain.</para>
@@ -4508,8 +4498,8 @@
             for a specified Cloud device.</para>
          <note><para>
             This call returns an asynchronous
-            response. Refer to the section "Synchronous and Asynchronous Responses" 
-            in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            response. Refer to <link
+               xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.
          </para></note>
          <note>
             <title>Notes</title>
@@ -4680,8 +4670,8 @@
             associated with a Rackspace Cloud device.</para>
          <note><para>
             This call returns an asynchronous
-            response. Refer to the section "Synchronous and Asynchronous Responses" 
-            in Chapter 3 for more details and examples of the way that asynchronous responses work.
+            response. Refer to <link
+               xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.
          </para></note>
          <note>
             <para>The IP address (data) for a PTR record cannot be
@@ -4824,8 +4814,8 @@
             record to delete. Omitting this parameter Deletes all PTR
             records associated with a specified device.</para>
          <note><para>This call returns an asynchronous
-            response. Refer to the section "Synchronous and Asynchronous Responses" 
-            in Chapter 3 for more details and examples of the way that asynchronous responses work.</para></note>
+            response. Refer to <link
+               xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para></note>
       </wadl:doc>
       <request>
          <param style="query" type="xs:string" name="href"
