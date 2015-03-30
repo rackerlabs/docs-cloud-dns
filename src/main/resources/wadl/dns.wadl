@@ -1332,6 +1332,9 @@
                <listitem><para>The BIND 9 formatted contents of the requested
                   domain will have no comments listed for the domain or
                   for the records of the domain being exported.</para></listitem>
+               <listitem><para>If there are more than 300 records in the Export domain operation, 
+                  records are dropped from the export due to a known defect. 
+                  Please contact your support team to perform the export for you.</para></listitem>
                <listitem><para>The following examples show the
                   <emphasis>final</emphasis> successful response for
                   the asynchronous
