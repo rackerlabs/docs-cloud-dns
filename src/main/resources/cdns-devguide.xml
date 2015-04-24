@@ -3151,7 +3151,7 @@
                     about how to perform the following tasks:<itemizedlist>
                         <listitem>
                             <para>
-                                <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html">Add account users</link>
+                                <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html">Add account users</link>
                             </para>
                         </listitem>
                         <listitem>
