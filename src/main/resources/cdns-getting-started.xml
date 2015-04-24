@@ -293,7 +293,9 @@
                 <para>
                <inlinemediaobject>
                     <imageobject>
-                        <imagedata contentwidth="6in" fileref="images/Choose_CS_Image_CCP.png"/>
+                        <imagedata 
+                            fileref="images/Choose_CS_Image_CCP2.png"
+                            contentwidth="6in" />
                     </imageobject>
                 </inlinemediaobject>
             </para>
