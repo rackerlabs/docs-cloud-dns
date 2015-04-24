@@ -289,8 +289,8 @@
             <step>
                 <para> Select an image from a list of different
                     operating systems, including Linux Distributions
-                    and Windows Images:</para>
-                <para>
+                    and Windows Images.</para>
+                <para security="writeronly">
                <inlinemediaobject>
                     <imageobject>
                         <imagedata 
