@@ -1,38 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE book [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-
-        <!-- Useful for describing APIs -->
-        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-        
-        <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
-        <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
-        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
-        <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
-        <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
-
-        <!-- Useful for specs -->
-        <!ENTITY MAY    '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
-        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
-        <!ENTITY MUST   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
-        <!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
-]>
-
-<book version="5.0"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xml:id="cdns-getting-started">
+<?xml version="1.0" encoding="utf-8"?>
+<?rax-warinfo cdns-v1.0-cdns-getting-started?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:m="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      version="5.0"
+      xml:id="cdns-getting-started"
+      xml:base="file:/Users/mike.asthalter/Documents/DNSaaS/docs-cloud-dns/src/main/resources/cdns-getting-started.xml">
     
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud DNS Getting Started Guide</title>
@@ -50,7 +26,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2015-02-25</pubdate>
+        <pubdate>2015-04-20</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -58,16 +34,25 @@
         </legalnotice>
         <revhistory>
             <revision>
+                <date>2015-04-20</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Edited entire document.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-02-25</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Removed
-                                London endpoint, since we now have one
-                                global endpoint for the Rackspace
-                                Authentication Service. See <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
+                            <para>Removed London endpoint since we now
+                                have one global endpoint for the
+                                Rackspace Authentication Service. See
+                                <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                    >Generate an authentication token</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -78,9 +63,9 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated JSON response for List
-                                domain details call (see <xref
-                                   linkend="List_Domain_Details"
-                                />).</para>
+                                domain details call (see <link
+                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/List_Domain_Details.html"
+                                   >List domain details</link>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -92,9 +77,10 @@
                         <listitem>
                             <para>Updated information for locating
                                 your account number (tenant ID) in the
-                                Cloud Control Panel (see <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
+                                Cloud Control Panel (see <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -106,9 +92,10 @@
                         <listitem>
                             <para>Revised information for locating
                                 your API Key and account number in the
-                                Cloud Control Panel. See <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
+                                Cloud Control Panel. See <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -119,9 +106,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added additional information for
-                                using cURL commands. See <xref
-                                   linkend="DB_using-curl-cli"
-                                />.</para>
+                                using cURL commands. See <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/DB_using-curl-cli.html">Send API requests using cURL</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -132,15 +117,14 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated authentication information.
-                                See <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
+                                See <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link>.</para>
                         </listitem>
                         <listitem>
                             <para>Updated information for service
-                                access endpoints. See <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />.</para>
+                                access endpoints. See <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Service_Access_Endpoints-d1e753.html">Service access endpoints</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -151,9 +135,10 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated Auth Response examples
-                                (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
+                                (refer to <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -164,9 +149,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated information for cURL
-                                command-line options (see <xref
-                                   linkend="DB_using-curl-cli"
-                                />).</para>
+                                command-line options (see <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/DB_using-curl-cli.html">Send API requests using cURL</link>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -187,9 +170,10 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Corrected request examples for
-                                authentication (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
+                                authentication (refer to <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -199,9 +183,10 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated for Auth 2.0 (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
+                            <para>Updated for Auth 2.0 (refer to <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -212,10 +197,11 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated Auth Response examples for
-                                   <xref
-                                   linkend="Generating_Auth_Token"/>
-                                to show the latest service
-                                catalog.</para>
+                                   <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                                   >Generate an authentication
+                                   token</link> to show the latest
+                                service catalog.</para>
                         </listitem>
                         <listitem>
                             <para>Updated syntax highlighting for all
@@ -235,31 +221,27 @@
                 </revdescription>
             </revision>           
         </revhistory>
-	<raxm:metadata
-	    xmlns:raxm="http://docs.rackspace.com/api/metadata">
-	  <raxm:displayname>Getting Started Guide</raxm:displayname>
-	  <raxm:product version="v1.0">cdns</raxm:product>
-	  <raxm:priority>1</raxm:priority>
-	</raxm:metadata>
+	     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+	        <raxm:displayname>Getting Started Guide</raxm:displayname>
+	        <raxm:product version="v1.0">cdns</raxm:product>
+	        <raxm:priority>1</raxm:priority>
+	     </raxm:metadata>
     </info>
     <chapter xml:id="DNS_Overview">
         <title>Overview</title>
         <para>This guide provides step-by-step instructions for how to
-            properly enter the necessary URLs, using cURL, in order to
-            set up DNS for <trademark>Cloud Servers</trademark> using
-            the Rackspace Cloud DNS API. Additional details about
-            Rackspace Cloud DNS can be found in the <citetitle>Cloud
-                DNS Developer Guide</citetitle> at <link
-                xlink:href="http://docs.rackspace.com/"
-                    >http://docs.rackspace.com/</link>
-            and at <link
+            use cURL to call the necessary Cloud DNS API operations to
+            set up DNS for <trademark>Cloud Servers</trademark>.
+            Additional details about Rackspace Cloud DNS can be found
+            in the <citetitle>Cloud DNS Developer Guide</citetitle> at
+                <link xlink:href="http://docs.rackspace.com/"
+                >http://docs.rackspace.com/</link> and at <link
                 xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/dns/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
         <section xml:id="Prerequisites_Examples">
-            <title>Prerequisites for Running Examples</title>
+            <title>Prerequisites for running examples</title>
             <para>In order to run the examples in this guide, you must
-                have the following prerequisites: <itemizedlist
-                    spacing="compact">
+                have the following prerequisites: <itemizedlist spacing="compact">
                     <listitem>
                         <para>Rackspace Cloud account</para>
                     </listitem>
@@ -267,29 +249,30 @@
                         <para>Rackspace Cloud username and password,
                             as specified during registration</para>
                     </listitem>
-                </itemizedlist></para>
+                </itemizedlist>
+         </para>
         </section>
     </chapter>
     <chapter xml:id="Create_Cloud_Server">
-        <title>Create a New Cloud Server</title>
-        <para>This guide requires two Cloud Servers for setting up DNS
+        <title>Create a new cloud server</title>
+        <para>This guide requires two cloud servers for setting up DNS
             using the Cloud DNS API. If you will be using two
-                <emphasis>existing</emphasis> Cloud Servers on your
+                <emphasis>existing</emphasis> cloud servers on your
             account for this purpose, skip Steps 1-5 and go directly
             to Step 6 below. Otherwise, follow the steps below:</para>
-        <para>Create a Cloud Server using the Cloud Servers section of
+        <para>Create a cloud server using the cloud servers section of
             the Cloud Control Panel (login here: <link
-                xlink:href="http://mycloud.rackspace.com/">Cloud Control
-                Panel</link>).</para>
+                xlink:href="http://mycloud.rackspace.com/">Cloud
+                Control Panel</link>).</para>
         <note>
-            <para>You can also create a Cloud Server using the Cloud
-                Servers API. Refer to the <citetitle><link
-                    xlink:href="http://docs.rackspace.com/">Cloud
-                    Servers API Developer Guide</link></citetitle> for
-                details.</para>
+            <para>You can also create a cloud server using the Cloud
+                Servers API. Refer to the <citetitle>
+                    <link xlink:href="http://docs.rackspace.com/"
+                        >Cloud Servers API Developer Guide</link>
+                </citetitle> for details.</para>
         </note>
         <procedure>
-            <title>To create a Cloud Server using the Cloud Control
+            <title>To create a cloud server using the Cloud Control
                 Panel:</title>
             <step>
                 <para>Click <guimenuitem>Servers</guimenuitem> to view
@@ -299,91 +282,84 @@
                 <para> Using the <guimenu>Region</guimenu> drop-down
                     menu, select the appropriate region, depending on
                     whether you want to create a first generation
-                    Cloud Server or a next generation Cloud Server.
-                    (The type of Cloud Server does not matter for this
+                    cloud server or a next generation cloud server.
+                    (The type of cloud server does not matter for this
                     exercise.)</para>
             </step>
             <step>
                 <para> Select an image from a list of different
                     operating systems, including Linux Distributions
                     and Windows Images:</para>
-                <para><inlinemediaobject>
+                <para>
+               <inlinemediaobject>
                     <imageobject>
-                        <imagedata
-                            fileref="images/Choose_CS_Image_CCP.png"
-                            contentwidth="6in"/>
+                        <imagedata contentwidth="6in" fileref="images/Choose_CS_Image_CCP.png"/>
                     </imageobject>
-                </inlinemediaobject></para>
+                </inlinemediaobject>
+            </para>
             </step>
             <step>
                 <para> Specify the <guilabel>Server Name</guilabel>
                     and select a <guilabel>Size</guilabel> for your
-                    Cloud Server, then click <guibutton>Create
+                    cloud server, then click <guibutton>Create
                         Server</guibutton>. </para>
             </step>
             <step>
-                <para>  Repeat steps 2-4 to create a second Cloud
-                    Server.</para>
+                <para> Repeat steps 2-4 to create a second cloud
+                    server.</para>
             </step>
             <step>
-                <para>Record the IP addresses listed for your Cloud
-                    Servers below:<itemizedlist>
+                <para>Record the IP addresses listed for your cloud
+                    servers below:<itemizedlist>
                         <listitem>
-                            <para>FIRST Cloud Server IP Address =
-                                _______________________________________
-                            </para>
+                            <para>FIRST cloud server IP address =
+                                _______________________________________ </para>
                         </listitem>
                         <listitem>
-                            <para>SECOND Cloud Server IP Address =
+                            <para>SECOND cloud server IP address =
                                 _______________________________________</para>
                         </listitem>
-                    </itemizedlist></para>
+                    </itemizedlist>
+                </para>
             </step>
         </procedure>
     </chapter>
     <chapter xml:id="DB_Sending_API_Requests">
-        <title>Send Requests to the API</title>
+        <title>Send requests to the API</title>
         <para>You have several options for sending requests through an
             API: </para>
         <itemizedlist spacing="compact">
             <listitem>
                 <para>Developers and testers may prefer to use cURL,
-                    the command-line tool from <link
-                        xlink:href="http://curl.haxx.se/"
-                        >http://curl.haxx.se/</link>. </para>
+                    the command-line tool from <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
                 <para>With cURL you can send HTTP requests and receive
                     responses back from the command line. </para>
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface,
                     the ReST client for Firefox also works well for
-                    testing and trying out commands, see <link
-                        xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
-                        >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
+                    testing and trying out commands, see <link xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
             </listitem>
             <listitem>
                 <para>You can also download and install rest-client, a
                     Java application to test ReSTful web services,
-                    from <link
-                        xlink:href="http://code.google.com/p/rest-client/"
-                        >http://code.google.com/p/rest-client/</link>. </para>
+                    from <link xlink:href="http://code.google.com/p/rest-client/">http://code.google.com/p/rest-client/</link>. </para>
             </listitem>
         </itemizedlist>
         <section xml:id="DB_using-curl-cli">
-            <title>Send API Requests Using cURL</title>
+            <title>Send API requests using cURL</title>
             <para>cURL is a command-line tool that is available on
                 most UNIX®-like environments and Mac OS X® and can be
                 downloaded for Windows® in order to interact with the
                 ReST interfaces. For more information on cURL, visit
-                    <link xlink:href="http://curl.haxx.se/"
-                    >http://curl.haxx.se/</link>. </para>
+                    <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
             <para>cURL allows you to transmit and receive HTTP requests and responses from the
                 command-line or from within a shell script. This makes it possible to work with the ReST API
                 directly without using one of the client APIs. </para>
-            <para>The following cURL command-line options will be used
-                in this guide to run the examples:</para>
+            <para>The following cURL command-line options are used in
+                this guide to run the examples:</para>
             <table xml:id="curl_options" rules="all" width="75%">
-                <caption>cURL Command-Line Options</caption>
+                <caption>cURL command-line options</caption>
                 <thead>
                     <tr>
                         <th>Option</th>
@@ -396,7 +372,7 @@
                             <option>-d</option>
                         </td>
                         <td>
-                            <para>Sends the specified data in a &POST;
+                            <para>Sends the specified data in a <command>POST</command>
                                 request to the HTTP server. Use this
                                 option to send a JSON or XML request
                                 body to the server.</para>
@@ -415,33 +391,36 @@
                             <para>Common headers in Rackspace API
                                 requests are:<itemizedlist>
                                    <listitem>
-                                   <para><literal>Content-Type</literal>.
+                                   <para>
+                                 <literal>Content-Type</literal>.
                                    Required for operations with a
                                    request body. </para>
                                    <para>Specifies the format of the
                                    request body. The syntax for the
                                    <literal>Content-Type</literal>
                                    header is:</para>
-                                   <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
+                                   <screen>Content-Type: application/format</screen>
                                    <para>Where
                                    <parameter>format</parameter> is
                                    either <literal>json</literal> or
                                    <literal>xml</literal>.</para>
                                    </listitem>
                                    <listitem>
-                                   <para><literal>X-Auth-Project-Id</literal>.
+                                   <para>
+                                 <literal>X-Auth-Project-Id</literal>.
                                    Optional. Specifies the project ID,
                                    which can be your account number or
                                    another value.</para>
                                    </listitem>
                                    <listitem>
-                                   <para><literal>Accept</literal>.
+                                   <para>
+                                 <literal>Accept</literal>.
                                    Optional. </para>
                                    <para>Specifies the format of the
                                    response body. The syntax for the
                                    <literal>Accept</literal> header
                                    is:</para>
-                                   <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
+                                   <screen>Accept: application/format</screen>
                                    <para>Where
                                    <parameter>format</parameter> is
                                    either <literal>json</literal> or
@@ -449,11 +428,13 @@
                                    <literal>json</literal>.</para>
                                    </listitem>
                                    <listitem>
-                                   <para><literal>X-Auth-Token</literal>.
+                                   <para>
+                                 <literal>X-Auth-Token</literal>.
                                    Required. Specifies the
                                    authentication token.</para>
                                    </listitem>
-                                </itemizedlist></para>
+                                </itemizedlist>
+                     </para>
                         </td>
                     </tr>
                     <tr>
@@ -489,7 +470,7 @@
                                 when communicating with the HTTP
                                 server. The specified request is used
                                 instead of the default method, which
-                                is &GET;. </para>
+                                is <command>GET</command>. </para>
                         </td>
                     </tr>
                 </tbody>
@@ -505,7 +486,7 @@
                 <para>In order to use <code>ppxml</code>, you need to
                     set the <code>ppxml</code> alias as
                     follows:</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 50%?><prompt>$</prompt> alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'</programlisting>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>$ alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'</programlisting>
             </note>
             <note xml:id="json_tool">
                 <title>json.tool</title>
@@ -514,21 +495,19 @@
                     call the json.tool to pretty-print output: </para>
                 <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
                 <para>To use the json.tool, import the json module.
-                    For information about the json.tool, see <link
-                        xlink:href="http://docs.python.org/2/library/json.html"
-                        >json — JSON encoder and decoder</link>. </para>
+                    For information about the json.tool, see <link xlink:href="http://docs.python.org/2/library/json.html">json — JSON encoder and decoder</link>. </para>
                 <para>If you do not want to pretty-print JSON output,
                     omit this code. </para>
             </note>
         </section>
         <section xml:id="DB_copy_paste_examples">
-            <title>Copying and Pasting cURL Request Examples into a
-                Terminal Window</title>
+            <title>Copying and pasting cURL request examples into a
+                terminal window</title>
             <para>To run the cURL request examples shown in this guide
                 on Linux or Mac systems, select the desired example
                 from the HTML version of this guide by clicking the
                 Select Text icon to the right of the example and then
-                select Edit->Copy. Then paste it into an ASCII editor
+                select Edit-&gt;Copy. Then paste it into an ASCII editor
                 (for example <emphasis role="bold">vi</emphasis> or
                     <emphasis role="bold">TextEdit</emphasis>). Next
                 modify the example with your required account
@@ -539,30 +518,31 @@
                     examples that are part of the cURL syntax are
                     escaped with a backslash ('\') in order to avoid
                     prematurely terminating the command. However you
-                    should not escape carriage returns inside the xml
-                    or json message within the command.</para>
+                    should not escape carriage returns inside the XML
+                    or JSON message within the command.</para>
             </note>
             <para>Consider the following cURL Authenticate Request:
-                XML example that is described in detail in <xref
-                    linkend="Generating_Auth_Token"/>:</para>
+                XML example that is described in detail in <link
+                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                    >Generate an authentication token</link>:</para>
             <example>
-                <title>cURL Authenticate Request: XML</title>
+                <title>cURL authenticate: XML request</title>
                 <?dbfo keep-together="always"?>
-                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
+                <screen language="bash">curl -i -d \
+'&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
         xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
         username="<emphasis role="bold">your_username</emphasis>"     
         apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
- &lt;/auth&gt;<option>'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
+ &lt;/auth&gt;' \
+'https://identity.api.rackspacecloud.com/v2.0/tokens'</screen>
             </example>
             <para>You can see that the lines that are part of the cURL
                 command syntax have all been escaped with a backslash
                 ('\') to indicate that the command continues on the
                 next line:</para>
-            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+            <screen language="bash">curl -i -d \
   
    
 (... lines within the xml portion of the message are not shown in this example)
@@ -570,20 +550,20 @@
      
     
    
- &lt;/auth&gt;<option>'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
+ &lt;/auth&gt;' \
+'https://identity.api.rackspacecloud.com/v2.0/tokens'</screen>
             <para>However the lines <emphasis>within</emphasis> the
                 xml portion of the message are
                     <emphasis>not</emphasis> escaped with a backslash
                 ('\') in order to avoid issues with the xml
                 processing:</para>
-            <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?>  
+            <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
         xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
         username="<emphasis role="bold">your_username</emphasis>"     
         apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
- &lt;/auth&gt;<option>'</option> \
+ &lt;/auth&gt;' \
 </screen>
             <note>
                 <para>The final line of the xml message is escaped
@@ -594,10 +574,12 @@
             </note>
             <para>After you are finished modifying the text for the
                 cURL request example with your information (for
-                example <emphasis role="bold"
-                        ><code>your_username</code></emphasis> and
-                    <emphasis role="bold"
-                    ><code>your_api_key</code></emphasis>), paste it
+                example <emphasis role="bold">
+               <code>your_username</code>
+            </emphasis> and
+                    <emphasis role="bold">
+               <code>your_api_key</code>
+            </emphasis>), paste it
                 into your terminal window. Then execute the cURL
                 command by pressing <guilabel>Enter</guilabel>.</para>
             <para>If you have trouble copying and pasting the examples
@@ -607,40 +589,38 @@
         </section>
     </chapter>
     <chapter xml:id="Generating_Auth_Token">
-        <title>Generate an Authentication Token</title>
+        <title>Generate an authentication token</title>
         <para>You need to generate a token whether you use cURL or a
             ReST client.</para>
         
-        <para>In order to use the ReST API, you will first need to
-            obtain an authentication token, which will need to be
-            passed in for each request using the
-                <code>X-Auth-Token</code> header. </para>
+        <para>In order to use the ReST API, you need to obtain an
+            authentication token, which will be passed with each
+            request using the <code>X-Auth-Token</code> header. </para>
         <para>The following example demonstrates how to use cURL to
             obtain the authentication token and the account number.
-            You will need to supply the authentication token and
-            account number when making subsequent Cloud DNS API
-            calls.</para>
+            You need to supply the authentication token and account
+            number when making subsequent Cloud DNS API calls.</para>
         <para>Remember to replace the names in the Authenticate
             Request examples below with their respective values:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_username</emphasis> &mdash; The
+                    <para>
+                  <emphasis role="bold">your_username</emphasis> — The
                         username is your common Rackspace Cloud
                         username, as supplied during
                         registration.</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_api_key</emphasis> &mdash; The key
+                    <para>
+                  <emphasis role="bold">your_api_key</emphasis> — The key
                         is your API access key.</para>
-                    <para><emphasis role="bold">To find your API
-                            Key:</emphasis></para>
+                    <para>
+                  <emphasis role="bold">To find your API
+                            Key:</emphasis>
+               </para>
                     <orderedlist>
                         <listitem>
                             <para>Log in to the Cloud Control Panel
-                                   (<link
-                                   xlink:href="https://mycloud.rackspace.com"
-                                   >https://mycloud.rackspace.com</link>).</para>
+                                   (<link xlink:href="https://mycloud.rackspace.com">https://mycloud.rackspace.com</link>).</para>
                         </listitem>
                         <listitem>
                             <para>On the upper-right side of the top
@@ -686,32 +666,15 @@
                         account number is the first item in the
                         menu.</para>
                 </listitem>
-            </itemizedlist></para>
+            </itemizedlist>
+      </para>
         <para> Use the following endpoint to access the Authentication
-            Service, regardless of US or UK identities: </para>
+            Service: </para>
         <itemizedlist spacing="compact">
             <listitem>
-                <para><link xlink:href="&ENDPOINT-US-20;"
-                        >&ENDPOINT-US-20;</link>
+                <para>
+               <link xlink:href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</link>
                 </para>
-            </listitem>
-        </itemizedlist>
-        <para> Your account may be based in either the US or the UK;
-            this is not determined by your physical location but by
-            the location of the Rackspace retail site which was used
-            to create your account: </para>
-        <itemizedlist spacing="compact">
-            <listitem>
-                <para> If your account was created via <link
-                        xlink:href="http://www.rackspacecloud.com"
-                        >http://www.rackspacecloud.com</link>, it is a
-                    US-based account. </para>
-            </listitem>
-            <listitem>
-                <para> If your account was created via <link
-                        xlink:href="http://www.rackspace.co.uk"
-                        >http://www.rackspace.co.uk</link>, it is a
-                    UK-based account. </para>
             </listitem>
         </itemizedlist>
         <para>Notice that you authenticate using a special URL for
@@ -722,24 +685,24 @@
             indicates that you are using version 2.0 of the Cloud Auth
             API.</para>
         <example>
-            <title>cURL Authenticate Request: XML</title>
+            <title>cURL authenticate: XML request</title>
             <?dbfo keep-together="always"?>
-            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
-&lt;auth>
+            <screen language="bash">curl -s -d \
+'&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;auth&gt;
    &lt;apiKeyCredentials
       xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
          username="<emphasis role="bold">your_username</emphasis>" 
-         apiKey="<emphasis role="bold">your_api_key</emphasis>"/>
-&lt;/auth>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | ppxml</screen>
+         apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;
+&lt;/auth&gt;' \
+-H 'Content-Type: application/xml' \
+-H 'Accept: application/xml' \
+'https://identity.api.rackspacecloud.com/v2.0/tokens' | ppxml</screen>
         </example>
         <example>
-            <title>cURL Authenticate Request: JSON</title>
+            <title>cURL authenticate: JSON request</title>
             <?dbfo keep-together="always"?>
-            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
+            <screen language="bash">curl -s -d \
 '{
     "auth":
     {
@@ -749,16 +712,234 @@
           "apiKey": "<emphasis role="bold">your_api_key</emphasis>"}
     }  
 }' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python -m json.tool</screen>
+-H 'Content-Type: application/json' \
+'https://identity.api.rackspacecloud.com/v2.0/tokens' | python -m json.tool</screen>
         </example>
         <example>
-            <title>Authenticate Response: XML</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/db-auth-20.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Authenticate: XML response</title>
+            <programlisting language="xml">HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+Content-Length: 477
+Date: Thu, 12 Apr 2012 18:50:20 GMT
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;access xmlns:os-ksadm="http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0"
+  xmlns="http://docs.openstack.org/identity/api/v2.0"
+  xmlns:rax-kskey="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
+  xmlns:rax-ksqa="http://docs.rackspace.com/identity/api/ext/RAX-KSQA/v1.0"
+  xmlns:common="http://docs.openstack.org/common/api/v1.0"
+  xmlns:ksgrp="http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0"
+  xmlns:rax-kscatalog="http://docs.openstack.org/identity/api/ext/OS-KSCATALOG/v1.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"&gt;
+  &lt;token id="vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz" expires="2011-12-08T22:51:02.000-06:00"/&gt;
+  &lt;user id="123456" name="jsmith" rax-auth:defaultRegion="DFW"&gt;
+    &lt;roles&gt;
+      &lt;role id="identity:admin" name="identity:admin" description="Admin Role."/&gt;
+      &lt;role id="identity:default" name="identity:default" description="Default Role."/&gt;
+    &lt;/roles&gt;
+  &lt;/user&gt;
+  &lt;serviceCatalog&gt;
+    &lt;service type="rax:database" name="cloudDatabases"&gt;
+      &lt;endpoint region="DFW" tenantId="1100111" publicURL="https://dfw.databases.api.rackspacecloud.com/v1.0/1100111"/&gt;
+      &lt;endpoint region="ORD" tenantId="1100111" publicURL="https://ord.databases.api.rackspacecloud.com/v1.0/1100111"/&gt;
+    &lt;/service&gt;
+    &lt;service type="rax:load-balancer" name="cloudLoadBalancers"&gt;
+      &lt;endpoint region="DFW" tenantId="1100111" publicURL="https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111"/&gt;
+      &lt;endpoint region="ORD" tenantId="1100111" publicURL="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111"/&gt;
+    &lt;/service&gt;
+    &lt;service type="compute" name="cloudServersOpenStack"&gt;
+      &lt;endpoint region="DFW" tenantId="1100111"
+        publicURL="https://dfw.servers.api.rackspacecloud.com/v2/1100111"&gt;
+        &lt;version id="2" info="https://dfw.servers.api.rackspacecloud.com/v2/"
+          list="https://dfw.servers.api.rackspacecloud.com/" /&gt;
+      &lt;/endpoint&gt;
+      &lt;endpoint region="ORD" tenantId="1100111"
+        publicURL="https://ord.servers.api.rackspacecloud.com/v2/1100111"&gt;
+        &lt;version id="2" info="https://ord.servers.api.rackspacecloud.com/v2/"
+          list="https://ord.servers.api.rackspacecloud.com/" /&gt;
+      &lt;/endpoint&gt;
+    &lt;/service&gt;
+    &lt;service type="compute" name="cloudServers"&gt;
+      &lt;endpoint tenantId="1100111"
+        publicURL="https://servers.api.rackspacecloud.com/v1.0/1100111"&gt;
+        &lt;version id="1.0"
+          info="https://servers.api.rackspacecloud.com/v1.0/"
+          list="https://servers.api.rackspacecloud.com/"/&gt;
+      &lt;/endpoint&gt;
+    &lt;/service&gt;
+    &lt;service type="object-store" name="cloudFiles"&gt;
+      &lt;endpoint region="DFW"
+        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
+        publicURL="https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
+        internalURL="https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt;
+      &lt;endpoint region="ORD"
+        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
+        publicURL="https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
+        internalURL="https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt;
+    &lt;/service&gt;
+    &lt;service type="rax:object-cdn" name="cloudFilesCDN"&gt;
+      &lt;endpoint region="DFW"
+        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
+        publicURL="https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt; 
+      &lt;endpoint region="ORD"
+        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
+        publicURL="https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt;    
+    &lt;/service&gt;
+    &lt;service type="rax:dns" name="cloudDNS"&gt;
+      &lt;endpoint tenantId="1100111"
+        publicURL="https://dns.api.rackspacecloud.com/v1.0/1100111"/&gt;
+    &lt;/service&gt;
+  &lt;/serviceCatalog&gt;
+&lt;/access&gt;
+</programlisting>
         </example>
         <example>
-            <title>Authenticate Response: JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/db-auth-20.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Authenticate: JSON response</title>
+            <programlisting language="json">HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 477
+Date: Thu, 12 Apr 2012 18:45:13 GMT
+
+{
+    "access": {
+     
+        "token": {
+            "expires": "2011-12-08T22:51:02.000-06:00", 
+            "id": "vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz"
+        }, 
+        "user": {
+            "id": "123456", 
+            "name": "jsmith",
+            "RAX-AUTH:defaultRegion": "DFW",
+            "roles": [
+                {
+                    "description": "Admin Role.", 
+                    "id": "identity:admin", 
+                    "name": "identity:admin"
+                }, 
+                {
+                    "description": "Default Role.", 
+                    "id": "identity:default", 
+                    "name": "identity:default"
+                }
+            ]
+        },
+        "serviceCatalog": [
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/1100111", 
+                        "region": "DFW", 
+                        "tenantId": "1100111"
+                    }, 
+                    {
+                        "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/1100111", 
+                        "region": "ORD", 
+                        "tenantId": "1100111"
+                    }
+                ], 
+                "name": "cloudDatabases", 
+                "type": "rax:database"
+            },
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111", 
+                        "region": "DFW", 
+                        "tenantId": "1100111"
+                    }, 
+                    {
+                        "publicURL": "https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111", 
+                        "region": "ORD", 
+                        "tenantId": "1100111"
+                    }
+                ], 
+                "name": "cloudLoadBalancers", 
+                "type": "rax:load-balancer"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "tenantId": "1100111",
+                        "region": "DFW",
+                        "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/1100111", 
+                        "versionId": "2", 
+                        "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2/", 
+                        "versionList": "https://dfw.servers.api.rackspacecloud.com/"
+                    },
+                    {
+                        "tenantId": "1100111",
+                        "region": "ORD",
+                        "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/1100111", 
+                        "versionId": "2", 
+                        "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2/", 
+                        "versionList": "https://ord.servers.api.rackspacecloud.com/"
+                    }
+                ],
+                "name": "cloudServersOpenStack", 
+                "type": "compute"
+            },
+            {
+                "endpoints": [
+                    {
+                        "tenantId": "1100111", 
+                        "publicURL": "https://servers.api.rackspacecloud.com/v1.0/1100111", 
+                        "versionId": "1.0", 
+                        "versionInfo": "https://servers.api.rackspacecloud.com/v1.0/", 
+                        "versionList": "https://servers.api.rackspacecloud.com/"
+                    }
+                ],
+                "name": "cloudServers", 
+                "type": "compute"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                        "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "region": "DFW" 
+                    },
+                    {
+                        "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                        "publicURL": "https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "internalURL": "https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "region": "ORD" 
+                    }
+                ], 
+                "name": "cloudFiles", 
+                "type": "object-store"
+            }, 
+            {
+                "endpoints": [  
+                    {
+                        "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "region": "DFW"
+                    },                
+                    {
+                        "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "publicURL": "https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                        "region": "ORD"
+                    }
+                ],
+                "name": "cloudFilesCDN", 
+                "type": "rax:object-cdn"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "tenantId": "1100111",
+                        "publicURL": "https://dns.api.rackspacecloud.com/v1.0/1100111"
+                    }
+                ],
+                "name": "cloudDNS", 
+                "type": "rax:dns"
+            }
+        ]
+    }
+}
+</programlisting>
         </example>
         <para>The authentication token <code>id</code> is returned
             along with an <code>expires</code> attribute that
@@ -785,8 +966,7 @@
                         authentication token. Tokens are valid for a
                         finite duration.</para>
                     <para>Remember to supply your authentication token
-                        wherever you see the field <emphasis
-                            role="bold">your_auth_token</emphasis> in
+                        wherever you see the field <emphasis role="bold">your_auth_token</emphasis> in
                         the examples in this guide.</para>
                 </listitem>
                 <listitem>
@@ -815,17 +995,17 @@
         <para>You will find the actual account number after the final
             '/' in the <code>publicURL</code> field. In this example,
             you can see that the account number is 1100111. You need
-            to specify your account number on most of the Cloud DNS
-            API calls, wherever you see the field <emphasis
-                role="bold">your_acct_id</emphasis> specified in the
-            examples in this guide.</para>
-        <para>After authentication, you can use cURL to perform &GET;,
-            &DELETE;, &PUT;, and &POST; requests for the Cloud DNS
+            to specify your account number on the Cloud DNS API calls,
+            wherever you see the field <emphasis role="bold"
+                >your_acct_id</emphasis> specified in the examples in
+            this guide.</para>
+        <para>After authentication, you can use cURL to perform <command>GET</command>,
+            <command>DELETE</command>, <command>PUT</command>, and <command>POST</command> requests for the Cloud DNS
             API.</para>
         
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
-        <title>Service Access/Endpoints</title>
+        <title>Service access/endpoints</title>
         <para>The DNS service is not a regionalized service. DNS is
             therefore responsible for appropriate replication,
             caching, and overall maintenance of DNS data across
@@ -835,7 +1015,7 @@
         
         <para>
             <table rules="all">
-                <caption>Service Access/Endpoint Examples</caption>
+                <caption>Service access/endpoint examples</caption>
                 <thead>
                     <tr align="center">
                         
@@ -845,20 +1025,23 @@
                 <tbody>
                     <tr align="left">
                         
-                        <td colspan="4"
-                                ><code>https://dns.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                        <td colspan="4">
+                     <code>https://dns.api.rackspacecloud.com/v1.0/</code>
+                     <parameter>1234</parameter>/
                         </td>
                     </tr>
                     <tr align="left">
                         
                         <td colspan="4">
-                            <code>https://lon.dns.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                            <code>https://lon.dns.api.rackspacecloud.com/v1.0/</code>
+                     <parameter>1234</parameter>/
                         </td>
                     </tr>
                 </tbody>
             </table>
         </para>
-        <note><title>Notes</title>
+        <note>
+         <title>Notes</title>
             <itemizedlist>
                 <listitem>
                     <para>The service catalog returned in the auth
@@ -866,8 +1049,10 @@
                         endpoint for your account to use for accessing
                         DNS. Use the service name (cloudDNS) to locate
                         the correct endpoint in the service catalog.
-                        See the auth response examples in <xref
-                            linkend="Generating_Auth_Token"/>.</para>
+                        See the auth response examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>.</para>
                 </listitem>
                 <listitem>
                     <para>All examples in this guide assume that you
@@ -880,19 +1065,21 @@
             number returned as part of the authentication response.
             Use your actual account number wherever you see the field
                 <emphasis role="bold">your_acct_id</emphasis>
-            specified in this guide. Refer to <xref
-                linkend="Generating_Auth_Token"/>.</para>
+            specified in this guide. Refer to <link
+                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                >Generate an authentication token</link>.</para>
         <para>When making a Cloud DNS API call, place the endpoint at
             the beginning of the request URL, for example:
-                <code>https://dns.api.rackspacecloud.com/v1.0/</code><emphasis
-                role="bold">your_acct_id</emphasis><code>/</code>, as
+                <code>https://dns.api.rackspacecloud.com/v1.0/</code>
+         <emphasis role="bold">your_acct_id</emphasis>
+         <code>/</code>, as
             you can see in the cURL Create Domain Request examples in
-                <xref linkend="Create_Domain"/>. Note that the
+            <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html">Create a domain</link>. Note that the
                 <code>v1.0</code> component in the URL indicates that
             you are using version 1.0 of the Cloud DNS API.</para>
     </chapter>
     <chapter xml:id="Create_Domain">
-        <title>Create a Domain</title>
+        <title>Create a domain</title>
         <para> The Create Domain API call provisions one or more new
             DNS domains under the account specified, based on the
             configuration defined in the request object. If the
@@ -903,17 +1090,17 @@
             nature of the failure in the body of the response.
             Failures in the validation process are non-recoverable and
             require the caller to correct the cause of the failure and
-            &POST; the request again.</para>
+            <command>POST</command> the request again.</para>
         <para> This call returns an <emphasis>asynchronous</emphasis>
-            response. In fact, &PUT;, &POST;, and &DELETE; DNS API
+            response. In fact, <command>PUT</command>, <command>POST</command>, and <command>DELETE</command> DNS API
             calls are all <emphasis>asynchronous</emphasis>, since
             they may take some time to process. Therefore they return
             202 ACCEPTED responses containing information with a
             callback URL, which allows the progress, status, and/or
             response information of the call to be retrieved at a
             later point in time. </para>
-        <para>You need to use the Create Domain API call
-                (<code>/domains</code>) to create a domain with the
+        <para>You need to use the Create Domain API call (POST
+                <code>/domains</code>) to create a domain with the
             configuration that you specify.</para>
         <para>In this case, assume that you want to create a domain
             with the following configuration:</para>
@@ -948,9 +1135,7 @@
                                    name "sub1.example.com" listed
                                    above to conform to the name you
                                    have chosen for your domain, for
-                                   example: "sub1.&lt;<emphasis
-                                   role="bold"
-                                   >your_domain_name</emphasis>>".</para>
+                                   example: "sub1.&lt;<emphasis role="bold">your_domain_name</emphasis>&gt;".</para>
                                 </note>
                             </para>
                         </listitem>
@@ -961,7 +1146,8 @@
                             <para>comment="1st sample
                                 subdomain"</para>
                         </listitem>
-                    </itemizedlist><itemizedlist>
+                    </itemizedlist>
+               <itemizedlist>
                         <listitem>
                             <para>Domain name =
                                 sub2.example.com</para>
@@ -971,9 +1157,7 @@
                                    name "sub2.example.com" listed
                                    above to conform to the name you
                                    have chosen for your domain, for
-                                   example: "sub2.&lt;<emphasis
-                                   role="bold"
-                                   >your_domain_name</emphasis>>".</para>
+                                   example: "sub2.&lt;<emphasis role="bold">your_domain_name</emphasis>&gt;".</para>
                                 </note>
                             </para>
                         </listitem>
@@ -984,41 +1168,42 @@
                             <para>comment="2nd sample
                                 subdomain"</para>
                         </listitem>
-                    </itemizedlist></para>
+                    </itemizedlist>
+            </para>
             </listitem>
         </itemizedlist>
         <note>
             <para>Although you could add records for your domain in
                 this Create Domain call, to keep things simple, you
-                will add the records using the separate Add Records
-                call in <xref linkend="Add_Records"/> instead.</para>
+                will add the records using the separate Add records
+                call in <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Add_Records.html">Add records</link> instead.</para>
         </note>
         <para>The following examples show the cURL requests for Create
             Domain:</para>
         <example>
-            <title>cURL Create Domain Request: XML</title>
-            <programlisting language="bash"><command>curl -s -d</command> \
+            <title>cURL create domain: XML request</title>
+            <programlisting language="bash">curl -s -d \
 '&lt;domains xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"
 xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.
-org/2005/Atom">
+org/2005/Atom"&gt;
     &lt;domain name="<emphasis role="bold">your_domain_name</emphasis>" ttl="3600" emailAddress="sample@rackspace.com"
-comment="Optional domain comment...">
-        &lt;subdomains>
+comment="Optional domain comment..."&gt;
+        &lt;subdomains&gt;
             &lt;domain name="sub1.<emphasis role="bold">your_domain_name</emphasis>" emailAddress="sample@rackspace.
-com" comment="1st sample subdomain"/>
+com" comment="1st sample subdomain"/&gt;
             &lt;domain name="sub2.<emphasis role="bold">your_domain_name</emphasis>" emailAddress="sample@rackspace.
-com" comment="1st sample subdomain"/>
-        &lt;/subdomains>
-    &lt;/domain>
-&lt;/domains>' \
+com" comment="1st sample subdomain"/&gt;
+        &lt;/subdomains&gt;
+    &lt;/domain&gt;
+&lt;/domains&gt;' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \            
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains'</uri> | ppxml</programlisting>
+-H 'Content-Type: application/xml' \
+-H 'Accept: application/xml' \            
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains' | ppxml</programlisting>
         </example>
         <example>
-            <title>cURL Create Domain Request: JSON</title>
-            <programlisting language="bash"><command>curl -s -d</command> \
+            <title>cURL create domain: JSON request</title>
+            <programlisting language="bash">curl -s -d \
 '{
     "domains" : [ {
         "name" : "<emphasis role="bold">your_name</emphasis>_example.com",
@@ -1040,51 +1225,98 @@ com" comment="1st sample subdomain"/>
 } ]
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains'</uri> | python -m json.tool</programlisting>
+-H 'Content-Type: application/json' \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
             that follow:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold">your_name</emphasis>
-                        &mdash; use some variant of your name to
+                    <para>
+                  <emphasis role="bold">your_name</emphasis>
+                        — use some variant of your name to
                         ensure a unique domain name when it is used as
-                        a prefix for your domain name (<emphasis
-                            role="bold"
-                        >your_name</emphasis>_example.com).</para>
+                        a prefix for your domain name (<emphasis role="bold">your_name</emphasis>_example.com).</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                        >your_auth_token</emphasis> &mdash; as returned in your
-                        authentication response (see the response
-                        examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
+                    <para>
+                        <emphasis role="bold"
+                            >your_auth_token</emphasis> — as returned
+                        in your authentication response (see the
+                        response examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
+                    <para>
+                  <emphasis role="bold">your_acct_id</emphasis> — as
                         returned in your authentication response (must
                         be replaced in the request URL)</para>
                 </listitem>
-            </itemizedlist></para>
+            </itemizedlist>
+      </para>
         <para>The following examples show the initial asynchronous
-            responses for Create Domain:</para>
+            responses for Create domain:</para>
         <example>
-            <title>Create Domain Initial Asynchronous Response:
-                XML</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains-asynch_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Create domain: initial asynchronous XML
+                response</title>
+            <programlisting language="xml">HTTP/1.1 202 Accepted
+X-API-VERSION: 1.0.13
+Content-Type: application/xml
+Date: Thu, 15 Mar 2012 16:21:49 GMT
+Content-Length: 1309
+Server: Jetty(7.3.1.v20110307)
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;asyncResponse xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" 
+    xmlns:ns2="http://www.w3.org/2005/Atom" 
+    xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
+    &lt;jobId&gt;c1b06e08-d7bd-4708-982e-30da5e64ce28&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/c1b06e08-d7bd-4708-982e-30da5e64ce28&lt;/callbackUrl&gt;
+    &lt;status&gt;RUNNING&lt;/status&gt;
+    &lt;requestUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl&gt;
+    &lt;verb&gt;POST&lt;/verb&gt;
+    &lt;request&gt; &amp;lt;domains xmlns:ns2=&amp;quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&amp;quot;
+    xmlns=&amp;quot;http://docs.rackspacecloud.com/dns/api/v1.0&amp;quot; xmlns:ns3=&amp;quot;http://www.w3.
+    org/2005/Atom&amp;quot;&amp;gt;
+    &amp;lt;domain name=&amp;quot;example.com&amp;quot; ttl=&amp;quot;3600&amp;quot; emailAddress=&amp;quot;sample@rackspace.com&amp;quot;
+    comment=&amp;quot;Optional domain comment...&amp;quot;&amp;gt;
+    &amp;lt;subdomains&amp;gt;
+    &amp;lt;domain name=&amp;quot;sub1.example.com&amp;quot; emailAddress=&amp;quot;sample@rackspace.com&amp;quot; comment=&amp;quot;1st sample subdomain&amp;quot;/&amp;gt;
+    &amp;lt;domain name=&amp;quot;sub2.example.com&amp;quot; emailAddress=&amp;quot;sample@rackspace.com&amp;quot; comment=&amp;quot;1st sample subdomain&amp;quot;/&amp;gt;
+    &amp;lt;/subdomains&amp;gt;
+    &amp;lt;/domain&amp;gt;
+    &amp;lt;/domains&amp;gt;
+    &lt;/request&gt;
+&lt;/asyncResponse&gt;
+</programlisting>
         </example>
         <note>
-            <para>The <code>&lt;request></code> in the XML response
+            <para>The <code>&lt;request&gt;</code> in the XML response
                 comes back with the request you sent, with the HTML
                 entities encoded (&amp;lt; &amp;gt;
                 &amp;quot;).</para>
         </note>
         <example>
-            <title>Create Domain Initial Asynchronous Response:
-                JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Create domain: initial asynchronous JSON
+                response</title>
+            <programlisting language="json">HTTP/1.1 202 Accepted
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Thu, 15 Mar 2012 18:08:15 GMT
+Content-Length: 931
+Server: Jetty(7.3.1.v20110307)
+
+{
+"callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/status/ec180c96-5488-4b29-8d25-ce3e2985afd4", 
+  "jobId": "ec180c96-5488-4b29-8d25-ce3e2985afd4", 
+  "request": "{\n    \"domains\" : [ {\n        \"name\" : \"example.com\",   \n        \"comment\" : \"Optional domain comment...\",   \n        \"subdomains\" : {\n            \"domains\" : [ {\n                \"name\" : \"sub1.example.com\",\n                \"comment\" : \"1st sample subdomain\",\n                \"emailAddress\" : \"sample@rackspace.com\"\n            }, {\n                \"name\" : \"sub2.example.com\",\n                \"comment\" : \"1st sample subdomain\",\n                \"emailAddress\" : \"sample@rackspace.com\"\n\n            } ]\n        },\n        \"ttl\" : 3600,\n        \"emailAddress\" : \"sample@rackspace.com\"\n} ]\n}", 
+  "requestUrl": "http://dns.api.rackspacecloud.com/v1.0/1234/domains", 
+  "status": "RUNNING", 
+  "verb": "POST"
+}
+</programlisting>
         </example>
         <para>Notice that you can see the 202 ACCEPTED responses
             containing information with a callback URL
@@ -1098,8 +1330,7 @@ com" comment="1st sample subdomain"/>
         <para>The following examples show the requests to get the
             status for the job using the <code>jobID</code> and
                 <code>callbackUrl</code> provided (which you can see
-            in the previous example). Note that the <emphasis
-                role="bold">job_id</emphasis> is automatically
+            in the previous example). Note that the <emphasis role="bold">job_id</emphasis> is automatically
             inserted for you at the end of the callbackUrl, so you can
             just copy the entire callbackUrl and place it within the
             single quotes at the end of the cURL command. Then follow
@@ -1108,85 +1339,223 @@ com" comment="1st sample subdomain"/>
         <para>The following examples show the cURL status requests for
             Create Domain:</para>
         <example>
-            <title>cURL Asynchronous Status for Create Domain Request:
-                XML</title>
-            <programlisting language="bash"><command>curl -i </command> \
+            <title>cURL Create domain asynchronous status: XML
+                request</title>
+            <programlisting language="bash">curl -i  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \            
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/status/</uri><emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
+-H 'Content-Type: application/xml' \
+-H 'Accept: application/xml' \            
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/status/<emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
         </example>
         <example>
-            <title>cURL Asynchronous Status for Create Domain Request:
-                JSON</title>
-            <programlisting language="bash"><command>curl -i </command> \
+            <title>cURL Create domain asynchronous status: JSON
+                request</title>
+            <programlisting language="bash">curl -i  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/status/</uri><emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
+-H 'Content-Type: application/json' \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/status/<emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
         </example>
         <para>Adding the parameter <code>?showDetails=true</code> at
             the end of the end of the URL after the <emphasis
                 role="bold">job_id</emphasis> causes the response to
-            display all details for the aynch request, including the
-            results, if they are available. Omitting this parameter
-            causes just basic details to be displayed (jobId,
-            callbackUrl, and status attributes).</para>
+            display all details for the asynchronous request,
+            including the results, if they are available. Omitting
+            this parameter causes just basic details to be displayed
+            (jobId, callbackUrl, and status attributes).</para>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
             that follow:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
+                    <para>
+                        <emphasis role="bold"
+                            >your_auth_token</emphasis> — as returned
+                        in your authentication response (see the
+                        response examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
+                    <para>
+                  <emphasis role="bold">your_acct_id</emphasis> — as
                         returned in your authentication response (must
                         be replaced in the request URL)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">job_id</emphasis>
-                        &mdash; as returned in your Create Domain
+                    <para>
+                  <emphasis role="bold">job_id</emphasis>
+                        — as returned in your Create Domain
                         response (must be replaced in the request
                         URL)</para>
                 </listitem>
-            </itemizedlist></para>
+            </itemizedlist>
+      </para>
         <para>
             <note>
                 <para> The following examples show the
                         <emphasis>final</emphasis> successful response
-                    for the asynchronous call. Refer to <link
-                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
-                        >http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
+                    for the asynchronous call. Refer to <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
                     for more information about how the asynchronous
                     call works.</para>
             </note>
         </para>
         <para>The following examples show the final successful
-            responses for Create Domain:</para>
+            responses for Create domain:</para>
         <example>
-            <title>Create Domain Final Successful Response:
-                XML</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Create domain: XML final successful
+                response</title>
+            <programlisting language="xml">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/xml
+Date: Thu, 15 Mar 2012 17:56:10 GMT
+Content-Length: 2400
+Server: Jetty(7.3.1.v20110307)
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;asyncResponse xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" 
+    xmlns:ns2="http://www.w3.org/2005/Atom" 
+    xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
+    &lt;jobId&gt;b32efdff-e217-4a97-9851-aac406811a38&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/b32efdff-e217-4a97-9851-aac406811a38&lt;/callbackUrl&gt;
+    &lt;status&gt;COMPLETED&lt;/status&gt;
+    &lt;requestUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl&gt;
+    &lt;verb&gt;POST&lt;/verb&gt;
+    &lt;request&gt; &amp;lt;domains xmlns:ns2=&amp;quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&amp;quot;
+    xmlns=&amp;quot;http://docs.rackspacecloud.com/dns/api/v1.0&amp;quot; xmlns:ns3=&amp;quot;http://www.w3.
+    org/2005/Atom&amp;quot;&amp;gt;
+    &amp;lt;domain name=&amp;quot;example.com&amp;quot; ttl=&amp;quot;3600&amp;quot; emailAddress=&amp;quot;sample@rackspace.com&amp;quot;
+    comment=&amp;quot;Optional domain comment...&amp;quot;&amp;gt;
+    &amp;lt;subdomains&amp;gt;
+    &amp;lt;domain name=&amp;quot;sub1.example.com&amp;quot; emailAddress=&amp;quot;sample@rackspace.com&amp;quot; comment=&amp;quot;1st sample subdomain&amp;quot;/&amp;gt;
+    &amp;lt;domain name=&amp;quot;sub2.example.com&amp;quot; emailAddress=&amp;quot;sample@rackspace.com&amp;quot; comment=&amp;quot;1st sample subdomain&amp;quot;/&amp;gt;
+    &amp;lt;/subdomains&amp;gt;
+    &amp;lt;/domain&amp;gt;
+    &amp;lt;/domains&amp;gt;
+    &lt;/request&gt;
+    &lt;response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="domains"&gt;
+        &lt;domain id="3191305" accountId="1234" name="example.com" ttl="3600" 
+            emailAddress="sample@rackspace.com" updated="2012-03-15T17:53:05Z" 
+            created="2012-03-15T17:53:05Z" comment="Optional domain comment..."&gt;
+            &lt;nameservers&gt;
+                &lt;nameserver name="dns1.stabletransit.com"/&gt;
+                &lt;nameserver name="dns2.stabletransit.com"/&gt;
+            &lt;/nameservers&gt;
+            &lt;subdomains&gt;
+                &lt;domain id="3191307" accountId="1234" name="sub1.example.com" ttl="3600" 
+                    emailAddress="sample@rackspace.com" updated="2012-03-15T17:53:05Z" 
+                    created="2012-03-15T17:53:05Z" comment="1st sample subdomain"&gt;
+                    &lt;nameservers&gt;
+                        &lt;nameserver name="dns1.stabletransit.com"/&gt;
+                        &lt;nameserver name="dns2.stabletransit.com"/&gt;
+                    &lt;/nameservers&gt;
+                &lt;/domain&gt;
+                &lt;domain id="3191308" accountId="1234" name="sub2.example.com" ttl="3600" 
+                    emailAddress="sample@rackspace.com" updated="2012-03-15T17:53:05Z" 
+                    created="2012-03-15T17:53:05Z" comment="1st sample subdomain"&gt;
+                    &lt;nameservers&gt;
+                        &lt;nameserver name="dns1.stabletransit.com"/&gt;
+                        &lt;nameserver name="dns2.stabletransit.com"/&gt;
+                    &lt;/nameservers&gt;
+                &lt;/domain&gt;
+            &lt;/subdomains&gt;
+        &lt;/domain&gt;
+    &lt;/response&gt;
+&lt;/asyncResponse&gt;
+</programlisting>
         </example>
         <example>
-            <title>Create Domain Final Successful Response:
-                JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-create-domains_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Create domain: JSON final successful
+                response</title>
+            <programlisting language="json">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Thu, 15 Mar 2012 18:46:01 GMT
+Content-Length: 1892
+Server: Jetty(7.3.1.v20110307)
+
+{
+"request": "{\n    \"domains\" : [ {\n        \"name\" : \"example.com\",\n        \"comment\" : \"Optional domain comment...\",\n        \"subdomains\" : {\n            \"domains\" : [ 
+{\n                \"name\" : \"sub1.example.com\",\n                \"comment\" : \"1st sample subdomain\",\n                \"emailAddress\" : \"sample@rackspace.com\"\n            }, {
+\n                \"name\" : \"sub2.example.com\",\n                \"comment\" : \"1st sample subdomain\",\n                \"emailAddress\" : \"sample@rackspace.com\"\n\n            } ]\n 
+},\n        \"ttl\" : 3600,\n        \"emailAddress\" : \"sample@rackspace.com\"\n} ]\n}",
+"response": {
+  "domains": [
+    {
+      "name": "example.com",
+      "id": 3191338,
+      "comment": "Optional domain comment...",
+      "accountId": 1234,
+      "subdomains": {
+        "domains": [
+          {
+            "name": "sub1.example.com",
+            "id": 3191339,
+            "comment": "1st sample subdomain",
+            "accountId": 1234,
+            "updated": "2012-03-15T18:08:16.000+0000",
+            "ttl": 3600,
+            "emailAddress": "sample@rackspace.com",
+            "nameservers": [
+              {
+                "name": "dns1.stabletransit.com"
+              },
+              {
+                "name": "dns2.stabletransit.com"
+              }
+            ],
+            "created": "2012-03-15T18:08:16.000+0000"
+          },
+          {
+            "name": "sub2.example.com",
+            "id": 3191340,
+            "comment": "1st sample subdomain",
+            "accountId": 1234,
+            "updated": "2012-03-15T18:08:16.000+0000",
+            "ttl": 3600,
+            "emailAddress": "sample@rackspace.com",
+            "nameservers": [
+              {
+                "name": "dns1.stabletransit.com"
+              },
+              {
+                "name": "dns2.stabletransit.com"
+              }
+            ],
+            "created": "2012-03-15T18:08:16.000+0000"
+          }
+        ]
+      },
+      "updated": "2012-03-15T18:08:15.000+0000",
+      "ttl": 3600,
+      "emailAddress": "sample@rackspace.com",
+      "nameservers": [
+        {
+          "name": "dns1.stabletransit.com"
+        },
+        {
+          "name": "dns2.stabletransit.com"
+        }
+      ],
+      "created": "2012-03-15T18:08:15.000+0000"
+    }
+  ]
+},
+"status": "COMPLETED",
+"verb": "POST",
+"jobId": "ec180c96-5488-4b29-8d25-ce3e2985afd4",
+"callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/status/ec180c96-5488-4b29-8d25-ce3e2985afd4",
+"requestUrl": "http://dns.api.rackspacecloud.com/v1.0/1234/domains"
+}
+</programlisting>
         </example>
         <para>Notice that you can see the 200 OK responses containing
             information about the domain/subdomains with status
             COMPLETED. This indicates that the call was successfully
-            completed. </para>
+            completed.</para>
         <note>
             <para> The response examples show the
                     <emphasis>final</emphasis> successful response for
-                the asynchronous call. Refer to <link
-                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
-                    >http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
+                the asynchronous call. Refer to <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
                 for more information about how the asynchronous call
                 works.</para>
         </note>
@@ -1195,13 +1564,12 @@ com" comment="1st sample subdomain"/>
             sub1.example.com and sub2.example.com. You will need the
             domain <code>id</code> for making the List Domain Details
             call in the next section, and you should supply this value
-            wherever you see the field <emphasis role="bold"
-                >domain_id</emphasis> in the examples in this
+            wherever you see the field <emphasis role="bold">domain_id</emphasis> in the examples in this
             guide.</para>
     </chapter>
     
     <chapter xml:id="List_Domain_Details">
-            <title>List Domain Details</title>
+            <title>List domain details</title>
             <para>This operation provides detailed output for a
             specific domain configured and associated with your
             account. This operation is not capable of returning
@@ -1211,72 +1579,152 @@ com" comment="1st sample subdomain"/>
                 <emphasis role="bold">domain_id</emphasis> that you
             created in the previous section.</para>
         <para>The following examples show the cURL requests for List
-            Domain Details:</para>
+            domain details:</para>
         <example>
-            <title>cURL List Domain Details Request : XML</title>
-            <programlisting language="bash"><command>curl</command> <option>-s</option>  \
+            <title>cURL List domain details: XML request</title>
+            <programlisting language="bash">curl -s  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
-<option>-H 'Accept: application/xml'</option>  \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis><uri>'</uri> | ppxml</programlisting>
+-H 'Accept: application/xml'  \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains/<emphasis role="bold">domain_id</emphasis>' | ppxml</programlisting>
         </example>
         <example>
-            <title>cURL List Domain Details Request : JSON</title>
-            <programlisting language="bash"><command>curl</command> <option>-s</option>  \
+            <title>cURL List domain details: JSON request</title>
+            <programlisting language="bash">curl -s  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
-<option>-H 'Accept: application/json'</option>  \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis><uri>'</uri> | python -m json.tool</programlisting>
+-H 'Accept: application/json'  \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains/<emphasis role="bold">domain_id</emphasis>' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
             that follow:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
+                    <para>
+                        <emphasis role="bold"
+                            >your_auth_token</emphasis> — as returned
+                        in your authentication response (see the
+                        response examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
+                    <para>
+                  <emphasis role="bold">your_acct_id</emphasis> — as
                         returned in your authentication response (must
                         be replaced in the request URL)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">domain_id</emphasis>
-                        &mdash; as returned in your create domain
+                    <para>
+                  <emphasis role="bold">domain_id</emphasis>
+                        — as returned in your create domain
                         response (must be replaced in the request
                         URL)</para>
                 </listitem>
-            </itemizedlist></para>
-        <para>The following examples show the List Domain Details
+            </itemizedlist>
+      </para>
+        <para>The following examples show the List domain details
             responses:</para>
             
             <example>
-                <title>List Domain Details Response: XML</title>
-                <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                <title>List domain details: XML response</title>
+                <programlisting language="xml">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/xml
+Date: Thu, 15 Mar 2012 19:51:54 GMT
+Content-Length: 903
+Server: Jetty(7.3.1.v20110307)
+
+
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;domain xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" 
+  xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" id="3191338" accountId="1234" 
+  name="example.com" ttl="3600" emailAddress="sample@rackspace.com" updated="2012-03-15T18:08:15Z" 
+  created="2012-03-15T18:08:15Z" comment="Optional domain comment..."&gt;
+  &lt;nameservers&gt;
+    &lt;nameserver name="dns1.stabletransit.com"/&gt;
+    &lt;nameserver name="dns2.stabletransit.com"/&gt;
+  &lt;/nameservers&gt;
+  &lt;recordsList totalEntries="2"&gt;
+    &lt;record id="NS-7475194" type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600" updated="2012-03-15T18:08:15Z" created="2012-03-15T18:08:15Z"/&gt;
+    &lt;record id="NS-7475195" type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600" updated="2012-03-15T18:08:15Z" created="2012-03-15T18:08:15Z"/&gt;
+  &lt;/recordsList&gt;
+&lt;/domain&gt;
+</programlisting>
             </example>
             
             <example>
-                <title>List Domain Details Response: JSON</title>
-                <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                <title>List domain details: JSON response</title>
+                <programlisting language="json">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Thu, 15 Mar 2012 19: 54: 52 GMT
+Content-Length: 713
+Server: Jetty(7.3.1.v20110307)
+
+ 
+{
+  "name": "example.com",
+  "id": 3191338,
+  "comment": "Optional domain comment...",
+  "accountId": 1234,
+  "updated": "2012-03-15T18:08:15.000+0000",
+  "ttl": 3600,
+  "recordsList": {
+    "records": [
+      {
+        "name": "example.com",
+        "id": "NS-7475194",
+        "type": "NS",
+        "data": "dns1.stabletransit.com",
+        "updated": "2012-03-15T18:08:15.000+0000",
+        "ttl": 3600,
+        "created": "2012-03-15T18:08:15.000+0000"
+      },
+      {
+        "name": "example.com",
+        "id": "NS-7475195",
+        "type": "NS",
+        "data": "dns2.stabletransit.com",
+        "updated": "2012-03-15T18:08:15.000+0000",
+        "ttl": 3600,
+        "created": "2012-03-15T18:08:15.000+0000"
+      }
+    ],
+    "totalEntries": 2
+  },
+  "emailAddress": "sample@rackspace.com",
+  "nameservers": [
+    {
+      "name": "dns1.stabletransit.com"
+    },
+    {
+      "name": "dns2.stabletransit.com"
+    }
+  ],
+  "created": "2012-03-15T18:08:15.000+0000"
+}
+
+</programlisting>
             </example>
-        <para>By default, the List Domain Details API call lists
+        <para>By default, the List domain details API call lists
             details of the specified domain, with record information
             but <emphasis>without</emphasis> subdomains.</para>
         <para>The following parameters are available to control the
-            information displayed by the List Domain Details
+            information displayed by the List domain details
             responses:</para>
         <itemizedlist>
             <listitem>
-                <para><code>showRecords</code> &mdash; if this
+                <para>
+               <code>showRecords</code> — if this
                     parameter is set to true, then information about
                     records is returned; if this parameter is set to
                     false, then information about records is not
                     returned.</para>
             </listitem>
             <listitem>
-                <para><code>showSubdomains</code> &mdash; if this
+                <para>
+               <code>showSubdomains</code> — if this
                     parameter is set to true, then information about
                     subdomains is returned; if this parameter is set
                     to false, then information about subdomains is not
@@ -1286,79 +1734,152 @@ com" comment="1st sample subdomain"/>
         <para>For example, using the following version of the call,
             information about subdomains will be displayed, but
             information about records will not be displayed:
-                <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis
-                role="bold"
-                >your_acct_id</emphasis><uri>/domains/</uri><emphasis
-                role="bold"
-                >domain_id</emphasis><uri>?showRecords=false&amp;showSubdomains=true</uri>'</para>
+                <uri>'https://dns.api.rackspacecloud.com/v1.0/</uri>
+         <emphasis role="bold">your_acct_id</emphasis>
+         <uri>/domains/</uri>
+         <emphasis role="bold">domain_id</emphasis>
+         <uri>?showRecords=false&amp;showSubdomains=true</uri>'</para>
         <para>Displaying only the information needed will improve the
-            performance of the List Domain Details call.</para>
+            performance of the List domain details call.</para>
         <para>The following examples show the cURL requests for List
-            Domain Details, with subdomains, but no records:</para>
+            domain details with subdomains, but no records:</para>
         <example>
-            <title>cURL List Domain Details with Subdomains, No
-                Records Request : XML</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option>  \
+            <title>cURL List domain details with subdomains, no
+                records: XML request</title>
+            <programlisting language="bash">curl -i  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
-<option>-H 'Accept: application/xml'</option>  \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis>?showRecords=false&amp;showSubdomains=true<uri>'</uri></programlisting>
+-H 'Accept: application/xml'  \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains/<emphasis role="bold">domain_id</emphasis>?showRecords=false&amp;showSubdomains=true'</programlisting>
         </example>
         <example>
-            <title>cURL List Domain Details with Subdomains, No
-                Records Request : JSON</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option>  \
+            <title>cURL List domain details with subdomains, no
+                records: JSON request</title>
+            <programlisting language="bash">curl -i  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
-<option>-H 'Accept: application/json'</option>  \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis>?showRecords=false&amp;showSubdomains=true<uri>'</uri></programlisting>
+-H 'Accept: application/json'  \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains/<emphasis role="bold">domain_id</emphasis>?showRecords=false&amp;showSubdomains=true'</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
             that follow:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
+                    <para>
+                        <emphasis role="bold"
+                            >your_auth_token</emphasis> — as returned
+                        in your authentication response (see the
+                        response examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
+                    <para>
+                  <emphasis role="bold">your_acct_id</emphasis> — as
                         returned in your authentication response; must
                         be replaced in the request URL</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">domain_id</emphasis>
-                        &mdash; as returned in your create domain
+                    <para>
+                  <emphasis role="bold">domain_id</emphasis>
+                        — as returned in your create domain
                         final successful response (see the examples in
-                            <xref linkend="Create_Domain"/>); must be
+                        <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html">Create a domain</link>); must be
                         replaced in the request URL </para>
                 </listitem>
-            </itemizedlist></para>
-        <para>The following examples show the List Domain Details with
-            Subdomains, No Records responses:</para>
+            </itemizedlist>
+      </para>
+        <para>The following examples show the List domain details with
+            subdomains, no records responses:</para>
         <example>
-            <title>List Domain Details with Subdomains, No Records
-                Response: XML</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-subdomains-no-records-details_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>List domain details with subdomains, no records:
+                XML response</title>
+            <programlisting language="xml">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/xml
+Date: Thu, 15 Mar 2012 21:16:28 GMT
+Content-Length: 865
+Server: Jetty(7.3.1.v20110307)
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;domain xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" 
+  xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0" id="3191338" accountId="1234" 
+  name="example.com" ttl="3600" emailAddress="sample@rackspace.com" updated="2012-03-15T18:08:15Z" 
+  created="2012-03-15T18:08:15Z" comment="Optional domain comment..."&gt;
+  &lt;nameservers&gt;
+    &lt;nameserver name="dns1.stabletransit.com"/&gt;
+    &lt;nameserver name="dns2.stabletransit.com"/&gt;
+  &lt;/nameservers&gt;
+  &lt;subdomains totalEntries="2"&gt;
+    &lt;domain id="3191339" name="sub1.example.com" updated="2012-03-15T18:08:16Z" created="2012-03-15T18:08:16Z" comment="1st sample subdomain"/&gt;
+    &lt;domain id="3191340" name="sub2.example.com" updated="2012-03-15T18:08:17Z" created="2012-03-15T18:08:16Z" comment="1st sample subdomain"/&gt;
+  &lt;/subdomains&gt;
+&lt;/domain&gt;
+</programlisting>
         </example>
         <example>
-            <title>List Domain Details with Subdomains, No Records
-                Response: JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-list-domain-subdomains-no-records-details_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>List domain details with subdomains, no records:
+                JSON response</title>
+            <programlisting language="json">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Thu, 15 Mar 2012 19: 54: 52 GMT
+Content-Length: 713
+Server: Jetty(7.3.1.v20110307)
+
+
+{
+   "id": "3191338",
+   "accountId": "1234",
+   "name": "example.com",
+   "ttl": "3600",
+   "emailAddress": "sample@rackspace.com",
+   "updated": "2012-03-15T18:08:15Z",
+   "created": "2012-03-15T18:08:15Z",
+   "comment": "Optional domain comment...",
+   "nameservers": {
+      "nameserver": [
+         {
+            "name": "dns1.stabletransit.com"
+         },
+         {
+            "name": "dns2.stabletransit.com"
+         }
+      ]
+   },
+   "subdomains": {
+      "totalEntries": "2",
+      "domain": [
+         {
+            "id": "3191339",
+            "name": "sub1.example.com",
+            "updated": "2012-03-15T18:08:16Z",
+            "created": "2012-03-15T18:08:16Z",
+            "comment": "1st sample subdomain"
+         },
+         {
+            "id": "3191340",
+            "name": "sub2.example.com",
+            "updated": "2012-03-15T18:08:17Z",
+            "created": "2012-03-15T18:08:16Z",
+            "comment": "1st sample subdomain"
+         }
+      ]
+   }
+}
+
+</programlisting>
         </example>
         </chapter>
     <chapter xml:id="Add_Records">
-        <title>Add Records</title>
+        <title>Add records</title>
         <para>In this section, you will add records for your new
             domain as follows:</para>
         <itemizedlist>
             <listitem>
                 <para>Two A records to map the IPV4 addresses of your
-                    two Cloud Servers that you recorded in <xref
-                        linkend="Create_Cloud_Server"/> to the new
-                    domain that you created in <xref
-                        linkend="Create_Domain"/>. </para>
+                    two cloud servers that you recorded in <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Cloud_Server.html">Create a new cloud server</link>
+                    to the new
+                    domain that you created in <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html">Create a domain</link>). </para>
             </listitem>
             <listitem>
                 <para>One CNAME record to create an alias
@@ -1367,12 +1888,12 @@ com" comment="1st sample subdomain"/>
                     CNAME record.”</para>
             </listitem>
             <listitem>
-                <para>Make the first Cloud Server the ftp server
+                <para>Make the first cloud server the ftp server
                     (ftp.example.com) for your domain with a TTL of
                     5571.</para>
             </listitem>
             <listitem>
-                <para>Make the second Cloud Server the domain server
+                <para>Make the second cloud server the domain server
                     with a TTL of 86400.</para>
             </listitem>
         </itemizedlist>
@@ -1381,43 +1902,43 @@ com" comment="1st sample subdomain"/>
                 create AAAA records in addition to any A records for
                 IPv4 addresses.</para>
         </note>
-        <para xmlns="http://docbook.org/ns/docbook">The following
-            examples show the cURL requests for Add Records:</para>
+        <para>The following examples show the cURL requests for Add
+            records:</para>
         <example>
-            <title>cURL Add Records Request: XML</title>
-            <programlisting language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" ?> 
+            <title>cURL Add records: XML request</title>
+            <programlisting language="bash">curl -s -d \
+'&lt;?xml version="1.0" ?&gt; 
 &lt;recordsList xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.
 0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.
-w3.org/2005/Atom">
+w3.org/2005/Atom"&gt;
     &lt;record type="A" name="ftp.example.com" 
-    data="&lt;<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>>" ttl="5771"/>
+    data="&lt;<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>&gt;" ttl="5771"/&gt;
     &lt;record type="A" name="example.com" 
-    data="&lt;<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>>" ttl="86400"/>
+    data="&lt;<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>&gt;" ttl="86400"/&gt;
     &lt;record type="CNAME" name="www.example.com" data="example.com" ttl="5400" 
-    comment="This is a comment on the CNAME record"/>
-&lt;/recordsList>' \
+    comment="This is a comment on the CNAME record"/&gt;
+&lt;/recordsList&gt;' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis><uri>/records'</uri> | ppxml</programlisting>
+-H 'Content-Type: application/xml' \
+-H 'Accept: application/xml' \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains/<emphasis role="bold">domain_id</emphasis>/records' | ppxml</programlisting>
         </example>
         <example>
             <?dbfo keep-together="always"?>
-            <title>cURL Add Records Request: JSON</title>
-            <programlisting language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
+            <title>cURL Add records: JSON request</title>
+            <programlisting language="bash">curl -s -d \
 '{
     "records": [
         {
             "name" : "ftp.example.com",
             "type" : "A",
-            "data" : "&lt;<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>>",
+            "data" : "&lt;<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>&gt;",
             "ttl" : 5771
         }, 
         {
             "name" : "example.com",
             "type" : "A",
-            "data" : "&lt;<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>>",
+            "data" : "&lt;<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>&gt;",
             "ttl" : 86400
         },
         {
@@ -1430,68 +1951,115 @@ w3.org/2005/Atom">
     ]
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/domains/</uri><emphasis role="bold">domain_id</emphasis><uri>/records'</uri> | python -m json.tool</programlisting>
+-H 'Content-Type: application/json' \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains/<emphasis role="bold">domain_id</emphasis>/records' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
+                    <para>
+                        <emphasis role="bold"
+                            >your_auth_token</emphasis> — as returned
+                        in your authentication response (see the
+                        examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the examples in <xref
-                            linkend="Generating_Auth_Token"/>); must
-                        be replaced in the request URL</para>
+                    <para>
+                        <emphasis role="bold">your_acct_id</emphasis>
+                        — as returned in your authentication response
+                        (see the examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication token</link>);
+                        must be replaced in the request URL</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">domain_id</emphasis>
-                        &mdash; as returned in your create domain
+                    <para>
+                  <emphasis role="bold">domain_id</emphasis>
+                        — as returned in your create domain
                         final successful response (see the examples in
-                            <xref linkend="Create_Domain"/>); must be
+                        <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html">Create a domain</link>); must be
                         replaced in the request URL</para>
                 </listitem>
-            </itemizedlist></para>
+            </itemizedlist>
+      </para>
         <para>The following examples show the initial asynchronous
-            responses for Add Records:</para>
+            responses for Add records:</para>
         <example>
-            <title>Add Records Initial Asynchronous Response:
-                XML</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records-asynch_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Add records: initial asynchronous XML
+                response</title>
+            <programlisting language="xml">HTTP/1.1 202 Accepted
+X-API-VERSION: 1.0.13
+Content-Type: application/xml
+Date: Fri, 16 Mar 2012 15:17:52 GMT
+Content-Length: 1283
+Server: Jetty(7.3.1.v20110307)
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;asyncResponse xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
+  &lt;jobId&gt;1912f480-4636-498e-bba4-609661d19083&lt;/jobId&gt;
+  &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/1912f480-4636-498e-bba4-609661d19083&lt;/callbackUrl&gt;
+  &lt;status&gt;RUNNING&lt;/status&gt;
+  &lt;requestUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/domains/3191338/records&lt;/requestUrl&gt;
+  &lt;verb&gt;POST&lt;/verb&gt;
+  &lt;request&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; ?&amp;gt;
+&amp;lt;recordsList xmlns:ns2=&amp;quot;http://docs.rackspacecloud.com/dns/api/management/v1.
+0&amp;quot; xmlns=&amp;quot;http://docs.rackspacecloud.com/dns/api/v1.0&amp;quot; xmlns:ns3=&amp;quot;http://www.
+w3.org/2005/Atom&amp;quot;&amp;gt;
+&amp;lt;record type=&amp;quot;A&amp;quot; name=&amp;quot;ftp.example.com&amp;quot; 
+  data=&amp;quot;50.56.207.146&amp;quot; ttl=&amp;quot;5771&amp;quot;/&amp;gt;
+&amp;lt;record type=&amp;quot;A&amp;quot; name=&amp;quot;example.com&amp;quot; 
+  data=&amp;quot;108.166.67.215&amp;quot; ttl=&amp;quot;86400&amp;quot;/&amp;gt;
+&amp;lt;record type=&amp;quot;CNAME&amp;quot; name=&amp;quot;www.example.com&amp;quot; data=&amp;quot;example.com&amp;quot; ttl=&amp;quot;5400&amp;quot;
+  comment=&amp;quot;This is a comment on the CNAME record&amp;quot;/&amp;gt;
+&amp;lt;/recordsList&amp;gt;&lt;/request&gt;
+&lt;/asyncResponse&gt;
+
+</programlisting>
         </example>
         <example>
-            <title>Add Records Initial Asynchronous Response:
-                JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records-asynch_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>Add records: initial asynchronous JSON
+                response</title>
+            <programlisting language="json">HTTP/1.1 202 Accepted
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Fri, 16 Mar 2012 17:16:16 GMT
+Content-Length: 700
+Server: Jetty(7.3.1.v20110307)
+
+{
+  "request": "{\n\"records\": [\n{\n\"name\" : \"ftp.example.com\",\n\"type\" : \"A\",\n\"data\" : \"50.56.207.146\",\n\"ttl\" : 5771\n},\n{\n\"name\" : \"example.com\",\n\"type\" : \"A\",\n\"data\" : \"108.166.67.215\",\n\"ttl\" : 86400\n},\n{\n\"name\" : \"www.example.com\",\n\"type\" : \"CNAME\",\n\"comment\" : \"This is a comment on the CNAME record\",\n\"data\" : \"example.com\",\n\"ttl\" : 5400\n}\n]\n}",
+  "status": "RUNNING",
+  "verb": "POST",
+  "jobId": "e6b78833-2b5e-4c4c-88c6-6aabb55a706b",
+  "callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/status/e6b78833-2b5e-4c4c-88c6-6aabb55a706b",
+  "requestUrl": "http://dns.api.rackspacecloud.com/v1.0/1234/domains/3191338/records"
+}
+</programlisting>
         </example>
         <para>The following examples show the cURL asynchronous status
-            requests for Add Records:</para>
+            requests for Add records:</para>
         <example>
-            <title>cURL Asynchronous Status for Add Records Request:
-                XML</title>
-            <programlisting language="bash"><command>curl -i </command> \
+            <title>cURL asynchronous status for Add records: XML
+                request</title>
+            <programlisting language="bash">curl -i  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \            
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/status/</uri><emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
+-H 'Content-Type: application/xml' \
+-H 'Accept: application/xml' \            
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/status/<emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
         </example>
         <example>
-            <title>cURL Asynchronous Status for Add Records Request:
-                JSON</title>
-            <programlisting language="bash"><command>curl -i </command> \
+            <title>cURL asynchronous status for Add records: JSON
+                request</title>
+            <programlisting language="bash">curl -i  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dns.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/status/</uri><emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
+-H 'Content-Type: application/json' \
+'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/status/<emphasis role="bold">job_id</emphasis>?showDetails=true'</programlisting>
         </example>
         <para>Adding the parameter <code>?showDetails=true</code> at
-            the end of the end of the URL after the <emphasis
-                role="bold">job_id</emphasis> causes the response to
+            the end of the end of the URL after the <emphasis role="bold">job_id</emphasis> causes the response to
             display all details for the aynch request, including the
             results, if they are available. Omitting this parameter
             causes just basic details to be displayed (jobId,
@@ -1500,51 +2068,136 @@ w3.org/2005/Atom">
             their actual respective values for all the cURL examples
             that follow:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
+                    <para>
+                        <emphasis role="bold"
+                            >your_auth_token</emphasis> — as returned
+                        in your authentication response (see the
+                        response examples in <link
+                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
+                            >Generate an authentication
+                        token</link>)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
+                    <para>
+                  <emphasis role="bold">your_acct_id</emphasis> — as
                         returned in your authentication response (must
                         be replaced in the request URL)</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">job_id</emphasis>
-                        &mdash; as returned in your Create Domain
-                        response (must be replaced in the request
-                        URL)</para>
+                    <para>
+                        <emphasis role="bold">job_id</emphasis> — as
+                        returned in your Create domain response (must
+                        be replaced in the request URL)</para>
                 </listitem>
-            </itemizedlist></para>
+            </itemizedlist>
+      </para>
         <para> The following examples show the
                 <emphasis>final</emphasis> successful response for the
-            asynchronous Add Records call. Refer to <link
+            asynchronous Add records call. Refer to <link
                 xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
                 >http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html</link>
             for more information about how the asynchronous call
             works.</para>
         <example>
-            <title>cURL Add Records Final Successful Response:
-                XML</title>
-            <programlisting language="xml"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>cURL Add records: final successful  XML
+                response</title>
+            <programlisting language="xml">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/xml
+Date: Fri, 16 Mar 2012 15:53:22 GMT
+Content-Length: 1906
+Server: Jetty(7.3.1.v20110307)
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;asyncResponse xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"&gt;
+  &lt;jobId&gt;1912f480-4636-498e-bba4-609661d19083&lt;/jobId&gt;
+  &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/1912f480-4636-498e-bba4-609661d19083&lt;/callbackUrl&gt;
+  &lt;status&gt;COMPLETED&lt;/status&gt;
+  &lt;requestUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/domains/3191338/records&lt;/requestUrl&gt;
+  &lt;verb&gt;POST&lt;/verb&gt;
+  &lt;request&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; ?&amp;gt;
+&amp;lt;recordsList xmlns:ns2=&amp;quot;http://docs.rackspacecloud.com/dns/api/management/v1.
+0&amp;quot; xmlns=&amp;quot;http://docs.rackspacecloud.com/dns/api/v1.0&amp;quot; xmlns:ns3=&amp;quot;http://www.
+w3.org/2005/Atom&amp;quot;&amp;gt;
+&amp;lt;record type=&amp;quot;A&amp;quot; name=&amp;quot;ftp.example.com&amp;quot; 
+  data=&amp;quot;50.56.207.146&amp;quot; ttl=&amp;quot;5771&amp;quot;/&amp;gt;
+&amp;lt;record type=&amp;quot;A&amp;quot; name=&amp;quot;example.com&amp;quot; 
+  data=&amp;quot;108.166.67.215&amp;quot; ttl=&amp;quot;86400&amp;quot;/&amp;gt;
+&amp;lt;record type=&amp;quot;CNAME&amp;quot; name=&amp;quot;www.example.com&amp;quot; data=&amp;quot;example.com&amp;quot; ttl=&amp;quot;5400&amp;quot;
+  comment=&amp;quot;This is a comment on the CNAME record&amp;quot;/&amp;gt;
+&amp;lt;/recordsList&amp;gt;&lt;/request&gt;
+  &lt;response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="recordsList"&gt;
+    &lt;record id="A-8135987" type="A" name="ftp.example.com" data="50.56.207.146" ttl="5771" updated="2012-03-16T15:17:53Z" created="2012-03-16T15:17:53Z"/&gt;
+    &lt;record id="A-8135988" type="A" name="example.com" data="108.166.67.215" ttl="86400" updated="2012-03-16T15:17:53Z" created="2012-03-16T15:17:53Z"/&gt;
+    &lt;record id="CNAME-10713155" type="CNAME" name="www.example.com" data="example.com" ttl="5400" updated="2012-03-16T15:17:54Z" created="2012-03-16T15:17:54Z" comment="This is a comment on the CNAME record"/&gt;
+  &lt;/response&gt;
+&lt;/asyncResponse&gt;
+
+</programlisting>
         </example>
         <example>
-            <title>cURL Add Records Final Successful Response:
-                JSON</title>
-            <programlisting language="json"><xi:include href="../../../src/main/resources/samples/dns-gs-add-records_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title>cURL Add records: final successful  XML
+                response</title>
+            <programlisting language="json">HTTP/1.1 200 OK
+X-API-VERSION: 1.0.13
+Content-Type: application/json
+Date: Fri, 16 Mar 2012 16:16:23 GMT
+Content-Length: 1455
+Server: Jetty(7.3.1.v20110307)
+
+{
+"request": "{\n\"records\": [\n{\n\"name\" : \"ftp.example.com\",\n\"type\" : \"A\",\n\"data\" : \"50.56.207.146\",\n\"ttl\" : 5771\n},\n{\n\"name\" : \"example.com\",\n\"type\" : \"A\",\n\"data\" : \"108.166.67.215\",\n\"ttl\" : 86400\n},\n{\n\"name\" : \"www.example.com\",\n\"type\" : \"CNAME\",\n\"comment\" : \"This is a comment on the CNAME record\",\n\"data\" : \"example.com\",\n\"ttl\" : 5400\n}\n]\n}",
+  "response": {
+    "records": [
+      {
+        "name": "ftp.example.com",
+        "id": "A-8135987",
+        "type": "A",
+        "data": "50.56.207.146",
+        "updated": "2012-03-16T15:17:53.000+0000",
+        "ttl": 5771,
+        "created": "2012-03-16T15:17:53.000+0000"
+      },
+      {
+        "name": "example.com",
+        "id": "A-8135988",
+        "type": "A",
+        "data": "108.166.67.215",
+        "updated": "2012-03-16T15:17:53.000+0000",
+        "ttl": 86400,
+        "created": "2012-03-16T15:17:53.000+0000"
+      },
+      {
+        "name": "www.example.com",
+        "id": "CNAME-10713155",
+        "type": "CNAME",
+        "comment": "This is a comment on the CNAME record",
+        "data": "example.com",
+        "updated": "2012-03-16T15:17:54.000+0000",
+        "ttl": 5400,
+        "created": "2012-03-16T15:17:54.000+0000"
+      }
+    ]
+  },
+  "status": "COMPLETED",
+  "verb": "POST",
+  "jobId": "1912f480-4636-498e-bba4-609661d19083",
+  "callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/status/1912f480-4636-498e-bba4-609661d19083",
+  "requestUrl": "http://dns.api.rackspacecloud.com/v1.0/1234/domains/3191338/records"
+}
+</programlisting>
         </example>
-        <para>You can now call List Domain Details again to confirm
-            that the records are added to your domain. See <xref
-                linkend="List_Domain_Details"/> for
+        <para>You can now call List domain details again to confirm
+            that the records are added to your domain. See <link
+                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/List_Domain_Details.html"
+                >List domain details</link> for
             instructions.</para>
-        <para>This concludes <citetitle>Getting Started</citetitle>.
-            Thank you for using Rackspace Cloud products.</para>
+        <para>This concludes the <citetitle>Getting Started
+                Guide</citetitle>. Thank you for using Rackspace Cloud
+            products.</para>
     </chapter>
     <chapter xml:id="DNS_Doc_Change_History">
-        <title>Document Change History</title>
+        <title>Document change history</title>
         <para>This version of the Getting Started replaces and
             obsoletes all previous versions. The most recent changes
             are described in the table below:</para>
