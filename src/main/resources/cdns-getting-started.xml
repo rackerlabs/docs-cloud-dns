@@ -63,9 +63,9 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated JSON response for List
-                                domain details call (see <link
-                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/List_Domain_Details.html"
-                                   >List domain details</link>).</para>
+                                domain details call. See <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/List_Domain_Details.html"
+                                   >List domain details</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -77,10 +77,10 @@
                         <listitem>
                             <para>Updated information for locating
                                 your account number (tenant ID) in the
-                                Cloud Control Panel (see <link
+                                Cloud Control Panel. See <link
                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
                                    >Generate an authentication
-                                   token</link>).</para>
+                                   token</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -91,7 +91,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Revised information for locating
-                                your API Key and account number in the
+                                your API key and account number in the
                                 Cloud Control Panel. See <link
                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
                                    >Generate an authentication
@@ -134,11 +134,11 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated Auth Response examples
-                                (refer to <link
+                            <para>Updated Auth Response examples. See
+                                   <link
                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
                                    >Generate an authentication
-                                   token</link>).</para>
+                                   token</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -149,7 +149,10 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated information for cURL
-                                command-line options (see <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/DB_using-curl-cli.html">Send API requests using cURL</link>).</para>
+                                command-line options. See <link
+                                   xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/DB_using-curl-cli.html"
+                                   >Send API requests using
+                                   cURL</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -170,10 +173,10 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Corrected request examples for
-                                authentication (refer to <link
+                                authentication. See <link
                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
                                    >Generate an authentication
-                                   token</link>).</para>
+                                   token</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -183,10 +186,10 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated for Auth 2.0 (refer to <link
+                            <para>Updated for Auth 2.0. See <link
                                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
                                    >Generate an authentication
-                                   token</link>).</para>
+                                   token</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -339,7 +342,7 @@
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface,
-                    the ReST client for Firefox also works well for
+                    the REST client for Firefox also works well for
                     testing and trying out commands, see <link xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
             </listitem>
             <listitem>
@@ -353,10 +356,10 @@
             <para>cURL is a command-line tool that is available on
                 most UNIX®-like environments and Mac OS X® and can be
                 downloaded for Windows® in order to interact with the
-                ReST interfaces. For more information on cURL, visit
+                REST interfaces. For more information on cURL, visit
                     <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
             <para>cURL allows you to transmit and receive HTTP requests and responses from the
-                command-line or from within a shell script. This makes it possible to work with the ReST API
+                command-line or from within a shell script. This makes it possible to work with the REST API
                 directly without using one of the client APIs. </para>
             <para>The following cURL command-line options are used in
                 this guide to run the examples:</para>
@@ -488,7 +491,7 @@
                 <para>In order to use <code>ppxml</code>, you need to
                     set the <code>ppxml</code> alias as
                     follows:</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>$ alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'</programlisting>
+                <programlisting language="bash" role="gutter: false">$ alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'</programlisting>
             </note>
             <note xml:id="json_tool">
                 <title>json.tool</title>
@@ -523,8 +526,8 @@
                     should not escape carriage returns inside the XML
                     or JSON message within the command.</para>
             </note>
-            <para>Consider the following cURL Authenticate Request:
-                XML example that is described in detail in <link
+            <para>Consider the following cURL authenticate:
+                XML request example that is described in detail in <link
                     xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
                     >Generate an authentication token</link>:</para>
             <example>
@@ -593,9 +596,9 @@
     <chapter xml:id="Generating_Auth_Token">
         <title>Generate an authentication token</title>
         <para>You need to generate a token whether you use cURL or a
-            ReST client.</para>
+            REST client.</para>
         
-        <para>In order to use the ReST API, you need to obtain an
+        <para>In order to use the REST API, you need to obtain an
             authentication token, which will be passed with each
             request using the <code>X-Auth-Token</code> header. </para>
         <para>The following example demonstrates how to use cURL to
@@ -617,7 +620,7 @@
                         is your API access key.</para>
                     <para>
                   <emphasis role="bold">To find your API
-                            Key:</emphasis>
+                            key:</emphasis>
                </para>
                     <orderedlist>
                         <listitem>
@@ -642,13 +645,13 @@
                                 <guibutton>Show</guibutton>.</para>
                         </listitem>
                         <listitem>
-                            <para>Copy the value of the API Key and
+                            <para>Copy the value of the API key and
                                 paste it into a text editor of your
                                 choice.</para>
                         </listitem>
                         <listitem>
                             <para>Click <guibutton>Hide</guibutton> to
-                                hide the value of the API Key. </para>
+                                hide the value of the API key. </para>
                         </listitem>
                     </orderedlist>
                     <para>You also need your cloud account number. In
@@ -657,7 +660,7 @@
                         (technically, the ID is different from the
                         name, but at Rackspace, they are the same
                         thing). Together, three components—your
-                        username, your API Key, and your tenant ID or
+                        username, your API key, and your tenant ID or
                         cloud account number—form the authentication
                         credentials that are required to connect to
                         the Rackspace cloud. To find your tenant ID or
@@ -682,10 +685,10 @@
         <para>Notice that you authenticate using a special URL for
             Cloud authentication services. For example, you may use
                 <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
-            as shown in the following Authenticate Request examples.
+            as shown in the following authenticate request examples.
             Note that the <code>v2.0</code> component in the URL
-            indicates that you are using version 2.0 of the Cloud Auth
-            API.</para>
+            indicates that you are using version 2.0 of the Cloud
+            Identity API.</para>
         <example>
             <title>cURL authenticate: XML request</title>
             <?dbfo keep-together="always"?>
@@ -1007,17 +1010,17 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
-        <title>Service access/endpoints</title>
+        <title>Service access endpoints</title>
         <para>The DNS service is not a regionalized service. DNS is
             therefore responsible for appropriate replication,
             caching, and overall maintenance of DNS data across
             regional boundaries to other DNS servers.</para>
-        <para>You can find the service access/endpoint examples for
+        <para>You can find the service access endpoint examples for
             Cloud DNS in the table below.</para>
         
         <para>
             <table rules="all">
-                <caption>Service access/endpoint examples</caption>
+                <caption>Service access endpoint examples</caption>
                 <thead>
                     <tr align="center">
                         
@@ -1072,17 +1075,18 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                 >Generate an authentication token</link>.</para>
         <para>When making a Cloud DNS API call, place the endpoint at
             the beginning of the request URL, for example:
-                <code>https://dns.api.rackspacecloud.com/v1.0/</code>
-         <emphasis role="bold">your_acct_id</emphasis>
-         <code>/</code>, as
-            you can see in the cURL Create Domain Request examples in
-            <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html">Create a domain</link>. Note that the
+                <code>https://dns.api.rackspacecloud.com/v1.0/</code><emphasis
+                role="bold">your_acct_id</emphasis><code>/</code>, as
+            you can see in the cURL Create domain request examples in
+                <link
+                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html"
+                >Create a domain</link>. Note that the
                 <code>v1.0</code> component in the URL indicates that
             you are using version 1.0 of the Cloud DNS API.</para>
     </chapter>
     <chapter xml:id="Create_Domain">
         <title>Create a domain</title>
-        <para> The Create Domain API call provisions one or more new
+        <para> The Create domain API call provisions one or more new
             DNS domains under the account specified, based on the
             configuration defined in the request object. If the
             corresponding request cannot be fulfilled due to
@@ -1092,7 +1096,7 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             nature of the failure in the body of the response.
             Failures in the validation process are non-recoverable and
             require the caller to correct the cause of the failure and
-            <command>POST</command> the request again.</para>
+                <command>POST</command> the request again.</para>
         <para> This call returns an <emphasis>asynchronous</emphasis>
             response. In fact, <command>PUT</command>, <command>POST</command>, and <command>DELETE</command> DNS API
             calls are all <emphasis>asynchronous</emphasis>, since
@@ -1101,7 +1105,7 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             callback URL, which allows the progress, status, and/or
             response information of the call to be retrieved at a
             later point in time. </para>
-        <para>You need to use the Create Domain API call (POST
+        <para>You need to use the Create domain API call (POST
                 <code>/domains</code>) to create a domain with the
             configuration that you specify.</para>
         <para>In this case, assume that you want to create a domain
@@ -1176,14 +1180,16 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         </itemizedlist>
         <note>
             <para>Although you could add records for your domain in
-                this Create Domain call, to keep things simple, you
+                this Create domain call, to keep things simple, you
                 will add the records using the separate Add records
-                call in <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Add_Records.html">Add records</link> instead.</para>
+                call in <link
+                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Add_Records.html"
+                    >Add records</link> instead.</para>
         </note>
         <para>The following examples show the cURL requests for Create
-            Domain:</para>
+            domain:</para>
         <example>
-            <title>cURL create domain: XML request</title>
+            <title>cURL Create domain: XML request</title>
             <programlisting language="bash">curl -s -d \
 '&lt;domains xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"
 xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.
@@ -1204,7 +1210,7 @@ com" comment="1st sample subdomain"/&gt;
 'https://dns.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/domains' | ppxml</programlisting>
         </example>
         <example>
-            <title>cURL create domain: JSON request</title>
+            <title>cURL Create domain: JSON request</title>
             <programlisting language="bash">curl -s -d \
 '{
     "domains" : [ {
@@ -1339,7 +1345,7 @@ Server: Jetty(7.3.1.v20110307)
             it with the <code>?showDetails=true</code>
             parameter.</para>
         <para>The following examples show the cURL status requests for
-            Create Domain:</para>
+            Create domain:</para>
         <example>
             <title>cURL Create domain asynchronous status: XML
                 request</title>
@@ -1564,9 +1570,10 @@ Server: Jetty(7.3.1.v20110307)
         <para>In the previous examples, you can see that the domain
             example.com was created along with its subdomains
             sub1.example.com and sub2.example.com. You will need the
-            domain <code>id</code> for making the List Domain Details
+            domain <code>id</code> for making the List domain details
             call in the next section, and you should supply this value
-            wherever you see the field <emphasis role="bold">domain_id</emphasis> in the examples in this
+            wherever you see the field <emphasis role="bold"
+                >domain_id</emphasis> in the examples in this
             guide.</para>
     </chapter>
     
@@ -2194,9 +2201,35 @@ Server: Jetty(7.3.1.v20110307)
                 xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/List_Domain_Details.html"
                 >List domain details</link> for
             instructions.</para>
-        <para>This concludes the <citetitle>Getting Started
-                Guide</citetitle>. Thank you for using Rackspace Cloud
-            products.</para>
+    </chapter>
+    <chapter xml:id="Additional_Resources">
+        <title>Additional resources</title>
+        <para>For information about all Cloud DNS API operations, see
+            the <citetitle>Cloud DNS Developer Guide</citetitle> at
+                <link xlink:href="http://docs.rackspace.com/"
+                >docs.rackspace.com</link>. All you need to get
+            started with the Cloud DNS API is in this getting started
+            guide and the developer guide. For additional information
+            about Cloud DNS, see the <link
+                xlink:href="http://www.rackspace.com/knowledge_center/article/rackspace-cloud-dns-available-features"
+                >Knowledge Center</link>.</para>
+        <para>The official support channels (phone, chat, email,
+            forums, and knowledge base articles) for Cloud DNS are
+            available through the Rackspace Cloud website at <link
+                xlink:href="www.rackspace.com">www.rackspace.com</link>.</para>
+        <para>If the Cloud DNS system is not functioning as expected,
+            you can review the <link
+                xlink:href="https://status.rackspace.com/">System
+                Status page</link>. This page is updated to reflect
+            up-to-date information about the system’s current health
+            and status.</para>
+        <para>Interested users can also follow updates and
+            announcements for Rackspace on <link
+                xlink:href="https://twitter.com/rackspace"
+                >Twitter</link>. </para>
+        <para>Visit the <link
+            xlink:href="https://feedback.rackspace.com/">Product Feedback Forum</link> and tell us
+            what you think about Cloud DNS.</para>
     </chapter>
     <chapter xml:id="DNS_Doc_Change_History">
         <title>Document change history</title>
