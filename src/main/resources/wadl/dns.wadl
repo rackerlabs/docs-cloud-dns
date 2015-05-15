@@ -3289,13 +3289,21 @@
             optional. The responses from a record search have the same
             format as the responses for list records.</para>
          <note>
-            <para>By default, returns a maximum of 100 items at a time
-               if no <code>limit</code> is specified. To navigate the
-               collection returned, the parameters <code>limit</code>
-               and <code>offset</code> can be set in the URI (for
-               example:
-               <code>limit=10&amp;offset=0</code>). Refer to <link
-                  xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link> for details.</para>
+            <title>Notes</title>
+            <itemizedlist>
+               <listitem><para>By default, the search returns a maximum of 100 items at a time
+                  if no <code>limit</code> is specified. To navigate the
+                  collection returned, the parameters <code>limit</code>
+                  and <code>offset</code> can be set in the URI (for
+                  example:
+                  <code>limit=10&amp;offset=0</code>). Refer to <link
+                     xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html">Pagination</link> for details.</para>
+               </listitem>
+               <listitem><para>
+                  Using special characters in a search such as " " and "_" causes no results to be returned.
+               </para></listitem>
+            
+            </itemizedlist>
          </note>
       </wadl:doc>
       <request>
