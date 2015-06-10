@@ -12,7 +12,8 @@
     
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud DNS Getting Started Guide</title>
-    <titleabbrev>Rackspace Cloud DNS and Servers Getting Started Guide</titleabbrev>
+    <titleabbrev>Rackspace Cloud DNS Getting Started
+        Guide</titleabbrev>
 
     <info>
         
@@ -26,7 +27,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2015-04-20</pubdate>
+        <pubdate>2015-06-10</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -34,7 +35,7 @@
         </legalnotice>
         <revhistory>
             <revision>
-                <date>2015-04-20</date>
+                <date>2015-06-10</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -250,7 +251,9 @@
                     </listitem>
                     <listitem>
                         <para>Rackspace Cloud username and password,
-                            as specified during registration</para>
+                            as specified during registration (<link
+                                xlink:href="https://mycloud.rackspace.com/"
+                                >https://mycloud.rackspace.com/</link>)</para>
                     </listitem>
                 </itemizedlist>
          </para>
@@ -282,17 +285,26 @@
                     the Cloud Servers page.</para>
             </step>
             <step>
-                <para> Using the <guimenu>Region</guimenu> drop-down
-                    menu, select the appropriate region, depending on
-                    whether you want to create a first generation
-                    cloud server or a next generation cloud server.
-                    (The type of cloud server does not matter for this
-                    exercise.)</para>
+                <para> Click <guimenuitem>Create
+                    Server</guimenuitem>.</para>
+            </step>
+            <step>
+                <para> Specify the <guilabel>Server Name</guilabel>
+                    and select a <guilabel>Size</guilabel> for your
+                    cloud server, then click <guibutton>Create
+                        Server</guibutton>. </para>
+            </step>
+            <step>
+                <para>Using the <guimenu>Region</guimenu> drop-down
+                    menu, select the appropriate region.</para>
             </step>
             <step>
                 <para> Select an image from a list of different
                     operating systems, including Linux Distributions
-                    and Windows Images.</para>
+                    and Windows Images. For the purposes of this
+                    exercise, you can select any image listed and the
+                    two servers do not need to use the same
+                    image.</para>
                 <para security="writeronly">
                <inlinemediaobject>
                     <imageobject>
@@ -304,28 +316,40 @@
             </para>
             </step>
             <step>
-                <para> Specify the <guilabel>Server Name</guilabel>
-                    and select a <guilabel>Size</guilabel> for your
-                    cloud server, then click <guibutton>Create
-                        Server</guibutton>. </para>
+                <para>Select the desired<guimenu>Flavor</guimenu>. 1
+                    GB General Purpose v1 is suggested for this
+                    exercise.</para>
             </step>
             <step>
-                <para> Repeat steps 2-4 to create a second cloud
+                <para>Click <guimenu>Create Server</guimenu> to create
+                    your server.</para>
+            </step>
+            <step>
+                <para>Record the IP address listed for your cloud
+                    server below:<itemizedlist>
+                        <listitem>
+                            <para>FIRST cloud server IP address =
+                                _______________________________________
+                            </para>
+                        </listitem>
+                    </itemizedlist>Also make a note of the root admin
+                    password, since you will need it to perform
+                    administrative tasks on the server. </para>
+            </step>
+            <step>
+                <para> Repeat steps 2-8 to create a second cloud
                     server.</para>
             </step>
             <step>
-                <para>Record the IP addresses listed for your cloud
-                    servers below:<itemizedlist>
-                        <listitem>
-                            <para>FIRST cloud server IP address =
-                                _______________________________________ </para>
-                        </listitem>
+                <para>Record the IP address listed for your cloud
+                    server below:<itemizedlist>
                         <listitem>
                             <para>SECOND cloud server IP address =
                                 _______________________________________</para>
                         </listitem>
-                    </itemizedlist>
-                </para>
+                    </itemizedlist>Also make a note of the root admin
+                    password, since you will need it to perform
+                    administrative tasks on the server. </para>
             </step>
         </procedure>
     </chapter>
@@ -404,7 +428,7 @@
                                    request body. The syntax for the
                                    <literal>Content-Type</literal>
                                    header is:</para>
-                                   <screen>Content-Type: application/format</screen>
+                                   <screen>Content-Type: application/<emphasis>format</emphasis></screen>
                                    <para>Where
                                    <parameter>format</parameter> is
                                    either <literal>json</literal> or
@@ -510,14 +534,16 @@
                 terminal window</title>
             <para>To run the cURL request examples shown in this guide
                 on Linux or Mac systems, select the desired example
-                from the HTML version of this guide by clicking the
-                Select Text icon to the right of the example and then
-                select Edit-&gt;Copy. Then paste it into an ASCII editor
-                (for example <emphasis role="bold">vi</emphasis> or
-                    <emphasis role="bold">TextEdit</emphasis>). Next
-                modify the example with your required account
-                information and so forth, as detailed in this
-                guide.</para>
+                from the HTML version of this guide (visit <link
+                    xlink:href="http://docs.rackspace.com/"
+                    >http://docs.rackspace.com/</link>) by clicking
+                the Select Text icon to the right of the example and
+                then select Edit-&gt;Copy. Then paste it into an ASCII
+                editor (for example <emphasis role="bold"
+                    >vi</emphasis> or <emphasis role="bold"
+                    >TextEdit</emphasis>). Next modify the example
+                with your required account information and so forth,
+                as detailed in this guide.</para>
             <note>
                 <para>The carriage returns in the cURL request
                     examples that are part of the cURL syntax are
@@ -587,6 +613,10 @@
             </emphasis>), paste it
                 into your terminal window. Then execute the cURL
                 command by pressing <guilabel>Enter</guilabel>.</para>
+            <para>You will be performing the copy/paste operation and
+                then modifying the example using your personal
+                information in order to generate an authentication
+                token in the next section.</para>
             <para>If you have trouble copying and pasting the examples
                 as described, try typing the entire example on one
                 long line, removing all the backslash line
@@ -969,10 +999,11 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                     <para>The <code>id</code> attribute in the
                         Authenticate Response specifies the
                         authentication token. Tokens are valid for a
-                        finite duration.</para>
-                    <para>Remember to supply your authentication token
-                        wherever you see the field <emphasis role="bold">your_auth_token</emphasis> in
-                        the examples in this guide.</para>
+                        finite duration. Remember to supply your
+                        authentication token wherever you see the
+                        field <emphasis role="bold"
+                            >your_auth_token</emphasis> in the
+                        examples in this guide.</para>
                 </listitem>
                 <listitem>
                     <para> The <code>expires</code> attribute denotes
@@ -1007,6 +1038,10 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         <para>After authentication, you can use cURL to perform <command>GET</command>,
             <command>DELETE</command>, <command>PUT</command>, and <command>POST</command> requests for the Cloud DNS
             API.</para>
+        <para>If you have problems running any of the examples in this
+            guide, support for Cloud DNS is available for US, UK, HKG,
+            and SYD customers 24x7x365 via phone, chat, or you may
+            also file a ticket from the Cloud Control Panel.</para>
         
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
@@ -1080,9 +1115,14 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             you can see in the cURL Create domain request examples in
                 <link
                 xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html"
-                >Create a domain</link>. Note that the
-                <code>v1.0</code> component in the URL indicates that
-            you are using version 1.0 of the Cloud DNS API.</para>
+                >Create a domain</link>. For example, the complete URL
+            for the Create domain API operation is
+                <code>https://dns.api.rackspacecloud.com/v1.0/</code><emphasis
+                role="bold"
+                >your_acct_id</emphasis><code>/domains</code>. Note
+            that the <code>v1.0</code> component in the URL indicates
+            that you are using version 1.0 of the Cloud DNS
+            API.</para>
     </chapter>
     <chapter xml:id="Create_Domain">
         <title>Create a domain</title>
@@ -1118,7 +1158,12 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                         for documentation purposes. Therefore you will
                         need to substitute your own domain name in
                         order for the examples to work with the Cloud
-                        DNS API.</para>
+                        DNS API. To name your domain, you can use any
+                        letter, numbers between 0 and 9, and the
+                        character "-". For example, you might use your
+                        first name and last initial at the beginning
+                        of the name, as follows:
+                        "bobmexample.com."</para>
                 </note>
             </listitem>
             <listitem>
@@ -1214,15 +1259,15 @@ com" comment="1st sample subdomain"/&gt;
             <programlisting language="bash">curl -s -d \
 '{
     "domains" : [ {
-        "name" : "<emphasis role="bold">your_name</emphasis>_example.com",
+        "name" : "<emphasis role="bold">your_domain_name</emphasis>",
         "comment" : "Optional domain comment...",
         "subdomains" : {
             "domains" : [ {
-                "name" : "sub1.<emphasis role="bold">your_name</emphasis>_example.com",
+                "name" : "sub1.<emphasis role="bold">your_domain_name</emphasis>",
                 "comment" : "1st sample subdomain",
                 "emailAddress" : "sample@rackspace.com"
             }, {
-                "name" : "sub2.<emphasis role="bold">your_name</emphasis>_example.com",
+                "name" : "sub2.<emphasis role="bold">your_domain_name</emphasis>",
                 "comment" : "1st sample subdomain",
                 "emailAddress" : "sample@rackspace.com"
 
@@ -1241,10 +1286,10 @@ com" comment="1st sample subdomain"/&gt;
             that follow:<itemizedlist spacing="compact">
                 <listitem>
                     <para>
-                  <emphasis role="bold">your_name</emphasis>
-                        — use some variant of your name to
-                        ensure a unique domain name when it is used as
-                        a prefix for your domain name (<emphasis role="bold">your_name</emphasis>_example.com).</para>
+                        <emphasis role="bold"
+                            >your_domain_name</emphasis> — to name
+                        your domain, you can use any letter, numbers
+                        between 0 and 9, and the character "-".</para>
                 </listitem>
                 <listitem>
                     <para>
@@ -1886,9 +1931,12 @@ Server: Jetty(7.3.1.v20110307)
         <itemizedlist>
             <listitem>
                 <para>Two A records to map the IPV4 addresses of your
-                    two cloud servers that you recorded in <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Cloud_Server.html">Create a new cloud server</link>
-                    to the new
-                    domain that you created in <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html">Create a domain</link>). </para>
+                    two cloud servers that you recorded in <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Cloud_Server.html"
+                        >Create a new cloud server</link> to the new
+                    domain that you created in <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html"
+                        >Create a domain</link>. </para>
             </listitem>
             <listitem>
                 <para>One CNAME record to create an alias
@@ -1921,9 +1969,9 @@ Server: Jetty(7.3.1.v20110307)
 0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.
 w3.org/2005/Atom"&gt;
     &lt;record type="A" name="ftp.example.com" 
-    data="&lt;<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>&gt;" ttl="5771"/&gt;
+    data="<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>" ttl="5771"/&gt;
     &lt;record type="A" name="example.com" 
-    data="&lt;<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>&gt;" ttl="86400"/&gt;
+    data="<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>" ttl="86400"/&gt;
     &lt;record type="CNAME" name="www.example.com" data="example.com" ttl="5400" 
     comment="This is a comment on the CNAME record"/&gt;
 &lt;/recordsList&gt;' \
@@ -1941,13 +1989,13 @@ w3.org/2005/Atom"&gt;
         {
             "name" : "ftp.example.com",
             "type" : "A",
-            "data" : "&lt;<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>&gt;",
+            "data" : "<emphasis role="bold">your_FIRST_Cloud_Server_IP_address</emphasis>",
             "ttl" : 5771
         }, 
         {
             "name" : "example.com",
             "type" : "A",
-            "data" : "&lt;<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>&gt;",
+            "data" : "<emphasis role="bold">your_SECOND_Cloud_Server_IP_address</emphasis>",
             "ttl" : 86400
         },
         {
