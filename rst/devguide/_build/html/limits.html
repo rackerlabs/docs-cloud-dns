@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rackspace Developer Center</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type='text/css'>
+
+  <!-- drc styles: -->
+  <link rel="stylesheet" href="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/main-ebdad849435665c9fe9a22d338a57bf6.css">
+
+  <!-- local styles: -->
+  <link rel="stylesheet" href="_static/localsphinx.css">
+
+  <link href="/atom.xml" rel="alternate" title="Rackspace Developer Portal" type="application/atom+xml">
+ <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=45237,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+<div id="header" class="navbar navbar-fixed-top navbar-inverse navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand new-landing-sprite rs-developer-logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-btn">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/sdks/">SDKs</a></li>
+                <li><a href="/databases/">Databases</a></li>
+                <li><a href="/docs/">API Docs</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://community.rackspace.com/developers/default">Developer Forum</a></li>
+                        <li><a href="/community/">Outreach &amp; Events</a></li>
+                        <li><a href="https://github.com/rackerlabs/developer.rackspace.com">This site on github</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Developer-to-Developer Support</a></li>-->
+                        <li><a href="http://www.rackspace.com/knowledge_center/">Knowledge Center</a></li>
+                        <li><a href="http://status.rackspace.com">System Health Status</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://my.rackspace.com/portal/auth/login">MyRackspace Portal</a></li>
+                        <li><a href="https://mycloud.rackspace.com">Cloud Control Panel</a></li>
+                        <li><a href="https://manage.rackspacecloud.com/pages/Login.jsp">Cloud Sites Control Panel</a>
+                        </li>
+                        <li><a href="https://apps.rackspace.com">Rackspace Webmail Login</a></li>
+                        <li><a href="https://cp.rackspace.com">Email Admin Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/signup" class="btn btn-default" id="btn-get-started">Sign up for $50/month credit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title-header">
+  <div class="inner">
+    <span class="headline">Rackspace Developer Center</span>
+  </div>
+</div>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-md-9 col-md-push-3 docs-content bodycontent">
+      <div class="document">
+  <div class="documentwrapper">
+      <div class="body" role="main">
+
+  <div class="section" id="limits">
+<h1>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h1>
+<p>All accounts, by default, have a preconfigured set of thresholds (or
+limits) to manage capacity and prevent abuse of the system. The system
+recognizes two kinds of limits: <em>rate limits</em> and <em>absolute limits</em>.
+Rate limits are thresholds that are reset after a certain amount of time
+passes. Absolute limits are fixed.</p>
+<div class="section" id="rate-limits">
+<h2>Rate Limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
+<p>Rate limits are specified in terms of both a human-readable wild-card
+URI and a machine-processable regular expression. The regular expression
+boundary matcher &#8216;^&#8217; takes effect after the root URI path. For example,
+the regular expression ^/v1.0/<em>``1234``</em>/domains would match the
+bolded portion of the following URI:
+<a class="reference external" href="https://dns.api.rackspacecloud.com">https://dns.api.rackspacecloud.com</a><strong>/v1.0/1234/domains</strong>.</p>
+<p>The following table specifies the default rate limits for all API
+operations for all <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong>, and <strong>DELETE</strong> calls for
+domains, subdomains, or records:</p>
+<p><strong>Default Rate Limits</strong></p>
+<dl class="docutils">
+<dt><strong>GET /status/</strong></dt>
+<dd>RegEx: .*/v\d+\.\d+/(\d+/status).*
+Limit: 5/second</dd>
+<dt><strong>GET /domains/search</strong></dt>
+<dd>RegEx: .*/v\d+\.\d+/(\d+/domains/search).*
+Limit: 20/minute</dd>
+<dt><strong>GET /domains</strong></dt>
+<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
+Limit: 60/minute</dd>
+<dt><strong>POST /domains</strong></dt>
+<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
+Limit: 20/minute</dd>
+<dt><strong>PUT /domains</strong></dt>
+<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
+Limit: 20/minute</dd>
+<dt><strong>DELETE /domains</strong></dt>
+<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
+Limit: 10/minute</dd>
+</dl>
+<p>If you exceed the thresholds established for your account, a 413 HTTP
+response will be returned with a <code class="docutils literal"><span class="pre">Reply-After</span></code> header to notify the
+client when it can attempt to try again. The <code class="docutils literal"><span class="pre">Reply-After</span></code> header is
+an ISO 8601 Date/Time field, for example &#8220;2012-10-10T21:21:15Z&#8221;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The first entry in the Default Rate Limits table above is for simple
+STATUS calls after a <strong>POST</strong>, <strong>PUT</strong>, or <strong>DELETE</strong> to retrieve the
+status details; for example:
+<a class="reference external" href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d">https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</a></p>
+<p class="last">This status call has a limit of 5 requests per second.</p>
+</div>
+</div>
+<div class="section" id="absolute-limits">
+<h2>Absolute Limits<a class="headerlink" href="#absolute-limits" title="Permalink to this headline">¶</a></h2>
+<p><strong>POST</strong> and <strong>PUT</strong> calls are limited to the creation or modification
+of a maximum of 100 entities per call where an entity is defined as a
+record, domain, or subdomain. For example, when using <strong>POST</strong>
+<code class="docutils literal"><span class="pre">/domains</span></code> to create a new domain with nine subdomains, you could
+create a maximum of ninety records across the domain and subdomains.
+This would total 100 entities: 1 domain + 9 subdomains + 90 records.
+Additional records and/or subdomains could be created for the domain in
+subsequent calls.</p>
+<div class="section" id="domain-limits">
+<h3>Domain Limits<a class="headerlink" href="#domain-limits" title="Permalink to this headline">¶</a></h3>
+<p>By default users may have up to 500 domains per Cloud account (including
+sub-domains). When a user submits a request to create new domains and/or
+sub-domains, the system will only accept the request if the total number
+of existing plus requested domains and sub-domains is within the account
+domain limit. If the total exceeds the account domain limit, the entire
+request will be rejected and the following message will be returned:</p>
+<p><strong>Example: Domain Limit Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 417
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;overlimit code=&quot;413&quot; xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;message&gt;Your account is currently over the limit so your request could not be processed.&lt;/message&gt;
+    &lt;details&gt;Limit of 500 domains has been reached.&lt;/details&gt;
+&lt;/overlimit&gt;
+</pre></div>
+</div>
+<p><strong>Example: Domain Limit Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 172
+
+{
+  &quot;message&quot; : &quot;Your account is currently over the limit so your request could not be processed.&quot;,
+  &quot;code&quot; : 413,
+  &quot;details&quot; : &quot;Limit of 500 domains has been reached.&quot;
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any domains/sub-domains or records that are submitted in any request
+that causes domain limits to be exceeded will not be provisioned and the
+entire request will be rejected.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The account domain limit applies to any API request that can be used
+to create a domain and/or sub-domain. An account may have a non-default
+limit if determined necessary by Support.</p>
+</div>
+</div>
+<div class="section" id="record-limits">
+<h3>Record Limits<a class="headerlink" href="#record-limits" title="Permalink to this headline">¶</a></h3>
+<p>By default users may have up to 500 records per domain per Cloud
+account. When a user submits a request to create one or more new
+records, the system will only accept the request if the total number of
+existing plus requested records is within the account record limit. If
+the total number of records on a specified domain exceeds the record
+limit, the entire request will be rejected and the following message
+will be returned:</p>
+<p><strong>Example: Domain Record Limit Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 428
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;overlimit code=&quot;413&quot; xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;message&gt;Your account is currently over the limit so your request could not be processed.&lt;/message&gt;
+    &lt;details&gt;Limit of 500 records per domain has been reached.&lt;/details&gt;
+&lt;/overlimit&gt;
+</pre></div>
+</div>
+<p><strong>Example: Domain Record Limit Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 183
+
+{
+  &quot;message&quot; : &quot;Your account is currently over the limit so your request could not be processed.&quot;,
+  &quot;code&quot; : 413,
+  &quot;details&quot; : &quot;Limit of 500 records per domain has been reached.&quot;
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any domains/sub-domains or records that are submitted in any request
+that causes record limits to be exceeded will not be provisioned and the
+entire request will be rejected.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The limits apply to any API request that can be used to create one or
+more records. An account may have a non-default record limit if
+determined necessary by Support.</p>
+</div>
+</div>
+</div>
+<div class="section" id="viewing-current-limits">
+<h2>Viewing Current Limits<a class="headerlink" href="#viewing-current-limits" title="Permalink to this headline">¶</a></h2>
+<p>Users can view their current rate and absolute (including domain and
+record) limits.</p>
+</div>
+</div>
+
+
+</div>
+
+  <div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+
+      </div>
+<div class="clearer"></div>
+</div>
+    </div>
+    <div class="col-md-3 col-md-pull-9 sidebar">
+<ul>
+  <li><a href="/" class="back">&laquo; Developer Home</a></li>
+</ul>
+<ul>
+  
+|
+
+  <li><span class="sidebarheader">Contents</span></li>
+</ul>
+<ul class="simple">
+</ul>
+
+
+      <div class="callout">
+  <span class="sidebarheader">Need Help?</span>
+
+  <p>
+    E-mail <a href="mailto:sdk-support@rackspace.com">sdk-support@rackspace.com</a>,<br>
+    tweet <a href="https://twitter.com/rackspace">@rackspace</a>,
+    chat with us in #rackspace on Freenode,
+    or post in <a href="https://community.rackspace.com/developers/default">our developer forum</a>.
+  </p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Found a bug? Caught a typo?</span>
+  <p>File a <a href="https://github.com/rackerlabs/developer.rackspace.com/issues/new">bug report</a> or submit a <a target="blank" href="https://github.com/rackerlabs/developer.rackspace.com">pull request</a> on our developer site Github repo.</p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Want To Stay Up To Date?</span>
+  <p>Subscribe to our developer blog <a href="/atom.xml">RSS</a> feed.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="basement">
+    <div class="container">
+        <img src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/rackerpowered-logo-79838459d447e1e48dd93c76549bdf74.png" alt="Racker Powered">
+        <ul>
+            <li>©2015 Rackspace, US Inc.</li>
+            <li><a href="http://www.rackspace.com/about/">About Rackspace</a></li>
+            <li><a href="http://ir.rackspace.com/">Investors</a></li>
+            <li><a href="http://www.rackertalent.com">Careers</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/privacystatement">Privacy Statement</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/websiteterms">Website Terms</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/copyrights_trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/app-b899e84f641d7962050ed3d62a3d53a7.js"></script>
+
+  <!-- analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35639070-1']);
+    _gaq.push(['_setDomainName', 'rackspace.com']);
+    _gaq.push(['_trackPageview']);
+
+   (function () {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
+
+ <!-- Tealium -->
+ <script type="text/javascript" src="https://tags.tiqcdn.com/utag/rackspace/developer/prod/utag.js"></script>
+
+ <!-- Google Code for Rackspace Blog Page Visitors (Global Tag) -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1040066332;
+    var google_conversion_label = "wFI2CI7LnQQQnM747wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040066332/?value=0&amp;label=wFI2CI7LnQQQnM747wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>
