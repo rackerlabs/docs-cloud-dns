@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rackspace Developer Center</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type='text/css'>
+
+  <!-- drc styles: -->
+  <link rel="stylesheet" href="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/main-ebdad849435665c9fe9a22d338a57bf6.css">
+
+  <!-- local styles: -->
+  <link rel="stylesheet" href="_static/localsphinx.css">
+
+  <link href="/atom.xml" rel="alternate" title="Rackspace Developer Portal" type="application/atom+xml">
+ <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=45237,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+<div id="header" class="navbar navbar-fixed-top navbar-inverse navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand new-landing-sprite rs-developer-logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-btn">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/sdks/">SDKs</a></li>
+                <li><a href="/databases/">Databases</a></li>
+                <li><a href="/docs/">API Docs</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://community.rackspace.com/developers/default">Developer Forum</a></li>
+                        <li><a href="/community/">Outreach &amp; Events</a></li>
+                        <li><a href="https://github.com/rackerlabs/developer.rackspace.com">This site on github</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Developer-to-Developer Support</a></li>-->
+                        <li><a href="http://www.rackspace.com/knowledge_center/">Knowledge Center</a></li>
+                        <li><a href="http://status.rackspace.com">System Health Status</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://my.rackspace.com/portal/auth/login">MyRackspace Portal</a></li>
+                        <li><a href="https://mycloud.rackspace.com">Cloud Control Panel</a></li>
+                        <li><a href="https://manage.rackspacecloud.com/pages/Login.jsp">Cloud Sites Control Panel</a>
+                        </li>
+                        <li><a href="https://apps.rackspace.com">Rackspace Webmail Login</a></li>
+                        <li><a href="https://cp.rackspace.com">Email Admin Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/signup" class="btn btn-default" id="btn-get-started">Sign up for $50/month credit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title-header">
+  <div class="inner">
+    <span class="headline">Rackspace Developer Center</span>
+  </div>
+</div>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-md-9 col-md-push-3 docs-content bodycontent">
+      <div class="document">
+  <div class="documentwrapper">
+      <div class="body" role="main">
+
+  <div class="section" id="synchronous-and-asynchronous-responses">
+<h1>Synchronous and Asynchronous Responses<a class="headerlink" href="#synchronous-and-asynchronous-responses" title="Permalink to this headline">¶</a></h1>
+<p>All successful <strong>GET</strong> requests are <em>synchronous</em> calls, since they are
+always retrieving (reading) existing information. With these requests,
+the caller waits until the call returns with the specified code and
+response body.</p>
+<p><strong>PUT</strong>, <strong>POST</strong>, and <strong>DELETE</strong> calls are <em>asynchronous</em>, however,
+since they may take some time to process. Therefore they return 202
+ACCEPTED responses containing information with a callback URL, which
+allows the progress, status, and/or response information of the call to
+be retrieved at a later point in time.</p>
+<p>When the status of a request is queried (via a <code class="docutils literal"><span class="pre">callbackUrl</span></code> supplied
+by the API), only basic information regarding the status of the job is
+returned by default. If more detail is desired, any status URL may
+include an optional <code class="docutils literal"><span class="pre">showDetails</span></code> query parameter that will display
+more information regarding the original request:</p>
+<dl class="docutils">
+<dt><strong>GET</strong>/status/<em>``jobId``</em>?<em>``showDetails``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code></dt>
+<dd>List status of the specified asynchronous request. Display details, as
+specified by the <em>``showDetails``</em> parameter.
+Representations: XML, JSON
+Normal Response Code(s): 200
+Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
+unauthorized (401), badRequest (400), itemNotFound (404), overLimit
+(413)</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The results of asynchronous calls are retained for up to 24 hours.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a request body does not pass initial validation or an error
+condition arises, you may receive an immediate error response from the
+request.</p>
+</div>
+<p>The following list shows the complete set of attributes for
+asynchronous responses:</p>
+<p><strong>Attributes for Asynchronous Responses</strong></p>
+<dl class="docutils">
+<dt>jobId</dt>
+<dd>An identifier for the specific request.
+Inclusion: Basic and Detail</dd>
+<dt>callbackUrl</dt>
+<dd>Resource locator for querying the status of the request.
+Inclusion: Basic and Detail</dd>
+<dt>status</dt>
+<dd>An indicator of the request status: INITIALIZED, RUNNING, COMPLETED, or
+ERROR.
+Inclusion: Basic and Detail</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">INITIALIZED is the status that immediately precedes RUNNING and is
+the first possible state of a job. It indicates acceptance of the job.</p>
+</div>
+<dl class="docutils">
+<dt>requestUrl</dt>
+<dd>The url of the original request.
+Inclusion: Detail only</dd>
+<dt>verb</dt>
+<dd>The type of the original request: PUT, POST, or DELETE.
+Inclusion: Detail only</dd>
+<dt>request</dt>
+<dd>The original request data, if any.
+Inclusion: Detail only</dd>
+<dt>response</dt>
+<dd>The results of a COMPLETE operation, if any.
+Inclusion: Detail only</dd>
+<dt>error</dt>
+<dd>The results of an ERROR operation.
+Inclusion: Detail only</dd>
+</dl>
+<p>The asynchronous response body will look similar to the following
+examples, depending on whether basic or detailed information is
+requested.</p>
+<p>If you use the callback URL <em>without</em> specifying the query parameter
+<code class="docutils literal"><span class="pre">showDetails=true</span></code>, only <em>basic</em> information is returned (jobId,
+callbackUrl, and status attributes):</p>
+<p><strong>Example: Basic Success Asynchronous Request: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 0
+</pre></div>
+</div>
+<p><strong>Example: Basic Success Asynchronous Request: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 0
+</pre></div>
+</div>
+<p>When a request is made to the callback URL provided and the job is still
+running, another 202 ACCEPTED response is returned with the same
+information as the previous one.</p>
+<p>If the request is successful, the <code class="docutils literal"><span class="pre">status</span></code> is <code class="docutils literal"><span class="pre">COMPLETED</span></code>:</p>
+<p><strong>Example: Basic Success Asynchronous Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 455
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;3593a5e9-83af-4eb8-ae1a-25f07b747d80&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80&lt;/callbackUrl&gt;
+    &lt;status&gt;COMPLETED&lt;/status&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: Basic Success Asynchronous Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 190
+
+{
+  &quot;status&quot; : &quot;COMPLETED&quot;,
+  &quot;jobId&quot; : &quot;3593a5e9-83af-4eb8-ae1a-25f07b747d80&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80&quot;
+}
+</pre></div>
+</div>
+<p>If you specify the query parameter <code class="docutils literal"><span class="pre">showDetails=true</span></code> for the callback
+URL, <em>detailed</em> information is returned (all attributes) :</p>
+<p><strong>Example: Detail Success Asynchronous Request: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80?showDetails=true
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 0
+</pre></div>
+</div>
+<p><strong>Example: Detail Success Asynchronous Request: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80?showDetails=true
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 0
+</pre></div>
+</div>
+<p>If the request is successful, this includes the <code class="docutils literal"><span class="pre">response</span></code>, which
+contains the results of the operation:</p>
+<p><strong>Example: Detail Success Asynchronous Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 1187
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;3593a5e9-83af-4eb8-ae1a-25f07b747d80&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80&lt;/callbackUrl&gt;
+    &lt;status&gt;COMPLETED&lt;/status&gt;
+    &lt;requestUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl&gt;
+    &lt;verb&gt;POST&lt;/verb&gt;
+    &lt;request&gt;{
+        &quot;domains&quot; : [ {
+        &quot;name&quot; : &quot;example.com&quot;,
+        &quot;emailAddress&quot; : &quot;admin@example.com&quot;
+        } ]
+        }
+    &lt;/request&gt;
+    &lt;response xsi:type=&quot;domains&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+        &lt;domain id=&quot;12345&quot; accountId=&quot;1234&quot; name=&quot;example.com&quot; ttl=&quot;3600&quot; emailAddress=&quot;admin@example.com&quot; updated=&quot;2011-08-23T14:02:54-05:00&quot; created=&quot;2011-08-23T14:02:54-05:00&quot;&gt;
+            &lt;nameservers&gt;
+                &lt;nameserver name=&quot;dns1.stabletransit.com&quot;/&gt;
+                &lt;nameserver name=&quot;dns2.stabletransit.com&quot;/&gt;
+            &lt;/nameservers&gt;
+        &lt;/domain&gt;
+    &lt;/response&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: Detail Success Asynchronous Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 866
+
+{
+  &quot;status&quot; : &quot;COMPLETED&quot;,
+  &quot;request&quot; : &quot;{\n        \&quot;domains\&quot; : [ {\n        \&quot;name\&quot; : \&quot;example.com\&quot;,\n        \&quot;emailAddress\&quot; : \&quot;admin@example.com\&quot;\n        } ]\n        }\n    &quot;,
+  &quot;verb&quot; : &quot;POST&quot;,
+  &quot;jobId&quot; : &quot;3593a5e9-83af-4eb8-ae1a-25f07b747d80&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80&quot;,
+  &quot;requestUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/domains&quot;,
+  &quot;response&quot; : {
+    &quot;domains&quot; : [ {
+      &quot;name&quot; : &quot;example.com&quot;,
+      &quot;id&quot; : 12345,
+      &quot;updated&quot; : &quot;2011-08-23T19:02:54.000+0000&quot;,
+      &quot;nameservers&quot; : [ {
+        &quot;name&quot; : &quot;dns1.stabletransit.com&quot;
+      }, {
+        &quot;name&quot; : &quot;dns2.stabletransit.com&quot;
+      } ],
+      &quot;accountId&quot; : 1234,
+      &quot;ttl&quot; : 3600,
+      &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+      &quot;created&quot; : &quot;2011-08-23T19:02:54.000+0000&quot;
+    } ]
+  }
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Examples of successful responses in the rest of this guide only
+demonstrate the <em>contents</em> of the asynchronous <code class="docutils literal"><span class="pre">response</span></code> attribute.
+Additional attributes and elements have been omitted for clarity.</p>
+</div>
+<p>If an error occurs as a result of processing the original request,
+querying the callback URL will return the information about the error.
+If you use the callback URL without specifying the query parameter
+<code class="docutils literal"><span class="pre">showDetails=true</span></code>, only basic information is provided:</p>
+<p><strong>Example: Basic Error Asynchronous Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 451
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/callbackUrl&gt;
+    &lt;status&gt;ERROR&lt;/status&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: Basic Error Asynchronous Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 186
+
+{
+  &quot;status&quot; : &quot;ERROR&quot;,
+  &quot;jobId&quot; : &quot;e63886c9-acf0-4e5d-8023-09a0fae37446&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&quot;
+}
+</pre></div>
+</div>
+<p>If you use the callback URL with the query parameter
+<code class="docutils literal"><span class="pre">showDetails=true</span></code>, then detailed information is provided:</p>
+<p><strong>Example: Detail Error Asynchronous Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 847
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/callbackUrl&gt;
+    &lt;status&gt;ERROR&lt;/status&gt;
+    &lt;requestUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl&gt;
+    &lt;verb&gt;POST&lt;/verb&gt;
+    &lt;request&gt;{
+        &quot;domains&quot; : [ {
+        &quot;name&quot; : &quot;example.com&quot;,
+        &quot;emailAddress&quot; : &quot;admin@example.com&quot;
+        } ]
+        }
+    &lt;/request&gt;
+    &lt;error code=&quot;409&quot;&gt;
+        &lt;message&gt;The object already exists.&lt;/message&gt;
+        &lt;details&gt;Domain already exists&lt;/details&gt;
+    &lt;/error&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: Detail Error Asynchronous Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 564
+
+{
+  &quot;status&quot; : &quot;ERROR&quot;,
+  &quot;error&quot; : {
+    &quot;message&quot; : &quot;The object already exists.&quot;,
+    &quot;code&quot; : 409,
+    &quot;details&quot; : &quot;Domain already exists&quot;
+  },
+  &quot;request&quot; : &quot;{\n        \&quot;domains\&quot; : [ {\n        \&quot;name\&quot; : \&quot;example.com\&quot;,\n        \&quot;emailAddress\&quot; : \&quot;admin@example.com\&quot;\n        } ]\n        }\n    &quot;,
+  &quot;verb&quot; : &quot;POST&quot;,
+  &quot;jobId&quot; : &quot;e63886c9-acf0-4e5d-8023-09a0fae37446&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&quot;,
+  &quot;requestUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/domains&quot;
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Examples of error responses in the rest of this guide only show the
+<em>contents</em> of the asynchronous <code class="docutils literal"><span class="pre">error</span></code> attribute. Additional
+attributes and elements have been omitted for clarity.</p>
+</div>
+<div class="section" id="viewing-status-of-all-asynchronous-job-requests">
+<h2>Viewing Status of All Asynchronous Job Requests<a class="headerlink" href="#viewing-status-of-all-asynchronous-job-requests" title="Permalink to this headline">¶</a></h2>
+<p>As well as viewing status for a <em>particular job ID</em>, as described in the
+previous section, you can also view status information for <em>all</em>
+asynchronous job requests for an account. You can also filter the
+information requested by using the following optional boolean request
+parameters:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">showErrors</span></code> – if <code class="docutils literal"><span class="pre">true</span></code>, specifies that errors are shown</li>
+<li><code class="docutils literal"><span class="pre">showRunning</span></code> – if <code class="docutils literal"><span class="pre">true</span></code>, specifies that jobs still running are
+shown</li>
+<li><code class="docutils literal"><span class="pre">showCompleted</span></code> – if <code class="docutils literal"><span class="pre">true</span></code>, specifies that completed jobs are
+shown</li>
+<li><code class="docutils literal"><span class="pre">showDetails</span></code>– if <code class="docutils literal"><span class="pre">true</span></code>, specifies that job details are shown</li>
+</ul>
+<p>In addition, paging request parameters <code class="docutils literal"><span class="pre">limit</span></code> and <code class="docutils literal"><span class="pre">offset</span></code> can also
+be supplied for the request. Refer to <a href="#id1"><span class="problematic" id="id2">`the section called
+“Pagination” fixmefixmefixme&gt;`__</span></a> for details.</p>
+<p>The default values for these request parameters (if they are not
+specified) are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">showErrors=true</span></code></li>
+<li><code class="docutils literal"><span class="pre">showRunning=true</span></code></li>
+<li><code class="docutils literal"><span class="pre">showCompleted=true</span></code></li>
+<li><code class="docutils literal"><span class="pre">showDetails=false</span></code></li>
+<li><code class="docutils literal"><span class="pre">limit=100</span></code></li>
+<li><code class="docutils literal"><span class="pre">offset=0</span></code></li>
+</ul>
+<p><strong>GET</strong>/status?*``showDetails``*=<code class="docutils literal"><span class="pre">[true|false]</span></code>
+&amp;<em>``showErrors``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code>
+&amp;<em>``showRunning``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code>
+&amp;<em>``showCompleted``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code>
+&amp;<em>``limit``</em>=<em>``int1``</em> &amp;<em>``offset``</em>=<em>``int2``</em></p>
+<p>List status of all asynchronous job requests for an account and filter
+the information requested by using the optional boolean request
+parameters.</p>
+<p>Representations: XML, JSON</p>
+<p>Normal Response Code(s): 200</p>
+<p>Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
+unauthorized (401), badRequest (400), itemNotFound (404), overLimit
+(413)</p>
+<p>By omitting the <em>``showDetails``</em> parameter from the request (or
+explicitly setting it to <code class="docutils literal"><span class="pre">false</span></code>), you can request basic information
+for all errors, running jobs, and completed jobs for the account. By
+default (with no query parameters specified) only <em>basic</em> information is
+requested:</p>
+<p><strong>Example: Get Basic Status for All Jobs Request: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 0
+</pre></div>
+</div>
+<p><strong>Example: Get Basic Status for All Jobs Request: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 0
+</pre></div>
+</div>
+<p>The response lists all the user&#8217;s jobs that have had errors, followed by
+those still running, and then those that have completed:</p>
+<p><strong>Example: Get Basic Status for All Jobs Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 822
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncjobsstatus totalEntries=&quot;12&quot; xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;asyncResponse&gt;
+        &lt;jobId&gt;1ada58ab-f413-4d7e-a139-19c96eaea8b2&lt;/jobId&gt;
+        &lt;callbackUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2?showDetails=true&lt;/callbackUrl&gt;
+        &lt;status&gt;COMPLETED&lt;/status&gt;
+    &lt;/asyncResponse&gt;
+    &lt;asyncResponse&gt;
+        &lt;jobId&gt;34c0160a-6109-4b61-9ea4-1f0513df031b&lt;/jobId&gt;
+        &lt;callbackUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b?showDetails=true&lt;/callbackUrl&gt;
+        &lt;status&gt;COMPLETED&lt;/status&gt;
+    &lt;/asyncResponse&gt;
+&lt;/asyncjobsstatus&gt;
+</pre></div>
+</div>
+<p><strong>Example: Get Basic Status for All Jobs Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 482
+
+{
+  &quot;totalEntries&quot; : 12,
+  &quot;asyncResponses&quot; : [ {
+    &quot;status&quot; : &quot;COMPLETED&quot;,
+    &quot;jobId&quot; : &quot;1ada58ab-f413-4d7e-a139-19c96eaea8b2&quot;,
+    &quot;callbackUrl&quot; : &quot;http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2?showDetails=true&quot;
+  }, {
+    &quot;status&quot; : &quot;COMPLETED&quot;,
+    &quot;jobId&quot; : &quot;34c0160a-6109-4b61-9ea4-1f0513df031b&quot;,
+    &quot;callbackUrl&quot; : &quot;http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b?showDetails=true&quot;
+  } ]
+}
+</pre></div>
+</div>
+<p>To get <em>detailed</em> status information for all jobs, set the
+<em>``showDetails``</em> parameter to true (<code class="docutils literal"><span class="pre">showDetails=true</span></code>):</p>
+<p><strong>Example: Get Detailed Status for All Jobs Request: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status?showDetails=true
+Accept: application/xml
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/xml
+Content-Length: 0
+</pre></div>
+</div>
+<p><strong>Example: Get Detailed Status for All Jobs Request: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status?showDetails=true
+Accept: application/json
+X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+Content-Type: application/json
+Content-Length: 0
+</pre></div>
+</div>
+<p>The response lists all the user&#8217;s jobs that have had errors, followed by
+those still running, and then those that have completed:</p>
+<p><strong>Example: Get Detailed Status for All Jobs Response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 1601
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncjobsstatus totalEntries=&quot;12&quot; xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;asyncResponse&gt;
+        &lt;jobId&gt;1ada58ab-f413-4d7e-a139-19c96eaea8b2&lt;/jobId&gt;
+        &lt;callbackUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2?showDetails=true&lt;/callbackUrl&gt;
+        &lt;status&gt;COMPLETED&lt;/status&gt;
+        &lt;requestUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/domains/2764176&lt;/requestUrl&gt;
+        &lt;verb&gt;DELETE&lt;/verb&gt;
+    &lt;/asyncResponse&gt;
+    &lt;asyncResponse&gt;
+        &lt;jobId&gt;34c0160a-6109-4b61-9ea4-1f0513df031b&lt;/jobId&gt;
+        &lt;callbackUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b?showDetails=true&lt;/callbackUrl&gt;
+        &lt;status&gt;COMPLETED&lt;/status&gt;
+        &lt;requestUrl&gt;http://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl&gt;
+        &lt;verb&gt;POST&lt;/verb&gt;
+        &lt;request&gt;
+        &lt;/request&gt;
+        &lt;response xsi:type=&quot;domains&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+            &lt;domain id=&quot;2764458&quot; accountId=&quot;440369&quot; name=&quot;example.com&quot; ttl=&quot;3642&quot; emailAddress=&quot;hostmaster@example.com&quot; updated=&quot;2011-08-29T15:49:53-05:00&quot; created=&quot;2011-08-29T15:49:53-05:00&quot;&gt;
+                &lt;nameservers&gt;
+                    &lt;nameserver name=&quot;dns1.stabletransit.com&quot;/&gt;
+                    &lt;nameserver name=&quot;dns2.stabletransit.com&quot;/&gt;
+                &lt;/nameservers&gt;
+            &lt;/domain&gt;
+        &lt;/response&gt;
+    &lt;/asyncResponse&gt;
+&lt;/asyncjobsstatus&gt;
+</pre></div>
+</div>
+<p><strong>Example: Get Detailed Status for All Jobs Response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 1170
+
+{
+  &quot;totalEntries&quot; : 12,
+  &quot;asyncResponses&quot; : [ {
+    &quot;status&quot; : &quot;COMPLETED&quot;,
+    &quot;verb&quot; : &quot;DELETE&quot;,
+    &quot;jobId&quot; : &quot;1ada58ab-f413-4d7e-a139-19c96eaea8b2&quot;,
+    &quot;callbackUrl&quot; : &quot;http://dns.api.rackspacecloud.com/v1.0/1234/status/1ada58ab-f413-4d7e-a139-19c96eaea8b2?showDetails=true&quot;,
+    &quot;requestUrl&quot; : &quot;http://dns.api.rackspacecloud.com/v1.0/1234/domains/2764176&quot;
+  }, {
+    &quot;status&quot; : &quot;COMPLETED&quot;,
+    &quot;request&quot; : &quot;\n\t\t&quot;,
+    &quot;verb&quot; : &quot;POST&quot;,
+    &quot;jobId&quot; : &quot;34c0160a-6109-4b61-9ea4-1f0513df031b&quot;,
+    &quot;callbackUrl&quot; : &quot;http://dns.api.rackspacecloud.com/v1.0/1234/status/34c0160a-6109-4b61-9ea4-1f0513df031b?showDetails=true&quot;,
+    &quot;requestUrl&quot; : &quot;http://dns.api.rackspacecloud.com/v1.0/1234/domains&quot;,
+    &quot;response&quot; : {
+      &quot;domains&quot; : [ {
+        &quot;name&quot; : &quot;example.com&quot;,
+        &quot;id&quot; : 2764458,
+        &quot;updated&quot; : &quot;2011-08-29T20:49:53.000+0000&quot;,
+        &quot;nameservers&quot; : [ {
+          &quot;name&quot; : &quot;dns1.stabletransit.com&quot;
+        }, {
+          &quot;name&quot; : &quot;dns2.stabletransit.com&quot;
+        } ],
+        &quot;accountId&quot; : 440369,
+        &quot;ttl&quot; : 3642,
+        &quot;emailAddress&quot; : &quot;hostmaster@example.com&quot;,
+        &quot;created&quot; : &quot;2011-08-29T20:49:53.000+0000&quot;
+      } ]
+    }
+  } ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+  <div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+
+      </div>
+<div class="clearer"></div>
+</div>
+    </div>
+    <div class="col-md-3 col-md-pull-9 sidebar">
+<ul>
+  <li><a href="/" class="back">&laquo; Developer Home</a></li>
+</ul>
+<ul>
+  
+|
+
+  <li><span class="sidebarheader">Contents</span></li>
+</ul>
+<ul class="simple">
+</ul>
+
+
+      <div class="callout">
+  <span class="sidebarheader">Need Help?</span>
+
+  <p>
+    E-mail <a href="mailto:sdk-support@rackspace.com">sdk-support@rackspace.com</a>,<br>
+    tweet <a href="https://twitter.com/rackspace">@rackspace</a>,
+    chat with us in #rackspace on Freenode,
+    or post in <a href="https://community.rackspace.com/developers/default">our developer forum</a>.
+  </p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Found a bug? Caught a typo?</span>
+  <p>File a <a href="https://github.com/rackerlabs/developer.rackspace.com/issues/new">bug report</a> or submit a <a target="blank" href="https://github.com/rackerlabs/developer.rackspace.com">pull request</a> on our developer site Github repo.</p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Want To Stay Up To Date?</span>
+  <p>Subscribe to our developer blog <a href="/atom.xml">RSS</a> feed.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="basement">
+    <div class="container">
+        <img src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/rackerpowered-logo-79838459d447e1e48dd93c76549bdf74.png" alt="Racker Powered">
+        <ul>
+            <li>©2015 Rackspace, US Inc.</li>
+            <li><a href="http://www.rackspace.com/about/">About Rackspace</a></li>
+            <li><a href="http://ir.rackspace.com/">Investors</a></li>
+            <li><a href="http://www.rackertalent.com">Careers</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/privacystatement">Privacy Statement</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/websiteterms">Website Terms</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/copyrights_trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/app-b899e84f641d7962050ed3d62a3d53a7.js"></script>
+
+  <!-- analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35639070-1']);
+    _gaq.push(['_setDomainName', 'rackspace.com']);
+    _gaq.push(['_trackPageview']);
+
+   (function () {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
+
+ <!-- Tealium -->
+ <script type="text/javascript" src="https://tags.tiqcdn.com/utag/rackspace/developer/prod/utag.js"></script>
+
+ <!-- Google Code for Rackspace Blog Page Visitors (Global Tag) -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1040066332;
+    var google_conversion_label = "wFI2CI7LnQQQnM747wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040066332/?value=0&amp;label=wFI2CI7LnQQQnM747wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>
