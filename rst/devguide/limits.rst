@@ -8,13 +8,13 @@ recognizes two kinds of limits: *rate limits* and *absolute limits*.
 Rate limits are thresholds that are reset after a certain amount of time
 passes. Absolute limits are fixed.
 
-Rate Limits
+Rate limits
 ~~~~~~~~~~~
 
 Rate limits are specified in terms of both a human-readable wild-card
 URI and a machine-processable regular expression. The regular expression
 boundary matcher '^' takes effect after the root URI path. For example,
-the regular expression ^/v1.0/\ *``1234``*/domains would match the
+the regular expression ^/v1.0/1234/domains would match the
 bolded portion of the following URI:
 https://dns.api.rackspacecloud.com\ **/v1.0/1234/domains**.
 
@@ -22,31 +22,23 @@ The following table specifies the default rate limits for all API
 operations for all **GET**, **POST**, **PUT**, and **DELETE** calls for
 domains, subdomains, or records:
 
-**Default Rate Limits**
+**Default rate limits**
 
-**GET /status/**
-   RegEx: .\*/v\\d+\\.\\d+/(\\d+/status).\*
-   Limit: 5/second
-
-**GET /domains/search**
-   RegEx: .\*/v\\d+\\.\\d+/(\\d+/domains/search).\*
-   Limit: 20/minute
-
-**GET /domains**
-   RegEx: .\*/v\\d+\\.\\d+/(\\d+/domains).\*
-   Limit: 60/minute
-
-**POST /domains**
-   RegEx: .\*/v\\d+\\.\\d+/(\\d+/domains).\*
-   Limit: 20/minute
-
-**PUT /domains**
-   RegEx: .\*/v\\d+\\.\\d+/(\\d+/domains).\*
-   Limit: 20/minute
-
-**DELETE /domains**
-   RegEx: .\*/v\\d+\\.\\d+/(\\d+/domains).\*
-   Limit: 10/minute
++--------+---------------------+-------------------------------------------+-----------+
+| Verb   | URI                 | RegEx                                     | Default   |
++--------+---------------------+-------------------------------------------+-----------+
+| GET    | \*/status/\*        | .\*/v\\d+\\.\\d+/(\\d+/status).\*         | 5/second  |
++--------+---------------------+-------------------------------------------+-----------+
+| GET    | \*/domains/search\* | .\*/v\\d+\\.\\d+/(\\d+/domains/search).\* | 20/minute |
++--------+---------------------+-------------------------------------------+-----------+
+| GET    | \*/domains\*        | .\*/v\\d+\\.\\d+/(\\d+/domains).\*        | 60/minute |
++--------+---------------------+-------------------------------------------+-----------+
+| POST   | \*/domains*\        | .\*/v\\d+\\.\\d+/(\\d+/domains).\*        | 20/minute |
++--------+---------------------+-------------------------------------------+-----------+
+| PUT    | \*/domains*\        | .\*/v\\d+\\.\\d+/(\\d+/domains).\*        | 20/minute |
++--------+---------------------+-------------------------------------------+-----------+
+| DELETE | \*/domains*\        | .\*/v\\d+\\.\\d+/(\\d+/domains).\*        | 10/minute |
++--------+---------------------+-------------------------------------------+-----------+
 
 
 If you exceed the thresholds established for your account, a 413 HTTP
@@ -62,7 +54,7 @@ an ISO 8601 Date/Time field, for example "2012-10-10T21:21:15Z".
 
    This status call has a limit of 5 requests per second.
 
-Absolute Limits
+Absolute limits
 ~~~~~~~~~~~~~~~
 
 **POST** and **PUT** calls are limited to the creation or modification
@@ -74,7 +66,7 @@ This would total 100 entities: 1 domain + 9 subdomains + 90 records.
 Additional records and/or subdomains could be created for the domain in
 subsequent calls.
 
-Domain Limits
+Domain limits
 ^^^^^^^^^^^^^
 
 By default users may have up to 500 domains per Cloud account (including
@@ -84,7 +76,7 @@ of existing plus requested domains and sub-domains is within the account
 domain limit. If the total exceeds the account domain limit, the entire
 request will be rejected and the following message will be returned:
 
-**Example: Domain Limit Response: XML**
+**Example: Domain limit response: XML**
 
 .. code::
 
@@ -101,7 +93,7 @@ request will be rejected and the following message will be returned:
     </overlimit>
 
 
-**Example: Domain Limit Response: JSON**
+**Example: Domain limit response: JSON**
 
 .. code::
 
@@ -129,7 +121,7 @@ request will be rejected and the following message will be returned:
    to create a domain and/or sub-domain. An account may have a non-default
    limit if determined necessary by Support.
 
-Record Limits
+Record limits
 ^^^^^^^^^^^^^
 
 By default users may have up to 500 records per domain per Cloud
@@ -140,7 +132,7 @@ the total number of records on a specified domain exceeds the record
 limit, the entire request will be rejected and the following message
 will be returned:
 
-**Example: Domain Record Limit Response: XML**
+**Example: Domain record limit response: XML**
 
 .. code::
 
@@ -157,7 +149,7 @@ will be returned:
     </overlimit>
 
 
-**Example: Domain Record Limit Response: JSON**
+**Example: Domain record limit response: JSON**
 
 .. code::
 
@@ -183,7 +175,7 @@ will be returned:
    more records. An account may have a non-default record limit if
    determined necessary by Support.
 
-Viewing Current Limits
+Viewing current limits
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Users can view their current rate and absolute (including domain and

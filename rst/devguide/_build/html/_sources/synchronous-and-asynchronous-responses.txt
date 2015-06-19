@@ -1,5 +1,5 @@
 ======================================
-Synchronous and Asynchronous Responses
+Synchronous and asynchronous responses
 ======================================
 
 All successful **GET** requests are *synchronous* calls, since they are
@@ -19,14 +19,19 @@ returned by default. If more detail is desired, any status URL may
 include an optional ``showDetails`` query parameter that will display
 more information regarding the original request:
 
-**GET**/status/*``jobId``*?\ *``showDetails``*\ =\ ``[true|false]``
+**GET** /status/``jobId``? ``showDetails`` =\ ``[true|false]``
+
+**GET** /status/*jobId*\ ?\ ``showDetails``\ =\ ``[true|false]``
+
    List status of the specified asynchronous request. Display details, as
-   specified by the *``showDetails``* parameter.
+   specified by the ``showDetails`` parameter.
+   
    Representations: XML, JSON
-   Normal Response Code(s): 200
-   Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
-   unauthorized (401), badRequest (400), itemNotFound (404), overLimit
-   (413)
+   
+Normal Response Code(s): 200
+
+Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
+unauthorized (401), badRequest (400), itemNotFound (404), overLimit (413)
 
 .. note::
    The results of asynchronous calls are retained for up to 24 hours.
@@ -39,7 +44,7 @@ more information regarding the original request:
 The following list shows the complete set of attributes for
 asynchronous responses:
 
-**Attributes for Asynchronous Responses**
+**Attributes for asynchronous responses**
 
 jobId
    An identifier for the specific request.
@@ -86,7 +91,7 @@ If you use the callback URL *without* specifying the query parameter
 ``showDetails=true``, only *basic* information is returned (jobId,
 callbackUrl, and status attributes):
 
-**Example: Basic Success Asynchronous Request: XML**
+**Example: Basic success asynchronous request: XML**
 
 .. code::
 
@@ -97,7 +102,7 @@ callbackUrl, and status attributes):
     Content-Length: 0
 
 
-**Example: Basic Success Asynchronous Request: JSON**
+**Example: Basic success asynchronous request: JSON**
 
 .. code::
 
@@ -113,7 +118,7 @@ information as the previous one.
 
 If the request is successful, the ``status`` is ``COMPLETED``:
 
-**Example: Basic Success Asynchronous Response: XML**
+**Example: Basic success asynchronous response: XML**
 
 .. code::
 
@@ -131,7 +136,7 @@ If the request is successful, the ``status`` is ``COMPLETED``:
     </asyncresponse>
 
 
-**Example: Basic Success Asynchronous Response: JSON**
+**Example: Basic success asynchronous response: JSON**
 
 .. code::
 
@@ -150,7 +155,7 @@ If the request is successful, the ``status`` is ``COMPLETED``:
 If you specify the query parameter ``showDetails=true`` for the callback
 URL, *detailed* information is returned (all attributes) :
 
-**Example: Detail Success Asynchronous Request: XML**
+**Example: Detail success asynchronous request: XML**
 
 .. code::
 
@@ -160,7 +165,7 @@ URL, *detailed* information is returned (all attributes) :
     Content-Type: application/xml
     Content-Length: 0
 
-**Example: Detail Success Asynchronous Request: JSON**
+**Example: Detail success asynchronous request: JSON**
 
 .. code::
 
@@ -173,7 +178,7 @@ URL, *detailed* information is returned (all attributes) :
 If the request is successful, this includes the ``response``, which
 contains the results of the operation:
 
-**Example: Detail Success Asynchronous Response: XML**
+**Example: Detail success asynchronous response: XML**
 
 .. code::
 
@@ -209,7 +214,7 @@ contains the results of the operation:
 
 
 
-**Example: Detail Success Asynchronous Response: JSON**
+**Example: Detail success asynchronous response: JSON**
 
 .. code::
 
@@ -255,7 +260,7 @@ querying the callback URL will return the information about the error.
 If you use the callback URL without specifying the query parameter
 ``showDetails=true``, only basic information is provided:
 
-**Example: Basic Error Asynchronous Response: XML**
+**Example: Basic error asynchronous response: XML**
 
 .. code::
 
@@ -272,7 +277,7 @@ If you use the callback URL without specifying the query parameter
         <status>ERROR</status>
     </asyncresponse>
 
-**Example: Basic Error Asynchronous Response: JSON**
+**Example: Basic error asynchronous response: JSON**
 
 .. code::
 
@@ -291,7 +296,7 @@ If you use the callback URL without specifying the query parameter
 If you use the callback URL with the query parameter
 ``showDetails=true``, then detailed information is provided:
 
-**Example: Detail Error Asynchronous Response: XML**
+**Example: Detail error asynchronous response: XML**
 
 .. code::
 
@@ -323,7 +328,7 @@ If you use the callback URL with the query parameter
 
 
 
-**Example: Detail Error Asynchronous Response: JSON**
+**Example: Detail error asynchronous response: JSON**
 
 .. code::
 
@@ -352,7 +357,7 @@ If you use the callback URL with the query parameter
    *contents* of the asynchronous ``error`` attribute. Additional
    attributes and elements have been omitted for clarity.
 
-Viewing Status of All Asynchronous Job Requests
+Viewing status of all asynchronous job requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As well as viewing status for a *particular job ID*, as described in the
@@ -372,8 +377,8 @@ parameters:
 *  ``showDetails``– if ``true``, specifies that job details are shown
 
 In addition, paging request parameters ``limit`` and ``offset`` can also
-be supplied for the request. Refer to `the section called
-“Pagination” fixmefixmefixme>`__ for details.
+be supplied for the request. 
+See :ref:`Pagination <cdns-dg-pagination>` for details.
 
 The default values for these request parameters (if they are not
 specified) are:
@@ -408,13 +413,13 @@ Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
 unauthorized (401), badRequest (400), itemNotFound (404), overLimit
 (413)
 
-By omitting the *``showDetails``* parameter from the request (or
+By omitting the ``showDetails`` parameter from the request (or
 explicitly setting it to ``false``), you can request basic information
 for all errors, running jobs, and completed jobs for the account. By
 default (with no query parameters specified) only *basic* information is
 requested:
 
-**Example: Get Basic Status for All Jobs Request: XML**
+**Example: Get basic status for all jobs request: XML**
 
 .. code::
 
@@ -424,7 +429,7 @@ requested:
     Content-Type: application/xml
     Content-Length: 0
 
-**Example: Get Basic Status for All Jobs Request: JSON**
+**Example: Get basic status for all jobs request: JSON**
 
 .. code::
 
@@ -439,7 +444,7 @@ requested:
 The response lists all the user's jobs that have had errors, followed by
 those still running, and then those that have completed:
 
-**Example: Get Basic Status for All Jobs Response: XML**
+**Example: Get basic status for all jobs response: XML**
 
 .. code::
 
@@ -465,7 +470,7 @@ those still running, and then those that have completed:
 
 
 
-**Example: Get Basic Status for All Jobs Response: JSON**
+**Example: Get basic status for all jobs response: JSON**
 
 .. code::
 
@@ -491,9 +496,9 @@ those still running, and then those that have completed:
 
 
 To get *detailed* status information for all jobs, set the
-*``showDetails``* parameter to true (``showDetails=true``):
+``showDetails`` parameter to true (``showDetails=true``):
 
-**Example: Get Detailed Status for All Jobs Request: XML**
+**Example: Get detailed status for all jobs request: XML**
 
 .. code::
 
@@ -505,7 +510,7 @@ To get *detailed* status information for all jobs, set the
 
 
 
-**Example: Get Detailed Status for All Jobs Request: JSON**
+**Example: Get detailed status for all jobs request: JSON**
 
 .. code::
 
@@ -520,7 +525,7 @@ To get *detailed* status information for all jobs, set the
 The response lists all the user's jobs that have had errors, followed by
 those still running, and then those that have completed:
 
-**Example: Get Detailed Status for All Jobs Response: XML**
+**Example: Get detailed status for all jobs response: XML**
 
 .. code::
 
@@ -560,7 +565,7 @@ those still running, and then those that have completed:
 
 
 
-**Example: Get Detailed Status for All Jobs Response: JSON**
+**Example: Get detailed status for all jobs response: JSON**
 
 .. code::
 

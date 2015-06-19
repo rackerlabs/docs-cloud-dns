@@ -5,7 +5,7 @@ Comments
 Comments are supported for domains and records and their requests and
 responses using the ``comment`` attribute. See the examples that follow.
 
-**Example: Response with Comments: XML**
+**Example: Response with comments: XML**
 
 .. code::
 
@@ -37,7 +37,7 @@ responses using the ``comment`` attribute. See the examples that follow.
         </subdomains>
     </domain>
 
-**Example: Response with Comments: JSON**
+**Example: Response with comments: JSON**
 
 .. code::
 

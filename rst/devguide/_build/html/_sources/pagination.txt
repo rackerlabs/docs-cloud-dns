@@ -1,3 +1,5 @@
+.. _cdns-dg-pagination:
+
 ==========
 Pagination
 ==========
@@ -17,7 +19,7 @@ parameters are named ``limit`` and ``offset`` respectively, and both
 apply only to **GET** calls. If unspecified, they default to
 ``limit=100`` and ``offset=0``. See the examples that follow.
 
-**Examples of Limits and Offsets for Paging Calls**
+**Examples of limits and offsets for paging calls**
 
 .. code::
 
@@ -33,27 +35,24 @@ apply only to **GET** calls. If unspecified, they default to
 
 Pagination applies only to the calls listed here:
 
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Verb | URI                          | Description                                                                                                         |
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| GET  | /domains/                    | List all domains manageable by the account specified.                                                               |
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| GET  | /domains/?name=domainName    | Filter domains by domain name: list all domains manageable by the account specified that match the name domainName. |
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| GET  | /domains/domainID            | List details of the specified domain. Applies to the recordsand subdomains lists.                                   |
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| GET  | /domains/domainID/subdomains | List domains that are subdomains of the specified domain.                                                           |
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| GET  | /domains/domainID/records    | List all records configured for the domain.                                                                         |
++------+------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
-**GET**/domains/
-   List all domains manageable by the account specified.
-
-**GET**/domains/?name=*``domainName``*
-   Filter domains by domain name: list all domains manageable by the
-   account specified that match the name domainName.
-
-**GET**/domains/*``domainID``*
-   List details of the specified domain. Applies to the records and
-   subdomains lists.
-
-**GET**/domains/*``domainID``*/subdomains
-   List domains that are subdomains of the specified domain.
-
-**GET**/domains/*``domainID``*/records
-   List all records configured for the domain.
 
 See the following section for examples of paged List Domains calls.
 
-Pagination Elements and Attributes
+Pagination elements and attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For any collection in a result, there is a ``totalEntries`` attribute

@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="authenticate-through-the-rackspace-cloud-identity-service">
-<h1>Authenticate through the Rackspace Cloud Identity Service<a class="headerlink" href="#authenticate-through-the-rackspace-cloud-identity-service" title="Permalink to this headline">¶</a></h1>
+<span id="cdns-dg-authentication"></span><h1>Authenticate through the Rackspace Cloud Identity Service<a class="headerlink" href="#authenticate-through-the-rackspace-cloud-identity-service" title="Permalink to this headline">¶</a></h1>
 <p>Each HTTP request against the OpenStack Compute system requires the
 inclusion of specific authentication credentials. A single deployment
 might support multiple authentication schemes, such as OAuth, Basic
@@ -117,7 +117,7 @@ authentication response.</p>
 <p>For detailed information about the Identity Service v2.0, see the
 <em>Cloud Identity Client Developer Guide API v2.0</em>.</p>
 <div class="section" id="rackspace-cloud-identity-service-endpoints">
-<h2>Rackspace Cloud Identity Service Endpoints<a class="headerlink" href="#rackspace-cloud-identity-service-endpoints" title="Permalink to this headline">¶</a></h2>
+<span id="cdns-dg-authentication-endpoints"></span><h2>Rackspace Cloud Identity Service endpoints<a class="headerlink" href="#rackspace-cloud-identity-service-endpoints" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Multiple Rackspace Cloud Identity Service endpoints exist. You
@@ -130,7 +130,7 @@ may use any endpoint, regardless of where your account was created.</p>
 special considerations for choosing a data center at
 <a class="reference external" href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions">http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</a>.</p>
 </div>
-<p><strong>Table:&nbsp;Rackspace Cloud Identity Service Endpoints</strong></p>
+<p><strong>Table:&nbsp;Rackspace Cloud Identity Service endpoints</strong></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="26%" />
@@ -154,7 +154,7 @@ special considerations for choosing a data center at
 alternate authentication endpoints here on this site.</p>
 </div>
 <div class="section" id="authentication-request">
-<h2>Authentication Request<a class="headerlink" href="#authentication-request" title="Permalink to this headline">¶</a></h2>
+<h2>Authentication request<a class="headerlink" href="#authentication-request" title="Permalink to this headline">¶</a></h2>
 <p>To authenticate, issue a <strong>POST</strong> <strong>/tokens</strong> request to the appropriate
 Rackspace Cloud Identity Service endpoint.</p>
 <p>In the request body, supply one of the following sets of credentials:</p>
@@ -201,7 +201,7 @@ Key: JSON Request</strong></p>
 </div>
 </div>
 <div class="section" id="authentication-response">
-<h2>Authentication Response<a class="headerlink" href="#authentication-response" title="Permalink to this headline">¶</a></h2>
+<h2>Authentication response<a class="headerlink" href="#authentication-response" title="Permalink to this headline">¶</a></h2>
 <p>In response to valid credentials, your request returns an authentication
 token and a service catalog with the endpoints that you use to request
 services.</p>
@@ -398,11 +398,44 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
 </ul>
 <ul>
   
+<a href="concepts.html"><<</a>
+
 |
+
+<a href="dns-service-versions.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Authenticate through the Rackspace Cloud Identity Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rackspace-cloud-identity-service-endpoints">Rackspace Cloud Identity Service endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication-request">Authentication request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication-response">Authentication response</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request/Response Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and Asynchronous Responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

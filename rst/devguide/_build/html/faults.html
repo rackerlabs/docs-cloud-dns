@@ -97,71 +97,66 @@ of the response, the system will return additional information about the
 fault.</p>
 <p>The following table lists possible fault types with their associated
 error codes and descriptions.</p>
-<dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">dnsFault</span></code></dt>
-<dd><p class="first">500, as well as other 5xx-level:</p>
-<p class="last">Generic catch-all. Should not be seen as often as the specific faults
-below. See the <code class="docutils literal"><span class="pre">details</span></code> element for more specifics.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">serviceUnavailable</span></code></dt>
-<dd>503
-The request could not be processed because back-end services were
-temporarily unavailable. This condition should be temporary; contact
-support if the error persists.</dd>
-<dt><code class="docutils literal"><span class="pre">unauthorized</span></code></dt>
-<dd><p class="first">401</p>
-<p class="last">The user is not authorized to access the API functionality in question.
-The user may not have authenticated to the API. If the user should have
-access to the API functionality, contact support.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">badRequest</span></code></dt>
-<dd><p class="first">400</p>
-<p class="last">The request is missing one or more elements, or the values of some
-elements are invalid. See the <code class="docutils literal"><span class="pre">details</span></code> element or
-<code class="docutils literal"><span class="pre">validationErrors</span></code> element for specifics.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">itemNotFound</span></code></dt>
-<dd><p class="first">404</p>
-<p class="last">The back-end services did not find anything matching the Request-URI.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">overLimit</span></code></dt>
-<dd><p class="first">413</p>
-<p class="last">Either the number of entities in the request is larger than allowed
-limits, or the user has exceeded allowable request rate limits. See the
-<code class="docutils literal"><span class="pre">details</span></code> element for more specifics. Contact support if you think you
-need higher request rate limits.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">itemAlreadyExists</span></code></dt>
-<dd><p class="first">409</p>
-<p class="last">The back-end services could not complete the request due to a conflict
-with the current state of the resource. Possibly, the user is trying to
-create an entity that already exists. See the <code class="docutils literal"><span class="pre">details</span></code> element for
-specifics.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">deleteFault</span></code></dt>
-<dd><p class="first">500 and nested other fault codes</p>
-<p class="last">The back-end services could not successfully delete some of a number of
-entities requested to be deleted. See the <code class="docutils literal"><span class="pre">failedItems</span></code> element for
-specifics.</p>
-</dd>
-<dt><code class="docutils literal"><span class="pre">internalServerError</span></code></dt>
-<dd><p class="first">500</p>
-<p>The back-end services encountered an unexpected condition that prevented
-it from fulfilling the request. See the <code class="docutils literal"><span class="pre">details</span></code> element for
-specifics.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="15%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Fault Type</td>
+<td>Associated Error Code</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>dnsFault</td>
+<td>500, as well as any of the following others:</td>
+<td>Generic catch-all. Should not be seen as often as the specific faults below. See the details element for more specifics.</td>
+</tr>
+<tr class="row-odd"><td>serviceUnavailable</td>
+<td>503</td>
+<td>The request could not be processed because back-end services were temporarily unavailable. This condition should be temporary; contact support if the error persists.</td>
+</tr>
+<tr class="row-even"><td>unauthorized</td>
+<td>401</td>
+<td>The user is not authorized to access the API functionality in question. The user may not have authenticated to the API. If the user should have access to the API functionality, contact support.</td>
+</tr>
+<tr class="row-odd"><td>badRequest</td>
+<td>400</td>
+<td>The request is missing one or more elements, or the values of some elements are invalid. See the details element or validationErrors element for specifics.</td>
+</tr>
+<tr class="row-even"><td>itemNotFound</td>
+<td>404</td>
+<td>The back-end services did not find anything matching the Request-URI.</td>
+</tr>
+<tr class="row-odd"><td>overLimit</td>
+<td>413</td>
+<td>Either the number of entities in the request is larger than allowed limits, or the user has exceeded allowable request rate limits. See the details element for more specifics. Contact support if you think you need higher request rate limits.</td>
+</tr>
+<tr class="row-even"><td>itemAlreadyExists</td>
+<td>409</td>
+<td>The back-end services could not complete the request due to a conflict with the current state of the resource. Possibly, the user is trying to create an entity that already exists. See the details element for specifics.</td>
+</tr>
+<tr class="row-odd"><td>deleteFault</td>
+<td>500 and nested other fault codes</td>
+<td>The back-end services could not successfully delete some of a number of entities requested to be deleted. See the failedItems element for specifics.</td>
+</tr>
+<tr class="row-even"><td>internalServerError</td>
+<td>500</td>
+<td>The back-end services encountered an unexpected condition that prevented it from fulfilling the request. See the details element for specifics.</td>
+</tr>
+</tbody>
+</table>
 <p>The base of all fault types is <code class="docutils literal"><span class="pre">dnsFault</span></code>. From an XML schema
 perspective, all API faults are extensions of the base fault type
 <code class="docutils literal"><span class="pre">dnsFault</span></code>. When working with a system such as JAXB that binds XML to
 actual classes, <code class="docutils literal"><span class="pre">dnsFault</span></code> can be used as a catch-all if there is no
 interest in distinguishing between individual fault types.</p>
-<p class="last"><code class="docutils literal"><span class="pre">dnsFault</span></code> has the structure and elements shown below. All other fault
+<p><code class="docutils literal"><span class="pre">dnsFault</span></code> has the structure and elements shown below. All other fault
 types extend <code class="docutils literal"><span class="pre">dnsFault</span></code>. Currently only fault types <code class="docutils literal"><span class="pre">badRequest</span></code> and
 <code class="docutils literal"><span class="pre">deleteFault</span></code> actually add additional elements to their structure as
 compared to the parent <code class="docutils literal"><span class="pre">dnsFault</span></code>. These two fault types are described
 later.</p>
-</dd>
-</dl>
-<p><strong>Example: Fault Response: XML</strong></p>
+<p><strong>Example: Fault response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;dnsFault xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; code=&quot;500&quot;&gt;
      &lt;message&gt;Main fault&lt;/message&gt;
@@ -169,7 +164,7 @@ later.</p>
 &lt;/dnsFault&gt;
 </pre></div>
 </div>
-<p><strong>Example: Fault Response: JSON</strong></p>
+<p><strong>Example: Fault response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
   <span class="s">&quot;message&quot;</span> <span class="p">:</span> <span class="s">&quot;Main fault&quot;</span><span class="p">,</span>
   <span class="s">&quot;code&quot;</span> <span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
@@ -189,7 +184,7 @@ depending on the type of error. <code class="docutils literal"><span class="pre"
 <code class="docutils literal"><span class="pre">validationErrors</span></code> element that contains a list of error messages for
 invalid requests. The first two <code class="docutils literal"><span class="pre">badRequest</span></code> examples show errors when
 the request structure is wrong:</p>
-<p><strong>Example: badRequest Fault on Request Structure Errors: XML</strong></p>
+<p><strong>Example: badRequest fault on request structure errors: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;badRequest xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; code=&quot;400&quot;&gt;
      &lt;message&gt;The request could not be processed.&lt;/message&gt;
@@ -198,7 +193,7 @@ the request structure is wrong:</p>
 &lt;/badRequest&gt;
 </pre></div>
 </div>
-<p><strong>Example: badRequest Fault on Request Structure Errors:
+<p><strong>Example: badRequest fault on request structure errors:
 JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
   <span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;The request could not be processed.&quot;</span><span class="p">,</span>
@@ -288,11 +283,40 @@ entities that could not be deleted:</p>
 </ul>
 <ul>
   
+<a href="supported-record-types.html"><<</a>
+
 |
+
+<a href="ip-address-support.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request and response types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and asynchronous responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

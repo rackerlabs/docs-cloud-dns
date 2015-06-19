@@ -1,11 +1,11 @@
 ====================
-DNS Service Versions
+DNS Service versions
 ====================
 
 The Cloud DNS Service version defines the contract and build
 information for the API.
 
-Contract Version
+Contract version
 ~~~~~~~~~~~~~~~~
 
 The contract version denotes the data model and behavior that the API
@@ -21,7 +21,7 @@ given time and are not guaranteed to be compatible with one another.
 
 .. note:: This document pertains to contract version 1.0.
 
-API Version Headers
+API version headers
 ~~~~~~~~~~~~~~~~~~~
 
 Every response from the Cloud DNS Service includes custom headers that
@@ -34,5 +34,5 @@ included in any support request.
 X-API-VERSION
    The deployed version of the Cloud DNS Service. This is used to identify
    releases, and it should correspond to the contract version in the URL
-   (that is, v1.0). Example value: ```X-API-VERSION=1.0.8```
+   (that is, v1.0). Example value: ``X-API-VERSION=1.0.8``
 

@@ -1,6 +1,6 @@
-======================
-Request/Response Types
-======================
+==========================
+Request and response types
+==========================
 
 The DNS API supports both the JSON and XML data serialization formats.
 The request format is specified using the ``Content-Type`` header and is
@@ -12,7 +12,7 @@ the request. If no response format is specified, JSON is the default. If
 conflicting formats are specified using both an ``Accept`` header and a
 query extension, the query extension takes precedence.
 
-**Response Formats**
+**Response formats**
 
 +----------+---------------------+----------------------+---------+
 | Format   | Accept Header       | Query Extension      | Default |
@@ -22,11 +22,11 @@ query extension, the query extension takes precedence.
 | XML      | application/xml     | .xml                 | No      |
 +----------+---------------------+----------------------+---------+
 
-In the request example below, notice that *``Content-Type``* is set to
-*``application/json``*, but *``application/xml``* is requested via the
-*``Accept``* header:
+In the request example below, notice that ``Content-Type`` is set to
+``application/json``, but ``application/xml`` is requested via the
+``Accept`` header:
 
-**Example: Request with Headers: XML**
+**Example: Request with headers: XML**
 
 .. code::
 
@@ -43,7 +43,7 @@ In the request example below, notice that *``Content-Type``* is set to
 
 Therefore an XML response format is returned:
 
-**Example: Response with Headers: XML**
+**Example: Response with headers: XML**
 
 .. code::
 
@@ -62,7 +62,7 @@ Therefore an XML response format is returned:
 
 An alternative method of achieving the same result is illustrated below.
 This time we utilize a URI extension (``.xml``) to request an XML
-response format instead of an *``Accept``* header:
+response format instead of an ``Accept`` header:
 
 **Example: Extension: XML request**
 

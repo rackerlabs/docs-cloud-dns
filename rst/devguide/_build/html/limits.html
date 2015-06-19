@@ -97,37 +97,62 @@ recognizes two kinds of limits: <em>rate limits</em> and <em>absolute limits</em
 Rate limits are thresholds that are reset after a certain amount of time
 passes. Absolute limits are fixed.</p>
 <div class="section" id="rate-limits">
-<h2>Rate Limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
+<h2>Rate limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
 <p>Rate limits are specified in terms of both a human-readable wild-card
 URI and a machine-processable regular expression. The regular expression
 boundary matcher &#8216;^&#8217; takes effect after the root URI path. For example,
-the regular expression ^/v1.0/<em>``1234``</em>/domains would match the
+the regular expression ^/v1.0/1234/domains would match the
 bolded portion of the following URI:
 <a class="reference external" href="https://dns.api.rackspacecloud.com">https://dns.api.rackspacecloud.com</a><strong>/v1.0/1234/domains</strong>.</p>
 <p>The following table specifies the default rate limits for all API
 operations for all <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong>, and <strong>DELETE</strong> calls for
 domains, subdomains, or records:</p>
-<p><strong>Default Rate Limits</strong></p>
-<dl class="docutils">
-<dt><strong>GET /status/</strong></dt>
-<dd>RegEx: .*/v\d+\.\d+/(\d+/status).*
-Limit: 5/second</dd>
-<dt><strong>GET /domains/search</strong></dt>
-<dd>RegEx: .*/v\d+\.\d+/(\d+/domains/search).*
-Limit: 20/minute</dd>
-<dt><strong>GET /domains</strong></dt>
-<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
-Limit: 60/minute</dd>
-<dt><strong>POST /domains</strong></dt>
-<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
-Limit: 20/minute</dd>
-<dt><strong>PUT /domains</strong></dt>
-<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
-Limit: 20/minute</dd>
-<dt><strong>DELETE /domains</strong></dt>
-<dd>RegEx: .*/v\d+\.\d+/(\d+/domains).*
-Limit: 10/minute</dd>
-</dl>
+<p><strong>Default rate limits</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="25%" />
+<col width="52%" />
+<col width="13%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Verb</td>
+<td>URI</td>
+<td>RegEx</td>
+<td>Default</td>
+</tr>
+<tr class="row-even"><td>GET</td>
+<td>*/status/*</td>
+<td>.*/v\d+\.\d+/(\d+/status).*</td>
+<td>5/second</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td>*/domains/search*</td>
+<td>.*/v\d+\.\d+/(\d+/domains/search).*</td>
+<td>20/minute</td>
+</tr>
+<tr class="row-even"><td>GET</td>
+<td>*/domains*</td>
+<td>.*/v\d+\.\d+/(\d+/domains).*</td>
+<td>60/minute</td>
+</tr>
+<tr class="row-odd"><td>POST</td>
+<td>*/domains*</td>
+<td>.*/v\d+\.\d+/(\d+/domains).*</td>
+<td>20/minute</td>
+</tr>
+<tr class="row-even"><td>PUT</td>
+<td>*/domains*</td>
+<td>.*/v\d+\.\d+/(\d+/domains).*</td>
+<td>20/minute</td>
+</tr>
+<tr class="row-odd"><td>DELETE</td>
+<td>*/domains*</td>
+<td>.*/v\d+\.\d+/(\d+/domains).*</td>
+<td>10/minute</td>
+</tr>
+</tbody>
+</table>
 <p>If you exceed the thresholds established for your account, a 413 HTTP
 response will be returned with a <code class="docutils literal"><span class="pre">Reply-After</span></code> header to notify the
 client when it can attempt to try again. The <code class="docutils literal"><span class="pre">Reply-After</span></code> header is
@@ -142,7 +167,7 @@ status details; for example:
 </div>
 </div>
 <div class="section" id="absolute-limits">
-<h2>Absolute Limits<a class="headerlink" href="#absolute-limits" title="Permalink to this headline">¶</a></h2>
+<h2>Absolute limits<a class="headerlink" href="#absolute-limits" title="Permalink to this headline">¶</a></h2>
 <p><strong>POST</strong> and <strong>PUT</strong> calls are limited to the creation or modification
 of a maximum of 100 entities per call where an entity is defined as a
 record, domain, or subdomain. For example, when using <strong>POST</strong>
@@ -152,14 +177,14 @@ This would total 100 entities: 1 domain + 9 subdomains + 90 records.
 Additional records and/or subdomains could be created for the domain in
 subsequent calls.</p>
 <div class="section" id="domain-limits">
-<h3>Domain Limits<a class="headerlink" href="#domain-limits" title="Permalink to this headline">¶</a></h3>
+<h3>Domain limits<a class="headerlink" href="#domain-limits" title="Permalink to this headline">¶</a></h3>
 <p>By default users may have up to 500 domains per Cloud account (including
 sub-domains). When a user submits a request to create new domains and/or
 sub-domains, the system will only accept the request if the total number
 of existing plus requested domains and sub-domains is within the account
 domain limit. If the total exceeds the account domain limit, the entire
 request will be rejected and the following message will be returned:</p>
-<p><strong>Example: Domain Limit Response: XML</strong></p>
+<p><strong>Example: Domain limit response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -173,7 +198,7 @@ Content-Length: 417
 &lt;/overlimit&gt;
 </pre></div>
 </div>
-<p><strong>Example: Domain Limit Response: JSON</strong></p>
+<p><strong>Example: Domain limit response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -201,7 +226,7 @@ limit if determined necessary by Support.</p>
 </div>
 </div>
 <div class="section" id="record-limits">
-<h3>Record Limits<a class="headerlink" href="#record-limits" title="Permalink to this headline">¶</a></h3>
+<h3>Record limits<a class="headerlink" href="#record-limits" title="Permalink to this headline">¶</a></h3>
 <p>By default users may have up to 500 records per domain per Cloud
 account. When a user submits a request to create one or more new
 records, the system will only accept the request if the total number of
@@ -209,7 +234,7 @@ existing plus requested records is within the account record limit. If
 the total number of records on a specified domain exceeds the record
 limit, the entire request will be rejected and the following message
 will be returned:</p>
-<p><strong>Example: Domain Record Limit Response: XML</strong></p>
+<p><strong>Example: Domain record limit response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -223,7 +248,7 @@ Content-Length: 428
 &lt;/overlimit&gt;
 </pre></div>
 </div>
-<p><strong>Example: Domain Record Limit Response: JSON</strong></p>
+<p><strong>Example: Domain record limit response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 413 Request Entity Too Large
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -252,7 +277,7 @@ determined necessary by Support.</p>
 </div>
 </div>
 <div class="section" id="viewing-current-limits">
-<h2>Viewing Current Limits<a class="headerlink" href="#viewing-current-limits" title="Permalink to this headline">¶</a></h2>
+<h2>Viewing current limits<a class="headerlink" href="#viewing-current-limits" title="Permalink to this headline">¶</a></h2>
 <p>Users can view their current rate and absolute (including domain and
 record) limits.</p>
 </div>
@@ -277,11 +302,45 @@ record) limits.</p>
 </ul>
 <ul>
   
+<a href="persistent-connections.html"><<</a>
+
 |
+
+<a href="date-time-format.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request and response types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and asynchronous responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Limits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rate-limits">Rate limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#absolute-limits">Absolute limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-current-limits">Viewing current limits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

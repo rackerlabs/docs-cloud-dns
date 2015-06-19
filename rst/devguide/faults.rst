@@ -10,81 +10,42 @@ fault.
 The following table lists possible fault types with their associated
 error codes and descriptions.
 
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Fault Type          | Associated Error Code                        | Description                                                                                                                                                                                                                                       |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dnsFault            | 500, as well as any of the following others: | Generic catch-all. Should not be seen as often as the specific faults below. See the details element for more specifics.                                                                                                                          |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| serviceUnavailable  | 503                                          | The request could not be processed because back-end services were temporarily unavailable. This condition should be temporary; contact support if the error persists.                                                                             |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| unauthorized        | 401                                          | The user is not authorized to access the API functionality in question. The user may not have authenticated to the API. If the user should have access to the API functionality, contact support.                                                 |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| badRequest          | 400                                          | The request is missing one or more elements, or the values of some elements are invalid. See the details element or validationErrors element for specifics.                                                                                       |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| itemNotFound        | 404                                          | The back-end services did not find anything matching the Request-URI.                                                                                                                                                                             |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| overLimit           | 413                                          | Either the number of entities in the request is larger than allowed limits, or the user has exceeded allowable request rate limits. See the details element for more specifics. Contact support if you think you need higher request rate limits. |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| itemAlreadyExists   | 409                                          | The back-end services could not complete the request due to a conflict with the current state of the resource. Possibly, the user is trying to create an entity that already exists. See the details element for specifics.                       |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| deleteFault         | 500 and nested other fault codes             | The back-end services could not successfully delete some of a number of entities requested to be deleted. See the failedItems element for specifics.                                                                                              |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| internalServerError | 500                                          | The back-end services encountered an unexpected condition that prevented it from fulfilling the request. See the details element for specifics.                                                                                                   |
++---------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-``dnsFault``
-   500, as well as other 5xx-level:
 
-   Generic catch-all. Should not be seen as often as the specific faults
-   below. See the ``details`` element for more specifics.
+The base of all fault types is ``dnsFault``. From an XML schema
+perspective, all API faults are extensions of the base fault type
+``dnsFault``. When working with a system such as JAXB that binds XML to
+actual classes, ``dnsFault`` can be used as a catch-all if there is no
+interest in distinguishing between individual fault types.
 
-``serviceUnavailable``
-   503
-   The request could not be processed because back-end services were
-   temporarily unavailable. This condition should be temporary; contact
-   support if the error persists.
+``dnsFault`` has the structure and elements shown below. All other fault
+types extend ``dnsFault``. Currently only fault types ``badRequest`` and
+``deleteFault`` actually add additional elements to their structure as
+compared to the parent ``dnsFault``. These two fault types are described
+later.
 
-``unauthorized``
-   401
-
-   The user is not authorized to access the API functionality in question.
-   The user may not have authenticated to the API. If the user should have
-   access to the API functionality, contact support.
-
-``badRequest``
-   400
-
-   The request is missing one or more elements, or the values of some
-   elements are invalid. See the ``details`` element or
-   ``validationErrors`` element for specifics.
-
-``itemNotFound``
-   404
-
-   The back-end services did not find anything matching the Request-URI.
-
-``overLimit``
-   413
-
-   Either the number of entities in the request is larger than allowed
-   limits, or the user has exceeded allowable request rate limits. See the
-   ``details`` element for more specifics. Contact support if you think you
-   need higher request rate limits.
-
-``itemAlreadyExists``
-   409
-
-   The back-end services could not complete the request due to a conflict
-   with the current state of the resource. Possibly, the user is trying to
-   create an entity that already exists. See the ``details`` element for
-   specifics.
-
-``deleteFault``
-   500 and nested other fault codes
-
-   The back-end services could not successfully delete some of a number of
-   entities requested to be deleted. See the ``failedItems`` element for
-   specifics.
-
-``internalServerError``
-   500
-
-   The back-end services encountered an unexpected condition that prevented
-   it from fulfilling the request. See the ``details`` element for
-   specifics.
-
-   The base of all fault types is ``dnsFault``. From an XML schema
-   perspective, all API faults are extensions of the base fault type
-   ``dnsFault``. When working with a system such as JAXB that binds XML to
-   actual classes, ``dnsFault`` can be used as a catch-all if there is no
-   interest in distinguishing between individual fault types.
-
-   ``dnsFault`` has the structure and elements shown below. All other fault
-   types extend ``dnsFault``. Currently only fault types ``badRequest`` and
-   ``deleteFault`` actually add additional elements to their structure as
-   compared to the parent ``dnsFault``. These two fault types are described
-   later.
-
-**Example: Fault Response: XML**
+**Example: Fault response: XML**
 
 .. code::
 
@@ -95,7 +56,7 @@ error codes and descriptions.
     </dnsFault>
 
 
-**Example: Fault Response: JSON**
+**Example: Fault response: JSON**
 
 .. code::
 
@@ -120,7 +81,7 @@ depending on the type of error. ``badRequest`` fault adds a
 invalid requests. The first two ``badRequest`` examples show errors when
 the request structure is wrong:
 
-**Example: badRequest Fault on Request Structure Errors: XML**
+**Example: badRequest fault on request structure errors: XML**
 
 .. code::
 
@@ -132,7 +93,7 @@ the request structure is wrong:
     </badRequest>
 
 
-**Example: badRequest Fault on Request Structure Errors:
+**Example: badRequest fault on request structure errors:
 JSON**
 
 .. code::

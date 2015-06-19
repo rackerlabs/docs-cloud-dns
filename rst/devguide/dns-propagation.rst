@@ -1,5 +1,7 @@
+.. _cdns-dg-propagation:
+
 ===============
-DNS Propagation
+DNS propagation
 ===============
 
 Typical DNS propagation to Rackspace name servers (globally) may take up

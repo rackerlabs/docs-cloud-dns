@@ -1,5 +1,5 @@
 ================
-Date/Time Format
+Date/Time format
 ================
 
 The DNS service uses an ISO-8601 compliant date format for the display

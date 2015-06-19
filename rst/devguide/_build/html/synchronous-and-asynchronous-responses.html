@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="synchronous-and-asynchronous-responses">
-<h1>Synchronous and Asynchronous Responses<a class="headerlink" href="#synchronous-and-asynchronous-responses" title="Permalink to this headline">¶</a></h1>
+<h1>Synchronous and asynchronous responses<a class="headerlink" href="#synchronous-and-asynchronous-responses" title="Permalink to this headline">¶</a></h1>
 <p>All successful <strong>GET</strong> requests are <em>synchronous</em> calls, since they are
 always retrieving (reading) existing information. With these requests,
 the caller waits until the call returns with the specified code and
@@ -105,16 +105,16 @@ by the API), only basic information regarding the status of the job is
 returned by default. If more detail is desired, any status URL may
 include an optional <code class="docutils literal"><span class="pre">showDetails</span></code> query parameter that will display
 more information regarding the original request:</p>
-<dl class="docutils">
-<dt><strong>GET</strong>/status/<em>``jobId``</em>?<em>``showDetails``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code></dt>
-<dd>List status of the specified asynchronous request. Display details, as
-specified by the <em>``showDetails``</em> parameter.
-Representations: XML, JSON
-Normal Response Code(s): 200
-Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
-unauthorized (401), badRequest (400), itemNotFound (404), overLimit
-(413)</dd>
-</dl>
+<p><strong>GET</strong> /status/<code class="docutils literal"><span class="pre">jobId</span></code>? <code class="docutils literal"><span class="pre">showDetails</span></code> =<code class="docutils literal"><span class="pre">[true|false]</span></code></p>
+<p><strong>GET</strong> /status/<em>jobId</em>?<code class="docutils literal"><span class="pre">showDetails</span></code>=<code class="docutils literal"><span class="pre">[true|false]</span></code></p>
+<blockquote>
+<div><p>List status of the specified asynchronous request. Display details, as
+specified by the <code class="docutils literal"><span class="pre">showDetails</span></code> parameter.</p>
+<p>Representations: XML, JSON</p>
+</div></blockquote>
+<p>Normal Response Code(s): 200</p>
+<p>Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
+unauthorized (401), badRequest (400), itemNotFound (404), overLimit (413)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The results of asynchronous calls are retained for up to 24 hours.</p>
@@ -127,7 +127,7 @@ request.</p>
 </div>
 <p>The following list shows the complete set of attributes for
 asynchronous responses:</p>
-<p><strong>Attributes for Asynchronous Responses</strong></p>
+<p><strong>Attributes for asynchronous responses</strong></p>
 <dl class="docutils">
 <dt>jobId</dt>
 <dd>An identifier for the specific request.
@@ -168,7 +168,7 @@ requested.</p>
 <p>If you use the callback URL <em>without</em> specifying the query parameter
 <code class="docutils literal"><span class="pre">showDetails=true</span></code>, only <em>basic</em> information is returned (jobId,
 callbackUrl, and status attributes):</p>
-<p><strong>Example: Basic Success Asynchronous Request: XML</strong></p>
+<p><strong>Example: Basic success asynchronous request: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80
 Accept: application/xml
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -176,7 +176,7 @@ Content-Type: application/xml
 Content-Length: 0
 </pre></div>
 </div>
-<p><strong>Example: Basic Success Asynchronous Request: JSON</strong></p>
+<p><strong>Example: Basic success asynchronous request: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80
 Accept: application/json
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -188,7 +188,7 @@ Content-Length: 0
 running, another 202 ACCEPTED response is returned with the same
 information as the previous one.</p>
 <p>If the request is successful, the <code class="docutils literal"><span class="pre">status</span></code> is <code class="docutils literal"><span class="pre">COMPLETED</span></code>:</p>
-<p><strong>Example: Basic Success Asynchronous Response: XML</strong></p>
+<p><strong>Example: Basic success asynchronous response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -203,7 +203,7 @@ Content-Length: 455
 &lt;/asyncresponse&gt;
 </pre></div>
 </div>
-<p><strong>Example: Basic Success Asynchronous Response: JSON</strong></p>
+<p><strong>Example: Basic success asynchronous response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -219,7 +219,7 @@ Content-Length: 190
 </div>
 <p>If you specify the query parameter <code class="docutils literal"><span class="pre">showDetails=true</span></code> for the callback
 URL, <em>detailed</em> information is returned (all attributes) :</p>
-<p><strong>Example: Detail Success Asynchronous Request: XML</strong></p>
+<p><strong>Example: Detail success asynchronous request: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80?showDetails=true
 Accept: application/xml
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -227,7 +227,7 @@ Content-Type: application/xml
 Content-Length: 0
 </pre></div>
 </div>
-<p><strong>Example: Detail Success Asynchronous Request: JSON</strong></p>
+<p><strong>Example: Detail success asynchronous request: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80?showDetails=true
 Accept: application/json
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -237,7 +237,7 @@ Content-Length: 0
 </div>
 <p>If the request is successful, this includes the <code class="docutils literal"><span class="pre">response</span></code>, which
 contains the results of the operation:</p>
-<p><strong>Example: Detail Success Asynchronous Response: XML</strong></p>
+<p><strong>Example: Detail success asynchronous response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -269,7 +269,7 @@ Content-Length: 1187
 &lt;/asyncresponse&gt;
 </pre></div>
 </div>
-<p><strong>Example: Detail Success Asynchronous Response: JSON</strong></p>
+<p><strong>Example: Detail success asynchronous response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -312,7 +312,7 @@ Additional attributes and elements have been omitted for clarity.</p>
 querying the callback URL will return the information about the error.
 If you use the callback URL without specifying the query parameter
 <code class="docutils literal"><span class="pre">showDetails=true</span></code>, only basic information is provided:</p>
-<p><strong>Example: Basic Error Asynchronous Response: XML</strong></p>
+<p><strong>Example: Basic error asynchronous response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -327,7 +327,7 @@ Content-Length: 451
 &lt;/asyncresponse&gt;
 </pre></div>
 </div>
-<p><strong>Example: Basic Error Asynchronous Response: JSON</strong></p>
+<p><strong>Example: Basic error asynchronous response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -343,7 +343,7 @@ Content-Length: 186
 </div>
 <p>If you use the callback URL with the query parameter
 <code class="docutils literal"><span class="pre">showDetails=true</span></code>, then detailed information is provided:</p>
-<p><strong>Example: Detail Error Asynchronous Response: XML</strong></p>
+<p><strong>Example: Detail error asynchronous response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -371,7 +371,7 @@ Content-Length: 847
 &lt;/asyncresponse&gt;
 </pre></div>
 </div>
-<p><strong>Example: Detail Error Asynchronous Response: JSON</strong></p>
+<p><strong>Example: Detail error asynchronous response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -400,7 +400,7 @@ Content-Length: 564
 attributes and elements have been omitted for clarity.</p>
 </div>
 <div class="section" id="viewing-status-of-all-asynchronous-job-requests">
-<h2>Viewing Status of All Asynchronous Job Requests<a class="headerlink" href="#viewing-status-of-all-asynchronous-job-requests" title="Permalink to this headline">¶</a></h2>
+<h2>Viewing status of all asynchronous job requests<a class="headerlink" href="#viewing-status-of-all-asynchronous-job-requests" title="Permalink to this headline">¶</a></h2>
 <p>As well as viewing status for a <em>particular job ID</em>, as described in the
 previous section, you can also view status information for <em>all</em>
 asynchronous job requests for an account. You can also filter the
@@ -415,8 +415,8 @@ shown</li>
 <li><code class="docutils literal"><span class="pre">showDetails</span></code>– if <code class="docutils literal"><span class="pre">true</span></code>, specifies that job details are shown</li>
 </ul>
 <p>In addition, paging request parameters <code class="docutils literal"><span class="pre">limit</span></code> and <code class="docutils literal"><span class="pre">offset</span></code> can also
-be supplied for the request. Refer to <a href="#id1"><span class="problematic" id="id2">`the section called
-“Pagination” fixmefixmefixme&gt;`__</span></a> for details.</p>
+be supplied for the request.
+See <a class="reference internal" href="pagination.html#cdns-dg-pagination"><span>Pagination</span></a> for details.</p>
 <p>The default values for these request parameters (if they are not
 specified) are:</p>
 <ul class="simple">
@@ -440,12 +440,12 @@ parameters.</p>
 <p>Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
 unauthorized (401), badRequest (400), itemNotFound (404), overLimit
 (413)</p>
-<p>By omitting the <em>``showDetails``</em> parameter from the request (or
+<p>By omitting the <code class="docutils literal"><span class="pre">showDetails</span></code> parameter from the request (or
 explicitly setting it to <code class="docutils literal"><span class="pre">false</span></code>), you can request basic information
 for all errors, running jobs, and completed jobs for the account. By
 default (with no query parameters specified) only <em>basic</em> information is
 requested:</p>
-<p><strong>Example: Get Basic Status for All Jobs Request: XML</strong></p>
+<p><strong>Example: Get basic status for all jobs request: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status
 Accept: application/xml
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -453,7 +453,7 @@ Content-Type: application/xml
 Content-Length: 0
 </pre></div>
 </div>
-<p><strong>Example: Get Basic Status for All Jobs Request: JSON</strong></p>
+<p><strong>Example: Get basic status for all jobs request: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status
 Accept: application/json
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -463,7 +463,7 @@ Content-Length: 0
 </div>
 <p>The response lists all the user&#8217;s jobs that have had errors, followed by
 those still running, and then those that have completed:</p>
-<p><strong>Example: Get Basic Status for All Jobs Response: XML</strong></p>
+<p><strong>Example: Get basic status for all jobs response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -485,7 +485,7 @@ Content-Length: 822
 &lt;/asyncjobsstatus&gt;
 </pre></div>
 </div>
-<p><strong>Example: Get Basic Status for All Jobs Response: JSON</strong></p>
+<p><strong>Example: Get basic status for all jobs response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -507,8 +507,8 @@ Content-Length: 482
 </pre></div>
 </div>
 <p>To get <em>detailed</em> status information for all jobs, set the
-<em>``showDetails``</em> parameter to true (<code class="docutils literal"><span class="pre">showDetails=true</span></code>):</p>
-<p><strong>Example: Get Detailed Status for All Jobs Request: XML</strong></p>
+<code class="docutils literal"><span class="pre">showDetails</span></code> parameter to true (<code class="docutils literal"><span class="pre">showDetails=true</span></code>):</p>
+<p><strong>Example: Get detailed status for all jobs request: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status?showDetails=true
 Accept: application/xml
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -516,7 +516,7 @@ Content-Type: application/xml
 Content-Length: 0
 </pre></div>
 </div>
-<p><strong>Example: Get Detailed Status for All Jobs Request: JSON</strong></p>
+<p><strong>Example: Get detailed status for all jobs request: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET https://dns.api.rackspacecloud.com/v1.0/1234/status?showDetails=true
 Accept: application/json
 X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
@@ -526,7 +526,7 @@ Content-Length: 0
 </div>
 <p>The response lists all the user&#8217;s jobs that have had errors, followed by
 those still running, and then those that have completed:</p>
-<p><strong>Example: Get Detailed Status for All Jobs Response: XML</strong></p>
+<p><strong>Example: Get detailed status for all jobs response: XML</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -562,7 +562,7 @@ Content-Length: 1601
 &lt;/asyncjobsstatus&gt;
 </pre></div>
 </div>
-<p><strong>Example: Get Detailed Status for All Jobs Response: JSON</strong></p>
+<p><strong>Example: Get detailed status for all jobs response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>Status: 202 Accepted
 Date: Thu, 28 Jul 2011 21:54:21 GMT
 X-API-VERSION: 1.0.17
@@ -626,11 +626,43 @@ Content-Length: 1170
 </ul>
 <ul>
   
+<a href="request-response-types.html"><<</a>
+
 |
+
+<a href="content-compression.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request and response types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Synchronous and asynchronous responses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-status-of-all-asynchronous-job-requests">Viewing status of all asynchronous job requests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

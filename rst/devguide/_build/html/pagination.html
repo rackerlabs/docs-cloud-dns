@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="pagination">
-<h1>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h1>
+<span id="cdns-dg-pagination"></span><h1>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h1>
 <p>Pagination is the ability to limit the size of the returned data as well
 as retrieve a specified subset of a large data set. Pagination has two
 key concepts: limit and offset. <em>Limit</em> is the restriction on the
@@ -104,7 +104,7 @@ and offset are specified via request parameters on the URI. The
 parameters are named <code class="docutils literal"><span class="pre">limit</span></code> and <code class="docutils literal"><span class="pre">offset</span></code> respectively, and both
 apply only to <strong>GET</strong> calls. If unspecified, they default to
 <code class="docutils literal"><span class="pre">limit=100</span></code> and <code class="docutils literal"><span class="pre">offset=0</span></code>. See the examples that follow.</p>
-<p><strong>Examples of Limits and Offsets for Paging Calls</strong></p>
+<p><strong>Examples of limits and offsets for paging calls</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>....\domains?limit=50              -- returns the first 50 domains, that is: 1 - 50
 ....\domains?limit=50&amp;offset=50    -- returns the domains 51-100
 ....\domains?limit=25&amp;offset=50    -- returns the domains 51-75
@@ -116,23 +116,42 @@ apply only to <strong>GET</strong> calls. If unspecified, they default to
 </pre></div>
 </div>
 <p>Pagination applies only to the calls listed here:</p>
-<dl class="docutils">
-<dt><strong>GET</strong>/domains/</dt>
-<dd>List all domains manageable by the account specified.</dd>
-<dt><strong>GET</strong>/domains/?name=*``domainName``*</dt>
-<dd>Filter domains by domain name: list all domains manageable by the
-account specified that match the name domainName.</dd>
-<dt><strong>GET</strong>/domains/<em>``domainID``</em></dt>
-<dd>List details of the specified domain. Applies to the records and
-subdomains lists.</dd>
-<dt><strong>GET</strong>/domains/<em>``domainID``</em>/subdomains</dt>
-<dd>List domains that are subdomains of the specified domain.</dd>
-<dt><strong>GET</strong>/domains/<em>``domainID``</em>/records</dt>
-<dd>List all records configured for the domain.</dd>
-</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="20%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Verb</td>
+<td>URI</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>GET</td>
+<td>/domains/</td>
+<td>List all domains manageable by the account specified.</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td>/domains/?name=domainName</td>
+<td>Filter domains by domain name: list all domains manageable by the account specified that match the name domainName.</td>
+</tr>
+<tr class="row-even"><td>GET</td>
+<td>/domains/domainID</td>
+<td>List details of the specified domain. Applies to the recordsand subdomains lists.</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td>/domains/domainID/subdomains</td>
+<td>List domains that are subdomains of the specified domain.</td>
+</tr>
+<tr class="row-even"><td>GET</td>
+<td>/domains/domainID/records</td>
+<td>List all records configured for the domain.</td>
+</tr>
+</tbody>
+</table>
 <p>See the following section for examples of paged List Domains calls.</p>
 <div class="section" id="pagination-elements-and-attributes">
-<h2>Pagination Elements and Attributes<a class="headerlink" href="#pagination-elements-and-attributes" title="Permalink to this headline">¶</a></h2>
+<h2>Pagination elements and attributes<a class="headerlink" href="#pagination-elements-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>For any collection in a result, there is a <code class="docutils literal"><span class="pre">totalEntries</span></code> attribute
 representing the total number of entries there are for this item type.
 If the number of items requested in the <strong>GET</strong> call is less then the
@@ -336,11 +355,43 @@ the attribute <code class="docutils literal"><span class="pre">rel=&quot;previou
 </ul>
 <ul>
   
+<a href="comments.html"><<</a>
+
 |
+
+<a href="supported-record-types.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request and response types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and asynchronous responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Pagination</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pagination-elements-and-attributes">Pagination elements and attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

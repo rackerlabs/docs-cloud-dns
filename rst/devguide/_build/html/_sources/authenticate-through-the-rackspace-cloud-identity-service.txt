@@ -1,3 +1,5 @@
+.. _cdns-dg-authentication:
+
 =========================================================
 Authenticate through the Rackspace Cloud Identity Service
 =========================================================
@@ -30,7 +32,9 @@ authentication response.
 For detailed information about the Identity Service v2.0, see the
 *Cloud Identity Client Developer Guide API v2.0*.
 
-Rackspace Cloud Identity Service Endpoints
+.. _cdns-dg-authentication-endpoints:
+
+Rackspace Cloud Identity Service endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important:: Multiple Rackspace Cloud Identity Service endpoints exist. You
@@ -42,7 +46,7 @@ When you authenticate, use one of the following endpoints:
    special considerations for choosing a data center at
    http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions.
 
-**Table: Rackspace Cloud Identity Service Endpoints**
+**Table: Rackspace Cloud Identity Service endpoints**
 
 +--------------------+--------------------------------------------------------+
 | National location  | Rackspace Cloud Identity Service endpoint              |
@@ -55,7 +59,7 @@ When you authenticate, use one of the following endpoints:
 For information about support for legacy identity endpoints, search for
 alternate authentication endpoints here on this site.
 
-Authentication Request
+Authentication request
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To authenticate, issue a **POST** **/tokens** request to the appropriate
@@ -116,7 +120,7 @@ Key: JSON Request**
    more readable: | python -m json.tool
 
 
-Authentication Response
+Authentication response
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 In response to valid credentials, your request returns an authentication

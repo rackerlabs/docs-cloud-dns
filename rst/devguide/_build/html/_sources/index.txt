@@ -24,6 +24,7 @@ General API Information
 .. toctree::
    :maxdepth: 2
 
+   general-api-information
    authenticate-through-the-rackspace-cloud-identity-service
    dns-service-versions
    request-response-types

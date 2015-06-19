@@ -97,7 +97,7 @@ programmatically via the Rackspace Cloud DNS API as described in this
 Cloud DNS Developer Guide.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Refer to the section called “DNS Propagation” for information.</p>
+<p class="last">See <a class="reference internal" href="dns-propagation.html#cdns-dg-propagation"><span>DNS propagation</span></a> for information about DNS propagation.</p>
 </div>
 <p>The following figure shows an overview of Cloud DNS Infrastructure:</p>
 <div class="figure">
@@ -108,7 +108,7 @@ Forum</a>.</p>
 <p>Issues and bug reports can be directed to your support team via ticket,
 chat, email, or phone.</p>
 <div class="section" id="intended-audience">
-<h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">¶</a></h2>
+<h2>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">¶</a></h2>
 <p>This Guide is intended to assist software developers who want to develop
 applications using the Cloud DNS Service API. To use the information
 provided here, you should first have a general understanding of the DNS
@@ -120,6 +120,32 @@ service. You should also be familiar with:</p>
 <li>HTTP/1.1 conventions</li>
 <li>JSON and/or XML data serialization formats</li>
 </ul>
+</div>
+<div class="section" id="document-change-history">
+<h2>Document change history<a class="headerlink" href="#document-change-history" title="Permalink to this headline">¶</a></h2>
+<p>This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:</p>
+<div class="section" id="may-15-2015">
+<h3>May 15, 2015<a class="headerlink" href="#may-15-2015" title="Permalink to this headline">¶</a></h3>
+<p>Added note about using special characters in record searches. See <a class="reference external" href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/GET_searchRecords_v1.0__account__domains__domainId__records_records.html">http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/GET_searchRecords_v1.0__account__domains__domainId__records_records.html</a>.</p>
+</div>
+<div class="section" id="march-30-2015">
+<h3>March 30, 2015<a class="headerlink" href="#march-30-2015" title="Permalink to this headline">¶</a></h3>
+<p>Added note for exporting domain with more than 300 records. See <a class="reference external" href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/GET_exportDomain_v1.0__account__domains__domainId__export_domains.html">http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/GET_exportDomain_v1.0__account__domains__domainId__export_domains.html</a>.</p>
+</div>
+<div class="section" id="february-25-2015">
+<h3>February 25, 2015<a class="headerlink" href="#february-25-2015" title="Permalink to this headline">¶</a></h3>
+<p>Removed London endpoint, since we now have one global endpoint for the Rackspace Authentication
+Service. See <a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html#cdns-dg-authentication-endpoints"><span>Identity service endpoints</span></a>.</p>
+</div>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<p>You can download the most current versions of other API-related documents from <a class="reference external" href="http://docs.rackspace.com/">http://docs.rackspace.com/</a>.</p>
+<p>For more details about Rackspace Cloud DNS, refer to <a class="reference external" href="http://www.rackspace.com/cloud/dns">http://www.rackspace.com/cloud/dns</a>. This site also offers links to Rackspace&#8217;s official support channels, including knowledge center articles, forums, phone, chat, and email.</p>
+<p>Using this API document, your Rackspace Cloud account, and at least two cloud servers, you can get started whenever you&#8217;d like. See the <em>Getting Started with Rackspace Cloud DNS</em> at <a class="reference external" href="http://docs.rackspace.com/">http://docs.rackspace.com/</a> for information about getting started using the API.</p>
+<p>Please visit our <a class="reference external" href="http://feedback.rackspace.com">Product Feedback Forum</a> and let us know what you think about Cloud DNS!</p>
+<p>You can also follow Rackspace updates and announcements via <a class="reference external" href="https://twitter.com/rackspace">Twitter</a>.</p>
+<p>This API uses standard HTTP 1.1 response codes as documented at <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a>.</p>
 </div>
 </div>
 
@@ -142,11 +168,44 @@ service. You should also be familiar with:</p>
 </ul>
 <ul>
   
+<a href="index.html"><<</a>
+
 |
+
+<a href="concepts.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#intended-audience">Intended audience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-change-history">Document change history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request/Response Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and Asynchronous Responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 
