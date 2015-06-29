@@ -19,8 +19,6 @@ returned by default. If more detail is desired, any status URL may
 include an optional ``showDetails`` query parameter that will display
 more information regarding the original request:
 
-**GET** /status/``jobId``? ``showDetails`` =\ ``[true|false]``
-
 **GET** /status/*jobId*\ ?\ ``showDetails``\ =\ ``[true|false]``
 
    List status of the specified asynchronous request. Display details, as
