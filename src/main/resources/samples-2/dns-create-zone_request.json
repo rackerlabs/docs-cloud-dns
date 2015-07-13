@@ -1,0 +1,11 @@
+POST /v2/zones HTTP/1.1
+Host: 127.0.0.1:9001
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "example.org.",
+    "email": "joe@example.org",
+    "ttl": 7200,
+    "description": "This is an example zone."
+}

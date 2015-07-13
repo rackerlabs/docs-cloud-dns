@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application [
+    <!ENTITY % common  SYSTEM "common.ent">
+    %common;
+]>
+<application xmlns="http://wadl.dev.java.net/2009/02"
+             xmlns:rax="http://docs.rackspace.com/api"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:wadl="http://wadl.dev.java.net/2009/02"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:svg="http://www.w3.org/2000/svg"
+             xmlns:m="http://www.w3.org/1998/Math/MathML"
+             xmlns:html="http://www.w3.org/1999/xhtml"
+             xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+   <!--
+     The roles dnsaas:observer and observer have permissions to list/get
+     zones and recordsets.
+     The role dnsaas:creator has permissions to list/get/create/update/delete
+     zones and recordsets.
+     The roles dnsaas:admin, dnsaas:service-admin, identity:user-admin, admin
+     have permissions to all operations - namely - list/get/create/update/delete/abandon
+     zones and recordsets, list/get/create/update/delete tlds,blacklists,pools.
+   -->
+  <resources base="http://localhost:8080">
+    <resource id="zones" path="/v2/zones" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <method href="#createZone"/>
+      <method href="#listZones" rax:roles="dnsaas:observer observer"/>
+    </resource>
+ 
+    <resource id="zone_id" path="/v2/zones/{zone_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="zone_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xml:lang="EN"><para>The zone ID for the specified zone.</para>
+        </wadl:doc>
+      </param>
+      <method href="#updateZone"/>
+      <method href="#deleteZone"/>
+    </resource>
+ 
+    <resource id="zone_id_tasks" path="/v2/zones/{zone_id}/tasks/abandon" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="zone_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The zone ID for the specified zone.</para>
+        </wadl:doc>
+        </param>
+      <method href="#abandonZone"/>
+    </resource>
+    
+    <resource id="zone_id_recordset" path="/v2/zones/{zone_id}/recordsets" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="zone_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The zone ID for the specified zone.</para>
+        </wadl:doc>
+      </param>
+      <method href="#createRecordset"/>
+      <method href="#listRecordsets" rax:roles="dnsaas:observer observer"/>
+    </resource>
+    
+    <resource id="recordset_id_recordset" path="/v2/zones/{zone_id}/recordsets/{recordset_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="zone_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The zone ID for the specified zone.</para>
+        </wadl:doc>
+      </param>
+      <param style="template" type="xs:string" name="recordset_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The record set ID for the specified record set.</para>
+        </wadl:doc>
+      </param>
+      <method href="#updateRecordset"/>
+      <method href="#listRecordset"/>
+      <method href="#deleteRecordset"/>
+    </resource>
+    
+ <!--
+    
+ 
+
+   
+
+    <resource path="/v2/tlds" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <method name="POST"/>
+      <method name="GET"/>
+    </resource>
+    <resource path="/v2/tlds/{tld_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="tld_id"/>
+      <method name="PATCH"/>
+      <method name="DELETE"/>
+      <method name="GET"/>
+    </resource>
+
+    <resource path="/v2/blacklists" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <method name="POST"/>
+      <method name="GET"/>
+    </resource>
+    <resource path="/v2/blacklists/{blacklist_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="blacklist_id"/>
+      <method name="PATCH"/>
+      <method name="DELETE"/>
+      <method name="GET"/>
+    </resource>
+
+    <resource path="/v2/pools" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <method name="POST"/>
+      <method name="GET"/>
+    </resource>
+    <resource path="/v2/pools/{pool_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="pool_id"/>
+      <method name="PATCH"/>
+      <method name="DELETE"/>
+      <method name="GET"/>
+    </resource>
+-->
+    <!--
+      The operations at the admin endpoint are available to roles dnsaas:admin,
+      dnsaas:service-admin, identity:user-admin, admin.
+    -->
+    
+ <!--    
+    <resource path="/admin/reports/counts" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <method name="GET"/>
+    </resource>
+    <resource path="/admin/reports/counts/{criterion}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="criterion"/>
+      <method name="GET"/>
+    </resource>
+    <resource path="/admin/reports/tenants" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <method name="GET"/>
+    </resource>
+    <resource path="/admin/reports/tenants/{tenant_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="tenant_id"/>
+      <method name="GET"/>
+    </resource>
+    <resource path="/admin/quotas/{tenant_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="tenant_id"/>
+      <method name="GET"/>
+      <method name="PATCH"/>
+      <method name="DELETE"/>
+    </resource>
+    <resource path="/admin/zones/export/{zone_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="zone_id"/>
+      <method name="GET"/>
+    </resource>
+    <resource path="/admin/zones/import" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <method name="POST"/>
+    </resource>  
+ -->
+  </resources>
+  
+  <!-- zones -->
+  
+  <method id="createZone" name="POST">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Create zone">
+      <para role="shortdesc">Creates a zone with the
+        configuration defined by the request.</para>
+      <note>
+        <para>This call returns an asynchronous
+          response. Refer to <link
+            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> 
+          for more details and examples of the way that asynchronous responses work. </para>
+      </note>
+      
+      <para>This call provisions a new DNS zone, based on the configuration defined
+        in the request object. If the corresponding request cannot
+        be fulfilled due to insufficient or invalid data, an
+        <code>HTTP</code>
+        <returnvalue>400 (Bad Request)</returnvalue> error
+        response will be returned with information regarding the
+        nature of the failure in the body of the response.
+        Failures in the validation process are non-recoverable and
+        require the caller to correct the cause of the failure and
+        <command>POST</command> the request again. <note>
+          <title>Notes</title>
+          <itemizedlist>
+            <listitem security="reviewer">
+              <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/dns_propagation.html">DNS Propagation</link>
+                for information about DNS propagation.</para>
+            </listitem>
+            <listitem>
+              <para>If you attempt to create a zone that
+                already exists, the API will return an
+                exception saying that the zone already
+                exists.</para>
+            </listitem>
+            
+            <listitem security="reviewer">
+              <para>When a domain is created, and no Time To
+                Live (TTL) is specified, the SOA minTTL (3600
+                seconds) is used as the default. When a record
+                is added without a specified TTL, it will
+                receive the domain TTL by default. When the
+                domain and/or record TTL is supplied by the
+                user, either via a create or update call, the
+                TTL values must be 300 seconds or more.</para>
+            </listitem>
+            <listitem security="reviewer">
+              <para>Subzones are managed in separate zone
+                files in the DNS system and will add some
+                overhead to domain management.</para>
+            </listitem>
+          </itemizedlist>
+        </note>
+      </para>
+      <para>The following examples show the Create zone
+        request:<?rax-fo keep-with-next?>
+      </para>
+      <note>
+        <para>The following examples show the
+          <emphasis>initial</emphasis> 202 Accepted response
+          for the asynchronous call and indicate that the task
+          has been accepted for processing.
+          Refer to <link
+            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+          of how the asynchronous call works.</para>
+      </note>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create zone: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-create-zone_request.json"/>
+        </wadl:doc>
+        <param name="name" style="plain" type="xs:string"
+          required="true" path="$.name">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
+              name.</para></wadl:doc>
+        </param>
+        <param name="type" style="plain" type="xs:string"
+          required="false" path="$.type">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Enum PRIMARY/SECONDARY, default PRIMARY (immutable).</para></wadl:doc>
+        </param>
+        <param name="email" style="plain" type="xs:string"
+          required="true" path="$.email">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Email address to use for
+              contacting the domain
+              administrator.</para></wadl:doc>
+        </param>
+        <param name="ttl" style="plain" type="xs:string"
+          required="false" path="$.ttl">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+        </param>
+        <param name="description" style="plain" type="xs:string"
+          required="false" path="$.description">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
+        </param>
+        <param name="masters" style="plain" type="xs:object"
+          required="false" path="$.masters">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Array of master nameservers. (NULL for type PRIMARY, required for SECONDARY otherwise zone will not be transferred before set.)</para></wadl:doc>
+        </param>
+      </representation>
+    </request>
+    <response status="202">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create zone: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-create-zone_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <method id="listZones" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List zones">
+      <para role="shortdesc">Lists all zones. </para>
+      <para>This operation provides a list of detailed information for all zones. A zone corresponds to a classic DNS domain.
+      </para>
+      
+      <para>A <code>self</code> link is included for each zone. These links point to each individual zone.</para>
+    </wadl:doc>
+    <request>
+      <!--       <param style="query" type="xs:string" name="name"
+            required="false">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"><para>The name of the domain for which to
+                  list details.</para></wadl:doc>
+         </param> -->
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zones: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-zones_request.json"/>
+        </wadl:doc>
+      </representation>
+      
+      <!--         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: XML request">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_request.json"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: XML request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_request.json"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: XML request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_request.json"
+               />
+            </wadl:doc>
+         </representation> -->
+      
+    </request>
+    <response status="200">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zones: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-zones_response.json"/>
+        </wadl:doc>
+      </representation>
+      
+      <!--          <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: XML response">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_response.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified domain Name: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-filter-domain-by-name_response.json"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: XML response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_response.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Fully Qualified Subdomain Name: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-name_response.json"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: XML response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_response.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Filter by Partial Name: JSON response">
+               <xsdxt:code
+                  href="../samples/dns-filter-subdomain-by-partial-name_response.json"
+               />
+            </wadl:doc>
+         </representation> -->
+    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; 
+  </method>
+  
+  <method id="updateZone" name="PATCH">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Update zone">
+      <para role="shortdesc">Updates the configuration of a
+        zone.</para>
+      <note>
+        <para>This call returns an asynchronous response. Refer to <link
+          xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+      </note>
+      <para security="reviewer">This call modifies DNS zone attributes only.
+        records cannot be added, modified, or Deleted. Only the
+        TTL, email address and comment attributes of a zone can
+        be modified.</para>
+      <para>If a request cannot be fulfilled due to insufficient or
+        invalid data, an <code>HTTP</code>
+        <returnvalue>400 (Bad Request)</returnvalue> error
+        response will be returned with information regarding the
+        nature of the failure in the body of the response.
+        Failures in the validation process are non-recoverable and
+        require the caller to correct the cause of the failure and
+        POST the request again.</para>
+      <note>
+        <title>Notes</title>
+        <itemizedlist>
+          <listitem security="reviewer">
+            <para>Refer to <link
+              xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/dns_propagation.html">DNS Propagation</link>
+              for information about DNS propagation.</para>
+          </listitem>
+          <listitem>
+            <para>A zone's <code>id</code> is immutable.
+            </para>
+          </listitem>
+          <listitem security="reviewer">
+            <para>When the zone TTL is supplied
+              by the user, either via a create or update call,
+              the TTL values must be 300 seconds or
+              more.</para>
+          </listitem>
+          <listitem security="reviewer">
+            <para>
+              <code>name</code> cannot be specified, because the
+              zone name cannot be modified.</para>
+          </listitem>
+        </itemizedlist>
+      </note>
+      
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Update zone: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-update-zone_request.json"/>
+        </wadl:doc>
+        <param name="name" style="plain" type="xs:string"
+          required="true" path="$.name">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
+              name.</para></wadl:doc>
+        </param>
+        <param name="type" style="plain" type="xs:string"
+          required="false" path="$.type">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Enum PRIMARY/SECONDARY, default PRIMARY (immutable).</para></wadl:doc>
+        </param>
+        <param name="email" style="plain" type="xs:string"
+          required="true" path="$.email">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Email address to use for
+              contacting the domain
+              administrator.</para></wadl:doc>
+        </param>
+        <param name="ttl" style="plain" type="xs:string"
+          required="false" path="$.ttl">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+        </param>
+        <param name="description" style="plain" type="xs:string"
+          required="false" path="$.description">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
+        </param>
+        <param name="masters" style="plain" type="xs:object"
+          required="false" path="$.masters">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Array of master nameservers. (NULL for type PRIMARY, required for SECONDARY otherwise zone will not be transferred before set.)</para></wadl:doc>
+        </param>
+      </representation>
+    </request> 
+    <response status="200">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Update zone: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-update-zone_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <method id="deleteZone" name="DELETE">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Delete zone">
+      <para role="shortdesc">This operation deletes a zone.</para>
+      <note>
+        <para>This operation returns an asynchronous
+          response, as
+          described in <link
+            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
+        </para>
+        <para>Once pool manager has deleted the zone from all the pool targets, the zone is deleted from storage.</para>
+      </note>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete zone: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-delete-zone_request.json"/>
+        </wadl:doc>
+      </representation>
+      <!--         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN" title="Delete domains: XML request">
+               <xsdxt:code
+                  href="../samples/dns-delete-domains_request.xml"/>
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN" title="Delete domains: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-delete-domains_request.json"/>
+            </wadl:doc>
+         </representation> -->
+      
+      <!--        <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Delete domain and subdomains: XML request">
+               <xsdxt:code
+                  href="../samples/dns-delete-domain-subdomains_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Delete domain and subdomains: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-delete-domain-subdomains_request.json"
+               />
+            </wadl:doc>
+         </representation> 
+         <representation mediaType="application/xml">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Delete domains and subdomains: XML request">
+               <xsdxt:code
+                  href="../samples/dns-delete-domains-subdomains_request.xml"
+               />
+            </wadl:doc>
+         </representation>
+         <representation mediaType="application/json">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"
+               title="Delete domains and subdomains: JSON request">
+               <xsdxt:code
+                  href="../samples/dns-delete-domains-subdomains_request.json"
+               />
+            </wadl:doc>
+         </representation> -->
+    </request>
+    <response status="202">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete zone: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-delete-zone_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <method id="abandonZone" name="POST">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Abandon zone">
+      <para role="shortdesc">Abandons a
+        zone.</para>
+      <para>This operation removes the zone from DNS storage. There is no operation done on the pool targets. 
+        This is intended to be used in the cases where DNS storage is incorrect for whatever reason. 
+        By default this is restricted by policy (abandon_domain) to admins.</para>
+      <note security="reviewer">
+        <para>This call returns an asynchronous response. Refer to <link
+          xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+      </note>
+      
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Abandon zone: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-abandon-zone_request.json"/>
+        </wadl:doc>
+        
+      </representation>
+    </request> 
+    <response status="204">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Abandon zone: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-abandon-zone_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <!-- record sets -->
+  
+  <method id="createRecordset" name="POST">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Create record set">
+      <para role="shortdesc">Creates a record set with the
+        configuration defined by the request.</para>
+      
+      <para>This operation creates a record set with the
+        configuration defined by the request.</para>
+      <para>A record set groups together a list of related records. It is the essential content 
+        of your zone file and is used to define the various domain to server routes for your application. 
+        Record sets are also referred to as <emphasis>Resource Record Sets</emphasis> or <emphasis>RRSets</emphasis>.</para>
+      <note>
+        <para>This operation returns an asynchronous
+          response. Refer to <link
+            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> 
+          for more details and examples of the way that asynchronous responses work. </para>
+      </note>
+      
+      <para security="reviewer">This operation provisions a new DNS record set, based on the configuration defined
+        in the request object. If the corresponding request cannot
+        be fulfilled due to insufficient or invalid data, an
+        <code>HTTP</code>
+        <returnvalue>400 (Bad Request)</returnvalue> error
+        response will be returned with information regarding the
+        nature of the failure in the body of the response.
+        Failures in the validation process are non-recoverable and
+        require the caller to correct the cause of the failure and
+        <command>POST</command> the request again.
+      </para>
+      <para>The following example shows the Create record set
+        request.<?rax-fo keep-with-next?>
+      </para>
+      <note>
+        <para>The following example shows the
+          <emphasis>final</emphasis> 201 Created response
+          for the asynchronous call and indicates that the task
+          has been completed.
+          Refer to <link
+            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+          of how the asynchronous call works.</para>
+      </note>
+      <para>The example illustrates a record set in the BIND file format.</para>
+      <para>This format can be used for common record set types including A, AAAA, CNAME, NS and TXT. 
+        Simply replace the type and records with the respective values. 
+        NS record sets can only be created and deleted. Examples for MX, SSHFP, SPF and SRV will follow.</para>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create record set: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-create-record-set_request.json"/>
+        </wadl:doc>
+        <param name="name" style="plain" type="xs:string"
+          required="true" path="$.name">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
+              name.</para></wadl:doc>
+        </param>
+        <param name="type" style="plain" type="xs:string"
+          required="false" path="$.type">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Type of record set.</para></wadl:doc>
+        </param>
+        <param name="ttl" style="plain" type="xs:string"
+          required="false" path="$.ttl">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+        </param>
+        <param name="description" style="plain" type="xs:string"
+          required="false" path="$.description">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
+        </param>
+        <param name="records" style="plain" type="xs:object"
+          required="true" path="$.records">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Array of record values.</para></wadl:doc>
+        </param>
+      </representation>
+    </request>
+    <response status="202">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create record set: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-create-record-set_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <method id="listRecordsets" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List record sets">
+    <para role="shortdesc">Lists all record sets for the specified zone id. </para>
+      <para>This operation provides detailed information for all record sets for the specified zone id. 
+    </para>
+    
+      <para security="reviewer">A <code>self</code> link is included for each record set. These links point to each individual record set. 
+        A <code>self</code> link is also included for the current List record set operation. </para>
+    </wadl:doc>
+    <request>
+      <!--       <param style="query" type="xs:string" name="name"
+            required="false">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook"
+               xml:lang="EN"><para>The name of the domain for which to
+                  list details.</para></wadl:doc>
+         </param> -->
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List record sets: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-record-sets_request.json"/>
+        </wadl:doc>
+      </representation>   
+    </request>
+    <response status="200">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List record sets: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-record-sets_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; 
+  </method>
+  
+  <method id="updateRecordset" name="PUT">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Update record set">
+      <para role="shortdesc">Replaces the specified record set with the specified details.</para>
+      <note>
+        <para>This call returns an asynchronous response. Refer to <link
+          xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+      </note>
+      
+      <para>If a request cannot be fulfilled due to insufficient or
+        invalid data, an <code>HTTP</code>
+        <returnvalue>400 (Bad Request)</returnvalue> error
+        response will be returned with information regarding the
+        nature of the failure in the body of the response.
+        Failures in the validation process are non-recoverable and
+        require the caller to correct the cause of the failure and
+        POST the request again.</para>
+      <para>In the example shown below, the TTL is updated to <code>3600</code>.</para>
+      
+      
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Update record set: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-update-record-set_request.json"/>
+        </wadl:doc>
+        <param name="name" style="plain" type="xs:string"
+          required="true" path="$.name">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para security="reviewer">The name for the zone (immutable). Must be a valid zone
+              name.</para></wadl:doc>
+        </param>
+        <param name="type" style="plain" type="xs:string"
+          required="false" path="$.type">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>Type of record set. Cannot be changed on update (immutable).</para></wadl:doc>
+        </param>
+        <param name="ttl" style="plain" type="xs:string"
+          required="false" path="$.ttl">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+        </param>
+        <param name="description" style="plain" type="xs:string"
+          required="false" path="$.description">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
+        </param>
+        <param name="records" style="plain" type="xs:object"
+          required="false" path="$.records">
+          <wadl:doc xmlns="http://docbook.org/ns/docbook"
+            xml:lang="EN"><para>A list of data records.</para></wadl:doc>
+        </param>
+      </representation>
+    </request> 
+    <response status="200">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Update record set: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-update-record-set_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <method id="listRecordset" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List record set">
+      <para role="shortdesc">Retrieves a record set with the specified record set ID.</para>
+      
+      <para>If a request cannot be fulfilled due to insufficient or
+        invalid data, an <code>HTTP</code>
+        <returnvalue>400 (Bad Request)</returnvalue> error
+        response will be returned with information regarding the
+        nature of the failure in the body of the response.
+        Failures in the validation process are non-recoverable and
+        require the caller to correct the cause of the failure and
+        POST the request again.</para>
+      <para>In the example shown below, the TTL is updated to <code>3600</code>.</para>
+      
+      
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List record set: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-record-set_request.json"/>
+        </wadl:doc>
+        
+      </representation>
+    </request> 
+    <response status="200">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List record set: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-record-set_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+  <method id="deleteRecordset" name="DELETE">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Deletes a record set with the specified record set ID">
+      <para role="shortdesc">This operation deletes a record set with the specified record set ID.</para>
+      <note>
+        <para>This operation returns an asynchronous
+          response, as
+          described in <link
+            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
+        </para>
+      </note>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete record set: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-delete-record-set_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="204">
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete record set: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-delete-record-set_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+  </method>
+  
+</application>

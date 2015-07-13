@@ -35,6 +35,20 @@
 	      <canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
 	    </configuration>
 	  </execution>
+		<execution>
+			<id>cdns-releasenotes</id>
+			<goals>
+				<goal>generate-webhelp</goal>
+			</goals>
+			<phase>initialize</phase>
+			<configuration>
+				<includes>cdns-releasenotes.xml</includes>
+				<enableDisqus>1</enableDisqus>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<chapterAutolabel>0</chapterAutolabel>
+				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
+			</configuration>
+		</execution>
 	  <execution>
 	    <id>cdns-releasenotes-internal</id>
 	    <goals>
@@ -51,20 +65,6 @@
 	      <canonicalUrlBase>http://docs-internal.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
 	    </configuration>
 	  </execution>
-	  <execution>
-	    <id>cdns-releasenotes</id>
-	    <goals>
-	      <goal>generate-webhelp</goal>
-	    </goals>
-	    <phase>initialize</phase>
-	    <configuration>
-	      <includes>cdns-releasenotes.xml</includes>
-	      <enableDisqus>1</enableDisqus>
-	      <enableGoogleAnalytics>1</enableGoogleAnalytics>
-	      <chapterAutolabel>0</chapterAutolabel>
-	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
-	    </configuration>
-	  </execution>
 	  <execution> 
 	    <id>cdns-devguide</id>
 	    <goals>
@@ -78,6 +78,21 @@
 	      <canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content</canonicalUrlBase>
 	    </configuration>
 	  </execution> 
+		
+		<execution> 
+			<id>cdns-devguide-2</id>
+			<goals>
+				<goal>generate-webhelp</goal>
+			</goals>
+			<phase>generate-sources</phase>
+			<configuration>
+				<enableDisqus>1</enableDisqus>
+				<includes>cdns-devguide-2.xml</includes>
+				<security>reviewer</security>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content</canonicalUrlBase>
+			</configuration>
+		</execution> 
 		
 	<!--  	<execution>
 			<id>cdns-devguide-w-wadl</id>
@@ -106,7 +121,24 @@
 	      <enableGoogleAnalytics>1</enableGoogleAnalytics>
 	    	<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content</canonicalUrlBase>
 	    </configuration>
-	  </execution>	  
+	  </execution>
+		
+	  <execution>
+			<id>cdns-getting-started-2</id>
+			<goals>
+				<goal>generate-webhelp</goal>
+			</goals>
+			<phase>generate-sources</phase>
+			<configuration>
+				<enableDisqus>1</enableDisqus>
+				<includes>cdns-getting-started-2.xml</includes>
+				<webhelpDefaultTopic>DNS_Overview.html</webhelpDefaultTopic>
+				<security>reviewer</security>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started-2/content</canonicalUrlBase>
+			</configuration>
+	</execution>
+		
 	</executions>
 	<configuration>
 	  <sourceDirectory>src/main/resources</sourceDirectory>
