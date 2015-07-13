@@ -710,20 +710,21 @@
                     <thead>
                         <tr align="center">
 
-                            <td colspan="4">Endpoint</td>
+                            <td colspan="1">Endpoint</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr align="left">
 
-                            <td colspan="4"
-                                   ><code>https://dns.api.rackspacecloud.com/v2/</code></td>
+                            <td colspan="1">
+                                <code>https://dns.api.rackspacecloud.com/v2/</code></td>
                         </tr>
-                        <tr align="left">
+                    <tr align="left" security="writeronly">
 
-                            <td colspan="4" security="writeronly">
+                            <td colspan="1">
                                 <code>https://lon.dns.api.rackspacecloud.com/v2/</code></td>
-                        </tr>
+                        </tr>  
+                              
                     </tbody>
                 </table>
             </para>

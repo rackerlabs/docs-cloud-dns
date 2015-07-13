@@ -851,18 +851,18 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                 <thead>
                     <tr align="center">
                         
-                        <td colspan="4">Endpoint</td>
+                        <td colspan="1">Endpoint</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr align="left">
                         
-                        <td colspan="4">
+                        <td colspan="1">
                             <code>https://dns.api.rackspacecloud.com/v2/</code></td>
                     </tr>
-                    <tr align="left">
+                    <tr align="left" security="writeronly">
                         
-                        <td colspan="4" security="writeronly">
+                        <td colspan="1" >
                             <code>https://lon.dns.api.rackspacecloud.com/v2/</code></td>
                     </tr>
                 </tbody>
