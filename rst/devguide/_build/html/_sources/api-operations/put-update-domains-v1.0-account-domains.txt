@@ -1,0 +1,186 @@
+
+.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
+
+=============================================================================
+Update Domains -  Rackspace Cloud DNS Developer Guide
+=============================================================================
+
+Update Domains
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <put-update-domains-v1.0-account-domains.html#request>`__
+`Response <put-update-domains-v1.0-account-domains.html#response>`__
+
+.. code::
+
+    PUT /v1.0/{account}/domains
+
+Updates the configurations of multiple domains.
+
+.. note::
+   This call returns an asynchronous response, as described in `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__.
+   
+   
+
+This call modifies DNS domain(s) attributes only. records cannot be added, modified, or Deleted. Only the TTL, email address and comment attributes of a domain can be modified.
+
+If a request cannot be fulfilled due to insufficient or invalid data, an ``HTTP`` 400 (Bad Request) error response will be returned with information regarding the nature of the failure in the body of the response. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.
+
+.. note::
+   Notes 
+   
+   *  Refer to `DNS Propagation <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/dns_propagation.html>`__ for information about DNS propagation.
+   *  A domain's ``id`` is immutable.
+   *  When the domain and/or record TTL is supplied by the user, either via a create or update call, the TTL values must be 300 seconds or more.
+   
+   
+   
+
+.. note::
+   ``name`` cannot be specified, because the domain name cannot be modified.
+   
+   
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|202                       |Accepted                 |Request is accepted.     |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |dnsFault                 |The DNS service has      |
+|                          |                         |experienced a fault.     |
++--------------------------+-------------------------+-------------------------+
+|409                       |Already Exists           |The item already exists. |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The service is not       |
+|                          |                         |available.               |
++--------------------------+-------------------------+-------------------------+
+|401                       |Unauthorized             |You are not authorized   |
+|                          |                         |to complete this         |
+|                          |                         |operation. This error    |
+|                          |                         |can occur if the request |
+|                          |                         |is submitted with an     |
+|                          |                         |invalid authentication   |
+|                          |                         |token.                   |
++--------------------------+-------------------------+-------------------------+
+|400                       |Bad Request              |The request is missing   |
+|                          |                         |one or more elements, or |
+|                          |                         |the values of some       |
+|                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
+|413                       |Over Limit               |The number of items      |
+|                          |                         |returned is above the    |
+|                          |                         |allowed limit.           |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|X-Auth-Token              |xs:string *(Required)*   |Arbitrary character      |
+|                          |                         |string generated by the  |
+|                          |                         |authentication service   |
+|                          |                         |in response to valid     |
+|                          |                         |credentials.             |
++--------------------------+-------------------------+-------------------------+
+|{account}                 |*(Required)*             |The tenant ID.           |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+This table shows the body parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|id                        |xs:string *(Required)*   |For modifying multiple   |
+|                          |                         |domains, the id for each |
+|                          |                         |domain must be specified |
+|                          |                         |as an attribute. Note    |
+|                          |                         |that for modifying a     |
+|                          |                         |single domain, the id is |
+|                          |                         |a required parameter at  |
+|                          |                         |the end of the API call  |
+|                          |                         |URI.                     |
++--------------------------+-------------------------+-------------------------+
+|emailAddress              |xs:string *(Required)*   |Email address to use for |
+|                          |                         |contacting the domain    |
+|                          |                         |administrator.           |
++--------------------------+-------------------------+-------------------------+
+|ttl                       |xs:string *(Required)*   |If specified, must be    |
+|                          |                         |greater than or equal to |
+|                          |                         |300.                     |
++--------------------------+-------------------------+-------------------------+
+|comment                   |xs:string *(Required)*   |If included, its length  |
+|                          |                         |must be less than or     |
+|                          |                         |equal to 160 characters. |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+**Example Update domains: XML request**
+
+
+.. code::
+
+    PUT https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+    Accept: application/xml
+    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+    Content-Type: application/xml
+    Content-Length: 441
+    
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <domains xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
+        <domain id="2725233" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment..."/>
+        <domain id="2725257" emailAddress="sample@rackspace.com" comment="1st sample subdomain"/>
+    </domains>
+    
+
+
+**Example Update domains: JSON request**
+
+
+.. code::
+
+    PUT https://dns.api.rackspacecloud.com/v1.0/1234/domains/
+    Accept: application/json
+    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
+    Content-Type: application/json
+    Content-Length: 266
+    
+    {
+      "domains" : [ {
+        "id" : 2725233,
+        "comment" : "Optional domain comment...",
+        "ttl" : 3600,
+        "emailAddress" : "sample@rackspace.com"
+      }, {
+        "id" : 2725257,
+        "comment" : "1st sample subdomain",
+        "emailAddress" : "sample@rackspace.com"
+      } ]
+    }
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+

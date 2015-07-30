@@ -163,6 +163,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:rates">
@@ -210,6 +211,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:limitTypes">
@@ -261,6 +263,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:rates">
@@ -317,9 +320,6 @@
                   <code>next</code> link points to a group of 10
                records starting at <code>offset=30</code>.</para>
          </note>
-         <remark>There is 1 problems with this section: 1) I can't get
-            rid of the generated statement "This operation does not
-            return a response body"</remark>
       </wadl:doc>
       <request>
     <!--       <param style="query" type="xs:string" name="name"
@@ -400,6 +400,7 @@
          
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
@@ -588,6 +589,7 @@
          </representation>
       </response> -->
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -790,6 +792,7 @@
          </representation>
       </response> -->
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
      <!--     <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -988,6 +991,7 @@
          </representation> -->
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domain">
@@ -1185,6 +1189,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN"
@@ -1257,8 +1262,8 @@
                xmlns:xi="http://www.w3.org/2001/XInclude"
                >date/time</code>.</para>
          <para>This call shows all changes to a specified domain
-            because a specified <code>date/time</code>. The
-               <parameter>because</parameter> parameter is optional
+            <code>since</code> a specified date/time. The
+               <parameter>since</parameter> parameter is optional
             and defaults to midnight of the current
             day. See the section "Date/Time Format" in the Devguide for details on how to
             specify this parameter's value.</para>
@@ -1291,6 +1296,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domain">
@@ -1360,6 +1366,7 @@
          </representation>
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domain">
@@ -1404,7 +1411,9 @@
             nature of the failure in the body of the response.
             Failures in the validation process are non-recoverable and
             require the caller to correct the cause of the failure and
-               <command>POST</command> the request again. <note>
+               <command>POST</command> the request again. 
+         </para>
+            <note>
                <title>Notes</title>
                <itemizedlist>
                   <listitem>
@@ -1442,7 +1451,7 @@
                   </listitem>
                </itemizedlist>
             </note>
-         </para>
+         
          <para>The following examples show the Create domains
             requests:<?rax-fo keep-with-next?>
          </para>
@@ -1554,6 +1563,7 @@
          </representation>
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
@@ -1821,6 +1831,7 @@
          </representation>
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml"
             xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
@@ -2326,6 +2337,7 @@
          </representation>
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2471,7 +2483,9 @@
             </param> --> 
          </representation>
       </request> 
-      <response status="202"></response>
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response>
       &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    <method id="updateDomains" name="PUT">
@@ -2610,38 +2624,7 @@
                <xsdxt:code
                   href="../samples/dns-modify-domains_request.xml"/>
             </wadl:doc>
-            <param name="id" style="plain" type="xs:string"
-               required="true" path="FIXME/@id">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>For modifying <emphasis
-                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                        xmlns="http://docbook.org/ns/docbook"
-                        >multiple</emphasis> domains, the id for each
-                     domain must be specified as an attribute. Note
-                     that for modifying a single domain, the id is a
-                     required parameter at the end of the API call
-                     URI.</para></wadl:doc>
-            </param>
-            <param name="emailAddress" style="plain" type="xs:string"
-               required="false" path="FIXME/@emailAddress">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>Email address to use for
-                     contacting the domain
-                  administrator.</para></wadl:doc>
-            </param>
-            <param name="ttl" style="plain" type="xs:string"
-               required="false" path="FIXME/@ttl">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If specified, must be greater
-                     than or equal to 300.</para></wadl:doc>
-            </param>
-            <param name="comment" style="plain" type="xs:string"
-               required="false" path="FIXME/@comment">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If included, its length must be
-                     less than or equal to 160
-                  characters.</para></wadl:doc>
-            </param>
+            
          </representation>
          <representation mediaType="application/json">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2649,6 +2632,38 @@
                <xsdxt:code
                   href="../samples/dns-modify-domains_request.json"/>
             </wadl:doc>
+            <param name="id" style="plain" type="xs:string"
+               required="true" path="$.domains[*].id">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>For modifying <emphasis
+                     xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns="http://docbook.org/ns/docbook"
+                     >multiple</emphasis> domains, the id for each
+                     domain must be specified as an attribute. Note
+                     that for modifying a single domain, the id is a
+                     required parameter at the end of the API call
+                     URI.</para></wadl:doc>
+            </param>
+            <param name="emailAddress" style="plain" type="xs:string"
+               required="false" path="$.domains[*].emailAddress">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>Email address to use for
+                     contacting the domain
+                     administrator.</para></wadl:doc>
+            </param>
+            <param name="ttl" style="plain" type="xs:string"
+               required="false" path="$.domains[*].ttl">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If specified, must be greater
+                     than or equal to 300.</para></wadl:doc>
+            </param>
+            <param name="comment" style="plain" type="xs:string"
+               required="false" path="$.domains[*].comment">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If included, its length must be
+                     less than or equal to 160
+                     characters.</para></wadl:doc>
+            </param>
    <!--           <param name="id" style="plain" type="xs:string"
                required="true" path="$.domains[*].id">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2684,7 +2699,9 @@
          </representation>
       </request> 
       
-      <response status="202"></response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <method id="deleteDomain" name="DELETE">
@@ -2793,7 +2810,9 @@
             </wadl:doc>
          </representation> -->
       </request>
-      <response status="202"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <method id="deleteDomains" name="DELETE">
@@ -2912,7 +2931,9 @@
             </wadl:doc>
          </representation> --> 
       </request>
-      <response status="202"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <method id="deleteDomainAndSubdomains" name="DELETE">
@@ -3026,7 +3047,9 @@
             </wadl:doc>
          </representation> -->
       </request>
-      <response status="202"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <method id="deleteDomainsAndSubdomains" name="DELETE">
@@ -3150,7 +3173,9 @@
             </wadl:doc>
          </representation>
       </request>
-      <response status="202"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <!-- subdomains -->
@@ -3194,6 +3219,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:domains">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3249,6 +3275,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:recordsList">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3324,7 +3351,9 @@
                xml:lang="EN"><para>Data for the record.</para></wadl:doc>
          </param>
       </request>
-      <response status="200"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <method id="showRecord" name="GET">
@@ -3354,6 +3383,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:record">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3430,49 +3460,7 @@
                   href="../samples/dns-add-records_request.xml"/>
             </wadl:doc>
             
-            <param name="type" style="plain" type="xs:string"
-               required="true" path="$.records[*].type">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The record type to
-                  add.</para></wadl:doc>
-            </param>
-            <param name="name" style="plain" type="xs:string"
-               required="true" path="$.records[*].name">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The name for the domain or
-                     subdomain. Must be a valid domain
-                  name.</para></wadl:doc>
-            </param>
-            <param name="data" style="plain" type="xs:string"
-               required="true" path="$.records[*].data">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The data field for PTR, A, and
-                     AAAA records must be a valid IPv4 or IPv6 IP
-                     address.</para></wadl:doc>
-            </param>
-            <param name="priority" style="plain" type="xs:string"
-               required="false" path="$.records[*].priority">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>Required for MX and SRV records,
-                     but forbidden for other record types. If
-                     specified, must be an integer from 0 to
-                     65535.</para></wadl:doc>
-            </param>
-            <param name="ttl" style="plain" type="xs:string"
-               required="false" path="$.records[*].ttl">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If specified, must be greater
-                     than or equal to 300. Defaults to the domain TTL if
-                     available, or 3600 if no TTL is
-                  specified.</para></wadl:doc>
-            </param>
-            <param name="comment" style="plain" type="xs:string"
-               required="false" path="$.records[*].comment">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If included, its length must be
-                     less than or equal to 160
-                  characters.</para></wadl:doc>
-            </param> 
+            
             
   <!--           <param name="type" style="plain" type="xs:string"
                required="true" path="FIXME/@type">
@@ -3524,6 +3512,49 @@
                <xsdxt:code
                   href="../samples/dns-add-records_request.json"/>
             </wadl:doc>
+            <param name="type" style="plain" type="xs:string"
+               required="true" path="$.records[*].type">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The record type to
+                     add.</para></wadl:doc>
+            </param>
+            <param name="name" style="plain" type="xs:string"
+               required="true" path="$.records[*].name">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The name for the domain or
+                     subdomain. Must be a valid domain
+                     name.</para></wadl:doc>
+            </param>
+            <param name="data" style="plain" type="xs:string"
+               required="true" path="$.records[*].data">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The data field for PTR, A, and
+                     AAAA records must be a valid IPv4 or IPv6 IP
+                     address.</para></wadl:doc>
+            </param>
+            <param name="priority" style="plain" type="xs:string"
+               required="false" path="$.records[*].priority">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>Required for MX and SRV records,
+                     but forbidden for other record types. If
+                     specified, must be an integer from 0 to
+                     65535.</para></wadl:doc>
+            </param>
+            <param name="ttl" style="plain" type="xs:string"
+               required="false" path="$.records[*].ttl">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If specified, must be greater
+                     than or equal to 300. Defaults to the domain TTL if
+                     available, or 3600 if no TTL is
+                     specified.</para></wadl:doc>
+            </param>
+            <param name="comment" style="plain" type="xs:string"
+               required="false" path="$.records[*].comment">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If included, its length must be
+                     less than or equal to 160
+                     characters.</para></wadl:doc>
+            </param> 
     <!--        <param name="type" style="plain" type="xs:string"
                required="true" path="$.records[*].type">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3570,6 +3601,7 @@
          </representation> 
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:records">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -3911,7 +3943,9 @@
             </param>
          </representation> -->
       </request>
-      <response status="202"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    <method id="updateRecords" name="PUT">
       <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -4100,7 +4134,7 @@
                />
             </wadl:doc>
             <param name="id" style="plain" type="xs:string"
-               required="true" path="FIXME/@id">
+               required="true" path="$.records[*].id">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>For modifying <emphasis
                         xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4112,7 +4146,7 @@
                      call URI.</para></wadl:doc>
             </param>
             <param name="name" style="plain" type="xs:string"
-               required="true" path="FIXME/@name">
+               required="true" path="$.records[*].name">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>For record types other than SRV
                      records, this specifies the name for the domain
@@ -4131,14 +4165,14 @@
                </wadl:doc>
             </param>
             <param name="data" style="plain" type="xs:string"
-               required="true" path="FIXME/@data">
+               required="true" path="$.records[*].data">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>The data field is required for
                      PTR and TXT records only. For PTR records, the data field must be a valid IPv4 or IPv6 IP
                      address.</para></wadl:doc>
             </param>
             <param name="priority" style="plain" type="xs:string"
-               required="false" path="FIXME/@priority">
+               required="false" path="$.records[*].priority">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>Can be included for MX and SRV
                      records, but forbidden for other record types. If
@@ -4146,7 +4180,7 @@
                      65535.</para></wadl:doc>
             </param>
             <param name="ttl" style="plain" type="xs:string"
-               required="false" path="FIXME/@ttl">
+               required="false" path="$.records[*].ttl">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If specified, must be greater
                      than or equal to 300. Defaults to the domain TTL if
@@ -4154,7 +4188,7 @@
                   specified.</para></wadl:doc>
             </param>
             <param name="comment" style="plain" type="xs:string"
-               required="false" path="FIXME/@comment">
+               required="false" path="$.records[*].comment">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
                   xml:lang="EN"><para>If included, its length must be
                      less than or equal to 160
@@ -4232,7 +4266,9 @@
             </param> -->
          </representation>
       </request>
-      <response status="202"></response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    <method id="deleteRecord" name="DELETE">
       <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -4292,7 +4328,9 @@
             </wadl:doc>
          </representation>-->
       </request>
-      <response status="202"></response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    <method id="deleteRecords" name="DELETE">
       <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -4392,7 +4430,9 @@
          </representation> 
          
       </request>
-      <response status="202"></response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+      <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
+      </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
    </method>
    
    <!-- PTR records -->
@@ -4427,6 +4467,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:recordsList">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4479,6 +4520,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:recordsList">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4576,40 +4618,7 @@
                xml:lang="EN" title="Add PTR record: XML request">
                <xsdxt:code href="../samples/dns-add-ptr_request.xml"/>
             </wadl:doc>
-            <param name="type" style="plain" type="xs:string"
-               required="true" path="FIXME/@type">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The record type as
-                        <literal>PTR</literal>.</para></wadl:doc>
-            </param>
-            <param name="name" style="plain" type="xs:string"
-               required="true" path="FIXME/@name">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The name for the domain or
-                     subdomain. Must be a valid domain
-                  name.</para></wadl:doc>
-            </param>
-            <param name="data" style="plain" type="xs:string"
-               required="true" path="FIXME/@data">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The data field for PTR records
-                     must be a valid IPv4 or IPv6 IP
-                  address.</para></wadl:doc>
-            </param>
-            <param name="ttl" style="plain" type="xs:string"
-               required="false" path="FIXME/@ttl">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If specified, must be greater
-                     than or equal to 300. Defaults to 3600 if no TTL is
-                     specified.</para></wadl:doc>
-            </param>
-            <param name="comment" style="plain" type="xs:string"
-               required="false" path="FIXME/@comment">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If included, its length must be
-                     less than or equal to 160
-                  characters.</para></wadl:doc>
-            </param>
+            
          </representation>
          <representation mediaType="application/json">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4617,6 +4626,40 @@
                <xsdxt:code href="../samples/dns-add-ptr_request.json"
                />
             </wadl:doc>
+            <param name="type" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].type">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The record type as
+                     <literal>PTR</literal>.</para></wadl:doc>
+            </param>
+            <param name="name" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].name">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The name for the domain or
+                     subdomain. Must be a valid domain
+                     name.</para></wadl:doc>
+            </param>
+            <param name="data" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].data">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The data field for PTR records
+                     must be a valid IPv4 or IPv6 IP
+                     address.</para></wadl:doc>
+            </param>
+            <param name="ttl" style="plain" type="xs:string"
+               required="false" path="$.recordsList.records[*].ttl">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If specified, must be greater
+                     than or equal to 300. Defaults to 3600 if no TTL is
+                     specified.</para></wadl:doc>
+            </param>
+            <param name="comment" style="plain" type="xs:string"
+               required="false" path="$.recordsList.records[*].comment">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If included, its length must be
+                     less than or equal to 160
+                     characters.</para></wadl:doc>
+            </param>
  <!--            <param name="type" style="plain" type="xs:string"
                required="true" path="$.recordsList.records[*].type">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4655,6 +4698,7 @@
          </representation>
       </request>
       <response status="200">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:recordsList">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4705,46 +4749,7 @@
                <xsdxt:code
                   href="../samples/dns-modify-ptr_request.xml"/>
             </wadl:doc>
-            <param name="name" style="plain" type="xs:string"
-               required="true" path="FIXME/@name">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The name for the domain or
-                     subdomain. Must be a valid domain name. Can be
-                     modified.</para></wadl:doc>
-            </param>
-            <param name="id" style="plain" type="xs:string"
-               required="true" path="FIXME/@id">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The unique ID of the
-                     record.</para></wadl:doc>
-            </param>
-            <param name="type" style="plain" type="xs:string"
-               required="true" path="FIXME/@type">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The record type as
-                  PTR.</para></wadl:doc>
-            </param>
-            <param name="data" style="plain" type="xs:string"
-               required="true" path="FIXME/@data">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>The data field is required for
-                     PTR and TXT records only. For PTR records, the data field must be a valid IPv4 or IPv6 IP
-                     address.</para></wadl:doc>
-            </param>
-            <param name="ttl" style="plain" type="xs:string"
-               required="false" path="FIXME/@ttl">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If specified, must be greater
-                     than or equal to 300. Defaults to 3600 if no TTL is
-                     specified.</para></wadl:doc>
-            </param>
-            <param name="comment" style="plain" type="xs:string"
-               required="false" path="FIXME/@comment">
-               <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                  xml:lang="EN"><para>If included, its length must be
-                     less than or equal to 160
-                  characters.</para></wadl:doc>
-            </param>
+            
          </representation>
          <representation mediaType="application/json">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4752,6 +4757,46 @@
                <xsdxt:code
                   href="../samples/dns-modify-ptr_request.json"/>
             </wadl:doc>
+            <param name="name" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].name">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The name for the domain or
+                     subdomain. Must be a valid domain name. Can be
+                     modified.</para></wadl:doc>
+            </param>
+            <param name="id" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].id">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The unique ID of the
+                     record.</para></wadl:doc>
+            </param>
+            <param name="type" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].type">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The record type as
+                     PTR.</para></wadl:doc>
+            </param>
+            <param name="data" style="plain" type="xs:string"
+               required="true" path="$.recordsList.records[*].data">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>The data field is required for
+                     PTR and TXT records only. For PTR records, the data field must be a valid IPv4 or IPv6 IP
+                     address.</para></wadl:doc>
+            </param>
+            <param name="ttl" style="plain" type="xs:string"
+               required="false" path="$.recordsList.records[*].ttl">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If specified, must be greater
+                     than or equal to 300. Defaults to 3600 if no TTL is
+                     specified.</para></wadl:doc>
+            </param>
+            <param name="comment" style="plain" type="xs:string"
+               required="false" path="$.recordsList.records[*].comment">
+               <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                  xml:lang="EN"><para>If included, its length must be
+                     less than or equal to 160
+                     characters.</para></wadl:doc>
+            </param>
   <!--           <param name="name" style="plain" type="xs:string"
                required="true" path="$.recordsList.records[*].name">
                <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4796,6 +4841,7 @@
          </representation>
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
             element="dnsaas:recordsList">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -4869,6 +4915,7 @@
          </representation>
       </request>
       <response status="202">
+         <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">Request is accepted.</wadl:doc>
          <representation mediaType="application/xml">
             <wadl:doc xmlns="http://docbook.org/ns/docbook"
                xml:lang="EN" title="Delete PTR records: XML response">

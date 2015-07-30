@@ -632,7 +632,8 @@
                             service; for details about whether and how
                             to specify a tenant, check the
                             documentation for the service you are
-                            using.</para>
+                            using. The DNS v2 API requires the use of
+                            a valid tenant.</para>
                         <para/>
                     </callout>
                     <callout arearefs="response.xml.url">
@@ -717,26 +718,44 @@
                         <tr align="left">
 
                             <td colspan="1">
-                                <code>https://dns.api.rackspacecloud.com/v2/</code></td>
+                                <code>https://dns.api.rackspacecloud.com/v2.0/<replaceable
+                                   security="writeronly"
+                                   >1234</replaceable></code></td>
                         </tr>
                     <tr align="left" security="writeronly">
 
                             <td colspan="1">
-                                <code>https://lon.dns.api.rackspacecloud.com/v2/</code></td>
+                                <code>https://lon.dns.api.rackspacecloud.com/v2.0/</code></td>
                         </tr>  
                               
                     </tbody>
                 </table>
             </para>
+            <para security="writeronly">Replace the sample tenant ID number, 1234, with your
+                actual tenant id number returned as part of the
+                authentication service response. You will find the
+                actual account number after the final '/' in the
+                publicURL field returned by the authentication
+                response.</para>
             <para>
-                <note>
-                    <para>The service catalog returned in the auth
-                        response specifies the correct service access
-                        endpoint to use for accessing DNS. Use the
-                        service name (cloudDNS) to locate the correct
-                        endpoint in the service catalog. See the auth
-                        response examples in <xref
-                            linkend="Authenticate-d1e171"/>.</para>
+                <note><title>Notes</title>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The tenant ID is not used with the
+                                EA release.</para>
+                        </listitem>
+                        <listitem>
+                            <para>The service catalog returned in the
+                                auth response specifies the correct
+                                service access endpoint to use for
+                                accessing DNS. Use the service name
+                                (cloudDNS) to locate the correct
+                                endpoint in the service catalog. See
+                                the auth response examples in <xref
+                                   linkend="Authenticate-d1e171"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
                 </note>
             </para>
         </section>
@@ -756,15 +775,15 @@
                         <title>Example Request URL (contract version
                             in <emphasis role="strong"
                             >bold</emphasis>)</title>
-                        <programlisting>https://dns.api.rackspacecloud.com/<emphasis role="strong">v2</emphasis>/zones</programlisting>
+                        <programlisting>https://dns.api.rackspacecloud.com/<emphasis role="strong">v2.0</emphasis>/zones</programlisting>
                     </example>
                     <note>
                         <para>This document pertains to contract
-                            version 2.</para>
+                            version 2.0.</para>
                     </note>
                 </para>
             </section>
-            <section xml:id="API_Version_Headers-d1e855">
+            <section xml:id="API_Version_Headers-d1e855" security="writeronly">
                 <title>API Version Headers</title>
                 <para>Every response from the Cloud DNS Service
                     includes custom headers that identify the specific
@@ -802,25 +821,20 @@
         </section>
         <section xml:id="Request_Response_Types-d1e903">
             <title>Request/Response Types</title>
-            <para security="reviewer">Reviewer: We only have JSON in
-                the Devguide request/response examples. So should I
-                delete all the XML references in this guide?</para>
-            <para>The DNS API supports both the JSON and XML data
-                serialization formats. The request format is specified
-                using the <code>Content-Type</code> header and is
-                required for calls that have a request body. The
-                response format can be specified in requests either by
-                using the <code>Accept</code> header or by adding an
-                    <code>.xml</code> or <code>.json</code> extension
-                to the request URI. Note that it is possible for a
-                response to be serialized using a format different
-                from the request. If no response format is specified,
-                JSON is the default. If conflicting formats are
-                specified using both an <code>Accept</code> header and
-                a query extension, the query extension takes
+            <para>The DNS API supports the JSON data serialization
+                format. The request format is specified using the
+                    <code>Content-Type</code> header and is required
+                for calls that have a request body. The response
+                format can be specified in requests either by using
+                the <code>Accept</code> header, or by adding a
+                    <code>.json</code> extension to the request URI.
+                If no response format is specified, JSON is the
+                default. If conflicting formats are specified using
+                both an <code>Accept</code> header and a query
+                extension, the query extension takes
                 precedence.</para>
             <table rules="all">
-                <caption>Response Formats</caption>
+                <caption>Response Format</caption>
                 <?dbfo keep-together="always"?>
                 <thead>
                     <tr align="center">
@@ -837,41 +851,8 @@
                         <td>.json</td>
                         <td>Yes</td>
                     </tr>
-                    <tr>
-                        <td>XML</td>
-                        <td>application/xml</td>
-                        <td>.xml</td>
-                        <td>No</td>
-                    </tr>
                 </tbody>
             </table>
-            <para>In the request example below, notice that
-                    <parameter>Content-Type</parameter> is set to
-                    <parameter>application/json</parameter>, but
-                    <parameter>application/xml</parameter> is
-                requested via the <parameter>Accept</parameter>
-                header:</para>
-            <example>
-                <title>Request with Headers: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-response-types-request_request.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-            <para>Therefore an XML response format is returned:</para>
-            <example>
-                <title>Response with Headers: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-content-type-response_response.xml" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-            <para>An alternative method of achieving the same result
-                is illustrated below. This time we utilize a URI
-                extension (<code>.xml</code>) to request an XML
-                response format instead of an
-                    <parameter>Accept</parameter> header:</para>
-            <example>
-                <title>Extension: XML request</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-content-type-req-ext_request.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
         </section>
         <section xml:id="sync_asynch_responses">
             <title>Synchronous and Asynchronous Responses</title>
@@ -905,18 +886,71 @@
                 return an HTTP status of 202 Accepted. The
                     <code>status</code> property <emphasis>must
                     not</emphasis> have the value <code>ACTIVE</code>. </para>
+            <para security="reviewer">Reviewer: Is the info above
+                correct about determining whether a given API call was
+                synchronous or asynchronous?</para>
+            <para><emphasis role="bold">There are two ways to check
+                    whether an asynchronous request is
+                    complete:</emphasis><itemizedlist>
+                    <listitem>
+                        <para>Query the collections link, for example:
+                                <link
+                                xlink:href="http://localhost:9001/v2/zones"
+                                >http://localhost:9001/v2/zones</link>.
+                            Note that you can also filter collections
+                            by status, for example: <link
+                                xlink:href="http://localhost:9001/v2/zones?status=PENDING"
+                                >http://localhost:9001/v2/zones?status=PENDING</link>.</para>
+                        <para security="reviewer">Reviewer: It is not
+                            clear to me what this collections link
+                            really is. Is it just an API call to list
+                            any set of resources, such as zones or
+                            recordsets?</para>
+                    </listitem>
+                </itemizedlist><itemizedlist>
+                    <listitem>
+                        <para> Query the <code>self</code> link
+                            included in a given response: </para>
+                        <programlisting>    {
+
+        "status": "ACTIVE",
+
+        "description": null,
+
+        "updated_at": "2014-07-08T20:28:31.000000",
+
+        "ttl": 86400,
+
+        "serial": 1404851315,
+
+        "id": "a4e29ed3-d7a4-4e4d-945d-ce64678d3b94",
+
+        "name": "example.com.",
+
+        "created_at": "2014-07-08T20:28:19.000000",
+
+        "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
+
+        "version": 1,
+
+        "project_id": "noauth-project",
+
+        "email": "hostmaster@example.com",
+
+        "<emphasis role="bold">links</emphasis>": {
+
+          "<emphasis role="bold">self</emphasis>": "http://dns.provider.com/v2/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+
+        }</programlisting>
+                    </listitem>
+                </itemizedlist></para>
             <para>Clients can determine if an asynchronous job is
-                complete by querying the resource URL (or, for Create
-                calls, the URL returned in the <code>Location</code>
-                header) and checking the value of the
-                    <code>status</code> property. Once the job is
-                complete, the <code>status</code> field will be
+                complete by querying the <code>self</code> link and
+                checking the value of the <code>status</code>
+                property. Once the job is complete, the
+                    <code>status</code> field will be
                     <code>ACTIVE</code>.</para>
-            <para security="reviewer">Reviewer: I think it would be
-                good to show a descriptive example here. I'm not sure
-                what is meant by "resource URL", nor have I seen a
-                Location header in any of our examples.</para>
-            <para security="reviewer">Reviewer: The material that
+    <!--          <para security="reviewer">Reviewer: The material that
                 follows below is from DNS v1 Devguide. Does any of it
                 need to be maintained here, or can I delete it?</para>
             <para>&PUT;, &POST;, and &DELETE; calls are
@@ -1344,14 +1378,18 @@
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml"><xi:include href="samples/dns-get-jobs-status-with-details_response.json" parse="text"><xi:fallback>Missing code sample samples/dns-get-jobs-status-with-details_response.json<?rax fail?></xi:fallback></xi:include></programlisting>
                 </example>
-            </section>
+            </section>  -->
 
         </section>
-        <section xml:id="Content_Compression-d1e1120">
+        <section xml:id="Content_Compression-d1e1120" security="writeronly">
             <title>Content Compression</title>
             <para security="reviewer">Reviewer: Can you please supply
                 me with the necessary info to update this section for
-                v2 as needed?</para>
+                v2 as needed? See:  <link
+                    xlink:href="https://repose.atlassian.net/wiki/display/REPOSE/Compression+filter"
+                    >https://repose.atlassian.net/wiki/display/REPOSE/Compression+filter</link>.
+                This will not be supported for early access but is
+                planned for UA. </para>
             <para>Request and response body data may be encoded with
                 gzip compression to accelerate interactive performance
                 of API calls and responses. This is controlled using
@@ -1384,7 +1422,7 @@
                 </tbody>
             </table>
         </section>
-        <section xml:id="Persistent_Connections-d1e1187">
+        <section xml:id="Persistent_Connections-d1e1187" security="writeronly">
             <title>Persistent Connections</title>
             <para security="reviewer">Reviewer: Can you please supply
                 me with the necessary info to update this section for
@@ -1405,7 +1443,11 @@
             <title>Limits</title>
             <para security="reviewer">Reviewer: Can you please supply
                 me with the necessary info to update this section for
-                v2 as needed?</para>
+                v2 as needed? For example, we shouldn't be using
+                domains in URL, but rather zones. Is that correct?
+                Please give me the needed info to update this
+                information in Section 3.8 and its subsections about
+                limits.</para>
             <para>All accounts, by default, have a preconfigured set
                 of thresholds (or limits) to manage capacity and
                 prevent abuse of the system. The system recognizes two
@@ -1660,14 +1702,14 @@
                 </tbody>
             </table>
         </section>
-        <section xml:id="comments">
-            <title>Comments</title>
+        <section xml:id="descriptions">
+            <title>Descriptions</title>
             <para security="reviewer">Reviewer: Please give me updates
-                for this section.</para>
-            <para>Comments are supported for domains and records and
-                their requests and responses using the
-                    <code>comment</code> attribute. See the examples
-                that follow.</para>
+                and examples for this section.</para>
+            <para>Descriptions are supported for zones and recordsets
+                and their requests and responses using the
+                    <code>description</code> attribute. See the
+                examples that follow.</para>
             <example>
                 <title>Example Response with Comments: XML</title>
                 <?dbfo keep-together="always"?>
@@ -1677,7 +1719,7 @@
                 <title>Example Response with Comments: JSON</title>
                 <programlisting language="xml"><xi:include href="samples/dns-example-response-w-comment_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
-            <para>Notes for comments:</para>
+            <para>Notes for descriptions:</para>
             <itemizedlist>
                 <listitem>
                     <para>Are limited to 160 characters each</para>
@@ -1690,27 +1732,25 @@
                 </listitem>
                 <listitem>
                     <para>To remove a comment, set it to the empty
-                        string, for example: comment=""</para>
+                        string, for example: description=""</para>
                 </listitem>
                 <listitem>
-                    <para>Are returned on &GET; calls for both domain
-                        and records regardless of whether the call is
-                        a single or multiple call, and regardless of
-                        whether it is a detail or non-detail
+                    <para>Are returned on &GET; calls for both zones
+                        and recordsets regardless of whether the call
+                        is a single or multiple call, and regardless
+                        of whether it is a detail or non-detail
                         call</para>
                 </listitem>
             </itemizedlist>
-            <para>In summary, all Create Domain and Create Record(s)
-                and all Modify Domain and Modify Record(s) calls can
-                take an optional comment (<code>comment="value of
-                    comment"</code>). In other words, all these
-                request calls can have an optional comment
-                attribute.</para>
         </section>
         <section xml:id="collections">
             <title>Collections</title>
-            <para security="reviewer">Reviewer: A collection is a ....
-                (please complete definition)</para>
+            <para security="reviewer">Reviewer: A collection is a set
+                of related objects, for example a collection of zones,
+                or a collection of recordsets. This section has been
+                updated with info from <link
+                    xlink:href="https://wiki.openstack.org/wiki/Designate/APIv2"
+                    >https://wiki.openstack.org/wiki/Designate/APIv2</link>.</para>
             <para>The following conventions apply to all collections,
                 unless otherwise noted. </para>
             <section xml:id="links">
@@ -1802,8 +1842,6 @@ Content-Type: application/json
  }  
 </programlisting>
                 </example>
-                <para security="reviewer">Do we need to specify the default values for
-                    limit and marker?</para>
             </section>
             <section xml:id="filtering">
                 <title>Filtering</title>
@@ -1874,11 +1912,13 @@ Content-Type: application/json
         </section>
         <section xml:id="resources">
             <title>Resources</title>
-            <para security="reviewer">Reviewer: please provide a
-                definition for resource. A resource is a ....</para>
+            <para security="reviewer">A resource is an item you access
+                in an API operation, such as a zone or
+                recordset.</para>
             <para>A <code>links</code> object will exist inside the
                 resource object. At the minimum, it will contain a
-                    <code>self</code> link.</para>
+                    <code>self</code> link that points to the given
+                resource.</para>
             <example>
                 <title>Example of <code>links</code> in the response
                     for a resource</title>
@@ -1903,7 +1943,9 @@ Content-Type: application/json
             <?dbfo keep-together="always"?>
             <title>Supported Record Types</title>
             <para security="reviewer">Reviewer: Please give me updates
-                for this section.</para>
+                for this section. Can you give me info for A record :
+                JSON, so I can see how these v2 record types are
+                supposed to look compared to the v1 records?</para>
             <para>The Rackspace Cloud DNS Service supports the
                     <glossterm>record</glossterm> types listed in the
                 following table.</para>
@@ -2243,7 +2285,8 @@ Content-Type: application/json
         <section xml:id="DNS_faults">
             <title>Faults</title>
             <para security="reviewer">Reviewer: Please give me updates
-                for this section.</para>
+                for this section. How can I get the List of exceptions
+                and the items actually returned.</para>
             <para>When an error occurs, the DNS Service returns a
                 fault object containing an HTTP error response code
                 that denotes the type of error. In the body of the
@@ -2520,6 +2563,8 @@ Content-Type: application/json
         </section>
         <section xml:id="role_based_access_control">
             <title>Role Based Access Control (RBAC)</title>
+            <para security="reviewer">Reviewer: Please give me updates
+                for this section.</para>
             <para>Role Based Access Control (RBAC) restricts access to
                 the capabilities of Rackspace Cloud services,
                 including the Cloud DNS API, to authorized users only.

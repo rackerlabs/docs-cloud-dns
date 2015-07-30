@@ -741,7 +741,7 @@
   
   <method id="listRecordsets" name="GET">
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-      title="List record sets">
+      title="List all record sets for a specified zone">
     <para role="shortdesc">Lists all record sets for the specified zone id. </para>
       <para>This operation provides detailed information for all record sets for the specified zone id. 
     </para>
@@ -758,7 +758,7 @@
          </param> -->
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
-          xml:lang="EN" title="List record sets: JSON request">
+          xml:lang="EN" title="List all record sets: JSON request">
           <xsdxt:code
             href="../samples-2/dns-list-record-sets_request.json"/>
         </wadl:doc>
@@ -768,7 +768,7 @@
       
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
-          xml:lang="EN" title="List record sets: JSON response">
+          xml:lang="EN" title="List all record sets: JSON response">
           <xsdxt:code
             href="../samples-2/dns-list-record-sets_response.json"/>
         </wadl:doc>

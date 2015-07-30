@@ -822,7 +822,7 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         </note>
         <para>Note that the <code>publicURL</code> endpoint for
                 <code>cloudDNS</code>
-                (<code>https://dns.api.rackspacecloud.com/v2/</code>)
+                (<code>https://dns.api.rackspacecloud.com/v2.0/</code>)
             is also returned in the response.</para>
         <para security="reviewer">Reviewer: **Note that the DNS v2
             endpoint needs to be added to the auth response example
@@ -858,12 +858,12 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                     <tr align="left">
                         
                         <td colspan="1">
-                            <code>https://dns.api.rackspacecloud.com/v2/</code></td>
+                            <code>https://dns.api.rackspacecloud.com/v2.0/</code></td>
                     </tr>
                     <tr align="left" security="writeronly">
                         
-                        <td colspan="1" >
-                            <code>https://lon.dns.api.rackspacecloud.com/v2/</code></td>
+                        <td colspan="1">
+                            <code>https://lon.dns.api.rackspacecloud.com/v2.0/</code></td>
                     </tr>
                 </tbody>
             </table>
@@ -890,13 +890,13 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         </note>
         <para>When making a Cloud DNS API call, place the endpoint at
             the beginning of the request URL, for example:
-                <code>https://dns.api.rackspacecloud.com/v2/</code>,
+                <code>https://dns.api.rackspacecloud.com/v2.0/</code>,
             as you can see in the cURL Create zone request examples in
                 <link
                 xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Zone.html"
                 >Create a zone</link>. For example, the complete URL
             for the Create zone API operation is
-                <code>https://dns.api.rackspacecloud.com/v2/</code><code>zones</code>.
+                <code>https://dns.api.rackspacecloud.com/v2.0/</code><code>zones</code>.
             Note that the <code>v2</code> component in the URL
             indicates that you are using version 2.0 of the Cloud DNS
             API.</para>
@@ -966,7 +966,7 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 -H 'Content-Type: application/json' \
-'https://dns.api.rackspacecloud.com/v2/zones' | python -m json.tool</programlisting>
+'https://dns.api.rackspacecloud.com/v2.0/zones' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
@@ -1015,7 +1015,7 @@ Content-Type: application/json
     "created_at": "2015-06-18T18:25:31.275934",
     "updated_at": null,
     "links": {
-      "self": "https://dns.api.rackspacecloud.com/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+      "self": "https://dns.api.rackspacecloud.com/v2.0/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
     }
 }
 </programlisting>
@@ -1057,7 +1057,7 @@ Content-Type: application/json
             <programlisting language="bash">curl -s  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
 -H 'Accept: application/json'  \
-'https://dns.api.rackspacecloud.com/v2/zones/<emphasis role="bold">zone_id</emphasis>' | python -m json.tool</programlisting>
+'https://dns.api.rackspacecloud.com/v2.0/zones/<emphasis role="bold">zone_id</emphasis>' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
@@ -1106,7 +1106,7 @@ Content-Type: application/json
     "created_at": "2015-06-18T18:25:31.275934",
     "updated_at": null,
     "links": {
-      "self": "https://dns.api.rackspacecloud.com/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+      "self": "https://dns.api.rackspacecloud.com/v2.0/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
     }
 }
 
@@ -1153,7 +1153,7 @@ Content-Type: application/json
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 -H 'Content-Type: application/json' \
-'https://dns.api.rackspacecloud.com/v2/zones/<emphasis role="bold">zone_id</emphasis>/recordsets' | python -m json.tool</programlisting>
+'https://dns.api.rackspacecloud.com/v2.0/zones/<emphasis role="bold">zone_id</emphasis>/recordsets' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values:<itemizedlist spacing="compact">
@@ -1211,7 +1211,7 @@ Content-Type: application/json
     "action": "CREATE",
     "description": "This is an example record set.",
     "links": {
-        "self": "https://dns.api.rackspacecloud.com/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+        "self": "https://dns.api.rackspacecloud.com/v2.0/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
     }
 }
 </programlisting>
@@ -1236,7 +1236,7 @@ Content-Type: application/json
             <programlisting language="bash">curl -s \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 -H 'Content-Type: application/json' \
-'https://dns.api.rackspacecloud.com/v2/zones/<emphasis role="bold">zone_id</emphasis>/recordsets/<emphasis role="bold">recordset_id</emphasis>' | python -m json.tool</programlisting>
+'https://dns.api.rackspacecloud.com/v2.0/zones/<emphasis role="bold">zone_id</emphasis>/recordsets/<emphasis role="bold">recordset_id</emphasis>' | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values:<itemizedlist
@@ -1294,7 +1294,7 @@ Content-Type: application/json
     "action": "NONE",
  "description": "This is an example record set.",
     "links": {
-        "self": "https://dns.api.rackspacecloud.com/v2/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+        "self": "https://dns.api.rackspacecloud.com/v2.0/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
     },
 }
 

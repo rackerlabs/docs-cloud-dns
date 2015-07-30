@@ -70,55 +70,57 @@
        <!ENTITY dnsFault
            ' 
          <response status="400 500" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:dnsFault"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="dnsFault" xml:lang="EN">The DNS service has experienced a fault.</wadl:doc>
         </response>
            '> 
            
        <!ENTITY serviceUnavailable
            ' 
          <response status="503" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:serviceUnavailable"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Service Unavailable" xml:lang="EN">The service is not available.</wadl:doc>
         </response>
            '>     
            
       <!ENTITY unauthorized
            ' 
          <response status="401" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:unauthorized"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Unauthorized" xml:lang="EN">You are not authorized to complete this operation. 
+            This error can occur if the request is submitted with an invalid authentication token.</wadl:doc>
         </response>
            '> 
-           
+      
+      <!ENTITY twohundred
+           ' 
+         <response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
+        </response>
+           '> 
+      
       <!ENTITY badRequest
            ' 
          <response status="400" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:badRequest"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Bad Request" xml:lang="EN">The request is missing one or more elements, or the values of some 
+                elements are invalid.</wadl:doc>
         </response>
            '> 
            
        <!ENTITY itemNotFound
            ' 
          <response status="404" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:itemNotFound"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Not Found" xml:lang="EN">The requested item was not found.</wadl:doc>
         </response>
            '>     
            
       <!ENTITY overLimit
            ' 
          <response status="413" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:overLimit"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Over Limit" xml:lang="EN">The number of items returned is above the allowed limit.</wadl:doc>
         </response>
            '>
            
       <!ENTITY itemAlreadyExists
            ' 
          <response status="409" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:itemAlreadyExists"/>
-            <representation mediaType="application/json"/>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Already Exists" xml:lang="EN">The item already exists.</wadl:doc>
         </response>
            '>                        
