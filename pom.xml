@@ -90,7 +90,7 @@
 				<includes>cdns-devguide-2.xml</includes>
 				<security>reviewer</security>
 				<enableGoogleAnalytics>1</enableGoogleAnalytics>
-				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content</canonicalUrlBase>
+				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v2.0/cdns-devguide-2/content</canonicalUrlBase>
 			</configuration>
 		</execution> 
 		

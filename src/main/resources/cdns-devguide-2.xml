@@ -96,6 +96,15 @@
             Interactions with Rackspace Cloud DNS occur
             programmatically via the Rackspace Cloud DNS API as
             described in this Cloud DNS Developer Guide.</para>
+        <para>Rackspace is deploying <link
+                xlink:href="http://docs.openstack.org/developer/designate/"
+                >OpenStack Designate v2</link> as the next version of
+            Cloud DNS at Rackspace. Cloud DNS v2 supports only
+            Designate v2 and not Designate v1. <note>
+                <para>PTR records, secondary zones, and the Designate
+                    v1.0 endpoint are not supported for the Rackspace
+                    Early Access launch.</para>
+            </note></para>
         <note>
             <para>Refer to <xref linkend="dns_propagation"/> for
                 information about DNS propagation.</para>
@@ -365,7 +374,7 @@
                         </listitem>
                     </itemizedlist>
                 </note>
-                <example>
+                <example security="writeronly">
                     <title>Auth Request for US Endpoint: XML</title>
                     <programlistingco>
                         <areaspec>
@@ -383,9 +392,9 @@
                     <title>Auth Request for US Endpoint: JSON</title>
                     <programlistingco>
                         <areaspec>
-                            <area xml:id="credentials.json.user"
+                            <area xml:id="credentials.xml.user"
                                 units="linecolumn" coords="14 22"/>
-                            <area xml:id="credentials.json.key"
+                            <area xml:id="credentials.xml.key"
                                 units="linecolumn" coords="15 20"/>
                         </areaspec>
                         <programlisting language="json">
@@ -409,7 +418,7 @@
                                 >Control Panel Login</link>).</para>
                     </callout>
                 </calloutlist>
-                <example>
+                <example security="writeronly">
                     <title>Auth Response for US Endpoint: XML</title>
                     <programlistingco>
                         <areaspec>
@@ -441,8 +450,6 @@
                     <title>Auth Response for US Endpoint: JSON</title>
                     <programlistingco>
                         <areaspec>
-                            <area xml:id="response.json.namespaces"
-                                units="linecolumn" coords="200 1"/>
                             <area xml:id="response.json.token"
                                 units="linecolumn" coords="9 8"/>
                             <area xml:id="response.json.dfltregion"
@@ -479,13 +486,7 @@
                         UK-based accounts.</para>
                 </note>
                 <calloutlist>
-                    <callout arearefs="response.xml.namespaces">
-                        <para>In XML responses only, a list of
-                            namespaces identifies API extensions that
-                            add functionality to the core API.</para>
-                        <para/>
-                    </callout>
-                    <callout arearefs="response.xml.token">
+                    <callout arearefs="response.json.token">
                         <para>This token can be presented to a service
                             as evidence of authentication. Tokens are
                             valid for a finite duration; a token's
@@ -513,7 +514,7 @@
                         </note>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.dfltregion">
+                    <callout arearefs="response.json.dfltregion">
                         <para>Users can be assigned a default region
                             so that, when there is a choice between
                             multiple endpoints associated with a
@@ -528,7 +529,7 @@
                             whenever possible.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.role">
+                    <callout arearefs="response.json.role">
                         <para>Users can be assigned multiple roles,
                             with each role providing specific
                             privileges. In this example,
@@ -543,7 +544,7 @@
                             Tester, or Trainer.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.catalog">
+                    <callout arearefs="response.json.catalog">
                         <para>The service catalog lists the services
                             this user can access. In this example, the
                             user can access one database service, one
@@ -560,7 +561,7 @@
                             access to this service.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.servicetype">
+                    <callout arearefs="response.json.servicetype">
                         <para>The service type attribute identifies
                             services that perform similar functions,
                             whatever those services might be named. In
@@ -580,7 +581,7 @@
                         </important>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.servicename">
+                    <callout arearefs="response.json.servicename">
                         <para>The service name attribute identifies
                             each unique service in the catalog. Once a
                             service is created, its name does not
@@ -612,7 +613,7 @@
                         </important>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.region">
+                    <callout arearefs="response.json.region">
                         <para>A service may expose endpoints in
                             different regions. Regional endpoints
                             allow clients to provision resources in a
@@ -624,7 +625,7 @@
                             access to internal URLs.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.tenant">
+                    <callout arearefs="response.json.tenant">
                         <para>Some services recognize specification of
                             a tenant. If a service does recognize
                             tenants, the format of the tenant
@@ -636,7 +637,7 @@
                             a valid tenant.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.url">
+                    <callout arearefs="response.json.url">
                         <para>An endpoint can be assigned public and
                             internal URLs. A public URL is accessible
                             from anywhere. Access to a public URL
@@ -860,7 +861,8 @@
                 already been updated for v2 using the info located
                 here:
                 https://wiki.openstack.org/wiki/Designate/APIv2#Synchronous_vs_Asynchronous.
-                Does any other content need to be added?</para>
+                Does any other content need to be added or
+                removed?</para>
             <para>All Create, Update, and Delete operations can be
                 either synchronous or asynchronous. </para>
             <para>With <emphasis>synchronous</emphasis> requests, the
@@ -897,15 +899,11 @@
                                 <link
                                 xlink:href="http://localhost:9001/v2/zones"
                                 >http://localhost:9001/v2/zones</link>.
-                            Note that you can also filter collections
-                            by status, for example: <link
+                            (Examples of collections are zones and
+                            recordsets.) Note that you can also filter
+                            collections by status, for example: <link
                                 xlink:href="http://localhost:9001/v2/zones?status=PENDING"
                                 >http://localhost:9001/v2/zones?status=PENDING</link>.</para>
-                        <para security="reviewer">Reviewer: It is not
-                            clear to me what this collections link
-                            really is. Is it just an API call to list
-                            any set of resources, such as zones or
-                            recordsets?</para>
                     </listitem>
                 </itemizedlist><itemizedlist>
                     <listitem>
@@ -1446,8 +1444,8 @@
                 v2 as needed? For example, we shouldn't be using
                 domains in URL, but rather zones. Is that correct?
                 Please give me the needed info to update this
-                information in Section 3.8 and its subsections about
-                limits.</para>
+                information in the section "Limits" and its
+                subsections about limits.</para>
             <para>All accounts, by default, have a preconfigured set
                 of thresholds (or limits) to manage capacity and
                 prevent abuse of the system. The system recognizes two
@@ -1704,17 +1702,12 @@
         </section>
         <section xml:id="descriptions">
             <title>Descriptions</title>
-            <para security="reviewer">Reviewer: Please give me updates
-                and examples for this section.</para>
+            <para security="reviewer">Reviewer: Please give me an
+                updated example for this section.</para>
             <para>Descriptions are supported for zones and recordsets
                 and their requests and responses using the
                     <code>description</code> attribute. See the
                 examples that follow.</para>
-            <example>
-                <title>Example Response with Comments: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/dns-example-response-w-comment_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
             <example>
                 <title>Example Response with Comments: JSON</title>
                 <programlisting language="xml"><xi:include href="samples/dns-example-response-w-comment_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
@@ -1745,12 +1738,9 @@
         </section>
         <section xml:id="collections">
             <title>Collections</title>
-            <para security="reviewer">Reviewer: A collection is a set
-                of related objects, for example a collection of zones,
-                or a collection of recordsets. This section has been
-                updated with info from <link
-                    xlink:href="https://wiki.openstack.org/wiki/Designate/APIv2"
-                    >https://wiki.openstack.org/wiki/Designate/APIv2</link>.</para>
+            <para>A collection is a set of related objects, for
+                example a collection of zones, or a collection of
+                recordsets. </para>
             <para>The following conventions apply to all collections,
                 unless otherwise noted. </para>
             <section xml:id="links">
@@ -1942,10 +1932,6 @@ Content-Type: application/json
         <section xml:id="supported_record_types">
             <?dbfo keep-together="always"?>
             <title>Supported Record Types</title>
-            <para security="reviewer">Reviewer: Please give me updates
-                for this section. Can you give me info for A record :
-                JSON, so I can see how these v2 record types are
-                supposed to look compared to the v1 records?</para>
             <para>The Rackspace Cloud DNS Service supports the
                     <glossterm>record</glossterm> types listed in the
                 following table.</para>
@@ -1970,14 +1956,17 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>A Record : XML</title>
-                                <para><programlisting language="xml">&lt;record id="A-123" type="A" name="example.foo.com" data="123.456.78.9" ttl="86400"/&gt;</programlisting></para>
-
-                            </formalpara>
-                            <formalpara>
                                 <title>A Record : JSON</title>
                                 <para>
-                                   <programlisting language="json">{ "id" : "A-123", "type" : "A", "name" : "example.foo.com", "data" : "123.456.78.9", "ttl" : 86400 }</programlisting>
+                                   <programlisting language="json">{ 
+  “name” : “example.com”, 
+  “description” : “This is an example A record set.”, 
+  “type” : “A”, 
+  “ttl” : 3600, 
+  “records” : [
+    “123.456.78.9”
+  ]
+}</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -1989,15 +1978,17 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>AAAA Record : XML</title>
-                                <para>
-                                   <programlisting language="xml">&lt;record id="AAAA-123" type="AAAA" name="example.foo.com" data="4321:0:1:2:3:4:567:89ab" ttl="86400"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>AAAA Record : JSON</title>
                                 <para>
-                                   <programlisting language="json">{ "id" : "AAAA-123", "type" : "AAAA", "name" : "example.foo.com", "data" : "4321:0:1:2:3:4:567:89ab", "ttl" : 86400 }</programlisting>
+                                   <programlisting language="json">{ 
+  “name” : “example.com”, 
+  “description” : “This is an example AAAA record set.”, 
+  “type” : “AAAA”, 
+  “ttl” : 3600, 
+  “records” : [
+     "4321:0:1:2:3:4:567:89ab" 
+  ]
+}</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -2009,15 +2000,17 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>CNAME Record : XML</title>
-                                <para>
-                                   <programlisting language="xml">&lt;record id="CNAME-123" type="CNAME" name="www.example.foo.com" data="example.foo.com" ttl="86400"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>CNAME Record : JSON</title>
                                 <para>
-                                   <programlisting language="json">{ "id" : "CNAME-123", "type" : "CNAME", "name" : "www.example.foo.com", "data" : "example.foo.com", "ttl" : 86400 }</programlisting>
+                                   <programlisting language="json">{
+  "name" : “www.example.com.",
+  "description" : "This is an example CNAME record set.",
+  "type" : “CNAME",
+  "ttl" : 3600,
+  "records" : [
+      “example.com."
+  ]
+}}</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -2045,17 +2038,30 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>MX Record : XML</title>
-                                <para>
-                                   <programlisting language="xml">&lt;record id="MX-123" priority="10" type="MX" name="example.foo.com" data="mail.example.foo.com" ttl="3600"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>MX Record : JSON</title>
                                 <para>
-                                   <programlisting language="json">{ "id" : "MX-123", "priority" : 10, "type" : "MX", "name" : "example.foo.com", "data" : "mail.example.foo.com", "ttl" : 3600 }</programlisting>
+                                   <programlisting language="json">{
+  "name" : “mail.example.com.”,
+  “description”: “This is an example MX record set.",
+  "type" : “MX",
+  "ttl" : 3600,
+  "records" : [
+      “10 mail.example.com."
+  ]
+}</programlisting>
                                 </para>
                             </formalpara>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <note>
+                                <para> MX record set data format is
+                                   “&lt;priority&gt; &lt;host&gt;”, so
+                                   in the above recordset, the
+                                   priority = <code>10</code> and host
+                                   = <code>mail.example.com</code>. </para>
+                            </note>
                         </td>
                     </tr>
                     <tr>
@@ -2066,15 +2072,18 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>NS Record : XML</title>
-                                <para>
-                                   <programlisting>&lt;record id="NS-123" type="NS" name="example.foo.com" data="ns1.foo.com" ttl="54000"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>NS Record : JSON</title>
                                 <para>
-                                   <programlisting>{ "id" : "NS-123", "type" : "NS", "name" : "example.foo.com", "data" : "ns1.foo.com", "ttl" : 54000 }</programlisting>
+                                   <programlisting>{
+  "name" : “example.com.",
+  "description" : "This is an example NS record set.",
+  "type" : "NS",
+  "ttl" : 3600,
+  "records" : [
+      “ns1.com"
+  ]
+}
+</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -2086,15 +2095,19 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>PTR Record : XML</title>
-                                <para>
-                                   <programlisting>&lt;record id="PTR-000002" type="PTR" name="example.com" data="192.0.2.7" ttl="56000" updated="2011-09-24T01:12:51Z" created="2011-09-24T01:12:51Z"/></programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>PTR Record : JSON</title>
                                 <para>
-                                   <programlisting>{ "name" : "example.com", "id" : "PTR-000002", "type" : "PTR", "data" : "192.0.2.7", "ttl" : 56000, "updated" : "2011-09-24T01:12:51.000+0000", "created" : "2011-09-24T01:12:51.000+0000" }</programlisting>
+                                   <programlisting>
+{
+  "name" : “7.0.2.192.in-addr.arpa.”,
+  “description”: “This is an example PTR record set.",
+  "type" : “PTR",
+  "ttl" : 3600,
+  "records" : [
+      “example.com."
+  ]
+}
+</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -2115,15 +2128,19 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>SRV Record : XML</title>
-                                <para>
-                                   <programlisting>&lt;record id="SRV-123" type="SRV" name="_sip._tcp.example.foo.com" priority="30" data="1 3443 sip.foo.com" ttl="86400"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>SRV Record : JSON</title>
                                 <para>
-                                   <programlisting>{ "id" : "SRV-123", "type" : "SRV", "name" : "_sip._tcp.example.foo.com", "priority" : 30, "data" : "1 3443 sip.foo.com", "ttl" : 86400 }</programlisting>
+                                   <programlisting>
+{
+  "name" : “_sip.tcp.example.com.”,
+  “description”: “This is an example SRV record set.",
+  "type" : “SRV",
+  "ttl" : 3600,
+  "records" : [
+      “10 0 5060 server.example.com."
+  ]
+}
+</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -2133,6 +2150,25 @@ Content-Type: application/json
                             <note>
                                 <title>Notes</title>
                                 <itemizedlist>
+                                   <listitem>
+                                   <para>SRV record set data format is
+                                   “&lt;priority&gt; &lt;weight&gt;
+                                   &lt;port&gt;
+                                   &lt;target-hostname&gt;” (for
+                                   example: <code>10 0 5060
+                                   server.example.org</code>, as shown
+                                   in the example above.). The
+                                   <code>name</code> attribute should
+                                   contain the service name, protocol,
+                                   and domain name (for example:
+                                   <code>_sip.tcp.example.org</code>.).
+                                   </para>
+                                   <para security="reviewer">Reviewer:
+                                   does any of the information in the
+                                   bullets that follow below need to
+                                   be maintained/updated for SRV
+                                   records?</para>
+                                   </listitem>
                                    <listitem>
                                    <para>The standard format of an SRV
                                    record is: _service._proto.name TTL
@@ -2244,15 +2280,17 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <formalpara>
-                                <title>TXT Record : XML</title>
-                                <para>
-                                   <programlisting>&lt;record id="TXT-123" type="TXT" name="example.foo.com" data="Some example text" ttl="3600"/&gt;</programlisting>
-                                </para>
-                            </formalpara>
-                            <formalpara>
                                 <title>TXT Record : JSON</title>
                                 <para>
-                                   <programlisting>{ "id" : "TXT-123", "type" : "TXT", "name" : "example.foo.com", "data" : "Some example text", "ttl" : 3600 }</programlisting>
+                                   <programlisting>{
+  "name" : “ example.com.",
+  "description" : "This is an example TXT record set.",
+  "type" : “TXT",
+  "ttl" : 3600,
+  "records" : [
+      “Some example text"
+  ]
+}</programlisting>
                                 </para>
                             </formalpara>
                         </td>
@@ -2286,7 +2324,10 @@ Content-Type: application/json
             <title>Faults</title>
             <para security="reviewer">Reviewer: Please give me updates
                 for this section. How can I get the List of exceptions
-                and the items actually returned.</para>
+                and the items actually returned? Previously you sent
+                me a link to the exceptions.py file, however I don't
+                find the appropriate types of info (as shown below) in
+                the classes described there. Please advise.</para>
             <para>When an error occurs, the DNS Service returns a
                 fault object containing an HTTP error response code
                 that denotes the type of error. In the body of the
@@ -2537,15 +2578,11 @@ Content-Type: application/json
         </section>
         <section xml:id="ip_address_support">
             <title>IP Address Support</title>
-            <para security="reviewer">Reviewer: Please give me updates
-                for this section.</para>
             <para>Cloud DNS supports IP addresses both inside and
                 outside the Rackspace-assigned IP ranges.</para>
         </section>
         <section xml:id="dns_propagation">
             <title>DNS Propagation</title>
-            <para security="reviewer">Reviewer: Please give me updates
-                for this section.</para>
             <para>Typical DNS propagation to Rackspace name servers
                 (globally) may take up to one minute. This refers to
                 the amount of time it takes after a change
@@ -2563,8 +2600,6 @@ Content-Type: application/json
         </section>
         <section xml:id="role_based_access_control">
             <title>Role Based Access Control (RBAC)</title>
-            <para security="reviewer">Reviewer: Please give me updates
-                for this section.</para>
             <para>Role Based Access Control (RBAC) restricts access to
                 the capabilities of Rackspace Cloud services,
                 including the Cloud DNS API, to authorized users only.

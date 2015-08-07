@@ -63,12 +63,19 @@
                 >http://docs.rackspace.com/</link> and at <link
                 xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/dns/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
-        <para>Cloud DNS v2 is based on OpenStack Designate v2. Cloud
-            DNS v2 supports only Designate v2 and not Designate v1. <note>
-                <para>Not all the features of Designate v2 are
-                    currently supported in Cloud DNS v2, notably PTR
-                    records and secondary zones.</para>
+        <para>Rackspace is deploying <link
+            xlink:href="http://docs.openstack.org/developer/designate/"
+            >OpenStack Designate v2</link>
+             as the next version of Cloud DNS at
+            Rackspace. Cloud DNS v2 supports only Designate v2 and not
+            Designate v1. <note>
+                <para>PTR records, secondary zones, and the Designate
+                    v1.0 endpoint are not supported for the Rackspace
+                    Early Access launch.</para>
             </note></para>
+        <para>This guide will show you how to use the Designate API to
+            set up zones and records using Designate Early Access at
+            Rackspace.</para>
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for running examples</title>
             <para>In order to run the examples in this guide, you must
@@ -91,10 +98,10 @@
         <para>This guide requires one cloud server for setting up DNS
             using the Cloud DNS API. If you will be using one
                 <emphasis>existing</emphasis> cloud server on your
-            account for this purpose, skip Steps 1-5 and go directly
-            to the <link xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started-2/content/DB_Sending_API_Requests.html"
-                >Send requests to the API</link>.
-            Otherwise, follow the steps below:</para>
+            account for this purpose, skip Steps 1-7 and go directly
+            to step 8 below, where you can record the IP address of
+            your existing cloud server. Otherwise, follow the steps
+            below to create a new cloud server:</para>
         <para>Create a cloud server using the cloud servers section of
             the Cloud Control Panel (login here: <link
                 xlink:href="http://mycloud.rackspace.com/">Cloud
@@ -283,7 +290,8 @@
                         </td>
                         <td>
                             <para>Includes the HTTP header in the
-                                output. </para>
+                                output to dump the response headers as
+                                well as the response body. </para>
                         </td>
                     </tr>
                     <tr>
@@ -516,21 +524,6 @@
             indicates that you are using version 2.0 of the Cloud
             Identity API.</para>
         <example>
-            <title>cURL authenticate: XML request</title>
-            <?dbfo keep-together="always"?>
-            <screen language="bash">curl -s -d \
-'&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
-&lt;auth&gt;
-   &lt;apiKeyCredentials
-      xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
-         username="<emphasis role="bold">your_username</emphasis>" 
-         apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;
-&lt;/auth&gt;' \
--H 'Content-Type: application/xml' \
--H 'Accept: application/xml' \
-'https://identity.api.rackspacecloud.com/v2.0/tokens' | ppxml</screen>
-        </example>
-        <example>
             <title>cURL authenticate: JSON request</title>
             <?dbfo keep-together="always"?>
             <screen language="bash">curl -s -d \
@@ -545,84 +538,6 @@
 }' \
 -H 'Content-Type: application/json' \
 'https://identity.api.rackspacecloud.com/v2.0/tokens' | python -m json.tool</screen>
-        </example>
-        <example>
-            <title>Authenticate: XML response</title>
-            <programlisting language="xml">HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-Content-Length: 477
-Date: Thu, 12 Apr 2012 18:50:20 GMT
-
-&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;access xmlns:os-ksadm="http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0"
-  xmlns="http://docs.openstack.org/identity/api/v2.0"
-  xmlns:rax-kskey="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
-  xmlns:rax-ksqa="http://docs.rackspace.com/identity/api/ext/RAX-KSQA/v1.0"
-  xmlns:common="http://docs.openstack.org/common/api/v1.0"
-  xmlns:ksgrp="http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0"
-  xmlns:rax-kscatalog="http://docs.openstack.org/identity/api/ext/OS-KSCATALOG/v1.0"
-  xmlns:atom="http://www.w3.org/2005/Atom"&gt;
-  &lt;token id="vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz" expires="2011-12-08T22:51:02.000-06:00"/&gt;
-  &lt;user id="123456" name="jsmith" rax-auth:defaultRegion="DFW"&gt;
-    &lt;roles&gt;
-      &lt;role id="identity:admin" name="identity:admin" description="Admin Role."/&gt;
-      &lt;role id="identity:default" name="identity:default" description="Default Role."/&gt;
-    &lt;/roles&gt;
-  &lt;/user&gt;
-  &lt;serviceCatalog&gt;
-    &lt;service type="rax:database" name="cloudDatabases"&gt;
-      &lt;endpoint region="DFW" tenantId="1100111" publicURL="https://dfw.databases.api.rackspacecloud.com/v1.0/1100111"/&gt;
-      &lt;endpoint region="ORD" tenantId="1100111" publicURL="https://ord.databases.api.rackspacecloud.com/v1.0/1100111"/&gt;
-    &lt;/service&gt;
-    &lt;service type="rax:load-balancer" name="cloudLoadBalancers"&gt;
-      &lt;endpoint region="DFW" tenantId="1100111" publicURL="https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111"/&gt;
-      &lt;endpoint region="ORD" tenantId="1100111" publicURL="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111"/&gt;
-    &lt;/service&gt;
-    &lt;service type="compute" name="cloudServersOpenStack"&gt;
-      &lt;endpoint region="DFW" tenantId="1100111"
-        publicURL="https://dfw.servers.api.rackspacecloud.com/v2/1100111"&gt;
-        &lt;version id="2" info="https://dfw.servers.api.rackspacecloud.com/v2/"
-          list="https://dfw.servers.api.rackspacecloud.com/" /&gt;
-      &lt;/endpoint&gt;
-      &lt;endpoint region="ORD" tenantId="1100111"
-        publicURL="https://ord.servers.api.rackspacecloud.com/v2/1100111"&gt;
-        &lt;version id="2" info="https://ord.servers.api.rackspacecloud.com/v2/"
-          list="https://ord.servers.api.rackspacecloud.com/" /&gt;
-      &lt;/endpoint&gt;
-    &lt;/service&gt;
-    &lt;service type="compute" name="cloudServers"&gt;
-      &lt;endpoint tenantId="1100111"
-        publicURL="https://servers.api.rackspacecloud.com/v1.0/1100111"&gt;
-        &lt;version id="1.0"
-          info="https://servers.api.rackspacecloud.com/v1.0/"
-          list="https://servers.api.rackspacecloud.com/"/&gt;
-      &lt;/endpoint&gt;
-    &lt;/service&gt;
-    &lt;service type="object-store" name="cloudFiles"&gt;
-      &lt;endpoint region="DFW"
-        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-        publicURL="https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-        internalURL="https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt;
-      &lt;endpoint region="ORD"
-        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-        publicURL="https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-        internalURL="https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt;
-    &lt;/service&gt;
-    &lt;service type="rax:object-cdn" name="cloudFilesCDN"&gt;
-      &lt;endpoint region="DFW"
-        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-        publicURL="https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt; 
-      &lt;endpoint region="ORD"
-        tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-        publicURL="https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/&gt;    
-    &lt;/service&gt;
-    &lt;service type="rax:dns" name="cloudDNS"&gt;
-      &lt;endpoint tenantId="1100111"
-        publicURL="https://dns.api.rackspacecloud.com/v1.0/1100111"/&gt;
-    &lt;/service&gt;
-  &lt;/serviceCatalog&gt;
-&lt;/access&gt;
-</programlisting>
         </example>
         <example>
             <title>Authenticate: JSON response</title>
@@ -883,6 +798,11 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                         token</link>.</para>
                 </listitem>
                 <listitem>
+                    <para>The new v2.0 endpoint <emphasis>must
+                            appear</emphasis> in your service catalog
+                        in order for you to access it.</para>
+                </listitem>
+                <listitem>
                     <para>All examples in this guide assume that you
                         are operating against the US region.</para>
                 </listitem>
@@ -906,9 +826,10 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         <para> The Create zone API call provisions one or more new DNS
             zones, based on the configuration defined in the request
             object. A <emphasis>zone</emphasis> corresponds to a
-            classic DNS domain. If the corresponding request cannot be
-            fulfilled due to insufficient or invalid data, an
-                <code>HTTP</code>
+            classic DNS domain. To create a zone, you need to post to
+            the <emphasis role="bold">/zones</emphasis> endpoint. If
+            the corresponding request cannot be fulfilled due to
+            insufficient or invalid data, an <code>HTTP</code>
             <returnvalue>400 (Bad Request)</returnvalue> error
             response will be returned with information regarding the
             nature of the failure in the body of the response.
@@ -1046,9 +967,8 @@ Content-Type: application/json
             <title>List zone</title>
             <para>This operation provides detailed output for a
             specific zone. You can only query for zones that you have
-            permission to query.</para>
-        <para>Reviewer: what zones do you have permission to query?
-            Those that you create plus ... ?</para>
+            permission to query, namely those created using your tenant ID.</para>
+        
         <para>This operation does not require a request body. </para>
         <para>The following example shows the cURL request for List
             zone:</para>
@@ -1114,6 +1034,15 @@ Content-Type: application/json
             </example>
         <para>You can see from the response that the zone has been
             created and is <code>ACTIVE</code>.</para>
+        <note>
+            <para>If you have multiple zones or records and want to
+                get a subset of them, you could paginate, sort or
+                filter the results. More information on these topics
+                is available in the <citetitle>DNS Devguide,
+                    v2</citetitle> at <link
+                    xlink:href="http://docs.rackspace.com/"
+                    >http://docs.rackspace.com/</link>.</para>
+        </note>
         </chapter>
     <chapter xml:id="Create_Recordset">
         <title>Create a recordset</title>
@@ -1122,7 +1051,7 @@ Content-Type: application/json
             file. Record sets are also referred to as “Resource Record
             Sets” or “RRSets”.  The following example creates an 'A'
             recordset.  An 'A' recordset is used to map a hostname to
-            an ip address.</para>
+            an IP address.</para>
         <para>In this section, you will create a recordset for your
             new domain as follows:</para>
         <itemizedlist>
@@ -1216,6 +1145,12 @@ Content-Type: application/json
 }
 </programlisting>
         </example>
+        <note>
+            <para>Your JSON response will show the IP address of the
+                cloud server you created earlier in this guide rather
+                than the value <code>10.1.0.2</code>, which is simply
+                provided as an example.</para>
+        </note>
         <para>This request is asynchronous, so the <code>status</code>
             is set to <code>PENDING</code> when the recordset is
             initially created. When the recordset is created
