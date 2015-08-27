@@ -260,6 +260,8 @@
       </representation>
     </request>
     <response status="202">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
       
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -352,7 +354,7 @@
       
     </request>
     <response status="200">
-      
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="List zones: JSON response">
@@ -415,7 +417,7 @@
                />
             </wadl:doc>
          </representation> -->
-    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; 
+    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="updateZone" name="PATCH">
@@ -509,6 +511,7 @@
       </representation>
     </request> 
     <response status="200">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
       
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -517,7 +520,7 @@
             href="../samples-2/dns-update-zone_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="deleteZone" name="DELETE">
@@ -596,6 +599,8 @@
          </representation> -->
     </request>
     <response status="202">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
       
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -604,7 +609,7 @@
             href="../samples-2/dns-delete-zone_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="abandonZone" name="POST">
@@ -632,7 +637,8 @@
       </representation>
     </request> 
     <response status="204">
-      
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="No Content" xml:lang="EN">The server has fulfilled the request but does not need 
+        to return an entity-body, and might want to return updated metainformation.</wadl:doc>
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="Abandon zone: JSON response">
@@ -640,7 +646,7 @@
             href="../samples-2/dns-abandon-zone_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <!-- record sets -->
@@ -728,7 +734,8 @@
       </representation>
     </request>
     <response status="202">
-      
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="Create record set: JSON response">
@@ -736,7 +743,7 @@
             href="../samples-2/dns-create-record-set_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="listRecordsets" name="GET">
@@ -765,7 +772,7 @@
       </representation>   
     </request>
     <response status="200">
-      
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="List all record sets: JSON response">
@@ -773,7 +780,7 @@
             href="../samples-2/dns-list-record-sets_response.json"/>
         </wadl:doc>
       </representation>
-    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; 
+    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="updateRecordset" name="PUT">
@@ -833,7 +840,7 @@
       </representation>
     </request> 
     <response status="200">
-      
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="Update record set: JSON response">
@@ -841,7 +848,7 @@
             href="../samples-2/dns-update-record-set_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="listRecordset" name="GET">
@@ -872,7 +879,7 @@
       </representation>
     </request> 
     <response status="200">
-      
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="List record set: JSON response">
@@ -880,7 +887,7 @@
             href="../samples-2/dns-list-record-set_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="deleteRecordset" name="DELETE">
@@ -907,6 +914,8 @@
       </representation>
     </request>
     <response status="204">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="No Content" xml:lang="EN">The server has fulfilled the request but does not need 
+        to return an entity-body, and might want to return updated metainformation.</wadl:doc>
       
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -915,7 +924,7 @@
             href="../samples-2/dns-delete-record-set_response.json"/>
         </wadl:doc>
       </representation>
-    </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit;
+    </response> &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
 </application>

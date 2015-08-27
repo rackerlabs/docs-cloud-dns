@@ -857,12 +857,6 @@
         </section>
         <section xml:id="sync_asynch_responses">
             <title>Synchronous and Asynchronous Responses</title>
-            <para security="reviewer">Reviewer: This section has
-                already been updated for v2 using the info located
-                here:
-                https://wiki.openstack.org/wiki/Designate/APIv2#Synchronous_vs_Asynchronous.
-                Does any other content need to be added or
-                removed?</para>
             <para>All Create, Update, and Delete operations can be
                 either synchronous or asynchronous. </para>
             <para>With <emphasis>synchronous</emphasis> requests, the
@@ -888,9 +882,6 @@
                 return an HTTP status of 202 Accepted. The
                     <code>status</code> property <emphasis>must
                     not</emphasis> have the value <code>ACTIVE</code>. </para>
-            <para security="reviewer">Reviewer: Is the info above
-                correct about determining whether a given API call was
-                synchronous or asynchronous?</para>
             <para><emphasis role="bold">There are two ways to check
                     whether an asynchronous request is
                     complete:</emphasis><itemizedlist>
@@ -1439,13 +1430,6 @@
         </section>
         <section xml:id="Limits-d1e1208">
             <title>Limits</title>
-            <para security="reviewer">Reviewer: Can you please supply
-                me with the necessary info to update this section for
-                v2 as needed? For example, we shouldn't be using
-                domains in URL, but rather zones. Is that correct?
-                Please give me the needed info to update this
-                information in the section "Limits" and its
-                subsections about limits.</para>
             <para>All accounts, by default, have a preconfigured set
                 of thresholds (or limits) to manage capacity and
                 prevent abuse of the system. The system recognizes two
@@ -1462,15 +1446,15 @@
                     regular expression boundary matcher '^' takes
                     effect after the root URI path. For example, the
                     regular expression
-                        ^/v1.0/<parameter>1234</parameter>/domains
-                    would match the bolded portion of the following
-                    URI: https://dns.api.rackspacecloud.com<emphasis
+                        ^/v1.0/<parameter>1234</parameter>/zones would
+                    match the bolded portion of the following URI:
+                        https://dns.api.rackspacecloud.com<emphasis
                         role="bold"
-                    >/v1.0/1234/domains</emphasis>.</para>
+                    >/v1.0/1234/zones</emphasis>.</para>
                 <para>The following table specifies the default rate
                     limits for all API operations for all &GET;,
-                    &POST;, &PUT;, and &DELETE; calls for domains,
-                    subdomains, or records:</para>
+                    &POST;, &PUT;, and &DELETE; calls for zones and
+                    subdomains:</para>
                 <table rules="all">
                     <caption>Default Rate Limits</caption>
                     <thead>
@@ -1491,37 +1475,37 @@
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">*/domains/search*</td>
+                            <td colspan="2">*/zones/search*</td>
                             <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/domains/search).*</td>
+                                .*/v\d+\.\d+/(\d+/zones/search).*</td>
                             <td colspan="1">20/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">*/zones*</td>
                             <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                                .*/v\d+\.\d+/(\d+/zones).*</td>
                             <td colspan="1">60/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&POST;</td>
-                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">*/zones*</td>
                             <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                                .*/v\d+\.\d+/(\d+/zones).*</td>
                             <td colspan="1">20/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&PUT;</td>
-                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">*/zones*</td>
                             <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                                .*/v\d+\.\d+/(\d+/zones).*</td>
                             <td colspan="1">20/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&DELETE;</td>
-                            <td colspan="2">*/domains*</td>
+                            <td colspan="2">*/zones*</td>
                             <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/domains).*</td>
+                                .*/v\d+\.\d+/(\d+/zones).*</td>
                             <td colspan="1">10/minute</td>
                         </tr>
                     </tbody>
@@ -1550,95 +1534,84 @@
                 <para>&POST; and &PUT; calls are limited to the
                     creation or modification of a maximum of 100
                     entities per call where an entity is defined as a
-                    record, domain, or subdomain. For example, when
-                    using &POST; <code>/domains</code> to create a new
-                    domain with nine subdomains, you could create a
-                    maximum of ninety records across the domain and
-                    subdomains. This would total 100 entities: 1
-                    domain + 9 subdomains + 90 records. Additional
-                    records and/or subdomains could be created for the
-                    domain in subsequent calls.</para>
+                    recordset, zone, or subzone. For example, when
+                    using &POST; <code>/zones</code> to create a new
+                    zone with nine subzones, you could create a
+                    maximum of ninety recordsets across the zone and
+                    subzones. This would total 100 entities: 1 zone +
+                    9 subzones + 90 recordsets. Additional recordsets
+                    and/or subzones could be created for the zone in
+                    subsequent calls.</para>
                 <section xml:id="Domain_Limits">
-                    <title>Domain Limits</title>
-                    <para>By default users may have up to 500 domains
-                        per Cloud account (including sub-domains).
-                        When a user submits a request to create new
-                        domains and/or sub-domains, the system will
-                        only accept the request if the total number of
-                        existing plus requested domains and
-                        sub-domains is within the account domain
-                        limit. If the total exceeds the account domain
-                        limit, the entire request will be rejected and
-                        the following message will be returned:</para>
+                    <title>Zone Limits</title>
+                    <para>By default users may have up to 500 zones
+                        per Cloud account (including sub-zones). When
+                        a user submits a request to create new zones
+                        and/or subzones, the system will only accept
+                        the request if the total number of existing
+                        plus requested zones and subzones is within
+                        the account zone limit. If the total exceeds
+                        the account zone limit, the entire request
+                        will be rejected and the following message
+                        will be returned:</para>
                     <example>
-                        <title>Example Domain Limit Response:
-                            XML</title>
-                        <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-example-domain-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                    </example>
-                    <example>
-                        <title>Example Domain Limit Response:
+                        <title>Example Zone Limit Response:
                             JSON</title>
-                        <programlisting language="xml"><xi:include href="samples/dns-example-domain-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                        <programlisting language="xml"><xi:include href="samples-2/dns-example-zone-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <note>
-                        <para>Any domains/sub-domains or records that
+                        <para>Any zones/subzones or recordsets that
                             are submitted in any request that causes
-                            domain limits to be exceeded will not be
+                            zone limits to be exceeded will not be
                             provisioned and the entire request will be
                             rejected.</para>
                     </note>
                     <note>
-                        <para>The account domain limit applies to any
+                        <para>The account zone limit applies to any
                             API request that can be used to create a
-                            domain and/or sub-domain. An account may
-                            have a non-default limit if determined
+                            zones and/or subzone. An account may have
+                            a non-default limit if determined
                             necessary by Support.</para>
                     </note>
                 </section>
                 <section xml:id="Record_Limits">
-                    <title>Record Limits</title>
-                    <para>By default users may have up to 500 records
-                        per domain per Cloud account. When a user
-                        submits a request to create one or more new
-                        records, the system will only accept the
-                        request if the total number of existing plus
-                        requested records is within the account record
-                        limit. If the total number of records on a
-                        specified domain exceeds the record limit, the
-                        entire request will be rejected and the
-                        following message will be returned:</para>
+                    <title>Recordset Limits</title>
+                    <para>By default users may have up to 500
+                        recordsets per zone per Cloud account. When a
+                        user submits a request to create one or more
+                        new recordsets, the system will only accept
+                        the request if the total number of existing
+                        plus requested recordsets is within the
+                        account record limit. If the total number of
+                        recordsets on a specified zone exceeds the
+                        recordset limit, the entire request will be
+                        rejected and the following message will be
+                        returned:</para>
                     <example>
-                        <title>Example Domain Record Limit Response:
-                            XML</title>
-                        <?dbfo keep-together="always"?>
-                        <programlisting language="xml"><xi:include href="samples/dns-example-record-limit_response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                    </example>
-                    <example>
-                        <title>Example Domain Record Limit Response:
+                        <title>Example Zone Recordset Limit Response:
                             JSON</title>
-                        <programlisting language="xml"><xi:include href="samples/dns-example-record-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                        <programlisting language="xml"><xi:include href="samples-2/dns-example-recordset-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <note>
-                        <para>Any domains/sub-domains or records that
+                        <para>Any zones/subzones or recordsets that
                             are submitted in any request that causes
-                            record limits to be exceeded will not be
-                            provisioned and the entire request will be
-                            rejected.</para>
+                            recordset limits to be exceeded will not
+                            be provisioned and the entire request will
+                            be rejected.</para>
                     </note>
                     <note>
                         <para>The limits apply to any API request that
-                            can be used to create one or more records.
-                            An account may have a non-default record
-                            limit if determined necessary by Support.
-                        </para>
+                            can be used to create one or more
+                            recordsets. An account may have a
+                            non-default recordset limit if determined
+                            necessary by Support. </para>
                     </note>
                 </section>
             </section>
             <section xml:id="view_limits_ov">
                 <title>Viewing Current Limits</title>
                 <para>Users can view their current rate and absolute
-                    (including domain and record) limits.</para>
+                    (including zone and recordset) limits.</para>
             </section>
         </section>
         <section xml:id="datetimeformat">
@@ -1702,15 +1675,13 @@
         </section>
         <section xml:id="descriptions">
             <title>Descriptions</title>
-            <para security="reviewer">Reviewer: Please give me an
-                updated example for this section.</para>
             <para>Descriptions are supported for zones and recordsets
                 and their requests and responses using the
                     <code>description</code> attribute. See the
                 examples that follow.</para>
             <example>
                 <title>Example Response with Comments: JSON</title>
-                <programlisting language="xml"><xi:include href="samples/dns-example-response-w-comment_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                <programlisting language="xml"><xi:include href="samples-2/dns-example-response-w-comment_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
             <para>Notes for descriptions:</para>
             <itemizedlist>
@@ -2163,34 +2134,22 @@ Content-Type: application/json
                                    and domain name (for example:
                                    <code>_sip.tcp.example.org</code>.).
                                    </para>
-                                   <para security="reviewer">Reviewer:
-                                   does any of the information in the
-                                   bullets that follow below need to
-                                   be maintained/updated for SRV
-                                   records?</para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>The standard format of an SRV
-                                   record is: _service._proto.name TTL
-                                   class SRV priority weight port
-                                   target, for example:
-                                   _sip._tcp.example.com. 86400 IN SRV
-                                   10 60 5060
-                                   bigbox.example.com.</para>
                                    </listitem>
                                    <listitem>
                                    <para>The DNS API flags two SRV
                                    records as duplicates if their
-                                   _service, _proto, name, priority,
-                                   and weight match, <emphasis
-                                   role="bold">and</emphasis> both
-                                   records are targeted to the same
-                                   server (host and port combination)
-                                   as well. So, for the domain
-                                   example.com, the DNS API will
-                                   accept the following SRV records
-                                   for the domain and will not flag
-                                   them as duplicates:</para>
+                                   service name,  protocol, zone name,
+                                   priority, and weight all match,
+                                   <emphasis role="bold"
+                                   >and</emphasis> both records are
+                                   targeted to the same server (host
+                                   and port combination) as well. So,
+                                   for the zone example.com, the DNS
+                                   API will accept the following SRV
+                                   records for the zone and will not
+                                   flag them as duplicates  (in the
+                                   format “&lt;name&gt;&lt;ttl&gt; IN
+                                   &lt;type&gt;&lt;priority&gt;&lt;weight&gt;&lt;port&gt;&lt;target-hostname&gt;”): </para>
                                    <itemizedlist>
                                    <listitem>
                                    <para>_sip._tcp.example.com. 86400

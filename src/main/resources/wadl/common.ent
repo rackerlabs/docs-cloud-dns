@@ -123,4 +123,29 @@
          <response status="409" xmlns="http://wadl.dev.java.net/2009/02">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Already Exists" xml:lang="EN">The item already exists.</wadl:doc>
         </response>
-           '>                        
+           '>  
+           
+       <!--
+         A collection of common faults for v2, these are pretty much expected
+         in every request.
+       -->
+     <!ENTITY v2commonFaults
+           '
+        <response status="201" xmlns="http://wadl.dev.java.net/2009/02">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Created" xml:lang="EN">The request has been fulfilled and 
+            resulted in a new resource being created. </wadl:doc>
+        </response>
+        <response status="403" xmlns="http://wadl.dev.java.net/2009/02">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Forbidden" xml:lang="EN">The server has not found anything 
+            matching the Request-URI.</wadl:doc>
+        </response>
+        <response status="405" xmlns="http://wadl.dev.java.net/2009/02">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Method Not Allowed" xml:lang="EN">The method specified in the 
+            Request-Line is not allowed for the resource identified by the Request-URI.</wadl:doc>
+        </response>
+        <response status="415" xmlns="http://wadl.dev.java.net/2009/02">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Unsupported Media Type" xml:lang="EN">The server is refusing to service 
+            the request because the entity of the request is in a format not supported by the requested resource for the 
+            requested method. </wadl:doc>
+        </response>
+           '>
