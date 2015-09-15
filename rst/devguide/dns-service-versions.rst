@@ -1,3 +1,5 @@
+.. _cdns-dg-service-versions:
+
 ====================
 DNS Service versions
 ====================

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-show-record-details-v1.0-account-domains-domainid-records-recordid:
+.. _get-show-record-details-v1.0-account-domains-domainid-records-recordid:
 
 Show record details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-update-records-v1.0-account-domains-domainid-records:
+.. _put-update-records-v1.0-account-domains-domainid-records:
 
 Update records
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -20,7 +20,7 @@ Updates the configuration of records in the domain.
 This call updates the configuration of records in a specified domain.
 
 .. note::
-   Notes 
+   
    
    *  If you submit a request with multiple records, and one or more of those records fails, the entire request fails.
    *  When the domain and/or record TTL is supplied by the user, either via a create or update call, the TTL values must be 300 seconds or more.

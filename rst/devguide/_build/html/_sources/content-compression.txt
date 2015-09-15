@@ -1,3 +1,5 @@
+.. _cdns-dg-content-compression:
+
 ===================
 Content Compression
 ===================
@@ -9,7 +11,7 @@ client and indicated by the ``Content-Encoding`` header in the server
 response. Unless the header is explicitly set, encoding defaults to
 disabled.
 
-**Encoding Headers**
+**Table. Encoding Headers**
 
 +----------+----------+----------------------+-------+
 | Header   | Type     | Name                 | Value |

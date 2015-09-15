@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-clone-domain-v1.0-account-domains-domainid-clone:
+.. _post-clone-domain-v1.0-account-domains-domainid-clone:
 
 Clone domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,7 +24,7 @@ This call duplicates a single existing domain configuration with a new domain na
 See the query parameters table for the parameters and options available to specify how the cloning affects subdomains, comments, email addresses, and record data.
 
 .. note::
-   Notes 
+   
    
    *  If the corresponding request cannot be fulfilled due to insufficient or invalid data, or if the reference domain does not exist, an HTTP 400 (Bad Request) error response will be returned in the body of the response with information regarding the nature of the failure.
    *  Clone domain is an atomic operation. If there is a failure in the duplication of a single record or subdomain, the entire process will fail. Failures are non-recoverable and require the caller to correct the cause of the failure and ``POST`` the request again.

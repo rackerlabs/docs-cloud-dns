@@ -1,3 +1,5 @@
+.. _cdns-dg-persistent-connections:
+
 ======================
 Persistent Connections
 ======================

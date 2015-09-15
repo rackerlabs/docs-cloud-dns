@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-import-domain-v1.0-account-domains-import:
+.. _post-import-domain-v1.0-account-domains-import:
 
 Import domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ Ensure that the BIND 9 formatted file configuration contents are valid by adheri
 Not following the above rules strictly will result in an HTTP 400 (Bad Request) error response with messages such as the following: "The request could not be understood by the server due to malformed syntax."
 
 .. note::
-   Notes 
+   
    
    *  If you attempt to import a domain that already exists, the API will return an exception saying that the domain already exists. This is the same behavior as when you attempt to create a domain that already exists.
    *  The domain can have a comment attribute specified in the import domain request, and that comment is transferred to the new domain. However the domain contents cannot have comments specified in them. For example, no record level comments can be used in the import domain request.

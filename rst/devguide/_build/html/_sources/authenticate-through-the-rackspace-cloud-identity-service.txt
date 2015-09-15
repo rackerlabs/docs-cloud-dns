@@ -82,8 +82,7 @@ Rackspace Cloud Control Panel.
 
 To find your API key, perform the following steps:
 
-#. Log in to the Cloud Control Panel
-   (` <http://mycloud.rackspace.com>`__\ http://mycloud.rackspace.com).
+#. Log in to the Cloud Control Panel at http://mycloud.rackspace.com.
 
 #. On the upper-right side of the top navigation pane, click your
    username.

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-add-ptr-records-v1.0-account-rdns:
+.. _post-add-ptr-records-v1.0-account-rdns:
 
 Add PTR records
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,7 +18,7 @@ Adds one or more PTR record records for a specified Cloud device.
    
 
 .. note::
-   Notes 
+   
    
    *  PTR records can only be added for Rackspace Cloud Servers and Load Balancers.
    *  ``id`` for the record must not be specified.

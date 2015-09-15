@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _put-update-domain-v1.0-account-domains-domainid:
+
 Update domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -20,17 +22,13 @@ This call modifies DNS domain(s) attributes only. records cannot be added, modif
 If a request cannot be fulfilled due to insufficient or invalid data, an ``HTTP`` 400 (Bad Request) error response will be returned with information regarding the nature of the failure in the body of the response. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.
 
 .. note::
-   Notes 
+   
    
    *  Refer to the section "DNS Propagation" in the Devguide for information about DNS propagation.
    *  A domain's ``id`` is immutable.
    *  When the domain and/or record TTL is supplied by the user, either via a create or update call, the TTL values must be 300 seconds or more.
+   *  ``name`` cannot be specified, because the domain name cannot be modified.
    
-   
-   
-
-.. note::
-   ``name`` cannot be specified, because the domain name cannot be modified.
    
    
 

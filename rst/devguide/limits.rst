@@ -1,3 +1,5 @@
+.. _cdns-dg-limits:
+
 ======
 Limits
 ======

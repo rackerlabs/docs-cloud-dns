@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="date-time-format">
-<h1>Date/Time format<a class="headerlink" href="#date-time-format" title="Permalink to this headline">¶</a></h1>
+<span id="cdns-dg-date-time"></span><h1>Date/Time format<a class="headerlink" href="#date-time-format" title="Permalink to this headline">¶</a></h1>
 <p>The DNS service uses an ISO-8601 compliant date format for the display
 and consumption of date/time values.</p>
 <p><strong>Example:&nbsp;DNS Service Date/Time Format</strong></p>
@@ -102,25 +102,44 @@ and consumption of date/time values.</p>
 <div class="code highlight-python"><div class="highlight"><pre>2011-05-19T08:07:08-0500
 </pre></div>
 </div>
-<p><strong>Explanation of Date/Time Format Codes</strong></p>
-<dl class="docutils">
-<dt>yyyy</dt>
-<dd>Four digit year</dd>
-<dt>MM</dt>
-<dd>Two digit month</dd>
-<dt>dd</dt>
-<dd>Two digit day of month</dd>
-<dt>T</dt>
-<dd>Separator for date/time</dd>
-<dt>HH</dt>
-<dd>Two digit hour of day (00-23)</dd>
-<dt>mm</dt>
-<dd>Two digit minutes of hour</dd>
-<dt>ss</dt>
-<dd>Two digit seconds of the minute</dd>
-<dt>Z</dt>
-<dd>RFC-822 timezone (offset from GMT)</dd>
-</dl>
+<p><strong>Table. Explanation of Date/Time Format Codes</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>yyyy</td>
+<td>Four digit year</td>
+</tr>
+<tr class="row-odd"><td>MM</td>
+<td>Two digit month</td>
+</tr>
+<tr class="row-even"><td>dd</td>
+<td>Two digit day of month</td>
+</tr>
+<tr class="row-odd"><td>T</td>
+<td>Separator for date/time</td>
+</tr>
+<tr class="row-even"><td>HH</td>
+<td>Two digit hour of day (00-23)</td>
+</tr>
+<tr class="row-odd"><td>mm</td>
+<td>Two digit minutes of hour</td>
+</tr>
+<tr class="row-even"><td>ss</td>
+<td>Two digit seconds of the minute</td>
+</tr>
+<tr class="row-odd"><td>Z</td>
+<td>RFC-822 timezone (offset from GMT)</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -142,40 +161,9 @@ and consumption of date/time values.</p>
 </ul>
 <ul>
   
-<a href="limits.html"><<</a>
-
 |
 
-<a href="comments.html">>></a>
-
   <li><span class="sidebarheader">Contents</span></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request and response types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and asynchronous responses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Date/Time format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

@@ -1,3 +1,5 @@
+.. _cdns-dg-synch-asynch:
+
 ======================================
 Synchronous and asynchronous responses
 ======================================
@@ -21,10 +23,10 @@ more information regarding the original request:
 
 **GET** /status/*jobId*\ ?\ ``showDetails``\ =\ ``[true|false]``
 
-   List status of the specified asynchronous request. Display details, as
-   specified by the ``showDetails`` parameter.
+- List status of the specified asynchronous request. Display details, as
+  specified by the ``showDetails`` parameter.
    
-   Representations: XML, JSON
+- Representations: XML, JSON
    
 Normal Response Code(s): 200
 
@@ -42,44 +44,30 @@ unauthorized (401), badRequest (400), itemNotFound (404), overLimit (413)
 The following list shows the complete set of attributes for
 asynchronous responses:
 
-**Attributes for asynchronous responses**
+**Table. Attributes for asynchronous responses**
 
-jobId
-   An identifier for the specific request.
-   Inclusion: Basic and Detail
-
-callbackUrl
-   Resource locator for querying the status of the request.
-   Inclusion: Basic and Detail
-
-status
-   An indicator of the request status: INITIALIZED, RUNNING, COMPLETED, or
-   ERROR.
-   Inclusion: Basic and Detail
-
-.. note::
-   INITIALIZED is the status that immediately precedes RUNNING and is
-   the first possible state of a job. It indicates acceptance of the job.
-
-requestUrl
-   The url of the original request.
-   Inclusion: Detail only
-
-verb
-   The type of the original request: PUT, POST, or DELETE.
-   Inclusion: Detail only
-
-request
-   The original request data, if any.
-   Inclusion: Detail only
-
-response
-   The results of a COMPLETE operation, if any.
-   Inclusion: Detail only
-
-error
-   The results of an ERROR operation.
-   Inclusion: Detail only
++-------------+--------------------------------------------------------------------------------+------------------+
+| Attribute   | Description                                                                    | Inclusion        |
++=============+================================================================================+==================+
+| jobid       | An identifier for the specific request.                                        | Basic and Detail |
++-------------+--------------------------------------------------------------------------------+------------------+
+| callbackUrl | Resource locator for querying the status of the request.                       | Basic and Detail |
++-------------+--------------------------------------------------------------------------------+------------------+
+| status      | An indicator of the request status: INITIALIZED, RUNNING, COMPLETED, or ERROR. | Basic and Detail |
+|             |                                                                                |                  |
+|             | **Note**: INITIALIZED is the status that immediately precedes RUNNING and      |                  |
+|             | is the first possible status of a job. It indicates acceptance of the job.     |                  |
++-------------+--------------------------------------------------------------------------------+------------------+
+| requestUrl  | The URL of the original request.                                               | Detail only      |
++-------------+--------------------------------------------------------------------------------+------------------+
+| verb        | The type of the original request: PUT, POST, or DELETE.                        | Detail only      |
++-------------+--------------------------------------------------------------------------------+------------------+
+| request     | The original request data, if any.                                             | Detail only      |
++-------------+--------------------------------------------------------------------------------+------------------+
+| response    | The results of a COMPLETE operation, if any.                                   | Detail only      |
++-------------+--------------------------------------------------------------------------------+------------------+
+| error       | The results of an ERROR operation.                                             | Detail only      |
++-------------+--------------------------------------------------------------------------------+------------------+
 
 The asynchronous response body will look similar to the following
 examples, depending on whether basic or detailed information is
@@ -393,11 +381,15 @@ specified) are:
 
 *  ``offset=0``
 
-**GET**/status?*``showDetails``*\ =\ ``[true|false]``
-&\ *``showErrors``*\ =\ ``[true|false]``
-&\ *``showRunning``*\ =\ ``[true|false]``
-&\ *``showCompleted``*\ =\ ``[true|false]``
-&\ *``limit``*\ =\ *``int1``* &\ *``offset``*\ =\ *``int2``*
++------+-----------------------------------+----------------------------------------+-----------------+
+| Verb | URI                               | Description                            | Representations |
++======+===================================+========================================+=================+
+| GET  | /status?showDetails=[true|false]  | List status of all asynchronous job    | XML, JSON       |
+|      | &showErrors=[true|false]          | requests for an account and filter the |                 |
+|      | &showRunning=[true|false]         | information requested by using the     |                 |
+|      | &showCompleted=[true|false]       | optional boolean request parameters.   |                 |
+|      | &limit=int1 &offset=int2          |                                        |                 |
++------+-----------------------------------+----------------------------------------+-----------------+
 
 List status of all asynchronous job requests for an account and filter
 the information requested by using the optional boolean request

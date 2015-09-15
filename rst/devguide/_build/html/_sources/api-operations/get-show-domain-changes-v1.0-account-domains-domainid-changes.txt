@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-show-domain-changes-v1.0-account-domains-domainid-changes:
+
 Show domain changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -8,9 +10,9 @@ Show domain changes
 
     GET /v1.0/{account}/domains/{domainId}/changes
 
-Shows all changes to a specified domain ``because`` a specified ``date/time``.
+Shows all changes to a specified domain ``since`` a specified ``date/time``.
 
-This call shows all changes to a specified domain ``since`` a specified date/time. The ``since`` parameter is optional and defaults to midnight of the current day. See the section "Date/Time Format" in the Devguide for details on how to specify this parameter's value.
+This call shows all changes to a specified domain ``since`` a specified date/time. The ``since`` parameter is optional and defaults to midnight of the current day. See the section "Date/Time Format" at (http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/datetimeformat.html) for details on how to specify this parameter's value.
 
 The following examples show the requests and corresponding responses to list the domain changes because midnight, GMT-5, on September 13, 2011:
 

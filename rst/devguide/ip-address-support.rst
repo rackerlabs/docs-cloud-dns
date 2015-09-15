@@ -1,3 +1,5 @@
+.. _cdns-dg-ip-address-support:
+
 ==================
 IP Address Support
 ==================

@@ -1,3 +1,5 @@
+.. _cdns-dg-request-response:
+
 ==========================
 Request and response types
 ==========================
@@ -12,7 +14,7 @@ the request. If no response format is specified, JSON is the default. If
 conflicting formats are specified using both an ``Accept`` header and a
 query extension, the query extension takes precedence.
 
-**Response formats**
+**Table. Response formats**
 
 +----------+---------------------+----------------------+---------+
 | Format   | Accept Header       | Query Extension      | Default |

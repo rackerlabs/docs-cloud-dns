@@ -1,3 +1,5 @@
+.. _overview:
+
 ========
 Overview
 ========
@@ -21,6 +23,8 @@ Forum <http://feedback.rackspace.com>`_.
 Issues and bug reports can be directed to your support team via ticket,
 chat, email, or phone.
 
+.. _overview-audience:
+
 Intended audience
 ~~~~~~~~~~~~~~~~~
 
@@ -38,6 +42,8 @@ service. You should also be familiar with:
 -  HTTP/1.1 conventions
 
 -  JSON and/or XML data serialization formats
+
+.. _cdns-dg-overview-dochistory:
 
 Document change history
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +65,8 @@ February 25, 2015
 
 Removed London endpoint, since we now have one global endpoint for the Rackspace Authentication
 Service. See :ref:`Identity service endpoints <cdns-dg-authentication-endpoints>`.
+
+.. _overview-additional-resources:
 
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-search-domains-v1.0-account-domains-search:
+.. _get-search-domains-v1.0-account-domains-search:
 
 Search domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -13,7 +13,7 @@ Search domains
 Searches domains by domain name: lists all names manageable by the specified account that have the value of the ``name`` parameter as part of their name.
 
 .. note::
-   Notes 
+   
    
    *  Use the query parameter ``name`` to search domains by domain name. This lists all names manageable by the specified account that have the value of the ``name`` parameter as part of their name.
    *  The value specified for the ``name`` parameter must contain at least 3 characters or nothing will be returned by the search.

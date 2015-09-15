@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-export-domain-v1.0-account-domains-domainid-export:
+.. _get-export-domain-v1.0-account-domains-domainid-export:
 
 Export domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -20,7 +20,7 @@ Exports details for a specified domain.
 This call provides the BIND (Berkeley Internet Name Domain) 9 formatted contents of the requested domain. This call is for a single domain only, and as such, does not traverse up or down the domain hierarchy for details (that is, no subdomain information is provided).
 
 .. note::
-   Notes 
+   
    
    *  This call is not capable of returning anything for a domain that has been deleted.
    *  The BIND 9 formatted contents of the requested domain will have no comments listed for the domain or for the records of the domain being exported.

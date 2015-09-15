@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="synchronous-and-asynchronous-responses">
-<h1>Synchronous and asynchronous responses<a class="headerlink" href="#synchronous-and-asynchronous-responses" title="Permalink to this headline">¶</a></h1>
+<span id="cdns-dg-synch-asynch"></span><h1>Synchronous and asynchronous responses<a class="headerlink" href="#synchronous-and-asynchronous-responses" title="Permalink to this headline">¶</a></h1>
 <p>All successful <strong>GET</strong> requests are <em>synchronous</em> calls, since they are
 always retrieving (reading) existing information. With these requests,
 the caller waits until the call returns with the specified code and
@@ -106,11 +106,11 @@ returned by default. If more detail is desired, any status URL may
 include an optional <code class="docutils literal"><span class="pre">showDetails</span></code> query parameter that will display
 more information regarding the original request:</p>
 <p><strong>GET</strong> /status/<em>jobId</em>?<code class="docutils literal"><span class="pre">showDetails</span></code>=<code class="docutils literal"><span class="pre">[true|false]</span></code></p>
-<blockquote>
-<div><p>List status of the specified asynchronous request. Display details, as
-specified by the <code class="docutils literal"><span class="pre">showDetails</span></code> parameter.</p>
-<p>Representations: XML, JSON</p>
-</div></blockquote>
+<ul class="simple">
+<li>List status of the specified asynchronous request. Display details, as
+specified by the <code class="docutils literal"><span class="pre">showDetails</span></code> parameter.</li>
+<li>Representations: XML, JSON</li>
+</ul>
 <p>Normal Response Code(s): 200</p>
 <p>Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
 unauthorized (401), badRequest (400), itemNotFound (404), overLimit (413)</p>
@@ -126,41 +126,57 @@ request.</p>
 </div>
 <p>The following list shows the complete set of attributes for
 asynchronous responses:</p>
-<p><strong>Attributes for asynchronous responses</strong></p>
-<dl class="docutils">
-<dt>jobId</dt>
-<dd>An identifier for the specific request.
-Inclusion: Basic and Detail</dd>
-<dt>callbackUrl</dt>
-<dd>Resource locator for querying the status of the request.
-Inclusion: Basic and Detail</dd>
-<dt>status</dt>
-<dd>An indicator of the request status: INITIALIZED, RUNNING, COMPLETED, or
-ERROR.
-Inclusion: Basic and Detail</dd>
-</dl>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">INITIALIZED is the status that immediately precedes RUNNING and is
-the first possible state of a job. It indicates acceptance of the job.</p>
-</div>
-<dl class="docutils">
-<dt>requestUrl</dt>
-<dd>The url of the original request.
-Inclusion: Detail only</dd>
-<dt>verb</dt>
-<dd>The type of the original request: PUT, POST, or DELETE.
-Inclusion: Detail only</dd>
-<dt>request</dt>
-<dd>The original request data, if any.
-Inclusion: Detail only</dd>
-<dt>response</dt>
-<dd>The results of a COMPLETE operation, if any.
-Inclusion: Detail only</dd>
-<dt>error</dt>
-<dd>The results of an ERROR operation.
-Inclusion: Detail only</dd>
-</dl>
+<p><strong>Table. Attributes for asynchronous responses</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="72%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Description</th>
+<th class="head">Inclusion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>jobid</td>
+<td>An identifier for the specific request.</td>
+<td>Basic and Detail</td>
+</tr>
+<tr class="row-odd"><td>callbackUrl</td>
+<td>Resource locator for querying the status of the request.</td>
+<td>Basic and Detail</td>
+</tr>
+<tr class="row-even"><td>status</td>
+<td><p class="first">An indicator of the request status: INITIALIZED, RUNNING, COMPLETED, or ERROR.</p>
+<p class="last"><strong>Note</strong>: INITIALIZED is the status that immediately precedes RUNNING and
+is the first possible status of a job. It indicates acceptance of the job.</p>
+</td>
+<td>Basic and Detail</td>
+</tr>
+<tr class="row-odd"><td>requestUrl</td>
+<td>The URL of the original request.</td>
+<td>Detail only</td>
+</tr>
+<tr class="row-even"><td>verb</td>
+<td>The type of the original request: PUT, POST, or DELETE.</td>
+<td>Detail only</td>
+</tr>
+<tr class="row-odd"><td>request</td>
+<td>The original request data, if any.</td>
+<td>Detail only</td>
+</tr>
+<tr class="row-even"><td>response</td>
+<td>The results of a COMPLETE operation, if any.</td>
+<td>Detail only</td>
+</tr>
+<tr class="row-odd"><td>error</td>
+<td>The results of an ERROR operation.</td>
+<td>Detail only</td>
+</tr>
+</tbody>
+</table>
 <p>The asynchronous response body will look similar to the following
 examples, depending on whether basic or detailed information is
 requested.</p>
@@ -426,11 +442,35 @@ specified) are:</p>
 <li><code class="docutils literal"><span class="pre">limit=100</span></code></li>
 <li><code class="docutils literal"><span class="pre">offset=0</span></code></li>
 </ul>
-<p><strong>GET</strong>/status?*``showDetails``*=<code class="docutils literal"><span class="pre">[true|false]</span></code>
-&amp;<em>``showErrors``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code>
-&amp;<em>``showRunning``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code>
-&amp;<em>``showCompleted``</em>=<code class="docutils literal"><span class="pre">[true|false]</span></code>
-&amp;<em>``limit``</em>=<em>``int1``</em> &amp;<em>``offset``</em>=<em>``int2``</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="6%" />
+<col width="36%" />
+<col width="41%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Verb</th>
+<th class="head">URI</th>
+<th class="head">Description</th>
+<th class="head">Representations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td>/status?showDetails=[true|false]
+&amp;showErrors=[true|false]
+&amp;showRunning=[true|false]
+&amp;showCompleted=[true|false]
+&amp;limit=int1 &amp;offset=int2</td>
+<td>List status of all asynchronous job
+requests for an account and filter the
+information requested by using the
+optional boolean request parameters.</td>
+<td>XML, JSON</td>
+</tr>
+</tbody>
+</table>
 <p>List status of all asynchronous job requests for an account and filter
 the information requested by using the optional boolean request
 parameters.</p>
@@ -625,43 +665,9 @@ Content-Length: 1170
 </ul>
 <ul>
   
-<a href="request-response-types.html"><<</a>
-
 |
 
-<a href="content-compression.html">>></a>
-
   <li><span class="sidebarheader">Contents</span></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request and response types</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Synchronous and asynchronous responses</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-status-of-all-asynchronous-job-requests">Viewing status of all asynchronous job requests</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supported-record-types.html">Supported Record Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS propagation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

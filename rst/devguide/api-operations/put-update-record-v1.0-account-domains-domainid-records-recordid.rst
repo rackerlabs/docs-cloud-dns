@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-update-record-v1.0-account-domains-domainid-records-recordid:
+.. _put-update-record-v1.0-account-domains-domainid-records-recordid:
 
 Update record
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -20,7 +20,7 @@ Updates the configuration of a record in the domain.
 This call updates the configuration for a specified record in a specified domain.
 
 .. note::
-   Notes 
+   
    
    *  When the domain and/or record TTL is supplied by the user, either via a create or update call, the TTL values must be 300 seconds or more.
    *  The only attributes that you can Update on a record (during a ``PUT`` ) are the ``data``, ``priority`` (for MX and SRV records), ``ttl``, and ``comment`` attributes.

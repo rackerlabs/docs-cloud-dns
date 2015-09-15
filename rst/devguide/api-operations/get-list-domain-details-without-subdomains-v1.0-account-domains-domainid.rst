@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-domain-details-without-subdomains-v1.0-account-domains-domainid:
+.. _get-list-domain-details-without-subdomains-v1.0-account-domains-domainid:
 
 List domain details without subdomains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

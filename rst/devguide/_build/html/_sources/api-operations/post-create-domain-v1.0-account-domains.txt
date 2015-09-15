@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-domain-v1.0-account-domains:
+
 Create domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -23,7 +25,7 @@ Creates a domain with the configuration defined by the request.
 This call provisions one or more new DNS domains under the account specified, based on the configuration defined in the request object. If the corresponding request cannot be fulfilled due to insufficient or invalid data, an ``HTTP`` 400 (Bad Request) error response will be returned with information regarding the nature of the failure in the body of the response. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and ``POST`` the request again. 
 
 .. note::
-   Notes 
+   
    
    *  Refer to `DNS Propagation <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/dns_propagation.html>`__ for information about DNS propagation.
    *  If you attempt to create a domain that already exists, the API will return an exception saying that the domain already exists.

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-ptr-records-v1.0-account-rdns-service-name:
+.. _delete-delete-ptr-records-v1.0-account-rdns-service-name:
 
 Delete PTR records
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

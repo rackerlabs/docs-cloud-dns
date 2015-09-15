@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-record-v1.0-account-domains-domainid-records-recordid:
+.. _delete-delete-record-v1.0-account-domains-domainid-records-recordid:
 
 Delete record
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

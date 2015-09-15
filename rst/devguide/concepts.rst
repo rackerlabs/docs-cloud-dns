@@ -1,9 +1,13 @@
+.. _concepts:
+
 ========
 Concepts
 ========
 
 To use the DNS API effectively, you should understand several key
 concepts:
+
+.. _concept-DNS:
 
 DNS
 ---
@@ -21,11 +25,15 @@ servers.
    DNS understands only ASCII, so the Cloud DNS Service provides conversion
    between UTF-8 and ASCII on all calls into the system.
 
+.. _concept-domain:
+
 Domain
 ------
 
 A domain is an entity/container of all DNS-related information
 containing one or more records.
+
+.. _concept-subdomain:
 
 Subdomain
 ---------
@@ -34,6 +42,8 @@ Subdomains are domains within a parent domain, and subdomains cannot be
 registered. Subdomains allow you to delegate domains. Subdomains can
 themselves have subdomains, so third-level, fourth-level, fifth-level,
 and deeper levels of nesting are possible.
+
+.. _concept-record:
 
 Record
 ------
@@ -44,6 +54,8 @@ Each record type contains particular information used to describe that
 record's purpose. Examples include mail exchange (MX) records, which
 specify the mail server for a particular domain, and name server (NS)
 records, which specify the authoritative name servers for a domain.
+
+.. _concept-domain-owner:
 
 Domain Owner
 ------------

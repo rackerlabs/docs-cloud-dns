@@ -1,6 +1,10 @@
+.. _DNS-glossary:
+
 ========
 Glossary
 ========
+
+.. _DNS-def:
 
 DNS
 ~~~
@@ -11,10 +15,14 @@ The Domain Name System (DNS) is a system by which internet domain name-to-addres
 
     DNS understands only ASCII, so the Cloud DNS Service provides conversion between UTF-8 and ASCII on all calls into the system.
 
+.. _domain-def:
+
 domain
 ~~~~~~
 
 A domain is an entity/container of all DNS-related information containing one or more records.
+
+.. _domain-owner-def:
 
 domain owner
 ~~~~~~~~~~~~
@@ -25,10 +33,14 @@ Within Rackspace DNS, the account which creates the domain is the domain owner.
 
     Domain registration is currently outside the scope of the Rackspace DNS API. Any references to ownership and management of domain information is only relevant within the context of the Rackspace DNS system.
 
+.. _record-def:
+
 record
 ~~~~~~
 
 A DNS record belongs to a particular domain and is used to specify information about the domain. There are several types of DNS records. Each record type contains particular information used to describe that record's purpose. Examples include mail exchange (MX) records, which specify the mail server for a particular domain, and name server (NS) records, which specify the authoritative name servers for a domain.
+
+.. _subdomain-def:
 
 subdomain
 ~~~~~~~~~

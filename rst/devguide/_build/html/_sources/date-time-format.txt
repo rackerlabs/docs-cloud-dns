@@ -1,3 +1,5 @@
+.. _cdns-dg-date-time:
+
 ================
 Date/Time format
 ================
@@ -19,29 +21,25 @@ May 19th, 2011 at 8:07:08 AM, GMT-5 would have the following format:
 
     2011-05-19T08:07:08-0500
 
-**Explanation of Date/Time Format Codes**
+**Table. Explanation of Date/Time Format Codes**
 
-yyyy
-   Four digit year
-
-MM
-   Two digit month
-
-dd
-   Two digit day of month
-
-T
-   Separator for date/time
-
-HH
-   Two digit hour of day (00-23)
-
-mm
-   Two digit minutes of hour
-
-ss
-   Two digit seconds of the minute
-
-Z
-   RFC-822 timezone (offset from GMT)
++------+------------------------------------+
+| Code | Description                        |
++======+====================================+
+| yyyy | Four digit year                    |
++------+------------------------------------+
+| MM   | Two digit month                    |
++------+------------------------------------+
+| dd   | Two digit day of month             |
++------+------------------------------------+
+| T    | Separator for date/time            |
++------+------------------------------------+
+| HH   | Two digit hour of day (00-23)      |
++------+------------------------------------+
+| mm   | Two digit minutes of hour          |
++------+------------------------------------+
+| ss   | Two digit seconds of the minute    |
++------+------------------------------------+
+| Z    | RFC-822 timezone (offset from GMT) |
++------+------------------------------------+
 

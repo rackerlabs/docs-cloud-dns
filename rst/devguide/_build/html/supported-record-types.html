@@ -90,55 +90,54 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="supported-record-types">
-<h1>Supported Record Types<a class="headerlink" href="#supported-record-types" title="Permalink to this headline">¶</a></h1>
+<span id="cdns-dg-supported-record-types"></span><h1>Supported Record Types<a class="headerlink" href="#supported-record-types" title="Permalink to this headline">¶</a></h1>
 <p>The Rackspace Cloud DNS Service supports the <em>record</em> types listed below.</p>
 <p><strong>Rackspace Cloud DNS Supported Record Types</strong></p>
-<dl class="docutils">
-<dt>Record Type: A</dt>
-<dd><p class="first">Maps an IPV4 address to a domain
-<strong>A Record : XML.</strong></p>
-<blockquote class="last">
+<p>Record Type: A</p>
+<ul>
+<li><p class="first">Maps an IPV4 address to a domain</p>
+<p>Example A Record: XML:</p>
+<blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;A-123&quot; type=&quot;A&quot; name=&quot;example.foo.com&quot; data=&quot;123.456.78.9&quot; ttl=&quot;86400&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-</dd>
-</dl>
-<p><strong>A Record : JSON.</strong></p>
+<p>Example A Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;A-123&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;123.456.78.9&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">86400</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt>Record Type: AAAA</dt>
-<dd>Maps an IPV6 address to a domain</dd>
-</dl>
-<p><strong>AAAA Record : XML.</strong></p>
+</li>
+</ul>
+<p>Record Type: AAAA</p>
+<ul>
+<li><p class="first">Maps an IPV6 address to a domain</p>
+<p>Example AAAA Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;AAAA-123&quot; type=&quot;AAAA&quot; name=&quot;example.foo.com&quot; data=&quot;4321:0:1:2:3:4:567:89ab&quot; ttl=&quot;86400&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>AAAA Record : JSON.</strong></p>
+<p>Example AAAA Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;AAAA-123&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;AAAA&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;4321:0:1:2:3:4:567:89ab&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">86400</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt>Record Type: CNAME</dt>
-<dd>Creates an alias for a domain</dd>
-</dl>
-<p><strong>CNAME Record : XML.</strong></p>
+</li>
+</ul>
+<p>Record Type: CNAME</p>
+<ul>
+<li><p class="first">Creates an alias for a domain</p>
+<p>Example CNAME Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;CNAME-123&quot; type=&quot;CNAME&quot; name=&quot;www.example.foo.com&quot; data=&quot;example.foo.com&quot; ttl=&quot;86400&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>CNAME Record : JSON.</strong></p>
+<p>Example CNAME Record : JSON:</p>
 <blockquote>
-<div><blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;CNAME-123&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;CNAME&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;www.example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">86400</span> <span class="p">}</span>
 </pre></div>
 </div>
@@ -147,50 +146,52 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p class="first admonition-title">Note</p>
 <p class="last">A CNAME record label (name) can have underscores anywhere in any subdomain labels, but not in the main domain name of the domain to which the record belongs. For example, for the domain example.com, a CNAME record belonging to that domain can have the label <code class="docutils literal"><span class="pre">_ab_b_.cd_e.example.com</span></code></p>
 </div>
-</div></blockquote>
-<dl class="docutils">
-<dt>Record Type: MX</dt>
-<dd>Designates a domain&#8217;s mail server</dd>
-</dl>
-<p><strong>MX Record : XML.</strong></p>
+</li>
+</ul>
+<p>Record Type: MX</p>
+<ul>
+<li><p class="first">Designates a domain&#8217;s mail server</p>
+<p>Example MX Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;MX-123&quot; priority=&quot;10&quot; type=&quot;MX&quot; name=&quot;example.foo.com&quot; data=&quot;mail.example.foo.com&quot; ttl=&quot;3600&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>MX Record : JSON.</strong></p>
+<p>Example MX Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;MX-123&quot;</span><span class="p">,</span> <span class="s">&quot;priority&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;MX&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;mail.example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt>Record Type: NS</dt>
-<dd>Designates a domain&#8217;s authoritative name server</dd>
-</dl>
-<p><strong>NS Record : XML.</strong></p>
+</li>
+</ul>
+<p>Record Type: NS</p>
+<ul>
+<li><p class="first">Designates a domain&#8217;s authoritative name server</p>
+<p>Example NS Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;NS-123&quot; type=&quot;NS&quot; name=&quot;example.foo.com&quot; data=&quot;ns1.foo.com&quot; ttl=&quot;54000&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>NS Record : JSON.</strong></p>
+<p>Example NS Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;NS-123&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;NS&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;ns1.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">54000</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt>Record Type: PTR</dt>
-<dd>Designates a reverse DNS record</dd>
-</dl>
-<p><strong>PTR Record : XML.</strong></p>
+</li>
+</ul>
+<p>Record Type: PTR</p>
+<ul>
+<li><p class="first">Designates a reverse DNS record</p>
+<p>Example PTR Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;PTR-000002&quot; type=&quot;PTR&quot; name=&quot;example.com&quot; data=&quot;192.0.2.7&quot; ttl=&quot;56000&quot; updated=&quot;2011-09-24T01:12:51Z&quot; created=&quot;2011-09-24T01:12:51Z&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>PTR Record : JSON.</strong></p>
+<p>Example PTR Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.com&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;PTR-000002&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;PTR&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;192.0.2.7&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">56000</span><span class="p">,</span> <span class="s">&quot;updated&quot;</span> <span class="p">:</span> <span class="s">&quot;2011-09-24T01:12:51.000+0000&quot;</span><span class="p">,</span> <span class="s">&quot;created&quot;</span> <span class="p">:</span> <span class="s">&quot;2011-09-24T01:12:51.000+0000&quot;</span> <span class="p">}</span>
 </pre></div>
@@ -200,22 +201,25 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p class="last">PTR records can only be managed using the /rdns URIs.</p>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt>Record Type: SRV</dt>
-<dd>General service locator record for a domain</dd>
-</dl>
-<p><strong>SRV Record : XML.</strong></p>
+</li>
+</ul>
+<p>Record Type: SRV</p>
+<ul>
+<li><p class="first">General service locator record for a domain</p>
+<p>Example SRV Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;SRV-123&quot; type=&quot;SRV&quot; name=&quot;_sip._tcp.example.foo.com&quot; priority=&quot;30&quot; data=&quot;1 3443 sip.foo.com&quot; ttl=&quot;86400&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>SRV Record : JSON.</strong></p>
+<p>Example SRV Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;SRV-123&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;SRV&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;_sip._tcp.example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;priority&quot;</span> <span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;1 3443 sip.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">86400</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
+</li>
+</ul>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -255,22 +259,23 @@ order), and the rest are ignored.</li>
 </ul>
 </li>
 </ul>
-<dl class="docutils">
-<dt>Record Type: TXT</dt>
-<dd>Arbitrary text for a domain record</dd>
-</dl>
-<p><strong>TXT Record : XML.</strong></p>
+<p>Record Type: TXT</p>
+<ul>
+<li><p class="first">Arbitrary text for a domain record</p>
+<p>Example TXT Record : XML:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre>&lt;record id=&quot;TXT-123&quot; type=&quot;TXT&quot; name=&quot;example.foo.com&quot; data=&quot;Some example text&quot; ttl=&quot;3600&quot;/&gt;
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>TXT Record : JSON.</strong></p>
+<p>Example TXT Record : JSON:</p>
 <blockquote>
 <div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;TXT-123&quot;</span><span class="p">,</span> <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;TXT&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.foo.com&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span> <span class="p">:</span> <span class="s">&quot;Some example text&quot;</span><span class="p">,</span> <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
+</li>
+</ul>
 </div>
 <div class="section" id="id1">
 <h2>Notes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -302,43 +307,9 @@ records by the DNS Service.</li>
 </ul>
 <ul>
   
-<a href="pagination.html"><<</a>
-
 |
 
-<a href="faults.html">>></a>
-
   <li><span class="sidebarheader">Contents</span></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="authenticate-through-the-rackspace-cloud-identity-service.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dns-service-versions.html">DNS Service Versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-response-types.html">Request/Response Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="synchronous-and-asynchronous-responses.html">Synchronous and Asynchronous Responses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content Compression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent Connections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date/Time Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comments.html">Comments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Supported Record Types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ip-address-support.html">IP Address Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dns-propagation.html">DNS Propagation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
 

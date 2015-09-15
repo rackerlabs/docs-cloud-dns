@@ -698,7 +698,7 @@
                xmlns:xi="http://www.w3.org/2001/XInclude"
                >name</parameter> parameter as part of their name.</para>
               
-         <note> <title>Notes</title>
+         <note> 
             <itemizedlist>
                <listitem><para>Use the query parameter <parameter>name</parameter> to
                   search domains by domain name. This lists all names manageable by the specified account that have the value of the <parameter
@@ -1314,14 +1314,16 @@
          <para role="shortdesc">Shows all changes to a specified
             domain <parameter
                xmlns:xi="http://www.w3.org/2001/XInclude"
-               >because</parameter> a specified <code
+               >since</parameter> a specified <code
                xmlns:xi="http://www.w3.org/2001/XInclude"
                >date/time</code>.</para>
          <para>This call shows all changes to a specified domain
             <code>since</code> a specified date/time. The
                <parameter>since</parameter> parameter is optional
             and defaults to midnight of the current
-            day. See the section "Date/Time Format" in the Devguide for details on how to
+            day. See the section "Date/Time Format" at 
+            (http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/datetimeformat.html) 
+            for details on how to
             specify this parameter's value.</para>
          <para>The following examples show the requests and
             corresponding responses to list the domain changes because
@@ -1394,7 +1396,7 @@
          <para>This call provides the BIND (Berkeley Internet Name Domain) 9 formatted contents of the
             requested domain. This call is for a single domain only, and as such, does not traverse up or
             down the domain hierarchy for details (that is, no subdomain information is provided).</para>
-         <note> <title>Notes</title>
+         <note> 
             <itemizedlist>
                <listitem><para>This call is not capable of returning anything for a
                   domain that has been deleted.</para></listitem>
@@ -1484,7 +1486,7 @@
                <command>POST</command> the request again. 
          </para>
             <note>
-               <title>Notes</title>
+               
                <itemizedlist>
                   <listitem>
                      <para>Refer to <link
@@ -1698,7 +1700,7 @@
             subdomains, comments, email addresses, and record
             data.</para>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist>
                <listitem>
                   <para>If the corresponding request cannot be
@@ -2343,7 +2345,7 @@
             such as the following: "The request could not be
             understood by the server due to malformed syntax."</para>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist>
                <listitem>
                   <para>If you attempt to import a domain that already
@@ -2469,7 +2471,6 @@
             require the caller to correct the cause of the failure and
             POST the request again.</para>
          <note>
-            <title>Notes</title>
             <itemizedlist>
                <listitem>
                   <para>Refer to the section "DNS Propagation" in the Devguide for
@@ -2485,13 +2486,14 @@
                      the TTL values must be 300 seconds or
                      more.</para>
                </listitem>
+               <listitem>
+                  <para>
+                     <code>name</code> cannot be specified, because the
+                     domain name cannot be modified.</para>
+               </listitem>
             </itemizedlist>
          </note>
-         <note>
-            <para>
-               <code>name</code> cannot be specified, because the
-               domain name cannot be modified.</para>
-         </note>
+         
       </wadl:doc>
       <request>
          <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0"
@@ -3462,7 +3464,7 @@
             optional. The responses from a record search have the same
             format as the responses for list records.</para>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist>
                <listitem><para>By default, the search returns a maximum of 100 items at a time
                   if no <code>limit</code> is specified. To navigate the
@@ -3579,7 +3581,7 @@
          <para>This call adds new record(s) to a specified
             domain.</para>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist>
                <listitem>
                   <para>If you submit a request with multiple records,
@@ -3595,13 +3597,14 @@
                      create or update call, the TTL values must be 300
                      seconds or more.</para>
                </listitem>
+               <listitem>
+                  <para>
+                     <code>id</code> for the record must not be
+                     specified.</para>
+               </listitem>
             </itemizedlist>
          </note>
-         <note>
-            <para>
-               <code>id</code> for the record must not be
-               specified.</para>
-         </note>
+         
          <note>
             <para>The following examples show the
                   <emphasis>final</emphasis> successful response for
@@ -3801,7 +3804,7 @@
          <para>This call updates the configuration for a specified
             record in a specified domain.</para>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist>
                <!--       <listitem>
                   <para>If you submit a request with multiple records,
@@ -4134,7 +4137,7 @@
          <para>This call updates the configuration of
             records in a specified domain.</para>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist>
                <listitem>
                   <para>If you submit a request with multiple records,
@@ -4764,7 +4767,7 @@
                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.
          </para></note>
          <note>
-            <title>Notes</title>
+            
             <itemizedlist spacing="compact">
                <listitem>
                   <para>PTR records can only be added for Rackspace

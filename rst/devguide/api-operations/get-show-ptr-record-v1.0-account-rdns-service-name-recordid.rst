@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-show-ptr-record-v1.0-account-rdns-service-name-recordid:
+.. _get-show-ptr-record-v1.0-account-rdns-service-name-recordid:
 
 Show PTR record
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
