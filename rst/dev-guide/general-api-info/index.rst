@@ -19,16 +19,16 @@ The Rackspace Cloud DNS API is implemented using a ReSTful web service interface
    service-access-endpoints
    dns-service-versions
    request-response-types
+   supported-record-types
    synchronous-and-asynchronous-responses
-   content-compression
-   persistent-connections
-   limits
-   date-time-format
-   comments
-   pagination
-   supported-record-types  
-   faults
    ip-address-support
    dns-propagation
+   persistent-connections
+   content-compression
+   limits
+   faults
+   pagination
+   date-time-format
+   comments
    role-based-access-control   
    
