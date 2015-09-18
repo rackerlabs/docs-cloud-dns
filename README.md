@@ -1,6 +1,9 @@
 
 # Rackspace Cloud DNS API Documentation
 
+[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-dns.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-dns)
+
+
 ## Resources
 
 This github repository contains the source files for the following Rackspace Cloud DNS API documentation:
