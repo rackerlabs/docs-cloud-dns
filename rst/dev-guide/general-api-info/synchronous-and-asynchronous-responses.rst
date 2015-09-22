@@ -33,13 +33,11 @@ Normal Response Code(s): 200
 Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
 unauthorized (401), badRequest (400), itemNotFound (404), overLimit (413)
 
-.. note::
-   The results of asynchronous calls are retained for up to 24 hours.
+The results of asynchronous calls are retained for up to 24 hours.
 
-.. note::
-   If a request body does not pass initial validation or an error
-   condition arises, you may receive an immediate error response from the
-   request.
+If a request body does not pass initial validation or an error
+condition arises, you may receive an immediate error response from the
+request.
 
 The following list shows the complete set of attributes for
 asynchronous responses:

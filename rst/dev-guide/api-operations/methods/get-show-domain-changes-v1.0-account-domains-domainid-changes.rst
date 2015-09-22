@@ -12,7 +12,7 @@ Show domain changes
 
 Shows all changes to a specified domain ``since`` a specified ``date/time``.
 
-This call shows all changes to a specified domain ``since`` a specified date/time. The ``since`` parameter is optional and defaults to midnight of the current day. See the section "Date/Time Format" at (http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/datetimeformat.html) for details on how to specify this parameter's value.
+This call shows all changes to a specified domain ``since`` a specified date/time. The ``since`` parameter is optional and defaults to midnight of the current day. See :ref:`Date/Time format <cdns-dg-date-time>` for details on how to specify this parameter's value.
 
 The following examples show the requests and corresponding responses to list the domain changes because midnight, GMT-5, on September 13, 2011:
 

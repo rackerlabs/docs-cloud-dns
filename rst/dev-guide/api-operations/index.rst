@@ -1,14 +1,11 @@
-.. _api-operatons-index:
+.. meta
+   :description: Rackspace Cloud DNS API Reference
+   :keywords: Rackspace, Cloud DNS ReST API, API resources, API methods
 
-API operations 
-------------------
 
-You can use the Cloud DNS API operations to interact directly with the Load Balancer 
-service.  You can also run DNS API operations by using the Rackspace Command Line 
-Client, the SDK, or from the Cloud Control panel.  
-
-.. toctree:: :hidden:
-   :maxdepth: 3
+.. toctree:: 
+   :caption: API Reference
+   :maxdepth: 2
    
    limits-operations
    domains

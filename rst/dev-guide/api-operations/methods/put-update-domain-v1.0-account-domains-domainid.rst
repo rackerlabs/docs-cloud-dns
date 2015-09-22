@@ -108,7 +108,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|FIXME/@\ **id**           |String *(Required)*      |For modifying multiple   |
+|**id**                    |String *(Required)*      |For modifying multiple   |
 |                          |                         |domains, the id for each |
 |                          |                         |domain must be specified |
 |                          |                         |as an attribute. Note    |
@@ -118,15 +118,15 @@ This table shows the body parameters for the request:
 |                          |                         |the end of the API call  |
 |                          |                         |URI.                     |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **emailAddress** |String *(Optional)*      |Email address to use for |
+|**emailAddress**          |String *(Optional)*      |Email address to use for |
 |                          |                         |contacting the domain    |
 |                          |                         |administrator.           |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **ttl**          |String *(Optional)*      |If specified, must be    |
+|**ttl**                   |String *(Optional)*      |If specified, must be    |
 |                          |                         |greater than or equal to |
 |                          |                         |300.                     |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **comment**      |String *(Optional)*      |If included, its length  |
+|**comment**               |String *(Optional)*      |If included, its length  |
 |                          |                         |must be less than or     |
 |                          |                         |equal to 160 characters. |
 +--------------------------+-------------------------+-------------------------+

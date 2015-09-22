@@ -106,7 +106,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|FIXME/@\ **id**           |String *(Required)*      |For modifying multiple   |
+|**id**                    |String *(Required)*      |For modifying multiple   |
 |                          |                         |records, the id for each |
 |                          |                         |record must be specified |
 |                          |                         |as an attribute. Note    |
@@ -116,7 +116,7 @@ This table shows the body parameters for the request:
 |                          |                         |parameter at the end of  |
 |                          |                         |the API call URI.        |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **name**         |String *(Required)*      |For record types other   |
+|**name**                  |String *(Required)*      |For record types other   |
 |                          |                         |than SRV records, this   |
 |                          |                         |specifies the name for   |
 |                          |                         |the domain or subdomain  |
@@ -145,28 +145,28 @@ This table shows the body parameters for the request:
 |                          |                         |specified for SRV        |
 |                          |                         |records.                 |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **data**         |String *(Required)*      |The data field is        |
+|**data**                  |String *(Required)*      |The data field is        |
 |                          |                         |required for PTR and TXT |
 |                          |                         |records only. For PTR    |
 |                          |                         |records, the data field  |
 |                          |                         |must be a valid IPv4 or  |
 |                          |                         |IPv6 IP address.         |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **priority**     |String *(Optional)*      |Can be included for MX   |
+|**priority**              |String *(Optional)*      |Can be included for MX   |
 |                          |                         |and SRV records, but     |
 |                          |                         |forbidden for other      |
 |                          |                         |record types. If         |
 |                          |                         |specified, must be an    |
 |                          |                         |integer from 0 to 65535. |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **ttl**          |String *(Optional)*      |If specified, must be    |
+|**ttl**                   |String *(Optional)*      |If specified, must be    |
 |                          |                         |greater than or equal to |
 |                          |                         |300. Defaults to the     |
 |                          |                         |domain TTL if available, |
 |                          |                         |or 3600 if no TTL is     |
 |                          |                         |specified.               |
 +--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **comment**      |String *(Optional)*      |If included, its length  |
+|**comment**               |String *(Optional)*      |If included, its length  |
 |                          |                         |must be less than or     |
 |                          |                         |equal to 160 characters. |
 +--------------------------+-------------------------+-------------------------+

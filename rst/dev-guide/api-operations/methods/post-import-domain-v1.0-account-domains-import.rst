@@ -125,17 +125,17 @@ This table shows the URI parameters for the request:
 
 This table shows the body parameters for the request:
 
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|FIXME/@\ **contentType**  |String *(Required)*      |The content type for the |
-|                          |                         |bind file. Must be       |
-|                          |                         |specified as "BIND_9".   |
-+--------------------------+-------------------------+-------------------------+
-|FIXME/@\ **contents**     |String *(Required)*      |The valid configuration  |
-|                          |                         |contents for the domain  |
-|                          |                         |to be imported.          |
-+--------------------------+-------------------------+-------------------------+
++-----------------------------+-------------------------+-------------------------+
+|Name                         |Type                     |Description              |
++=============================+=========================+=========================+
+|domains[*].\ **contentType** |String *(Required)*      |The content type for the |
+|                             |                         |bind file. Must be       |
+|                             |                         |specified as "BIND_9".   |
++-----------------------------+-------------------------+-------------------------+
+|domains[*].\ **contents**    |String *(Required)*      |The valid configuration  |
+|                             |                         |contents for the domain  |
+|                             |                         |to be imported.          |
++-----------------------------+-------------------------+-------------------------+
 
 
 
