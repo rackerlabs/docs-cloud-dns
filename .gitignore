@@ -1,4 +1,6 @@
 target
+doctrees/
+rst/dev-guide/_build
 .classpath
 .project
 .settings/
