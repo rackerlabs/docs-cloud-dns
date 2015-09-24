@@ -3,9 +3,6 @@
 Domains
 ~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local: 
 
 Use the Domains operations to view and manage domains and subdomains for a Rackspace Cloud 
 account.

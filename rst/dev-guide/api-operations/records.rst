@@ -3,9 +3,6 @@
 Records 
 ~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local: 
 
 Use the following Cloud DNS API operations to manage DNS records for a specified domain. 
 

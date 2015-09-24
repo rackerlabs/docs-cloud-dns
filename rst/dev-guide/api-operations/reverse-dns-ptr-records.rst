@@ -3,9 +3,6 @@
 Reverse DNS 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local: 
    
 Use the reverse DNS API operations to view and manage the PTR records associated with a Rackspace 
 Cloud device. 

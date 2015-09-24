@@ -3,9 +3,6 @@
 Limits 
 --------
 
-.. contents::
-   :depth: 1
-   :local: 
 
 Use the Limits operations to get information about the rate and domain limits 
 for a specified Rackspace Cloud account. 
