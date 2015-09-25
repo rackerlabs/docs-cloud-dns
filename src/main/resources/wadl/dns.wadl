@@ -4775,7 +4775,7 @@
                </listitem>
                <listitem>
                   <para>
-                     <code>id</code> for the record must not be
+                     The <code>id</code> for the record must not be
                      specified.</para>
                </listitem>
             </itemizedlist>
