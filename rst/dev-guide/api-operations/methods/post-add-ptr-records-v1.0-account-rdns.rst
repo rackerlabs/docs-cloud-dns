@@ -21,7 +21,7 @@ Adds one or more PTR record records for a specified Cloud device.
    
    
    *  PTR records can only be added for Rackspace Cloud Servers and Load Balancers.
-   *  ``id`` for the record must not be specified.
+   *  The ``id`` for the record must not be specified.
    
    
    
