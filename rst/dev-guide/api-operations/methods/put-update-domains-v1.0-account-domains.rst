@@ -17,7 +17,7 @@ Updates the configurations of multiple domains.
    
    
 
-This call modifies DNS domain(s) attributes only. records cannot be added, modified, or Deleted. Only the TTL, email address and comment attributes of a domain can be modified.
+This call modifies DNS domain(s) attributes only. Records cannot be added, modified, or Deleted. Only the TTL, email address and comment attributes of a domain can be modified.
 
 If a request cannot be fulfilled due to insufficient or invalid data, an ``HTTP`` 400 (Bad Request) error response will be returned with information regarding the nature of the failure in the body of the response. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.
 
