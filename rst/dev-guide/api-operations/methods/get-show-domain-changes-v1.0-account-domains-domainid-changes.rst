@@ -14,7 +14,9 @@ Shows all changes to a specified domain ``since`` a specified ``date/time``.
 
 This call shows all changes to a specified domain ``since`` a specified date/time. The ``since`` parameter is optional and defaults to midnight of the current day. See :ref:`Date/Time format <cdns-dg-date-time>` for details on how to specify this parameter's value.
 
-The following examples show the requests and corresponding responses to list the domain changes because midnight, GMT-5, on September 13, 2011:
+The examples below show the requests and
+corresponding responses to list the domain changes since
+midnight, GMT-5, on September 13, 2011.
 
 
 
@@ -86,6 +88,7 @@ This table shows the query parameters for the request:
 
 
 This operation does not accept a request body.
+
 
 
 

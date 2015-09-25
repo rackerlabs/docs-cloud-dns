@@ -29,7 +29,7 @@ This table shows the possible response codes for this operation:
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |dnsFault                 |The DNS service has      |
+|500                       |dnsFault                 |The DNS service has      |
 |                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
