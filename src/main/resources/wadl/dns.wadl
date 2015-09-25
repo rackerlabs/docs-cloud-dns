@@ -2459,7 +2459,7 @@
                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
          </note>
          <para>This call modifies DNS domain(s) attributes only.
-            records cannot be added, modified, or Deleted. Only the
+            Records cannot be added, modified, or deleted. Only the
             TTL, email address and comment attributes of a domain can
             be modified.</para>
          <para>If a request cannot be fulfilled due to insufficient or
@@ -4775,7 +4775,7 @@
                </listitem>
                <listitem>
                   <para>
-                     <code>id</code> for the record must not be
+                     The <code>id</code> for the record must not be
                      specified.</para>
                </listitem>
             </itemizedlist>
