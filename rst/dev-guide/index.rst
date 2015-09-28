@@ -27,4 +27,4 @@ in the Rackspace Knowledge Center.
    general-api-info/index
    api-reference
    api-operations/index
-   glossary
+   
