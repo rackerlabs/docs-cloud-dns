@@ -13,7 +13,9 @@ Delete PTR records
 Deletes one or all PTR records associated with a Rackspace Cloud device. Use the optional ``ip`` query parameter to specify a specified record to delete. Omitting this parameter Deletes all PTR records associated with a specified device.
 
 .. note::
-   This call returns an asynchronous response. Refer to `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__ for more details and examples of the way that asynchronous responses work.
+   This call returns an asynchronous response. Refer to 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`.
    
    
 

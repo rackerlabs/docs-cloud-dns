@@ -6,7 +6,7 @@ Additional resources
 Issues and bug reports can be directed to your support team via ticket,
 chat, email, or phone.
 
-You can download the most current versions of other API-related documents from http://docs.rackspace.com/.
+You can download the most current versions of other API-related documents from http://developer.rackspace.com/.
 
 For more details about Rackspace Cloud DNS, refer to http://www.rackspace.com/cloud/dns. This site also offers links to Rackspace's official support channels, including knowledge center articles, forums, phone, chat, and email.
 

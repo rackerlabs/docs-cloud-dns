@@ -13,7 +13,10 @@ Create domain
 Creates a domain with the configuration defined by the request.
 
 .. note::
-   This call returns an asynchronous response. Refer to `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__ for more details and examples of the way that asynchronous responses work. 
+   This call returns an asynchronous response. Refer to 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+   for more details and examples of the way that asynchronous responses work. 
    
    
 
@@ -27,7 +30,8 @@ This call provisions one or more new DNS domains under the account specified, ba
 .. note::
    
    
-   *  Refer to `DNS Propagation <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/dns_propagation.html>`__ for information about DNS propagation.
+   *  Refer to :rax-devdocs:`DNS propagation <cloud-dns/v1/developer-guide/#document-general-api-info/dns-propagation>`
+      for information about DNS propagation.
    *  If you attempt to create a domain that already exists, the API will return an exception saying that the domain already exists.
    *  This process allows multiple records to be created along with the domain. This is an atomic operation: if there is a failure in creation of even a single record, the entire process will fail.
    *  When a domain is created, and no Time To Live (TTL) is specified, the SOA minTTL (3600 seconds) is used as the default. When a record is added without a specified TTL, it will receive the domain TTL by default. When the domain and/or record TTL is supplied by the user, either via a create or update call, the TTL values must be 300 seconds or more.
@@ -39,7 +43,12 @@ This call provisions one or more new DNS domains under the account specified, ba
 The following examples show the Create domains requests:
 
 .. note::
-   The following examples show the initial 202 Accepted response for the asynchronous call and indicate that the task has been accepted for processing. Refer to `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__ for a description of how the asynchronous call works. Also see `http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html>`__ for a detailed example of processing the Create domain call, including the final successful responses for create domain.
+   The following examples show the initial 202 Accepted response for the asynchronous call and indicate that the task has been accepted for processing. Refer to 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+   for a description of how the asynchronous call works. 
+   See 
+   <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html>`__ for a detailed example of processing the Create domain call, including the final successful responses for create domain.
    
    
 

@@ -15,7 +15,11 @@ Clones a domain.
 Creates a specified domain ( ``example2.com`` ) by cloning a domain with id domainId. All options except cloneName assume a default value of ``true``.
 
 .. note::
-   This call returns an asynchronous response, as described in `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__. The AsyncResponse returned will be similar to that returned for Create domain but with the request element absent because the clone request has no body.
+   This call returns an asynchronous response, as described in 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+   The AsyncResponse returned will be similar to that returned for Create domain but with the request 
+   element absent because the clone request has no body.
    
    
 
@@ -43,7 +47,10 @@ According to the cloneName specified, the domain name and record name(s) will au
 The following examples show the Clone domain requests.
 
 .. note::
-   The following examples show the initial 202 Accepted response for the asynchronous call and indicate that the task has been accepted for processing. Refer to `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__ for a description of how the asynchronous call works.
+   The following examples show the initial 202 Accepted response for the asynchronous call and indicate that the task has been accepted for processing. Refer to 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+   for a description of how the asynchronous call works.
    
    
 

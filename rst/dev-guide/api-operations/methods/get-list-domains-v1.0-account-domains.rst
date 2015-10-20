@@ -15,7 +15,7 @@ Lists all domains manageable by the account specified. Displays IDs and names on
 These calls provide a list of all DNS domains manageable by a given account. The resulting list is flat, and does not break the domains down hierarchically by subdomain. All representative domains are included in the list, even if a domain is conceptually a subdomain of another domain in the list.
 
 .. note::
-   These calls return by default a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described in `Pagination <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html>`__.
+   These calls return by default a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described in :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>`.
    
    
 

@@ -34,7 +34,7 @@ Filter criteria may consist of:
 Filter criteria should not include any of the following characters: ' +, | ! " £ $ % & / ( ) = ? ^ * ç ° § ; : _ > ] [ @ à, é, ò
 
 .. note::
-   This call returns by default a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described at `Pagination <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html>`__.
+   This call returns by default a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described at :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>`.
    
    
 

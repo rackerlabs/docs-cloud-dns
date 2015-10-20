@@ -13,7 +13,9 @@ Update domains
 Updates the configurations of multiple domains.
 
 .. note::
-   This call returns an asynchronous response, as described in `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__.
+   This call returns an asynchronous response, as described in 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`.
    
    
 
@@ -25,7 +27,9 @@ If a request cannot be fulfilled due to insufficient or invalid data, an ``HTTP`
    
    
    
-   *  Refer to `DNS Propagation <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/dns_propagation.html>`__ for information about DNS propagation.
+   *  Refer to 
+      :rax-devdocs:`DNS propagation <cloud-dns/v1/developer-guide/#document-general-api-info/dns-propagation>`
+      for information about DNS propagation.
    *  A domain's ``id`` is immutable.
    *  When the domain and/or record TTL is supplied by the user, either via a create or update call, the TTL values must be 300 seconds or more.
    

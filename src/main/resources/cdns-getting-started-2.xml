@@ -11,9 +11,9 @@
       xml:base="file:/Users/mike.asthalter/Documents/DNSaaS/docs-cloud-dns/src/main/resources/cdns-getting-started.xml">
     
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
-    <title>Rackspace Cloud DNS Getting Started Guide, v2</title>
-    <titleabbrev>Rackspace Cloud DNS Getting Started
-        Guide, v2</titleabbrev>
+    <title>Rackspace Managed DNS Getting Started Guide</title>
+    <titleabbrev>Rackspace Managed DNS Getting Started
+        Guide</titleabbrev>
 
     <info>
         
@@ -25,9 +25,9 @@
             <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v2.0</releaseinfo>
-        <productname>Rackspace Cloud DNS</productname>
-        <pubdate>2015-09-01</pubdate>
+        <releaseinfo>API v1.0</releaseinfo>
+        <productname>Rackspace Managed DNS</productname>
+        <pubdate>2015-10-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -35,7 +35,7 @@
         </legalnotice>
         <revhistory>
             <revision>
-                <date>2015-09-01</date>
+                <date>2015-11-05</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -54,28 +54,28 @@
     <chapter xml:id="DNS_Overview">
         <title>Overview</title>
         <para>This guide provides step-by-step instructions for how to
-            use cURL to call the necessary Rackspace Cloud DNS API
-            operations to set up Cloud DNS v2 for <trademark>Cloud
-                Servers</trademark>. Additional details about Cloud
-            DNS can be found in the <citetitle>Cloud DNS Developer
-                Guide, v2</citetitle> at <link
+            use cURL to call the necessary Rackspace Managed DNS API
+            operations to set up Rackspace Managed DNS  for
+                <trademark>Cloud Servers</trademark>. Additional
+            details about Rackspace Managed DNS can be found in the
+                <citetitle>Rackspace Managed DNS Developer
+                Guide</citetitle> at <link
                 xlink:href="http://docs.rackspace.com/"
                 >http://docs.rackspace.com/</link> and at <link
                 xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/dns/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
         <para>Rackspace is deploying <link
-            xlink:href="http://docs.openstack.org/developer/designate/"
-            >OpenStack Designate v2</link>
-             as the next version of Cloud DNS at
-            Rackspace. Cloud DNS v2 supports only Designate v2 and not
-            Designate v1. <note>
-                <para>PTR records, secondary zones, and the Designate
-                    v1.0 endpoint are not supported for the Rackspace
-                    Early Access launch.</para>
+                xlink:href="http://docs.openstack.org/developer/designate/"
+                >OpenStack Designate v2</link> as the next version of
+            Rackspace Managed DNS at Rackspace. Managed DNS supports
+            only Designate v2 and not Designate v1. <note>
+                <para>PTR records are currently supported in Rackspace
+                    Managed DNS, but are not yet supported during the
+                    Rackspace Managed DNS Early Access phase. </para>
             </note></para>
-        <para>This guide will show you how to use the Designate API to
-            set up zones and records using Designate Early Access at
-            Rackspace.</para>
+        <para>This guide will show you how to use the Rackspace
+            Managed DNS API to set up zones and records using
+            Rackspace Managed DNS Early Access at Rackspace.</para>
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for running examples</title>
             <para>In order to run the examples in this guide, you must
@@ -96,8 +96,8 @@
     <chapter xml:id="Create_Cloud_Server">
         <title>Create a new cloud server</title>
         <para>This guide requires one cloud server for setting up DNS
-            using the Cloud DNS API. If you will be using one
-                <emphasis>existing</emphasis> cloud server on your
+            using the Rackspace Managed DNS API. If you will be using
+            one <emphasis>existing</emphasis> cloud server on your
             account for this purpose, skip Steps 1-7 and go directly
             to step 8 below, where you can record the IP address of
             your existing cloud server. Otherwise, follow the steps
@@ -453,8 +453,8 @@
             request using the <code>X-Auth-Token</code> header. </para>
         <para>The following example demonstrates how to use cURL to
             obtain the authentication token. You need to supply the
-            authentication token when making subsequent Cloud DNS API
-            calls.</para>
+            authentication token when making subsequent Managed DNS
+            API calls.</para>
         <para>Remember to replace the names in the Authenticate
             Request examples below with their respective values:<itemizedlist spacing="compact">
                 <listitem>
@@ -742,13 +742,15 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         <para security="reviewer">Reviewer: **Note that the DNS v2
             endpoint needs to be added to the auth response example
             shown above, when available.**</para>
-        <para>After authentication, you can use cURL to perform <command>GET</command>,
-            <command>DELETE</command>, <command>PUT</command>, and <command>POST</command> requests for the Cloud DNS
-            API.</para>
+        <para>After authentication, you can use cURL to perform
+                <command>GET</command>, <command>DELETE</command>,
+                <command>PUT</command>, and <command>POST</command>
+            requests for the Managed DNS API.</para>
         <para>If you have problems running any of the examples in this
-            guide, support for Cloud DNS is available for US, UK, HKG,
-            and SYD customers 24x7x365 via phone, chat, or you may
-            also file a ticket from the Cloud Control Panel.</para>
+            guide, support for Managed DNS is available for US, UK,
+            HKG, and SYD customers 24x7x365 via phone, chat, or you
+            may also file a ticket from the Cloud Control
+            Panel.</para>
         
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
@@ -757,8 +759,8 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             therefore responsible for appropriate replication,
             caching, and overall maintenance of DNS data across
             regional boundaries to other DNS servers.</para>
-        <para>You can find the service access endpoint examples for
-            Cloud DNS in the table below.</para>
+        <para>You can find the service access endpoints for Managed
+            DNS in the table below.</para>
         
         <para>
             <table rules="all">
@@ -801,6 +803,9 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                     <para>The new v2.0 endpoint <emphasis>must
                             appear</emphasis> in your service catalog
                         in order for you to access it.</para>
+                    <para security="reviewer">Reviewer: need to know
+                        if v1.0 or v2.0 endpoint will be used. See
+                        paragraph below.</para>
                 </listitem>
                 <listitem>
                     <para>All examples in this guide assume that you
@@ -808,8 +813,8 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                 </listitem>
             </itemizedlist>
         </note>
-        <para>When making a Cloud DNS API call, place the endpoint at
-            the beginning of the request URL, for example:
+        <para>When making a Managed DNS API call, place the endpoint
+            at the beginning of the request URL, for example:
                 <code>https://dns.api.rackspacecloud.com/v2.0/</code>,
             as you can see in the cURL Create zone request examples in
                 <link
@@ -818,16 +823,18 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             for the Create zone API operation is
                 <code>https://dns.api.rackspacecloud.com/v2.0/</code><code>zones</code>.
             Note that the <code>v2</code> component in the URL
-            indicates that you are using version 2.0 of the Cloud DNS
-            API.</para>
+            indicates that you are using version 2.0 of the Managed
+            DNS API.</para>
+        <para security="reviewer">Reviewer: need to know what endpoint will be for Managed
+            DNS.</para>
     </chapter>
     <chapter xml:id="Create_Zone">
         <title>Create a zone</title>
         <para> The Create zone API call provisions one or more new DNS
             zones, based on the configuration defined in the request
-            object. A <emphasis>zone</emphasis> corresponds to a
-            classic DNS domain. To create a zone, you need to post to
-            the <emphasis role="bold">/zones</emphasis> endpoint. If
+            object. A <emphasis>zone</emphasis> corresponds to a Cloud
+            DNS domain. To create a zone, you need to post to the
+                <emphasis role="bold">/zones</emphasis> endpoint. If
             the corresponding request cannot be fulfilled due to
             insufficient or invalid data, an <code>HTTP</code>
             <returnvalue>400 (Bad Request)</returnvalue> error
@@ -839,12 +846,12 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         <para> This call returns an <emphasis>asynchronous</emphasis>
             response. In fact, <command>PUT</command>,
                 <command>POST</command>, and <command>DELETE</command>
-            DNS API calls are all <emphasis>asynchronous</emphasis>,
-            since they may take some time to process. Therefore they
-            return 202 ACCEPTED responses containing information with
-            a link URL, which allows the progress, status, and/or
-            response information of the call to be retrieved at a
-            later point in time. </para>
+            Managed DNS API calls are all
+                <emphasis>asynchronous</emphasis>, since they may take
+            some time to process. Therefore they return 202 ACCEPTED
+            responses containing information with a link URL, which
+            allows the progress, status, and/or response information
+            of the call to be retrieved at a later point in time. </para>
         <para>You need to use the Create zone API call (POST
                 <code>/zones</code>) to create a zone with the
             configuration that you specify.</para>
@@ -1038,8 +1045,8 @@ Content-Type: application/json
             <para>If you have multiple zones or records and want to
                 get a subset of them, you could paginate, sort or
                 filter the results. More information on these topics
-                is available in the <citetitle>DNS Devguide,
-                    v2</citetitle> at <link
+                is available in the <citetitle>Rackspace Managed DNS
+                    Devguide</citetitle> at <link
                     xlink:href="http://docs.rackspace.com/"
                     >http://docs.rackspace.com/</link>.</para>
         </note>
@@ -1241,32 +1248,37 @@ Content-Type: application/json
     </chapter>
     <chapter xml:id="Additional_Resources">
         <title>Additional resources</title>
-        <para>For information about all Cloud DNS API operations, see
-            the <citetitle>Cloud DNS Developer Guide, v2</citetitle>
-            at <link xlink:href="http://docs.rackspace.com/"
+        <para>For information about all Rackspace Managed DNS API
+            operations, see the <citetitle>Rackspace Managed DNS
+                Developer Guide</citetitle> at <link
+                xlink:href="http://docs.rackspace.com/"
                 >docs.rackspace.com</link>. All you need to get
-            started with the Cloud DNS API is in this getting started
-            guide and the developer guide. For additional information
-            about Cloud DNS, see the <link
+            started with the Managed DNS API is in this getting
+            started guide and the developer guide. For additional
+            information about Managed DNS, see the <link
                 xlink:href="http://www.rackspace.com/knowledge_center/article/rackspace-cloud-dns-available-features"
                 >Knowledge Center</link>.</para>
         <para>The official support channels (phone, chat, email,
-            forums, and knowledge base articles) for Cloud DNS are
+            forums, and knowledge base articles) for Managed DNS are
             available through the Rackspace Cloud website at <link
-                xlink:href="www.rackspace.com">www.rackspace.com</link>.</para>
-        <para>If the Cloud DNS system is not functioning as expected,
-            you can review the <link
+                xlink:href="www.rackspace.com"
+                >www.rackspace.com</link>.</para>
+        <para>If the Managed DNS system is not functioning as
+            expected, you can review the <link
                 xlink:href="https://status.rackspace.com/">System
                 Status page</link>. This page is updated to reflect
             up-to-date information about the system’s current health
             and status.</para>
+        <para security="reviewer">Reviewer: please give me the link to the System Status
+            page for Managed DNS.</para>
         <para>Interested users can also follow updates and
             announcements for Rackspace on <link
                 xlink:href="https://twitter.com/rackspace"
                 >Twitter</link>. </para>
         <para>Visit the <link
-            xlink:href="https://feedback.rackspace.com/">Product Feedback Forum</link> and tell us
-            what you think about Cloud DNS.</para>
+                xlink:href="https://feedback.rackspace.com/">Product
+                Feedback Forum</link> and tell us what you think about
+            Managed DNS.</para>
     </chapter>
     <chapter xml:id="DNS_Doc_Change_History">
         <title>Document change history</title>

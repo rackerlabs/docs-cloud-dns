@@ -17,7 +17,7 @@ This call provides the detailed output for a specified domain configured and ass
 This call does not require a request body.
 
 .. note::
-   By default, returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described at `Pagination <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html>`__.
+   By default, returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described at :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>`.
    
    
 

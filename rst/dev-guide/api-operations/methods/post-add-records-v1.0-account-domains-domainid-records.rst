@@ -13,7 +13,10 @@ Add records
 Adds one or more records to a specified domain.
 
 .. note::
-   This call returns an asynchronous response. Refer to `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__ for details.
+   This call returns an asynchronous response. Refer to 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+   for details.
    
    
 
@@ -30,7 +33,10 @@ This call adds new record(s) to a specified domain.
    
 
 .. note::
-   The following examples show the final successful response for the asynchronous call. Refer to `Synchronous and Asynchronous Responses <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html>`__ for a description of how the asynchronous call works.
+   The following examples show the final successful response for the asynchronous call. Refer to `Synchronous and Asynchronous Responses 
+   :rax-devdocs:`Synchronous and asynchronous responses 
+   <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+   for a description of how the asynchronous call works.
    
    
 

@@ -25,7 +25,7 @@
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml" xml:id="cdns-devguide"
     version="5.0">
-    <title>Cloud DNS Developer Guide, v2</title>
+    <title>Rackspace Managed DNS Developer Guide</title>
     <?rax status.bar.text="EARLY ACCESS"?>
     <info>
         <author>
@@ -46,9 +46,9 @@
             <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v2.0</releaseinfo>
-        <productname>Cloud DNS</productname>
-        <pubdate>2015-09-01</pubdate>
+        <releaseinfo>API v1.0</releaseinfo>
+        <productname>Rackspace Managed DNS</productname>
+        <pubdate>2015-10-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -58,13 +58,13 @@
         <abstract>
             <para>This document is intended for software developers
                 interested in developing applications using the
-                Rackspace Cloud DNS Application Programming Interface
-                    (<abbrev>API</abbrev>).</para>
+                Rackspace Managed DNS Application Programming
+                Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
             
             <revision>
-                <date>2015-09-01</date>
+                <date>2015-11-05</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -91,26 +91,37 @@
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
-        <para>Rackspace Cloud <glossterm>DNS</glossterm> is a Domain
-            Name System (DNS) available to Rackspace Cloud customers.
-            Interactions with Rackspace Cloud DNS occur
-            programmatically via the Rackspace Cloud DNS API as
-            described in this Cloud DNS Developer Guide.</para>
-        <para>Rackspace is deploying <link
-                xlink:href="http://docs.openstack.org/developer/designate/"
-                >OpenStack Designate v2</link> as the next version of
-            Cloud DNS at Rackspace. Cloud DNS v2 supports only
-            Designate v2 and not Designate v1. <note>
-                <para>PTR records, secondary zones, and the Designate
-                    v1.0 endpoint are not supported for the Rackspace
-                    Early Access launch.</para>
+        <para>Rackspace Managed <glossterm>DNS</glossterm> iis a
+            globally distributed (Anycast network) service that allows
+            Rackspace customers to manage Domain Name System (DNS)
+            zones and resource records via a REST-based API for their
+            account. Interactions with Rackspace Managed DNS occur
+            programmatically via the API described in this Rackspace
+            Managed DNS Developer Guide. </para>
+        <para>Rackspace Managed DNS is powered by OpenStack Designate
+            v2.0 (DNSaaS). Duplicate zones and resource records may
+            not exist between Rackspace Cloud DNS and Rackspace
+            Managed DNS.<note>
+                <itemizedlist>
+                    <listitem>
+                        <para>Rackspace Managed DNS Early Access is
+                            limited to Rackspace Cloud
+                            accounts.</para>
+                    </listitem>
+                    <listitem>
+                        <para>PTR records are currently supported in
+                            Rackspace Cloud DNS, but are not yet
+                            supported during the Rackspace Managed DNS
+                            Early Access phase. </para>
+                    </listitem>
+                </itemizedlist>
             </note></para>
         <note>
             <para>Refer to <xref linkend="dns_propagation"/> for
                 information about DNS propagation.</para>
         </note>
-        <para>The following figure shows an overview of Cloud DNS
-            Infrastructure: <informalfigure>
+        <para>The following figure shows an overview of Rackspace
+            Managed DNS Infrastructure: <informalfigure>
                 <mediaobject>
                     <imageobject>
                         <imagedata
@@ -121,14 +132,17 @@
             </informalfigure>
         </para>
         <para>We welcome feedback, comments, and bug reports at <link
-                xlink:href="http://feedback.rackspace.com"
-                >Product Feedback Forum</link>.</para>
+                xlink:href="http://feedback.rackspace.com">Product
+                Feedback Forum</link>.</para>
+        <para security="reviewer">Reviewer: please give me the name of
+            the list to use for EA to report feedback for previous
+            line, pending EA email list creation.</para>
         <para>Issues and bug reports can be directed to your support
             team via ticket, chat, email, or phone.</para>
         <section xml:id="Intended_Audience-d1e122">
             <title>Intended Audience</title>
             <para>This Guide is intended to assist software developers
-                who want to develop applications using the Cloud DNS
+                who want to develop applications using the Managed DNS
                 Service API. To use the information provided here, you
                 should first have a general understanding of the DNS
                 service. You should also be familiar with:</para>
@@ -209,23 +223,24 @@
                 changes made to one DNS server are automatically
                 propagated to other active servers.</para>
             <note>
-                <para>DNS understands only ASCII, so the Cloud DNS
+                <para>DNS understands only ASCII, so the Managed DNS
                     Service provides conversion between UTF-8 and
                     ASCII on all calls into the system.</para>
             </note>
         </section>
         <section xml:id="Domain-d1e588">
-            <title>Domain</title>
-            <para>A domain is an entity/container of all DNS-related
-                information containing one or more records.</para>
+            <title>Domain / Zone</title>
+            <para>A domain, also known as a zone, is an
+                entity/container of all DNS-related information
+                containing one or more records.</para>
         </section>
         <section xml:id="subdomain">
             <title>Subdomain</title>
-            <para>Subdomains are domains within a parent domain, and
-                subdomains cannot be registered. Subdomains allow you
-                to delegate domains. Subdomains can themselves have
-                subdomains, so third-level, fourth-level, fifth-level,
-                and deeper levels of nesting are possible.</para>
+            <para>Also known as second level or child domains, a
+                subdomain is any domain that is part of a larger
+                domain. Subdomains allow you to divide and delegate a
+                domain, or parent. Subdomains cannot be registered and
+                are controlled by the parent domain.</para>
         </section>
         <section xml:id="Record-d1e607">
             <title>Record</title>
@@ -249,19 +264,19 @@
         </section>
         <section xml:id="Domain_Owner-d1e616">
             <title>Domain Owner</title>
-            <para>Within Rackspace DNS, the account which creates the
-                domain is the domain owner.</para>
+            <para>Within Rackspace Managed DNS, the account which
+                creates the domain is the domain owner.</para>
             <note>
                 <para>Domain registration is currently outside the
-                    scope of the Rackspace DNS API. Any references to
-                    ownership and management of domain information is
-                    only relevant within the context of the Rackspace
-                    DNS system.</para>
+                    scope of the Rackspace Managed DNS API. Any
+                    references to ownership and management of domain
+                    information is only relevant within the context of
+                    the Rackspace Managed DNS system.</para>
             </note>
         </section>
         <section xml:id="Zone-d1e254">
             <title>Zone</title>
-            <para>A zone corresponds to a classic DNS domain.</para>
+            <para>A zone corresponds to a Cloud DNS domain.</para>
         </section>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
@@ -274,11 +289,12 @@
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
-        <para>The DNS Service API is implemented using a ReSTful web
-            service interface. Like other products in the Rackspace
-            Cloud suite, the DNS Service shares a common token-based
-            authentication system that allows seamless access between
-            products and services.</para>
+        <para>The Rackspace Managed DNS Service API is implemented
+            using a ReSTful web service interface. Like other products
+            in the Rackspace Cloud suite, the Managed DNS Service
+            shares a common token-based authentication system that
+            allows seamless access between products and
+            services.</para>
         <note>
             <para>All requests to authenticate against and operate the
                 service are performed using SSL over HTTP (HTTPS) on
@@ -287,7 +303,7 @@
         <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
             <?dbhtml stop-chunking?>
-            <para>Every ReST request against the DNS Service requires
+            <para>Every ReST request against the DNS service requires
                 the inclusion of a specific authorization token,
                 supplied by the <code>X-Auth-Token</code> HTTP header.
                 Customers obtain this token by first using the
@@ -633,8 +649,8 @@
                             service; for details about whether and how
                             to specify a tenant, check the
                             documentation for the service you are
-                            using. The DNS v2 API requires the use of
-                            a valid tenant.</para>
+                            using. The Managed DNS API requires the
+                            use of a valid tenant.</para>
                         <para/>
                     </callout>
                     <callout arearefs="response.json.url">
@@ -699,12 +715,13 @@
         </section>
         <section xml:id="Service_Access_Endpoints-d1e753">
             <title>Service Access/Endpoints</title>
-            <para>The DNS service is not a regionalized service. DNS
-                is therefore responsible for appropriate replication,
-                caching, and overall maintenance of DNS data across
-                regional boundaries to other DNS servers.</para>
+            <para>The Managed DNS Service is not a regionalized
+                service. DNS is therefore responsible for appropriate
+                replication, caching, and overall maintenance of DNS
+                data across regional boundaries to other DNS
+                servers.</para>
             <para>You can find the service access/endpoint examples
-                for Cloud DNS in the table below.</para>
+                for Managed DNS in the table below.</para>
             <para>
                 <table rules="all">
                     <caption>Service Access/Endpoint
@@ -738,6 +755,8 @@
                 actual account number after the final '/' in the
                 publicURL field returned by the authentication
                 response.</para>
+            <para security="reviewer">Reviewer: need to know what endpoint will be for
+                Managed DNS.</para>
             <para>
                 <note><title>Notes</title>
                     <itemizedlist>
@@ -755,6 +774,12 @@
                                 the auth response examples in <xref
                                    linkend="Authenticate-d1e171"
                                 />.</para>
+                            <para security="reviewer">Reviewer: please
+                                check name for Managed DNS in the
+                                service catalog and tell writer to fix
+                                it if needed in the previous
+                                paragraph. Hopefully the new name is
+                                managedDNS.</para>
                         </listitem>
                     </itemizedlist>
                 </note>
@@ -762,7 +787,7 @@
         </section>
         <section xml:id="DNS_service_versions">
             <title>DNS Service Versions</title>
-            <para>The Cloud <glossterm>DNS</glossterm> Service version
+            <para>The <glossterm>DNS</glossterm> service version
                 defines the contract and build information for the
                 API.</para>
             <section xml:id="Contract_Version-d1e825">
@@ -882,6 +907,10 @@
                 return an HTTP status of 202 Accepted. The
                     <code>status</code> property <emphasis>must
                     not</emphasis> have the value <code>ACTIVE</code>. </para>
+            <para security="reviewer">Reviewer: please check with Paul Glass to validate
+                that the following section reflects async differences
+                for Managed DNS compared to behavior for async with
+                Cloud DNS (aka Classic).</para>
             <para><emphasis role="bold">There are two ways to check
                     whether an asynchronous request is
                     complete:</emphasis><itemizedlist>
@@ -1817,9 +1846,9 @@ Content-Type: application/json
                     supported.</para>
                 <note>
                     <para>Wildcard and substring matching may be
-                        introduced in a later revision of the v2 API,
-                        as long as the implementation is backward
-                        compatible.</para>
+                        introduced in a later revision of the Managed
+                        DNS API, as long as the implementation is
+                        backward compatible.</para>
                 </note>
                 <example>
                     <title>Request example for a filtered
@@ -1903,12 +1932,12 @@ Content-Type: application/json
         <section xml:id="supported_record_types">
             <?dbfo keep-together="always"?>
             <title>Supported Record Types</title>
-            <para>The Rackspace Cloud DNS Service supports the
+            <para>The Rackspace Managed DNS Service supports the
                     <glossterm>record</glossterm> types listed in the
                 following table.</para>
 
             <table rules="all">
-                <caption>Rackspace Cloud DNS Supported Record
+                <caption>Rackspace Managed DNS Supported Record
                     Types</caption>
                 <thead>
                     <tr>
@@ -2257,11 +2286,9 @@ Content-Type: application/json
                     <tr>
                         <td colspan="2">
                             <note>
-                                <title>Notes</title>
                                 <itemizedlist>
                                    <listitem>
-                                   <para><code>DKIM</code> and
-                                   <code>SPF</code> records are
+                                   <para><code>DKIM</code> records are
                                    supported using <code>TXT</code>
                                    records with appropriately
                                    formatted data fields.</para>
@@ -2270,7 +2297,10 @@ Content-Type: application/json
                                    <para>Invalid quote and slash
                                    characters are automatically
                                    removed from TXT records by the DNS
-                                   Service.</para>
+                                   service.</para>
+                                   <para security="reviewer">Reviewer: please verify the
+                                   previous bullet and let me know if
+                                   any changes are needed.</para>
                                    </listitem>
                                 </itemizedlist>
                             </note>
@@ -2278,6 +2308,10 @@ Content-Type: application/json
                     </tr>
                 </tbody>
             </table>
+            <para security="reviewer">Reviewer: please give me the
+                info and descriptions for SSHFP and SPF new record
+                types so I can add the new sections for each record
+                type to the previous table.</para>
         </section>
         <section xml:id="DNS_faults">
             <title>Faults</title>
@@ -2287,7 +2321,7 @@ Content-Type: application/json
                 me a link to the exceptions.py file, however I don't
                 find the appropriate types of info (as shown below) in
                 the classes described there. Please advise.</para>
-            <para>When an error occurs, the DNS Service returns a
+            <para>When an error occurs, the DNS service returns a
                 fault object containing an HTTP error response code
                 that denotes the type of error. In the body of the
                 response, the system will return additional
@@ -2537,7 +2571,7 @@ Content-Type: application/json
         </section>
         <section xml:id="ip_address_support">
             <title>IP Address Support</title>
-            <para>Cloud DNS supports IP addresses both inside and
+            <para>Managed DNS supports IP addresses both inside and
                 outside the Rackspace-assigned IP ranges.</para>
         </section>
         <section xml:id="dns_propagation">
@@ -2546,9 +2580,8 @@ Content-Type: application/json
                 (globally) may take up to one minute. This refers to
                 the amount of time it takes after a change
                 (add/delete/update) is made to a customer's records
-                via API, DNS Manager, MyRackspace Customer Portal,
-                Cloud Control, and so forth before the change is live
-                on our name servers.</para>
+                via API, MyRackspace Customer Portal, and so forth
+                before the change is live on our name servers.</para>
             <para>A large amount of changes made simultaneously may
                 take 2-3 minutes. If a new domain is added or an
                 existing domain is deleted, this may take up to a few
@@ -2561,32 +2594,36 @@ Content-Type: application/json
             <title>Role Based Access Control (RBAC)</title>
             <para>Role Based Access Control (RBAC) restricts access to
                 the capabilities of Rackspace Cloud services,
-                including the Cloud DNS API, to authorized users only.
-                RBAC enables Rackspace Cloud customers to specify
-                which account users of their Cloud account have access
-                to which Cloud DNS API service capabilities, based on
-                roles defined by Rackspace (see <xref
-                    linkend="cloud_dns_roles_capabilities"/>). The
-                permissions to perform certain operations in Cloud DNS
-                API – create, read, update, delete  – are assigned to
-                specific roles. The account owner user assigns these
-                roles, either global (multiproduct) or
-                product-specific (for example Cloud DNS), to account
-                users.</para>
+                including the Managed DNS API, to authorized users
+                only. RBAC enables Rackspace Cloud customers to
+                specify which account users of their Cloud account
+                have access to which Managed DNS API service
+                capabilities, based on roles defined by Rackspace (see
+                    <xref linkend="cloud_dns_roles_capabilities"/>).
+                The permissions to perform certain operations in
+                Managed DNS API – create, read, update, delete  – are
+                assigned to specific roles. The account owner user
+                assigns these roles, either global (multiproduct) or
+                product-specific (for example Managed DNS), to account users.<note>
+                    <para>RBAC is not required for participation in
+                        Early Access.</para>
+                    <para security="reviewer">Writer: after EA, need to make a search for
+                        all occurrences of Early Access.</para>
+                </note></para>
             <section xml:id="assigning_roles_to_account_users">
                 <title>Assigning Roles to Account Users</title>
                 <para>The account owner (identity:user-admin) can
                     create account users on the account and then
                     assign roles to those users. The roles grant the
                     account users specific permissions for accessing
-                    the capabilities of the Cloud DNS service. Each
+                    the capabilities of the Managed DNS service. Each
                     account has only one account owner, and that role
                     is assigned by default to any Rackspace Cloud
                     account when the account is created.</para>
                 <note>
                     <para>An account user who is not assigned any role
                         by the account owner is not able to access any
-                        capabilities of the Cloud DNS API.</para>
+                        capabilities of the Managed DNS API.</para>
                 </note>
                 
                 <para> See the <citetitle>Cloud Identity Client
@@ -2620,14 +2657,14 @@ Content-Type: application/json
                 </note>
             </section>
             <section xml:id="roles_for_cloud_dns">
-                <title>Roles Available for Cloud DNS</title>
+                <title>Roles Available for Managed DNS</title>
                 <para>Three roles (observer, creator, and admin) can
-                    be used to access the Cloud DNS API specifically.
-                    The following table describes these roles and
-                    their permissions.</para>
+                    be used to access the Managed DNS API
+                    specifically. The following table describes these
+                    roles and their permissions.</para>
                 <table rules="all" width="70%"
                     xml:id="cloud_dns_roles_capabilities">
-                    <caption>Cloud DNS Product Roles and
+                    <caption>Managed DNS Product Roles and
                         Capabilities</caption>
                     <col width="30%"/>
                     <col width="70%"/>
@@ -2643,26 +2680,26 @@ Content-Type: application/json
                             <td>dnsaas:admin</td>
                             <td>This role provides Create, Read,
                                 Update, and Delete permissions in
-                                Cloud DNS, where access is
+                                Managed DNS, where access is
                                 granted.</td>
                         </tr>
                         <tr>
                             <td>dnsaas:service-admin</td>
                             <td>This role provides Create, Read,
                                 Update, and Delete permissions in
-                                Cloud DNS, where access is
+                                Managed DNS, where access is
                                 granted.</td>
                         </tr>
                         <tr>
                             <td>dnsaas:creator</td>
                             <td>This role provides Create, Read and
-                                Update permissions in Cloud DNS, where
-                                access is granted.</td>
+                                Update permissions in Managed DNS,
+                                where access is granted.</td>
                         </tr>
                         <tr>
                             <td>dnsaas:observer</td>
                             <td>This role provides Read permission in
-                                Cloud DNS, where access is
+                                Managed DNS, where access is
                                 granted.</td>
                         </tr>
                     </tbody>
@@ -2706,7 +2743,7 @@ Content-Type: application/json
                 <title>Resolving Conflicts Between RBAC Multiproduct
                     vs. Custom (Product-specific) Roles</title>
                 <para>The account owner can set roles for multiproduct
-                    and Cloud DNS scope, and it is important to
+                    and Managed DNS scope, and it is important to
                     understand how any potential conflicts among these
                     roles are resolved. When two roles appear to
                     conflict, the role that provides the more
@@ -2735,13 +2772,13 @@ Content-Type: application/json
                                    roles: multiproduct <emphasis
                                    role="bold"><emphasis role="bold"
                                    >observer</emphasis></emphasis> and
-                                   Cloud DNS <emphasis role="bold"
+                                   Managed DNS <emphasis role="bold"
                                    >admin</emphasis></td>
                                 <td>Appears that the user has only the
                                    multiproduct <emphasis role="bold"
                                    >observer</emphasis> role</td>
-                                <td>Yes, for Cloud DNS only. The user
-                                   has the <emphasis role="bold"
+                                <td>Yes, for Managed DNS only. The
+                                   user has the <emphasis role="bold"
                                    >observer</emphasis> role for the
                                    rest of the products.</td>
                             </tr>
@@ -2749,13 +2786,13 @@ Content-Type: application/json
                                 <td>User is assigned the following
                                    roles: multiproduct <emphasis
                                    role="bold">admin</emphasis> and
-                                   Cloud DNS <emphasis role="bold"
+                                   Managed DNS <emphasis role="bold"
                                    >observer</emphasis></td>
                                 <td>Appears that the user has only the
                                    multiproduct <emphasis role="bold"
                                    >admin</emphasis> role</td>
                                 <td>Yes, for all of the products. The
-                                   Cloud DNS <emphasis role="bold"
+                                   Managed DNS <emphasis role="bold"
                                    >observer</emphasis> role is
                                    ignored.</td>
                             </tr>
@@ -2764,9 +2801,9 @@ Content-Type: application/json
                 </para>
             </section>
             <section version="5.0" xml:id="RBAC_API_XREF_3">
-                <title>RBAC Permissions Cross-reference to Cloud DNS
+                <title>RBAC Permissions Cross-reference to Managed DNS
                     API Operations</title>
-                <para>API operations for Cloud DNS may or may not be
+                <para>API operations for Managed DNS may or may not be
                     available to all roles. To see which operations
                     are permitted to invoke which calls, please review
                         <link
@@ -5836,9 +5873,11 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     one DNS server are automatically propagated to
                     other active servers.</para>
                 <para><emphasis role="bold">Note:</emphasis> DNS
-                    understands only ASCII, so the Cloud DNS Service
+                    understands only ASCII, so the Managed DNS Service
                     provides conversion between UTF-8 and ASCII on all
                     calls into the system.</para>
+                <para security="reviewer">Reviewer: from Nicole -- confirm that previous
+                    sentence is true for Managed DNS.</para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Domain-d1e016">
@@ -5900,7 +5939,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
         <glossentry>
             <glossterm>zone</glossterm>
             <glossdef>
-                <para>A zone corresponds to a classic DNS domain. See
+                <para>A zone corresponds to a Cloud DNS domain. See
                         <emphasis>domain</emphasis>.</para>
             </glossdef>
         </glossentry>

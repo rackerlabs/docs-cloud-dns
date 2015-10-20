@@ -16,7 +16,7 @@ This call provides a list of all applicable limits for a specified account.
 
 The following examples show the requests and corresponding responses to list all limits for the specified account.
 
-For details about the limits information returned, refer to `Limits <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/Limits-d1e1208.html>`__.
+For details about the limits information returned, refer to :rax-devdocs:`Limits <cloud-dns/v1/developer-guide/#document-general-api-info/limits>`.
 
 
 

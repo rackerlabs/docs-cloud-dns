@@ -17,7 +17,7 @@ Records can be searched within a domain. The API allows for the caller to supply
 .. note::
    
    
-   *  By default, the search returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ). Refer to `Pagination <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html>`__ for details.
+   *  By default, the search returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ). Refer to :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>` for details.
    *  Using special characters in a search such as " " and "_" causes no results to be returned.
    
    

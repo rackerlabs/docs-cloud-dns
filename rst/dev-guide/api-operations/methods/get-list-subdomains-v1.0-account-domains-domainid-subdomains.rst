@@ -15,7 +15,7 @@ Lists domains that are subdomains of the specified domain.
 This call provides a list of all DNS domains that are subdomains for a specified domain. The resulting list is flat, and does not break the domains down hierarchically by subdomain.
 
 .. note::
-   By default, returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ). Refer to `Pagination <http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/pagination.html>`__ for details.
+   By default, returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ). Refer to :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>` for details.
    
    
 
