@@ -1,0 +1,26 @@
+v1.0.33, July 29, 2014 
+-----------------------------------------------------
+
+What's new
+~~~~~~~~~~
+ 
+|no changes|
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+- Improved the performance of subdomain(s) retrieval requests (see the sections 
+  :rax-devdocs:`List subdomains <cloud-dns/v1/developer-guide/#list-subdomains>` and 
+  :rax-devdocs:`Show domain <cloud-dns/v1/developer-guide/#show-domain>`).
+- When exporting domains, support exporting TXT records that have multiple strings in
+  the data field. TXT records that have multiple strings in the data field to work around 
+  the 255-byte maximum length of a string within a single TXT record are now successfully 
+  exported.
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

@@ -1,0 +1,21 @@
+v1.0.31 Configuration Changes, July 16, 2014 
+-----------------------------------------------------
+
+What's new
+~~~~~~~~~~
+ 
+- Role Based Access Control added for Cloud DNS API. For details refer
+  to :rax-devdocs:`Role Based Access Control <cloud-dns/v1/developer-guide/#document-general-api-info/role-based-access-control>`.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

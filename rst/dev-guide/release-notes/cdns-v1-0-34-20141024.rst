@@ -1,0 +1,23 @@
+v1.0.34 Configuration Changes, October 24, 2014 
+-----------------------------------------------------
+
+What's new
+~~~~~~~~~~
+ 
+Configuration Changes
+
+- Updated the limit for searching domains from 5 to 20 per minute in the Default Rate
+  Limits table. Refer to 
+  :rax-devdocs:`limits <cloud-dns/v1/developer-guide/#document-general-api-info/limits>`.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
