@@ -133,11 +133,11 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                 "endpoints": [
                     {
                         "tenantId": "1100111",
-                        "publicURL": "https://dns.api.rackspacecloud.com/v1.0/1100111"
+                        "publicURL": "https://preview.dns.api.rackspacecloud.com/v2/1100111"
                     }
                 ],
-                "name": "cloudDNS", 
-                "type": "rax:dns"
+                "name": "managedDNS", 
+                "type": "dns"
             }
         ]
     }

@@ -157,7 +157,7 @@
       <note>
         <para>This call returns an asynchronous
           response. Refer to <link
-            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> 
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
           for more details and examples of the way that asynchronous responses work. </para>
       </note>
       
@@ -170,12 +170,13 @@
         nature of the failure in the body of the response.
         Failures in the validation process are non-recoverable and
         require the caller to correct the cause of the failure and
-        <command>POST</command> the request again. <note>
-          
+        <command>POST</command> the request again. 
+        
+        <note>
           <itemizedlist>
             <listitem>
               <para>Refer to <link
-                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/dns_propagation.html">DNS Propagation</link>
+                xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/dns-propagation">DNS Propagation</link>
                 for information about DNS propagation.</para>
             </listitem>
             <listitem>
@@ -186,15 +187,14 @@
             </listitem>
             
             <listitem>
-              <para>When a zone or subdomain is created, and no Time To
-                Live (TTL) is specified, the SOA minTTL (3600
-                seconds) is used as the default. When a record
-                is added without a specified TTL, it will
-                receive the domain TTL by default. When the
-                domain and/or record TTL is supplied by the
-                user, either via a create or update call, the
-                TTL values must be 300 seconds or more. </para>
-              <para security="reviewer">Reviewer: need to verify that this is the actual behavior in Managed DNS. </para>
+              <para>When a zone or subdomain is created, and no Time To Live (TTL) is specified, 
+                the SOA minTTL (3600 seconds) is used as the default. When a record is added without 
+                a specified TTL, the TTL will show as empty<phrase security="reviewer">(not sure this 
+                is the expected behavior, refer to DNS-874)</phrase>. When the domain and/or record 
+                TTL is supplied by the user, either via a create or update call, the TTL values must 
+                be 300 seconds or more. </para>
+              <para security="reviewer">Reviewer: please check status of DNS-874 and advise if sentence 
+                in previous paragraph needs revision after Preview. </para>
               
             </listitem>
             <listitem>
@@ -214,7 +214,7 @@
           for the asynchronous call and indicate that the task
           has been accepted for processing.
           Refer to <link
-            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for a description
           of how the asynchronous call works.</para>
       </note>
     </wadl:doc>
@@ -429,9 +429,9 @@
         zone.</para>
       <note>
         <para>This call returns an asynchronous response. Refer to <link
-          xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+          xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
       </note>
-      <para security="reviewer">This call modifies DNS zone attributes only.
+      <para>This call modifies DNS zone attributes only.
         Records cannot be added, modified, or Deleted. Only the
         TTL, email address and comment attributes of a zone can
         be modified.</para>
@@ -446,22 +446,22 @@
       <note>
         <title>Notes</title>
         <itemizedlist>
-          <listitem security="reviewer">
+          <listitem>
             <para>Refer to <link
-              xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/dns_propagation.html">DNS Propagation</link>
+              xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/dns-propagation">DNS Propagation</link>
               for information about DNS propagation.</para>
           </listitem>
           <listitem>
             <para>A zone's <code>id</code> is immutable.
             </para>
           </listitem>
-          <listitem security="reviewer">
+          <listitem>
             <para>When the zone TTL is supplied
               by the user, either via a create or update call,
               the TTL values must be 300 seconds or
               more.</para>
           </listitem>
-          <listitem security="reviewer">
+          <listitem>
             <para>
               <code>name</code> cannot be specified, because the
               zone name cannot be modified.</para>
@@ -529,14 +529,14 @@
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
       title="Delete zone">
       <para role="shortdesc">This operation deletes a zone.</para>
+      <para>Once a zone has been deleted, all associated resources are destroyed and the
+        operation is non-recoverable.</para>
       <note>
         <para>This operation returns an asynchronous
           response, as
           described in <link
-            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link>.
         </para>
-        <para>Once pool manager has deleted the zone from all the pool targets, the zone is deleted from storage.</para>
-        <para security="reviewer">Reviewer: From Nicole -- Not sure pool manager is customer-facing reference that should be mentioned. if it is and/or should be mentioned, add definition to 'terms' section. Otherwise, it seems like we can just say this along the lines of 'once a zone has been deleted, all associated resources are destroyed and the operation is non-recoverable.' or something like that.</para>
       </note>
       
     </wadl:doc>
@@ -620,14 +620,18 @@
       title="Abandon zone">
       <para role="shortdesc">Abandons a
         zone.</para>
-      <para>This operation removes the zone from DNS storage. There is no operation done on the pool targets. 
+      
+      <para>This operation removes the zone from DNS storage, removing zone data from the database, but not from the name servers.</para>
+        <note>   
+          <para>To remove zone data from the database <emphasis>and</emphasis> the name servers, use Delete zone instead. </para>
+        </note>
+        <para>
         This is intended to be used in the cases where DNS storage is incorrect for whatever reason. 
         By default this is restricted by policy (abandon_domain) to admins.</para>
-      <para security="reviewer">Reviewer: From Nicole -- what does this mean to the user? how is this more like or less like a 'delete'? how can we say this in a way that is more clear as to what removing the zone from storage results in?</para>
-      <para security="reviewer">Reviewer: From Nicole -- I think pools / pool targets will be an internal reference and might need to be removed / reworded for usefulness to customers</para>
+      
       <note>
         <para>This call returns an asynchronous response. Refer to <link
-          xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+          xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
       </note>
       
     </wadl:doc>
@@ -670,11 +674,11 @@
       <note>
         <para>This operation returns an asynchronous
           response. Refer to <link
-            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> 
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
           for more details and examples of the way that asynchronous responses work. </para>
       </note>
       
-      <para security="reviewer">This operation provisions a new DNS record set, based on the configuration defined
+      <para>This operation provisions a new DNS record set, based on the configuration defined
         in the request object. If the corresponding request cannot
         be fulfilled due to insufficient or invalid data, an
         <code>HTTP</code>
@@ -694,7 +698,7 @@
           for the asynchronous call and indicates that the task
           has been completed.
           Refer to <link
-            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for a description
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for a description
           of how the asynchronous call works.</para>
       </note>
       <para>The example illustrates a record set in the BIND file format.</para>
@@ -760,6 +764,7 @@
     
       <para security="reviewer">A <code>self</code> link is included for each record set. These links point to each individual record set. 
         A <code>self</code> link is also included for the current List record set operation. </para>
+      <para security="writeronly">Add previous statement back in for EA.</para>
     </wadl:doc>
     <request>
       <!--       <param style="query" type="xs:string" name="name"
@@ -794,7 +799,7 @@
       <para role="shortdesc">Replaces the specified record set with the specified details.</para>
       <note>
         <para>This call returns an asynchronous response. Refer to <link
-          xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+          xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
       </note>
       
       <para>If a request cannot be fulfilled due to insufficient or
@@ -819,7 +824,7 @@
         <param name="name" style="plain" type="xs:string"
           required="true" path="$.name">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
-            xml:lang="EN"><para security="reviewer">The name for the zone (immutable). Must be a valid zone
+            xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
               name.</para></wadl:doc>
         </param>
         <param name="type" style="plain" type="xs:string"
@@ -903,7 +908,7 @@
         <para>This operation returns an asynchronous
           response, as
           described in <link
-            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html">Synchronous and Asynchronous Responses</link>.
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link>.
         </para>
       </note>
       

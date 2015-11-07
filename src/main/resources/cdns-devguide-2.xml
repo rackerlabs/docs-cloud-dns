@@ -23,10 +23,10 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
-    xmlns:html="http://www.w3.org/1999/xhtml" xml:id="cdns-devguide"
+    xmlns:html="http://www.w3.org/1999/xhtml" xml:id="cdns-devguide-2"
     version="5.0">
     <title>Rackspace Managed DNS Developer Guide</title>
-    <?rax status.bar.text="EARLY ACCESS"?>
+    <?rax status.bar.text="PREVIEW"?>
     <info>
         <author>
             <personname>
@@ -48,7 +48,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
-        <pubdate>2015-10-06</pubdate>
+        <pubdate>2015-11-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -64,11 +64,11 @@
         <revhistory>
             
             <revision>
-                <date>2015-11-05</date>
+                <date>2015-11-12</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Initial Early Access (EA) release.</para>
+                            <para>Initial Preview release.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -489,11 +489,10 @@
                     </programlisting>
                     </programlistingco>
                 </example>
-                <para security="reviewer">Reviewer: need to edit auth
-                    response examples to add in DNS v2 endpoints
-                    (without account number). Then add the relevant
-                    information about no tenant for DNS v2 in this
-                    section.</para>
+                <para security="reviewer">Reviewer: service catalog
+                    example above has been modified to add in DNS v2
+                    endpoint. Please remember to fix the production
+                    endpoint for EA.</para>
                 <note>
                     <para>The information shown in the Auth Response
                         examples is for US-based accounts. If you
@@ -736,9 +735,7 @@
                         <tr align="left">
 
                             <td colspan="1">
-                                <code>https://dns.api.rackspacecloud.com/v2.0/<replaceable
-                                   security="writeronly"
-                                   >1234</replaceable></code></td>
+                                <code>https://preview.dns.api.rackspacecloud.com/v2/<replaceable>1234</replaceable></code></td>
                         </tr>
                     <tr align="left" security="writeronly">
 
@@ -749,37 +746,26 @@
                     </tbody>
                 </table>
             </para>
-            <para security="writeronly">Replace the sample tenant ID number, 1234, with your
+            <para>Replace the sample tenant ID number, 1234, with your
                 actual tenant id number returned as part of the
                 authentication service response. You will find the
                 actual account number after the final '/' in the
                 publicURL field returned by the authentication
                 response.</para>
-            <para security="reviewer">Reviewer: need to know what endpoint will be for
-                Managed DNS.</para>
             <para>
                 <note><title>Notes</title>
                     <itemizedlist>
                         <listitem>
-                            <para>The tenant ID is not used with the
-                                EA release.</para>
-                        </listitem>
-                        <listitem>
                             <para>The service catalog returned in the
                                 auth response specifies the correct
                                 service access endpoint to use for
-                                accessing DNS. Use the service name
-                                (cloudDNS) to locate the correct
-                                endpoint in the service catalog. See
-                                the auth response examples in <xref
+                                accessing Managed DNS. Use the service
+                                name (managedDNS) to locate the
+                                correct endpoint in the service
+                                catalog. See the auth response
+                                examples in <xref
                                    linkend="Authenticate-d1e171"
                                 />.</para>
-                            <para security="reviewer">Reviewer: please
-                                check name for Managed DNS in the
-                                service catalog and tell writer to fix
-                                it if needed in the previous
-                                paragraph. Hopefully the new name is
-                                managedDNS.</para>
                         </listitem>
                     </itemizedlist>
                 </note>
@@ -907,10 +893,14 @@
                 return an HTTP status of 202 Accepted. The
                     <code>status</code> property <emphasis>must
                     not</emphasis> have the value <code>ACTIVE</code>. </para>
-            <para security="reviewer">Reviewer: please check with Paul Glass to validate
-                that the following section reflects async differences
-                for Managed DNS compared to behavior for async with
-                Cloud DNS (aka Classic).</para>
+            <para security="reviewer">Reviewer: please check with Paul
+                Glass to validate that the following section reflects
+                async differences for Managed DNS compared to behavior
+                for async with Cloud DNS (aka Classic).  The section
+                is generally correct except using
+                https://preview.dns.api.rackspacecloud.com/v2/1234/
+                for endpoint. Please update after the official prod
+                endpoint becomes available. </para>
             <para><emphasis role="bold">There are two ways to check
                     whether an asynchronous request is
                     complete:</emphasis><itemizedlist>
@@ -918,12 +908,12 @@
                         <para>Query the collections link, for example:
                                 <link
                                 xlink:href="http://localhost:9001/v2/zones"
-                                >http://localhost:9001/v2/zones</link>.
+                                >https://preview.dns.api.rackspacecloud.com/v2/1234/zones</link>.
                             (Examples of collections are zones and
                             recordsets.) Note that you can also filter
                             collections by status, for example: <link
                                 xlink:href="http://localhost:9001/v2/zones?status=PENDING"
-                                >http://localhost:9001/v2/zones?status=PENDING</link>.</para>
+                                >https://preview.dns.api.rackspacecloud.com/v2/1234/zones?status=PENDING</link>.</para>
                     </listitem>
                 </itemizedlist><itemizedlist>
                     <listitem>
@@ -1902,7 +1892,7 @@ Content-Type: application/json
         </section>
         <section xml:id="resources">
             <title>Resources</title>
-            <para security="reviewer">A resource is an item you access
+            <para>A resource is an item you access
                 in an API operation, such as a zone or
                 recordset.</para>
             <para>A <code>links</code> object will exist inside the
@@ -2293,15 +2283,6 @@ Content-Type: application/json
                                    records with appropriately
                                    formatted data fields.</para>
                                    </listitem>
-                                   <listitem>
-                                   <para>Invalid quote and slash
-                                   characters are automatically
-                                   removed from TXT records by the DNS
-                                   service.</para>
-                                   <para security="reviewer">Reviewer: please verify the
-                                   previous bullet and let me know if
-                                   any changes are needed.</para>
-                                   </listitem>
                                 </itemizedlist>
                             </note>
                         </td>
@@ -2311,16 +2292,11 @@ Content-Type: application/json
             <para security="reviewer">Reviewer: please give me the
                 info and descriptions for SSHFP and SPF new record
                 types so I can add the new sections for each record
-                type to the previous table.</para>
+                type to the previous table when they become available
+                after Preview.</para>
         </section>
         <section xml:id="DNS_faults">
             <title>Faults</title>
-            <para security="reviewer">Reviewer: Please give me updates
-                for this section. How can I get the List of exceptions
-                and the items actually returned? Previously you sent
-                me a link to the exceptions.py file, however I don't
-                find the appropriate types of info (as shown below) in
-                the classes described there. Please advise.</para>
             <para>When an error occurs, the DNS service returns a
                 fault object containing an HTTP error response code
                 that denotes the type of error. In the body of the
@@ -2376,11 +2352,21 @@ Content-Type: application/json
                             for specifics.</td>
                     </tr>
                     <tr>
+                        <td colspan="2"><code>forbidden</code></td>
+                        <td colspan="1">403</td>
+                        <td colspan="3">The endpoint is not defined in the service catalog.</td>
+                    </tr>
+                    <tr>
                         <td colspan="2"><code>itemNotFound</code></td>
                         <td colspan="1">404</td>
                         <td colspan="3">The back-end services did not
                             find anything matching the
                             Request-URI.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>methodNotAllowed</code></td>
+                        <td colspan="1">405</td>
+                        <td colspan="3">The method is not allowed for the URL.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>overLimit</code></td>
@@ -2605,8 +2591,8 @@ Content-Type: application/json
                 assigned to specific roles. The account owner user
                 assigns these roles, either global (multiproduct) or
                 product-specific (for example Managed DNS), to account users.<note>
-                    <para>RBAC is not required for participation in
-                        Early Access.</para>
+                    <para>RBAC setup is not required for participation
+                        in Preview.</para>
                     <para security="reviewer">Writer: after EA, need to make a search for
                         all occurrences of Early Access.</para>
                 </note></para>
@@ -2631,18 +2617,18 @@ Content-Type: application/json
                     about how to perform the following tasks:<itemizedlist>
                         <listitem>
                             <para>
-                                <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html">Add account users</link>
+                                <link xlink:href="https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-user">Add account users</link>
                             </para>
                         </listitem>
                         <listitem>
                             <para>
-                                <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html">Assign roles to account
+                                <link xlink:href="https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-role-to-user">Assign roles to account
                                     users</link>
                             </para>
                         </listitem>
                         <listitem>
                             <para>
-                                <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html">Delete roles from account
+                                <link xlink:href="https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#delete-global-role-from-user">Delete global roles from account
                                     users</link>
                             </para>
                         </listitem>
@@ -5872,12 +5858,17 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     clustered or replicated such that changes made to
                     one DNS server are automatically propagated to
                     other active servers.</para>
-                <para><emphasis role="bold">Note:</emphasis> DNS
+                <para security="reviewer"><emphasis role="bold">Note:</emphasis> DNS
                     understands only ASCII, so the Managed DNS Service
                     provides conversion between UTF-8 and ASCII on all
                     calls into the system.</para>
-                <para security="reviewer">Reviewer: from Nicole -- confirm that previous
-                    sentence is true for Managed DNS.</para>
+                <para security="reviewer">Reviewer: from Nicole --
+                    confirm that previous sentence is true for Managed
+                    DNS. James Li responded: "Designate probably does
+                    not support unicode domains. The team has not yet
+                    tested it." So I will hide the above paragraph
+                    about providing conversion for now and then put it
+                    back in for EA. </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Domain-d1e016">

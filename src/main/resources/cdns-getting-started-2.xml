@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?rax-warinfo cdns-v1.0-cdns-getting-started?>
+
+<!DOCTYPE book [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
+        <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
+        <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
+        
+        <!-- Useful for specs -->
+        <!ENTITY MAY    '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
+        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
+        <!ENTITY MUST   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
+        <!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
+]>
+
 <book xmlns="http://docbook.org/ns/docbook"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -7,11 +33,12 @@
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
       version="5.0"
-      xml:id="cdns-getting-started"
-      xml:base="file:/Users/mike.asthalter/Documents/DNSaaS/docs-cloud-dns/src/main/resources/cdns-getting-started.xml">
+      xml:id="cdns-getting-started-2"
+      xml:base="file:/Users/mike.asthalter/Documents/DNSaaS/docs-cloud-dns/src/main/resources/cdns-getting-started-2.xml">
     
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Managed DNS Getting Started Guide</title>
+    <?rax status.bar.text="PREVIEW"?>
     <titleabbrev>Rackspace Managed DNS Getting Started
         Guide</titleabbrev>
 
@@ -27,7 +54,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
-        <pubdate>2015-10-06</pubdate>
+        <pubdate>2015-11-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -35,11 +62,11 @@
         </legalnotice>
         <revhistory>
             <revision>
-                <date>2015-11-05</date>
+                <date>2015-11-12</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Initial EA release.</para>
+                            <para>Initial Preview release.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -55,23 +82,24 @@
         <title>Overview</title>
         <para>This guide provides step-by-step instructions for how to
             use cURL to call the necessary Rackspace Managed DNS API
-            operations to set up Rackspace Managed DNS  for
+            operations to set up Rackspace Managed DNS for
                 <trademark>Cloud Servers</trademark>. Additional
             details about Rackspace Managed DNS can be found in the
                 <citetitle>Rackspace Managed DNS Developer
                 Guide</citetitle> at <link
-                xlink:href="http://docs.rackspace.com/"
-                >http://docs.rackspace.com/</link> and at <link
-                xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/dns/"
+                xlink:href="https://developer.rackspace.com/docs/"
+                >http://docs-internal.rackspace.com</link> and at
+                <link
+                xlink:href="https://www.rackspace.com/cloud/cloud_hosting_products/dns/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
         <para>Rackspace is deploying <link
                 xlink:href="http://docs.openstack.org/developer/designate/"
                 >OpenStack Designate v2</link> as the next version of
             Rackspace Managed DNS at Rackspace. Managed DNS supports
-            only Designate v2 and not Designate v1. <note>
+            only Designate v2 and not Designate v1.<note>
                 <para>PTR records are currently supported in Rackspace
                     Managed DNS, but are not yet supported during the
-                    Rackspace Managed DNS Early Access phase. </para>
+                    Rackspace Managed DNS Preview phase. </para>
             </note></para>
         <para>This guide will show you how to use the Rackspace
             Managed DNS API to set up zones and records using
@@ -92,8 +120,200 @@
                 </itemizedlist>
          </para>
         </section>
+        <section version="5.0" xml:id="designateclient">
+            <title>How the Designate client works</title>
+            <para>The Designate client Command Line Interface (CLI) is
+                now a plugin for OpenStack CLI.</para>
+            <para>You install the CLI clients on a Linux distribution
+                or on Mac OS X. You install the CLI clients in the
+                upcoming section "Install the CLI Clients". </para>
+            <para>To configure the trove client, you update your
+                .bash_profile file (or .bashrc) to set and export
+                trove environment variables. </para>
+            <note>
+                <para>You can specify the <code>--debug</code>
+                    parameter on any trove command to show the
+                    underlying API request for the command. This is a
+                    good way to become familiar with the API requests.
+                </para>
+            </note>
+        </section>
+        <section version="5.0" xml:id="curl">
+            <title>How cURL Commands Work</title>
+            <para>cURL is a command-line tool that you can use to
+                interact with <glossterm>REST</glossterm> interfaces.
+                cURL lets you to transmit and receive
+                    <glossterm>HTTP</glossterm> requests and responses
+                from the command line or a shell script, which enables
+                you to work with the API directly. It is available for
+                Linux distributions, Mac OS X, and Windows. For
+                information about cURL, see <link
+                    xlink:href="http://curl.haxx.se/"
+                    >http://curl.haxx.se/</link>. </para>
+            <para>To run the cURL request examples shown in this
+                guide, copy each example from the HTML version of this
+                guide directly to the command line or a script.</para>
+            <para>The following command is an example cURL command for
+                a JSON request that provisions a server with an
+                isolated network:</para>
+            <example xml:id="JSON_Example">
+                <title>cURL Command Example: JSON Request </title>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+       -X POST \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"server": {"name": "my_server_with_network", "imageRef": "d42f821e-c2d1-4796-9f07-af5ed7912d0e", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks": [{"uuid": "538a112a-34d1-47ff-bf1e-c40639e886e2"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+      | python -m json.tool</programlisting>
+            </example>
+            <note>
+                <para>The carriage returns in the cURL request
+                    examples are escaped with a backslash
+                        (<literal>\</literal>) character. The escape
+                    character allows continuation of the command
+                    across multiple lines. However, do not include the
+                    escape character in the JSON request body within
+                    the cURL command.</para>
+            </note>
+            <para>The cURL examples in this guide use the following
+                command-line options:</para>
+            <table xml:id="curl_options" rules="all" width="75%">
+                <caption>cURL Command-Line Options</caption>
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <option>-d</option>
+                        </td>
+                        <td>
+                            <para>Sends the specified data in a &POST;
+                                request to the HTTP server. Use this
+                                option to send a JSON request body to
+                                the server.</para>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <option>-H</option>
+                        </td>
+                        <td>
+                            <para>Specifies an extra HTTP header in
+                                the request. You can specify any
+                                number of extra headers. Precede each
+                                header with the <option>-H</option>
+                                option. </para>
+                            <para>Common headers in Rackspace API
+                                requests are:<itemizedlist>
+                                   <listitem>
+                                   <para><literal>Content-Type</literal>.
+                                   Required for operations with a
+                                   request body. </para>
+                                   <para>Specifies the format of the
+                                   request body. The syntax for the
+                                   <literal>Content-Type</literal>
+                                   header is:</para>
+                                   <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
+                                   <para>Where
+                                   <parameter>format</parameter> is
+                                   <literal>json</literal>.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para><literal>X-Auth-Project-Id</literal>.
+                                   Optional. Specifies the project ID,
+                                   which can be your account number or
+                                   another value.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para><literal>Accept</literal>.
+                                   Optional. </para>
+                                   <para>Specifies the format of the
+                                   response body. The syntax for the
+                                   <literal>Accept</literal> header
+                                   is:</para>
+                                   <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
+                                   <para>Where
+                                   <parameter>format</parameter> is
+                                   <literal>json</literal>. Default is
+                                   <literal>json</literal>.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para><literal>X-Auth-Token</literal>.
+                                   Required. Specifies the
+                                   authentication token.</para>
+                                   </listitem>
+                                </itemizedlist></para>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <option>-i</option>
+                        </td>
+                        <td>
+                            <para>Includes the HTTP header in the
+                                output. </para>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <option>-s</option>
+                        </td>
+                        <td>
+                            <para>Silent or quiet mode. Does not show
+                                progress or error messages. Makes cURL mute.<note>
+                                   <para>If your cURL command is not
+                                   generating any output, try
+                                   replacing the <code>-s</code>
+                                   option with <code>-i</code>.</para>
+                                </note>
+                            </para>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <option>-T</option>
+                        </td>
+                        <td>
+                            <para>Transfers the specified local file
+                                to the remote URL.</para>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <option>-X</option>
+                        </td>
+                        <td>
+                            <para>Specifies the request method to use
+                                when communicating with the HTTP
+                                server. The specified request is used
+                                instead of the default method, which
+                                is &GET;. </para>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <note xml:id="json_tool">
+                <title>json.tool</title>
+                <para>For commands that return a response, you can
+                    append the following code to the command to call
+                    the json.tool to pretty-print output: </para>
+                <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
+                <para>To use the json.tool, import the json module.
+                    For information about the json.tool, see <link
+                        xlink:href="http://docs.python.org/2/library/json.html"
+                        >json — JSON encoder and decoder</link>. </para>
+                <para>If you do not want to pretty-print JSON output,
+                    omit this code. </para>
+            </note>
+            <?hard-pagebreak?>
+        </section>
     </chapter>
-    <chapter xml:id="Create_Cloud_Server">
+    <chapter xml:id="Create_Cloud_Server" security="writeronly">
         <title>Create a new cloud server</title>
         <para>This guide requires one cloud server for setting up DNS
             using the Rackspace Managed DNS API. If you will be using
@@ -109,7 +329,7 @@
         <note>
             <para>You can also create a cloud server using the Cloud
                 Servers API. Refer to the <citetitle>
-                    <link xlink:href="http://docs.rackspace.com/"
+                    <link xlink:href="http://developer.rackspace.com/docs/"
                         >Cloud Servers API Developer Guide</link>
                 </citetitle> for details.</para>
         </note>
@@ -171,7 +391,49 @@
             </step>
         </procedure>
     </chapter>
-    <chapter xml:id="DB_Sending_API_Requests">
+    <chapter xml:id="install_CLI_clients">
+        <title>Install the CLI clients</title>
+        <para>If you want to run the cURL examples instead of CLI,
+            skip this step and proceed to the next section "Send
+            Requests to the API".</para>
+        <para>Run the following commands on a Mac or Linux
+            distribution to install the OpenStack and Designate
+            clients:</para>
+        <programlisting>$ sudo pip install -U python-openstackclient 
+$ sudo pip install -U python-designateclient </programlisting>
+        <para>Create a CLI config file with the content as shown
+            below, and name the file <emphasis role="bold"
+                >clouds.yaml</emphasis> underneath your current
+            directory.</para>
+        <programlisting>clouds:
+  prod:
+    auth:
+      auth_url: https://identity.api.rackspacecloud.com/v2.0/
+      project_id: 123456
+      username: &lt;RACKSPACE_CLOUD_USERNAME>
+      password: &lt;RACKSPACE_CLOUD_PASSWORD></programlisting>
+        <para>See the following for more CLI configuration options:
+            <link xlink:href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
+                >configuring OpenStack CLI/</link>.</para>
+        <para>Export the necessary environment
+            variables:<programlisting> $ export OS_CLOUD=prod </programlisting></para>
+        <para>Run the following command to see if OpenStack/Designate
+            CLI
+            works:<programlisting>$ openstack --help </programlisting></para>
+        <para>If you get an error such as <emphasis role="italic"
+                >Exception: Versioning for this project requires
+                either an sdist tarball, or access to an upstream git
+                repository. Are you sure that git is
+                installed?</emphasis>, run the following
+            command:<programlisting>$ sudo pip install -U distribute</programlisting>
+        </para>
+        <para security="reviewer">Reviewer: it looks as though the
+            Exception listed above is incomplete: "Versioning for this
+            project requires either an sdist tarball, or ...". Can you
+            please complete the sentence for me?</para>
+        <para>Skip to the section "Create a Zone".</para>
+    </chapter>
+    <chapter xml:id="Sending_API_Requests">
         <title>Send requests to the API</title>
         <para>You have several options for sending requests through an
             API: </para>
@@ -203,9 +465,9 @@
             <para>cURL allows you to transmit and receive HTTP requests and responses from the
                 command-line or from within a shell script. This makes it possible to work with the REST API
                 directly without using one of the client APIs. </para>
-            <para>The following cURL command-line options are used in
+            <para security="writeronly">The following cURL command-line options are used in
                 this guide to run the examples:</para>
-            <table xml:id="curl_options" rules="all" width="75%">
+            <table xml:id="curl_options2" rules="all" width="75%" security="writeronly">
                 <caption>cURL command-line options</caption>
                 <thead>
                     <tr>
@@ -323,20 +585,7 @@
                     </tr>
                 </tbody>
             </table>
-            <note>
-                <title>ppxml</title>
-                <para>For commands that return an XML response, you
-                    can append the following code to the command to
-                    call <code>ppxml</code> to pretty-print output: </para>
-                <programlisting language="bash" role="gutter: false">| ppxml</programlisting>
-                <para>If you do not want to pretty-print XML output,
-                    omit this code. </para>
-                <para>In order to use <code>ppxml</code>, you need to
-                    set the <code>ppxml</code> alias as
-                    follows:</para>
-                <programlisting language="bash" role="gutter: false">$ alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'</programlisting>
-            </note>
-            <note xml:id="json_tool">
+            <note xml:id="json_tool2" security="writeronly">
                 <title>json.tool</title>
                 <para>For commands that return a JSON response, you
                     can append the following code to the command to
@@ -354,12 +603,12 @@
             <para>To run the cURL request examples shown in this guide
                 on Linux or Mac systems, select the desired example
                 from the HTML version of this guide (visit <link
-                    xlink:href="http://docs.rackspace.com/"
-                    >http://docs.rackspace.com/</link>) by clicking
-                the Select Text icon to the right of the example and
-                then select Edit-&gt;Copy. Then paste it into an ASCII
-                editor (for example <emphasis role="bold"
-                    >vi</emphasis> or <emphasis role="bold"
+                    xlink:href="http://docs-internal.rackspace.com/"
+                    >http://docs-internal.rackspace.com/</link>) by
+                clicking the Select Text icon to the right of the
+                example and then select Edit-&gt;Copy. Then paste it
+                into an ASCII editor (for example <emphasis
+                    role="bold">vi</emphasis> or <emphasis role="bold"
                     >TextEdit</emphasis>). Next modify the example
                 with your required information (such as the
                 authentication token you have received from the
@@ -372,10 +621,10 @@
                     should not escape carriage returns inside the XML
                     or JSON message within the command.</para>
             </note>
-            <para>Consider the following cURL authenticate:
-                XML request example that is described in detail in <link
-                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
-                    >Generate an authentication token</link>:</para>
+            <para>Consider the following cURL authenticate: XML
+                request example that is described in detail in the
+                next section "Generate an authentication
+                token":</para>
             <example>
                 <title>cURL authenticate: XML request</title>
                 <?dbfo keep-together="always"?>
@@ -676,11 +925,11 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                 "endpoints": [
                     {
                         "tenantId": "1100111",
-                        "publicURL": "https://dns.api.rackspacecloud.com/v1.0/1100111"
+                        "publicURL": "https://preview.dns.api.rackspacecloud.com/v2/1100111"
                     }
                 ],
-                "name": "cloudDNS", 
-                "type": "rax:dns"
+                "name": "managedDNS", 
+                "type": "dns"
             }
         ]
     }
@@ -737,11 +986,16 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         </note>
         <para>Note that the <code>publicURL</code> endpoint for
                 <code>cloudDNS</code>
-                (<code>https://dns.api.rackspacecloud.com/v2.0/</code>)
+                (<code>https://preview.dns.api.rackspacecloud.com/v2/</code>)
             is also returned in the response.</para>
-        <para security="reviewer">Reviewer: **Note that the DNS v2
-            endpoint needs to be added to the auth response example
-            shown above, when available.**</para>
+        <note>
+            <para> Please make sure you have DNS v2 endpoint defined
+                in your service catalog that was returned. If not
+                please contact the DNS team. </para>
+        </note>
+        <para security="reviewer">Reviewer: **Remember to update the
+            DNS v2 endpoint after Preview to the production
+            endpoint.**</para>
         <para>After authentication, you can use cURL to perform
                 <command>GET</command>, <command>DELETE</command>,
                 <command>PUT</command>, and <command>POST</command>
@@ -775,7 +1029,7 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                     <tr align="left">
                         
                         <td colspan="1">
-                            <code>https://dns.api.rackspacecloud.com/v2.0/</code></td>
+                            <code>https://preview.dns.api.rackspacecloud.com/v2/1234/</code></td>
                     </tr>
                     <tr align="left" security="writeronly">
                         
@@ -794,18 +1048,13 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                         endpoint to use for accessing DNS. Use the
                         service name (cloudDNS) to locate the correct
                         endpoint in the service catalog. See the auth
-                        response examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
-                            >Generate an authentication
-                        token</link>.</para>
+                        response examples in the previous section
+                        "Generate an authentication token".</para>
                 </listitem>
                 <listitem>
-                    <para>The new v2.0 endpoint <emphasis>must
+                    <para>The new v2 endpoint <emphasis>must
                             appear</emphasis> in your service catalog
                         in order for you to access it.</para>
-                    <para security="reviewer">Reviewer: need to know
-                        if v1.0 or v2.0 endpoint will be used. See
-                        paragraph below.</para>
                 </listitem>
                 <listitem>
                     <para>All examples in this guide assume that you
@@ -815,22 +1064,61 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         </note>
         <para>When making a Managed DNS API call, place the endpoint
             at the beginning of the request URL, for example:
-                <code>https://dns.api.rackspacecloud.com/v2.0/</code>,
-            as you can see in the cURL Create zone request examples in
-                <link
-                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Zone.html"
-                >Create a zone</link>. For example, the complete URL
+                <code>https://preview.dns.api.rackspacecloud.com/v2/1234</code>,
+            as you can see in the cURL Create zone request examples in the section "Create a zone".
+            For example, the complete URL
             for the Create zone API operation is
-                <code>https://dns.api.rackspacecloud.com/v2.0/</code><code>zones</code>.
+                <code>https://preview.dns.api.rackspacecloud.com/v2/1234/</code><code>zones</code>.
             Note that the <code>v2</code> component in the URL
             indicates that you are using version 2.0 of the Managed
             DNS API.</para>
-        <para security="reviewer">Reviewer: need to know what endpoint will be for Managed
-            DNS.</para>
+        <para>Remember to replace <code>1234</code> in the example
+            URLs shown above with your real Rackspace Cloud account
+            number.</para>
+        <para security="reviewer">Reviewer: remember to update the v2
+            endpoint after Preview.</para>
     </chapter>
+    
+        <chapter xml:id="Export_CURL_ENV_VARS">
+            <title>Export Environment Variables to Run cURL
+                Commands</title>
+            <para>To run the cURL command examples in this guide,
+                follow this procedure to export environment variables. </para>
+            <para audience="gsonly">Otherwise, if you are using CLI
+            client commands, proceed to the next section, "Create a
+            zone". </para>
+            <para>Export your tenant ID and authentication token to
+                environment variables. All cURL examples in this guide
+                use these environment variables.</para>
+            <procedure>
+                <title>To export environment variables:</title>
+                <step>
+                    <para>Export your tenant ID to the
+                            <literal>account</literal> environment
+                        variable:</para>
+                    <screen><computeroutput>$ export account="&lt;tenantId&gt;"</computeroutput></screen>
+                    <para>Where <parameter>tenantId</parameter> is the
+                        value in the <literal>tenantId</literal> field
+                        in the authentication response. </para>
+                </step>
+                <step>
+                    <para>Export your authentication token to the
+                        <literal>token</literal> environment variable:
+                    <screen><computeroutput>$ export token="&lt;id&gt;"</computeroutput></screen>Where
+                        <parameter>id</parameter> is the
+                    authentication token value in the
+                        <literal>id</literal> field in the
+                        <literal>token</literal> element in the
+                    authentication response. Refer to the previous
+                    section "Generate an authentication token" for
+                    information about the token id.</para>
+                </step>
+            </procedure>
+        </chapter>
     <chapter xml:id="Create_Zone">
         <title>Create a zone</title>
-        <para> The Create zone API call provisions one or more new DNS
+        <para> A zone corresponds to a classic DNS domain.</para>
+        <para>The Create zone API call provisions one or more new DNS
             zones, based on the configuration defined in the request
             object. A <emphasis>zone</emphasis> corresponds to a Cloud
             DNS domain. To create a zone, you need to post to the
@@ -852,78 +1140,140 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             responses containing information with a link URL, which
             allows the progress, status, and/or response information
             of the call to be retrieved at a later point in time. </para>
-        <para>You need to use the Create zone API call (POST
-                <code>/zones</code>) to create a zone with the
-            configuration that you specify.</para>
         <para>In this case, assume that you want to create a zone with
-            the following configuration:</para>
-        <itemizedlist>
-            <listitem>
-                <para>name=example.org.</para>
-                <note>
-                    <para>If you want to substitute your own zone
-                        name, you can use any letter, numbers between
-                        0 and 9, and the character "-". For example,
-                        you might use your first name and last initial
-                        at the beginning of the name, as follows:
-                        "bobmexample.org." Ensure that you add the
-                        final period (.) at the end of your fully
-                        qualified zone name.</para>
-                </note>
-            </listitem>
-            <listitem>
-                <para>ttl=7200</para>
-            </listitem>
-            <listitem>
-                <para>email="joe@example.org."</para>
-            </listitem>
-            <listitem>
-                <para>description="This is an example zone."</para>
-            </listitem>
-        </itemizedlist>
-        <para>The following example shows the cURL request for Create
-            zone:</para>
-        <example>
-            <title>cURL Create zone: JSON request</title>
-            <programlisting language="bash">curl -X POST -i \
+            the following configuration:<itemizedlist>
+                <listitem>
+                    <para>name=example.org.</para>
+                    <note>
+                        <para>If you want to substitute your own zone
+                            name, you can use any letter, numbers
+                            between 0 and 9, and the character "-".
+                            For example, you might use your first name
+                            and last initial at the beginning of the
+                            name, as follows: "bobmexample.org."
+                            Ensure that you add the final period (.)
+                            at the end of your fully qualified zone
+                            name.</para>
+                    </note>
+                </listitem>
+                <listitem>
+                    <para>ttl=7200</para>
+                </listitem>
+                <listitem>
+                    <para>email="joe@example.org."</para>
+                </listitem>
+            </itemizedlist></para>
+        <para>Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para>The section  "Create zone with the
+                        CLI"</para>
+                </listitem>
+                <listitem>
+                    <para>The section "Create zone with cURL"</para>
+                </listitem>
+            </itemizedlist></para>
+        <section xml:id="cli_create_zone">
+            <title>Create zone with the CLI</title>
+        
+        <para>You need to use the <emphasis role="bold">zone
+                    create</emphasis> CLI call to create a zone with
+                the configuration that you specify.</para>
+        
+            <para>Enter the following command:</para>
+            <programlisting> $ openstack zone create example.org. --email "joe@example.org" --ttl 7200 
+</programlisting>
+            <para>The response is similar to the
+                following:<programlisting>
++----------------+--------------------------------------+
+| Field          | Value                                |
++----------------+--------------------------------------+
+| action         | CREATE                               |
+| created_at     | 2015-10-29T21:54:09.000000           |
+| description    | None                                 |
+| email          | joe@example.org                      |
+| id             | b8500fe8-eff1-4523-90a4-0765cf39d273 |
+| masters        |                                      |
+| name           | example.org.                         |
+| pool_id        | 794ccc2c-d751-44fe-b57f-8894c9f5c842 |
+| project_id     | 938611                               |
+| serial         | 1446155649                           |
+| status         | PENDING                              |
+| transferred_at | None                                 |
+| ttl            | 7200                                 |
+| type           | PRIMARY                              |
+| updated_at     | None                                 |
+| version        | 1                                    |
++----------------+--------------------------------------+
+
+</programlisting></para>
+            <note>
+                <para>You will see the following warning from
+                    keystone, please disregard
+                    it:<programlisting> <emphasis role="italic">Failed to contact the endpoint at  https://api-babby-dev.dsgn8.net/v2/938611 for discovery.
+      Fallback to  using that endpoint as the base url.</emphasis> </programlisting></para>
+            </note>
+            <para>This request is asynchronous. So the
+                    <code>status</code> is set to <code>PENDING</code>
+                when the zone is initially created. When the zone is
+                created completely, the status is set to
+                    <code>ACTIVE</code>. You will be able to see the
+                    <code>ACTIVE</code> status when you run the
+                    <emphasis role="bold">zone show</emphasis> command
+                in the next section.</para>
+            <note>
+                <para>Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
+                        >http://docs-internal.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html</link>
+                    for more information about how the asynchronous
+                    call works.</para>
+            </note>
+            <para>In the previous example, you can see that the zone
+                    <code>example.org.</code> was created. You will
+                need the zone <code>id</code> returned in the response
+                for making the Get zone call in the next section, and
+                you should supply this value wherever you see the
+                field <emphasis role="bold">zone_id</emphasis> in the
+                examples in this guide.</para>
+        </section>
+        <section xml:id="curl_create_zone">
+            <title>Create zone with cURL</title>
+            <para>You need to use the Create zone API call (POST
+                    <code>/zones</code>) to create a zone with the
+                configuration that you specify.</para>
+            <para>The following example shows the cURL request for
+                Create zone:</para>
+            <example>
+                <title>cURL Create zone: JSON request</title>
+                <programlisting language="bash">curl -X POST -i \
 '{
     "name" : "<emphasis role="bold">your_zone_name</emphasis>",
     "email" : "joe@example.org.",
     "ttl" : 7200,
-    "comment" : "This is an example zone."
+    "description" : "This is an example zone."
 }' \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
+-H 'X-Auth-Token: $token' \
 -H 'Content-Type: application/json' \
-'https://dns.api.rackspacecloud.com/v2.0/zones' | python -m json.tool</programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values for all the cURL examples
-            that follow:<itemizedlist spacing="compact">
-                <listitem>
-                    <para>
-                        <emphasis role="bold"
-                            >your_zone_name</emphasis> — to name your
-                        zone, you can use any letter, numbers between
-                        0 and 9, and the character "-".</para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold"
-                            >your_auth_token</emphasis> — as returned
-                        in your authentication response (see the
-                        response examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
-                            >Generate an authentication
-                        token</link>)</para>
-                </listitem>
-            </itemizedlist>
-      </para>
-        <para>The following example shows the initial asynchronous
-            responses for Create domain:</para>
-        <example>
-            <title>Create zone: initial asynchronous JSON
-                response</title>
-            <programlisting language="json">HTTP/1.1 202 Accepted
+'https://preview.dns.api.rackspacecloud.com/v2/$account/zones' | python -m json.tool</programlisting>
+            </example>
+            <para>Remember to replace the names in the examples above
+                with their actual respective values for all the cURL
+                examples that follow:<itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            <emphasis role="bold"
+                                >your_zone_name</emphasis> — to name
+                            your zone, you can use any letter, numbers
+                            between 0 and 9, and the character
+                            "-".</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>The following example shows the initial asynchronous
+                responses for Create zone:</para>
+            <example>
+                <title>Create zone: initial asynchronous JSON
+                    response</title>
+                <programlisting language="json">HTTP/1.1 202 Accepted
 Content-Type: application/json
 
 {
@@ -943,31 +1293,35 @@ Content-Type: application/json
     "created_at": "2015-06-18T18:25:31.275934",
     "updated_at": null,
     "links": {
-      "self": "https://dns.api.rackspacecloud.com/v2.0/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+      "self": "https://preview.dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
     }
 }
 </programlisting>
-        </example>
-        <para>This request is asynchronous. So the <code>status</code>
-            is set to <code>PENDING</code> when the zone is initially
-            created. When the zone is created completely, the status
-            is set to <code>ACTIVE</code>. To get the status of the
-            zone, you can query the <code>self</code> link returned in
-            the create response.</para>
-        <note>
-            <para>Refer to <link
-                    xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
-                    >http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html</link>
-                for more information about how the asynchronous call
-                works.</para>
-        </note>
-        <para>In the previous example, you can see that the zone
-                <code>example.org.</code> was created. You will need
-            the zone <code>id</code> returned in the response for
-            making the Get zone call in the next section, and you
-            should supply this value wherever you see the field
-                <emphasis role="bold">zone_id</emphasis> in the
-            examples in this guide.</para>
+            </example>
+            <para>This request is asynchronous. So the
+                    <code>status</code> is set to <code>PENDING</code>
+                when the zone is initially created. When the zone is
+                created completely, the status is set to
+                    <code>ACTIVE</code>. To get the status of the
+                zone, you can query the <code>self</code> link
+                returned in the create response. You will see the
+                    <code>ACTIVE</code> status in the next section
+                when you call the List zone operation.</para>
+            <note>
+                <para>Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html"
+                        >http://docs-internal.rackspace.com/cdns/api/v1.0/cdns-devguide-2/content/sync_asynch_responses.html</link>
+                    for more information about how the asynchronous
+                    call works.</para>
+            </note>
+            <para>In the previous example, you can see that the zone
+                    <code>example.org.</code> was created. You will
+                need the zone <code>id</code> returned in the response
+                for making the List zone call in the next section, and
+                you should supply this value wherever you see the
+                field <emphasis role="bold">zone_id</emphasis> in the
+                examples in this guide.</para>
+        </section>
     </chapter>
     
     <chapter xml:id="List_Zone">
@@ -975,41 +1329,75 @@ Content-Type: application/json
             <para>This operation provides detailed output for a
             specific zone. You can only query for zones that you have
             permission to query, namely those created using your tenant ID.</para>
-        
-        <para>This operation does not require a request body. </para>
-        <para>The following example shows the cURL request for List
-            zone:</para>
-        <example>
-            <title>cURL List zone: JSON request</title>
-            <programlisting language="bash">curl -s  \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
+        <para>Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para>The section "List a zone with the
+                        CLI"</para>
+                </listitem>
+                <listitem>
+                    <para>The section "List a zone with cURL"</para>
+                </listitem>
+            </itemizedlist></para>
+        <section xml:id="cli_list_zone">
+            <title>List zone with the CLI</title>
+            <para>You need to use the <emphasis role="bold">zone
+                    show</emphasis> CLI command to list a zone.</para>
+            <para>Enter the following command:</para>
+            <programlisting> $ openstack zone show example.org.  
+</programlisting>
+            <para>The response is similar to the
+                following:<programlisting>
++----------------+--------------------------------------+
+| Field          | Value                                |
++----------------+--------------------------------------+
+| action         | CREATE                               |
+| created_at     | 2015-10-29T21:54:09.000000           |
+| description    | None                                 |
+| email          | joe@example.org                      |
+| id             | b8500fe8-eff1-4523-90a4-0765cf39d273 |
+| masters        |                                      |
+| name           | example.org.                         |
+| pool_id        | 794ccc2c-d751-44fe-b57f-8894c9f5c842 |
+| project_id     | 938611                               |
+| serial         | 1446155649                           |
+| status         | ACTIVE                               |
+| transferred_at | None                                 |
+| ttl            | 7200                                 |
+| type           | PRIMARY                              |
+| updated_at     | 2015-10-29T21:54:39.000000           |
+| version        | 3                                    |
++----------------+--------------------------------------+
+
+</programlisting></para>
+            <para>You can see from the response that the zone has been
+                created and is <code>ACTIVE</code>.</para>
+        </section>
+        <section xml:id="curl_list_zone">
+            <title>List a zone with cURL</title>
+            <para>This operation does not require a request body. </para>
+            <para>The following example shows the cURL request for
+                List zone:</para>
+            <example>
+                <title>cURL List zone: JSON request</title>
+                <programlisting language="bash">curl -s  \
+-H 'X-Auth-Token: $token'  \
 -H 'Accept: application/json'  \
-'https://dns.api.rackspacecloud.com/v2.0/zones/<emphasis role="bold">zone_id</emphasis>' | python -m json.tool</programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values for all the cURL examples
-            that follow:<itemizedlist spacing="compact">
-                <listitem>
-                    <para>
-                        <emphasis role="bold"
-                            >your_auth_token</emphasis> — as returned
-                        in your authentication response (see the
-                        response examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
-                            >Generate an authentication
-                        token</link>)</para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold">zone_id</emphasis> — as
-                        returned in your create domain response (must
-                        be replaced in the request URL)</para>
-                </listitem>
-            </itemizedlist>
-      </para>
-        <para>The following example shows the List zone
-            response:</para>
-            
+'https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>' | python -m json.tool</programlisting>
+            </example>
+            <para>Remember to replace the names in the examples above
+                with their actual respective values for all the cURL
+                examples that follow:<itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            <emphasis role="bold">zone_id</emphasis> —
+                            as returned in your create domain response
+                            (must be replaced in the request
+                            URL)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>The following example shows the List zone
+                response:</para>
             <example>
                 <title>List zone: JSON response</title>
                 <programlisting language="json">HTTP/1.1 200 OK
@@ -1033,23 +1421,24 @@ Content-Type: application/json
     "created_at": "2015-06-18T18:25:31.275934",
     "updated_at": null,
     "links": {
-      "self": "https://dns.api.rackspacecloud.com/v2.0/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+      "self": "https://preview.dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
     }
 }
 
 </programlisting>
             </example>
-        <para>You can see from the response that the zone has been
-            created and is <code>ACTIVE</code>.</para>
-        <note>
-            <para>If you have multiple zones or records and want to
-                get a subset of them, you could paginate, sort or
-                filter the results. More information on these topics
-                is available in the <citetitle>Rackspace Managed DNS
-                    Devguide</citetitle> at <link
-                    xlink:href="http://docs.rackspace.com/"
-                    >http://docs.rackspace.com/</link>.</para>
-        </note>
+            <para>You can see from the response that the zone has been
+                created and is <code>ACTIVE</code>.</para>
+            <note>
+                <para>If you have multiple zones or records and want
+                    to get a subset of them, you could paginate, sort
+                    or filter the results. More information on these
+                    topics is available in the <citetitle>Rackspace
+                        Managed DNS Devguide</citetitle> at <link
+                        xlink:href="http://docs-internal.rackspace.com/"
+                        >http://docs-internal.rackspace.com/</link>.</para>
+            </note>
+        </section>
         </chapter>
     <chapter xml:id="Create_Recordset">
         <title>Create a recordset</title>
@@ -1064,73 +1453,102 @@ Content-Type: application/json
         <itemizedlist>
             <listitem>
                 <para>One 'A' recordset to map the IPV4 address of
-                    your cloud server that you recorded in <link
-                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Cloud_Server.html"
-                        >Create a new cloud server</link> to the new
-                    zone that you created in <link
-                        xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Zone.html"
-                        >Create a zone</link>. </para>
+                    your cloud server to the new zone that you created
+                    in the previous section, "Create a zone". </para>
             </listitem>
         </itemizedlist>
-        <para>The following examples show the cURL request for Add
-            recordset:</para>
-        <example>
-            <?dbfo keep-together="always"?>
-            <title>cURL Create recordset: JSON request</title>
-            <programlisting language="bash">curl -X POST -i \
+        <para>Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para>The section "Create a recordset with the
+                        CLI"</para>
+                </listitem>
+                <listitem>
+                    <para>The section "Create a recordset with
+                        cURL"</para>
+                </listitem>
+            </itemizedlist></para>
+        <section xml:id="cli_create_recordset">
+            <title>Create a recordset with the CLI</title>
+            <para>You need to use the <emphasis role="bold">recordset
+                    create</emphasis> CLI command to create a
+                recordset.</para>
+            <para>Enter the following command:</para>
+            <programlisting>  $ openstack recordset create
+        b8500fe8-eff1-4523-90a4-0765cf39d273 example.org. --records 10.1.0.5 --type "A"   
+</programlisting>
+            <para>The response is similar to the
+                following:<programlisting>
++-------------+--------------------------------------+
+| Field       | Value                                |
++-------------+--------------------------------------+
+| action      | CREATE                               |
+| created_at  | 2015-10-29T22:38:58.000000           |
+| description | None                                 |
+| id          | 0536cf1c-e379-4617-a1b0-63cdd16fd671 |
+| name        | example.org.                         |
+| records     | 10.1.0.5                             |
+| status      | PENDING                              |
+| ttl         | None                                 |
+| type        | A                                    |
+| updated_at  | None                                 |
+| version     | 1                                    |
+| zone_id     | b8500fe8-eff1-4523-90a4-0765cf39d273 |
++-------------+--------------------------------------+
+</programlisting></para>
+            <para>You can see from the response <code>status</code>
+                that the recordset creation is
+                <code>PENDING</code>.</para>
+        </section>
+        <section xml:id="curl_create_recordset">
+            <title>Create a recordset with cURL</title>
+            <para>The following examples show the cURL request for
+                Create recordset:</para>
+            <example>
+                <?dbfo keep-together="always"?>
+                <title>cURL Create recordset: JSON request</title>
+                <programlisting language="bash">curl -X POST -i \
 '{
   "name" : "example.org.",
   "description" : "This is an example record set.",
   "type" : "A",
   "ttl" : 3600,
   "records" : [
-      "<emphasis role="bold">your_cloud_server_ip_address</emphasis>"
+      "10.1.0.2"
   ]
 }' \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
+-H 'X-Auth-Token: $token' \
 -H 'Content-Type: application/json' \
-'https://dns.api.rackspacecloud.com/v2.0/zones/<emphasis role="bold">zone_id</emphasis>/recordsets' | python -m json.tool</programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values:<itemizedlist spacing="compact">
-                <listitem>
-                    <para>
-                        <emphasis role="bold"
-                            >your_cloud_server_ip_address</emphasis>
-                        —see <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Cloud_Server.html"
-                            >Create a new cloud server</link> for the
-                        IP address you recorded for the new cloud
-                        server you created; must be replaced in the
-                        request body</para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold"
-                            >your_auth_token</emphasis> — as returned
-                        in your authentication response (see the
-                        examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
-                            >Generate an authentication token</link>);
-                        must be replaced in the
-                            <code>X-Auth-Token</code> header</para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold">zone_id</emphasis> — as
-                        returned in your create zone response (see the
-                        examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started-2/content/Create_Zone.html"
-                            >Create a zone</link>); must be replaced
-                        in the request URL</para>
-                </listitem>
-            </itemizedlist>
-      </para>
-        <para>The following example shows the response for Create
-            recordset:</para>
-        <example>
-            <title>Create recordset: JSON response</title>
-            <programlisting language="json">HTTP/1.1 202 Accepted
+'https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>/recordsets' | python -m json.tool</programlisting>
+            </example>
+            <para>Remember to replace the names in the examples above
+                with their actual respective values:<itemizedlist
+                    spacing="compact">
+                    <listitem security="writeronly">
+                        <para>
+                            <emphasis role="bold"
+                                >your_cloud_server_ip_address</emphasis>
+                            —see <link
+                                xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Cloud_Server.html"
+                                >Create a new cloud server</link> for
+                            the IP address you recorded for the new
+                            cloud server you created; must be replaced
+                            in the request body</para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <emphasis role="bold">zone_id</emphasis> —
+                            as returned in your create zone response
+                            (see the examples in the previous section,
+                            "Create a zone"; must be
+                            replaced in the request URL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>The following example shows the response for Create
+                recordset:</para>
+            <example>
+                <title>Create recordset: JSON response</title>
+                <programlisting language="json">HTTP/1.1 202 Accepted
 Content-Type: application/json
 
 {
@@ -1147,78 +1565,112 @@ Content-Type: application/json
     "action": "CREATE",
     "description": "This is an example record set.",
     "links": {
-        "self": "https://dns.api.rackspacecloud.com/v2.0/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+        "self": "https://preview.dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
     }
 }
 </programlisting>
-        </example>
-        <note>
-            <para>Your JSON response will show the IP address of the
-                cloud server you created earlier in this guide rather
-                than the value <code>10.1.0.2</code>, which is simply
-                provided as an example.</para>
-        </note>
-        <para>This request is asynchronous, so the <code>status</code>
-            is set to <code>PENDING</code> when the recordset is
-            initially created. When the recordset is created
-            completely, the <code>status</code> is set to
-                <code>ACTIVE</code>. To get the status of the
-            recordset, you can query the <code>self</code> link
-            returned in the Create recordset response.</para>
+            </example>
+            <note security="writeronly">
+                <para>Your JSON response will show the IP address of
+                    the cloud server you created earlier in this guide
+                    rather than the value <code>10.1.0.2</code>, which
+                    is simply provided as an example.</para>
+            </note>
+            <para>This request is asynchronous, so the
+                    <code>status</code> is set to <code>PENDING</code>
+                when the recordset is initially created. When the
+                recordset is created completely, the
+                    <code>status</code> is set to <code>ACTIVE</code>.
+                To get the status of the recordset, you can query the
+                    <code>self</code> link returned in the Create
+                recordset response.</para>
+        </section>
     </chapter>
     <chapter xml:id="List_Recordset">
         <title>List a recordset</title>
-        <para>You can query a specific recordset using the recordset
+        <para>You can list a specific recordset using the recordset
                 <code>id</code>.</para>
-        <para>The following example shows the cURL request for List
-            recordset:</para>
-        <example>
-            <?dbfo keep-together="always"?>
-            <title>cURL List recordset: JSON request</title>
-            <programlisting language="bash">curl -s \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
+        <para>Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para>The section "List a recordset with the
+                        CLI"</para>
+                </listitem>
+                <listitem>
+                    <para>The section "List a recordset with
+                        cURL"</para>
+                </listitem>
+            </itemizedlist></para>
+        <section xml:id="cli_list_recordset">
+            <title>List a recordset with the CLI</title>
+            <para>You need to use the <emphasis role="bold">recordset
+                    show</emphasis> CLI command to list a
+                recordset.</para>
+            <para>Enter the following command:</para>
+            <programlisting>$ openstack recordset show b8500fe8-eff1-4523-90a4-0765cf39d273
+      0536cf1c-e379-4617-a1b0-63cdd16fd671    
+</programlisting>
+            <para>The response is similar to the
+                following:<programlisting>
++-------------+--------------------------------------+
+| Field       | Value                                |
++-------------+--------------------------------------+
+| action      | CREATE                               |
+| created_at  | 2015-10-29T22:38:58.000000           |
+| description | None                                 |
+| id          | 0536cf1c-e379-4617-a1b0-63cdd16fd671 |
+| name        | example.org.                         |
+| records     | 10.1.0.5                             |
+| status      | ACTIVE                               |
+| ttl         | None                                 |
+| type        | A                                    |
+| updated_at  | None                                 |
+| version     | 1                                    |
+| zone_id     | b8500fe8-eff1-4523-90a4-0765cf39d273 |
++-------------+--------------------------------------+
+</programlisting></para>
+            <para>You can see from the response <code>status</code>
+                that the recordset is <code>ACTIVE</code>, indicating
+                that the recordset is now created and active.</para>
+        </section>
+        <section xml:id="curl_list_recordset">
+            <title>List a recordset with cURL</title>
+            <para>The following example shows the cURL request for
+                List recordset:</para>
+            <example>
+                <?dbfo keep-together="always"?>
+                <title>cURL List recordset: JSON request</title>
+                <programlisting language="bash">curl -s \
+-H 'X-Auth-Token: $token' \
 -H 'Content-Type: application/json' \
-'https://dns.api.rackspacecloud.com/v2.0/zones/<emphasis role="bold">zone_id</emphasis>/recordsets/<emphasis role="bold">recordset_id</emphasis>' | python -m json.tool</programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values:<itemizedlist
-                spacing="compact">
-                <listitem>
-                    <para>
-                        <emphasis role="bold"
-                            >your_auth_token</emphasis> — as returned
-                        in your authentication response (see the
-                        examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html"
-                            >Generate an authentication
-                        token</link>)</para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold">zone_id</emphasis> — as
-                        returned in your Create zone response (see the
-                        examples in <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started-2/content/Create_Zone.html"
-                            >Create a zone</link>); must be replaced
-                        in the request URL</para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold">recordset_id</emphasis>
-                        —see <link
-                            xlink:href="http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started-2/content/Create_Recordset.html"
-                            >Create a recordset</link> for the
-                        recordset <code>id</code> returned in the
-                        Create recordset response; must be replaced in
-                        the request URL.</para>
-                </listitem>
-            </itemizedlist>
-        </para>
-        <para>The following example shows the response for List
-            recordset:</para>
-        <example>
-            <title>List recordset: JSON response</title>
-            <programlisting language="json">HTTP/1.1 200 OK
+'https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>/recordsets/<emphasis role="bold">recordset_id</emphasis>' | python -m json.tool</programlisting>
+            </example>
+            <para>Remember to replace the names in the examples above
+                with their actual respective values:<itemizedlist
+                    spacing="compact">
+                    <listitem>
+                        <para>
+                            <emphasis role="bold">zone_id</emphasis> —
+                            as returned in your Create zone response
+                            (see the examples in the previous section
+                            "Create a zone"; must be replaced in the
+                            request URL).</para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <emphasis role="bold"
+                                >recordset_id</emphasis> —see the
+                            previous section "Create a recordset" for
+                            the recordset <code>id</code> returned in
+                            the Create recordset response; must be
+                            replaced in the request URL.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>The following example shows the response for List
+                recordset:</para>
+            <example>
+                <title>List recordset: JSON response</title>
+                <programlisting language="json">HTTP/1.1 200 OK
 Vary: Accept
 Content-Type: application/json
 
@@ -1236,22 +1688,23 @@ Content-Type: application/json
     "action": "NONE",
  "description": "This is an example record set.",
     "links": {
-        "self": "https://dns.api.rackspacecloud.com/v2.0/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+        "self": "https://preview.dns.api.rackspacecloud.com/v2/$account/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
     },
 }
 
 </programlisting>
-        </example>
-        <para>Note that <code>status</code> is set to
-                <code>ACTIVE</code>, indicating that the recordset is
-            now created and active. </para>
+            </example>
+            <para>Note that <code>status</code> is set to
+                    <code>ACTIVE</code>, indicating that the recordset
+                is now created and active. </para>
+        </section>
     </chapter>
     <chapter xml:id="Additional_Resources">
         <title>Additional resources</title>
         <para>For information about all Rackspace Managed DNS API
             operations, see the <citetitle>Rackspace Managed DNS
                 Developer Guide</citetitle> at <link
-                xlink:href="http://docs.rackspace.com/"
+                xlink:href="http://docs-internal.rackspace.com/"
                 >docs.rackspace.com</link>. All you need to get
             started with the Managed DNS API is in this getting
             started guide and the developer guide. For additional
@@ -1263,14 +1716,14 @@ Content-Type: application/json
             available through the Rackspace Cloud website at <link
                 xlink:href="www.rackspace.com"
                 >www.rackspace.com</link>.</para>
-        <para>If the Managed DNS system is not functioning as
+        <para security="writeronly">If the Managed DNS system is not functioning as
             expected, you can review the <link
                 xlink:href="https://status.rackspace.com/">System
                 Status page</link>. This page is updated to reflect
             up-to-date information about the system’s current health
             and status.</para>
-        <para security="reviewer">Reviewer: please give me the link to the System Status
-            page for Managed DNS.</para>
+        <para security="reviewer">Reviewer: (for EA) please give me
+            the link to the System Status page for Managed DNS.</para>
         <para>Interested users can also follow updates and
             announcements for Rackspace on <link
                 xlink:href="https://twitter.com/rackspace"
