@@ -23,6 +23,8 @@ in the Rackspace Knowledge Center.
 .. toctree:: :hidden:
    :maxdepth: 2
 
+   Cloud DNS 1.0 <self>
+   API Status <http://www.rackspacestatus.com/>
    About the API <overview/index>
    developer-guide
    concepts

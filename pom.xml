@@ -103,7 +103,7 @@
 			<configuration>
 				<enableDisqus>1</enableDisqus>
 				<includes>cdns-devguide-2.xml</includes>
-				<security>reviewer</security>
+				<security>internal</security>
 				<enableGoogleAnalytics>1</enableGoogleAnalytics>
 				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v2.0/cdns-devguide-2/content</canonicalUrlBase>
 			</configuration>
@@ -148,7 +148,7 @@
 				<enableDisqus>1</enableDisqus>
 				<includes>cdns-getting-started-2.xml</includes>
 				<webhelpDefaultTopic>DNS_Overview.html</webhelpDefaultTopic>
-				<security>reviewer</security>
+				<security>internal</security>
 				<enableGoogleAnalytics>1</enableGoogleAnalytics>
 				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started-2/content</canonicalUrlBase>
 			</configuration>

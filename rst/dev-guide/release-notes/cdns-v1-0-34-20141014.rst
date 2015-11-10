@@ -10,7 +10,7 @@ What's new
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-- Fixed bug for Logging Filter.
+- Fixed a bug in the logging filter.
 
 
   

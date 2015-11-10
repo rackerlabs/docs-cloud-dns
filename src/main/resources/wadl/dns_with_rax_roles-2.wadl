@@ -234,7 +234,7 @@
         request:<?rax-fo keep-with-next?>
       </para>
       <note>
-        <para>The following examples show the
+        <para>When executed, this operation will show the
           <emphasis>initial</emphasis> 202 Accepted response
           for the asynchronous call and indicate that the task
           has been accepted for processing.

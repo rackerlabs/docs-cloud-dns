@@ -25,7 +25,7 @@
 			<year>2015</year>
 			<holder>Rackspace US, Inc.</holder>
 		</copyright>
-        <releaseinfo>API v1.0</releaseinfo>
+        <releaseinfo>API v2</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
 	<pubdate>2015-11-12</pubdate>
         <legalnotice role="rs-api">
@@ -93,7 +93,7 @@
 					xmlns:m="http://www.w3.org/1998/Math/MathML"
 					xmlns:html="http://www.w3.org/1999/xhtml">During
 					Preview, please send your feedback to:
-					ManagedDNS_Preview@rackspace.com.</para>
+						<email>ManagedDNS_Preview@rackspace.com</email>.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>

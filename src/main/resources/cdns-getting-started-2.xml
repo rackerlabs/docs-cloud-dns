@@ -52,7 +52,7 @@
             <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v1.0</releaseinfo>
+        <releaseinfo>API v2</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
         <pubdate>2015-11-12</pubdate>
         <legalnotice role="rs-api">
@@ -1185,6 +1185,12 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             <para>Enter the following command:</para>
             <programlisting> $ openstack zone create example.org. --email "joe@example.org" --ttl 7200 
 </programlisting>
+            <note>
+                <para>If you decide to change the zone name, make sure
+                    to use a valid name. You can use any letter,
+                    numbers between 0 and 9, and the character
+                    "-".</para>
+            </note>
             <para>The response is similar to the
                 following:<programlisting>
 +----------------+--------------------------------------+
