@@ -92,6 +92,8 @@
                 <link
                 xlink:href="https://www.rackspace.com/cloud/cloud_hosting_products/dns/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/dns/</link>.</para>
+        <para>Issues and bug reports can be directed to:
+                <email>ManagedDNS_Preview@rackspace.com</email>.</para>
         <para>Rackspace is deploying <link
                 xlink:href="http://docs.openstack.org/developer/designate/"
                 >OpenStack Designate v2</link> as the next version of
@@ -103,7 +105,7 @@
             </note></para>
         <para>This guide will show you how to use the Rackspace
             Managed DNS API to set up zones and records using
-            Rackspace Managed DNS Early Access at Rackspace.</para>
+            Rackspace Managed DNS Preview Access at Rackspace.</para>
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for running examples</title>
             <para>In order to run the examples in this guide, you must
@@ -1029,7 +1031,7 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                     <tr align="left">
                         
                         <td colspan="1">
-                            <code>https://preview.dns.api.rackspacecloud.com/v2/1234/</code></td>
+                            <code>https://preview.dns.api.rackspacecloud.com/v2/1234</code></td>
                     </tr>
                     <tr align="left" security="writeronly">
                         
@@ -1165,11 +1167,10 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
             </itemizedlist></para>
         <para>Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para>The section  "Create zone with the
-                        CLI"</para>
+                    <para><xref linkend="cli_create_zone"/></para>
                 </listitem>
                 <listitem>
-                    <para>The section "Create zone with cURL"</para>
+                    <para><xref linkend="curl_create_zone"/></para>
                 </listitem>
             </itemizedlist></para>
         <section xml:id="cli_create_zone">
@@ -1178,6 +1179,8 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         <para>You need to use the <emphasis role="bold">zone
                     create</emphasis> CLI call to create a zone with
                 the configuration that you specify.</para>
+            <para><code>usage: openstack zone create zone_name --email
+                    EMAIL --ttl TTL</code></para>
         
             <para>Enter the following command:</para>
             <programlisting> $ openstack zone create example.org. --email "joe@example.org" --ttl 7200 
@@ -1244,16 +1247,16 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
                 Create zone:</para>
             <example>
                 <title>cURL Create zone: JSON request</title>
-                <programlisting language="bash">curl -X POST -i \
+                <programlisting language="bash">curl -s -d \
 '{
     "name" : "<emphasis role="bold">your_zone_name</emphasis>",
-    "email" : "joe@example.org.",
+    "email" : "joe@example.org",
     "ttl" : 7200,
     "description" : "This is an example zone."
 }' \
--H 'X-Auth-Token: $token' \
--H 'Content-Type: application/json' \
-'https://preview.dns.api.rackspacecloud.com/v2/$account/zones' | python -m json.tool</programlisting>
+-H "X-Auth-Token: $token" \
+-H "Content-Type: application/json" \
+https://preview.dns.api.rackspacecloud.com/v2/$account/zones | python -m json.tool</programlisting>
             </example>
             <para>Remember to replace the names in the examples above
                 with their actual respective values for all the cURL
@@ -1293,7 +1296,7 @@ Content-Type: application/json
     "created_at": "2015-06-18T18:25:31.275934",
     "updated_at": null,
     "links": {
-      "self": "https://preview.dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+      "self": "https://preview.dns.api.rackspacecloud.com/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
     }
 }
 </programlisting>
@@ -1331,17 +1334,18 @@ Content-Type: application/json
             permission to query, namely those created using your tenant ID.</para>
         <para>Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para>The section "List a zone with the
-                        CLI"</para>
+                    <para><xref linkend="cli_list_zone"/></para>
                 </listitem>
                 <listitem>
-                    <para>The section "List a zone with cURL"</para>
+                    <para><xref linkend="curl_list_zone"/></para>
                 </listitem>
             </itemizedlist></para>
         <section xml:id="cli_list_zone">
             <title>List zone with the CLI</title>
             <para>You need to use the <emphasis role="bold">zone
                     show</emphasis> CLI command to list a zone.</para>
+            <para><code>usage: openstack zone show
+                zone_name</code></para>
             <para>Enter the following command:</para>
             <programlisting> $ openstack zone show example.org.  
 </programlisting>
@@ -1380,9 +1384,9 @@ Content-Type: application/json
             <example>
                 <title>cURL List zone: JSON request</title>
                 <programlisting language="bash">curl -s  \
--H 'X-Auth-Token: $token'  \
--H 'Accept: application/json'  \
-'https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>' | python -m json.tool</programlisting>
+-H "X-Auth-Token: $token"  \
+-H "Accept: application/json"  \
+https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis> | python -m json.tool</programlisting>
             </example>
             <para>Remember to replace the names in the examples above
                 with their actual respective values for all the cURL
@@ -1459,12 +1463,12 @@ Content-Type: application/json
         </itemizedlist>
         <para>Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para>The section "Create a recordset with the
-                        CLI"</para>
+                    <para><xref linkend="cli_create_recordset"
+                        /></para>
                 </listitem>
                 <listitem>
-                    <para>The section "Create a recordset with
-                        cURL"</para>
+                    <para><xref linkend="curl_create_recordset"
+                        /></para>
                 </listitem>
             </itemizedlist></para>
         <section xml:id="cli_create_recordset">
@@ -1472,6 +1476,9 @@ Content-Type: application/json
             <para>You need to use the <emphasis role="bold">recordset
                     create</emphasis> CLI command to create a
                 recordset.</para>
+            <para><code>usage: openstack recordset create zone_id
+                    zone_name --records RECORDS --type
+                TYPE</code></para>
             <para>Enter the following command:</para>
             <programlisting>  $ openstack recordset create
         b8500fe8-eff1-4523-90a4-0765cf39d273 example.org. --records 10.1.0.5 --type "A"   
@@ -1506,9 +1513,9 @@ Content-Type: application/json
             <example>
                 <?dbfo keep-together="always"?>
                 <title>cURL Create recordset: JSON request</title>
-                <programlisting language="bash">curl -X POST -i \
+                <programlisting language="bash">curl -s -d \
 '{
-  "name" : "example.org.",
+  "name" : "<emphasis role="bold">example.org.</emphasis>",
   "description" : "This is an example record set.",
   "type" : "A",
   "ttl" : 3600,
@@ -1516,9 +1523,9 @@ Content-Type: application/json
       "10.1.0.2"
   ]
 }' \
--H 'X-Auth-Token: $token' \
--H 'Content-Type: application/json' \
-'https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>/recordsets' | python -m json.tool</programlisting>
+-H "X-Auth-Token: $token" \
+-H "Content-Type: application/json" \
+https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>/recordsets | python -m json.tool</programlisting>
             </example>
             <para>Remember to replace the names in the examples above
                 with their actual respective values:<itemizedlist
@@ -1533,6 +1540,13 @@ Content-Type: application/json
                             the IP address you recorded for the new
                             cloud server you created; must be replaced
                             in the request body</para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <emphasis role="bold">name</emphasis> —
+                            the name you used in your create zone
+                            response (see the examples in the previous
+                            section, "Create a zone")</para>
                     </listitem>
                     <listitem>
                         <para>
@@ -1592,12 +1606,10 @@ Content-Type: application/json
                 <code>id</code>.</para>
         <para>Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para>The section "List a recordset with the
-                        CLI"</para>
+                    <para><xref linkend="cli_list_recordset"/></para>
                 </listitem>
                 <listitem>
-                    <para>The section "List a recordset with
-                        cURL"</para>
+                    <para><xref linkend="curl_list_recordset"/></para>
                 </listitem>
             </itemizedlist></para>
         <section xml:id="cli_list_recordset">
@@ -1605,6 +1617,8 @@ Content-Type: application/json
             <para>You need to use the <emphasis role="bold">recordset
                     show</emphasis> CLI command to list a
                 recordset.</para>
+            <para><code>usage: openstack recordset show zone_id
+                    recordset_id</code></para>
             <para>Enter the following command:</para>
             <programlisting>$ openstack recordset show b8500fe8-eff1-4523-90a4-0765cf39d273
       0536cf1c-e379-4617-a1b0-63cdd16fd671    
@@ -1640,9 +1654,9 @@ Content-Type: application/json
                 <?dbfo keep-together="always"?>
                 <title>cURL List recordset: JSON request</title>
                 <programlisting language="bash">curl -s \
--H 'X-Auth-Token: $token' \
--H 'Content-Type: application/json' \
-'https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>/recordsets/<emphasis role="bold">recordset_id</emphasis>' | python -m json.tool</programlisting>
+-H "X-Auth-Token: $token" \
+-H "Content-Type: application/json" \
+https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bold">zone_id</emphasis>/recordsets/<emphasis role="bold">recordset_id</emphasis> | python -m json.tool</programlisting>
             </example>
             <para>Remember to replace the names in the examples above
                 with their actual respective values:<itemizedlist
@@ -1705,13 +1719,16 @@ Content-Type: application/json
             operations, see the <citetitle>Rackspace Managed DNS
                 Developer Guide</citetitle> at <link
                 xlink:href="http://docs-internal.rackspace.com/"
-                >docs.rackspace.com</link>. All you need to get
+                >docs-internal.rackspace.com</link>. All you need to get
             started with the Managed DNS API is in this getting
             started guide and the developer guide. For additional
             information about Managed DNS, see the <link
                 xlink:href="http://www.rackspace.com/knowledge_center/article/rackspace-cloud-dns-available-features"
                 >Knowledge Center</link>.</para>
-        <para>The official support channels (phone, chat, email,
+        <para>During Preview, please send your feedback and bug
+            reports to:
+                <email>ManagedDNS_Preview@rackspace.com</email>.</para>
+        <para security="writeronly">The official support channels (phone, chat, email,
             forums, and knowledge base articles) for Managed DNS are
             available through the Rackspace Cloud website at <link
                 xlink:href="www.rackspace.com"
@@ -1728,7 +1745,7 @@ Content-Type: application/json
             announcements for Rackspace on <link
                 xlink:href="https://twitter.com/rackspace"
                 >Twitter</link>. </para>
-        <para>Visit the <link
+        <para security="writeronly">Visit the <link
                 xlink:href="https://feedback.rackspace.com/">Product
                 Feedback Forum</link> and tell us what you think about
             Managed DNS.</para>

@@ -49,6 +49,21 @@
 				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/content</canonicalUrlBase>
 			</configuration>
 		</execution>
+		<execution>
+			<id>cdns-releasenotes-2</id>
+			<goals>
+				<goal>generate-webhelp</goal>
+			</goals>
+			<phase>initialize</phase>
+			<configuration>
+				<includes>cdns-releasenotes-2.xml</includes>
+				<enableDisqus>1</enableDisqus>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<chapterAutolabel>0</chapterAutolabel>
+				<security>internal</security>
+				<canonicalUrlBase>http://docs.rackspace.com/cdns/api/v2.0/cdns-releasenotes-2/content</canonicalUrlBase>
+			</configuration>
+		</execution>
 	  <execution>
 	    <id>cdns-releasenotes-internal</id>
 	    <goals>

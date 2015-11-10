@@ -18,6 +18,6 @@ Content-Type: application/json
     "created_at": "2014-07-07T18:25:31.275934",
     "updated_at": null,
     "links": {
-      "self": "https://127.0.0.1:9001/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+      "self": "https://127.0.0.1:9001/v2/1234/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
     }
 }

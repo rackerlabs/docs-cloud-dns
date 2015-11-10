@@ -5,7 +5,7 @@ Content-Type: application/json
 {
     "description": "This is an example recordset.",
     "links": {
-        "self": "https://127.0.0.1:9001/v2/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+        "self": "https://127.0.0.1:9001/v2/1234/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
     },
     "updated_at": null,
     "records": [

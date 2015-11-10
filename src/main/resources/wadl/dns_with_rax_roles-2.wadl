@@ -22,12 +22,22 @@
      zones and recordsets, list/get/create/update/delete tlds,blacklists,pools.
    -->
   <resources base="http://localhost:8080">
-    <resource id="zones" path="/v2/zones" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+    <resource id="zones" path="/v2/{account_id}/zones" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <method href="#createZone"/>
       <method href="#listZones" rax:roles="dnsaas:observer observer"/>
     </resource>
  
-    <resource id="zone_id" path="/v2/zones/{zone_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+    <resource id="zone_id" path="/v2/{account_id}/zones/{zone_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <param style="template" type="xs:string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xml:lang="EN"><para>The zone ID for the specified zone.</para>
@@ -37,7 +47,12 @@
       <method href="#deleteZone"/>
     </resource>
  
-    <resource id="zone_id_tasks" path="/v2/zones/{zone_id}/tasks/abandon" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+    <resource id="zone_id_tasks" path="/v2/{account_id}/zones/{zone_id}/tasks/abandon" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
+      <param style="template" type="xs:string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <param style="template" type="xs:string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The zone ID for the specified zone.</para>
@@ -46,7 +61,12 @@
       <method href="#abandonZone"/>
     </resource>
     
-    <resource id="zone_id_recordset" path="/v2/zones/{zone_id}/recordsets" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+    <resource id="zone_id_recordset" path="/v2/{account_id}/zones/{zone_id}/recordsets" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <param style="template" type="xs:string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The zone ID for the specified zone.</para>
@@ -56,7 +76,12 @@
       <method href="#listRecordsets" rax:roles="dnsaas:observer observer"/>
     </resource>
     
-    <resource id="recordset_id_recordset" path="/v2/zones/{zone_id}/recordsets/{recordset_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+    <resource id="recordset_id_recordset" path="/v2/{account_id}/zones/{zone_id}/recordsets/{recordset_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="xs:string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <param style="template" type="xs:string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The zone ID for the specified zone.</para>
@@ -156,9 +181,9 @@
         configuration defined by the request.</para>
       <note>
         <para>This call returns an asynchronous
-          response. Refer to <link
+          response. Refer to <link security="writeronly"
             xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
-          for more details and examples of the way that asynchronous responses work. </para>
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work. </para>
       </note>
       
       <para>This call provisions a new DNS zone, based on the configuration defined
@@ -175,9 +200,9 @@
         <note>
           <itemizedlist>
             <listitem>
-              <para>Refer to <link
+              <para>Refer to <link security="writeronly"
                 xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/dns-propagation">DNS Propagation</link>
-                for information about DNS propagation.</para>
+                the section "DNS Propagation" in the Chapter "General API Information" for information about DNS propagation.</para>
             </listitem>
             <listitem>
               <para>If you attempt to create a zone that
@@ -213,9 +238,10 @@
           <emphasis>initial</emphasis> 202 Accepted response
           for the asynchronous call and indicate that the task
           has been accepted for processing.
-          Refer to <link
-            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for a description
-          of how the asynchronous call works.</para>
+          This call returns an asynchronous
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.</para>
       </note>
     </wadl:doc>
     <request>
@@ -428,8 +454,10 @@
       <para role="shortdesc">Updates the configuration of a
         zone.</para>
       <note>
-        <para>This call returns an asynchronous response. Refer to <link
-          xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+        <para>This call returns an asynchronous response. This call returns an asynchronous
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.</para>
       </note>
       <para>This call modifies DNS zone attributes only.
         Records cannot be added, modified, or Deleted. Only the
@@ -447,9 +475,9 @@
         <title>Notes</title>
         <itemizedlist>
           <listitem>
-            <para>Refer to <link
+            <para>Refer to <link security="writeronly"
               xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/dns-propagation">DNS Propagation</link>
-              for information about DNS propagation.</para>
+              the section "DNS Propagation" in the Chapter "General API Information" for information about DNS propagation.</para>
           </listitem>
           <listitem>
             <para>A zone's <code>id</code> is immutable.
@@ -533,9 +561,9 @@
         operation is non-recoverable.</para>
       <note>
         <para>This operation returns an asynchronous
-          response, as
-          described in <link
-            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link>.
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.
         </para>
       </note>
       
@@ -630,8 +658,10 @@
         By default this is restricted by policy (abandon_domain) to admins.</para>
       
       <note>
-        <para>This call returns an asynchronous response. Refer to <link
-          xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+        <para>This call returns an asynchronous response. This call returns an asynchronous
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.</para>
       </note>
       
     </wadl:doc>
@@ -673,9 +703,10 @@
         Record sets are also referred to as <emphasis>Resource Record Sets</emphasis> or <emphasis>RRSets</emphasis>.</para>
       <note>
         <para>This operation returns an asynchronous
-          response. Refer to <link
+          response. This call returns an asynchronous
+          response. Refer to <link security="writeronly"
             xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
-          for more details and examples of the way that asynchronous responses work. </para>
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work. </para>
       </note>
       
       <para>This operation provisions a new DNS record set, based on the configuration defined
@@ -697,9 +728,10 @@
           <emphasis>final</emphasis> 201 Created response
           for the asynchronous call and indicates that the task
           has been completed.
-          Refer to <link
-            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for a description
-          of how the asynchronous call works.</para>
+          This call returns an asynchronous
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.</para>
       </note>
       <para>The example illustrates a record set in the BIND file format.</para>
       <para>This format can be used for common record set types including A, AAAA, CNAME, NS and TXT. 
@@ -798,8 +830,10 @@
       title="Update record set">
       <para role="shortdesc">Replaces the specified record set with the specified details.</para>
       <note>
-        <para>This call returns an asynchronous response. Refer to <link
-          xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> for more details and examples of the way that asynchronous responses work.</para>
+        <para>This call returns an asynchronous response. This call returns an asynchronous
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.</para>
       </note>
       
       <para>If a request cannot be fulfilled due to insufficient or
@@ -906,9 +940,9 @@
       <para role="shortdesc">This operation deletes a record set with the specified record set ID.</para>
       <note>
         <para>This operation returns an asynchronous
-          response, as
-          described in <link
-            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link>.
+          response. Refer to <link security="writeronly"
+            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
+          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.
         </para>
       </note>
       

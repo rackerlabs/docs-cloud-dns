@@ -9,6 +9,7 @@
         <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
         <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
         <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY PATCH   '<command xmlns="http://docbook.org/ns/docbook">PATCH</command>'>
         <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
         
         <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
@@ -46,7 +47,7 @@
             <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v1.0</releaseinfo>
+        <releaseinfo>API v2</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
         <pubdate>2015-11-12</pubdate>
         <legalnotice role="rs-api">
@@ -77,7 +78,7 @@
         <raxm:metadata
             xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v1.0">cdns</raxm:product>
+            <raxm:product version="v2">cdns</raxm:product>
             <raxm:priority>2</raxm:priority>
         </raxm:metadata>
     </info>
@@ -87,11 +88,11 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:product version="v2">cdns</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
-        <para>Rackspace Managed <glossterm>DNS</glossterm> iis a
+        <para>Rackspace Managed <glossterm>DNS</glossterm> is a
             globally distributed (Anycast network) service that allows
             Rackspace customers to manage Domain Name System (DNS)
             zones and resource records via a REST-based API for their
@@ -104,15 +105,15 @@
             Managed DNS.<note>
                 <itemizedlist>
                     <listitem>
-                        <para>Rackspace Managed DNS Early Access is
+                        <para>Rackspace Managed DNS is currently
                             limited to Rackspace Cloud
                             accounts.</para>
                     </listitem>
                     <listitem>
                         <para>PTR records are currently supported in
-                            Rackspace Cloud DNS, but are not yet
-                            supported during the Rackspace Managed DNS
-                            Early Access phase. </para>
+                            Rackspace Cloud DNS, but will not be
+                            supported by Managed DNS until the
+                            Unlimited Availability launch phase. </para>
                     </listitem>
                 </itemizedlist>
             </note></para>
@@ -131,13 +132,15 @@
                 </mediaobject>
             </informalfigure>
         </para>
-        <para>We welcome feedback, comments, and bug reports at <link
+        <para>Issues and bug reports can be directed to:
+                <email>ManagedDNS_Preview@rackspace.com</email>.</para>
+        <para security="writeronly">We welcome feedback, comments, and bug reports at <link
                 xlink:href="http://feedback.rackspace.com">Product
                 Feedback Forum</link>.</para>
         <para security="reviewer">Reviewer: please give me the name of
             the list to use for EA to report feedback for previous
             line, pending EA email list creation.</para>
-        <para>Issues and bug reports can be directed to your support
+        <para security="writeronly">Issues and bug reports can be directed to your support
             team via ticket, chat, email, or phone.</para>
         <section xml:id="Intended_Audience-d1e122">
             <title>Intended Audience</title>
@@ -177,8 +180,8 @@
             <title>Additional Resources</title>
             <para>You can download the most current versions of other
                 API-related documents from <link
-                    xlink:href="http://docs.rackspace.com/api/"
-                    >http://docs.rackspace.com/api/</link>.</para>
+                    xlink:href="https://developer.rackspace.com/docs/"
+                    >https://developer.rackspace.com/docs/</link>.</para>
             <para>For information about Rackspace Cloud products,
                 refer to <link
                     xlink:href="http://www.rackspace.com/cloud/"
@@ -203,7 +206,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:product version="v2">cdns</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
@@ -285,7 +288,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:product version="v2">cdns</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
@@ -522,10 +525,7 @@
                             <para>The token's expiration time is
                                 formatted differently in the US and
                                 UK. These response examples show the
-                                US format. For examples of the UK
-                                format please refer to <link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_authenticate_v2.0_tokens_.html"
-                                   >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_authenticate_v2.0_tokens_.html</link>.</para>
+                                US format.</para>
                         </note>
                         <para/>
                     </callout>
@@ -699,8 +699,8 @@
                         Cloud Identity Service), refer to the
                             <citetitle>Cloud Identity Client Developer
                             Guide</citetitle> at <link
-                            xlink:href="http://docs.rackspace.com"
-                            >http://docs.rackspace.com/</link>.</para>
+                            xlink:href="https://developer.rackspace.com/docs/"
+                            >https://developer.rackspace.com/docs/</link>.</para>
                 </tip>
                 <para>DNS service endpoints are published in the
                     service catalog in the Auth response with the
@@ -1465,11 +1465,10 @@
                     regular expression boundary matcher '^' takes
                     effect after the root URI path. For example, the
                     regular expression
-                        ^/v1.0/<parameter>1234</parameter>/zones would
+                        ^/v2/<parameter>1234</parameter>/zones would
                     match the bolded portion of the following URI:
                         https://dns.api.rackspacecloud.com<emphasis
-                        role="bold"
-                    >/v1.0/1234/zones</emphasis>.</para>
+                        role="bold">/v2/1234/zones</emphasis>.</para>
                 <para>The following table specifies the default rate
                     limits for all API operations for all &GET;,
                     &POST;, &PUT;, and &DELETE; calls for zones and
@@ -1480,51 +1479,40 @@
                         <tr align="center">
                             <td colspan="1">Verb</td>
                             <td colspan="2">URI</td>
-                            <td colspan="2">RegEx</td>
+                            
                             <td colspan="1">Default</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="1">&GET;</td>
-                            <td colspan="2">*/status/*</td>
-                            <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/status).*</td>
-                            <td colspan="1">5/second</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">&GET;</td>
-                            <td colspan="2">*/zones/search*</td>
-                            <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/zones/search).*</td>
-                            <td colspan="1">20/minute</td>
-                        </tr>
+                        
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">*/zones*</td>
-                            <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/zones).*</td>
-                            <td colspan="1">60/minute</td>
+                            
+                            <td colspan="1">420/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&POST;</td>
                             <td colspan="2">*/zones*</td>
-                            <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/zones).*</td>
-                            <td colspan="1">20/minute</td>
+                            
+                            <td colspan="1">40/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&PUT;</td>
                             <td colspan="2">*/zones*</td>
-                            <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/zones).*</td>
-                            <td colspan="1">20/minute</td>
+                            
+                            <td colspan="1">40/minute</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">&PATCH;</td>
+                            <td colspan="2">*/zones*</td>
+                            
+                            <td colspan="1">40/minute</td>
                         </tr>
                         <tr>
                             <td colspan="1">&DELETE;</td>
                             <td colspan="2">*/zones*</td>
-                            <td colspan="2">
-                                .*/v\d+\.\d+/(\d+/zones).*</td>
+                            
                             <td colspan="1">10/minute</td>
                         </tr>
                     </tbody>
@@ -1541,9 +1529,9 @@
                             calls after a &POST;, &PUT;, or &DELETE;
                             to retrieve the status details; for
                             example: <link
-                                xlink:href="https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
+                                xlink:href="https://dns.api.rackspacecloud.com/v2/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d"
                                 >
-                                https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</link>.
+                                https://dns.api.rackspacecloud.com/v2/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d</link>.
                             This status call has a limit of 5 requests
                             per second.</para>
                     </note></para>
@@ -1592,39 +1580,41 @@
                             a non-default limit if determined
                             necessary by Support.</para>
                     </note>
-                </section>
-                <section xml:id="Record_Limits">
-                    <title>Recordset Limits</title>
-                    <para>By default users may have up to 500
-                        recordsets per zone per Cloud account. When a
-                        user submits a request to create one or more
-                        new recordsets, the system will only accept
-                        the request if the total number of existing
-                        plus requested recordsets is within the
-                        account record limit. If the total number of
-                        recordsets on a specified zone exceeds the
-                        recordset limit, the entire request will be
-                        rejected and the following message will be
-                        returned:</para>
-                    <example>
-                        <title>Example Zone Recordset Limit Response:
-                            JSON</title>
-                        <programlisting language="xml"><xi:include href="samples-2/dns-example-recordset-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                    </example>
-                    <note>
-                        <para>Any zones/subzones or recordsets that
-                            are submitted in any request that causes
-                            recordset limits to be exceeded will not
-                            be provisioned and the entire request will
-                            be rejected.</para>
-                    </note>
-                    <note>
-                        <para>The limits apply to any API request that
-                            can be used to create one or more
-                            recordsets. An account may have a
-                            non-default recordset limit if determined
-                            necessary by Support. </para>
-                    </note>
+                    <section xml:id="Record_Limits">
+                        <title>Recordset Limits</title>
+                        <para>By default users may have up to 500
+                            recordsets per zone per Cloud account.
+                            When a user submits a request to create
+                            one or more new recordsets, the system
+                            will only accept the request if the total
+                            number of existing plus requested
+                            recordsets is within the account record
+                            limit. If the total number of recordsets
+                            on a specified zone exceeds the recordset
+                            limit, the entire request will be rejected
+                            and the following message will be
+                            returned:</para>
+                        <example>
+                            <title>Example Zone Recordset Limit
+                                Response: JSON</title>
+                            <programlisting language="xml"><xi:include href="samples-2/dns-example-recordset-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+                        </example>
+                        <note>
+                            <para>Any zones/subzones or recordsets
+                                that are submitted in any request that
+                                causes recordset limits to be exceeded
+                                will not be provisioned and the entire
+                                request will be rejected.</para>
+                        </note>
+                        <note>
+                            <para>The limits apply to any API request
+                                that can be used to create one or more
+                                recordsets. An account may have a
+                                non-default recordset limit if
+                                determined necessary by Support.
+                            </para>
+                        </note>
+                    </section>
                 </section>
             </section>
             <section xml:id="view_limits_ov">
@@ -2433,7 +2423,7 @@ Content-Type: application/json
                 <title>Example Fault Response: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;dnsFault xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="500">
+&lt;dnsFault xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="500">
      &lt;message>Main fault&lt;/message>
      &lt;details>Error Details&lt;/details>
 &lt;/dnsFault></programlisting>
@@ -2470,7 +2460,7 @@ Content-Type: application/json
                     Errors: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="400">
+&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="400">
      &lt;message>The request could not be processed.&lt;/message>
      &lt;details> Unexpected close tag &amp;lt;/domains&amp;gt; expected &amp;lt;/domain&amp;gt;.
      &lt;/details>
@@ -2493,7 +2483,7 @@ Content-Type: application/json
                     response</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="400">
+&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="400">
      &lt;validationErrors>
           &lt;messages>Must provide a name for each domain.&lt;/messages>
           &lt;messages>null is not a valid domain name.&lt;/messages>
@@ -2523,7 +2513,7 @@ Content-Type: application/json
                 <title>Example deleteFault: XML</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;deleteFault xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" code="500">
+&lt;deleteFault xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="500">
      &lt;message>One or more items could not be deleted.&lt;/message>
      &lt;details>See errors list for details.&lt;/details>
      &lt;failedItems>
@@ -2565,12 +2555,12 @@ Content-Type: application/json
             <para>Typical DNS propagation to Rackspace name servers
                 (globally) may take up to one minute. This refers to
                 the amount of time it takes after a change
-                (add/delete/update) is made to a customer's records
-                via API, MyRackspace Customer Portal, and so forth
-                before the change is live on our name servers.</para>
+                (add/delete/update) is made to a zone or record via
+                API or Rackspace Control Panel before the change is
+                live on our name servers.</para>
             <para>A large amount of changes made simultaneously may
-                take 2-3 minutes. If a new domain is added or an
-                existing domain is deleted, this may take up to a few
+                take 2-3 minutes. If a new zone is added or an
+                existing zone is deleted, this may take up to a few
                 minutes to propagate to our Rackspace name servers.
                 When changing name servers for a domain, complete
                 propagation will take about 2 days for most domains;
@@ -5701,7 +5691,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:product version="v2">cdns</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
@@ -5840,7 +5830,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">cdns</raxm:product>
+                <raxm:product version="v2">cdns</raxm:product>
                 <raxm:priority>50</raxm:priority>
             </raxm:metadata>
         </info>
