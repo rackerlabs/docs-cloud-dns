@@ -74,7 +74,7 @@
         </revhistory>
 	     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
 	        <raxm:displayname>Getting Started Guide</raxm:displayname>
-	        <raxm:product version="v1.0">cdns</raxm:product>
+	        <raxm:product version="v2">cdns</raxm:product>
 	        <raxm:priority>1</raxm:priority>
 	     </raxm:metadata>
     </info>
