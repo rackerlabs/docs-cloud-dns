@@ -186,6 +186,8 @@
           the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work. </para>
       </note>
       
+      <note><para>This operation will take a few minutes to become effective on our name servers.</para></note>
+      
       <para>This call provisions a new DNS zone, based on the configuration defined
         in the request object. If the corresponding request cannot
         be fulfilled due to insufficient or invalid data, an
@@ -559,6 +561,7 @@
       <para role="shortdesc">This operation deletes a zone.</para>
       <para>Once a zone has been deleted, all associated resources are destroyed and the
         operation is non-recoverable.</para>
+      
       <note>
         <para>This operation returns an asynchronous
           response. Refer to <link security="writeronly"
@@ -566,6 +569,8 @@
           the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.
         </para>
       </note>
+      
+      <note><para>This operation will take a few minutes to become effective on our name servers.</para></note>
       
     </wadl:doc>
     <request>
