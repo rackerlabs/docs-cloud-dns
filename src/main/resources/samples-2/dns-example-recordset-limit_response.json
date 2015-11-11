@@ -7,5 +7,5 @@ Content-Length: 183
 {
   "message" : "Your account is currently over the limit so your request could not be processed.",
   "code" : 413,
-  "details" : "Limit of 500 recordsets per zone has been reached."
+  "details" : "Limit of 3000 recordsets per zone has been reached."
 }

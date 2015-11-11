@@ -1551,7 +1551,7 @@
                     subsequent calls.</para>
                 <section xml:id="Domain_Limits">
                     <title>Zone Limits</title>
-                    <para>By default users may have up to 500 zones
+                    <para>By default users may have up to 5000 zones
                         per Cloud account (including sub-zones). When
                         a user submits a request to create new zones
                         and/or subzones, the system will only accept
@@ -1581,18 +1581,20 @@
                             necessary by Support.</para>
                     </note>
                     <section xml:id="Record_Limits">
-                        <title>Recordset Limits</title>
-                        <para>By default users may have up to 500
-                            recordsets per zone per Cloud account.
-                            When a user submits a request to create
+                        <title>Recordset and Record Limits</title>
+                        <para>By default, users may have up to 3000
+                            records total per zone per Cloud account
+                            and up to 120 records per
+                            recordset.</para>
+                        <para>When a user submits a request to create
                             one or more new recordsets, the system
                             will only accept the request if the total
-                            number of existing plus requested
-                            recordsets is within the account record
-                            limit. If the total number of recordsets
-                            on a specified zone exceeds the recordset
-                            limit, the entire request will be rejected
-                            and the following message will be
+                            number of existing plus requested records
+                            and recordsets is within these limits. If
+                            the total number of recordsets and/or
+                            recordsets on a specified zone exceeds
+                            these limits, the entire request will be
+                            rejected and the following message will be
                             returned:</para>
                         <example>
                             <title>Example Zone Recordset Limit
@@ -1617,7 +1619,7 @@
                     </section>
                 </section>
             </section>
-            <section xml:id="view_limits_ov">
+            <section security="writeronly" xml:id="view_limits_ov">
                 <title>Viewing Current Limits</title>
                 <para>Users can view their current rate and absolute
                     (including zone and recordset) limits.</para>
