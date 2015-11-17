@@ -12,7 +12,7 @@ This github repository contains the source files for the following Rackspace Clo
 * [Cloud DNS Developer Guide](https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/)
 * [Cloud DNS Release Notes](https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-release-notes)
 
-This github repository also contains the source files for the Rackspace Managed DNS v2.0 API documentation
+This github repository also contains the source files for the Rackspace Managed DNS v2.0 API documentation.
 
 ## Contributing
 
@@ -66,7 +66,7 @@ Managed DNS v2.0
 
 If you want to make changes to the example files referenced in the v1 WADL file, you can find the example files at [src/main/resources/samples](src/main/resources/samples).
 
-If you want to make changes to the example files referenced in the v2 WADL file, you can find the example files at [src/main/resources/samples](src/main/resources/samples-2).
+If you want to make changes to the example files referenced in the v2 WADL file, you can find the example files at [src/main/resources/samples-2](src/main/resources/samples-2).
 
 The status codes referenced by the v1 WADL file are at [src/main/resources/wadl/common.ent](src/main/resources/wadl/common.ent).
 
