@@ -6,11 +6,13 @@
 
 ## Resources
 
-This github repository contains the source files for the following Rackspace Cloud DNS API documentation:
+This github repository contains the source files for the following Rackspace Cloud DNS v1.0 API documentation:
 
 * [Cloud DNS Getting Started Guide](http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/)
-* [Cloud DNS Developer Guide](http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/)
-* [Cloud DNS Release Notes](http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/)
+* [Cloud DNS Developer Guide](https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/)
+* [Cloud DNS Release Notes](https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-release-notes)
+
+This github repository also contains the source files for the Rackspace Managed DNS v2.0 API documentation
 
 ## Contributing
 
@@ -28,11 +30,14 @@ The output appears in PDF and HTML form in the following locations. The items in
 
 | Name | Build Location |
 | --- | --- |
-| [Getting Started Guide](http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/) | target/docbkx/webhelp/cdns-getting-started-external |
-| [Developer Guide](http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/) | target/docbkx/webhelp/cdns-devguide-external |
-| [Release Notes](http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/) | target/docbkx/webhelp/cdns-releasenotes-external |
-| Developer Guide for Service Management (Internal) | target/docbkx/webhelp/cdns-mgmt-devguide-internal |
-| Release Notes (Internal) | target/docbkx/webhelp/cdns-releasenotes-internal |
+| [Getting Started Guide v1](http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/) | target/docbkx/webhelp/cdns-getting-started-external |
+| [Developer Guide v1](http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/) | target/docbkx/webhelp/cdns-devguide-external |
+| [Release Notes v1](http://docs.rackspace.com/cdns/api/v1.0/cdns-releasenotes/) | target/docbkx/webhelp/cdns-releasenotes-external |
+| Developer Guide for Service Management v1 (Internal) | target/docbkx/webhelp/cdns-mgmt-devguide-internal |
+| Release Notes v1 (Internal) | target/docbkx/webhelp/cdns-releasenotes-internal |
+| [Getting Started Guide v2](http://docs-internal.rackspace.com/cdns/api/v2/cdns-getting-started-2/content/DNS_Overview.html) | target/docbkx/webhelp/cdns-getting-started-2-internal |
+| [Developer Guide v2](http://docs-internal.rackspace.com/cdns/api/v2/cdns-devguide-2/content/overview.html) | target/docbkx/webhelp/cdns-devguide-2-internal |
+| [Release Notes v2](http://docs-internal.rackspace.com/cdns/api/v2/cdns-releasenotes-2/content/doc_change_history.html) | target/docbkx/webhelp/cdns-releasenotes-2-internal |
 
 #### Editors
 
@@ -47,11 +52,23 @@ You can use any text editor to work with these source files. If you want to use 
 
 The files that are most likely to be of interest are:
 
+Cloud DNS v1.0:
+
 * [src/main/resources/cdns-getting-started.xml](src/main/resources/cdns-getting-started.xml)
 * [src/main/resources/cdns-devguide.xml](src/main/resources/cdns-devguide.xml)
 * [src/main/resources/wadl/dns.wadl](src/main/resources/wadl/dns.wadl)
 
-If you want to make changes to the example files referenced in the WADL file, you can find the example files at [src/main/resources/samples](src/main/resources/samples).
+Managed DNS v2.0
 
-The status codes referenced by the WADL files are at [src/main/resources/wadl/common.ent](src/main/resources/wadl/common.ent).
+* [src/main/resources/cdns-getting-started-2.xml](src/main/resources/cdns-getting-started-2.xml)
+* [src/main/resources/cdns-devguide-2.xml](src/main/resources/cdns-devguide-2.xml)
+* [src/main/resources/wadl/dns_with_rax_roles-2.wadl](src/main/resources/wadl/dns_with_rax_roles-2.wadl)
+
+If you want to make changes to the example files referenced in the v1 WADL file, you can find the example files at [src/main/resources/samples](src/main/resources/samples).
+
+If you want to make changes to the example files referenced in the v2 WADL file, you can find the example files at [src/main/resources/samples](src/main/resources/samples-2).
+
+The status codes referenced by the v1 WADL file are at [src/main/resources/wadl/common.ent](src/main/resources/wadl/common.ent).
+
+The status codes referenced by the v2 WADL file are at [src/main/resources/wadl/common.ent](src/main/resources/wadl/common.ent).
 
