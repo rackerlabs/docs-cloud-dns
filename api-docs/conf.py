@@ -85,7 +85,7 @@ today = 'November 3, 2015'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build','api-operations/methods*']
+exclude_patterns = ['_build','common-gs','api-operations/methods*','samples']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -134,8 +134,9 @@ extlinks = {
 
 rst_epilog = """
 .. |apiservice| replace:: Rackspace Cloud DNS API
-.. |no changes| replace:: None for this release.
+.. |no changes| replace:: None for this release
 .. |contract version| replace:: 1.0
+.. |product name| replace:: Rackspace Cloud DNS
 """
 
 #Software release.version currently deployed in production.
