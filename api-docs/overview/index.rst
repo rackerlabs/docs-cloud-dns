@@ -19,6 +19,6 @@ The following figure shows an overview of Cloud DNS Infrastructure:
 
 .. toctree:: :hidden:
    :maxdepth: 3
-   
+
    additional-resources
- 
+   doc-change-history
