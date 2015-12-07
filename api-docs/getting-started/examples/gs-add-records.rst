@@ -211,8 +211,8 @@ http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_respon
 for more information about how the asynchronous call works.
 
  
-**cURL Add records: final successful response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**cURL Add records: final successful response**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML response**
 

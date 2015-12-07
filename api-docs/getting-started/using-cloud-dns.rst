@@ -26,9 +26,16 @@ request URL,for example:``https://dns.api.rackspacecloud.com/v1.0/**your_acct_id
 as you can see in cURL request examples for this guide.
 
 .. note::
+     These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and ``$TENANT_ID`` environment
+     variables to specify the API endpoint, authentication token, and project ID values
+     for accessing the service. Make sure you
+     :ref:`configure these variables<configure-environment-variables>` before running the
+     code samples. 
+
+.. note::
    All examples in this guide assume that you are operating against the US region.
 
-.. include:: examples/gs-create-servers.rst
+.. include:: examples/gs-create-server.rst
 .. include:: examples/gs-create-domain.rst
 .. include:: examples/gs-list-domain.rst
 .. include:: examples/gs-add-records.rst
