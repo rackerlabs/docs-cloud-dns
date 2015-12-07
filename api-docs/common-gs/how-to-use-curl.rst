@@ -12,7 +12,7 @@ distributions, Mac OS® X, and Microsoft Windows®. For information about cURL, 
 To run the cURL request examples shown in this guide, copy each example from the HTML version
 of this guide directly to the command line or a script.
 
-.. _auth-curl-json::
+.. _auth-curl-json:
 
 The following example shows a cURL command for sending an authentication request to
 the Rackspace Cloud Identity service.
@@ -24,7 +24,7 @@ the Rackspace Cloud Identity service.
 **cURL command example: JSON request**
 
 .. include:: ../common-gs/samples/auth-req-curl.rst
-    
+
 In this example, ``$apiKey`` is an environment variable that stores your API key value.
 Environment variables make it easier to reference account information in API requests,
 to reuse the same cURL commands with different credentials, and also to keep sensitive
