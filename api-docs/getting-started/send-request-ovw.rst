@@ -18,7 +18,6 @@ To learn about other ways to use Rackspace Cloud API services, see the following
    interacting with the API by using an application such as
    `Postman`_  or `RESTClient for Firefox`_.
 
-
 .. include:: ../common-gs/how-to-use-curl.rst
 
 .. _cURL command line tool: http://curl.haxx.se/
