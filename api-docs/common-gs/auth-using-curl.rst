@@ -1,7 +1,5 @@
 .. _authenticate-using-curl:
 
-Authenticating by using cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow these steps to authenticate to the Rackspace Cloud by 
 :ref:`using cURL<how-curl-commands-work>`. 
@@ -14,7 +12,7 @@ Follow these steps to authenticate to the Rackspace Cloud by
 .. _send-auth-req-curl:
 
 Send an authentication request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 From a command prompt, send a **POST tokens** request to the Rackspace Cloud Identity 
 service.  Include your username and :ref:`API key<get-credentials>` 
