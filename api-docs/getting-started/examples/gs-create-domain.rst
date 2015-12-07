@@ -27,10 +27,8 @@ configuration:
 
 -  Domain name=example.com
 
-      style="margin-left: 0.5in; margin-right: 0.5in;">
 
-   ..  note::
-       The DNS specification reserves "example.com" for documentation
+     - The DNS specification reserves "example.com" for documentation
        purposes. Therefore you will need to substitute your own domain name
        in order for the examples to work with the Cloud DNS API. To name
        your domain, you can use any letter, numbers between 0 and 9, and the
@@ -47,10 +45,8 @@ configuration:
 
    -  Domain name = sub1.example.com
 
-         style="margin-left: 0.5in; margin-right: 0.5in;">
-
-      ..  note::
-          Remember to modify the domain name "sub1.example.com" listed above
+      
+       -  Remember to modify the domain name "sub1.example.com" listed above
           to conform to the name you have chosen for your domain, for
           example: "sub1.<**your\_domain\_name**>".
 
@@ -60,10 +56,8 @@ configuration:
 
    -  Domain name = sub2.example.com
 
-         style="margin-left: 0.5in; margin-right: 0.5in;">
-
-      ..  note::
-          Remember to modify the domain name "sub2.example.com" listed above
+      
+        - Remember to modify the domain name "sub2.example.com" listed above
           to conform to the name you have chosen for your domain, for
           example: "sub2.<**your\_domain\_name**>".
 
@@ -71,10 +65,10 @@ configuration:
 
    -  comment="2nd sample subdomain"
 
-..  note::
-    Although you could add records for your domain in this Create domain
-    call, to keep things simple, you will add the records using the separate
-    Add records call in :ref:`Add records <gs-add-records>` instead.
+
+Although you could add records for your domain in this Create domain 
+call, to keep things simple, you will add the records using the separate
+Add records call in :ref:`Add records <gs-add-records>` instead.
 
 The following examples show the cURL requests for Create domain:
 
@@ -187,9 +181,9 @@ Create domain: initial asynchronous response
         </request>
     </asyncResponse>
 
-..  note::
-    The ``<request>`` in the XML response comes back with the request you
-    sent, with the HTML entities encoded (<; >; ";).
+
+The ``<request>`` in the XML response comes back with the request you
+sent, with the HTML entities encoded (<; >; ";).
 
 **JSON Response**
 
@@ -271,15 +265,10 @@ respective values for all the cURL examples that follow:
 -  **job\_id** — as returned in your Create Domain response (must be
    replaced in the request URL)
 
-..  note::
-    The following examples show the *final* successful response for the
-    asynchronous call. You can find more information about how asynchronous
-    calls work in the
-    `Cloud DNS developer guide <https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`__.
-
-The following examples show the final successful responses for Create
-domain:
-
+The following examples show the final successful responses for the Create
+domain asynchronous call. 
+You can find more information about how asynchronous calls work in the 
+`Cloud DNS developer guide <https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`__.
  
 Create domain: final successful response
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -435,11 +424,8 @@ Notice that you can see the 200 OK responses containing information
 about the domain/subdomains with status COMPLETED. This indicates that
 the call was successfully completed.
 
-..  note::
-    The following examples show the *final* successful response for the
-    asynchronous call. You can find more information about how asynchronous
-    calls work in the
-    `Cloud DNS developer guide <https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`__.
+You can find more information about how asynchronous calls work in the 
+`Cloud DNS developer guide <https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`__.
 
 In the previous examples, you can see that the domain example.com was
 created along with its subdomains sub1.example.com and sub2.example.com.
