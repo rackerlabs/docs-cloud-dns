@@ -34,7 +34,7 @@ Panel:**
     of this exercise, you can select any image listed and the two
     servers do not need to use the same image.
 
-6.  Select the desired\ **Flavor**. 1 GB General Purpose v1 is suggested
+6.  Select the desired **Flavor**. 1 GB General Purpose v1 is suggested
     for this exercise.
 
 7.  Click **Create Server** to create your server.

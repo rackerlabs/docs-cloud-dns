@@ -207,7 +207,7 @@ respective values for all the cURL examples that follow:
 
 The following examples show the *final* successful response for the
 asynchronous Add records call. Refer to
-http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/sync_asynch_responses.html
+:rax-devdocs:`Synchronous and asynchronous responses <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
 for more information about how the asynchronous call works.
 
  
@@ -303,6 +303,5 @@ for more information about how the asynchronous call works.
     }
 
 You can now call List domain details again to confirm that the records
-are added to your domain. See `List domain
-details <gs-list-domain>`
+are added to your domain. See :ref:`List domain details <gs-list-domain>`
 for instructions.

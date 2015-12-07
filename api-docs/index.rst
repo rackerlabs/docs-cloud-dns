@@ -27,9 +27,9 @@ in the Rackspace Knowledge Center.
 
    Cloud DNS 1.0 <self>
    API Status <http://www.rackspacestatus.com/>
+   About the API <overview/index>
    getting-started
    getting-started/index
-   About the API <overview/index>
    developer-guide
    concepts
    general-api-info/index
