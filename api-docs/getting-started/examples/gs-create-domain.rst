@@ -85,7 +85,7 @@ cURL Create domain: request
 
 .. code::
 
-    curl -s -d \
+    $ curl -s -d \
     '<domains xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.0"
     xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.w3.
     org/2005/Atom">
@@ -108,7 +108,7 @@ cURL Create domain: request
 
 .. code::
 
-    curl -s -d \
+    $ curl -s -d \
     '{
         "domains" : [ {
             "name" : "your_domain_name",
@@ -237,7 +237,7 @@ cURL Create domain asynchronous status: request
 
 .. code::
 
-    curl -i  \
+    $ curl -i  \
     -H 'X-Auth-Token: your_auth_token' \
     -H 'Content-Type: application/xml' \
     -H 'Accept: application/xml' \
@@ -247,7 +247,7 @@ cURL Create domain asynchronous status: request
 
 .. code::
 
-    curl -i  \
+    $ curl -i  \
     -H 'X-Auth-Token: your_auth_token' \
     -H 'Content-Type: application/json' \
     'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/status/job_id?showDetails=true'

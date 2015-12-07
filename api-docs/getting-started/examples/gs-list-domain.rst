@@ -22,7 +22,7 @@ cURL List domain details: request
 
 .. code::
 
-    curl -s  \
+    $ curl -s  \
     -H 'X-Auth-Token: your_auth_token'  \
     -H 'Accept: application/xml'  \
     'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id' | ppxml
@@ -169,7 +169,7 @@ cURL List domain details with subdomains, no records: request
 
 .. code::
 
-    curl -i  \
+    $ curl -i  \
     -H 'X-Auth-Token: your_auth_token'  \
     -H 'Accept: application/xml'  \
     'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id?showRecords=false&showSubdomains=true'
@@ -179,7 +179,7 @@ cURL List domain details with subdomains, no records: request
 
 .. code::
 
-    curl -i  \
+    $ curl -i  \
     -H 'X-Auth-Token: your_auth_token'  \
     -H 'Accept: application/json'  \
     'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id?showRecords=false&showSubdomains=true'

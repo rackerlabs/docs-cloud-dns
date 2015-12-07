@@ -34,7 +34,7 @@ cURL Add records: request
 
 .. code::
 
-    curl -s -d \
+    $ curl -s -d \
     '<?xml version="1.0" ?>
     <recordsList xmlns:ns2="http://docs.rackspacecloud.com/dns/api/management/v1.
     0" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://www.
@@ -56,7 +56,7 @@ cURL Add records: request
 
 .. code::
 
-    curl -s -d \
+    $ curl -s -d \
     '{
         "records": [
             {
@@ -171,7 +171,7 @@ cURL asynchronous status for Add records: request
 
 .. code::
 
-    curl -i  \
+    $ curl -i  \
     -H 'X-Auth-Token: your_auth_token' \
     -H 'Content-Type: application/xml' \
     -H 'Accept: application/xml' \
@@ -181,7 +181,7 @@ cURL asynchronous status for Add records: request
 
 .. code::
 
-    curl -i  \
+    $ curl -i  \
     -H 'X-Auth-Token: your_auth_token' \
     -H 'Content-Type: application/json' \
     'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/status/job_id?showDetails=true'
