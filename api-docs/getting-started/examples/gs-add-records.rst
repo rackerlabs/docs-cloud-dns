@@ -1,7 +1,7 @@
 .. _gs-add-records:
 
-Add records
-~~~~~~~~~~~
+Adding records
+~~~~~~~~~~~~~~~~
 
 This section shows you how to add records for your new domain:
 
@@ -46,10 +46,11 @@ cURL Add records: request
         <record type="CNAME" name="www.example.com" data="example.com" ttl="5400"
         comment="This is a comment on the CNAME record"/>
     </recordsList>' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/xml' \
-    -H 'Accept: application/xml' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id/records' | ppxml
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/xml" \
+    -H "Accept: application/xml" \
+    "$API_ENDPOINT/domains/domain_id/records" | ppxml
 
  
 **JSON request**
@@ -80,24 +81,16 @@ cURL Add records: request
             }
         ]
     }' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/json' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id/records' | python -m json.tool
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/json" \
+    "$API_ENDPOINT/domains/domain_id/records" | python -m json.tool
 
 Remember to replace the names in the examples above with their actual
 respective values:
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__)
-
--  **your\_acct\_id** — as returned in your authentication response (see
-   the examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__);
-   must be replaced in the request URL
-
 -  **domain\_id** — as returned in your create domain final successful
-   response (see the examples in `Create a
+   response (see the examples in `Creating a
    domain <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html>`__);
    must be replaced in the request URL
 
@@ -172,19 +165,21 @@ cURL asynchronous status for Add records: request
 .. code::
 
     $ curl -i  \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/xml' \
-    -H 'Accept: application/xml' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/status/job_id?showDetails=true'
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/xml" \
+    -H "Accept: application/xml" \
+    "$API_ENDPOINT/status/job_id?showDetails=true"
 
 **JSON request**
 
 .. code::
 
     $ curl -i  \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/json' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/status/job_id?showDetails=true'
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/json" \
+    "$API_ENDPOINT/status/job_id?showDetails=true"
 
 Adding the parameter ``?showDetails=true`` at the end of the end of the
 URL after the **job\_id** causes the response to display all details for
@@ -194,13 +189,6 @@ Omitting this parameter causes just basic details to be displayed
 
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
-
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__)
-
--  **your\_acct\_id** — as returned in your authentication response
-   (must be replaced in the request URL)
 
 -  **job\_id** — as returned in your Create domain response (must be
    replaced in the request URL)
@@ -303,5 +291,5 @@ for more information about how the asynchronous call works.
     }
 
 You can now call List domain details again to confirm that the records
-are added to your domain. See :ref:`List domain details <gs-list-domain>`
+are added to your domain. See :ref:`Listing domain details <gs-list-domain>`
 for instructions.

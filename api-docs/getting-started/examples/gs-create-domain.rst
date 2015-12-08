@@ -1,7 +1,7 @@
 .. _gs-create-domain:
 
-Create a domain
-~~~~~~~~~~~~~~~
+Creating a domain
+~~~~~~~~~~~~~~~~~~~
 
 The Create domain API call provisions one or more new DNS domains under
 the account specified, based on the configuration defined in the request
@@ -68,7 +68,7 @@ configuration:
 
 Although you could add records for your domain in this Create domain 
 call, to keep things simple, you will add the records using the separate
-Add records call in :ref:`Add records <gs-add-records>` instead.
+Add records call in :ref:`Adding records <gs-add-records>` instead.
 
 The following examples show the cURL requests for Create domain:
 
@@ -93,10 +93,11 @@ cURL Create domain: request
             </subdomains>
         </domain>
     </domains>' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/xml' \
-    -H 'Accept: application/xml' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains' | ppxml
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/xml" \
+    -H "Accept: application/xml" \
+    "$API_ENDPOINT/domains" | ppxml
 
 **JSON request**
 
@@ -123,9 +124,10 @@ cURL Create domain: request
             "emailAddress" : "sample@rackspace.com"
     } ]
     }' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/json' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains' | python -m json.tool
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/json" \
+    "$API_ENDPOINT/domains" | python -m json.tool
 
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
@@ -133,12 +135,6 @@ respective values for all the cURL examples that follow:
 -  **your\_domain\_name** — to name your domain, you can use any letter,
    numbers between 0 and 9, and the character "-".
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__)
-
--  **your\_acct\_id** — as returned in your authentication response
-   (must be replaced in the request URL)
 
 The following examples show the initial asynchronous responses for
 Create domain:
@@ -232,19 +228,21 @@ cURL Create domain asynchronous status: request
 .. code::
 
     $ curl -i  \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/xml' \
-    -H 'Accept: application/xml' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/status/job_id?showDetails=true'
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/xml" \
+    -H "Accept: application/xml" \
+    "$API_ENDPOINT/status/job_id?showDetails=true"
 
 **JSON Request**
 
 .. code::
 
     $ curl -i  \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/json' \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/status/job_id?showDetails=true'
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/json" \
+    "$API_ENDPOINT/status/job_id?showDetails=true"
 
 Adding the parameter ``?showDetails=true`` at the end of the end of the
 URL after the **job\_id** causes the response to display all details for
@@ -254,13 +252,6 @@ Omitting this parameter causes just basic details to be displayed
 
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
-
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__)
-
--  **your\_acct\_id** — as returned in your authentication response
-   (must be replaced in the request URL)
 
 -  **job\_id** — as returned in your Create Domain response (must be
    replaced in the request URL)

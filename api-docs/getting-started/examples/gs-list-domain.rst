@@ -1,7 +1,7 @@
 .. _gs-list-domain:
 
-List domain details
-~~~~~~~~~~~~~~~~~~~
+Listing domain details
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 This operation provides detailed output for a specific domain configured
 and associated with your account. This operation is not capable of
@@ -23,28 +23,23 @@ cURL List domain details: request
 .. code::
 
     $ curl -s  \
-    -H 'X-Auth-Token: your_auth_token'  \
-    -H 'Accept: application/xml'  \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id' | ppxml
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Accept: application/xml"  \
+    "$API_ENDPOINT/domains/domain_id" | ppxml
 
 **JSON request**
 
 .. code::
 
     curl -s  \
-    -H 'X-Auth-Token: your_auth_token'  \
-    -H 'Accept: application/json'  \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id' | python -m json.tool
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Accept: application/json"  \
+    "$API_ENDPOINT/domains/domain_id" | python -m json.tool
 
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
-
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__)
-
--  **your\_acct\_id** — as returned in your authentication response
-   (must be replaced in the request URL)
 
 -  **domain\_id** — as returned in your create domain response (must be
    replaced in the request URL)
@@ -170,9 +165,10 @@ cURL List domain details with subdomains, no records: request
 .. code::
 
     $ curl -i  \
-    -H 'X-Auth-Token: your_auth_token'  \
-    -H 'Accept: application/xml'  \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id?showRecords=false&showSubdomains=true'
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Accept: application/xml"  \
+    "$API_ENDPOINT/domains/domain_id?showRecords=false&showSubdomains=true"
 
 
 **JSON request**
@@ -180,22 +176,16 @@ cURL List domain details with subdomains, no records: request
 .. code::
 
     $ curl -i  \
-    -H 'X-Auth-Token: your_auth_token'  \
-    -H 'Accept: application/json'  \
-    'https://dns.api.rackspacecloud.com/v1.0/your_acct_id/domains/domain_id?showRecords=false&showSubdomains=true'
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Accept: application/json"  \
+    "$API_ENDPOINT/domains/domain_id?showRecords=false&showSubdomains=true"
 
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Generate an authentication
-   token <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Generating_Auth_Token.html>`__)
-
--  **your\_acct\_id** — as returned in your authentication response;
-   must be replaced in the request URL
-
 -  **domain\_id** — as returned in your create domain final successful
-   response (see the examples in `Create a
+   response (see the examples in `Creating a
    domain <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html>`__);
    must be replaced in the request URL
 

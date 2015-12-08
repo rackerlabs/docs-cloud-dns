@@ -8,21 +8,21 @@ by using Cloud DNS API operations.
 
 You will perform the following tasks:
 
-- Create two Cloud Servers
-- Create a DNS domain
-- List domains
-- Add records to your domains
+- Creating two Cloud Servers
+- Creating a DNS domain
+- Listing domain details
+- Adding records to your domains
 
 The DNS service is not a regionalized service. DNS is therefore responsible for
 appropriate replication, caching, and overall maintenance of DNS data across
 regional boundaries to other DNS servers. The followings are examples
 of service access endpoints for Cloud DNS.
 
-- ``https://dns.api.rackspacecloud.com/v1.0/ 1234/``
-- ``https://lon.dns.api.rackspacecloud.com/v1.0/ 1234/``
+- ``https://dns.api.rackspacecloud.com/v1.0/1234/``
+- ``https://lon.dns.api.rackspacecloud.com/v1.0/1234/``
 
 When making a Cloud DNS API call call, place the endpoint at the beginning of the
-request URL,for example:``https://dns.api.rackspacecloud.com/v1.0/**your_acct_id/**``,
+request URL,for example:``https://dns.api.rackspacecloud.com/v1.0/**your_acct_id**``,
 as you can see in cURL request examples for this guide.
 
 .. note::

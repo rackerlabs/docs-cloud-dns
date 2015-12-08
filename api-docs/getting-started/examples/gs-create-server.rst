@@ -1,7 +1,7 @@
 .. _gs-create-server:
 
-Create a new cloud server 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a new cloud server 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This guide requires two cloud servers for setting up DNS using the Cloud
 DNS API. If you will be using two *existing* cloud servers on your
