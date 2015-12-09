@@ -1,6 +1,8 @@
 target
 doctrees/
+rst/
 rst/dev-guide/_build
+api-docs/_build
 .classpath
 .project
 .settings/
