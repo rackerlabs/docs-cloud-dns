@@ -9,8 +9,8 @@ maintenance of DNS data across regional boundaries to other DNS servers.
 
 Use one of the following service access/endpoint to access the Rackspace Cloud DNS service:
 
-- ``https://dns.api.rackspacecloud.com/v1.0/ 1234/``
-- ``https://lon.dns.api.rackspacecloud.com/v1.0/ 1234/``
+- ``https://dns.api.rackspacecloud.com/v1.0/1234/``
+- ``https://lon.dns.api.rackspacecloud.com/v1.0/1234/``
 
 ..  note::
     The service catalog returned in the auth response specifies the correct
