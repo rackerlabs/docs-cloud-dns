@@ -15,7 +15,7 @@ Use one of the following service access/endpoint to access the Rackspace Cloud D
 ..  note::
     The service catalog returned in the auth response specifies the correct
     service access endpoint for your account to use for accessing DNS. Use
-    the service type (cloudDNS) to locate the correct endpoint in the
+    the service type (rax:dns) to locate the correct endpoint in the
     service catalog. For an example of the service catalog, see
     :ref:`authentication response examples <authentication-response-examples>`.
 
