@@ -23,7 +23,7 @@
    -->
   <resources base="http://localhost:8080">
     <resource id="zones" path="/v2/{account_id}/zones" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
-      <param style="template" type="xs:string" name="account_id">
+      <param style="template" type="string" name="account_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
         </wadl:doc>
@@ -31,14 +31,25 @@
       <method href="#createZone"/>
       <method href="#listZones" rax:roles="dnsaas:observer observer"/>
     </resource>
+    
+    
+    
+    <resource id="zones_uuid" path="/v2/zones/{uuid_id}/tasks/export" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator"> 
+      <param style="template" type="string" name="uuid_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The uuid of the specified zone.</para>
+        </wadl:doc>
+      </param>
+        <method href="#exportZone"/>
+    </resource>
  
     <resource id="zone_id" path="/v2/{account_id}/zones/{zone_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
-      <param style="template" type="xs:string" name="account_id">
+      <param style="template" type="string" name="account_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
         </wadl:doc>
       </param>
-      <param style="template" type="xs:string" name="zone_id">
+      <param style="template" type="string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xml:lang="EN"><para>The zone ID for the specified zone.</para>
         </wadl:doc>
@@ -48,12 +59,12 @@
     </resource>
  
     <resource id="zone_id_tasks" path="/v2/{account_id}/zones/{zone_id}/tasks/abandon" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin">
-      <param style="template" type="xs:string" name="account_id">
+      <param style="template" type="string" name="account_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
         </wadl:doc>
       </param>
-      <param style="template" type="xs:string" name="zone_id">
+      <param style="template" type="string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The zone ID for the specified zone.</para>
         </wadl:doc>
@@ -61,13 +72,17 @@
       <method href="#abandonZone"/>
     </resource>
     
+    <resource id="zones_tasks" path="/v2/zones/tasks/imports" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <method href="#importZone"/>
+    </resource>
+    
     <resource id="zone_id_recordset" path="/v2/{account_id}/zones/{zone_id}/recordsets" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
-      <param style="template" type="xs:string" name="account_id">
+      <param style="template" type="string" name="account_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
         </wadl:doc>
       </param>
-      <param style="template" type="xs:string" name="zone_id">
+      <param style="template" type="string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The zone ID for the specified zone.</para>
         </wadl:doc>
@@ -77,17 +92,17 @@
     </resource>
     
     <resource id="recordset_id_recordset" path="/v2/{account_id}/zones/{zone_id}/recordsets/{recordset_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
-      <param style="template" type="xs:string" name="account_id">
+      <param style="template" type="string" name="account_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
         </wadl:doc>
       </param>
-      <param style="template" type="xs:string" name="zone_id">
+      <param style="template" type="string" name="zone_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The zone ID for the specified zone.</para>
         </wadl:doc>
       </param>
-      <param style="template" type="xs:string" name="recordset_id">
+      <param style="template" type="string" name="recordset_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The record set ID for the specified record set.</para>
         </wadl:doc>
@@ -254,35 +269,35 @@
           <xsdxt:code
             href="../samples-2/dns-create-zone_request.json"/>
         </wadl:doc>
-        <param name="name" style="plain" type="xs:string"
+        <param name="name" style="plain" type="string"
           required="true" path="$.name">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
               name.</para></wadl:doc>
         </param>
-        <param name="type" style="plain" type="xs:string"
+        <param name="type" style="plain" type="string"
           required="false" path="$.type">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Enum PRIMARY/SECONDARY, default PRIMARY (immutable).</para></wadl:doc>
         </param>
-        <param name="email" style="plain" type="xs:string"
+        <param name="email" style="plain" type="string"
           required="true" path="$.email">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Email address to use for
               contacting the domain
               administrator.</para></wadl:doc>
         </param>
-        <param name="ttl" style="plain" type="xs:string"
+        <param name="ttl" style="plain" type="integer"
           required="false" path="$.ttl">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
-            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+            xml:lang="EN"><para>time-to-live numeric value in seconds<phrase security="writeronly">, NULL for SECONDARY</phrase>. The default value is 300 seconds.</para></wadl:doc>
         </param>
-        <param name="description" style="plain" type="xs:string"
+        <param name="description" style="plain" type="string"
           required="false" path="$.description">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
         </param>
-        <param name="masters" style="plain" type="xs:object"
+        <param name="masters" style="plain" type="object"
           required="false" path="$.masters">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Array of master nameservers. (NULL for type PRIMARY, required for SECONDARY otherwise zone will not be transferred before set.)</para></wadl:doc>
@@ -507,35 +522,35 @@
           <xsdxt:code
             href="../samples-2/dns-update-zone_request.json"/>
         </wadl:doc>
-        <param name="name" style="plain" type="xs:string"
+        <param name="name" style="plain" type="string"
           required="true" path="$.name">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
               name.</para></wadl:doc>
         </param>
-        <param name="type" style="plain" type="xs:string"
+        <param name="type" style="plain" type="string"
           required="false" path="$.type">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Enum PRIMARY/SECONDARY, default PRIMARY (immutable).</para></wadl:doc>
         </param>
-        <param name="email" style="plain" type="xs:string"
+        <param name="email" style="plain" type="string"
           required="true" path="$.email">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Email address to use for
               contacting the domain
               administrator.</para></wadl:doc>
         </param>
-        <param name="ttl" style="plain" type="xs:string"
+        <param name="ttl" style="plain" type="integer"
           required="false" path="$.ttl">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
-            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+            xml:lang="EN"><para>time-to-live numeric value in seconds<phrase security="writeronly">, NULL for SECONDARY</phrase>. The default value is 300 seconds.</para></wadl:doc>
         </param>
-        <param name="description" style="plain" type="xs:string"
+        <param name="description" style="plain" type="string"
           required="false" path="$.description">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
         </param>
-        <param name="masters" style="plain" type="xs:object"
+        <param name="masters" style="plain" type="object"
           required="false" path="$.masters">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Array of master nameservers. (NULL for type PRIMARY, required for SECONDARY otherwise zone will not be transferred before set.)</para></wadl:doc>
@@ -693,6 +708,84 @@
     </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
+  <method id="importZone" name="POST">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Create a zone import">
+      <para role="shortdesc">Imports a zonefile.</para>
+      <para>This call imports a zonefile. To import a zonefile, set the Content-type to <code>text/dns</code>. 
+        The <emphasis role="bold">zoneextractor.py</emphasis> tool in the <code>contrib</code> folder can generate 
+        zonefiles that are suitable for DNS (without any <code>$INCLUDE</code> statements for example).
+        
+        An object will be returned that can be queried using the <code>self</code> link in the <code>links</code> field.</para>
+      
+      
+      <para>The following examples show the Create a zone import 
+        request:<?rax-fo keep-with-next?>
+      </para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create zone import: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-import-zone_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="202">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create zone import: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-import-zone_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &postPutFaults; 
+  </method>
+  
+  <method id="exportZone" name="POST">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Create a zone export">
+      <para role="shortdesc">Exports a zone in BIND9 zonefile format.</para>
+      <para>This call exports a zone in BIND9 zonefile format. To export a 
+        zone in BIND9 zonefile format, a zone export resource must be created. 
+        This is accomplished by initializing an export task.</para>
+      
+      
+      <para>The following examples show the Create a zone export 
+        request:<?rax-fo keep-with-next?>
+      </para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create zone export: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-export-zone_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="202">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create zone export: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-export-zone_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> 
+  </method>
+  
   <!-- record sets -->
   
   <method id="createRecordset" name="POST">
@@ -751,37 +844,53 @@
           <xsdxt:code
             href="../samples-2/dns-create-record-set_request.json"/>
         </wadl:doc>
-        <param name="name" style="plain" type="xs:string"
+        <param name="name" style="plain" type="string"
           required="true" path="$.name">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
               name.</para></wadl:doc>
         </param>
-        <param name="type" style="plain" type="xs:string"
+        <param name="type" style="plain" type="string"
           required="false" path="$.type">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
-            xml:lang="EN"><para>Type of record set.</para></wadl:doc>
+            xml:lang="EN"><para>The type of record set. The type must be specified when creating a record set, but is not allowed when updating one.</para></wadl:doc>
         </param>
-        <param name="ttl" style="plain" type="xs:string"
+        <param name="ttl" style="plain" type="integer"
           required="false" path="$.ttl">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
-            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+            xml:lang="EN"><para>time-to-live numeric value in seconds<phrase security="writeronly">, NULL for SECONDARY</phrase>. The default value is 300 seconds.</para></wadl:doc>
         </param>
-        <param name="description" style="plain" type="xs:string"
+        <param name="description" style="plain" type="string"
           required="false" path="$.description">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
         </param>
-        <param name="records" style="plain" type="xs:object"
+        <param name="records" style="plain" type="object"
           required="true" path="$.records">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Array of record values.</para></wadl:doc>
         </param>
       </representation>
+      
+      <representation mediaType="application/json">
+        <doc title="Create MX record set request: JSON">
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create MX record set request:</para>
+          <xsdxt:code href="../samples-2/dns-create-MX-record-set_request.json"/>
+        </doc>
+      </representation>
+      
+      <representation mediaType="application/json">
+        <doc title="Create CNAME record set request: JSON">
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create CNAME record set request:</para>
+          <xsdxt:code href="../samples-2/dns-create-CNAME-record-set_request.json"/>
+        </doc>
+      </representation>
+      
     </request>
     <response status="202">
       <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
         but the processing has not been completed.</wadl:doc>
+      
       <representation mediaType="application/json">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN" title="Create record set: JSON response">
@@ -789,6 +898,23 @@
             href="../samples-2/dns-create-record-set_response.json"/>
         </wadl:doc>
       </representation>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create MX record set: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-create-MX-record-set_response.json"/>
+        </wadl:doc>
+      </representation>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Create CNAME record set: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-create-CNAME-record-set_response.json"/>
+        </wadl:doc>
+      </representation>
+      
     </response> &dnsFault; &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
@@ -860,28 +986,28 @@
           <xsdxt:code
             href="../samples-2/dns-update-record-set_request.json"/>
         </wadl:doc>
-        <param name="name" style="plain" type="xs:string"
+        <param name="name" style="plain" type="string"
           required="true" path="$.name">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>The name for the zone (immutable). Must be a valid zone
               name.</para></wadl:doc>
         </param>
-        <param name="type" style="plain" type="xs:string"
+        <param name="type" style="plain" type="string"
           required="false" path="$.type">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Type of record set. Cannot be changed on update (immutable).</para></wadl:doc>
         </param>
-        <param name="ttl" style="plain" type="xs:string"
+        <param name="ttl" style="plain" type="integer"
           required="false" path="$.ttl">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
-            xml:lang="EN"><para>time-to-live numeric value in seconds, NULL for SECONDARY.</para></wadl:doc>
+            xml:lang="EN"><para>time-to-live numeric value in seconds<phrase security="writeronly">, NULL for SECONDARY</phrase>. The default value is 300 seconds.</para></wadl:doc>
         </param>
-        <param name="description" style="plain" type="xs:string"
+        <param name="description" style="plain" type="string"
           required="false" path="$.description">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para> UTF-8 text field.</para></wadl:doc>
         </param>
-        <param name="records" style="plain" type="xs:object"
+        <param name="records" style="plain" type="object"
           required="false" path="$.records">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>A list of data records.</para></wadl:doc>

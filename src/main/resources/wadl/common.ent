@@ -60,13 +60,13 @@
       <!--
           Faults on POST/PUT
       -->
+     
      <!ENTITY postPutFaults
-           '
-        <response status="415" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" xmlns:dnsaas="http://docs.rackspacecloud.com/dns/api/v1.0" element="dnsaas:badMediaType"/>
-            <representation mediaType="application/json"/>
+           ' 
+         <response status="415" xmlns="http://wadl.dev.java.net/2009/02">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Unsupported Media Type" xml:lang="EN">The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.</wadl:doc>
         </response>
-           '>
+           '>       
            
        <!ENTITY dnsFault
            ' 

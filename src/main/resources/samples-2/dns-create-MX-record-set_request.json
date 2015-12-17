@@ -1,0 +1,17 @@
+POST /v2/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets HTTP/1.1
+Host: 127.0.0.1:9001
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "mail.example.org.",
+    "description" : "An MX recordset.",
+    "type" : "MX",
+    "ttl" : 3600,
+    "records" : [
+        "10 mail1.example.org.",
+        "20 mail2.example.org.",
+        "30 mail3.example.org.",
+        "40 mail4.example.org."
+    ]
+}
