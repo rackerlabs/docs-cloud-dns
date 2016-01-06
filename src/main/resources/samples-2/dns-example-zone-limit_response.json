@@ -5,7 +5,7 @@ Content-Type: application/json
 Content-Length: 172
 
 {
-  "message" : "Your account is currently over the limit so your request could not be processed.",
-  "code" : 413,
-  "details" : "Limit of 5000 zones has been reached."
+    "code": 413,
+    "type": "over_quota",
+    "request_id": "req-6d896f1e-9686-454e-af6f-412a802f9451"
 }
