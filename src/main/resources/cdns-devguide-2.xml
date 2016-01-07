@@ -787,7 +787,7 @@
                         <title>Example Request URL (contract version
                             in <emphasis role="strong"
                             >bold</emphasis>)</title>
-                        <programlisting>https://dns.api.rackspacecloud.com/<emphasis role="strong">v2.0</emphasis>/zones</programlisting>
+                        <programlisting>https://preview.dns.api.rackspacecloud.com/<emphasis role="strong">v2.0</emphasis>/zones</programlisting>
                     </example>
                     <note>
                         <para>This document pertains to contract
@@ -1471,8 +1471,7 @@
                         role="bold">/v2/1234/zones</emphasis>.</para>
                 <para>The following table specifies the default rate
                     limits for all API operations for all &GET;,
-                    &POST;, &PUT;, and &DELETE; calls for zones and
-                    subdomains:</para>
+                    &POST;, &PUT;, and &DELETE; calls for zones:</para>
                 <table rules="all">
                     <caption>Default Rate Limits</caption>
                     <thead>
@@ -1538,25 +1537,17 @@
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
-                <para>&POST; and &PUT; calls are limited to the
-                    creation or modification of a maximum of 100
-                    entities per call where an entity is defined as a
-                    recordset, zone, or subzone. For example, when
-                    using &POST; <code>/zones</code> to create a new
-                    zone with nine subzones, you could create a
-                    maximum of ninety recordsets across the zone and
-                    subzones. This would total 100 entities: 1 zone +
-                    9 subzones + 90 recordsets. Additional recordsets
-                    and/or subzones could be created for the zone in
-                    subsequent calls.</para>
+                <para>&POST; and &PUT; and &PATCH; calls are subject to absolute
+                    limits. Absoulte limits are quotas on the number of a certain
+                    resource a user is allowed to create.</para>
                 <section xml:id="Domain_Limits">
                     <title>Zone Limits</title>
-                    <para>By default users may have up to 5000 zones
+                    <para>By default users may have up to 500 zones
                         per Cloud account (including sub-zones). When
-                        a user submits a request to create new zones
-                        and/or subzones, the system will only accept
+                        a user submits a request to create new zones,
+                        the system will only accept
                         the request if the total number of existing
-                        plus requested zones and subzones is within
+                        plus requested zones is within
                         the account zone limit. If the total exceeds
                         the account zone limit, the entire request
                         will be rejected and the following message
@@ -1567,7 +1558,7 @@
                         <programlisting language="xml"><xi:include href="samples-2/dns-example-zone-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                     </example>
                     <note>
-                        <para>Any zones/subzones or recordsets that
+                        <para>Any zones or recordsets that
                             are submitted in any request that causes
                             zone limits to be exceeded will not be
                             provisioned and the entire request will be
@@ -1576,21 +1567,21 @@
                     <note>
                         <para>The account zone limit applies to any
                             API request that can be used to create a
-                            zones and/or subzone. An account may have
+                            zone. An account may have
                             a non-default limit if determined
                             necessary by Support.</para>
                     </note>
                     <section xml:id="Record_Limits">
                         <title>Recordset and Record Limits</title>
-                        <para>By default, users may have up to 3000
-                            records total per zone per Cloud account
-                            and up to 120 records per
+                        <para>By default, users may have up to 500
+                            recordsets total per zone per Cloud account
+                            and up to 50 records per
                             recordset.</para>
                         <para>When a user submits a request to create
-                            one or more new recordsets, the system
+                            a new recordset, the system
                             will only accept the request if the total
-                            number of existing plus requested records
-                            and recordsets is within these limits. If
+                            number of existing plus requested record
+                            or recordset is within these limits. If
                             the total number of recordsets and/or
                             recordsets on a specified zone exceeds
                             these limits, the entire request will be
@@ -1602,7 +1593,7 @@
                             <programlisting language="xml"><xi:include href="samples-2/dns-example-recordset-limit_response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
                         </example>
                         <note>
-                            <para>Any zones/subzones or recordsets
+                            <para>Any zones or recordsets
                                 that are submitted in any request that
                                 causes recordset limits to be exceeded
                                 will not be provisioned and the entire
@@ -2042,9 +2033,9 @@ Content-Type: application/json
                     URI of its own. The only current example of this
                     is the <code>records</code> array underneath the
                         <code>recordsets</code> resource. </para>
-                <para>By default, nested collections shall not be
+                <para>By default, nested collections are
                     included in the listing of its parent resource.
-                    For example, List record sets shall not include
+                    For example, Listing recordsets will include
                     the <code>records</code> collection for each of
                     the <code>recordsets</code> returned. For an
                     example, see Section 4.2.2 List Record
@@ -2073,7 +2064,7 @@ Content-Type: application/json
      "id": "a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
      "....": "....",
      "links": {
-       "self": "https://dns.provider.com/v2/examples/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
+       "self": "https://preview.dns.api.rackspacecloud.com/v2/examples/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
      }
    }
  } 
@@ -2267,7 +2258,7 @@ Content-Type: application/json
                         <td colspan="2">
                             <note>
                                 <para>PTR records can only be managed
-                                   using the /rdns URIs.</para>
+                                   by API administrators.</para>
                             </note>
                         </td>
                     </tr>
@@ -2457,9 +2448,9 @@ Content-Type: application/json
                 after Preview.</para>
         </section>
         <section xml:id="DNS_faults">
-            <title>Faults</title>
+            <title>Errors</title>
             <para>When an error occurs, the DNS service returns a
-                fault object containing an HTTP error response code
+                an object containing an HTTP error response code
                 that denotes the type of error. In the body of the
                 response, the system will return additional
                 information about the fault.</para>
@@ -2468,24 +2459,15 @@ Content-Type: application/json
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
-                        <td colspan="2">Fault Type</td>
+                        <td colspan="2">Error Type</td>
                         <td colspan="1">Associated Error Code</td>
                         <td colspan="3">Description</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="2"><code>dnsFault</code></td>
-                        <td colspan="1">500, as well as any of the
-                            following others:</td>
-                        <td colspan="3">Generic catch-all. Should not
-                            be seen as often as the specific faults
-                            below. See the <code>details</code>
-                            element for more specifics.</td>
-                    </tr>
-                    <tr>
                         <td colspan="2"
-                                ><code>serviceUnavailable</code></td>
+                                ><code>Service Unavailable</code></td>
                         <td colspan="1">503</td>
                         <td colspan="3">The request could not be
                             processed because back-end services were
@@ -2503,68 +2485,64 @@ Content-Type: application/json
                             API functionality, contact support.</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><code>badRequest</code></td>
+                        <td colspan="2"><code>bad_request</code></td>
                         <td colspan="1">400</td>
                         <td colspan="3">The request is missing one or
                             more elements, or the values of some
                             elements are invalid. See the
-                                <code>details</code> element or
-                                <code>validationErrors</code> element
-                            for specifics.</td>
+                                <code>errors</code> or <code>type</code>
+                            item for specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"><code>forbidden</code></td>
                         <td colspan="1">403</td>
-                        <td colspan="3">The endpoint is not defined in the service catalog.</td>
+                        <td colspan="3">The endpoint is not defined in the service catalog,
+                            or the user is not permitted to perform the API action
+                            in question.</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><code>itemNotFound</code></td>
+                        <td colspan="2"><code>resource_not_found</code></td>
                         <td colspan="1">404</td>
                         <td colspan="3">The back-end services did not
-                            find anything matching the
-                            Request-URI.</td>
+                            find anything matching the request UUID.</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><code>methodNotAllowed</code></td>
+                        <td colspan="2"><code>method_not_allowed</code></td>
                         <td colspan="1">405</td>
                         <td colspan="3">The method is not allowed for the URL.</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><code>overLimit</code></td>
+                        <td colspan="2"><code>over_quota</code></td>
                         <td colspan="1">413</td>
-                        <td colspan="3">Either the number of entities
-                            in the request is larger than allowed
-                            limits, or the user has exceeded allowable
-                            request rate limits. See the
-                                <code>details</code> element for more
-                            specifics. Contact support if you think
-                            you need higher request rate limits.</td>
+                        <td colspan="3">The user has exceeded allowable
+                            request rate limits or the absolute limits for the
+                            resource. Contact support if you think
+                            you need higher limits.</td>
                     </tr>
                     <tr>
                         <td colspan="2"
-                            ><code>itemAlreadyExists</code></td>
+                            ><code>duplate_resource</code></td>
                         <td colspan="1">409</td>
                         <td colspan="3">The back-end services could
                             not complete the request due to a conflict
                             with the current state of the resource.
                             Possibly, the user is trying to create an
                             entity that already exists. See the
-                                <code>details</code> element for
-                            specifics.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>deleteFault</code></td>
-                        <td colspan="1">500 and nested other fault
-                            codes</td>
-                        <td colspan="3">The back-end services could
-                            not successfully delete some of a number
-                            of entities requested to be deleted. See
-                            the <code>failedItems</code> element for
+                                <code>message</code> element for
                             specifics.</td>
                     </tr>
                     <tr>
                         <td colspan="2"
-                                ><code>internalServerError</code></td>
+                            ><code>tiemout</code></td>
+                        <td colspan="1">504</td>
+                        <td colspan="3">The back-end services
+                            encountered an unexpected condition that
+                            prevented it from fulfilling the request,
+                            in the alloted time.
+                    </tr>
+                    <tr>
+                        <td colspan="2"
+                                ><code>Internal Server Error</code></td>
                         <td colspan="1">500</td>
                         <td colspan="3">The back-end services
                             encountered an unexpected condition that
@@ -2574,145 +2552,46 @@ Content-Type: application/json
                     </tr>
                 </tbody>
             </informaltable>
-            <para>The base of all fault types is
-                <code>dnsFault</code>. From an XML schema perspective,
-                all API faults are extensions of the base fault type
-                    <code>dnsFault</code>. When working with a system
-                such as JAXB that binds XML to actual classes,
-                    <code>dnsFault</code> can be used as a catch-all
-                if there is no interest in distinguishing between
-                individual fault types.</para>
-            <para><code>dnsFault</code> has the structure and elements
-                shown below. All other fault types extend
-                    <code>dnsFault</code>. Currently only fault types
-                    <code>badRequest</code> and
-                    <code>deleteFault</code> actually add additional
-                elements to their structure as compared to the parent
-                    <code>dnsFault</code>. These two fault types are
-                described later.</para>
-            <example>
-                <title>Example Fault Response: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;dnsFault xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="500">
-     &lt;message>Main fault&lt;/message>
-     &lt;details>Error Details&lt;/details>
-&lt;/dnsFault></programlisting>
-            </example>
+            <para>All errors will look similar. A
+                <code>code</code> element will show the HTTP
+                error code for convenience. The
+                <code>type</code> element will show the type of error.
+                The <code>request_id</code> will help API operators debug
+                the request in a support ticket, if necessary.
+                The <code>message</code> field, when present will inform the
+                user of the exact problem the API detected.</para>
             <example>
                 <title>Example Fault Response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
-  "message" : "Main fault",
-  "code" : 500,
-  "details" : "Error Details"
-}</programlisting>
+    "code": 500,
+    "type": "error",
+    "request_id": "req-6d896f1e-9686-454e-af6f-412a802f9451"
+}
+</programlisting>
             </example>
-            <para>The error code (<code>code</code>) is returned in
-                the body of the response for convenience. The
-                    <code>message</code> element returns a
-                human-readable message that is appropriate for display
-                to the end user. The <code>details</code> element is
-                optional and may contain information that is useful
-                for tracking down an error, such as a stack trace. The
-                    <code>details</code> element may or may not be
-                appropriate for display to an end user, depending on
-                the role and experience of the end user.</para>
-            <para>The fault's root element (for example,
-                    <code>dnsFault</code>) may change depending on the
-                type of error. <code>badRequest</code> fault adds a
-                    <code>validationErrors</code> element that
-                contains a list of error messages for invalid
-                requests. The first two <code>badRequest</code>
-                examples show errors when the request structure is
-                wrong:</para>
-            <example>
-                <title>Example badRequest Fault on Request Structure
-                    Errors: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="400">
-     &lt;message>The request could not be processed.&lt;/message>
-     &lt;details> Unexpected close tag &amp;lt;/domains&amp;gt; expected &amp;lt;/domain&amp;gt;.
-     &lt;/details>
-&lt;/badRequest></programlisting>
-            </example>
-            <example>
-                <title>Example badRequest Fault on Request Structure
-                    Errors: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">{
-  "message":"The request could not be processed.",
-  "code":400,
-  "details":"Unexpected close tag &lt;/domains>; expected &lt;/domain>."
-}</programlisting>
-            </example>
-            <para>The next two <code>badRequest</code> examples show
+            <para>The <code>bad_request</code> example shows
                 validation errors:</para>
             <example>
-                <title>badRequest fault on validation errors: XML
-                    response</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;badRequest xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="400">
-     &lt;validationErrors>
-          &lt;messages>Must provide a name for each domain.&lt;/messages>
-          &lt;messages>null is not a valid domain name.&lt;/messages>
-     &lt;/validationErrors>
-&lt;/badRequest></programlisting>
-            </example>
-            <example>
-                <title>badRequest fault on validation errors: JSON
+                <title>bad_request fault on validation errors: JSON
                     response</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
-  "validationErrors":
-  {
-    "messages":
-    [
-      "Must provide a name for each domain.",
-      "null is not a valid domain name."
-    ]
-  },
-  "code":400
-}</programlisting>
-            </example>
-            <para><code>deleteFault</code> adds a
-                    <code>failedItems</code> element that contains
-                details on entities that could not be deleted:</para>
-            <example>
-                <title>Example deleteFault: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-&lt;deleteFault xmlns="http://docs.rackspacecloud.com/dns/api/v2" code="500">
-     &lt;message>One or more items could not be deleted.&lt;/message>
-     &lt;details>See errors list for details.&lt;/details>
-     &lt;failedItems>
-          &lt;fault code="503">
-               &lt;message>The DNS API is currently not available.&lt;/message>
-               &lt;details>Domain ID: 123&lt;/details>
-          &lt;/fault>
-     &lt;/failedItems>
-&lt;/deleteFault></programlisting>
-            </example>
-            <example>
-                <title>Example deleteFault: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">{
-    "failedItems":
-     {
-        "faults":
-         [
-          {
-            "message":"The DNS API is currently not available.",
-            "code":503,
-            "details":"Domain ID: 123"
-          }
-         ]
-     },
-     "message":"One or more items could not be deleted.",
-     "code":500,
-     "details":"See errors list for details."
+    "code": 400,
+    "type": "invalid_object",
+    "errors": {
+        "errors": [
+            {
+                "path": [
+                    "name"
+                ],
+                "message": "u'example.com' is not a 'domainname'",
+                "validator": "format",
+                "validator_value": "domainname"
+            }
+        ]
+    },
+    "request_id": "req-9ebcb6a5-5673-4696-bbfc-61524e986f31"
 }</programlisting>
             </example>
         </section>
