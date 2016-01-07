@@ -1540,7 +1540,7 @@
                 <para>&POST; and &PUT; and &PATCH; calls are subject to absolute
                     limits. Absoulte limits are quotas on the number of a certain
                     resource a user is allowed to create.</para>
-                <section xml:id="Domain_Limits">
+                <section xml:id="Zone_Limits">
                     <title>Zone Limits</title>
                     <para>By default users may have up to 500 zones
                         per Cloud account (including sub-zones). When
@@ -2447,7 +2447,7 @@ Content-Type: application/json
                 type to the previous table when they become available
                 after Preview.</para>
         </section>
-        <section xml:id="DNS_faults">
+        <section xml:id="DNS_errors">
             <title>Errors</title>
             <para>When an error occurs, the DNS service returns a
                 an object containing an HTTP error response code
@@ -2533,12 +2533,12 @@ Content-Type: application/json
                     </tr>
                     <tr>
                         <td colspan="2"
-                            ><code>tiemout</code></td>
+                            ><code>timeout</code></td>
                         <td colspan="1">504</td>
                         <td colspan="3">The back-end services
                             encountered an unexpected condition that
-                            prevented it from fulfilling the request,
-                            in the alloted time.
+                            prevented it from fulfilling the request 
+                            in the alloted time.</td>
                     </tr>
                     <tr>
                         <td colspan="2"
@@ -2558,7 +2558,7 @@ Content-Type: application/json
                 <code>type</code> element will show the type of error.
                 The <code>request_id</code> will help API operators debug
                 the request in a support ticket, if necessary.
-                The <code>message</code> field, when present will inform the
+                The <code>message</code> field, when present, will inform the
                 user of the exact problem the API detected.</para>
             <example>
                 <title>Example Fault Response: JSON</title>
@@ -5784,6 +5784,7 @@ images.www.example.com  A  127.0.0.5</programlisting>
                 
                 <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zones_tasks">
                     <wadl:method href="#importZone"/>
+                    <wadl:method href="#listZoneImports"/>
                 </wadl:resource>
                 
                 <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zones_uuid">

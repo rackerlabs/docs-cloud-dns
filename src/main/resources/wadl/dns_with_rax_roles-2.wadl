@@ -74,6 +74,7 @@
     
     <resource id="zones_tasks" path="/v2/zones/tasks/imports" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
       <method href="#importZone"/>
+      <method href="#listZoneImports"/>
     </resource>
     
     <resource id="zone_id_recordset" path="/v2/{account_id}/zones/{zone_id}/recordsets" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
@@ -746,6 +747,46 @@
         </wadl:doc>
       </representation>
     </response> &postPutFaults; 
+  </method>
+  
+  <method id="listZoneImports" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List Zone Imports">
+      <para role="shortdesc">List all of the zone imports created by this project.</para>
+      <para>This call lists all of the zone imports created by this project. To import a zonefile, set the Content-type to <code>text/dns</code>. 
+        The <emphasis role="bold">zoneextractor.py</emphasis> tool in the <code>contrib</code> folder can generate 
+        zonefiles that are suitable for DNS (without any <code>$INCLUDE</code> statements for example).
+        
+        Objects will be returned that can be queried using the <code>self</code> link in the <code>links</code> field.</para>
+      
+      
+      <para>The following examples show the List zone imports 
+        request:<?rax-fo keep-with-next?>
+      </para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone imports: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-imports_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="200">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone imports: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-imports_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
   </method>
   
   <!-- 
