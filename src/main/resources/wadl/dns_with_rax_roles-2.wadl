@@ -29,18 +29,42 @@
         </wadl:doc>
       </param>
       <method href="#createZone"/>
-      <method href="#listZones" rax:roles="dnsaas:observer observer"/>
+      <method href="#listZones"/>
     </resource>
     
     
     
-    <resource id="zones_uuid" path="/v2/zones/{uuid_id}/tasks/export" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator"> 
+    <resource id="zones_uuid" path="/v2/{account_id}/zones/{uuid_id}/tasks/export" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator"> 
+      <param style="template" type="string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <param style="template" type="string" name="uuid_id">
         <wadl:doc xmlns="http://docbook.org/ns/docbook"
           xml:lang="EN"><para>The uuid of the specified zone.</para>
         </wadl:doc>
       </param>
         <method href="#exportZone"/>
+    </resource>
+    
+    <resource id="zones_tasks2" path="/v2/{account_id}/zones/tasks/exports" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
+      <method href="#listZoneExports"/>
+      <resource id="uuid_id2" path="{uuid_id}">
+        <param name="uuid_id" style="template"
+          type="string" >
+          <doc>The uuid ID for the specified zone export.</doc></param>
+        <method href="#listZoneExport"/>
+        <method href="#deleteZoneExport"/>
+        <resource id="export2" path="export">
+          <method href="#listExportedZone"/>
+        </resource>
+      </resource>
     </resource>
  
     <resource id="zone_id" path="/v2/{account_id}/zones/{zone_id}" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
@@ -72,9 +96,21 @@
       <method href="#abandonZone"/>
     </resource>
     
-    <resource id="zones_tasks" path="/v2/zones/tasks/imports" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+    <resource id="zones_tasks" path="/v2/{account_id}/zones/tasks/imports" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
+      <param style="template" type="string" name="account_id">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The account ID of the owner of the specified account.</para>
+        </wadl:doc>
+      </param>
       <method href="#importZone"/>
       <method href="#listZoneImports"/>
+      <resource id="zone_id3" path="{zone_id}">
+        <param name="uuid_id" style="template"
+          type="string" >
+          <doc>The uuid ID for the specified zone import.</doc></param>
+        <method href="#listZoneImport"/>
+        <method href="#deleteZoneImport"/>
+      </resource>
     </resource>
     
     <resource id="zone_id_recordset" path="/v2/{account_id}/zones/{zone_id}/recordsets" rax:roles="dnsaas:admin dnsaas:service-admin identity:user-admin admin dnsaas:creator">
@@ -751,13 +787,13 @@
   
   <method id="listZoneImports" name="GET">
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-      title="List Zone Imports">
+      title="List zone imports">
       <para role="shortdesc">List all of the zone imports created by this project.</para>
       <para>This call lists all of the zone imports created by this project. To import a zonefile, set the Content-type to <code>text/dns</code>. 
         The <emphasis role="bold">zoneextractor.py</emphasis> tool in the <code>contrib</code> folder can generate 
         zonefiles that are suitable for DNS (without any <code>$INCLUDE</code> statements for example).
         
-        Objects will be returned that can be queried using the <code>self</code> link in the <code>links</code> field.</para>
+        Objects will be returned that can be queried using the links in the <code>links</code> field.</para>
       
       
       <para>The following examples show the List zone imports 
@@ -789,6 +825,77 @@
     </response> &unauthorized; &itemNotFound;  
   </method>
   
+  <method id="listZoneImport" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List a zone import">
+      <para role="shortdesc">Lists the status of a zone import.</para>
+      <para>This call lists the status of a zone import by querying the uuid ID that was returned when the request was created.
+        
+        Objects will be returned that can be queried using the links in the <code>links</code> field.</para>
+      
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone import: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-import_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="200">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone import: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-import_response.json"/>
+          <para>Notice the status has been updated, the message field shows that the zone was successfully imported, and there 
+            now an <code>href</code> in the <code>links</code> field that points to the new zone.</para>
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
+  </method>
+  
+  <method id="deleteZoneImport" name="DELETE">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Delete a zone import">
+      <para role="shortdesc">Deletes a zone import with the specified zone import uuid ID.</para>
+      <para>This call deletes a zone import with the specified zone import uuid ID. 
+        It does not affect the zone that was imported. It simply removes the record of the import.
+      </para>
+      
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete zone import: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-delete-zone-import_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="204">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="No Content" xml:lang="EN">The server has fulfilled the request 
+        but does not need to return an entity-body, and might want to return updated metainformation. </wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete zone import: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-delete-zone-import_response.json"/>
+          
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
+  </method>
+  
   <!-- 
     Note to Mike:
     With the import and exports, there are more than just the "Create a import/export" the full list is:
@@ -811,8 +918,8 @@
   <method id="exportZone" name="POST">
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
       title="Create a zone export">
-      <para role="shortdesc">Exports a zone in BIND9 zonefile format.</para>
-      <para>This call exports a zone in BIND9 zonefile format. To export a 
+      <para role="shortdesc">Exports a zone in BIND9 zone file format.</para>
+      <para>This call exports a zone in BIND9 zone file format. To export a 
         zone in BIND9 zonefile format, a zone export resource must be created. 
         This is accomplished by initializing an export task.</para>
       
@@ -844,6 +951,146 @@
         </wadl:doc>
       </representation>
     </response> 
+  </method>
+  
+  <method id="listZoneExports" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List zone exports">
+      <para role="shortdesc">List all of the zone exports created by this project.</para>
+      <para>This call lists all of the zone exports created by this project. 
+        Objects will be returned that can be queried using the links in the <code>links</code> field.</para>
+      
+      
+      <para>The following examples show the List zone exports 
+        request:<?rax-fo keep-with-next?>
+      </para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone exports: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-exports_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="200">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone exports: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-exports_response.json"/>
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
+  </method>
+  
+  <method id="listZoneExport" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List a zone export record">
+      <para role="shortdesc">List the zone export record for the specified zone export uuid ID.</para>
+      <para>This call lists the zone export record for the specified zone export uuid ID. 
+        Objects will be returned that can be queried using the links in the <code>links</code> field.</para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone export record: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-export-record_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="200">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List zone export record: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-zone-export-record_response.json"/>
+          <para>Notice the status has been updated and there is now an <code>export</code> in the <code>links</code> field that 
+            points to a link where the export (zonefile) can be accessed.</para>
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
+  </method>
+  
+  <method id="deleteZoneExport" name="DELETE">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="Delete a zone export">
+      <para role="shortdesc">Deletes a zone export for the specified zone export uuid ID.</para>
+      <para>This call deletes a zone export for the specified zone export uuid ID. 
+        This does not affect the zone that was exported. It simply removes the record of the export. 
+        If the link to view the export was pointing to a Designate API endpoint, the endpoint will no longer be available.</para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete zone export: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-delete-zone-export_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="204">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="No Content" xml:lang="EN">The server has fulfilled the request 
+        but does not need to return an entity-body, and might want to return updated metainformation.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="Delete zone export: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-delete-zone-export_response.json"/>
+          
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
+  </method>
+  
+  <method id="listExportedZone" name="GET">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+      title="List exported zone">
+      <para role="shortdesc">Lists an exported zone for the specified zone export uuid ID.</para>
+      <para>This call lists an exported zone for the specified zone export uuid ID. 
+        The link that is generated in the export field in an export resource can be 
+        followed to a Designate resource, or an external resource. If the link is to 
+        a Designate endpoint, the zonefile can be retrieved directly through the API by following that link.</para>
+      
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List exported zone: JSON request">
+          <xsdxt:code
+            href="../samples-2/dns-list-exported-zone_request.json"/>
+        </wadl:doc>
+      </representation>
+    </request>
+    <response status="200">
+      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing, 
+        but the processing has not been completed.</wadl:doc>
+      
+      <representation mediaType="application/json">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN" title="List exported zone: JSON response">
+          <xsdxt:code
+            href="../samples-2/dns-list-exported-zone_response.json"/>
+          <para>Notice how the SOA and NS records are replaced with the Designate server(s).</para>
+        </wadl:doc>
+      </representation>
+    </response> &unauthorized; &itemNotFound;  
   </method>
   
   <!-- record sets -->

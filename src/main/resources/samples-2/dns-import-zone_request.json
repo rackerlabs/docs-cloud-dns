@@ -1,4 +1,4 @@
-POST /v2/zones/tasks/imports HTTP/1.1
+POST /v2/1234/zones/tasks/imports HTTP/1.1
 Host: 127.0.0.1:9001
 Content-type: text/dns
 

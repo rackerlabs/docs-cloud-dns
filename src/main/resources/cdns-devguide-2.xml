@@ -5787,10 +5787,29 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <wadl:method href="#listZoneImports"/>
                 </wadl:resource>
                 
+                <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zone_id3">
+                    <wadl:method href="#listZoneImport"/>
+                    <wadl:method href="#deleteZoneImport"/>
+                </wadl:resource>
+                
                 <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zones_uuid">
                     <wadl:method href="#exportZone"/>
                 </wadl:resource>
-              </wadl:resources>
+                
+                <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zones_tasks2">
+                    <wadl:method href="#listZoneExports"/>
+                </wadl:resource>
+                
+                <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#uuid_id2">
+                    <wadl:method href="#listZoneExport"/>
+                    <wadl:method href="#deleteZoneExport"/>
+                </wadl:resource>
+                
+                <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#export2">
+                    <wadl:method href="#listExportedZone"/>
+                </wadl:resource>
+            
+            </wadl:resources>
         </section> 
         
          <section xml:id="recordsets">
