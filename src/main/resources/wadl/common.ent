@@ -71,7 +71,7 @@
        <!ENTITY dnsFault
            ' 
          <response status="400 500" xmlns="http://wadl.dev.java.net/2009/02">
-            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="dnsFault" xml:lang="EN">The DNS service has experienced a fault.</wadl:doc>
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="dnsFault" xml:lang="EN">The DNS service has experienced an error.</wadl:doc>
         </response>
            '> 
            

@@ -789,9 +789,7 @@
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
       title="List zone imports">
       <para role="shortdesc">List all of the zone imports created by this project.</para>
-      <para>This call lists all of the zone imports created by this project. To import a zonefile, set the Content-type to <code>text/dns</code>. 
-        The <emphasis role="bold">zoneextractor.py</emphasis> tool in the <code>contrib</code> folder can generate 
-        zonefiles that are suitable for DNS (without any <code>$INCLUDE</code> statements for example).
+      <para>This call lists all of the zone imports created by this project.
         
         Objects will be returned that can be queried using the links in the <code>links</code> field.</para>
       
@@ -1030,7 +1028,7 @@
       <para role="shortdesc">Deletes a zone export for the specified zone export uuid ID.</para>
       <para>This call deletes a zone export for the specified zone export uuid ID. 
         This does not affect the zone that was exported. It simply removes the record of the export. 
-        If the link to view the export was pointing to a Designate API endpoint, the endpoint will no longer be available.</para>
+        If the link to view the export was pointing to a DNS API endpoint, the endpoint will no longer be available.</para>
       
     </wadl:doc>
     <request>
@@ -1064,8 +1062,8 @@
       <para role="shortdesc">Lists an exported zone for the specified zone export uuid ID.</para>
       <para>This call lists an exported zone for the specified zone export uuid ID. 
         The link that is generated in the export field in an export resource can be 
-        followed to a Designate resource, or an external resource. If the link is to 
-        a Designate endpoint, the zonefile can be retrieved directly through the API by following that link.</para>
+        followed to a DNS resource, or an external resource. If the link is to 
+        a DNS endpoint, the zonefile can be retrieved directly through the API by following that link.</para>
       
     </wadl:doc>
     <request>
@@ -1087,7 +1085,7 @@
           xml:lang="EN" title="List exported zone: JSON response">
           <xsdxt:code
             href="../samples-2/dns-list-exported-zone_response.json"/>
-          <para>Notice how the SOA and NS records are replaced with the Designate server(s).</para>
+          <para>Notice how the SOA and NS records are replaced with the DNS server(s).</para>
         </wadl:doc>
       </representation>
     </response> &unauthorized; &itemNotFound;  

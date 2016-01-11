@@ -45,11 +45,12 @@
             <year>2013</year>
             <year>2014</year>
             <year>2015</year>
+            <year>2016</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v2</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
-        <pubdate>2015-12-17</pubdate>
+        <pubdate>2016-01-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -2449,12 +2450,12 @@ Content-Type: application/json
         </section>
         <section xml:id="DNS_errors">
             <title>Errors</title>
-            <para>When an error occurs, the DNS service returns a
-                an object containing an HTTP error response code
-                that denotes the type of error. In the body of the
+            <para>When an error occurs, the DNS service returns a an
+                object containing an HTTP error response code that
+                denotes the type of error. In the body of the
                 response, the system will return additional
-                information about the fault.</para>
-            <para>The following table lists possible fault types with
+                information about the error.</para>
+            <para>The following table lists possible error types with
                 their associated error codes and descriptions.</para>
             <informaltable rules="all">
                 <thead>
@@ -2561,7 +2562,7 @@ Content-Type: application/json
                 The <code>message</code> field, when present, will inform the
                 user of the exact problem the API detected.</para>
             <example>
-                <title>Example Fault Response: JSON</title>
+                <title>Example Error Response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
     "code": 500,
@@ -2573,7 +2574,7 @@ Content-Type: application/json
             <para>The <code>bad_request</code> example shows
                 validation errors:</para>
             <example>
-                <title>bad_request fault on validation errors: JSON
+                <title>bad_request error on validation errors: JSON
                     response</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="xml">{
