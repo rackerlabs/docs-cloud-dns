@@ -699,52 +699,6 @@
       </representation>
     </response> &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
-  
-  <method id="abandonZone" name="POST">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-      title="Abandon zone">
-      <para role="shortdesc">Abandons a
-        zone.</para>
-      
-      <para>This operation removes the zone from DNS storage, removing zone data from the database, but not from the name servers.</para>
-        <note>   
-          <para>To remove zone data from the database <emphasis>and</emphasis> the name servers, use Delete zone instead. </para>
-        </note>
-        <para>
-        This is intended to be used in the cases where DNS storage is incorrect for whatever reason. 
-        By default this is restricted by policy (abandon_domain) to admins.</para>
-      
-      <note>
-        <para>This call returns an asynchronous response. This call returns an asynchronous
-          response. Refer to <link security="writeronly"
-            xlink:href="https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses">Synchronous and Asynchronous Responses</link> 
-          the section "Synchronous and Asynchronous Responses" in the Chapter "General API Information" for more details and examples of the way that asynchronous responses work.</para>
-      </note>
-      
-    </wadl:doc>
-    <request>
-      <representation mediaType="application/json">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook"
-          xml:lang="EN" title="Abandon zone: JSON request">
-          <xsdxt:code
-            href="../samples-2/dns-abandon-zone_request.json"/>
-        </wadl:doc>
-        
-      </representation>
-    </request> 
-    <response status="204">
-      <wadl:doc xmlns="http://docbook.org/ns/docbook" title="No Content" xml:lang="EN">The server has fulfilled the request but does not need 
-        to return an entity-body, and might want to return updated metainformation.</wadl:doc>
-      <representation mediaType="application/json">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook"
-          xml:lang="EN" title="Abandon zone: JSON response">
-          <xsdxt:code
-            href="../samples-2/dns-abandon-zone_response.json"/>
-        </wadl:doc>
-      </representation>
-    </response> &itemAlreadyExists; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
-  </method>
-  
   <method id="importZone" name="POST">
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
       title="Create a zone import">
