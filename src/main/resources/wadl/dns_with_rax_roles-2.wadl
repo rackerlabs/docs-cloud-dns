@@ -266,20 +266,15 @@
             </listitem>
             
             <listitem>
-              <para>When a zone or subdomain is created, and no Time To Live (TTL) is specified, 
+              <para>When a zone is created, and no Time To Live (TTL) is specified,
                 the SOA minTTL (3600 seconds) is used as the default. When a record is added without 
                 a specified TTL, the TTL will show as empty<phrase security="reviewer">(not sure this 
-                is the expected behavior, refer to DNS-874)</phrase>. When the domain and/or record 
+                is the expected behavior, refer to DNS-874)</phrase>. When the zone and/or record
                 TTL is supplied by the user, either via a create or update call, the TTL values must 
                 be 300 seconds or more. </para>
               <para security="reviewer">Reviewer: please check status of DNS-874 and advise if sentence 
                 in previous paragraph needs revision after Preview. </para>
               
-            </listitem>
-            <listitem>
-              <para>Subdomains are managed in separate zone
-                files in the DNS system and will add some
-                overhead to domain management.</para>
             </listitem>
           </itemizedlist>
         </note>
@@ -321,7 +316,7 @@
           required="true" path="$.email">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Email address to use for
-              contacting the domain
+              contacting the zone
               administrator.</para></wadl:doc>
         </param>
         <param name="ttl" style="plain" type="integer"
@@ -359,7 +354,7 @@
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
       title="List zones">
       <para role="shortdesc">Lists all zones. </para>
-      <para>This operation provides a list of detailed information for all zones. A zone corresponds to a Cloud DNS domain.
+      <para>This operation provides a list of detailed information for all zones.
       </para>
       
       <para>A <code>self</code> link is included for each zone. These links point to each individual zone.</para>
@@ -499,7 +494,7 @@
                />
             </wadl:doc>
          </representation> -->
-    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
+    </response>  &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="updateZone" name="PATCH">
@@ -574,7 +569,7 @@
           required="true" path="$.email">
           <wadl:doc xmlns="http://docbook.org/ns/docbook"
             xml:lang="EN"><para>Email address to use for
-              contacting the domain
+              contacting the zone
               administrator.</para></wadl:doc>
         </param>
         <param name="ttl" style="plain" type="integer"
@@ -699,6 +694,7 @@
       </representation>
     </response> &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
+
   <method id="importZone" name="POST">
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
       title="Create a zone import">
@@ -1056,7 +1052,7 @@
       <para>This operation creates a record set with the
         configuration defined by the request.</para>
       <para>A record set groups together a list of related records. It is the essential content 
-        of your zone file and is used to define the various domain to server routes for your application. 
+        of your zone file and is used to define the various domain name to server routes for your application.
         Record sets are also referred to as <emphasis>Resource Record Sets</emphasis> or <emphasis>RRSets</emphasis>.</para>
       <note>
         <para>This operation returns an asynchronous
@@ -1212,7 +1208,7 @@
             href="../samples-2/dns-list-record-sets_response.json"/>
         </wadl:doc>
       </representation>
-    </response>  &dnsFault; &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
+    </response>  &serviceUnavailable; &unauthorized; &badRequest; &itemNotFound; &overLimit; &v2commonFaults;
   </method>
   
   <method id="updateRecordset" name="PUT">
