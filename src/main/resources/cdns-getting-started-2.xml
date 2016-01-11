@@ -1119,11 +1119,9 @@ Date: Thu, 12 Apr 2012 18:45:13 GMT
         </chapter>
     <chapter xml:id="Create_Zone">
         <title>Create a zone</title>
-        <para> A zone corresponds to a classic DNS domain.</para>
         <para>The Create zone API call provisions one or more new DNS
             zones, based on the configuration defined in the request
-            object. A <emphasis>zone</emphasis> corresponds to a Cloud
-            DNS domain. To create a zone, you need to post to the
+            object. To create a zone, you need to post to the
                 <emphasis role="bold">/zones</emphasis> endpoint. If
             the corresponding request cannot be fulfilled due to
             insufficient or invalid data, an <code>HTTP</code>
@@ -1400,7 +1398,7 @@ https://preview.dns.api.rackspacecloud.com/v2/$account/zones/<emphasis role="bol
                     <listitem>
                         <para>
                             <emphasis role="bold">zone_id</emphasis> —
-                            as returned in your create domain response
+                            as returned in your create zone response
                             (must be replaced in the request
                             URL)</para>
                     </listitem>
@@ -1459,7 +1457,7 @@ Content-Type: application/json
             recordset.  An 'A' recordset is used to map a hostname to
             an IP address.</para>
         <para>In this section, you will create a recordset for your
-            new domain as follows:</para>
+            new zone as follows:</para>
         <itemizedlist>
             <listitem>
                 <para>One 'A' recordset to map the IPV4 address of

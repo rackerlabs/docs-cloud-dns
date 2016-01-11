@@ -233,29 +233,29 @@
             </note>
         </section>
         <section xml:id="Domain-d1e588">
-            <title>Domain / Zone</title>
-            <para>A domain, also known as a zone, is an
+            <title>Zone</title>
+            <para>A zone is an
                 entity/container of all DNS-related information
                 containing one or more records.</para>
         </section>
-        <section xml:id="subdomain">
-            <title>Subdomain</title>
-            <para>Also known as second level or child domains, a
-                subdomain is any domain that is part of a larger
-                domain. Subdomains allow you to divide and delegate a
-                domain, or parent. Subdomains cannot be registered and
-                are controlled by the parent domain.</para>
+        <section xml:id="subzone">
+            <title>Subzone</title>
+            <para>Also known as second level or child zones, a
+                subzone is any zone that is part of a larger
+                zone. Subzones allow you to divide and delegate a
+                zone, or parent. Subzones cannot be registered and
+                are controlled by the parent zone.</para>
         </section>
         <section xml:id="Record-d1e607">
             <title>Record</title>
-            <para>A DNS record belongs to a particular domain and is
-                used to specify information about the domain. There
+            <para>A DNS record belongs to a particular zone and is
+                used to specify information about the zone. There
                 are several types of DNS records. Each record type
                 contains particular information used to describe that
                 record's purpose. Examples include mail exchange (MX)
                 records, which specify the mail server for a
-                particular domain, and name server (NS) records, which
-                specify the authoritative name servers for a domain.
+                particular internet domain, and name server (NS) records,
+                which specify the authoritative name servers for a zone.
             </para>
         </section>
         <section xml:id="RecordSet-d1e508">
@@ -267,20 +267,17 @@
                     <emphasis>RRSets</emphasis>. </para>
         </section>
         <section xml:id="Domain_Owner-d1e616">
-            <title>Domain Owner</title>
+            <title>Zone Owner</title>
             <para>Within Rackspace Managed DNS, the account which
-                creates the domain is the domain owner.</para>
+                creates the zone is the zone owner.</para>
             <note>
-                <para>Domain registration is currently outside the
+                <para>Internet
+                    Domain name registration is currently outside the
                     scope of the Rackspace Managed DNS API. Any
-                    references to ownership and management of domain
+                    references to ownership and management of zone
                     information is only relevant within the context of
                     the Rackspace Managed DNS system.</para>
             </note>
-        </section>
-        <section xml:id="Zone-d1e254">
-            <title>Zone</title>
-            <para>A zone corresponds to a Cloud DNS domain.</para>
         </section>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
@@ -2094,7 +2091,7 @@ Content-Type: application/json
                 <tbody>
                     <tr>
                         <td>A</td>
-                        <td>Maps an IPV4 address to a domain</td>
+                        <td>Maps an IPV4 address to a zone</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -2116,7 +2113,7 @@ Content-Type: application/json
                     </tr>
                     <tr>
                         <td>AAAA</td>
-                        <td>Maps an IPV6 address to a domain</td>
+                        <td>Maps an IPV6 address to a zone</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -2138,7 +2135,7 @@ Content-Type: application/json
                     </tr>
                     <tr>
                         <td>CNAME</td>
-                        <td>Creates an alias for a domain</td>
+                        <td>Creates an alias for a zone</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -2163,12 +2160,12 @@ Content-Type: application/json
                             <note>
                                 <para>A CNAME record label (name) can
                                    have underscores anywhere in any
-                                   subdomain labels, but not in the
-                                   main domain name of the domain to
+                                   subzone labels, but not in the
+                                   main zone name of the zone to
                                    which the record belongs. For
-                                   example, for the domain
+                                   example, for the zone
                                    example.com, a CNAME record
-                                   belonging to that domain can have
+                                   belonging to that zone can have
                                    the label
                                    <code>_ab_b_.cd_e.example.com</code></para>
                             </note>
@@ -2176,7 +2173,7 @@ Content-Type: application/json
                     </tr>
                     <tr>
                         <td>MX</td>
-                        <td>Designates a domain's mail server</td>
+                        <td>Designates a zone's mail server</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -2209,7 +2206,7 @@ Content-Type: application/json
                     </tr>
                     <tr>
                         <td>NS</td>
-                        <td>Designates a domain's authoritative name
+                        <td>Designates a zone's authoritative name
                             server</td>
                     </tr>
                     <tr>
@@ -2266,7 +2263,7 @@ Content-Type: application/json
                     <tr>
                         <td>SRV</td>
                         <td>General service locator record for a
-                            domain</td>
+                            zone</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -2303,7 +2300,7 @@ Content-Type: application/json
                                    in the example above.). The
                                    <code>name</code> attribute should
                                    contain the service name, protocol,
-                                   and domain name (for example:
+                                   and zone name (for example:
                                    <code>_sip.tcp.example.org</code>.).
                                    </para>
                                    </listitem>
@@ -2406,7 +2403,7 @@ Content-Type: application/json
                     </tr>
                     <tr>
                         <td>TXT</td>
-                        <td>Arbitrary text for a domain record</td>
+                        <td>Arbitrary text</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -2613,9 +2610,9 @@ Content-Type: application/json
                 take 2-3 minutes. If a new zone is added or an
                 existing zone is deleted, this may take up to a few
                 minutes to propagate to our Rackspace name servers.
-                When changing name servers for a domain, complete
-                propagation will take about 2 days for most domains;
-                this is enforced by the registries.</para>
+                When changing name servers for an internet domain name,
+                complete propagation will take about 2 days for most
+                domains; this is enforced by the registrars.</para>
         </section>
         <section xml:id="role_based_access_control">
             <title>Role Based Access Control (RBAC)</title>
@@ -5779,10 +5776,6 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     <wadl:method href="#deleteZone"/>
                 </wadl:resource>
                 
-                <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zone_id_tasks">
-                    <wadl:method href="#abandonZone"/>
-                </wadl:resource>
-                
                 <wadl:resource href="wadl/dns_with_rax_roles-2.wadl#zones_tasks">
                     <wadl:method href="#importZone"/>
                     <wadl:method href="#listZoneImports"/>
@@ -5855,17 +5848,6 @@ images.www.example.com  A  127.0.0.5</programlisting>
                 </wadl:resource>
                 
                 -->
-            
-        
-        <section xml:id="subdomains" security="writeronly">
-            <title>Subdomains</title>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource href="wadl/dns.wadl#subdomains">
-                    <wadl:method href="#listSubdomains"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
         <section xml:id="records" security="writeronly">
             <title>Records</title>
             <wadl:resources
@@ -5941,49 +5923,50 @@ images.www.example.com  A  127.0.0.5</programlisting>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Domain-d1e016">
-            <glossterm>domain</glossterm>
+            <glossterm>zone</glossterm>
             <glossdef>
-                <para>A domain is an entity/container of all
+                <para>A zone is an entity/container of all
                     DNS-related information containing one or more
-                    records.</para>
+                    records. Zones correspond to an internet domain
+                    name.</para>
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>subdomain</glossterm>
+            <glossterm>subzone</glossterm>
             <glossdef>
-                <para>Subdomains are domains within a parent domain,
-                    and subdomains cannot be registered. Subdomains
-                    allow you to delegate domains. Subdomains can
-                    themselves have subdomains, so third-level,
+                <para>Subzones are zones within a parent zone,
+                    and subzones cannot be registered. Subzones
+                    allow you to delegate zones. Subzones can
+                    themselves have subzones, so third-level,
                     fourth-level, fifth-level, and deeper levels of
                     nesting are possible.</para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Domain-Owner-d1e020">
-            <glossterm>domain owner</glossterm>
+            <glossterm>zone owner</glossterm>
             <glossdef>
                 <para>Within Rackspace DNS, the account which creates
-                    the domain is the domain owner.</para>
-                <para><emphasis role="bold">Note:</emphasis> Domain
-                    registration is currently outside the scope of the
-                    Rackspace DNS API. Any references to ownership and
-                    management of domain information is only relevant
-                    within the context of the Rackspace DNS
+                    the zone is the zone owner.</para>
+                <para><emphasis role="bold">Note:</emphasis> Internet
+                    Domain name registration is currently outside the
+                    scope of the Rackspace DNS API. Any references to
+                    ownership and management of zone information is
+                    only relevant within the context of the Rackspace DNS
                     system.</para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Record-d1e019">
             <glossterm>record</glossterm>
             <glossdef>
-                <para>A DNS record belongs to a particular domain and
-                    is used to specify information about the domain.
+                <para>A DNS record belongs to a particular zone and
+                    is used to specify information about the zone.
                     There are several types of DNS records. Each
                     record type contains particular information used
                     to describe that record's purpose. Examples
                     include mail exchange (MX) records, which specify
-                    the mail server for a particular domain, and name
-                    server (NS) records, which specify the
-                    authoritative name servers for a domain.</para>
+                    the mail server for a particular internet domain name,
+                    and name server (NS) records, which specify the
+                    authoritative name servers for a zone.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -5994,13 +5977,6 @@ images.www.example.com  A  127.0.0.5</programlisting>
                     content of your zone file. Record sets are also
                     referred to as Resource Record Sets or
                     RRSets.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm>zone</glossterm>
-            <glossdef>
-                <para>A zone corresponds to a Cloud DNS domain. See
-                        <emphasis>domain</emphasis>.</para>
             </glossdef>
         </glossentry>
     </glossary>

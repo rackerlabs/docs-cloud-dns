@@ -36,5 +36,8 @@ Content-Type: application/json
     ],
     "links": {
         "self": "http://127.0.0.1:9001/v2/zones/tasks/exports"
+    },
+    "metadata": {
+        "total_count": 2
     }
 }
