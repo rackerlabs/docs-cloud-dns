@@ -50,11 +50,12 @@
             <year>2013</year>
             <year>2014</year>
             <year>2015</year>
+            <year>2016</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v2</releaseinfo>
         <productname>Rackspace Managed DNS</productname>
-        <pubdate>2015-11-12</pubdate>
+        <pubdate>2016-01-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -83,10 +84,11 @@
         <para>This guide provides step-by-step instructions for how to
             use cURL to call the necessary Rackspace Managed DNS API
             operations to set up Rackspace Managed DNS for
-                <trademark>Cloud Servers</trademark>. Additional
-            details about Rackspace Managed DNS can be found in the
-                <citetitle>Rackspace Managed DNS Developer
-                Guide</citetitle> at <link
+                <trademark>Cloud Servers</trademark>. It also provides
+            instructions if you prefer to use the CLI (Command Line
+            Interface). Additional details about Rackspace Managed DNS
+            can be found in the <citetitle>Rackspace Managed DNS
+                Developer Guide</citetitle> at <link
                 xlink:href="https://developer.rackspace.com/docs/"
                 >http://docs-internal.rackspace.com</link> and at
                 <link
@@ -429,10 +431,6 @@ $ sudo pip install -U python-designateclient </programlisting>
                 installed?</emphasis>, run the following
             command:<programlisting>$ sudo pip install -U distribute</programlisting>
         </para>
-        <para security="reviewer">Reviewer: it looks as though the
-            Exception listed above is incomplete: "Versioning for this
-            project requires either an sdist tarball, or ...". Can you
-            please complete the sentence for me?</para>
         <para>Skip to the section "Create a Zone".</para>
     </chapter>
     <chapter xml:id="Sending_API_Requests">
@@ -604,12 +602,8 @@ $ sudo pip install -U python-designateclient </programlisting>
                 terminal window</title>
             <para>To run the cURL request examples shown in this guide
                 on Linux or Mac systems, select the desired example
-                from the HTML version of this guide (visit <link
-                    xlink:href="http://docs-internal.rackspace.com/"
-                    >http://docs-internal.rackspace.com/</link>) by
-                clicking the Select Text icon to the right of the
-                example and then select Edit-&gt;Copy. Then paste it
-                into an ASCII editor (for example <emphasis
+                from this guide and then select Edit-&gt;Copy. Then
+                paste it into an ASCII editor (for example <emphasis
                     role="bold">vi</emphasis> or <emphasis role="bold"
                     >TextEdit</emphasis>). Next modify the example
                 with your required information (such as the
@@ -1731,7 +1725,7 @@ Content-Type: application/json
                 >Knowledge Center</link>.</para>
         <para>During Preview, please send your feedback and bug
             reports to:
-                <email>ManagedDNS_Preview@rackspace.com</email>.</para>
+            <email>DNS_EA@rackspace.com</email>.</para>
         <para security="writeronly">The official support channels (phone, chat, email,
             forums, and knowledge base articles) for Managed DNS are
             available through the Rackspace Cloud website at <link
