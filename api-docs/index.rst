@@ -35,3 +35,4 @@ in the Rackspace Knowledge Center.
    api-reference
    api-operations/index
    release-notes
+   copyright
