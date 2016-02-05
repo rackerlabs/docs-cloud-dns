@@ -17,10 +17,10 @@ Use one of the following service access/endpoint to access the Rackspace Cloud D
     service access endpoint for your account to use for accessing DNS. Use
     the service type (rax:dns) to locate the correct endpoint in the
     service catalog. For an example of the service catalog, see
-    :ref:`authentication response examples <authentication-response-examples>`.
+    :ref:`authentication response examples <review-auth-resp>`.
 
 Replace the sample account ID number, ``1234``, with your Rackspace Cloud account number.
 
 You can find the account number after the final '/' in the
 ``publicURL`` field found in the Service catalog returned in the authentication response. For an
-example of the service catalog, see the :ref:`authentication response example <authentication-json-response>`.
+example of the service catalog, see the :ref:`authentication response example <review-auth-resp>`.

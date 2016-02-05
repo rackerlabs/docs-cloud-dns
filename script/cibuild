@@ -12,5 +12,5 @@ else
   echo "Not submitting ${TRAVIS_BRANCH} anywhere."
 fi
 
-cd api-docs
+cd api-docs/v1
 deconst-preparer-sphinx
