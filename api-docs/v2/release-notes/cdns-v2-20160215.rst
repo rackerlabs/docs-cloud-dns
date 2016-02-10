@@ -1,0 +1,18 @@
+v2 EA release, February 10, 2016 
+-----------------------------------------------------
+
+What's new
+~~~~~~~~~~
+This version contains the EA release for |product name|. 
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
