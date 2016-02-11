@@ -47,7 +47,7 @@ The response is similar to the following:
 
     Please disregard the following warning from keystone:
 
-    .. code::  
+    .. parsed-literal::  
 
        Failed to contact the endpoint at  \ |apiserviceendpoint|\ 938611 
        for discovery. Fallback to  using that endpoint as the base url. 

@@ -1,11 +1,11 @@
- .. code-block:: json
+ .. parsed-literal::
 
       {
           "name": "managedDNS",
           "endpoints": [
               {
                   "tenantId": "123456",
-                  "publicURL": "https://global.dns.api.rackspacecloud.com/v2/123456"
+                  "publicURL": "\ |apiserviceendpoint|\ 123456"
               }
           ],
           "type": "dns"
