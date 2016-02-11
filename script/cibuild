@@ -14,3 +14,6 @@ fi
 
 cd api-docs/v1
 deconst-preparer-sphinx
+
+cd api-docs/v2
+deconst-preparer-sphinx
