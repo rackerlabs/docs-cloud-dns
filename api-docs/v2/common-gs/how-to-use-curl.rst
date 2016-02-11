@@ -17,6 +17,13 @@ of this guide directly to the command line or a script.
 The following example shows a cURL command for sending an authentication request to
 the Rackspace Cloud Identity service.
 
+<<<<<<< HEAD
+**cURL command example: XML request**
+
+.. include:: ../common-gs/samples/auth-req-curl-xml.rst
+
+=======
+>>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
 **cURL command example: JSON request**
 
 .. include:: ../common-gs/samples/auth-req-curl.rst

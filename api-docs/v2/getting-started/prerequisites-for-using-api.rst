@@ -16,8 +16,12 @@ complete any necessary configuration work.
   command line tool.
 
 If you don't have an account, `sign up`_ for one.
+<<<<<<< HEAD
+You can find your account number and API key on the Account Settings page in the Cloud Control Panel.
+=======
 You can find your account number and API key on the Account Settings page in the Cloud 
 Control Panel.
+>>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
 
 .. include:: ../common-gs/get-credentials.rst
 
