@@ -1,23 +1,5 @@
 .. _overview:
 
-<<<<<<< HEAD
-About the Rackspace Cloud DNS API
------------------------------------------
-
-Rackspace Cloud *DNS* is a Domain Name System (DNS) available to
-Rackspace Cloud customers. Interactions with Rackspace Cloud DNS occur
-programmatically via the Rackspace Cloud DNS API as described in this
-Cloud DNS Developer Guide.
-
-.. note::
-
-   See :ref:`DNS propagation <cdns-dg-propagation>` for information about DNS propagation.
-
-The following figure shows an overview of Cloud DNS Infrastructure:
-
-.. figure:: /_images/Cloud_DNS_Infographic-1.png
-
-=======
 About the Rackspace Managed DNS API
 -----------------------------------------
 
@@ -43,14 +25,8 @@ The following figure shows an overview of the |product name| Infrastructure:
 .. figure:: /_images/Cloud_DNS_Infographic-1.png
 
 Issues and bug reports can be directed to: ``<DNS_EA@rackspace.com>``.
->>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
 
 .. toctree:: :hidden:
    :maxdepth: 3
 
-<<<<<<< HEAD
    additional-resources
-   doc-change-history
-=======
-   additional-resources
->>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
