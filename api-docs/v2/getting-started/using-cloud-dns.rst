@@ -1,9 +1,9 @@
 .. _using-cloud-dns:
 
-Create and manage DNS zones
----------------------------
+Create and manage DNS zones (domains)
+-------------------------------------
 
-You can use the examples in the following sections to create and manage zones
+You can use the examples in the following sections to create and manage zones (domains)
 by using |apiservice| operations.
 
 The Create zone API call provisions one or more new DNS zones, based on the configuration 

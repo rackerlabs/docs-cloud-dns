@@ -8,12 +8,12 @@ The following example shows the cURL request for List recordset:
  
 **Example cURL List recordset request**
 
-.. code::  
+.. parsed-literal::  
 
     curl -s \
     -H "X-Auth-Token: $token" \
     -H "Content-Type: application/json" \
-    https://dns.api.rackspacecloud.com/v2/$account/zones/zone_id/recordsets/recordset_id | python -m json.tool
+    \ |apiserviceendpoint|\ $account/zones/zone_id/recordsets/recordset_id | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values:
 
@@ -27,7 +27,7 @@ The following example shows the response for List recordset:
 
 **Example List recordset response**
 
-.. code::  
+.. parsed-literal::  
 
     HTTP/1.1 200 OK
     Vary: Accept
@@ -47,7 +47,7 @@ The following example shows the response for List recordset:
         "action": "NONE",
      "description": "This is an example record set.",
         "links": {
-            "self": "https://dns.api.rackspacecloud.com/v2/$account/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+            "self": "\ |apiserviceendpoint|\ $account/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
         },
     }
 

@@ -7,7 +7,7 @@ The following examples show the cURL request for Create recordset:
 
 **Example cURL Create recordset request**
 
-.. code::  
+.. parsed-literal::  
 
     curl -s -d \
     '{
@@ -21,7 +21,7 @@ The following examples show the cURL request for Create recordset:
     }' \
     -H "X-Auth-Token: $token" \
     -H "Content-Type: application/json" \
-    https://dns.api.rackspacecloud.com/v2/$account/zones/zone_id/recordsets | python -m json.tool
+    \ |apiserviceendpoint|\ $account/zones/zone_id/recordsets | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values:
 
@@ -35,7 +35,7 @@ The following example shows the response for Create recordset:
  
 **Example Create recordset response**
 
-.. code::  
+.. parsed-literal::  
 
     HTTP/1.1 202 Accepted
     Content-Type: application/json
@@ -54,7 +54,7 @@ The following example shows the response for Create recordset:
         "action": "CREATE",
         "description": "This is an example record set.",
         "links": {
-            "self": "https://dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+            "self": "\ |apiserviceendpoint|\ $account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
         }
     }
 

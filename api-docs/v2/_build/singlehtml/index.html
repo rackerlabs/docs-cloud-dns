@@ -27,7 +27,7 @@
     <link rel="top" title="None" href="index.html#document-index" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
   <body role="document">  
@@ -39,7 +39,7 @@
             
   <div class="section" id="rackspace-managed-dns-api-contract-version-early-access">
 <span id="index"></span><h1>Rackspace Managed DNS API 2.0 (Early Access)<a class="headerlink" href="#rackspace-managed-dns-api-contract-version-early-access" title="Permalink to this headline">¶</a></h1>
-<p><em>Last updated:</em> February 10, 2016</p>
+<p><em>Last updated:</em> February 11, 2016</p>
 <p>Use the following links to get user and reference information for using the Rackspace Managed DNS
 service REST API.</p>
 <ul class="simple">
@@ -95,7 +95,7 @@ think about Cloud DNS!</p>
 <span id="document-getting-started"></span><div class="section" id="getting-started-guide">
 <span id="getting-started"></span><h2><strong>Getting Started Guide</strong><a class="headerlink" href="#getting-started-guide" title="Permalink to this headline">¶</a></h2>
 <p>Use this Getting Started Guide to learn how to authenticate, send API requests,
-and complete basic operations by using the Rackspace Managed DNS API.</p>
+setup the command line interface, and complete basic operations by using the Rackspace Managed DNS API.</p>
 <p>For more information about Rackspace Managed DNS concepts and API operations, see the</p>
 <p><a class="reference internal" href="index.html#developer-guide"><span>Developer Guide</span></a> and the <a class="reference internal" href="index.html#api-reference"><span>API Reference</span></a>.</p>
 </div>
@@ -153,16 +153,16 @@ included in source code that is stored in public repositories.</p>
 </div>
 </div>
 </div>
-<span id="document-getting-started/designate-client"></span><div class="section" id="how-the-designate-client-works">
-<span id="designate-client"></span><h2>How the Designate client works<a class="headerlink" href="#how-the-designate-client-works" title="Permalink to this headline">¶</a></h2>
-<p>The Designate client Command Line Interface (CLI) is now a plugin for OpenStack CLI.</p>
+<span id="document-getting-started/designate-client"></span><div class="section" id="how-the-designate-command-line-interface-works">
+<span id="designate-client"></span><h2>How the Designate Command Line Interface Works<a class="headerlink" href="#how-the-designate-command-line-interface-works" title="Permalink to this headline">¶</a></h2>
+<p>The Designate Command Line Interface (CLI) is now a plugin for OpenStack CLI.</p>
 <p>You install the CLI clients on a Linux distribution or on Mac OS X. Learn how to install
 the CLI clients in the following section &#8220;Install the CLI Clients&#8221;.</p>
-<p>To configure the trove client, you update your .bash_profile file (or
-.bashrc) to set and export trove environment variables.</p>
+<p>To configure the Designate client, you update your .bash_profile file (or
+.bashrc) to set and export Designate environment variables.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You can specify the <code class="docutils literal"><span class="pre">--debug</span></code> parameter on any trove command to show the underlying
+<p class="last">You can specify the <code class="docutils literal"><span class="pre">--debug</span></code> parameter on any Designate command to show the underlying
 API request for the command. This is a good way to become familiar with the API requests.</p>
 </div>
 </div>
@@ -214,11 +214,12 @@ run the following command:</p>
 <p>This Getting Started Guide shows how to send requests by using cURL.</p>
 <p>You can also use Rackspace Cloud API services by using the following methods:</p>
 <ul class="simple">
-<li>If you are developing applications or automation, try using <a class="reference external" href="https://developer.rackspace.com/sdks/">Rackspace SDKs</a>, the
-<a class="reference external" href="https://developer.rackspace.com/docs/rack-cli/">Rackspace CLI</a>, or <a class="reference external" href="https://wiki.openstack.org/wiki/OpenStackClients">OpenStack client applications</a>.</li>
 <li>For API development, testing and workflow management in a graphical environment, try
 interacting with the API by using an application such as
 <a class="reference external" href="http://www.getpostman.com">Postman</a>  or <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/restclient">RESTClient for Firefox</a>.</li>
+<li>If you are developing applications or automation, try using <a class="reference external" href="https://developer.rackspace.com/sdks/">Rackspace SDKs</a>, the
+<a class="reference external" href="https://developer.rackspace.com/docs/rack-cli/">Rackspace CLI</a>, or <a class="reference external" href="https://wiki.openstack.org/wiki/OpenStackClients">OpenStack client applications</a>. These capabilities are
+not available during the Early Access phase of Rackspace Managed DNS.</li>
 </ul>
 <div class="section" id="using-curl">
 <span id="how-curl-commands-work"></span><h3><a class="toc-backref" href="#id1">Using cURL</a><a class="headerlink" href="#using-curl" title="Permalink to this headline">¶</a></h3>
@@ -588,21 +589,22 @@ in the authentication response.</p>
 </li>
 <li><p class="first">In the <code class="docutils literal"><span class="pre">service</span> <span class="pre">catalog</span></code> section of the authentication response, copy the <code class="docutils literal"><span class="pre">publicURL</span></code>
 value for the Rackspace Managed DNS API, version, and region that you want to access.</p>
-<p>This example shows the endpoints available for the Rackspace Managed DNS API.</p>
+<p>This example shows the endpoints available for the Rackspace Managed DNS API. An entry matching
+the name and type below is required in your service catalog to access Rackspace Managed DNS API.</p>
 <blockquote>
-<div><div class="highlight-json"><div class="highlight"><pre>{
-    &quot;name&quot;: &quot;cloudDNS&quot;,
+<div><pre class="literal-block">
+{
+    &quot;name&quot;: &quot;managedDNS&quot;,
     &quot;endpoints&quot;: [
         {
             &quot;tenantId&quot;: &quot;123456&quot;,
-            &quot;publicURL&quot;: &quot;https://dns.api.rackspacecloud.com/v1.0/123456&quot;
+            &quot;publicURL&quot;: &quot;<a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>123456&quot;
         }
     ],
-    &quot;type&quot;: &quot;rax:dns&quot;
+    &quot;type&quot;: &quot;dns&quot;
 },
 {
-</pre></div>
-</div>
+</pre>
 </div></blockquote>
 </li>
 <li><p class="first">Copy the URL, and then export it to an environment variable.</p>
@@ -614,9 +616,9 @@ value for the Rackspace Managed DNS API, version, and region that you want to ac
 </ol>
 </div>
 </div>
-<span id="document-getting-started/using-cloud-dns"></span><div class="section" id="create-and-manage-dns-zones">
-<span id="using-cloud-dns"></span><h2>Create and manage DNS zones<a class="headerlink" href="#create-and-manage-dns-zones" title="Permalink to this headline">¶</a></h2>
-<p>You can use the examples in the following sections to create and manage zones
+<span id="document-getting-started/using-cloud-dns"></span><div class="section" id="create-and-manage-dns-zones-domains">
+<span id="using-cloud-dns"></span><h2>Create and manage DNS zones (domains)<a class="headerlink" href="#create-and-manage-dns-zones-domains" title="Permalink to this headline">¶</a></h2>
+<p>You can use the examples in the following sections to create and manage zones (domains)
 by using Rackspace Managed DNS API operations.</p>
 <p>The Create zone API call provisions one or more new DNS zones, based on the configuration
 defined in the request object. To create a zone, you need to post to the <strong>/zones</strong>
@@ -682,10 +684,10 @@ letter, numbers between 0 and 9, and the character &#8220;-&#8221;.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Please disregard the following warning from keystone:</p>
-<div class="code last highlight-python"><div class="highlight"><pre>Failed to contact the endpoint at  https://api-babby-dev.dsgn8.net/v2/938611
+<pre class="last literal-block">
+Failed to contact the endpoint at  <a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>938611
 for discovery. Fallback to  using that endpoint as the base url.
-</pre></div>
-</div>
+</pre>
 </div>
 <p>This request is asynchronous. So the <code class="docutils literal"><span class="pre">status</span></code> is set to <code class="docutils literal"><span class="pre">PENDING</span></code> when the zone is
 initially created. When the zone is created completely, the status is set to <code class="docutils literal"><span class="pre">ACTIVE</span></code>.
@@ -707,18 +709,14 @@ examples in this guide.</p>
 that you specify.</p>
 <p>The following example shows the cURL request for Create zone:</p>
 <p><strong>Example&nbsp;Create zone request</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>curl -s -d \
-&#39;{
+<pre class="literal-block">
+curl -s -d '{
     &quot;name&quot; : &quot;your_zone_name&quot;,
-    &quot;email&quot; : &quot;joe@example.org&quot;,
+    &quot;email&quot; : &quot;<a class="reference external" href="mailto:joe&#37;&#52;&#48;example&#46;org">joe<span>&#64;</span>example<span>&#46;</span>org</a>&quot;,
     &quot;ttl&quot; : 7200,
     &quot;description&quot; : &quot;This is an example zone.&quot;
-}&#39; \
--H &quot;X-Auth-Token: $token&quot; \
--H &quot;Content-Type: application/json&quot; \
-https://dns.api.rackspacecloud.com/v2/$account/zones | python -m json.tool
-</pre></div>
-</div>
+}' -H &quot;X-Auth-Token: $token&quot; -H &quot;Content-Type: application/json&quot; <a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones | python -m json.tool
+</pre>
 <p>Remember to replace the names in the examples above with their actual respective values
 for all the cURL examples that follow:</p>
 <ul class="simple">
@@ -727,7 +725,8 @@ numbers between 0 and 9, and the character &#8220;-&#8221;.</li>
 </ul>
 <p>The following example shows the initial asynchronous responses for <strong>Create zone</strong>:</p>
 <p><strong>Example&nbsp;Create zone: initial asynchronous response</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
+<pre class="literal-block">
+HTTP/1.1 202 Accepted
 Content-Type: application/json
 
 {
@@ -735,7 +734,7 @@ Content-Type: application/json
     &quot;pool_id&quot;: &quot;572ba08c-d929-4c70-8e42-03824bb24ca2&quot;,
     &quot;project_id&quot;: &quot;123456&quot;,
     &quot;name&quot;: &quot;example.org.&quot;,
-    &quot;email&quot;: &quot;joe@example.org.&quot;,
+    &quot;email&quot;: &quot;<a class="reference external" href="mailto:joe&#37;&#52;&#48;example&#46;org">joe<span>&#64;</span>example<span>&#46;</span>org</a>.&quot;,
     &quot;ttl&quot;: 7200,
     &quot;serial&quot;: 1404757531,
     &quot;status&quot;: &quot;PENDING&quot;,
@@ -747,11 +746,10 @@ Content-Type: application/json
     &quot;created_at&quot;: &quot;2015-06-18T18:25:31.275934&quot;,
     &quot;updated_at&quot;: null,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;https://dns.api.rackspacecloud.com/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;
+      &quot;self&quot;: &quot;<a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;
     }
 }
-</pre></div>
-</div>
+</pre>
 <p>This request is asynchronous. So the <code class="docutils literal"><span class="pre">status</span></code> is set to <code class="docutils literal"><span class="pre">PENDING</span></code> when the zone is
 initially created. When the zone is created completely, the status is set to <code class="docutils literal"><span class="pre">ACTIVE</span></code>.
 To get the status of the zone, you can query the <code class="docutils literal"><span class="pre">self</span></code> link returned in the create
@@ -812,12 +810,9 @@ zones that you have permission to query, which are ones created using your tenan
 <p>This operation does not require a request body.</p>
 <p>The following example shows the cURL request for List zone:</p>
 <p><strong>Example&nbsp;List zone request</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>curl -s  \
--H &quot;X-Auth-Token: $token&quot;  \
--H &quot;Accept: application/json&quot;  \
-https://dns.api.rackspacecloud.com/v2/$account/zones/zone_id | python -m json.tool
-</pre></div>
-</div>
+<pre class="literal-block">
+curl -s  -H &quot;X-Auth-Token: $token&quot;  -H &quot;Accept: application/json&quot;  <a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones/zone_id | python -m json.tool
+</pre>
 <p>Remember to replace the names in the examples above with their actual respective values
 for all the cURL examples that follow:</p>
 <ul class="simple">
@@ -826,7 +821,8 @@ URL)</li>
 </ul>
 <p>The following example shows the List zone response:</p>
 <p><strong>Example&nbsp;List zone response</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+<pre class="literal-block">
+HTTP/1.1 200 OK
 Vary: Accept
 Content-Type: application/json
 
@@ -835,7 +831,7 @@ Content-Type: application/json
     &quot;pool_id&quot;: &quot;572ba08c-d929-4c70-8e42-03824bb24ca2&quot;,
     &quot;project_id&quot;: &quot;123456&quot;,
     &quot;name&quot;: &quot;example.org.&quot;,
-    &quot;email&quot;: &quot;joe@example.org.&quot;,
+    &quot;email&quot;: &quot;<a class="reference external" href="mailto:joe&#37;&#52;&#48;example&#46;org">joe<span>&#64;</span>example<span>&#46;</span>org</a>.&quot;,
     &quot;ttl&quot;: 7200,
     &quot;serial&quot;: 1404757531,
     &quot;status&quot;: &quot;ACTIVE&quot;,
@@ -847,11 +843,10 @@ Content-Type: application/json
     &quot;created_at&quot;: &quot;2015-06-18T18:25:31.275934&quot;,
     &quot;updated_at&quot;: null,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;https://dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;
+      &quot;self&quot;: &quot;<a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;
     }
 }
-</pre></div>
-</div>
+</pre>
 <p>You can see from the response that the zone has been created and is <code class="docutils literal"><span class="pre">ACTIVE</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -906,8 +901,8 @@ hostname to an IP address.</p>
 <span id="curl-create-recordset"></span><h3>Creating a recordset with cURL<a class="headerlink" href="#creating-a-recordset-with-curl" title="Permalink to this headline">¶</a></h3>
 <p>The following examples show the cURL request for Create recordset:</p>
 <p><strong>Example&nbsp;cURL Create recordset request</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>curl -s -d \
-&#39;{
+<pre class="literal-block">
+curl -s -d '{
   &quot;name&quot; : &quot;example.org.&quot;,
   &quot;description&quot; : &quot;This is an example record set.&quot;,
   &quot;type&quot; : &quot;A&quot;,
@@ -915,12 +910,8 @@ hostname to an IP address.</p>
   &quot;records&quot; : [
       &quot;10.1.0.2&quot;
   ]
-}&#39; \
--H &quot;X-Auth-Token: $token&quot; \
--H &quot;Content-Type: application/json&quot; \
-https://dns.api.rackspacecloud.com/v2/$account/zones/zone_id/recordsets | python -m json.tool
-</pre></div>
-</div>
+}' -H &quot;X-Auth-Token: $token&quot; -H &quot;Content-Type: application/json&quot; <a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones/zone_id/recordsets | python -m json.tool
+</pre>
 <p>Remember to replace the names in the examples above with their actual respective values:</p>
 <ul class="simple">
 <li><strong>name</strong> — the name you used in your create zone response (see the examples in the
@@ -930,7 +921,8 @@ section, &#8220;Create a zone&#8221;) must be replaced in the request URL</li>
 </ul>
 <p>The following example shows the response for Create recordset:</p>
 <p><strong>Example&nbsp;Create recordset response</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
+<pre class="literal-block">
+HTTP/1.1 202 Accepted
 Content-Type: application/json
 
 {
@@ -947,11 +939,10 @@ Content-Type: application/json
     &quot;action&quot;: &quot;CREATE&quot;,
     &quot;description&quot;: &quot;This is an example record set.&quot;,
     &quot;links&quot;: {
-        &quot;self&quot;: &quot;https://dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648&quot;
+        &quot;self&quot;: &quot;<a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648&quot;
     }
 }
-</pre></div>
-</div>
+</pre>
 <p>This request is asynchronous, so the <code class="docutils literal"><span class="pre">status</span></code> is set to <code class="docutils literal"><span class="pre">PENDING</span></code> when the recordset is
 initially created. When the recordset is created completely, the <code class="docutils literal"><span class="pre">status</span></code> is set to
 <code class="docutils literal"><span class="pre">ACTIVE</span></code>. To get the status of the recordset, you can query the <code class="docutils literal"><span class="pre">self</span></code> link returned in
@@ -999,12 +990,9 @@ the <strong>Create recordset</strong> response.</p>
 <span id="curl-list-recordset"></span><h3>Listing recordset with cURL<a class="headerlink" href="#listing-recordset-with-curl" title="Permalink to this headline">¶</a></h3>
 <p>The following example shows the cURL request for List recordset:</p>
 <p><strong>Example&nbsp;cURL List recordset request</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>curl -s \
--H &quot;X-Auth-Token: $token&quot; \
--H &quot;Content-Type: application/json&quot; \
-https://dns.api.rackspacecloud.com/v2/$account/zones/zone_id/recordsets/recordset_id | python -m json.tool
-</pre></div>
-</div>
+<pre class="literal-block">
+curl -s -H &quot;X-Auth-Token: $token&quot; -H &quot;Content-Type: application/json&quot; <a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones/zone_id/recordsets/recordset_id | python -m json.tool
+</pre>
 <p>Remember to replace the names in the examples above with their actual respective values:</p>
 <ul class="simple">
 <li><strong>zone_id</strong> — as returned in your <strong>Create zone</strong> response (see the examples in the
@@ -1014,7 +1002,8 @@ the previous section <strong>Creating a recordset</strong>) must be replaced in 
 </ul>
 <p>The following example shows the response for List recordset:</p>
 <p><strong>Example&nbsp;List recordset response</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+<pre class="literal-block">
+HTTP/1.1 200 OK
 Vary: Accept
 Content-Type: application/json
 
@@ -1032,11 +1021,10 @@ Content-Type: application/json
     &quot;action&quot;: &quot;NONE&quot;,
  &quot;description&quot;: &quot;This is an example record set.&quot;,
     &quot;links&quot;: {
-        &quot;self&quot;: &quot;https://dns.api.rackspacecloud.com/v2/$account/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648&quot;
+        &quot;self&quot;: &quot;<a class="reference external" href="https://global.dns.api.rackspacecloud.com/v2/">https://global.dns.api.rackspacecloud.com/v2/</a>$account/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648&quot;
     },
 }
-</pre></div>
-</div>
+</pre>
 <p>Note that <code class="docutils literal"><span class="pre">status</span></code> is set to <code class="docutils literal"><span class="pre">ACTIVE</span></code>, indicating that the recordset is now created and
 active.</p>
 </div>
@@ -1482,17 +1470,17 @@ Content-Type: application/json
 </pre></div>
 </div>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">&quot;examples&quot;</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;</span><span class="p">,</span>
-    <span class="s">&quot;....&quot;</span><span class="p">:</span> <span class="s">&quot;....&quot;</span>
+  <span class="s2">&quot;examples&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;....&quot;</span><span class="p">:</span> <span class="s2">&quot;....&quot;</span>
   <span class="p">},</span> <span class="p">{</span>
-    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;fdd7b0dc-52a3-491e-829f-41d18e1d3ada&quot;</span><span class="p">,</span>
-    <span class="s">&quot;....&quot;</span><span class="p">:</span> <span class="s">&quot;....&quot;</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fdd7b0dc-52a3-491e-829f-41d18e1d3ada&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;....&quot;</span><span class="p">:</span> <span class="s2">&quot;....&quot;</span>
   <span class="p">}],</span>
-  <span class="s">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s">&quot;self&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;URL for This Page&gt;&quot;</span><span class="p">,</span>
-    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;URL for Next Page&gt;&quot;</span><span class="p">,</span>
-    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;URL for Previous Page&gt;&quot;</span>
+  <span class="s2">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;URL for This Page&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;URL for Next Page&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;URL for Previous Page&gt;&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1523,17 +1511,17 @@ size. Both parameters are optional.</p>
 </pre></div>
 </div>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">&quot;examples&quot;</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;</span><span class="p">,</span>
-    <span class="s">&quot;....&quot;</span><span class="p">:</span> <span class="s">&quot;....&quot;</span>
+  <span class="s2">&quot;examples&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a86dba58-0043-4cc6-a1bb-69d5e86f3ca3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;....&quot;</span><span class="p">:</span> <span class="s2">&quot;....&quot;</span>
   <span class="p">},</span> <span class="p">{</span>
-    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;fdd7b0dc-52a3-491e-829f-41d18e1d3ada&quot;</span><span class="p">,</span>
-    <span class="s">&quot;....&quot;</span><span class="p">:</span> <span class="s">&quot;....&quot;</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fdd7b0dc-52a3-491e-829f-41d18e1d3ada&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;....&quot;</span><span class="p">:</span> <span class="s2">&quot;....&quot;</span>
   <span class="p">}],</span>
-  <span class="s">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s">&quot;self&quot;</span><span class="p">:</span> <span class="s">&quot;https://dns.provider.com/v2/examples?marker=e728bfe0-0673-11e3-8ffd-0800200c9a66&amp;limit=2&quot;</span><span class="p">,</span>
-    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="s">&quot;https://dns.provider.com/v2/examples?marker=fdd7b0dc-52a3-491e-829f-41d18e1d3ada&amp;limit=2&quot;</span><span class="p">,</span>
-    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="s">&quot;https://dns.provider.com/v2/examples?marker=d9890c50-0673-11e3-8ffd-0800200c9a66&amp;limit=2&quot;</span>
+  <span class="s2">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;https://dns.provider.com/v2/examples?marker=e728bfe0-0673-11e3-8ffd-0800200c9a66&amp;limit=2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;https://dns.provider.com/v2/examples?marker=fdd7b0dc-52a3-491e-829f-41d18e1d3ada&amp;limit=2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="s2">&quot;https://dns.provider.com/v2/examples?marker=d9890c50-0673-11e3-8ffd-0800200c9a66&amp;limit=2&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1766,11 +1754,11 @@ Content-Type: application/json
 <p>The Rackspace Managed DNS service supports the following <em>record</em> types:</p>
 <p>Record Type: <strong>A</strong>  (Maps an IPV4 address to a zone)</p>
 <blockquote>
-<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.com&quot;</span><span class="p">,</span>
-   <span class="s">&quot;description&quot;</span> <span class="p">:</span> <span class="s">&quot;This is an example A record set.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;A&quot;</span><span class="p">,</span>
-   <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
-   <span class="s">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s">&quot;123.456.78.9&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;example.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;This is an example A record set.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;123.456.78.9&quot;</span> <span class="p">]</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1818,11 +1806,11 @@ example, the priority = <code class="docutils literal"><span class="pre">10</spa
 </div></blockquote>
 <p>Record Type: <strong>NS</strong> (Designates a zone&#8217;s authoritative name server)</p>
 <blockquote>
-<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.com.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;description&quot;</span> <span class="p">:</span> <span class="s">&quot;This is an example NS record set.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;NS&quot;</span><span class="p">,</span>
-   <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
-   <span class="s">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s">&quot;ns1.com&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;example.com.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;This is an example NS record set.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;NS&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ns1.com&quot;</span> <span class="p">]</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1843,11 +1831,11 @@ the upcoming Unlimited Availability phase.</p>
 </div></blockquote>
 <p>Record Type: <strong>SRV</strong> (General service locator record for a zone)</p>
 <blockquote>
-<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;_sip.tcp.example.com.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;This is an example SRV record set.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;SRV&quot;</span><span class="p">,</span>
-   <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
-   <span class="s">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s">&quot;10 0 5060 server.example.com.&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;_sip.tcp.example.com.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;This is an example SRV record set.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;SRV&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;10 0 5060 server.example.com.&quot;</span> <span class="p">]</span> <span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1893,11 +1881,11 @@ and <em>target</em> (in that order).</li>
 </div></blockquote>
 <p>Record Type: <strong>TXT</strong> (Arbitrary text)</p>
 <blockquote>
-<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;example.com.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;description&quot;</span> <span class="p">:</span> <span class="s">&quot;This is an example TXT record set.&quot;</span><span class="p">,</span>
-   <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;TXT&quot;</span><span class="p">,</span>
-   <span class="s">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
-   <span class="s">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span>  <span class="s">&quot;Some example text&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<div><div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;example.com.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;This is an example TXT record set.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TXT&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ttl&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;records&quot;</span> <span class="p">:</span> <span class="p">[</span>  <span class="s2">&quot;Some example text&quot;</span> <span class="p">]</span> <span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1974,28 +1962,28 @@ debug the request in a support ticket, if necessary. The <code class="docutils l
 will inform the user of the exact problem the API detected.</p>
 <p><strong>Example: Fault response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">&quot;code&quot;</span> <span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
-  <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;error&quot;</span><span class="p">,</span>
-  <span class="s">&quot;request_id&quot;</span><span class="p">:</span> <span class="s">&quot;req-6d896f1e-9686-454e-af6f-412a802f9451&quot;</span>
+  <span class="s2">&quot;code&quot;</span> <span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;req-6d896f1e-9686-454e-af6f-412a802f9451&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">bad_request</span></code> example shows validation errors:</p>
 <p><strong>Example: bad_request fault on validation errors</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">&quot;code&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span>
-  <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;invalid_object&quot;</span><span class="p">,</span>
-  <span class="s">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{</span>
-     <span class="s">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;invalid_object&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-           <span class="s">&quot;path&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s">&quot;name&quot;</span> <span class="p">],</span>
-           <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;u&#39;example.com&#39; is not a &#39;domainname&#39;&quot;</span><span class="p">,</span>
-           <span class="s">&quot;validator&quot;</span><span class="p">:</span> <span class="s">&quot;format&quot;</span><span class="p">,</span>
-           <span class="s">&quot;validator_value&quot;</span><span class="p">:</span> <span class="s">&quot;domainname&quot;</span>
+           <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;name&quot;</span> <span class="p">],</span>
+           <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;u&#39;example.com&#39; is not a &#39;domainname&#39;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;validator&quot;</span><span class="p">:</span> <span class="s2">&quot;format&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;validator_value&quot;</span><span class="p">:</span> <span class="s2">&quot;domainname&quot;</span>
         <span class="p">}</span>
      <span class="p">]</span>
   <span class="p">},</span>
-  <span class="s">&quot;request_id&quot;</span><span class="p">:</span> <span class="s">&quot;req-9ebcb6a5-5673-4696-bbfc-61524e986f31&quot;</span>
+  <span class="s2">&quot;request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;req-9ebcb6a5-5673-4696-bbfc-61524e986f31&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -4729,7 +4717,7 @@ publication.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#configure-environment-variables">Configure environment variables</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-getting-started/using-cloud-dns">Create and manage DNS zones</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-getting-started/using-cloud-dns">Create and manage DNS zones (domains)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#creating-a-zone-with-the-cli">Creating a zone with the CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#creating-a-zone-with-the-curl">Creating a zone with the cURL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#listing-zone-with-the-cli">Listing zone with the CLI</a></li>
@@ -4821,8 +4809,8 @@ publication.</p>
       &copy;2016, Rackspace.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
     </div>
 

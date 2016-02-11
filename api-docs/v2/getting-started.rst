@@ -5,7 +5,7 @@
 ==========================
 
 Use this Getting Started Guide to learn how to authenticate, send API requests,
-and complete basic operations by using the |apiservice|.
+setup the command line interface, and complete basic operations by using the |apiservice|.
 
 For more information about |product name| concepts and API operations, see the 
 

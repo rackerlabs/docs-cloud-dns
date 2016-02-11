@@ -139,7 +139,8 @@ To reference the value in an API request, prefix the variable name with a $, for
 #. In the ``service catalog`` section of the authentication response, copy the ``publicURL`` 
    value for the |apiservice|, version, and region that you want to access. 
    
-   This example shows the endpoints available for the |apiservice|. 
+   This example shows the endpoints available for the |apiservice|. An entry matching 
+   the name and type below is required in your service catalog to access |apiservice|. 
    
    .. include:: ../common-gs/samples/service-catalog-endpoint.rst
           
