@@ -15,9 +15,12 @@
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
 @import url("basic.css");
 
 /* -- page layout ----------------------------------------------------------- */
@@ -71,10 +74,19 @@ div.footer a {
     color: #888;
 }
 
+<<<<<<< HEAD
 div.related {
     display: none;
 }
 
+=======
+
+div.relations {
+    display: none;
+}
+
+
+>>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
 div.sphinxsidebar a {
     color: #444;
     text-decoration: none;
@@ -387,8 +399,13 @@ pre {
 }
 
 dl pre, blockquote pre, li pre {
+<<<<<<< HEAD
     margin-left: -60px;
     padding-left: 60px;
+=======
+    margin-left: 0;
+    padding-left: 30px;
+>>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
 }
 
 dl dl pre {
@@ -527,6 +544,7 @@ a:hover tt, a:hover code {
         margin: 0;
     }
 
+<<<<<<< HEAD
     div.related {
         display: block;
         margin: 0;
@@ -539,6 +557,8 @@ a:hover tt, a:hover code {
         padding: 0;
     }
 
+=======
+>>>>>>> 67e2a107191eb8bef87aa0a08dd3c73120a05f0c
     div.footer {
         display: none;
     }
