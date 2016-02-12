@@ -28,6 +28,10 @@ This table shows the possible response codes for this operation:
 |         |                       | requested resource for the requested        |
 |         |                       | method.                                     |
 +---------+-----------------------+---------------------------------------------+
+| 513     | Global Rate Limit     | The service is under high load and the      |
+|         |                       | request was rate limited. Try again in a    |
+|         |                       | few minutes.                                |
++---------+-----------------------+---------------------------------------------+
 
 This table shows the URI parameters for the create a zone import
 request:

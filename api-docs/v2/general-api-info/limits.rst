@@ -13,46 +13,45 @@ are fixed.
 Rate limits
 ~~~~~~~~~~~
 
-Rate limits are specified in terms of both a human-readable wild-card URI and a 
-machine-processable regular expression. The regular expression boundary matcher '^' takes 
-effect after the root URI path. For example, the regular expression ^/v1.0/1234/domains 
-matches the bolded portion of the following URI:
-https://dns.api.rackspacecloud.com\ **/v1.0/1234/domains**.
+Rate limits are shown below for API operations by resource. They are displayed in a simplified, wild-card style format.
 
-The following table specifies the default rate limits for the **GET**, **POST**, **PUT**, 
-**PATCH**, and **DELETE** calls for zone API operations:
+**Zone rate limits:** URIs: ``\*/zones/`` and ``\*/zones/\<ID\>``
 
-**Default rate limits**
++--------+-----------+
+| Verb   | Default   |
++--------+-----------+
+| GET    | 420/minute|
++--------+-----------+
+| POST   | 10/minute |
++--------+-----------+
+| PATCH  | 20/minute |
++--------+-----------+
+| DELETE |  5/minute |
++--------+-----------+
 
-+--------+----------------+-----------+
-| Verb   | URI            | Default   |
-+--------+----------------+-----------+
-| GET    | \*/zones/\*    | 420/minute|
-+--------+----------------+-----------+
-| POST   | \*/zones\*     | 40/minute |
-+--------+----------------+-----------+
-| PUT    | \*/zones\*     | 40/minute |
-+--------+----------------+-----------+
-| PATCH  | \*/zones*\     | 40/minute |
-+--------+----------------+-----------+
-| DELETE | \*/zones*\     | 10/minute |
-+--------+----------------+-----------+
+**Record set rate limits:** URI: ``\*/zones/\<ID\>/recordsets/\*``
 
++--------+------------+
+| Verb   | Default    |
++--------+------------+
+| GET    | 420/minute |
++--------+------------+
+| POST   | 40/minute  |
++--------+------------+
+| PUT    | 40/minute  |
++--------+------------+
+| DELETE | 20/minute  |
++--------+------------+
 
 If you exceed the thresholds established for your account, a ``413`` HTTP response will 
 be returned with a ``Reply-After`` header to notify the client when it can attempt to try 
 again. The ``Reply-After`` header is an ISO 8601 Date/Time field, for example 
 "2012-10-10T21:21:15Z".
 
-.. note::
-   The first entry in the Default Rate Limits table above is for simple
-   STATUS calls after a **POST**, **PUT**, or **DELETE** to retrieve the
-   status details. For example, the following status call has a limit of 5 requests per 
-   second:
-   
-   .. code::
-   
-      https://dns.api.rackspacecloud.com/v1.0/1234/status/0062ac6e-3d07-4980-afab-5fd3a806ef4d
+**Global Rate Limit**
+
+During periods of peak load, the system may return a ``513`` HTTP reponse. If this occurs
+the request should be retried in a few minutes.
 
 Resource Quotas
 ~~~~~~~~~~~~~~~

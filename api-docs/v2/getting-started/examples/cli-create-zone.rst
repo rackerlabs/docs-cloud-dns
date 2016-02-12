@@ -47,9 +47,9 @@ The response is similar to the following:
 
     Please disregard the following warning from keystone:
 
-    .. parsed-literal::  
+    .. code::  
 
-       Failed to contact the endpoint at  \ |apiserviceendpoint|\ 938611 
+       Failed to contact the endpoint at  https://global.dns.api.rackspacecloud.com/v2/938611 
        for discovery. Fallback to  using that endpoint as the base url. 
 
 This request is asynchronous. So the ``status`` is set to ``PENDING`` when the zone is 

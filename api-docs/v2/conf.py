@@ -140,7 +140,6 @@ rst_epilog = """
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: 2.0
 .. |product name| replace:: Rackspace Managed DNS
-.. |apiserviceendpoint| replace:: https://global.dns.api.rackspacecloud.com/v2/
 """
 
 #Software release.version currently deployed in production.
