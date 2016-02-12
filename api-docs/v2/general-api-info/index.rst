@@ -30,6 +30,7 @@ system that allows seamless access between products and services.
    nested-collections
    resources
    supported-record-types
+   zone-recordset-statuses
    errors
    ip-address-support
    dns-propagation

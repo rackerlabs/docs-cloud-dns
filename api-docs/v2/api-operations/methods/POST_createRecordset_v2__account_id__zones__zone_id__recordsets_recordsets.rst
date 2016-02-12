@@ -13,26 +13,12 @@ A record set groups together a list of related records. It is the essential cont
 your zone file and is used to define the various domain name to server routes for your 
 application. Record sets are also referred to as *Resource Record Sets* or *RRSets*.
 
-..  note:: 
-
-    This operation returns an asynchronous response. This call returns an
-    asynchronous response. Refer to 
-    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works. 
-    
 This operation provisions a new DNS record set, based on the configuration defined in the 
 request object. If the corresponding request cannot be fulfilled due to insufficient or 
 invalid data, an ``HTTP 400`` (Bad Request) error response will be returned with 
 information regarding the nature of the failure in the body of the response. Failures in 
 the validation process are non-recoverable and require the caller to correct the cause of 
 the failure and to **POST** the request again.
-
-The following example shows the Create record set request and illustrates a record set in 
-the BIND file format.
-
-This format can be used for common record set types including A, AAAA, CNAME, NS, MX, and 
-TXT. SPF records will be treated like SPF records. Simply replace the type and records with 
-the respective values. NS record sets can only be created and deleted. 
 
 ..  note:: 
 
@@ -90,14 +76,14 @@ This table shows the possible response codes for this operation:
 
 This table shows the URI parameters for the create record set request:
 
-+-----------------------+---------+---------------------------------------------+
-| Name                  | Type    | Description                                 |
-+=======================+=========+=============================================+
++-----------------------+--------+---------------------------------------------+
+| Name                  | Type   | Description                                 |
++=======================+========+=============================================+
 | ``{account_id}``      | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
-+-----------------------+---------+---------------------------------------------+
+|                       |        | specified account.                          |
++-----------------------+--------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |
-+-----------------------+---------+---------------------------------------------+
++-----------------------+--------+---------------------------------------------+
 
 This list shows the body parameters for the request:
 
@@ -125,6 +111,8 @@ This list shows the body parameters for the request:
 
  
 **Example Create A record set request**
+
+This format can be used for common record set types including A, AAAA, CNAME, NS, and TXT. Simply replace the type and records with the respective values. NS record sets can only be created and deleted.
 
 .. code::  
 
