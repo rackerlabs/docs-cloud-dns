@@ -9,12 +9,12 @@ The following example shows the cURL request for List zone:
 
 **Example List zone request**
 
-.. parsed-literal::  
+.. code::  
 
     curl -s  \
     -H "X-Auth-Token: $token"  \
     -H "Accept: application/json"  \
-    \ |apiserviceendpoint|\ $account/zones/zone_id | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$account/zones/zone_id | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values 
 for all the cURL examples that follow:
@@ -26,7 +26,7 @@ The following example shows the List zone response:
 
 **Example List zone response**
 
-.. parsed-literal::  
+.. code::  
 
     HTTP/1.1 200 OK
     Vary: Accept
@@ -49,7 +49,7 @@ The following example shows the List zone response:
         "created_at": "2015-06-18T18:25:31.275934",
         "updated_at": null,
         "links": {
-          "self": "\ |apiserviceendpoint|\ $account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/$account/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
         }
     }
 

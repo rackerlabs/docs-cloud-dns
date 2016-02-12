@@ -20,17 +20,17 @@ The following example takes a collection of zones and filters it by the “name�
  
 **Example Request with a collection of zones**
 
-.. parsed-literal::  
+.. code::  
 
      GET /v2/zones?name=example.com. HTTP/1.1 
-     Host: \ |hostname|\ 
+     Host: global.dns.api.rackspacecloud.com
      Accept: application/json
      X-Auth-Token: *************  
 
  
 **Example Response for a collection of zones**
 
-.. parsed-literal::  
+.. code::  
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -50,11 +50,11 @@ The following example takes a collection of zones and filters it by the “name�
         "project_id": "noauth-project",
         "email": "hostmaster@example.com",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
         }
       }],
       "links": {
-        "self": "\ |apiserviceendpoint|\ zones?name=example.com."
+        "self": "https://global.dns.api.rackspacecloud.com/v2/zones?name=example.com."
       }
     } 
 
@@ -64,17 +64,17 @@ use of wildcards on the right side of a query:
  
 **Example 3.13. Request with a wildcard**
 
-.. parsed-literal::  
+.. code::  
 
     GET /v2/zones?name=example* HTTP/1.1
-    Host: \ |hostname|\ 
+    Host: global.dns.api.rackspacecloud.com
     Accept: application/json
     X-Auth-Token: ************* 
 
  
 **Example Response example for a wildcard**
 
-.. parsed-literal::  
+.. code::  
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -94,7 +94,7 @@ use of wildcards on the right side of a query:
         "project_id": "noauth-project",
         "email": "hostmaster@example.com",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
         }
       },
       {
@@ -111,11 +111,11 @@ use of wildcards on the right side of a query:
         "project_id": "noauth-project",
         "email": "hostmaster@example.org",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/38dbf635-45cb-4873-8300-6c273f0283c7"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/38dbf635-45cb-4873-8300-6c273f0283c7"
         }
       }],
       "links": {
-        "self": "\ |apiserviceendpoint|\ zones?name=example*"
+        "self": "https://global.dns.api.rackspacecloud.com/v2/zones?name=example*"
       }
     } 
 
@@ -124,17 +124,17 @@ This example demonstrates the use of multiple wildcards:
  
 **Example Request with multiple wildcards**
 
-.. parsed-literal::  
+.. code::  
 
     GET /v2/zones?name=*example* HTTP/1.1
-    Host: \ |hostname|\ 
+    Host: global.dns.api.rackspacecloud.com
     Accept: application/json
     X-Auth-Token: ************* 
 
  
 **Example Response for multiple wildcards**
 
-.. parsed-literal::  
+.. code::  
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -154,7 +154,7 @@ This example demonstrates the use of multiple wildcards:
         "project_id": "noauth-project",
         "email": "hostmaster@example.com",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
         }
       },
       {
@@ -171,7 +171,7 @@ This example demonstrates the use of multiple wildcards:
         "project_id": "noauth-project",
         "email": "hostmaster@example.com",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/13db810b-917d-4898-bc28-4d4ee370d20d"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/13db810b-917d-4898-bc28-4d4ee370d20d"
         }
       },
       {
@@ -188,7 +188,7 @@ This example demonstrates the use of multiple wildcards:
         "project_id": "noauth-project",
         "email": "hostmaster@example.org",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/38dbf635-45cb-4873-8300-6c273f0283c7"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/38dbf635-45cb-4873-8300-6c273f0283c7"
         }
       },
       {
@@ -205,10 +205,10 @@ This example demonstrates the use of multiple wildcards:
         "project_id": "noauth-project",
         "email": "hostmaster@example.net",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/c316def0-8599-4030-9dcd-2ce566348115"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/c316def0-8599-4030-9dcd-2ce566348115"
         }
       }],
       "links": {
-        "self": "\ |apiserviceendpoint|\ zones?name=*example*"
+        "self": "https://global.dns.api.rackspacecloud.com/v2/zones?name=*example*"
       }
     }
