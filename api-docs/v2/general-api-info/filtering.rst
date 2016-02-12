@@ -154,7 +154,7 @@ This example demonstrates the use of multiple wildcards:
         "project_id": "noauth-project",
         "email": "hostmaster@example.com",
         "links": {
-          "self": "\ |hostname|\ zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+          "self": "\ |apiserviceendpoint|\ zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
         }
       },
       {

@@ -29,12 +29,6 @@ or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` qu
  
 **Example Response for a paginated collection of zones**
 
-.. code::  
-
-    HTTP/1.1 200 OK
-     Vary: Accept
-     Content-Type: application/json  
-
 .. parsed-literal::  
 
     HTTP/1.1 200 OK
