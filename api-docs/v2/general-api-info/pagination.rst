@@ -19,17 +19,17 @@ or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` qu
 
 **Example Request for a paginated collection of zones**
 
-.. parsed-literal::  
+.. code::  
 
     GET /v2/zones?marker=c74af170-0673-11e3-8ffd-0800200c9a66&limit=2 HTTP/1.1
-     Host: \ |hostname|\ 
+     Host: global.dns.api.rackspacecloud.com
      Accept: application/json
      X-Auth-Token: ************  
 
  
 **Example Response for a paginated collection of zones**
 
-.. parsed-literal::  
+.. code::  
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -49,7 +49,7 @@ or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` qu
         "project_id": "noauth-project",
         "email": "hostmaster@example.net",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/c316def0-8599-4030-9dcd-2ce566348115"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/c316def0-8599-4030-9dcd-2ce566348115"
         }
       },
       {
@@ -66,11 +66,11 @@ or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` qu
         "project_id": "noauth-project",
         "email": "hostmaster@example.com",
         "links": {
-          "self": "\ |apiserviceendpoint|\ zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
         }
       }
       }],
       "links": {
-        "self": "\ |apiserviceendpoint|\ zones?sort_key=id&sort_dir=desc"
+        "self": "https://global.dns.api.rackspacecloud.com/v2/zones?sort_key=id&sort_dir=desc"
       }
     }
