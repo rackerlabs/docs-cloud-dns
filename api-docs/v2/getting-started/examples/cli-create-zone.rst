@@ -49,8 +49,8 @@ The response is similar to the following:
 
     .. code::  
 
-       Failed to contact the endpoint at  https://global.dns.api.rackspacecloud.com/v2/938611 
-       for discovery. Fallback to  using that endpoint as the base url. 
+       Failed to contact the endpoint at https://global.dns.api.rackspacecloud.com/v2/123456 
+       for discovery. Fallback to using that endpoint as the base url. 
 
 This request is asynchronous. So the ``status`` is set to ``PENDING`` when the zone is 
 initially created. When the zone is created completely, the status is set to ``ACTIVE``. 

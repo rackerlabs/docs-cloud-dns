@@ -5,7 +5,7 @@ Create a zone import
 
 .. code::
 
-    POST /v2/{account_id}/zones/tasks/imports
+    POST /v2/123456/zones/tasks/imports
 
 This call imports a zonefile. To import a zonefile, set the Content-type to ``text/dns``. 
 The **zoneextractor.py** tool in the ``contrib`` folder can generate zonefiles that are 
@@ -48,8 +48,8 @@ request:
 
 .. code::  
 
-    POST /v2/1234/zones/tasks/imports HTTP/1.1
-    Host: 127.0.0.1:9001
+    POST /v2/123456/zones/tasks/imports HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Content-type: text/dns
 
     $ORIGIN example.com.
@@ -73,7 +73,7 @@ This operation does not accept a request body.
         "status": "PENDING",
         "zone_id": null,
         "links": {
-            "self": "http://127.0.0.1:9001/v2/zones/tasks/imports/074e805e-fe87-4cbb-b10b-21a06e215d41"
+            "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/imports/074e805e-fe87-4cbb-b10b-21a06e215d41"
         },
         "created_at": "2015-05-08T15:43:42.000000",
         "updated_at": null,

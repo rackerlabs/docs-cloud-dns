@@ -32,13 +32,13 @@ example:
 
 .. code::
 
-	`https://dns.api.rackspacecloud.com/v2/1234/zones <http://localhost:9001/v2/zones>`__.
+	`https://global.dns.api.rackspacecloud.com/v2/123456/zones`__.
 	
 You can filter collections by status. For example:
 
 .. code::
 
-	`https://dns.api.rackspacecloud.com/v2/1234/zones?status=PENDING <http://localhost:9001/v2/zones?status=PENDING>`__.
+	`https://global.dns.api.rackspacecloud.com/v2/123456/zones?status=PENDING`__.
 	
 Method 2:
 
@@ -61,5 +61,5 @@ property. If the job is complete, the ``status`` field will be ``ACTIVE``..  For
       "project_id": "noauth-project",
       "email": "hostmaster@example.com",
       "links": {
-      "self": "http://dns.provider.com/v2/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
+      "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
     }

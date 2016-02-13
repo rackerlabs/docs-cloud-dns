@@ -45,8 +45,8 @@ This table shows the URI parameters for the list a zone import request:
 
 .. code::  
 
-    GET /v2/1234/zones/tasks/imports/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
-    Host: 127.0.0.1:9001
+    GET /v2/123456/zones/tasks/imports/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
 
 This operation does not accept a request body.
@@ -63,8 +63,8 @@ This operation does not accept a request body.
         "status": "COMPLETE",
         "zone_id": "6625198b-d67d-47dc-8d29-f90bd60f3ac4",
         "links": {
-            "self": "http://127.0.0.1:9001/v2/zones/tasks/imports/074e805e-fe87-4cbb-b10b-21a06e215d41",
-            "href": "http://127.0.0.1:9001/v2/zones/6625198b-d67d-47dc-8d29-f90bd60f3ac4"
+            "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/imports/074e805e-fe87-4cbb-b10b-21a06e215d41",
+            "href": "https://global.dns.rackspacecloud.com/v2/123456/zones/6625198b-d67d-47dc-8d29-f90bd60f3ac4"
         },
         "created_at": "2015-05-08T15:43:42.000000",
         "updated_at": "2015-05-08T15:43:42.000000",

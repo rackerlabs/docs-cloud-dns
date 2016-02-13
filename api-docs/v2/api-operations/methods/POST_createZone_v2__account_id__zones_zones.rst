@@ -5,7 +5,7 @@ Create zone
 
 .. code::
 
-    POST /v2/{account_id}/zones
+    POST /v2/123456/zones
 
 This call provisions a new DNS zone, based on the configuration defined
 in the request object. 
@@ -124,8 +124,8 @@ This list shows the body parameters for the request:
 
 .. code::  
 
-    POST /v2/1234/zones HTTP/1.1
-    Host: 127.0.0.1:9001
+    POST /v2/123456/zones HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
     Content-Type: application/json
 
@@ -161,6 +161,6 @@ This list shows the body parameters for the request:
         "created_at": "2014-07-07T18:25:31.275934",
         "updated_at": null,
         "links": {
-          "self": "https://127.0.0.1:9001/v2/1234/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
         }
     }

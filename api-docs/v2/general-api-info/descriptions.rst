@@ -21,7 +21,7 @@ Descriptions are supported for requests and responses of zones and recordsets us
       "masters": null,
       "name": "example.com.",
       "links": {
-        "self": "http://127.0.0.1:9001/v2/zones/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
+        "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
       },
       "transferred_at": null,
       "created_at": "2015-07-22T15:55:47.000000",

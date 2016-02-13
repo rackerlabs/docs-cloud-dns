@@ -32,8 +32,8 @@ records. Zones may also be referred to as domains.
 
 .. _concept-subzone:
 
-Subzone
--------
+Subzone (Subdomain)
+-------------------
 
 Also known as second level or child zones, a subzone is any zone that is part of a larger
 zone. Subzones allow you to divide and delegate a zone, also called a parent zone. Subzones 

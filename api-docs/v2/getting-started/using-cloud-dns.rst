@@ -24,10 +24,9 @@ In this case, assume that you want to create a zone using ``name=example.org``.
 
 ..  note:: 
 
-   If you want to substitute your own zone name, you can use any letter, numbers between 
-   0 and 9, and the character "-". For example, you might use your first name and last 
-   initial at the beginning of the name (for example, "bobmexample.org"). Ensure that you 
-   add the final period (.) at the end of your fully qualified zone name.
+   **Zone naming** You can use any letter, number from 0 to 9, and the character 
+   `-`. Ensure that you add the final period (.) at the end of your fully qualified 
+   zone name (e.g. `example1234.com.`).
 
 
 Choose one of the following methods:

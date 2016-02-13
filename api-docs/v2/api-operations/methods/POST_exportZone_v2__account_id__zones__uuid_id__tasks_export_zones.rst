@@ -44,8 +44,8 @@ request:
 
 .. code::  
 
-    POST /v2/1234/zones/074e805e-fe87-4cbb-b10b-21a06e215d41/tasks/export HTTP/1.1
-    Host: 127.0.0.1:9001
+    POST /v2/123456/zones/074e805e-fe87-4cbb-b10b-21a06e215d41/tasks/export HTTP/1.1
+    Host: global.dns.rackspacecloud.com
 
 This operation does not accept a request body.
  
@@ -60,7 +60,7 @@ This operation does not accept a request body.
         "status": "PENDING",
         "zone_id": "074e805e-fe87-4cbb-b10b-21a06e215d41",
         "links": {
-            "self": "http://127.0.0.1:9001/v2/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720"
+            "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720"
         },
         "created_at": "2015-08-27T20:57:03.000000",
         "updated_at": null,

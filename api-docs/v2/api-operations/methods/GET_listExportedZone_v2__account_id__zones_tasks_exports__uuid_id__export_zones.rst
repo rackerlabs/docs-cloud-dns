@@ -47,7 +47,7 @@ This table shows the URI parameters for the list exported zone request:
 .. code::  
 
     GET /zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export HTTP/1.1
-    Host: 127.0.0.1:9001
+    Host: global.dns.rackspacecloud.com
     Accept: text/dns
 
 This operation does not accept a request body.

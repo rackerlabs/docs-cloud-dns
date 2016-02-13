@@ -124,8 +124,8 @@ This list shows the body parameters for the request:
 
 .. code::  
 
-    PATCH /v2/1234/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
-    Host: 127.0.0.1:9001
+    PATCH /v2/123456/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
     Content-Type: application/json
 
@@ -158,6 +158,6 @@ This list shows the body parameters for the request:
         "created_at": "2014-07-07T18:25:31.275934",
         "updated_at": "2014-07-07T19:09:20.876366",
         "links": {
-          "self": "https://127.0.0.1:9001/v2/1234/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
         }
     }

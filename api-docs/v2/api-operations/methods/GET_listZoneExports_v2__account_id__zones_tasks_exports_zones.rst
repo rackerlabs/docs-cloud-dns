@@ -42,8 +42,8 @@ This table shows the URI parameters for the list zone exports request:
 
 .. code::  
 
-    GET /v2/1234/zones/tasks/exports/ HTTP/1.1
-    Host: 127.0.0.1:9001
+    GET /v2/123456/zones/tasks/exports/ HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
 
 This operation does not accept a request body.
@@ -61,13 +61,13 @@ This operation does not accept a request body.
                 "status": "COMPLETE",
                 "zone_id": "30ea7692-7f9e-4195-889e-0ba11620b491",
                 "links": {
-                    "self": "http://127.0.0.1:9001/v2/zones/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248",
-                    "export": "http://127.0.0.1:9001/v2/zones/30ea7692-7f9e-4195-889e-0ba11620b491/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248/export"
+                    "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248",
+                    "export": "https://global.dns.rackspacecloud.com/v2/123456/zones/30ea7692-7f9e-4195-889e-0ba11620b491/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248/export"
                 },
                 "created_at": "2015-08-24T19:46:50.000000",
                 "updated_at": "2015-08-24T19:46:50.000000",
                 "version": 2,
-                "location": "designate://v2/zones/30ea7692-7f9e-4195-889e-0ba11620b491/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248/export",
+                "location": "https://global.dns.rackspacecloud.com/v2/123456/zones/30ea7692-7f9e-4195-889e-0ba11620b491/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248/export",
                 "message": null,
                 "project_id": "noauth-project",
                 "id": "d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248"
@@ -76,20 +76,20 @@ This operation does not accept a request body.
                 "status": "COMPLETE",
                 "zone_id": "0503f9fd-3938-47a4-bbf3-df99b088abfc",
                 "links": {
-                    "self": "http://127.0.0.1:9001/v2/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8",
-                    "export": "http://127.0.0.1:9001/v2/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8/export"
+                    "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8",
+                    "export": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8/export"
                 },
                 "created_at": "2015-08-25T15:16:10.000000",
                 "updated_at": "2015-08-25T15:16:10.000000",
                 "version": 2,
-                "location": "designate://v2/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8/export",
+                "location": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8/export",
                 "message": null,
                 "project_id": "noauth-project",
                 "id": "3d7d07a5-2ce3-458e-b3dd-6a29906234d8"
             },
         ],
         "links": {
-            "self": "http://127.0.0.1:9001/v2/zones/tasks/exports"
+            "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports"
         },
         "metadata": {
             "total_count": 2
