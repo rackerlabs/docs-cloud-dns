@@ -8,9 +8,8 @@ Create a zone import
     POST /v2/{TENANT_ID}/zones/tasks/imports
 
 This call imports a zonefile. To import a zonefile, set the Content-type to ``text/dns``. 
-The **zoneextractor.py** tool in the ``contrib`` folder can generate zonefiles that are 
-suitable for DNS (without any ``$INCLUDE`` statements for example). An object will be 
-returned that can be queried using the ``self`` link in the ``links`` field.
+An object will be  returned that can be queried using the ``self`` link in the ``links`` 
+field.
 
 This table shows the possible response codes for this operation:
 

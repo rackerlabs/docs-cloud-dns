@@ -23,7 +23,7 @@ in the Rackspace How-To.
 .. toctree:: :hidden:
    :maxdepth: 2
 
-   Cloud DNS 1.0 <self>
+   Managed DNS 2.0 <self>
    API Status <https://status.rackspace.com/>
    About the API <overview/index>
    getting-started

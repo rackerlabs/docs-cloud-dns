@@ -1,10 +1,10 @@
 .. _recordset-operations:
 
-Recordset Operations 
-~~~~~~~~~~~~~~~~~~~~
+Record set Operations 
+~~~~~~~~~~~~~~~~~~~~~
 
 
-Use the recordset operations to view information about the recordsets for a specified 
+Use the record set operations to view information about the record sets for a specified 
 zone.
 
 .. include:: methods/POST_createRecordset_v2__account_id__zones__zone_id__recordsets_recordsets.rst

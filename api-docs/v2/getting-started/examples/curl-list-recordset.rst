@@ -1,12 +1,12 @@
 .. _curl-list-recordset:
 
-Listing recordset with cURL
+Listing record set with cURL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example shows the cURL request for List recordset:
+The following example shows the cURL request for List record set:
 
  
-**Example cURL List recordset request**
+**Example cURL List record set request**
 
 .. code::  
 
@@ -31,12 +31,12 @@ URL:
 -  **zone_id** — as returned in your **Create zone** response (see the examples in the 
    previous section **Creating a zone**) must be replaced in the request URL.
 
--  **recordset_id** — as returned in your **Creating a recordset** (see the examples in 
-   the previous section **Creating a recordset**) must be replaced in the request URL.
+-  **recordset_id** — as returned in your **Creating a record set** (see the examples in 
+   the previous section **Creating a record set**) must be replaced in the request URL.
 
-The following example shows the response for List recordset:
+The following example shows the response for List record set:
 
-**Example List recordset response**
+**Example List record set response**
 
 .. code::  
 
@@ -62,5 +62,5 @@ The following example shows the response for List recordset:
         },
     }
 
-Note that ``status`` is set to ``ACTIVE``, indicating that the recordset is now created and 
+Note that ``status`` is set to ``ACTIVE``, indicating that the record set is now created and 
 active.

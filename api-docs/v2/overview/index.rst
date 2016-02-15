@@ -20,11 +20,15 @@ resource records may not exist between Rackspace Cloud DNS and |product name|.
 
 	- See :ref:`DNS propagation <cdns-dg-propagation>` for information about DNS propagation.
 
+.. warning::
+
+ 	If you're using pyrax or ansible, see known issue (see 
+ 	:ref:`v2 EA release, February 22, 2016  <RN_20160222>`).
+
+
 The following figure shows an overview of the |product name| Infrastructure:
 
 .. figure:: /_images/Cloud_DNS_Infographic-1.png
-
-Issues and bug reports can be directed to: ``<DNS_EA@rackspace.com>``.
 
 .. toctree:: :hidden:
    :maxdepth: 3

@@ -13,5 +13,5 @@ details about |apiservice| |version| service updates.
 .. toctree::
    :maxdepth: 2
 
+   release-notes/cdns-v2-20160222
    release-notes/cdns-v2-20151112
-   release-notes/cdns-v2-20160215

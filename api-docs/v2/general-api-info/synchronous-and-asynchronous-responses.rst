@@ -27,7 +27,7 @@ The following two methods show how to check whether an asynchronous request is c
 
 Method 1:
 
-Query the collections link (where examples of collections include zones or recordsets). For 
+Query the collections link (where examples of collections include zones or record sets). For 
 example: 
 
 .. code::

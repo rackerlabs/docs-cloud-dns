@@ -48,29 +48,29 @@ Choose one of the following methods:
 .. include:: examples/cli-list-zone.rst
 .. include:: examples/curl-list-zone.rst
 
-Create and manage recordsets
+Create and manage record sets
 -----------------------------
 
 A record set groups together a list of related records of the same type. It is the essential
 content of your zone file. Record sets are also referred to as “Resource Record Sets” or
-“RRSets”. The following example creates an 'A' recordset. An 'A' recordset is used to map a
+“RRSets”. The following example creates an 'A' record set. An 'A' record set is used to map a
 hostname to an IP address.
 
 Choose one of the following methods:
 
--  :ref:`Creating a recordset with the CLI<cli-create-recordset>`
--  :ref:`Creating a recordset with cURL<curl-create-recordset>`
+-  :ref:`Creating a record set with the CLI<cli-create-recordset>`
+-  :ref:`Creating a record set with cURL<curl-create-recordset>`
 
 .. include:: examples/cli-create-recordset.rst
 .. include:: examples/curl-create-recordset.rst
 
-The List recordset API call provides detailed output for a specific recordset using the 
+The List record set API call provides detailed output for a specific record set using the 
 ``recordset id``.
 
 Choose one of the following methods:
 
--  :ref:`Listing a recordset with the CLI<cli-list-recordset>`
--  :ref:`Listing a recordset with cURL<curl-list-recordset>`
+-  :ref:`Listing a record set with the CLI<cli-list-recordset>`
+-  :ref:`Listing a record set with cURL<curl-list-recordset>`
 
 .. include:: examples/cli-list-recordset.rst
 .. include:: examples/curl-list-recordset.rst

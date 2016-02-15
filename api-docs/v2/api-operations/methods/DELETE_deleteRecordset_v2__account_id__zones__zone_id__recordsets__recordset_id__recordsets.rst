@@ -1,6 +1,6 @@
 .. _DELETE_deleteRecordset_v2__account_id__zones__zone_id__recordsets__recordset_id__recordsets:
 
-Delete specified recordset for a specified zone
+Delete specified record set for a specified zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -48,8 +48,7 @@ This table shows the possible response codes for this operation:
 |         |                       | not allowed for the resource identified by  |
 |         |                       | the Request-URI.                            |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | Request exceeds rate limit or quota         |
 +---------+-----------------------+---------------------------------------------+
 | 415     | Unsupported Media     | The server is refusing to service the       |
 |         | Type                  | request because the entity of the request   |

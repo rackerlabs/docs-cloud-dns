@@ -75,4 +75,4 @@ This operation does not accept a request body.
     }
 
 Notice that the status has been updated, the message field shows that the zone was successfully 
-imported, and there now an ``href`` in the ``links`` field pointing to the new zone.
+imported, and there is now an ``href`` in the ``links`` field pointing to the new zone.
