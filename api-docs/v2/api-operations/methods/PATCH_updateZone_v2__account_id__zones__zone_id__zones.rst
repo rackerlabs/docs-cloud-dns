@@ -5,7 +5,7 @@ Update zone
 
 .. code::
 
-    PATCH /v2/{account_id}/zones/{zone_id}
+    PATCH /v2/{TENANT_ID}/zones/{zone_id}
 
 This call modifies DNS zone attributes only. Records cannot be added,
 modified, or Deleted. Only the TTL, email address and comment attributes
@@ -85,7 +85,7 @@ This table shows the URI parameters for the update zone request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

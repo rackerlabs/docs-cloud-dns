@@ -5,7 +5,7 @@ Delete specified recordset for a specified zone
 
 .. code::
 
-    DELETE /v2/{account_id}/zones/{zone_id}/recordsets/{recordset_id}
+    DELETE /v2/{$TENANT-ID}/zones/{zone_id}/recordsets/{recordset_id}
 
 This operation deletes a record set with the specified record set ID.
  
@@ -67,7 +67,7 @@ set id request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

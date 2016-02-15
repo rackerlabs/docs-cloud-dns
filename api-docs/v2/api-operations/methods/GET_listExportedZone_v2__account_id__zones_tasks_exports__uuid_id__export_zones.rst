@@ -5,7 +5,7 @@ List exported zone
 
 .. code::
 
-    GET /v2/{account_id}/zones/tasks/exports/{uuid_id}/export
+    GET /v2/{$TENANT-ID}/zones/tasks/exports/{uuid_id}/export
 
 This call lists an exported zone for the specified zone export uuid ID. The link that is 
 generated in the export field in an export resource can be followed to a DNS resource, or 
@@ -35,7 +35,7 @@ This table shows the URI parameters for the list exported zone request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{$TENANT-ID}``      | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{uuid_id}``         | ​String | The uuid ID for the specified zone export.  |
@@ -46,7 +46,7 @@ This table shows the URI parameters for the list exported zone request:
 
 .. code::  
 
-    GET /zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export HTTP/1.1
+    GET /v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export HTTP/1.1
     Host: global.dns.rackspacecloud.com
     Accept: text/dns
 

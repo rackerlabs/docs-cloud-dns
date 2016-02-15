@@ -5,7 +5,7 @@ List specified recordset for a specified zone
 
 .. code::
 
-    GET /v2/{account_id}/zones/{zone_id}/recordsets/{recordset_id}
+    GET /v2/{TENANT_ID}/zones/{zone_id}/recordsets/{recordset_id}
 
 This operation retrieves a record set with the specified record set ID.
 
@@ -64,7 +64,7 @@ This table shows the URI parameters for the list record set request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

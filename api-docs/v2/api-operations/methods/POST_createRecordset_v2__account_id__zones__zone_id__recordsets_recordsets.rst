@@ -5,7 +5,7 @@ Create recordset
 
 .. code::
 
-    POST /v2/{account_id}/zones/{zone_id}/recordsets
+    POST /v2/{TENANT_ID}/zones/{zone_id}/recordsets
 
 This operation creates a record set with the configuration defined by the request.
 
@@ -79,7 +79,7 @@ This table shows the URI parameters for the create record set request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

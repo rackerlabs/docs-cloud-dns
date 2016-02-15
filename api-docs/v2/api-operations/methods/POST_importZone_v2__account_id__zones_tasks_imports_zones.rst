@@ -5,7 +5,7 @@ Create a zone import
 
 .. code::
 
-    POST /v2/123456/zones/tasks/imports
+    POST /v2/{TENANT_ID}/zones/tasks/imports
 
 This call imports a zonefile. To import a zonefile, set the Content-type to ``text/dns``. 
 The **zoneextractor.py** tool in the ``contrib`` folder can generate zonefiles that are 
@@ -39,7 +39,7 @@ request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 

@@ -5,7 +5,7 @@ Delete a zone import
 
 .. code::
 
-    DELETE /v2/{account_id}/zones/tasks/imports/{zone_id}
+    DELETE /v2/{$TENANT-ID}/zones/tasks/imports/{zone_id}
 
 This call deletes a zone import with the specified zone import uuid ID.
 It does not affect the zone that was imported. It simply removes the
@@ -35,7 +35,7 @@ This table shows the URI parameters for the delete a zone import request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{$TENANT-ID}``      | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{uuid_id}``         | ​String | The uuid ID for the specified zone import.  |

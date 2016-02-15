@@ -5,7 +5,7 @@ List zone imports
 
 .. code::
 
-    GET /v2/{account_id}/zones/tasks/imports
+    GET /v2/{TENANT_ID}/zones/tasks/imports
 
 This call lists all of the zone imports created by this project. Objects will be returned 
 that can be queried using the links in the ``links`` field.
@@ -33,7 +33,7 @@ This table shows the URI parameters for the list zone imports request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 

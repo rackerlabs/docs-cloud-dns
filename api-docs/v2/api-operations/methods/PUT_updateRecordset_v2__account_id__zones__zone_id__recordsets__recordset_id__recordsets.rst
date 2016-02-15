@@ -5,7 +5,7 @@ Update recordset
 
 .. code::
 
-    PUT /v2/{account_id}/zones/{zone_id}/recordsets/{recordset_id}
+    PUT /v2/{TENANT_ID}/zones/{zone_id}/recordsets/{recordset_id}
 
 This operation replaces the specified record set with the specified details.
 
@@ -72,7 +72,7 @@ This table shows the URI parameters for the update record set request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

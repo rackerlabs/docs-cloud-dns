@@ -19,17 +19,30 @@ The following examples show the cURL request for Create recordset:
           "10.1.0.2"
       ]
     }' \
-    -H "X-Auth-Token: $token" \
+    -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
-    https://global.dns.api.rackspacecloud.com/v2/123456/zones/zone_id/recordsets | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zone_id}/recordsets | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values:
+
+Request body:
 
 -  **name** — the name you used in your create zone response (see the examples in the 
    previous section, "Create a zone")
 
+Header:
+
+-  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
+   replacement, set your environment variables 
+   (see :ref:`Configure environment variables <configure-environment-variables>`).
+
+URL:
+
+-  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
+   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+
 -  **zone_id** — as returned in your create zone response (see the examples in the previous 
-   section, "Create a zone") must be replaced in the request URL
+   section, "Create a zone").
 
 The following example shows the response for Create recordset:
  
