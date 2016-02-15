@@ -3,7 +3,7 @@ v2 Preview release, November 12, 2015
 
 What's new
 ~~~~~~~~~~
-This version contains the preview release for |product name|. 
+This version contains the internal-only preview release for |product name|. 
 
 During the preview, please send your feedback to: <ManagedDNS_Preview@rackspace.com>.
 

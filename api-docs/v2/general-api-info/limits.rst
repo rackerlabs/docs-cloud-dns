@@ -62,7 +62,7 @@ resource a user is allowed to create.
 Zone quotas
 ^^^^^^^^^^^
 
-By default users may have up to 500 zones per Cloud account (including sub-zones). When
+By default users may have up to 5000 zones per Cloud account (including sub-zones). When
 a user submits a request to create new zones, the system will only accept the request if the
 total number of existing plus requested zones is within the account zone limit. If the total
 exceeds the account zone limit, the entire request will be rejected and the following message

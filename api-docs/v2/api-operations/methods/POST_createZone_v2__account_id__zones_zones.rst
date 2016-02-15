@@ -77,10 +77,6 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
-| 513     | Global Rate Limit     | The service is under high load and the      |
-|         |                       | request was rate limited. Try again in a    |
-|         |                       | few minutes.                                |
-+---------+-----------------------+---------------------------------------------+
 
 This table shows the URI parameters for the create zone request:
 
@@ -147,7 +143,7 @@ This list shows the body parameters for the request:
     {
         "id": "a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
         "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
-        "project_id": "4335d1f0-f793-11e2-b778-0800200c9a66",
+        "project_id": "123456",
         "name": "example.org.",
         "email": "joe@example.org",
         "ttl": 7200,

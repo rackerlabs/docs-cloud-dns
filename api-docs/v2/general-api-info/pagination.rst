@@ -6,7 +6,9 @@ Pagination and Sorting
 Pagination and sorting is available on all collections and is controlled using a combination 
 of four query parameters: ``marker=<UUID>&limit=<INTEGER>&sort_key=<STRING>&sort_dir<STRING>``. 
 
-Collection responses will include a ``links`` object containing absolute URLs for the next and previous pages. These links may be omitted, or null, at the edges of a paginated collection.
+Collection responses will include a ``links`` object containing absolute URLs for the next 
+and previous pages. These links may be omitted, or null, at the edges of a paginated 
+collection.
 
 To navigate the collection, the parameters ``limit`` and ``marker`` can be set in the URI 
 (for example: ``?limit=100&marker=<UUID>``). The ``marker`` parameter is the ID of the last 
@@ -46,7 +48,7 @@ or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` qu
         "created_at": "2014-07-15T14:39:16.000000",
         "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
         "version": 1,
-        "project_id": "noauth-project",
+        "project_id": "123456",
         "email": "hostmaster@example.net",
         "links": {
           "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/c316def0-8599-4030-9dcd-2ce566348115"
@@ -63,7 +65,7 @@ or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` qu
         "created_at": "2014-07-08T20:28:19.000000",
         "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
         "version": 1,
-        "project_id": "noauth-project",
+        "project_id": "123456",
         "email": "hostmaster@example.com",
         "links": {
           "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"

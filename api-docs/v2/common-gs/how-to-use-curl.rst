@@ -62,11 +62,6 @@ The cURL examples in this guide use the following command-line options.
 |           |                                                                       |
 |           | - Specifies the authentication token.                                 |
 |           |                                                                       |
-|           | ``X-Auth-Project-Id``: Optional.                                      |
-|           |                                                                       |
-|           | - Specifies the project ID, which can be your account number or       |
-|           |   another value.                                                      |
-|           |                                                                       |
 |           | ``Accept``: Optional.                                                 |
 |           |                                                                       |
 |           | - Specifies the format of the response body. Following is the syntax  |

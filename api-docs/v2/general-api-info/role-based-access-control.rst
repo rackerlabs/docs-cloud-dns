@@ -4,6 +4,11 @@
 Role Based Access Control
 =========================
 
+.. important::
+
+   Role based access control does not apply during the EA release period.  This section
+   is intended only for future releases.
+
 Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud 
 services, including the Cloud DNS API, to authorized users only. RBAC enables Rackspace 
 Cloud customers to specify which account users of their Cloud account have access to which 

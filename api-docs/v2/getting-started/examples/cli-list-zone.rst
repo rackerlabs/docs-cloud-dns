@@ -28,7 +28,7 @@ The response is similar to the following:
     | masters        |                                      |
     | name           | example.org.                         |
     | pool_id        | 794ccc2c-d751-44fe-b57f-8894c9f5c842 |
-    | project_id     | 938611                               |
+    | project_id     | 123456                               |
     | serial         | 1446155649                           |
     | status         | ACTIVE                               |
     | transferred_at | None                                 |

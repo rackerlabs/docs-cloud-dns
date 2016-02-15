@@ -70,7 +70,7 @@ This operation does not accept a request body.
         "updated_at": "2015-05-08T15:43:42.000000",
         "version": 2,
         "message": "example.com. imported",
-        "project_id": "noauth-project",
+        "project_id": "123456",
         "id": "074e805e-fe87-4cbb-b10b-21a06e215d41"
     }
 
