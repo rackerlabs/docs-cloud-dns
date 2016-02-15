@@ -56,7 +56,7 @@ the request should be retried in a few minutes.
 Resource Quotas
 ~~~~~~~~~~~~~~~
 
-**POST**, **PUT**, and **PATCH** ccalls are subject to quotas for the number of a certain 
+**POST**, **PUT**, and **PATCH** calls are subject to quotas for the number of a certain 
 resource a user is allowed to create.
 
 Zone quotas
