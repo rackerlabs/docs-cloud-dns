@@ -7,7 +7,7 @@ List zone exports
 
     GET /v2/{TENANT_ID}/zones/tasks/exports
 
-This call lists all of the zone exports created by this project. Returned objects can be 
+This call lists all of the zone exports created by this account. Returned objects can be 
 queried using the links in the ``links`` field.
 
 This table shows the possible response codes for this operation:
@@ -69,7 +69,7 @@ This operation does not accept a request body.
                 "version": 2,
                 "location": "https://global.dns.rackspacecloud.com/v2/123456/zones/30ea7692-7f9e-4195-889e-0ba11620b491/tasks/exports/d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248/export",
                 "message": null,
-                "project_id": "noauth-project",
+                "project_id": "123456",
                 "id": "d2f36aa6-2da4-4b22-a2a9-9cdf19a2f248"
             },
             {
@@ -84,7 +84,7 @@ This operation does not accept a request body.
                 "version": 2,
                 "location": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/3d7d07a5-2ce3-458e-b3dd-6a29906234d8/export",
                 "message": null,
-                "project_id": "noauth-project",
+                "project_id": "123456",
                 "id": "3d7d07a5-2ce3-458e-b3dd-6a29906234d8"
             },
         ],

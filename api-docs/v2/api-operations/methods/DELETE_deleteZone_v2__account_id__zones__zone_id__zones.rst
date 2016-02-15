@@ -63,10 +63,6 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
-| 513     | Global Rate Limit     | The service is under high load and the      |
-|         |                       | request was rate limited. Try again in a    |
-|         |                       | few minutes.                                |
-+---------+-----------------------+---------------------------------------------+
 
 This table shows the URI parameters for the delete zone request:
 

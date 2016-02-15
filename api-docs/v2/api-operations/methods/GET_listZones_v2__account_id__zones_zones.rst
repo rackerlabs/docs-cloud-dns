@@ -87,7 +87,7 @@ This operation does not accept a request body.
             {
                 "id": "a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
                 "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
-                "project_id": "4335d1f0-f793-11e2-b778-0800200c9a66",
+                "project_id": "123456",
                 "name": "example.org.",
                 "email": "joe@example.org.",
                 "ttl": 7200,
@@ -107,7 +107,7 @@ This operation does not accept a request body.
             {
                 "id": "fdd7b0dc-52a3-491e-829f-41d18e1d3ada",
                 "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
-                "project_id": "4335d1f0-f793-11e2-b778-0800200c9a66",
+                "project_id": "123456",
                 "name": "example.net.",
                 "email": "joe@example.net.",
                 "ttl": 7200,

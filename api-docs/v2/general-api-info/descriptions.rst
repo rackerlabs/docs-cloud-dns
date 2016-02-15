@@ -32,7 +32,7 @@ Descriptions are supported for requests and responses of zones and recordsets us
       "ttl": 3600,
       "action": "NONE",
       "serial": 1437580547,
-      "project_id": "noauth-project",
+      "project_id": "123456",
       "type": "PRIMARY",
       "email": "user@example.org",
       "description": "Optional zone description"

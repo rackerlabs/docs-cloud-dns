@@ -7,7 +7,7 @@ List zone imports
 
     GET /v2/{TENANT_ID}/zones/tasks/imports
 
-This call lists all of the zone imports created by this project. Objects will be returned 
+This call lists all of the zone imports created by this account. Objects will be returned 
 that can be queried using the links in the ``links`` field.
 
 This table shows the possible response codes for this operation:
@@ -69,7 +69,7 @@ This operation does not accept a request body.
                 "updated_at": "2015-05-08T15:22:50.000000",
                 "version": 2,
                 "message": "example.com. imported",
-                "project_id": "noauth-project",
+                "project_id": "123456",
                 "id": "fb47a23e-eb97-4c86-a3d4-f3e1a4ca9f5e"
             },
             {
@@ -83,7 +83,7 @@ This operation does not accept a request body.
                 "updated_at": "2015-05-08T15:43:42.000000",
                 "version": 2,
                 "message": "example.com. imported",
-                "project_id": "noauth-project",
+                "project_id": "123456",
                 "id": "074e805e-fe87-4cbb-b10b-21a06e215d41"
             }
         ],

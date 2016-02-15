@@ -35,8 +35,6 @@ descriptions.
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Internal Server Error| 500  | The back-end services encountered an unexpected condition that prevented it from fulfilling the request. See the details element for specifics.                                                                                                   |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Global Rate Limit    | 513  | The system is under peak load and new requests are being rate limited. Please try again.                                                                                                                                                          |
-+----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 All errors will look similar. A ``code`` element will show the HTTP error code for convenience.
 The ``type`` element will show the type of error. The ``request_id`` will help API operators
