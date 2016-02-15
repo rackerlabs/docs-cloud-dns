@@ -13,7 +13,7 @@ The following example shows the cURL request for List recordset:
     curl -s \
     -H "X-Auth-Token: $token" \
     -H "Content-Type: application/json" \
-    https://global.dns.api.rackspacecloud.com/v2/$account/zones/zone_id/recordsets/recordset_id | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/123456/zones/zone_id/recordsets/recordset_id | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values:
 
@@ -47,7 +47,7 @@ The following example shows the response for List recordset:
         "action": "NONE",
      "description": "This is an example record set.",
         "links": {
-            "self": "https://global.dns.api.rackspacecloud.com/v2/$account/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
+            "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
         },
     }
 

@@ -42,7 +42,7 @@ Record Type: **CNAME** (Creates an alias for a zone)
   	   A CNAME record label (name) can have underscores anywhere in any subzone labels, 
   	   but not in the main zone name of the zone to which the record belongs. For example, 
   	   for the zone *example.com*, a CNAME record belonging to that zone can have the label 
-  	   ``_ab_b_.cd_e.example.com``.
+  	   ``_ab_b_.cd_e.example.com.``.
 
 Record Type: **MX** (Designates a zone's mail server)
 
@@ -57,7 +57,7 @@ Record Type: **MX** (Designates a zone's mail server)
   	.. note::
   	
   	   The MX record set data format is “<priority> <host>”, so in the preceding recordset 
-  	   example, the priority = ``10`` and host = ``mail.example.com``.
+  	   example, the priority = ``10`` and host = ``mail.example.com.``.
   	   
 Record Type: **NS** (Designates a zone's authoritative name server)
 
@@ -67,7 +67,7 @@ Record Type: **NS** (Designates a zone's authoritative name server)
          "description" : "This is an example NS record set.",
          "type" : "NS",
          "ttl" : 3600,
-         "records" : [ "ns1.com" ] }
+         "records" : [ "ns1.com." ] }
 
 Record Type: **PTR** (Designates a reverse DNS record)
 

@@ -7,6 +7,7 @@
 .. toctree::
     :maxdepth: 2
 
+    Name server setup with your Registrar <name-server-setup>
     Prerequisites <prerequisites-for-using-api>
     Designate client <designate-client>
     Install CLI client <install-CLI-client>

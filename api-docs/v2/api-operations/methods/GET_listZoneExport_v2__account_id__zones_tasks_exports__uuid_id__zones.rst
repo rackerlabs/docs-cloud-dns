@@ -45,8 +45,8 @@ request:
 
 .. code::  
 
-    GET /v2/zones/tasks/exports/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
-    Host: 127.0.0.1:9001
+    GET /v2/123456/zones/tasks/exports/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
 
 This operation does not accept a request body.
@@ -62,13 +62,13 @@ This operation does not accept a request body.
         "status": "COMPLETE",
         "zone_id": "6625198b-d67d-47dc-8d29-f90bd60f3ac4",
         "links": {
-            "self": "http://127.0.0.1:9001/v2/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720",
-            "export": "http://127.0.0.1:9001/v2/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export"
+            "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720",
+            "export": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export"
         },
         "created_at": "2015-08-27T20:57:03.000000",
         "updated_at": "2015-08-27T20:57:03.000000",
         "version": 2,
-        "location": "designate://v2/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export",
+        "location": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export",
         "message": null,
         "project_id": "noauth-project",
         "id": "8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720"

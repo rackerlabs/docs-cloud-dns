@@ -24,7 +24,7 @@ a ``self`` link that points to the given resource.
          "id": "a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
          "....": "....",
          "links": {
-           "self": "https://dns.api.rackspacecloud.com/v2/examples/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
+           "self": "https://global.dns.api.rackspacecloud.com/v2/examples/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
          }
        }
      } 

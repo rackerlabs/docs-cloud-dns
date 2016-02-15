@@ -93,7 +93,7 @@ token ID
     
 tenant ID
     The tenant ID provides your account number. For most Rackspace Cloud service APIs, the 
-    tenant ID is appended to the API endpoint in the service catalog automatically. You 
+    tenant ID is appended to the API endpoint in the service catalog automatically. 
      
 endpoint 
 	The API endpoint provides the URL that you use to access the API service. For guidance 

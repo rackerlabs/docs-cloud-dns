@@ -66,8 +66,8 @@ This table shows the URI parameters for the list zones request:
 
 .. code::  
 
-    GET /v2/1234/zones HTTP/1.1
-    Host: 127.0.0.1:9001
+    GET /v2/123456/zones HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
     Content-Type: application/json
 
@@ -101,7 +101,7 @@ This operation does not accept a request body.
                 "created_at": "2014-07-07T18:25:31.275934",
                 "updated_at": null,
                 "links": {
-                    "self": "https://127.0.0.1:9001/v2/1234/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+                    "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
                 }
             },
             {
@@ -121,12 +121,12 @@ This operation does not accept a request body.
                 "created_at": "2014-07-07T18:22:08.287743",
                 "updated_at": null,
                 "links": {
-                    "self": "https://127.0.0.1:9001/v2/1234/zones/fdd7b0dc-52a3-491e-829f-41d18e1d3ada"
+                    "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/fdd7b0dc-52a3-491e-829f-41d18e1d3ada"
                 }
             }
         ],
         "links": {
-            "self": "https://127.0.0.1:9001/v2/1234/zones"
+            "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones"
         },
         "metadata": {
             "total_count": 2

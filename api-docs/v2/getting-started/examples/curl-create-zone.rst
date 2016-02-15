@@ -21,7 +21,7 @@ The following example shows the cURL request for Create zone:
     }' \
     -H "X-Auth-Token: $token" \
     -H "Content-Type: application/json" \
-    https://global.dns.api.rackspacecloud.com/v2/$account/zones | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/123456/zones | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values 
 for all the cURL examples that follow:
@@ -56,7 +56,7 @@ The following example shows the initial asynchronous responses for **Create zone
         "created_at": "2015-06-18T18:25:31.275934",
         "updated_at": null,
         "links": {
-          "self": "https://global.dns.api.rackspacecloud.com/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
+          "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
         }
     }
 

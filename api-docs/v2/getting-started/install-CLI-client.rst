@@ -49,3 +49,5 @@ run the following command:
 .. code::  
 
     $ sudo pip install -U distribute
+
+Now that your command line tool is ready, jump to :ref:`Creating a zone with the CLI<cli-create-zone>`.

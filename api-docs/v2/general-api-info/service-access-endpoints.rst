@@ -7,10 +7,9 @@ Because |product name| service is not a regionalized service, the service is the
 responsible for appropriate replication, caching, and overall maintenance of DNS data 
 across regional boundaries to other DNS servers.
 
-Use one of the following service access/endpoint to access the |product name| service:
+Use the following service access/endpoint to access the |product name| service:
 
-- ``https://dns.api.rackspacecloud.com/v1.0/1234/``
-- ``https://lon.dns.api.rackspacecloud.com/v1.0/1234/``
+- ``https://global.dns.api.rackspacecloud.com/v2/123456/``
 
 Replace the sample account ID number, ``1234``, with your Rackspace Cloud account number.
 
@@ -21,5 +20,5 @@ catalog, see the :ref:`authentication response example <review-auth-resp>`.
 ..  note::
     The service catalog returned in the auth response specifies the correct service access 
     endpoint for your account to use for accessing |product name|. Use the service type 
-    (rax:dns) to locate the correct endpoint in the service catalog. For an example of the 
+    (dns) to locate the correct endpoint in the service catalog. For an example of the 
     service catalog, see :ref:`authentication response examples <review-auth-resp>`.

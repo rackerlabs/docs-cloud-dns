@@ -19,6 +19,6 @@ one another.
 
 .. code::
 
-    https://dns.api.rackspacecloud.com/v2.0/zones
+    https://global.dns.api.rackspacecloud.com/v2.0/zones
 
 .. note:: This request URL pertains to contract version 2.0.

@@ -84,8 +84,8 @@ This table shows the URI parameters for the delete zone request:
 
 .. code::  
 
-    DELETE /v2/1234/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
-    Host: 127.0.0.1:9001
+    DELETE /v2/123456/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3 HTTP/1.1
+    Host: global.dns.rackspacecloud.com
     Accept: application/json
     Content-Type: application/json
 
