@@ -7,11 +7,10 @@ Because |product name| service is not a regionalized service, the service is the
 responsible for appropriate replication, caching, and overall maintenance of DNS data 
 across regional boundaries to other DNS servers.
 
-Use the following service access/endpoint to access the |product name| service:
+Use the following service access/endpoint to access the |product name| service. Replace the 
+`$TENANT_ID` variable with your Rackspace Cloud account number (for example, `123456`).
 
-- ``https://global.dns.api.rackspacecloud.com/v2/123456/``
-
-Replace the sample account ID number, ``1234``, with your Rackspace Cloud account number.
+- ``https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/``
 
 You can find your account number after the final '/' in the ``publicURL`` field found in 
 the Service catalog returned in the authentication response. For an example of the service 

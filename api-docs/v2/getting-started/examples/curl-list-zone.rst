@@ -12,15 +12,25 @@ The following example shows the cURL request for List zone:
 .. code::  
 
     curl -s  \
-    -H "X-Auth-Token: $token"  \
+    -H "X-Auth-Token: $AUTH_TOKEN \
     -H "Accept: application/json"  \
-    https://global.dns.api.rackspacecloud.com/v2/123456/zones/zone_id | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zone_id} | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values 
 for all the cURL examples that follow:
 
--  **zone_id** — as returned in your create zone response (must be replaced in the request 
-   URL)
+Header:
+
+-  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
+   replacement, set your environment variables 
+   (see :ref:`Configure environment variables <configure-environment-variables>`).
+
+URL:
+
+-  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
+   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+   
+-  **zone_id** — as returned in your create zone response.
 
 The following example shows the List zone response:
 

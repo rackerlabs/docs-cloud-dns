@@ -19,18 +19,30 @@ The following example shows the cURL request for Create zone:
         "ttl" : 7200,
         "description" : "This is an example zone."
     }' \
-    -H "X-Auth-Token: $token" \
+    -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
-    https://global.dns.api.rackspacecloud.com/v2/123456/zones | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones | python -m json.tool
 
 Remember to replace the names in the examples above with their actual respective values 
 for all the cURL examples that follow:
 
--  **your_zone_name** — to name your zone, you can use any letter,
-   numbers between 0 and 9, and the character "-".
+Header:
+
+-  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
+   replacement, set your environment variables 
+   (see :ref:`Configure environment variables <configure-environment-variables>`).
+
+URL:
+
+-  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
+   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+   
+Request body:
+   
+-  **name** — to name your zone, you can use any letter, numbers between 0 and 9, and the 
+   character "-".
 
 The following example shows the initial asynchronous responses for **Create zone**:
-
  
 **Example Create zone: initial asynchronous response**
 

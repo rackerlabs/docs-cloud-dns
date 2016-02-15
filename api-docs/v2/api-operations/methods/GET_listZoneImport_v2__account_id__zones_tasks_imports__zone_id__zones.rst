@@ -5,7 +5,7 @@ List a zone import
 
 .. code::
 
-    GET /v2/{account_id}/zones/tasks/imports/{zone_id}
+    GET /v2/{TENANT_ID}/zones/tasks/imports/{zone_id}
 
 This call lists the status of a zone import by querying the uuid ID that was returned when 
 the request was created. Objects will be returned that can be queried using the links in 
@@ -34,7 +34,7 @@ This table shows the URI parameters for the list a zone import request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{uuid_id}``         | ​String | The uuid ID for the specified zone import.  |

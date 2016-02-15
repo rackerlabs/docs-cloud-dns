@@ -5,7 +5,7 @@ List a zone export record
 
 .. code::
 
-    GET /v2/{account_id}/zones/tasks/exports/{uuid_id}
+    GET /v2/{TENANT_ID}/zones/tasks/exports/{uuid_id}
 
 This call lists the zone export record for the specified zone export uuid ID. Returned 
 objects can be queried using the links in the ``links`` field.
@@ -34,7 +34,7 @@ request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{uuid_id}``         | ​String | The uuid ID for the specified zone export.  |

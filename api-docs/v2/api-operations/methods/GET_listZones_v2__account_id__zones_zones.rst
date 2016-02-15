@@ -5,7 +5,7 @@ List zones
 
 .. code::
 
-    GET /v2/{account_id}/zones
+    GET /v2/{TENANT_ID}/zones
 
 This operation provides a list of detailed information for all zones.
 
@@ -57,7 +57,7 @@ This table shows the URI parameters for the list zones request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 

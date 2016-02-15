@@ -5,7 +5,7 @@ Create zone
 
 .. code::
 
-    POST /v2/123456/zones
+    POST /v2/{TENANT_ID}/zones
 
 This call provisions a new DNS zone, based on the configuration defined
 in the request object. 
@@ -87,7 +87,7 @@ This table shows the URI parameters for the create zone request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 

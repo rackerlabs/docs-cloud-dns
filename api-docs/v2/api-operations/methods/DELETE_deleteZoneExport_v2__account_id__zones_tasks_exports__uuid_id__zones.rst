@@ -5,7 +5,7 @@ Delete a zone export
 
 .. code::
 
-    DELETE /v2/{account_id}/zones/tasks/exports/{uuid_id}
+    DELETE /v2/{$TENANT-ID}/zones/tasks/exports/{uuid_id}
 
 This call deletes a zone export for the specified zone export uuid ID. This does not affect 
 the zone that was exported. It simply removes the record of the export. If the link to 
@@ -35,7 +35,7 @@ This table shows the URI parameters for the delete a zone export request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{uuid_id}``         | ​String | The uuid ID for the specified zone export.  |

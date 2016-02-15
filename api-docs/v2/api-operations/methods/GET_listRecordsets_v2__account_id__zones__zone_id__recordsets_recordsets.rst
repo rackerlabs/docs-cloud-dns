@@ -5,7 +5,7 @@ List all recordsets for a specified zone
 
 .. code::
 
-    GET /v2/{account_id}/zones/{zone_id}/recordsets
+    GET /v2/{TENANT_ID}/zones/{zone_id}/recordsets
  
 This operation provides detailed information for all record sets for the
 specified zone id.
@@ -56,7 +56,7 @@ This table shows the URI parameters for the list all record sets for a specified
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

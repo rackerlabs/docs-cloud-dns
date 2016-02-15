@@ -5,7 +5,7 @@ Delete specified zone
 
 .. code::
 
-    DELETE /v2/{account_id}/zones/{zone_id}
+    DELETE /v2/{$TENANT-ID}/zones/{zone_id}
 
 This operation deletes a specified zone. Once a zone has been deleted, all associated 
 resources are destroyed, and the operation is non-recoverable.
@@ -73,7 +73,7 @@ This table shows the URI parameters for the delete zone request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{$TENANT-ID}``      | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{zone_id}``         | ​String | The zone ID for the specified zone.         |

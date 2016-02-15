@@ -5,7 +5,7 @@ Create a zone export
 
 .. code::
 
-    POST /v2/{account_id}/zones/{uuid}/tasks/export
+    POST /v2/{TENANT_ID}/zones/{uuid}/tasks/export
 
 This call exports a zone in BIND9 zone file format. To export a zone in BIND9 zonefile 
 format, a zone export resource must be created by initializing an export task.
@@ -33,7 +33,7 @@ request:
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{account_id}``      | ​String | The account ID of the owner of the          |
+| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
 |                       |         | specified account.                          |
 +-----------------------+---------+---------------------------------------------+
 | ``{uuid_id}``         | ​String | The uuid of the specified zone.             |
