@@ -3,8 +3,6 @@
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
-Issues and bug reports can be directed to your support team via ticket, chat, email, or phone.
-
 You can download the most current versions of other API-related documents from 
 :rax-dev:`developer.rackspace.com<>`.
 
@@ -12,8 +10,9 @@ For information about Rackspace Cloud products, refer to the :rax-cloud:`Rackspa
 This site also offers links to Rackspace's official support channels, including How-To 
 articles, forums, phone, chat, and email.
 
-Please visit our :rax-special:`Product Feedback Forum<feedback>` and let us know what you 
-think about Cloud DNS!
+Let us know what you think by sending feedback, issues, bug reports to DNS_EA@rackspace.com.  
+
+.. COMMENT Please visit our :rax-special:`Product Feedback Forum<feedback>` to let us know what you think about Managed DNS!
 
 You can also follow Rackspace updates and announcements via `Twitter`_.
 

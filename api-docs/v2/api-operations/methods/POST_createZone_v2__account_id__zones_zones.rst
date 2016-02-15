@@ -72,8 +72,7 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 409     | Already Exists        | The item already exists.                    |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | Request exceeds rate limit or quota         |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
@@ -93,29 +92,18 @@ This list shows the body parameters for the request:
 
    The name for the zone (immutable). Must be a valid zone name.
 
--  **type**: String. Optional.
-
-   Enum PRIMARY/SECONDARY, default PRIMARY (immutable).
-
 -  **email**: String. Required.
 
    Email address to use for contacting the zone administrator.
 
 -  **ttl**: Integer. Optional.
 
-   time-to-live numeric value in seconds. The default value is 300
-   seconds.
+   time-to-live numeric value in seconds. The minimum value is 300 seconds.
 
 -  **description**: String. Optional.
 
    UTF-8 text field.
 
--  **masters**: Object. Optional.
-
-   Array of master nameservers. (NULL for type PRIMARY, required for
-   SECONDARY otherwise zone will not be transferred before set.)
-
- 
 **Example Create zone request**
 
 .. code::  

@@ -12,10 +12,12 @@ resources are destroyed, and the operation is non-recoverable.
 
 ..  note:: 
 
-    This operation returns an asynchronous response. This call returns an
-    asynchronous response. Refer to 
-    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works. 
+    This operation returns an asynchronous response. This call returns an asynchronous 
+    response. Refer to :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` 
+    for more information about how the asynchronous call works. 
+    
+    Refer to :ref:`DNS propagation<cdns-dg-propagation>` for information about DNS 
+    propagation.
 
 ..  note:: 
 
@@ -52,8 +54,7 @@ This table shows the possible response codes for this operation:
 |         |                       | not allowed for the resource identified by  |
 |         |                       | the Request-URI.                            |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | Request exceeds rate limit or quota         |
 +---------+-----------------------+---------------------------------------------+
 | 415     | Unsupported Media     | The server is refusing to service the       |
 |         | Type                  | request because the entity of the request   |

@@ -3,7 +3,7 @@
 Descriptions
 ~~~~~~~~~~~~~~
 
-Descriptions are supported for requests and responses of zones and recordsets using the 
+Descriptions are supported for requests and responses of zones and record sets using the 
 ``description`` attribute, as demonstrated in the following example:
  
 **Example 3.7. Example Response with description**
@@ -39,6 +39,7 @@ Descriptions are supported for requests and responses of zones and recordsets us
     }
 
 Notes for descriptions:
+
 -	Are limited to 160 characters each
 
 -	Can be any text characters
@@ -47,6 +48,6 @@ Notes for descriptions:
 
 -	To remove a description, set it to the empty string, for example: description=""
 
--	Are returned on **GET** calls for both zones and recordsets regardless of whether the 
+-	Are returned on **GET** calls for both zones and record sets regardless of whether the 
 	call is a single or multiple call, and regardless of whether it is a detail or 
 	non-detail call

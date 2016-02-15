@@ -1,9 +1,9 @@
 .. _cli-create-recordset:
 
-Creating a recordset with the CLI
+Creating a record set with the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the **recordset create** CLI command to create a recordset.
+Use the **recordset create** CLI command to create a record set.
 
 ``usage: openstack recordset create <zone_id> <zone_name> --records <RECORDS> --type <TYPE>``
 
@@ -35,5 +35,5 @@ The response is similar to the following:
     | zone_id     | b8500fe8-eff1-4523-90a4-0765cf39d273 |
     +-------------+--------------------------------------+
 
-You can see from the response ``status`` that the recordset creation is ``PENDING``.
+You can see from the response ``status`` that the record set creation is ``PENDING``.
 

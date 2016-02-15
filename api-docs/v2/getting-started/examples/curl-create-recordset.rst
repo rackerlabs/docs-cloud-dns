@@ -1,11 +1,11 @@
 .. _curl-create-recordset:
 
-Creating a recordset with cURL
+Creating a record set with cURL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following examples show the cURL request for Create recordset:
+The following examples show the cURL request for Create record set:
 
-**Example cURL Create recordset request**
+**Example cURL Create record set request**
 
 .. code::  
 
@@ -44,9 +44,9 @@ URL:
 -  **zone_id** — as returned in your create zone response (see the examples in the previous 
    section, "Create a zone").
 
-The following example shows the response for Create recordset:
+The following example shows the response for Create record set:
  
-**Example Create recordset response**
+**Example Create record set response**
 
 .. code::  
 
@@ -71,7 +71,7 @@ The following example shows the response for Create recordset:
         }
     }
 
-This request is asynchronous, so the ``status`` is set to ``PENDING`` when the recordset is 
-initially created. When the recordset is created completely, the ``status`` is set to 
-``ACTIVE``. To get the status of the recordset, you can query the ``self`` link returned in 
-the **Create recordset** response.
+This request is asynchronous, so the ``status`` is set to ``PENDING`` when the record set is 
+initially created. When the record set is created completely, the ``status`` is set to 
+``ACTIVE``. To get the status of the record set, you can query the ``self`` link returned in 
+the **Create record set** response.

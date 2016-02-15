@@ -1,7 +1,7 @@
 .. _send-api-requests:
 
-Sending API requests to Cloud DNS
-----------------------------------------
+Sending API requests to |product name|
+-----------------------------------------------------
 
 .. contents::
    :local:

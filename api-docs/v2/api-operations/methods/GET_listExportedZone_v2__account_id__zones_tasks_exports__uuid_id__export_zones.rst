@@ -8,7 +8,7 @@ List exported zone
     GET /v2/{$TENANT-ID}/zones/tasks/exports/{uuid_id}/export
 
 This call lists an exported zone for the specified zone export uuid ID. The link that is 
-generated in the export field in an export resource can be followed to a DNS resource, or 
+generated in the export field of an export resource can be followed to a DNS resource, or 
 an external resource. If the link is to a DNS endpoint, the zonefile can be retrieved 
 directly through the API by following that link.
 
@@ -63,7 +63,7 @@ This operation does not accept a request body.
     $ORIGIN example.com.
     $TTL 42
 
-    example.com. IN SOA ns.designate.com. nsadmin.example.com. (
+    example.com. IN SOA ns.rackspace.com. nsadmin.example.com. (
         1394213803 ; serial
         3600 ; refresh
         600 ; retry
@@ -71,7 +71,7 @@ This operation does not accept a request body.
         3600 ; minimum
     )
 
-    example.com. IN NS ns.designate.com.
+    example.com. IN NS ns.rackspace.com.
     example.com.  IN MX 10 mail.example.com.
     ns.example.com.  IN A  10.0.0.1
     mail.example.com.  IN A  10.0.0.2

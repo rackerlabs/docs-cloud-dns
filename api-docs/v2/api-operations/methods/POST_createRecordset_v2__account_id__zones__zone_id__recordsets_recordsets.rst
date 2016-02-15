@@ -1,6 +1,6 @@
 .. _POST_createRecordset_v2__account_id__zones__zone_id__recordsets_recordsets:
 
-Create recordset
+Create record set
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -61,8 +61,7 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 409     | Already Exists        | The item already exists.                    |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | Request exceeds rate limit or quota         |
 +---------+-----------------------+---------------------------------------------+
 | 415     | Unsupported Media     | The server is refusing to service the       |
 |         | Type                  | request because the entity of the request   |

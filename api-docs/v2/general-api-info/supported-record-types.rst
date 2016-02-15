@@ -56,7 +56,7 @@ Record Type: **MX** (Designates a zone's mail server)
 
   	.. note::
   	
-  	   The MX record set data format is “<priority> <host>”, so in the preceding recordset 
+  	   The MX record set data format is “<priority> <host>”, so in the preceding record set 
   	   example, the priority = ``10`` and host = ``mail.example.com.``.
   	   
 Record Type: **NS** (Designates a zone's authoritative name server)

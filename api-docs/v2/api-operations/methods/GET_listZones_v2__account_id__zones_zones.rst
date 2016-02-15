@@ -9,7 +9,7 @@ List zones
 
 This operation provides a list of detailed information for all zones.
 
-A ``self`` link is included for each zone. These links point to each
+A ``self`` link is included for each zone.
 
 This table shows the possible response codes for this operation:
 
@@ -40,8 +40,7 @@ This table shows the possible response codes for this operation:
 |         |                       | not allowed for the resource identified by  |
 |         |                       | the Request-URI.                            |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | Request exceeds rate limit or quota         |
 +---------+-----------------------+---------------------------------------------+
 | 415     | Unsupported Media     | The server is refusing to service the       |
 |         | Type                  | request because the entity of the request   |

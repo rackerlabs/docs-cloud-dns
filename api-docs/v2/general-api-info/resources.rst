@@ -3,7 +3,7 @@
 Resources
 ~~~~~~~~~
 
-A resource is an item you access in an API operation, such as a zone or recordset.
+A resource is an item you access in an API operation, such as a zone or record set.
 
 A ``links`` object will exist inside the resource object. At the minimum, it will contain 
 a ``self`` link that points to the given resource.

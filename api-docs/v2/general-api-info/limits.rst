@@ -15,7 +15,7 @@ Rate limits
 
 Rate limits are shown below for API operations by resource. They are displayed in a simplified, wild-card style format.
 
-**Zone rate limits:** URIs: ``\*/zones/`` and ``\*/zones/\<ID\>``
+**Zone rate limits:** URIs: ``/zones/`` and ``/zones/<ID>``
 
 +--------+-----------+
 | Verb   | Default   |
@@ -29,7 +29,7 @@ Rate limits are shown below for API operations by resource. They are displayed i
 | DELETE |  5/minute |
 +--------+-----------+
 
-**Record set rate limits:** URI: ``\*/zones/\<ID\>/recordsets/\*``
+**Record set rate limits:** URI: ``/zones/<ID>/recordsets/``
 
 +--------+------------+
 | Verb   | Default    |
@@ -88,24 +88,24 @@ will be returned:
 
 .. note::
 
-   Any zones or recordsets that are submitted in any request that causes zone quotas to be 
+   Any zones or record sets that are submitted in any request that causes zone quotas to be 
    exceeded will not be provisioned and the entire request will be rejected.
 
    The account zone limit applies to any API request that can be used to create a zone. An 
    account may have a non-default limit if determined necessary by Rackspace Support.
 
-Recordset and Record quotas
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Record set and Record quotas
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, users may have up to 500 recordsets total per zone per Cloud account and up to
-50 records per recordset.
+By default, users may have up to 500 record sets total per zone per Cloud account and up to
+50 records per record set.
 
-When a user submits a request to create a new recordset, the system will only accept the
-request if the total number of existing plus requested record or recordset is within these
-quotas. If the total number of recordsets or recordsets on a specified zone exceeds
+When a user submits a request to create a new record set, the system will only accept the
+request if the total number of existing plus requested record or record set is within these
+quotas. If the total number of records or record sets on a specified zone exceeds
 these quotas, the entire request will be rejected and the following message will be returned:
 
-**Example: Recordset limit rejection response:**
+**Example: Record set limit rejection response:**
 
 .. code::
 
@@ -123,10 +123,10 @@ these quotas, the entire request will be rejected and the following message will
 
 .. note::
 
-   Any zones recordsets that are submitted in any request that causes recordset limits to 
+   Any zones record sets that are submitted in any request that causes record set limits to 
    be exceeded will not be provisioned and the entire request will be rejected.
 
-   The limits apply to any API request that can be used to create one or more recordsets. 
+   The limits apply to any API request that can be used to create one or more record sets. 
    An account may have a non-default record limit if determined necessary by Rackspace Support.
 
 
