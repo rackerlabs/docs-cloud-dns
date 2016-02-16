@@ -3,21 +3,27 @@
 Pagination and Sorting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Pagination and sorting is available on all collections and is controlled using a combination 
-of four query parameters: ``marker=<UUID>&limit=<INTEGER>&sort_key=<STRING>&sort_dir<STRING>``. 
-
 Collection responses will include a ``links`` object containing absolute URLs for the next 
 and previous pages. These links may be omitted, or null, at the edges of a paginated 
 collection.
 
-To navigate the collection, the parameters ``limit`` and ``marker`` can be set in the URI 
-(for example: ``?limit=100&marker=<UUID>``). The ``marker`` parameter is the ID of the last 
-item in the previous list. Items are sorted by create time in descending order. When a 
-create time is not available, they are sorted by ID. The ``limit`` parameter sets the page 
-size. Both parameters are optional.
+Pagination and sorting is available on all collections and is controlled using a combination 
+of four query parameters:
 
-To sort results, set the ``sort_key`` query parameter to a valid attribute (e.g. ``name``
-or ``email``). To sort in descending order, specify add the ``sort_dir=DESC`` query parameter.
+- **marker**: ID of the last item in the previous list
+- **limit**: sets the page size.
+- **sort_key**: attribute used for sorting
+- **sort_dir**: direction (``asc`` for ascending and ``desc`` for descending)
+
+For example: ``marker=<UUID>&limit=<INTEGER>&sort_key=<STRING>&sort_dir<STRING>``. 
+
+To navigate the collection, the parameters ``limit`` and ``marker`` can be set in the URI 
+(for example: ``?limit=100&marker=<UUID>``). Both parameters are optional.
+
+Items are sorted by create time in descending order. When a create time is not available, 
+they are sorted by ID. To sort results, set the ``sort_key`` query parameter to a valid 
+attribute (e.g. ``name``or ``email``). To sort in descending order, specify add the 
+``sort_dir=desc`` query parameter.
 
 **Example Request for a paginated collection of zones**
 

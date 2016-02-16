@@ -23,7 +23,7 @@ resource records may not exist between Rackspace Cloud DNS and |product name|.
 .. warning::
 
  	If you're using pyrax or ansible, see known issue (see 
- 	:ref:`v2 EA release, February 22, 2016  <RN_20160222>`).
+ 	:ref:`v2 EA release, March 14, 2016  <RN_20160314>`).
 
 
 The following figure shows an overview of the |product name| Infrastructure:
