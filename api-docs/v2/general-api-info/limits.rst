@@ -50,7 +50,7 @@ again. The ``Reply-After`` header is an ISO 8601 Date/Time field, for example
 
 **Global Rate Limit**
 
-During periods of peak load, the system may return a ``513`` HTTP reponse. If this occurs
+During periods of peak load, the system may return a ``503`` HTTP reponse. If this occurs
 the request should be retried in a few minutes.
 
 Resource Quotas
@@ -97,8 +97,8 @@ will be returned:
 Record set and Record quotas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, users may have up to 500 record sets total per zone per Cloud account and up to
-50 records per record set.
+By default, users may have up to 3000 record sets total per zone per Cloud account and up to
+3000 records per zone.
 
 When a user submits a request to create a new record set, the system will only accept the
 request if the total number of existing plus requested record or record set is within these
@@ -118,12 +118,12 @@ these quotas, the entire request will be rejected and the following message will
     {
       "message" : "Your account is currently over the limit so your request could not be processed.",
       "code" : 413,
-      "details" : "Limit of 500 records per domain has been reached."
+      "details" : "Limit of 3000 records per domain has been reached."
     }
 
 .. note::
 
-   Any zones record sets that are submitted in any request that causes record set limits to 
+   Any record sets or records that are submitted in any request that causes quota limits to 
    be exceeded will not be provisioned and the entire request will be rejected.
 
    The limits apply to any API request that can be used to create one or more record sets. 
