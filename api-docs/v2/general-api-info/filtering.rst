@@ -55,6 +55,9 @@ The following example takes a collection of zones and filters it by the â€œnameâ
       }],
       "links": {
         "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones?name=example.com."
+      },
+      "metadata": {
+        "total_count": 1
       }
     } 
 
@@ -116,6 +119,9 @@ use of wildcards on the right side of a query:
       }],
       "links": {
         "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones?name=example*"
+      },
+      "metadata": {
+        "total_count": 2
       }
     } 
 
@@ -210,5 +216,8 @@ This example demonstrates the use of multiple wildcards:
       }],
       "links": {
         "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones?name=*example*"
+      },
+      "metadata": {
+        "total_count": 4
       }
     }

@@ -43,42 +43,55 @@ attribute (e.g. ``name``or ``email``). To sort in descending order, specify add 
     Content-Type: application/json
 
     {
-      "zones": [{
-        "status": "ACTIVE",
-        "description": null,
-        "updated_at": null,
-        "ttl": 3600,
-        "serial": 1405435156,
-        "id": "c316def0-8599-4030-9dcd-2ce566348115",
-        "name": "abc.example.net.",
-        "created_at": "2014-07-15T14:39:16.000000",
-        "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
-        "version": 1,
-        "project_id": "123456",
-        "email": "hostmaster@example.net",
-        "links": {
-          "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/c316def0-8599-4030-9dcd-2ce566348115"
+      "zones": [
+        {
+          "status": "ACTIVE",
+          "masters": [],
+          "name": "joe1.com.",
+          "links": {
+            "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/bb069ab4-85e7-47ab-b949-0587c84f4ac1"
+          },
+          "transferred_at": null,
+          "created_at": "2016-02-23T15:46:21.000000",
+          "pool_id": "794ccc2c-d751-44fe-b57f-8894c9f5c842",
+          "updated_at": "2016-02-23T15:46:29.000000",
+          "version": 3,
+          "id": "bb069ab4-85e7-47ab-b949-0587c84f4ac1",
+          "ttl": 300,
+          "action": "NONE",
+          "serial": 1456242381,
+          "project_id": "123456",
+          "type": "PRIMARY",
+          "email": "user1@user1.com",
+          "description": "poo poo"
+        },
+        {
+          "status": "ACTIVE",
+          "masters": [],
+          "name": "joe2.com.",
+          "links": {
+            "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/43400f29-815f-4357-8474-336ea6a40d0a"
+          },
+          "transferred_at": null,
+          "created_at": "2016-02-23T15:46:41.000000",
+          "pool_id": "794ccc2c-d751-44fe-b57f-8894c9f5c842",
+          "updated_at": "2016-02-23T15:47:01.000000",
+          "version": 3,
+          "id": "43400f29-815f-4357-8474-336ea6a40d0a",
+          "ttl": 300,
+          "action": "CREATE",
+          "serial": 1456242401,
+          "project_id": "123456",
+          "type": "PRIMARY",
+          "email": "user1@user1.com",
+          "description": "poo poo"
         }
-      },
-      {
-        "status": "ACTIVE",
-        "description": null,
-        "updated_at": "2014-07-08T20:28:31.000000",
-        "ttl": 86400,
-        "serial": 1404851315,
-        "id": "a4e29ed3-d7a4-4e4d-945d-ce64678d3b94",
-        "name": "example.com.",
-        "created_at": "2014-07-08T20:28:19.000000",
-        "pool_id": "572ba08c-d929-4c70-8e42-03824bb24ca2",
-        "version": 1,
-        "project_id": "123456",
-        "email": "hostmaster@example.com",
-        "links": {
-          "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones/a4e29ed3-d7a4-4e4d-945d-ce64678d3b94"
-        }
-      }
-      }],
+      ],
       "links": {
-        "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones?sort_key=id&sort_dir=desc"
+        "self": "https://global.dns.api.rackspacecloud.com/v2/123456/zones?marker=8bbad290-dc58-42b9-a190-464e21b6497c&limit=2",
+        "next": "https://global.dns.api.rackspacecloud.com/v2/123456/zones?limit=2&marker=43400f29-815f-4357-8474-336ea6a40d0a"
+      },
+      "metadata": {
+        "total_count": 7
       }
     }
