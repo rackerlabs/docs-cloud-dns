@@ -11,6 +11,10 @@ This call imports a zonefile. To import a zonefile, set the Content-type to ``te
 An object will be  returned that can be queried using the ``self`` link in the ``links`` 
 field.
 
+.. important::
+
+	The content type for this request is not json.  Instead, use ``Content-type: text/dns``.
+	
 This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
@@ -53,9 +57,6 @@ request:
     example.com. 42 IN MX 10 mail.example.com.
     ns.example.com. 42 IN A 10.0.0.1
     mail.example.com. 42 IN A 10.0.0.2
-
-This operation does not accept a request body.
-
  
 **Example Create zone import response**
 
