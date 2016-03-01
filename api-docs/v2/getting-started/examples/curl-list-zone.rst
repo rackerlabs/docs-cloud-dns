@@ -12,7 +12,7 @@ The following example shows the cURL request for List zone:
 .. code::  
 
     curl -s  \
-    -H "X-Auth-Token: $AUTH_TOKEN \
+    -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Accept: application/json"  \
     https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zone_id} | python -m json.tool
 
