@@ -23,7 +23,7 @@ underneath your current directory.
       prod:
         auth:
           auth_url: https://identity.api.rackspacecloud.com/v2.0/
-          project_id: 123456
+          project_id: <RACKSPACE_CLOUD_TENANT_ID>
           username: <RACKSPACE_CLOUD_USERNAME>
           password: <RACKSPACE_CLOUD_PASSWORD>
 
