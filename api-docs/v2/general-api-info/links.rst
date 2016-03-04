@@ -3,7 +3,7 @@
 Links
 ~~~~~
 
-A ``links`` object will exist at the root of all collection responses. At the minimun, it 
+A ``links`` object will exist at the root of all collection responses. At the minimum, it 
 will contain a ``self`` link. If the collection resultset is not complete, a ``next`` or 
 ``previous`` link will be included for pagination to point to the respective items in the 
 collection.
