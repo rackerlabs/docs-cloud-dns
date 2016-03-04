@@ -12,7 +12,6 @@ Descriptions are supported for requests and responses of zones and record sets u
 
     Status: 200 OK
     Date: Thu, 28 Jul 2011 21:54:21 GMT
-    X-API-VERSION: 1.0.17
     Content-Type: application/json
     Content-Length: 3020
 
