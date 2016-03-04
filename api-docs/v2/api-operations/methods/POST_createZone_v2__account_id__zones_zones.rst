@@ -33,7 +33,7 @@ the request again.
 If you attempt to create a zone that already exists, the API will return an exception 
 saying that the zone already exists.
 
-When a zone is created, and no Time To Live (TTL) is specified, the SOA minTTL (3600 
+When a zone is created, and no Time To Live (TTL) is specified, the SOA minTTL (300 
 seconds) is used as the default. When a record is added without a specified TTL, the TTL 
 will show as empty. When the zone and/or record TTL is supplied by the user, either via a 
 create or update call, the TTL values must be 300 seconds or more.
