@@ -74,7 +74,6 @@ will be returned:
 
     Status: 413 Request Entity Too Large
     Date: Thu, 28 Jul 2011 21:54:21 GMT
-    X-API-VERSION: 1.0.17
     Content-Type: application/json
     Content-Length: 172
 
@@ -111,7 +110,6 @@ these quotas, the entire request will be rejected and the following message will
 
     Status: 413 Request Entity Too Large
     Date: Thu, 28 Jul 2011 21:54:21 GMT
-    X-API-VERSION: 1.0.17
     Content-Type: application/json
     Content-Length: 183
 
