@@ -5,7 +5,7 @@ Creating a record set with the CLI
 
 Use the **recordset create** CLI command to create a record set.
 
-``usage: openstack recordset create <zone_id> <zone_name> --records <RECORDS> --type <TYPE>``
+``usage: openstack recordset create <zone_id> <recordset_name> --records <RECORDS> --type <TYPE>``
 
 Enter the following command:
 
