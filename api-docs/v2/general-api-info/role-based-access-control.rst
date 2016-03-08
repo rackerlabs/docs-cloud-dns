@@ -1,7 +1,7 @@
 .. _cdns-dg-RBAC:
 
 =========================
-Role Based Access Control
+Role-based access control
 =========================
 
 .. important::
@@ -9,20 +9,20 @@ Role Based Access Control
    Role based access control does not apply during the EA release period.  This section
    is intended only for future releases.
 
-Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud 
-services, including the Cloud DNS API, to authorized users only. RBAC enables Rackspace 
+Role-based access control (RBAC) restricts access to the capabilities of Rackspace Cloud 
+services, including the |apiservice|, to authorized users only. RBAC enables Rackspace 
 Cloud customers to specify which account users of their Cloud account have access to which 
 |apiservice| service capabilities, based on roles defined by Rackspace (see |product name| 
-Product Roles and Permissions). The permissions to perform certain operations in 
+Product Roles and Permissions). The permissions to perform certain operations in the 
 |apiservice| – create, read, update, delete – are assigned to specific roles. The account 
 owner user assigns these roles, either global (multiproduct) or product-specific (for 
 example, Managed DNS), to account users.
 
 ..  note::
     
-    RBAC setup is not required for participation in the Early Access phase.
+    RBAC setup is not required for participation in the EA phase.
 
-Assigning Roles to Account Users
+Assigning roles to account users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner (identity:user-admin) can create account users on the account and then 
@@ -31,7 +31,7 @@ accessing the capabilities of the |product name| service. Each account has only 
 owner, and that role is assigned by default to any Rackspace Cloud account when the account 
 is created.
 
-See the Cloud Identity Client Developer Guide for information about how to perform the 
+See the *Cloud Identity Client Developer Guide* for information about how to perform the 
 following tasks:
 
 -  :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>` 
@@ -45,24 +45,24 @@ following tasks:
     The account owner (identity:user-admin) role cannot hold any additional roles because 
     it already has full access to all capabilities.
 
-Roles Available for |product name|
+Roles available for |product name|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Three roles (observer, creator, and admin) can be used to access the |apiservice| 
 specifically. The following table describes these roles and their permissions.
 
-**Managed DNS Product Roles and Permissions**
+**Managed DNS product roles and permissions**
 
 +-----------------+-------------------------------------------------------------------+
-| Role Name       | Role Permissions                                                  |
+| Role name       | Role permissions                                                  |
 +=================+===================================================================+
-| dnsaas:admin    | This role provides Create, Read, Update, and Delete permissions   |
+| dnsaas:admin    | This role provides create, read, update, and delete permissions   |
 |                 | in |product name|, where access is granted.                       |
 +-----------------+-------------------------------------------------------------------+
-| dnsaas:creator  | This role provides Create, Read and Update permissions            |
+| dnsaas:creator  | This role provides create, read and update permissions            |
 |                 | in |product name|, where access is granted.                       |
 +-----------------+-------------------------------------------------------------------+
-| dnsaas:observer | This role provides Read permission in |product name|, where       |
+| dnsaas:observer | This role provides read permission in |product name|, where       |
 |                 | access is granted.                                                |
 +-----------------+-------------------------------------------------------------------+
 
@@ -70,19 +70,19 @@ Additionally, two multiproduct roles apply to all products. Users with multiprod
 inherit access to future products when those products become RBAC-enabled. The following 
 table describes these roles and their permissions.
 
-**Multiproduct (Global) Roles and Permissions**
+**Multiproduct (global) roles and permissions**
 
 +-----------+-------------------------------------------------------------------+
-| Role Name | Role Permissions                                                  |
+| Role name | Role permissions                                                  |
 +===========+===================================================================+
-| admin     | This role provides Create, Read, Update, and Delete permissions   |
+| admin     | This role provides create, read, update, and delete permissions   |
 |           | in all products, where access is granted.                         |
 +-----------+-------------------------------------------------------------------+
-| observer  | This role provides Read permission in all products, where         |
+| observer  | This role provides read permission in all products, where         |
 |           | access is granted.                                                |
 +-----------+-------------------------------------------------------------------+
 
-Resolving Conflicts Between Roles
+Resolving conflicts between roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner can set roles for both multiproduct and |product name| scope, and it is 
@@ -94,27 +94,25 @@ roles, because admin roles provide more permissions.
 The following scenarios show examples of how potential conflicts between user roles 
 in the Control Panel are resolved:
 
-**Scenario 1:**
-Configuration : User is assigned the following roles: multiproduct **observer** and 
-|product name| **admin**
+**Scenario 1**
+^^^^^^^^^^^^^^^
 
-View: Appears that the user has only the multiproduct **observer** role.
+The user is assigned the following roles: multiproduct *observer* and |product name| 
+*admin*. In the Control Panel, it appears that the user has only the multiproduct *observer* 
+role. The user can perform product *admin* functions in the Control Panel for |product name| 
+only, and has the *observer* role for the rest of the products.
 
-Permissions: The user can perform product admin functions in the Control Panel for 
-|product name| only. The user has the **observer** role for the rest of the products.
+**Scenario 2**
+^^^^^^^^^^^^^^^
 
-**Scenario 2:**
-Configuration: User is assigned the following roles: multiproduct **admin** and 
-|product name| **observer**
+The user is assigned the following roles: multiproduct *admin* and |product name| *observer*. 
+In the Control Panel, it appears that the user has only the multiproduct *admin* role. The 
+user can perform product *admin* functions in the Control Panel for all of the products, 
+and the |product name| *observer* role is ignored.
 
-View: Appears that the user has only the multiproduct **admin** role.
-
-Permissions: The user can perform product admin functions in the Control Panel for all 
-of the products. The |product name| **observer** role is ignored.
-
-RBAC Permissions Cross-reference to |apiservice| Operations
+RBAC permissions cross-reference to |apiservice| operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 API operations for |product name| may or may not be available to all roles. To see which 
-operations are permitted to invoke which calls, please review 
+operations are permitted to invoke which operations, see the 
 :h2:`Detailed Permissions Matrix for DNS <detailed-permissions-matrix-for-dns>` 

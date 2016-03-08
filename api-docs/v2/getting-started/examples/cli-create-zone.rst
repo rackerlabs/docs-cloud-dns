@@ -1,11 +1,12 @@
 .. _cli-create-zone:
 
-Creating a zone with the CLI 
+Create a zone with the CLI 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the **zone create** CLI call to create a zone with the configuration that you specify.
+Use the ``zone create`` CLI command to create a zone (domain) with the configuration that 
+you specify.
 
-``usage: openstack zone create zone_name --email <EMAIL> --ttl <TTL>``
+``Syntax: openstack zone create <zoneName> --email <email> --ttl <ttl>``
 
 Enter the following command:
 
@@ -15,10 +16,10 @@ Enter the following command:
 
 ..  note:: 
 
-    If you decide to change the zone name, make sure to use a valid name. You can use any 
-    letter, numbers between 0 and 9, and the character "-".
+    If you decide to change the zone name, be sure to use a valid name. You can use any 
+    letter, numbers from 0 to 9, and the hyphen.
 
-The response is similar to the following:
+The response is similar to the following example:
 
 .. code::  
 
@@ -45,24 +46,23 @@ The response is similar to the following:
 
 ..  note:: 
 
-    Please disregard the following warning from keystone:
+    You can disregard the following warning from keystone:
 
     .. code::  
 
        Failed to contact the endpoint at https://global.dns.api.rackspacecloud.com/v2/123456 
        for discovery. Fallback to using that endpoint as the base url. 
 
-This request is asynchronous. So the ``status`` is set to ``PENDING`` when the zone is 
+This request is asynchronous, so the ``status`` is set to ``PENDING`` when the zone is 
 initially created. When the zone is created completely, the status is set to ``ACTIVE``. 
-You will be able to see the ``ACTIVE`` status when you run the **zone show** command in 
+To get the status of the zone, you can use the ``zone show`` command, as described in 
 the next section.
 
 ..  note:: 
 
-    Refer to :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works.
+    For more information about how the asynchronous operations work, see 
+    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` 
 
-In the previous example, you can see that the zone ``example.org.`` was created. You will 
-need the zone ``id`` returned in the response for making the Get zone call in the next 
-section, and you should supply this value wherever you see the field ``zone_id`` in the 
-examples in this guide.
+In the preceding example, the ``example.org.`` zone was created. You need the zone ``id`` 
+that is returned in the response to get the details about the zone, and you should supply 
+this value wherever you see the ``zone_id`` field in the examples in this guide.

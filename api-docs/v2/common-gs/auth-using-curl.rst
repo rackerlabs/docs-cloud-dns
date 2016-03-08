@@ -26,49 +26,55 @@ as shown in the following example.
 Review the authentication response
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your credentials are valid, the Identity service returns an authentication response 
+If your credentials are valid, the Identity service returns an authentication response
 that includes the following information:
 
-- an authentication token
-- a service catalog with information about the services you can access.
-- user information and role assignments
-
-In the following example, the ellipsis (...)  represents other service endpoints, which 
-are not shown. The values shown in this and other examples vary because the information 
-returned is specific to your account. 
+- An authentication token
+- A service catalog with information about the services that you can access
+- User information and role assignments
 
 .. note:: 
-     For a detailed description of the information included in the authentication response, see 
-     :rax-devdocs:`Annotated authentication request and response<cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>`.
-      
-**Example: Authentication response**  
-    
+     For detailed information about the authentication response, see 
+     :rax-devdocs:`Annotated authentication request and response<cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>` 
+     in the Rackspace Cloud Identity documentation.
+
+
+In the following example response, the ellipsis (...)  represents other service endpoints, 
+which are not shown. The values shown in this and other examples vary because the information
+returned is specific to your account.
+
+
+**Example: Authentication response**
+
 .. include:: ../common-gs/samples/auth-resp-json.rst
 
 
-If the request was successful, you can find the authentication token and other information in the
-authentication response. You'll need these values to submit requests to the API. See 
+If the request was successful, you can find the authentication token and other information 
+in the authentication response. You'll need these values to submit requests to the API. See
 :ref:`Configure environment variables<configure-environment-variables>`.
 
-If the request failed, review the response message and
-the following error message descriptions to determine next steps.
+If the request failed, review the response message and the following error message 
+descriptions to determine next steps.
 
-``400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting``
-      
-  Review the authentication request for syntax or coding errors.
-  If you are using cURL, see the :ref:`Using cURL<how-curl-commands-work>`.
-          
+If you see the following message, review the authentication request for syntax or coding 
+errors. If you are using cURL, see the section on :ref:`using cURL <how-curl-commands-work>`.
 
-``401 Unable to authenticate user with credentials provided.``
-        
-  Verify the authentication credentials submitted in the
-  authentication request. If necessary, contact your Rackspace
-  Cloud Administrator or Rackspace Support to get valid
-  credentials.
+.. code:: 
 
-..  note:: 
-       For additional information about authentication errors, see the 
-       :rax-devdocs:`Identity API Reference documentation <cloud-identity/v2/developer-guide/#document-api-operations/token-operations>`.
+   400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting
+
+If you see the following message, verify the authentication credentials submitted in the 
+authentication request. If necessary, contact your Rackspace Cloud Administrator or
+Rackspace Support to get valid credentials. 
+
+.. code::
+
+   401 Unable to authenticate user with credentials provided.
+   
+   
+..  note::
+       For more information about authentication and authorization errors, see the
+       :rax-devdocs:`Cloud Identity API Reference documentation <cloud-identity/v2/developer-guide/#document-api-operations/token-operations>`.
 
 
 .. _configure-environment-variables:
@@ -76,84 +82,88 @@ the following error message descriptions to determine next steps.
 Configure environment variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The authentication response returns the following values that you 
-need to include when you make service requests to the |apiservice|. 
+The authentication response returns the following values that you need to include when you 
+make service requests to the |apiservice|.
 
 
 token ID
-    The token ID value is required to confirm your identity each time you access the service.
-    Include it in the ``X-Auth-Token`` header for each API request. 
-    
-    The ``expires`` attribute indicates the date and time that the token will expire, 
-    unless it is revoked prior to the 
-    expiration. To get a new token, submit another authentication request. For more 
-    information, see 
-    :rax-devdocs:`Manage tokens and token expiration 
-    <cloud-identity/v2/developer-guide/#manage-authentication-tokens>`.
-    
-tenant ID
-    The tenant ID provides your account number. For most Rackspace Cloud service APIs, the 
-    tenant ID is appended to the API endpoint in the service catalog automatically. 
-     
-endpoint 
-	The API endpoint provides the URL that you use to access the API service. For guidance 
-	on choosing an endpoint, see :ref:`Service access<service-access-endpoints>`.
-        
+    The authentication token ID value is required to confirm your identity each time you 
+    access the service. You include it in the ``X-Auth-Token`` header for each API request.
 
-To make it easier to include the values in API requests, use the export command to create 
-environment variables that can be substituted for the actual values. For example, you can 
-create an ``API_ENDPOINT`` variable to store the URL for accessing an API service. 
-To reference the value in an API request, prefix the variable name with a $, for example 
-``$API_ENDPOINT``.
+    The ``expires`` attribute indicates the date and time that the token will expire,
+    unless it is revoked prior to the expiration. To get a new token, submit another 
+    authentication request. For more information, see
+    :rax-devdocs:`Manage tokens and token expiration<cloud-identity/v2/developer-guide/#manage-authentication-tokens>`.
+
+tenant ID
+    The tenant ID value provides your account number. For most Rackspace Cloud service APIs, 
+    the tenant ID is appended to the API endpoint in the service catalog automatically.
+
+endpoints
+	 The endpoints object provides the URLs that you can use to access the API service. 
+	 For guidance on choosing an endpoint, see :ref:`Service access<service-access-endpoints>`.
+
+
+To make it easier to include these and other values in API requests, use the ``export`` 
+command to create environment variables that can be substituted for the actual values. 
+For example, you can create an ``API_ENDPOINT`` variable to store the URL for accessing 
+an API service. To reference the value in an API request, prefix the variable name with a $, 
+for example ``ENDPOINT``.
+
 
 .. include:: ../common-gs/using-env-variables.rst
-		   
+
 **Create environment variables**
 
-#. In the ``token`` section of the authentication response, copy the token ``id`` and 
-   tenant ``id`` values from the token object.
+#. In the ``token`` section of the authentication response, copy the token ``id`` and
+   tenant ``id`` values from the token object. The following example shows example values 
+   only.
 
       .. include:: ../common-gs/samples/auth-token-object.rst
-   
+
 #. Export the token ID to an environment variable
-   that can be supplied in the `X-Auth-Token` header required in each
-   API request.  
-   
+   that can be supplied in the ``X-Auth-Token`` header required in each
+   API request.  Replace ``token-id`` with the authentication ``token id`` value returned
+   in the authentication response.
+
    .. code::
 
        $ export AUTH_TOKEN="token-id"
 
-   Replace *token-id* with the authentication token ``id`` value returned 
+
+#. Export the tenant ID to an environment variable
+   that can be supplied in requests that require you to specify a tenant ID or tenant name.
+   Replace ``tenant-id`` with the authentication token ``tenant id`` value returned
    in the authentication response.
-        
-#. Export the tenant ID to an environment variable 
-   that can be supplied in requests that require you to specify a tenant ID or tenant name. 
-   
+
    .. code::
 
        $ export TENANT_ID="tenant-id"
 
-   Replace *tenant-id* with the authentication token ``id`` value returned 
-   in the authentication response.        
-        
-#. In the ``service catalog`` section of the authentication response, copy the ``publicURL`` 
-   value for the |apiservice|, version, and region that you want to access. 
-   
-   This example shows the endpoints available for the |apiservice|. An entry matching 
-   the name and type below is required in your service catalog to access |apiservice|. 
-   
+
+#. In the ``service catalog`` section of the authentication response, copy the ``publicURL``
+   value for the |apiservice|, version, and region that you want to access.
+
+   The following example shows the endpoint available for the |apiservice|.
+
    .. include:: ../common-gs/samples/service-catalog-endpoint.rst
-          
    
-#. Copy the URL, and then export it to an environment variable.
+   
+   .. note:: 
+      For some services, the ``publicURL`` value for |apiservice| consists of the service 
+      access endpoint URL with the tenant ID for your account appended after the ``/``. 
+
+
+#. Export the URL to an environment variable, as shown in the following example.  
+   Replace ``publicURL`` with the ``publicURL`` value listed in the service catalog.
 
    .. code::
-      
-        $ export API_ENDPOINT="publicURL"
-      
-      
-   Replace *publicURL* with the publicURL value listed in the service catalog.
-   
+
+        $ export ENDPOINT="publicURL"
+
+
+
+
    
 
     

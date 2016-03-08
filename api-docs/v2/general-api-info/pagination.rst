@@ -1,9 +1,9 @@
 .. _cdns-paginated-collections:
 
-Pagination and Sorting
+Pagination and sorting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Collection responses will include a ``links`` object containing absolute URLs for the next 
+Collection responses include a ``links`` object that contains absolute URLs for the next 
 and previous pages. These links may be omitted, or null, at the edges of a paginated 
 collection.
 
@@ -11,21 +11,21 @@ Pagination and sorting is available on all collections and is controlled using a
 of four query parameters:
 
 - **marker**: ID of the last item in the previous list
-- **limit**: sets the page size.
-- **sort_key**: attribute used for sorting
-- **sort_dir**: direction (``asc`` for ascending and ``desc`` for descending)
+- **limit**: Sets the page size.
+- **sort_key**: Attribute used for sorting
+- **sort_dir**: Direction (``asc`` for ascending and ``desc`` for descending)
 
-For example: ``marker=<UUID>&limit=<INTEGER>&sort_key=<STRING>&sort_dir<STRING>``. 
+For example: ``marker=<uuid>&limit=<integer>&sort_key=<string>&sort_dir<string>``. 
 
 To navigate the collection, the parameters ``limit`` and ``marker`` can be set in the URI 
-(for example: ``?limit=100&marker=<UUID>``). Both parameters are optional.
+(for example: ``?limit=100&marker=<uuid>``). Both parameters are optional.
 
 Items are sorted by create time in descending order. When a create time is not available, 
 they are sorted by ID. To sort results, set the ``sort_key`` query parameter to a valid 
-attribute (e.g. ``name``or ``email``). To sort in descending order, specify add the 
-``sort_dir=desc`` query parameter.
+attribute (for example, ``name``or ``email``). To sort in descending order, specify add 
+the ``sort_dir=desc`` query parameter.
 
-**Example Request for a paginated collection of zones**
+**Example: Request for a paginated collection of zones**
 
 .. code::  
 
@@ -35,7 +35,7 @@ attribute (e.g. ``name``or ``email``). To sort in descending order, specify add 
      X-Auth-Token: ************  
 
  
-**Example Response for a paginated collection of zones**
+**Example: Response for a paginated collection of zones**
 
 .. code::  
 

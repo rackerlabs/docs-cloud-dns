@@ -3,13 +3,13 @@
 Links
 ~~~~~
 
-A ``links`` object will exist at the root of all collection responses. At the minimum, it 
-will contain a ``self`` link. If the collection resultset is not complete, a ``next`` or 
-``previous`` link will be included for pagination to point to the respective items in the 
+A ``links`` object exists at the root of all collection responses. At a minimum, it 
+contains a ``self`` link. If the collection result set is not complete, a ``next`` or 
+``previous`` link is included for pagination to point to the respective items in the 
 collection.
 
  
-**Example of ``links`` in the response for a collection**
+**Example: Links in the response for a collection**
 
 .. code::  
 

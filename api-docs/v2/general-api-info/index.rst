@@ -3,8 +3,8 @@
 General API information
 -------------------------
 
-The |apiservice| is implemented using a ReSTful web service interface. Like other products 
-in the Rackspace Cloud suite, the DNS service shares a common token-based authentication 
+The |apiservice| is implemented using a RESTful web service interface. Like other Rackspace 
+Cloud products, the |product name| service shares a common token-based authentication 
 system that allows seamless access between products and services.
 
 .. note:: 

@@ -3,51 +3,65 @@
 Install the CLI clients
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to run the cURL examples instead of CLI, skip this step and proceed to the 
-next section "Send Requests to the API".
+If you want to run the cURL examples instead of using the CLI, skip this step and proceed 
+to the next section "Sending API requests to |product name|".
 
-Run the following commands on a Mac or Linux distribution to install the OpenStack and 
-Designate clients:
+You can use the designate command-line interface (CLI) client with Managed DNS. The 
+designate client is the CLI for the OpenStack DNS service API and its extensions, and is 
+a plug-in to the OpenStack CLI.
 
-.. code::  
+..  note:: 
 
-    $ sudo pip install -U python-openstackclient 
-    $ sudo pip install -U python-designateclient 
+    You can specify the ``--debug`` parameter on any designate command to show the underlying 
+    API request for the command. This is a good way to become familiar with the API requests.
 
-Create a CLI config file with the content as shown below, and name the file **clouds.yaml** 
-underneath your current directory.
 
-.. code::  
+#. Run the following commands on a Mac OS X or Linux distribution to install the OpenStack 
+   and designate clients:
 
-    clouds:
-      prod:
-        auth:
-          auth_url: https://identity.api.rackspacecloud.com/v2.0/
-          project_id: <RACKSPACE_CLOUD_TENANT_ID>
-          username: <RACKSPACE_CLOUD_USERNAME>
-          password: <RACKSPACE_CLOUD_PASSWORD>
+   .. code::  
 
-See the following for more CLI configuration options: 
-:os-docs:`Configuring Openstack CLI <developer/python-openstackclient/configuration.html>`
+      $ sudo pip install -U python-openstackclient 
+      $ sudo pip install -U python-designateclient 
 
-Export the necessary environment variables:
+#. Create a CLI configuration file with the content as shown in the following example, name 
+   the file **clouds.yaml**, and place it under your current directory.
 
-.. code::  
+   .. code::  
 
-     $ export OS_CLOUD=prod 
+      clouds:
+         prod:
+           auth:
+             auth_url: https://identity.api.rackspacecloud.com/v2.0/
+             project_id: <RACKSPACE_CLOUD_TENANT_ID>
+             username: <RACKSPACE_CLOUD_USERNAME>
+             password: <RACKSPACE_CLOUD_PASSWORD>
 
-Run the following command to see if OpenStack/Designate CLI works:
+   For more CLI configuration options, see the 
+   :os-docs:`Configuration <developer/python-openstackclient/configuration.html>` 
+   topic in the OpenStack client documentation.
 
-.. code::  
+#. Export the following environment variables manually, or update your ``.bash_profile``
+   or ``.bashrc`` files with these variables:
 
-    $ openstack --help 
+   .. code::  
 
-If you get an error such as ``Exception: Versioning for this project requires either an 
-sdist tarball, or access to an upstream git repository. Are you sure that git is installed?``, 
-run the following command:
+      $ export OS_CLOUD=prod 
 
-.. code::  
+#. Run the following command to see if OpenStack/Designate CLI works:
 
-    $ sudo pip install -U distribute
+   .. code::  
 
-Now that your command line tool is ready, jump to :ref:`Creating a zone with the CLI<cli-create-zone>`.
+      $ openstack --help 
+
+#. If you get an error such as 
+   ``Exception: Versioning for this project requires either an sdist tarball, or access to 
+   an upstream git repository. Are you sure that git is installed?``, 
+   run the following command:
+  
+   .. code::  
+
+      $ sudo pip install -U distribute
+
+Now that your command line tool is ready, skip to 
+:ref:`Creating a zone with the CLI<cli-create-zone>`.

@@ -13,7 +13,7 @@ To use the information provided here, you should have a general understanding of
 DNS service. You should also be familiar with the following technologies:
 
 -	DNS terminology
-- General operating principles of DNS
--  *RESTful* web services
--  *HTTP*/1.1 conventions
+-  General operating principles of DNS
+-  RESTful web services
+-  HTTP/1.1 conventions
 -  JSON data serialization format

@@ -4,22 +4,22 @@
 Errors
 ======
 
-When an error occurs, the |product name| service returns a an object containing an HTTP 
+When an error occurs, the |product name| service returns a an object that contains an HTTP 
 error response code that denotes the type of error. In the body of the response, the system 
-will return additional information about the error.
+returns additional information about the error.
 
 The following table lists possible error types with their associated error codes and 
 descriptions.
 
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error Type           |Error | Description                                                                                                                                                                                                                                       |
-|                      |Code  |                                                                                                                                                                                                                                                   |
+| Error type           |Error | Description                                                                                                                                                                                                                                       |
+|                      |code  |                                                                                                                                                                                                                                                   |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Service Unavailable  | 503  | The request could not be processed because back-end services were temporarily unavailable. This condition should be temporary; contact support if the error persists.                                                                             |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | unauthorized         | 401  | The user is not authorized to access the API functionality in question. The user may not have authenticated to the API. If the user should have access to the API functionality, contact support.                                                 |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| bad_request          | 400  | The request is missing one or more elements, or the values of some elements are invalid. See errors or type item for specifics.                                                                                                                   |
+| bad_request          | 400  | The request is missing one or more elements, or the values of some elements are invalid. See the errors or type elements for specific information.                                                                                                |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | forbidden            | 403  | The endpoint is not defined in the service catalog, or the user is not permitted to perform the API action in question.                                                                                                                           |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -27,21 +27,24 @@ descriptions.
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | method_not_allowed   | 405  | The method is not allowed for the URL.                                                                                                                                                                                                            |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| over_quota           | 413  | The request has exceeded rate limit or quota. Contact support if you think you need higher limits.                                                                                                                                                |
+| over_quota           | 413  | The request has exceeded the rate limit or quota. Contact support if you think you need higher limits.                                                                                                                                            |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | duplicate_resource   | 409  | The back-end services could not complete the request due to a conflict with the current state of the resource. Possibly, the user is trying to create an entity that already exists. See the message element for specifics.                       |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| timeout              | 504  | The back-end services encountered an unexpected condition that prevented it from fulfilling the request in the allotted time.                                                                                                                     |
+| timeout              | 504  | The back-end services encountered an unexpected condition that prevented them from fulfilling the request in the allotted time.                                                                                                                   |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Internal Server Error| 500  | The back-end services encountered an unexpected condition that prevented it from fulfilling the request. See the details element for specifics.                                                                                                   |
+| Internal Server Error| 500  | The back-end services encountered an unexpected condition that prevented them from fulfilling the request. See the details element for specific information.                                                                                      |
 +----------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-All errors will look similar. A ``code`` element will show the HTTP error code for convenience.
-The ``type`` element will show the type of error. The ``request_id`` will help API operators
-debug the request in a support ticket, if necessary. The ``message`` field, when present, 
-will inform the user of the exact problem the API detected.
+All error responses have the following elements: 
 
-**Example: Fault response**
+- The ``code`` element shows the HTTP error code.
+- The ``type`` element shows the type of error. 
+- The ``request_id`` helps API operators debug the request in a support ticket, if necessary. 
+- The ``message`` field, when present, informs the user of the exact problem that the API 
+  detected.
+
+**Example: Error response**
 
 .. code::
 
@@ -52,9 +55,9 @@ will inform the user of the exact problem the API detected.
     }
 
 
-The ``bad_request`` example shows validation errors:
+The following ``bad_request`` example shows validation errors:
 
-**Example: bad_request fault on validation errors**
+**Example: bad_request error caused by validation errors**
 
 .. code::
 

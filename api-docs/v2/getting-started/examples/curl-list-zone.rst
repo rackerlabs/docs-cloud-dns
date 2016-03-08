@@ -1,38 +1,40 @@
 .. _curl-list-zone:
 
-Listing zone with cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get details about a zone with cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This operation does not require a request body.
+Use this API operation to get detailed output for a specific zone. This operation does not 
+require a request body.
 
-The following example shows the cURL request for List zone:
+The following example shows the cURL request for list zone:
 
-**Example List zone request**
+**Example: List zone, cURL request**
 
 .. code::  
 
     curl -s  \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Accept: application/json"  \
-    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zone_id} | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zoneId} | python -m json.tool
 
-Remember to replace the names in the examples above with their actual respective values 
-for all the cURL examples that follow:
+Remember to replace the values in the example with actual values.
 
-Header:
+-  **AUTH_TOKEN** 
 
--  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
-   replacement, set your environment variables 
-   (see :ref:`Configure environment variables <configure-environment-variables>`).
+	The token that you received during authentication.  For automatic replacement, set your 
+	environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+  
 
-URL:
+-  **TENANT_ID** 
 
--  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
-   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+   Your Rackspace Cloud account ID.  For automatic  replacement, set your environment 
+   variables (see :ref:`Configure environment variables <configure-environment-variables>`).
    
--  **zone_id** — as returned in your create zone response.
+-  **zoneId**
 
-The following example shows the List zone response:
+	The ID returned in the create zone response.
+
+The following example shows the response:
 
 **Example List zone response**
 
@@ -63,7 +65,7 @@ The following example shows the List zone response:
         }
     }
 
-You can see from the response that the zone has been created and is ``ACTIVE``.
+The response shows that the zone has been created and has a status of ``ACTIVE``.
 
 ..  note:: 
 

@@ -1,12 +1,12 @@
 .. _cdns-dg-supported-record-types:
 
 ======================
-Supported Record Types
+Supported record types
 ======================
 
 The |product name| service supports the following *record* types:
 
-Record Type: **A**  (Maps an IPV4 address to a zone)
+Record type: **A**  (maps an IPV4 address to a zone)
      	
 	.. code::  
 	
@@ -17,7 +17,7 @@ Record Type: **A**  (Maps an IPV4 address to a zone)
 	      "records" : [ "123.456.78.9" ] }
      	 
     	
-Record Type: **AAAA** (Maps an IPV6 address to a zone)
+Record type: **AAAA** (maps an IPV6 address to a zone)
 	
 	.. code:: 
 	
@@ -27,7 +27,7 @@ Record Type: **AAAA** (Maps an IPV6 address to a zone)
 	      “ttl” : 3600, 
 	      “records” : [ "4321:0:1:2:3:4:567:89ab" ] }
     	 
-Record Type: **CNAME** (Creates an alias for a zone)
+Record type: **CNAME** (creates an alias for a zone)
 
 	.. code::
 	
@@ -37,14 +37,13 @@ Record Type: **CNAME** (Creates an alias for a zone)
 	      "ttl" : 3600,
 	      "records" : [ “example.com." ] }
     	
-  	.. note::
-  	
-  	   A CNAME record label (name) can have underscores anywhere in any subzone labels, 
-  	   but not in the main zone name of the zone to which the record belongs. For example, 
-  	   for the zone *example.com*, a CNAME record belonging to that zone can have the label 
-  	   ``_ab_b_.cd_e.example.com.``.
 
-Record Type: **MX** (Designates a zone's mail server)
+A CNAME record label (name) can have underscores anywhere in any subzone labels, but not 
+in the main zone name of the zone to which the record belongs. For example, for the zone 
+*example.com*, a CNAME record belonging to that zone can have the label 
+``_ab_b_.cd_e.example.com.``.
+
+Record type: **MX** (designates a zone's mail server)
 
 	.. code::
 	   
@@ -53,13 +52,11 @@ Record Type: **MX** (Designates a zone's mail server)
 	      "type" : “MX",
 	      "ttl" : 3600,
 	      "records" : [ “10 mail.example.com." ] }
-
-  	.. note::
   	
-  	   The MX record set data format is “<priority> <host>”, so in the preceding record set 
-  	   example, the priority = ``10`` and host = ``mail.example.com.``.
+The MX record set data format is “<priority> <host>”, so in the preceding record set 
+example, the priority = ``10`` and host = ``mail.example.com.``.
   	   
-Record Type: **NS** (Designates a zone's authoritative name server)
+Record type: **NS** (designates a zone's authoritative name server)
 
    .. code::
    
@@ -69,7 +66,7 @@ Record Type: **NS** (Designates a zone's authoritative name server)
          "ttl" : 3600,
          "records" : [ "ns1.com." ] }
 
-Record Type: **PTR** (Designates a reverse DNS record)
+Record type: **PTR** (designates a reverse DNS record)
 
    .. code::
    
@@ -78,13 +75,11 @@ Record Type: **PTR** (Designates a reverse DNS record)
          "type" : "PTR",
          "ttl" : 3600,
          "records" : [ "example.com." ] }
-   
-   .. note::
 
-      PTR records are not supported during Early Access and will only be supported during 
-      the upcoming Unlimited Availability phase.
+PTR records are not supported during Early Access but will be supported during the 
+upcoming Unlimited Availability phase.
 
-Record Type: **SRV** (General service locator record for a zone)
+Record type: **SRV** (general service locator record for a zone)
 
    .. code::
    
@@ -94,18 +89,16 @@ Record Type: **SRV** (General service locator record for a zone)
          "ttl" : 3600,
          "records" : [ "10 0 5060 server.example.com." ] }
 
-   .. note::
+The SRV record set data format is “<priority> <weight> <port> <target-hostname>” 
+(for example, ``10 0 5060 server.example.org``, as shown in the preceding example.). 
+The ``name`` attribute should contain the service name, protocol, and zone name 
+(for example, ``_sip.tcp.example.org``.).
 
-      The SRV record set data format is “<priority> <weight> <port> <target-hostname>” 
-      (for example: ``10 0 5060 server.example.org``, as shown in the preceding example.). 
-      The ``name`` attribute should contain the service name, protocol, and zone name 
-      (for example: ``_sip.tcp.example.org``.).
-
-      The DNS API flags two SRV records as duplicates if their service name, protocol, 
-      zone name, priority, and weight all match, **and** both records are targeted to the 
-      same server (host and port combination). So, for the zone example.com, the DNS API 
-      will accept the following SRV records for the zone and will not flag them as 
-      duplicates (in the format “<name><ttl> IN <type><priority><weight><port><target-hostname>”):
+The |apiservice| flags two SRV records as duplicates if their service name, protocol, 
+zone name, priority, and weight all match, *and* both records are targeted to the 
+same server (host and port combination). So, for the zone ``example.com``, the DNS API 
+accepts the following SRV records for the zone and does not flag them as duplicates (in 
+the format “<name><ttl> IN <type><priority><weight><port><target-hostname>”):
 
 		.. code::
 		
@@ -113,29 +106,27 @@ Record Type: **SRV** (General service locator record for a zone)
 		   _sip._tcp.example.com. 86400 IN SRV 20 0 5061 backupbox1.example.com.	
 		   _ftp._tcp.example.com. 86400 IN SRV 20 0 5062 backupbox2.example.com.
 		   _sip._tcp.example.com. 86400 IN SRV 20 0 5061 backupbox2.example.com.
-
-   .. note::
    
-      The data attribute of an SRV record specifies the *weight*, *port*, and *target* of 
-      the service represented by the record. These values are space delimited. The 
-      |apiservice| makes the following assumptions when parsing the data attribute of an 
-      ``SRV`` record:
+The data attribute of an SRV record specifies the *weight*, *port*, and *target* of 
+the service represented by the record. These values are space delimited. The 
+|apiservice| makes the following assumptions when parsing the data attribute of an 
+SRV record:
    	
-   	-  The values for the *weight*, *port* and *target* are specified in that order.
+-  The values for the *weight*, *port* and *target* are specified in that order.
 
-   	-  If only one field is provided in the data attribute, it is assumed to be the 
-   	   *target*.
+-  If only one field is provided in the data attribute, it is assumed to be the 
+   *target*.
 
-   	-  If two fields are provided in the data attribute, it is assumed they are the 
-   	   *port* and *target* (in that order).
+-  If two fields are provided in the data attribute, they are assumed to be the 
+   *port* and *target* (in that order).
 
-   	-  If all three fields are provided, it is assumed they are the *weight*, *port*, 
-   	   and *target* (in that order).
+-  If all three fields are provided, they are assumed to be the *weight*, *port*, 
+   and *target* (in that order).
 
-   	-  If more than three fields are provided, it is assumed that the first three are the 
-   	   *weight*, *port*, and *target* (in that order), and the rest are ignored.
+-  If more than three fields are provided, it is assumed that the first three are the 
+   *weight*, *port*, and *target* (in that order), and the rest are ignored.
       
-Record Type: **TXT** (Arbitrary text)
+Record type: **TXT** (arbitrary text)
 
    .. code::
 
@@ -145,7 +136,5 @@ Record Type: **TXT** (Arbitrary text)
          "ttl" : 3600,
          "records" : [	"Some example text" ] }
 
-   ..  note:: 
    
-      ``DKIM`` records are supported using ``TXT`` records with appropriately formatted 
-      data fields.
+DKIM records are supported using TXT records with appropriately formatted data fields.
