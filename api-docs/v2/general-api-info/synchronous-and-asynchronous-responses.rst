@@ -4,28 +4,29 @@
 Synchronous and asynchronous responses
 ======================================
 
-All Create, Update, and Delete operations can be either synchronous or asynchronous.
+All create, update, and delete operations can be either synchronous or asynchronous.
 
-With *synchronous* requests, the caller waits until the call returns with the specified 
+With *synchronous* requests, the user waits until the operation returns with the specified 
 code and response body.
 
-With *asynchronous* requests, the caller receives status information and can determine when 
-the operation is complete at a later time. In other words, the caller does not need to wait 
+With *asynchronous* requests, the user receives status information and can determine when 
+the operation is complete at a later time. In other words, the user does not need to wait 
 for the results before continuing.
 
-To determine whether a given API call was synchronous or asynchronous, examine the HTTP
+To determine whether a given API operation was synchronous or asynchronous, examine the HTTP
 status of the operation.
 
-- Synchronous Create/Update/Delete API calls will return an HTTP status of 201 Created, 
-  200 OK, or 204 No Content respectively. Additionally, resources which contain a ``status`` 
+- Synchronous create, update, or delete API operations return an HTTP status of 201 Created, 
+  200 OK, or 204 No Content, respectively. Additionally, resources that contain a ``status`` 
   property *must* have the value ``ACTIVE``.
 
-- Asynchronous Create/Update/Delete API calls will return an HTTP status of 202 Accepted. 
+- Asynchronous create, update, or delete API operation return an HTTP status of 202 Accepted. 
   The ``status`` property *must not* have the value ``ACTIVE``.
 
-The following two methods show how to check whether an asynchronous request is complete:
+You can use the following two methods to check whether an asynchronous request is complete.
 
-Method 1:
+Query the collections link method:
+--------------------------------------
 
 Query the collections link (where examples of collections include zones or record sets). For 
 example: 
@@ -40,10 +41,11 @@ You can filter collections by status. For example:
 
 	`https://global.dns.api.rackspacecloud.com/v2/123456/zones?status=PENDING`.
 	
-Method 2:
+Query the self link method:
+--------------------------------------
 
 Query the ``self`` link included in a given response and check the value of the ``status`` 
-property. If the job is complete, the ``status`` field will be ``ACTIVE``..  For example:
+property. If the job is complete, the ``status`` field is ``ACTIVE``..  For example:
 
  .. code::  
 

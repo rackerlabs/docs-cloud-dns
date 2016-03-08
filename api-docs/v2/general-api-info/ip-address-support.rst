@@ -1,9 +1,9 @@
 .. _cdns-dg-ip-address-support:
 
 ==================
-IP Address Support
+IP address support
 ==================
 
-|product name| supports IP addresses both inside and outside the Rackspace-assigned
+|product name| supports IP addresses both inside and outside the Rackspace assigned
 IP ranges.
 

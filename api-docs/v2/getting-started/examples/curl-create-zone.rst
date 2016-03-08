@@ -1,14 +1,14 @@
 .. _curl-create-zone:
 
-Creating a zone with cURL 
+Create a zone with cURL 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the **Create zone** API call (``POST /zones``) to create a zone with the configuration 
-that you specify.
+Use the ``create zone`` API operation (``POST /zones``) to create a zone with the 
+configuration that you specify.
 
-The following example shows the cURL request for Create zone:
+The following example shows the cURL request for the create zone operation.
 
-**Example Create zone request**
+**Example: Create zone, cURL request**
 
 .. code::  
 
@@ -23,28 +23,26 @@ The following example shows the cURL request for Create zone:
     -H "Content-Type: application/json" \
     https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones | python -m json.tool
 
-Remember to replace the names in the examples above with their actual respective values 
-for all the cURL examples that follow:
+Remember to replace the values in the example with their actual values.
 
-Header:
+-  **AUTH_TOKEN** 
 
--  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
-   replacement, set your environment variables 
-   (see :ref:`Configure environment variables <configure-environment-variables>`).
+	The token that you received during authentication.  For automatic replacement, set your 
+	environment variables (see 
+	:ref:`Configure environment variables <configure-environment-variables>`).
 
-URL:
+-  **TENANT_ID** 
 
--  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
-   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+	Your Rackspace Cloud account ID.  For automatic  replacement, set your environment 
+	variables (see :ref:`Configure environment variables <configure-environment-variables>`).
    
-Request body:
-   
--  **name** — to name your zone, you can use any letter, numbers between 0 and 9, and the 
-   character "-".
+-  **name**
+	
+	To name your zone, you can use any letter, numbers from 0 to 9, and the hyphen.
 
-The following example shows the initial asynchronous responses for **Create zone**:
+The following example shows the initial asynchronous responses for the operation.
  
-**Example Create zone: initial asynchronous response**
+**Example: Create zone, initial asynchronous response**
 
 .. code::  
 
@@ -72,18 +70,16 @@ The following example shows the initial asynchronous responses for **Create zone
         }
     }
 
-This request is asynchronous. So the ``status`` is set to ``PENDING`` when the zone is 
+Because this request is asynchronous, the ``status`` is set to ``PENDING`` when the zone is 
 initially created. When the zone is created completely, the status is set to ``ACTIVE``. 
 To get the status of the zone, you can query the ``self`` link returned in the create 
-response. You will see the ``ACTIVE`` status in the next section when you call the **List 
-zone** operation.
+response. You will see the ``ACTIVE`` status when you use the ``list zone`` operation.
 
 ..  note:: 
 
-    Refer to  :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works.  
+    For more information about how the asynchronous call works, see 
+    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` .  
 
-In the previous example, you can see that the zone ``example.org.`` was created. You will 
-need the zone ``id`` returned in the response for making the List zone call in the next 
-section, and you should supply this value wherever you see the field **zone\_id** in the 
-examples in this guide.
+In the preceding example, the zone was created. You need the zone ``id`` that is returned 
+in the response to get details about the zone, and you should supply this value wherever 
+you see the **zone_id** field in the examples in this guide.

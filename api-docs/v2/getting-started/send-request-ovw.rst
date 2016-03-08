@@ -3,11 +3,7 @@
 Sending API requests to |product name|
 -----------------------------------------------------
 
-.. contents::
-   :local:
-   :depth: 1
-
-This Getting Started Guide shows how to send requests by using cURL.
+This Getting Started Guide shows you how to send requests by using cURL.
 
 You can also use Rackspace Cloud API services by using the following methods:
 

@@ -1,11 +1,11 @@
 .. _cli-list-recordset:
 
-Listing record set with the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get details about a  record set with the CLI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the **recordset show** CLI command to list a record set.
+Use the ``recordset show`` CLI command to get details about a record set.
 
-``usage: openstack recordset show <zone_id> <recordset_id>``
+``Syntax: openstack recordset show <zoneId> <recordSetId>``
 
 Enter the following command:
 
@@ -14,7 +14,7 @@ Enter the following command:
     $ openstack recordset show b8500fe8-eff1-4523-90a4-0765cf39d273
           0536cf1c-e379-4617-a1b0-63cdd16fd671    
 
-The response is similar to the following:
+The response is similar to the following example:
 
 .. code::  
 
@@ -35,6 +35,6 @@ The response is similar to the following:
     | zone_id     | b8500fe8-eff1-4523-90a4-0765cf39d273 |
     +-------------+--------------------------------------+
 
-You can see from the response ``status`` that the record set is
-``ACTIVE``, indicating that the record set is now created and active.
+The ``status`` is set to ```ACTIVE``, which indicates that the record set is now created 
+and active.
 

@@ -1,42 +1,44 @@
 .. _curl-list-recordset:
 
-Listing record set with cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get details about a  record set with cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example shows the cURL request for List record set:
+The following example shows the cURL request for list record set operation.
 
  
-**Example cURL List record set request**
+**Example: List record set, cURL request**
 
 .. code::  
 
     curl -s \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
-    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zone_id}/recordsets/{recordset_id} | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zoneId}/recordsets/{recordSetId} | python -m json.tool
 
-Remember to replace the names in the examples above with their actual respective values:
+Remember to replace the values in the examples with their actual respective values:
 
-Header:
+-  **AUTH_TOKEN** 
 
--  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
-   replacement, set your environment variables 
-   (see :ref:`Configure environment variables <configure-environment-variables>`).
+	The token that you received during authentication.  For automatic replacement, set your 
+	environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
 
-URL:
+-  **TENANT_ID**
 
--  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
-   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+	Your Rackspace Cloud account ID.  For automatic  replacement, set your environment 
+	variables (see :ref:`Configure environment variables <configure-environment-variables>`).
    
--  **zone_id** — as returned in your **Create zone** response (see the examples in the 
-   previous section **Creating a zone**) must be replaced in the request URL.
+-  **zoneId** 
 
--  **recordset_id** — as returned in your **Creating a record set** (see the examples in 
-   the previous section **Creating a record set**) must be replaced in the request URL.
+   The zone ID returned in the ``Create zone`` response (see the examples in the 
+   "Create a zone" section).
 
-The following example shows the response for List record set:
+-  **recordSetId** 
+   The ``record set ID``returned in the ``Create a record set`` response (see the examples 
+   in the "Create a record set" section).
 
-**Example List record set response**
+The following example shows the response for the list record set operation.
+
+**Example: List record set response**
 
 .. code::  
 
@@ -62,5 +64,5 @@ The following example shows the response for List record set:
         },
     }
 
-Note that ``status`` is set to ``ACTIVE``, indicating that the record set is now created and 
+The ``status`` is set to ``ACTIVE``, which indicates that the record set is now created and 
 active.

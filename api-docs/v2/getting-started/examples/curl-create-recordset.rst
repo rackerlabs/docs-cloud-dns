@@ -1,11 +1,11 @@
 .. _curl-create-recordset:
 
-Creating a record set with cURL
+Create a record set with cURL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following examples show the cURL request for Create record set:
+The following examples show the cURL request for create record set operation:
 
-**Example cURL Create record set request**
+**Example: Create record set, cURL request**
 
 .. code::  
 
@@ -21,32 +21,35 @@ The following examples show the cURL request for Create record set:
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
-    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zone_id}/recordsets | python -m json.tool
+    https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/zones/{zoneId}/recordsets | python -m json.tool
 
-Remember to replace the names in the examples above with their actual respective values:
+Remember to replace the values in the example with actual respective values:
 
 Request body:
 
--  **name** — the name you used in your create zone response (see the examples in the 
-   previous section, "Create a zone")
+-  **name** 
 
-Header:
+   The name you used in the create zone request (see the examples in the "Create a zone" 
+   section).
 
--  **AUTH_TOKEN** - the token you received during authentication.  For automatic 
-   replacement, set your environment variables 
-   (see :ref:`Configure environment variables <configure-environment-variables>`).
+-  **AUTH_TOKEN**
 
-URL:
-
--  **TENANT_ID** - your Rackspace Cloud account ID.  For automatic  replacement, set your 
+   The token that you received during authentication.  For automatic replacement, set your 
    environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
 
--  **zone_id** — as returned in your create zone response (see the examples in the previous 
-   section, "Create a zone").
+-  **TENANT_ID** 
+   
+   Your Rackspace Cloud account ID.  For automatic  replacement, set your environment 
+   variables (see :ref:`Configure environment variables <configure-environment-variables>`).
 
-The following example shows the response for Create record set:
+-  **zoneId** 
+
+   The ID returned in the create zone response (see the examples in the "Create a zone" 
+   section).
+
+The following example shows the response for the create record set operation:
  
-**Example Create record set response**
+**Example: Create record set, cURL response**
 
 .. code::  
 
@@ -74,4 +77,4 @@ The following example shows the response for Create record set:
 This request is asynchronous, so the ``status`` is set to ``PENDING`` when the record set is 
 initially created. When the record set is created completely, the ``status`` is set to 
 ``ACTIVE``. To get the status of the record set, you can query the ``self`` link returned in 
-the **Create record set** response.
+the create record set response.

@@ -3,22 +3,22 @@
 Filtering
 ~~~~~~~~~
 
-Filtering is available on all collections and is controlled using query parameters, which 
+Filtering is available on all collections and is controlled by using query parameters that  
 match the name of the attribute being filtered.
 
 The following attributes support filtering:
 
--  **Record sets**: name, type, ttl, data, description, status
+-  **Record sets**: ``name``, ``type``, ``ttl``, ``data``, ``description``, ``status``
 
--  **Zones**: name, email, ttl, description, status
+-  **Zones**: ``name``, ``email``, ``ttl``, ``description``, ``status``
 
 Filters can be an exact match search or a wildcard search. Wildcard search is 
-supported using the '\*' character.
+supported by using the asterisk (*) character.
 
-The following example takes a collection of zones and filters it by the “name” parameter.
+The following example filters a collection of zones by the ``name`` parameter.
 
  
-**Example Request with a collection of zones**
+**Example: Request to filter a collection of zones**
 
 .. code::  
 
@@ -28,7 +28,7 @@ The following example takes a collection of zones and filters it by the “name�
      X-Auth-Token: *************  
 
  
-**Example Response for a collection of zones**
+**Example: Response to filter a collection of zones**
 
 .. code::  
 
@@ -65,7 +65,7 @@ Wildcards can be placed anywhere within the query. The following example demonst
 use of wildcards on the right side of a query:
 
  
-**Example 3.13. Request with a wildcard**
+**Example: Request to filter with a wildcard**
 
 .. code::  
 
@@ -75,7 +75,7 @@ use of wildcards on the right side of a query:
     X-Auth-Token: ************* 
 
  
-**Example Response example for a wildcard**
+**Example: Response to filter with a wildcard**
 
 .. code::  
 
@@ -125,10 +125,10 @@ use of wildcards on the right side of a query:
       }
     } 
 
-This example demonstrates the use of multiple wildcards:
+The following example demonstrates the use of multiple wildcards.
 
  
-**Example Request with multiple wildcards**
+**Example: Request to filter with multiple wildcards**
 
 .. code::  
 
@@ -138,7 +138,7 @@ This example demonstrates the use of multiple wildcards:
     X-Auth-Token: ************* 
 
  
-**Example Response for multiple wildcards**
+**Example: Response to filter with multiple wildcards**
 
 .. code::  
 

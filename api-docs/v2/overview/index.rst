@@ -3,10 +3,16 @@
 About the Rackspace Managed DNS API
 -----------------------------------------
 
+The |apiservice| enables developers to view and manage domains, subdomains, and records 
+through a simple Representational State Transfer (REST) web service interface.
+
+For more information about the |product name| service, see the :h2:`Managed DNS FAQ <managed-dns-faq>`
+in the Rackspace How-To. 
+
 |product name| is a globally distributed (Anycast network) service that 
-allows Rackspace customers to manage Domain Name System (DNS) zones and resource records 
-via a REST-based API for their account. Interactions with |product name| occur 
-programmatically via the API described in this |product name| Developer Guide.
+enables Rackspace customers to manage Domain Name System (DNS) zones and resource records 
+via a REepresentational State Transfer (REST) based API for their account. Interactions with |product name| occur 
+programmatically via the API described in this |product name| Developer guide.
 
 |product name| is powered by OpenStack Designate v2.0 (DNSaaS). Duplicate zones and 
 resource records may not exist between Rackspace Cloud DNS and |product name|.
@@ -15,18 +21,18 @@ resource records may not exist between Rackspace Cloud DNS and |product name|.
 
 	-  |product name| is currently limited to Rackspace Cloud accounts.
 
-	-  PTR records are currently supported in Rackspace Cloud DNS, but will not be supported 
+	-  PTR records are currently supported in Rackspace Cloud DNS but will not be supported 
 	   by |product name| until the Unlimited Availability launch phase.
 
-	- See :ref:`DNS propagation <cdns-dg-propagation>` for information about DNS propagation.
+	- For information about DNS propagation, see :ref:`DNS propagation <cdns-dg-propagation>`.
 
 .. warning::
 
- 	If you're using pyrax or ansible, see known issue (see 
- 	:ref:`v2 EA release, March 14, 2016  <RN_20160314>`).
+ 	If you're using pyrax or ansible, see the known issue, described in 
+ 	:ref:`v2 EA release, March 14, 2016  <RN_20160314>`.
 
 
-The following figure shows an overview of the |product name| Infrastructure:
+The following figure shows an overview of the |product name| infrastructure:
 
 .. figure:: /_images/Cloud_DNS_Infographic-1.png
 

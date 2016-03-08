@@ -1,11 +1,11 @@
 .. _cli-create-recordset:
 
-Creating a record set with the CLI
+Create a record set with the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the **recordset create** CLI command to create a record set.
+Use the ``recordset create`` CLI command to create a record set.
 
-``usage: openstack recordset create <zone_id> <recordset_name> --records <RECORDS> --type <TYPE>``
+``Syntax: openstack recordset create <zoneId> <recordSetName> --records <records> --type <type>``
 
 Enter the following command:
 
@@ -14,7 +14,7 @@ Enter the following command:
       $ openstack recordset create b8500fe8-eff1-4523-90a4-0765cf39d273 example.org. 
          --records 10.1.0.5 --type "A"   
 
-The response is similar to the following:
+The response is similar to the following example:
 
 .. code::  
 
@@ -35,5 +35,8 @@ The response is similar to the following:
     | zone_id     | b8500fe8-eff1-4523-90a4-0765cf39d273 |
     +-------------+--------------------------------------+
 
-You can see from the response ``status`` that the record set creation is ``PENDING``.
+The ``status`` is set to ``PENDING`` when the record set is initially created. When the 
+record set is created completely, the status is set to ``ACTIVE``. To get the status of 
+the record set, you can use the ``recordset show`` CLI command, as described in the next 
+section.
 

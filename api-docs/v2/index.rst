@@ -14,12 +14,6 @@ service REST API.
 - :ref:`API reference <api-reference>`
 - :ref:`Release Notes <release-notes>`
 
-The |apiservice| enables developers to view and manage domains, subdomains, and records 
-through a simple Representational State Transfer (REST) web service interface.
-
-For more information about the DNS service, see the :h2:`Cloud DNS FAQ <cloud-dns-faq>`
-in the Rackspace How-To. 
-
 .. toctree:: :hidden:
    :maxdepth: 2
 
