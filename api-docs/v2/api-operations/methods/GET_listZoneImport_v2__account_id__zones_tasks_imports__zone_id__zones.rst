@@ -5,21 +5,20 @@ List a zone import
 
 .. code::
 
-    GET /v2/{TENANT_ID}/zones/tasks/imports/{zone_id}
+    GET /v2/{TENANT_ID}/zones/tasks/imports/{zoneId}
 
-This call lists the status of a zone import by querying the uuid ID that was returned when 
-the request was created. Objects will be returned that can be queried using the links in 
-the ``links`` field.
+This operation lists the status of a zone import by querying the UUID that was returned 
+when the zone import request was created. Objects are returned that can be queried by 
+using the links in the ``links`` field.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
-|         |                       | completed.                                  |
+| 200     | Accepted              | The request was accepted for processing,    |
+|         |                       | but the processing has not completed.       |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
@@ -29,19 +28,19 @@ This table shows the possible response codes for this operation:
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the list a zone import request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{uuid_id}``         | ​String | The uuid ID for the specified zone import.  |
+| ``{zoneId}``          | ​UUID   | The zone ID of the zone import for which you|
+|                       |         | wan to list the status.                     |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example List zone import request**
+**Example: List a zone import, request**
 
 .. code::  
 
@@ -52,7 +51,7 @@ This table shows the URI parameters for the list a zone import request:
 This operation does not accept a request body.
 
  
-**Example List zone import response**
+**Example: List a zone import, response**
 
 .. code::  
 
@@ -74,5 +73,5 @@ This operation does not accept a request body.
         "id": "074e805e-fe87-4cbb-b10b-21a06e215d41"
     }
 
-Notice that the status has been updated, the message field shows that the zone was successfully 
-imported, and there is now an ``href`` in the ``links`` field pointing to the new zone.
+Notice that the status is ``COMPLETE``, the message field shows that the zone was successfully 
+imported, and the ``links`` field contains an ``href`` that pointsto the new zone.

@@ -7,7 +7,7 @@ What's new
 ~~~~~~~~~~
 This version contains the internal-only preview release for |product name|. 
 
-During the preview, please send your feedback to: <ManagedDNS_Preview@rackspace.com>.
+During the preview, send your feedback to ManagedDNS_Preview@rackspace.com.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

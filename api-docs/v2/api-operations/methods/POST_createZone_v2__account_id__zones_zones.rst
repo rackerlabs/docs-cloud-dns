@@ -1,62 +1,51 @@
 .. _POST_createZone_v2__account_id__zones_zones:
 
-Create zone
+Create a zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /v2/{TENANT_ID}/zones
 
-This call provisions a new DNS zone, based on the configuration defined
+This operation provisions a new DNS zone, based on the configuration defined
 in the request object. 
 
-If the corresponding request cannot be fulfilled due to insufficient or invalid data, an 
-``HTTP 400`` (Bad Request) error response will be returned with information regarding the 
-nature of the failure in the body of the response. Failures in the validation process are 
-non-recoverable and require the caller to correct the cause of the failure and **POST** 
-the request again.
+If the corresponding request cannot be fulfilled because of insufficient or invalid data, 
+an ``HTTP 400`` (Bad Request) error response is returned with information about the 
+failure in the body of the response. Failures in the validation process are 
+non-recoverable and require you to correct the cause of the failure and resend the request.
 
 ..  note:: 
 
-    This operation returns an asynchronous response. This call returns an
-    asynchronous response. Refer to 
-    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works. 
+    - This operation returns an asynchronous response. For information about how
+      asynchronous operations work, see 
+      :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`. 
 
-..  note:: 
+    - This operation takes a few minutes to become effective on our name servers. For 
+      more information about DNS propagation, see :ref:`DNS propagation<cdns-dg-propagation>`. 
 
-    This operation takes a few minutes to become effective on our name servers.
-
-    Refer to :ref:`DNS propagation<cdns-dg-propagation>` for information about DNS 
-    propagation.
-
-If you attempt to create a zone that already exists, the API will return an exception 
+If you attempt to create a zone that already exists, the API returns an exception 
 saying that the zone already exists.
 
-When a zone is created, and no Time To Live (TTL) is specified, the SOA minTTL (300 
-seconds) is used as the default. When a record is added without a specified TTL, the TTL 
-will show as empty. When the zone and/or record TTL is supplied by the user, either via a 
-create or update call, the TTL values must be 300 seconds or more.
+When a zone is created, and no time-to-live (TTL) value is specified, the minimum value of 
+300 seconds is used as the default. When a record is added without a specified TTL, the TTL 
+value is shown as empty. When the zone and/or record TTL is supplied by the user, either 
+via a create or update operation, the TTL values must be 300 seconds or more.
 
-The following examples show the Create zone request:
+
+The following table shows the possible response codes for this operation.
 
 ..  note:: 
 
     When executed, this operation will show the *initial* ``202 Accepted`` response for 
     the asynchronous call and indicate that the task has been accepted for processing. 
-    This operation returns an asynchronous response. This call returns an
-    asynchronous response. Refer to 
-    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works. 
-
-This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 202     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
+| 202     | Accepted              | The request was accepted for                |
+|         |                       | processing, but the processing has not      |
 |         |                       | completed.                                  |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
@@ -72,39 +61,38 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 409     | Already Exists        | The item already exists.                    |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | Request exceeds rate limit or quota         |
+| 413     | Over Limit            |The request exceeds the rate limit or quota. |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the create zone request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
-This list shows the body parameters for the request:
+The following table shows the body parameters for the request.
 
--  **name**: String. Required.
++-----------------------+------------+---------------------------------------------+
+| Name                  | Type       | Description                                 |
++=======================+============+=============================================+
+| ``name``              | ​String    | The name for the zone, which cannot be      |
+|                       | (Required) | changed. Must be a valid zone (domain) name.|
++-----------------------+------------+---------------------------------------------+
+| ``email``             | ​String    | Email address to use for contacting the zone|
+|                       | (Required) | administrator.                              |
++-----------------------+------------+---------------------------------------------+
+| ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
+|                       | (Optional) | minimum value is 300 seconds.               |
++-----------------------+------------+---------------------------------------------+
+| ``description``       | ​String    | A description of the zone.                  |
+|                       | (Optional) |                                             |
++-----------------------+------------+---------------------------------------------+
 
-   The name for the zone (immutable). Must be a valid zone name.
-
--  **email**: String. Required.
-
-   Email address to use for contacting the zone administrator.
-
--  **ttl**: Integer. Optional.
-
-   time-to-live numeric value in seconds. The minimum value is 300 seconds.
-
--  **description**: String. Optional.
-
-   UTF-8 text field.
-
-**Example Create zone request**
+**Example: Create a zone, request**
 
 .. code::  
 
@@ -121,7 +109,7 @@ This list shows the body parameters for the request:
     }
 
  
-**Example Create zone response**
+**Example: Create a zone, response**
 
 .. code::  
 

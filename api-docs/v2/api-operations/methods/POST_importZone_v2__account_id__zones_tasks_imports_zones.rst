@@ -7,43 +7,41 @@ Create a zone import
 
     POST /v2/{TENANT_ID}/zones/tasks/imports
 
-This call imports a zonefile. To import a zonefile, set the Content-type to ``text/dns``. 
-An object will be  returned that can be queried using the ``self`` link in the ``links`` 
-field.
+This operation imports a *zone file*. To import a zone file, you set the ``content-type``
+header to ``text/dns``. An object is returned that can be queried by using the ``self`` 
+link in the ``links`` field.
 
 .. important::
 
 	The content type for this request is not json.  Instead, use ``Content-type: text/dns``.
 	
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 202     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
+| 202     | Accepted              | The request was accepted for                |
+|         |                       | processing, but the processing has not      |
 |         |                       | completed.                                  |
 +---------+-----------------------+---------------------------------------------+
-| 415     | Unsupported Media     | The server is refusing to service the       |
+| 415     | Unsupported Media     | The server won't service the                |
 |         | Type                  | request because the entity of the request   |
 |         |                       | is in a format not supported by the         |
 |         |                       | requested resource for the requested        |
 |         |                       | method.                                     |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the create a zone import
-request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example Create zone import request**
+**Example: Create a zone import, request**
 
 .. code::  
 
@@ -57,8 +55,11 @@ request:
     example.com. 42 IN MX 10 mail.example.com.
     ns.example.com. 42 IN A 10.0.0.1
     mail.example.com. 42 IN A 10.0.0.2
+    
+The body parameters for this operation are the contents of the zone file that you want to
+import.
  
-**Example Create zone import response**
+**Example: Create a zone import, response**
 
 .. code::  
 

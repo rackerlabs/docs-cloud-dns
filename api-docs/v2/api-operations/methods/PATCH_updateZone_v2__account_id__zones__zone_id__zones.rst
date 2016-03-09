@@ -1,52 +1,42 @@
 .. _PATCH_updateZone_v2__account_id__zones__zone_id__zones:
 
-Update zone
+Update a zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    PATCH /v2/{TENANT_ID}/zones/{zone_id}
+    PATCH /v2/{TENANT_ID}/zones/{zoneId}
 
-This call modifies DNS zone attributes only. Records cannot be added,
-modified, or Deleted. Only the TTL, email address and comment attributes
-of a zone can be modified.
-
-..  note:: 
-
-    This operation returns an asynchronous response. This call returns an
-    asynchronous response. Refer to 
-    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works. 
-
-If the corresponding request cannot be fulfilled due to insufficient or invalid data, an 
-``HTTP 400`` (Bad Request) error response will be returned with information regarding the 
-nature of the failure in the body of the response. Failures in the validation process are 
-non-recoverable and require the caller to correct the cause of the failure and **POST** 
-the request again.
+This operation modifies DNS zone attributes only. Records cannot be added, modified, or 
+deleted. Only the TTL, email address and description attributes of a zone can be modified.
 
 ..  note:: 
 
-    -  Refer to :ref:`DNS propagation<cdns-dg-propagation>` for information about DNS 
-       propagation.
+    - This operation returns an asynchronous response. For information about how
+      asynchronous operations work, see 
+      :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`.  
 
-    -  A zone's ``id`` is immutable.
+If the corresponding request cannot be fulfilled because of insufficient or invalid data, 
+an ``HTTP 400`` (Bad Request) error response is returned with information about the 
+failure in the body of the response. Failures in the validation process are 
+non-recoverable and require you to correct the cause of the failure and resend the request.
 
-    -  When the zone TTL is supplied by the user, either via a create or update call, the 
-       TTL values must be 300 seconds or more.
+..  note:: 
 
-    -  ``name`` cannot be specified, because the zone name cannot be
-       modified.
+    -  After a DNS change is made, it might take up to a minute for the change to propagate 
+       to Rackspace name servers. For information about DNS propagation, see 
+       :ref:`DNS propagation<cdns-dg-propagation>`.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
+| 200     | Success               | The request succeeded.                      |
 +---------+-----------------------+---------------------------------------------+
-| 201     | Created               | The request has been fulfilled and resulted |
-|         |                       | in a new resource being created.            |
+| 201     | Created               | The request was fulfilled and a new resource|
+|         |                       | was created.                                |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -57,20 +47,20 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 403     | Forbidden             | The server has not found anything matching  |
-|         |                       | the Request-URI.                            |
+| 403     | Forbidden             | The server did not find anything matching   |
+|         |                       | the request URI.                            |
 +---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
-| 405     | Method Not Allowed    | The method specified in the Request-Line is |
+| 405     | Method Not Allowed    | The method specified in the request is      |
 |         |                       | not allowed for the resource identified by  |
-|         |                       | the Request-URI.                            |
+|         |                       | the request URI.                            |
 +---------+-----------------------+---------------------------------------------+
 | 409     | Already Exists        | The item already exists.                    |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | Request exceeds rate limit or quota         |
+| 413     | Over Limit            | The request exceeds the rate limit or quota.|
 +---------+-----------------------+---------------------------------------------+
-| 415     | Unsupported Media     | The server is refusing to service the       |
+| 415     | Unsupported Media     | The server won't service the                |
 |         | Type                  | request because the entity of the request   |
 |         |                       | is in a format not supported by the         |
 |         |                       | requested resource for the requested        |
@@ -79,47 +69,40 @@ This table shows the possible response codes for this operation:
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the update zone request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{zone_id}``         | ​String | The zone ID for the specified zone.         |
+| ``{zoneId}``          | ​String | The ID of the zone to be updated.           |
 +-----------------------+---------+---------------------------------------------+
 
-This list shows the body parameters for the request:
+The following table shows the body parameters for the request.
 
--  **name**: String. Required.
-
-   The name for the zone (immutable). Must be a valid zone name.
-
--  **type**: String. Optional.
-
-   Enum PRIMARY/SECONDARY, default PRIMARY (immutable).
-
--  **email**: String. Required.
-
-   Email address to use for contacting the zone administrator.
-
--  **ttl**: Integer. Optional.
-
-   time-to-live numeric value in seconds. The default value is 300
-   seconds.
-
--  **description**: String. Optional.
-
-   UTF-8 text field.
-
--  **masters**: Object. Optional.
-
-   Array of master nameservers. (NULL for type PRIMARY, required for
-   SECONDARY otherwise zone will not be transferred before set.)
-
++-----------------------+------------+---------------------------------------------+
+| Name                  | Type       | Description                                 |
++=======================+============+=============================================+
+| ``name``              | ​String    | The name for the zone, which cannot be      |
+|                       | (Required) | changed. Must be a valid zone (domain) name.|
++-----------------------+------------+---------------------------------------------+
+| ``email``             | ​String    | Email address to use for contacting the zone|
+|                       | (Required) | administrator.                              |
++-----------------------+------------+---------------------------------------------+
+| ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
+|                       | (Optional) | default (and minimum) value is 300 seconds. |
++-----------------------+------------+---------------------------------------------+
+| ``description``       | ​String    | A description of the zone.                  |
+|                       | (Optional) |                                             |
++-----------------------+------------+---------------------------------------------+
+| ``masters``           | ​Object    | An array of master name servers. (NULL for  |
+|                       | (Optional) | type PRIMARY, required for SECONDARY        |
+|                       |            | otherwise the zone will not be transfered   |
+|                       |            | before set.                                 |
++-----------------------+------------+---------------------------------------------+
  
-**Example Update zone request**
+**Example: Update a zone, request**
 
 .. code::  
 
@@ -133,7 +116,7 @@ This list shows the body parameters for the request:
     }
 
  
-**Example  Update zone response**
+**Example:  Update a zone, response**
 
 .. code::  
 

@@ -1,48 +1,53 @@
 .. _GET_listExportedZone_v2__account_id__zones_tasks_exports__uuid_id__export_zones:
 
-List exported zone
+List an exported zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /v2/{$TENANT-ID}/zones/tasks/exports/{uuid_id}/export
+    GET /v2/{$TENANT-ID}/zones/tasks/exports/{zoneId}/export
 
-This call lists an exported zone for the specified zone export uuid ID. The link that is 
-generated in the export field of an export resource can be followed to a DNS resource, or 
-an external resource. If the link is to a DNS endpoint, the zonefile can be retrieved 
+This operation lists an exported zone for the specified zone export ID. The link that is 
+generated in the export field of an export resource can be followed to a DNS resource or 
+an external resource. If the link is to a DNS endpoint, the zone file can be retrieved 
 directly through the API by following that link.
 
-This table shows the possible response codes for this operation:
+.. important::
+
+	To list an exported zone file, you set the ``content-type`` header to ``text/dns``. 
+
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
-|         |                       | completed.                                  |
+| 200     | Accepted              | The request was accepted for processing,    |
+|         |                       |  but the processing has not completed.      |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
+| 403     | Forbidden             | The server did not find anything matching   |
+|         |                       | the request URI.                            |
++---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the list exported zone request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{$TENANT-ID}``      | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{$TENANT-ID}``      | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{uuid_id}``         | ​String | The uuid ID for the specified zone export.  |
+| ``{zoneId}``          | ​UUID   | The ID for the zone export to list.         |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example List exported zone request**
+**Example: List an exported zone, request**
 
 .. code::  
 
@@ -53,7 +58,7 @@ This table shows the URI parameters for the list exported zone request:
 This operation does not accept a request body.
 
  
-**Example List exported zone response**
+**Example: List an exported zone, response**
 
 .. code::  
 
@@ -76,6 +81,6 @@ This operation does not accept a request body.
     ns.example.com.  IN A  10.0.0.1
     mail.example.com.  IN A  10.0.0.2
 
-Notice how the SOA and NS records are replaced with the DNS server(s).
+Notice that the SOA and NS records are replaced with the DNS servers.
 
-This operation does not return a response body.
+The body returned by this operation is an exported zone file.

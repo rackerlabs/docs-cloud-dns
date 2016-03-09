@@ -7,18 +7,17 @@ List zone exports
 
     GET /v2/{TENANT_ID}/zones/tasks/exports
 
-This call lists all of the zone exports created by this account. Returned objects can be 
-queried using the links in the ``links`` field.
+This operation lists all of the zone exports created by this account. Returned objects can 
+be queried by using the links in the ``links`` field.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
-|         |                       | completed.                                  |
+| 200     | Accepted              | The request was accepted for  processing,   |
+|         |                       | but the processing has not completed.       |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
@@ -28,17 +27,16 @@ This table shows the possible response codes for this operation:
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the list zone exports request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example List zone exports request**
+**Example: List zone exports, request**
 
 .. code::  
 
@@ -48,7 +46,7 @@ This table shows the URI parameters for the list zone exports request:
 
 This operation does not accept a request body.
  
-**Example List zone exports response**
+**Example: List zone exports, response**
 
 .. code::  
 

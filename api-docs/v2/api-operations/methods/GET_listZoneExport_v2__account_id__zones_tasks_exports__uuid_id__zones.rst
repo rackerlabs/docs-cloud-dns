@@ -5,20 +5,19 @@ List a zone export record
 
 .. code::
 
-    GET /v2/{TENANT_ID}/zones/tasks/exports/{uuid_id}
+    GET /v2/{TENANT_ID}/zones/tasks/exports/{zoneId}
 
-This call lists the zone export record for the specified zone export uuid ID. Returned 
-objects can be queried using the links in the ``links`` field.
+This operation lists the zone export record for the specified zone export uuid ID. Returned 
+objects can be queried by using the links in the ``links`` field.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
-|         |                       | completed.                                  |
+| 200     | Accepted              | The request was accepted for processing,    |
+|         |                       | but the processing has not completed.       |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
@@ -28,20 +27,19 @@ This table shows the possible response codes for this operation:
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the list a zone export record
-request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{uuid_id}``         | ​String | The uuid ID for the specified zone export.  |
+| ``{zoneId}``          | ​UUID   | The ID of the zone export for which you want|
+|                       |         | to list the record.                         |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example List zone export record request**
+**Example: List a zone export record, request**
 
 .. code::  
 
@@ -51,7 +49,7 @@ request:
 
 This operation does not accept a request body.
  
-**Example List zone export record response**
+**Example: List a zone export record, response**
 
 .. code::  
 
@@ -60,7 +58,7 @@ This operation does not accept a request body.
 
     {
         "status": "COMPLETE",
-        "zone_id": "6625198b-d67d-47dc-8d29-f90bd60f3ac4",
+        "zone_id": "a86dba58-0043-4cc6-a1bb-69d5e86f3ca3",
         "links": {
             "self": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720",
             "export": "https://global.dns.rackspacecloud.com/v2/123456/zones/tasks/exports/8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720/export"
@@ -74,5 +72,5 @@ This operation does not accept a request body.
         "id": "8ec17fe1-d1f9-41b4-aa98-4eeb4c27b720"
     }
 
-Notice that the status has been updated and there is now an ``export`` in the ``links`` 
-field that points to a link where the export (zonefile) can be accessed.
+Notice that the status is ``COMPLETE`` and the ``links`` field contains an ``export`` entry 
+that provides a link where the export (zone file) can be accessed.

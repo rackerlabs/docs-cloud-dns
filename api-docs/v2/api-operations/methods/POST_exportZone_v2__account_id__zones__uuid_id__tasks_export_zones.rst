@@ -5,42 +5,42 @@ Create a zone export
 
 .. code::
 
-    POST /v2/{TENANT_ID}/zones/{uuid}/tasks/export
+    POST /v2/{TENANT_ID}/zones/{zoneId}/tasks/export
 
-This call exports a zone in BIND9 zone file format. To export a zone in BIND9 zonefile 
-format, a zone export resource must be created by initializing an export task.
+This operation exports the specified zone in BIND9 zone file format. To export a zone in 
+BIND9 zone file format, a zone export resource must be created by initializing an export 
+task.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 202     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
+| 202     | Accepted              | The request was accepted for                |
+|         |                       | processing, but the processing has not      |
 |         |                       | completed.                                  |
 +---------+-----------------------+---------------------------------------------+
-| 415     | Unsupported Media     | The server is refusing to service the       |
+| 415     | Unsupported Media     | The server won't service the                |
 |         | Type                  | request because the entity of the request   |
 |         |                       | is in a format not supported by the         |
 |         |                       | requested resource for the requested        |
 |         |                       | method.                                     |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the create a zone export
-request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{uuid_id}``         | ​String | The uuid of the specified zone.             |
+| ``{zoneId}``          | ​UUID   | The zone ID for the zone that you want to   | 
+|                       |         | export.                                     |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example Create zone export request**
+**Example: Create a zone export, request**
 
 .. code::  
 
@@ -49,7 +49,7 @@ request:
 
 This operation does not accept a request body.
  
-**Example Create zone export response**
+**Example: Create a zone export, response**
 
 .. code::  
 

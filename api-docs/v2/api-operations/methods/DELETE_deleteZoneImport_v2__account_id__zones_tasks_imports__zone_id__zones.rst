@@ -5,44 +5,46 @@ Delete a zone import
 
 .. code::
 
-    DELETE /v2/{$TENANT-ID}/zones/tasks/imports/{zone_id}
+    DELETE /v2/{$TENANT-ID}/zones/tasks/imports/{zoneId}
 
-This call deletes a zone import with the specified zone import uuid ID.
-It does not affect the zone that was imported. It simply removes the
+This operation deletes a zone import with the specified zone import ID.
+The operation does not affect the zone that was imported; it simply removes the
 record of the import.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
 | 204     | No Content            | The server has fulfilled the request but    |
 |         |                       | does not need to return an entity-body, and |
 |         |                       | might want to return updated                |
-|         |                       | metainformation.                            |
+|         |                       | meta-information.                           |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
+| 403     | Forbidden             | The server did not find anything matching   |
+|         |                       | the request URI.                            |
++---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the delete a zone import request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{$TENANT-ID}``      | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{$TENANT-ID}``      | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{uuid_id}``         | ​String | The uuid ID for the specified zone import.  |
+| ``{zoneId}``          | ​UUID   | The ID of the zone import to delete.        |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example Delete zone import request**
+**Example: Delete a zone import, request**
 
 .. code::  
 
@@ -54,7 +56,7 @@ This table shows the URI parameters for the delete a zone import request:
 This operation does not accept a request body.
 
  
-**Example Delete zone import response**
+**Example: Delete a zone import, response**
 
 .. code::  
 

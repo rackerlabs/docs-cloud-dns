@@ -1,38 +1,36 @@
 .. _PUT_updateRecordset_v2__account_id__zones__zone_id__recordsets__recordset_id__recordsets:
 
-Update record set
+Update a record set
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    PUT /v2/{TENANT_ID}/zones/{zone_id}/recordsets/{recordset_id}
+    PUT /v2/{TENANT_ID}/zones/{zoneId}/recordsets/{recordsetId}
 
-This operation replaces the specified record set with the specified details.
+This operation updates the specified record set with the specified details. NS record sets 
+cannot be updated.
 
 ..  note:: 
 
-    This operation returns an asynchronous response. This call returns an
-    asynchronous response. Refer to 
-    :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>` for more 
-    information about how the asynchronous call works.     
+    - This operation returns an asynchronous response. For information about how
+      asynchronous operations work, see 
+      :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`.  
 
-If a request cannot be fulfilled due to insufficient or invalid data, an ``HTTP 400`` 
-(Bad Request) error response will be returned with information regarding the nature of the 
-failure in the body of the response. Failures in the validation process are non-recoverable 
-and require the caller to correct the cause of the failure and **POST** the request again.
+If the corresponding request cannot be fulfilled because of insufficient or invalid data, 
+an ``HTTP 400`` (Bad Request) error response is returned with information about the 
+failure in the body of the response. Failures in the validation process are 
+non-recoverable and require you to correct the cause of the failure and resend the request.
 
-In the example shown below, the TTL is updated to ``3600``.
-
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
+| 200     | Success               | The request succeeded.                      |
 +---------+-----------------------+---------------------------------------------+
-| 201     | Created               | The request has been fulfilled and resulted |
-|         |                       | in a new resource being created.            |
+| 201     | Created               | The request was fulfilled and a new resource|
+|         |                       | was created.                                |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -43,20 +41,20 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 403     | Forbidden             | The server has not found anything matching  |
-|         |                       | the Request-URI.                            |
+| 403     | Forbidden             | The server did not find anything matching   |
+|         |                       | the request URI.                            |
 +---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
-| 405     | Method Not Allowed    | The method specified in the Request-Line is |
+| 405     | Method Not Allowed    | The method specified in the request is      |
 |         |                       | not allowed for the resource identified by  |
-|         |                       | the Request-URI.                            |
+|         |                       | the request URI.                            |
 +---------+-----------------------+---------------------------------------------+
 | 409     | Already Exists        | The item already exists.                    |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | Request exceeds rate limit or quota         |
+| 413     | Over Limit            |The request exceeds the rate limit or quota. |
 +---------+-----------------------+---------------------------------------------+
-| 415     | Unsupported Media     | The server is refusing to service the       |
+| 415     | Unsupported Media     | The server won't service the                |
 |         | Type                  | request because the entity of the request   |
 |         |                       | is in a format not supported by the         |
 |         |                       | requested resource for the requested        |
@@ -66,45 +64,42 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 
 
-This table shows the URI parameters for the update record set request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{zone_id}``         | ​String | The zone ID for the specified zone.         |
+| ``{zoneId}``          | ​String | The ID of the zone with the record set to   |
+|                       |         | update.                                     |
 +-----------------------+---------+---------------------------------------------+
-| ``{recordset_id}``    | ​String | The record set ID for the specified record  |
-|                       |         | set.                                        |
+| ``{recordsetId}``     | ​String | The ID of the record set to update.         |
 +-----------------------+---------+---------------------------------------------+
 
-This list shows the body parameters for the request:
+The following table shows the body parameters for the request.
 
--  **name**: String. Required.
-
-   The name for the zone (immutable). Must be a valid zone name.
-
--  **type**: String. Optional.
-
-   Type of record set. Cannot be changed on update (immutable).
-
--  **ttl**: Integer. Optional.
-
-   time-to-live numeric value in seconds. The default value is 300
-   seconds.
-
--  **description**: String. Optional.
-
-   UTF-8 text field.
-
--  **records**: Object. Optional.
-
-   A list of data records.
++-----------------------+------------+---------------------------------------------+
+| Name                  | Type       | Description                                 |
++=======================+============+=============================================+
+| ``name``              | ​String    | The name for the zone, which cannot be      |
+|                       | (Required) | changed. Must be a valid zone (domain) name.|
++-----------------------+------------+---------------------------------------------+
+| ``type``              | ​String    | Type of record set, which cannot be         |
+|                       | (Optional) | changed.                                    |
++-----------------------+------------+---------------------------------------------+
+| ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
+|                       | (Optional) | default value is 300 seconds.               |
++-----------------------+------------+---------------------------------------------+
+| ``description``       | ​String    | A description of the record set (UTF-8 text |
+|                       | (Optional) | field).                                     |
++-----------------------+------------+---------------------------------------------+
+| ``records``           | ​Object    | An array of data records.                   |
+|                       | (Optional) |                                             |
++-----------------------+------------+---------------------------------------------+
 
  
-**Example Update record set request**
+**Example: Update a record set, request**
 
 .. code::  
 
@@ -121,8 +116,9 @@ This list shows the body parameters for the request:
         ]
      }
 
- 
-**Example Update record set response**
+In this example, the TTL is updated to ``3600``.
+
+**Example: Update a record set, response**
 
 .. code::  
 

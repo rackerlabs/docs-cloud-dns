@@ -7,16 +7,16 @@ What's new
 ~~~~~~~~~~
 This version contains the EA release for |product name| and includes the following items: 
 
-- 2x improvement for all recordset rate limits
-- 2x improvement for all GET rate limits
-- 10x higher zone(domain) quota per account 
-- 6x higher record quota per zone(domain) 
+- Doubled all recordset rate limits
+- Doubled for all GET rate limits
+- Increased zone(domain) quota per account by ten times
+- Increased record quota per zone(domain) by six times
 - Dedicated and supported CLI
-- Immediate zone/record validation before the asynchronous process starts.
-- Imports and exports in pure BIND9 zone file format; no more parsing to and from XML or 
-  JSON.
+- Immediate zone or record validation before the asynchronous process starts
+- Imports and exports in pure BIND9 zone file format, which means no more parsing to and 
+  from XML or JSON
 - Built-in status monitoring for asynchronous responses so that you don’t have to keep 
-  checking a separate endpoint.
+  checking a separate endpoint
 - OpenStack-standard API based on OpenStack Designate v2
 
 Resolved issues
@@ -27,11 +27,10 @@ Resolved issues
 Known issues
 ~~~~~~~~~~~~
 
-Pyrax Upgrade Dependency – Enabling Rackspace Managed DNS (Early Access) will block use of 
-Rackspace Cloud DNS (Production) for users of pyrax versions earlier than 1.9.7.  In order 
-to enable accounts for Managed DNS (Early Access) without impacting current pyrax usage in 
-Cloud DNS, participating customers with a workflow that is dependent on Rackspace Cloud 
-SDK "pyrax” will need to upgrade to the latest version (1.9.7).  Additionally, users of 
-Ansible's Rackspace modules would also have to upgrade the pyrax dependency before 
-associated accounts can be enabled for Managed DNS (Early Access).
+Enabling Rackspace Managed DNS (EA) blocks the use of Rackspace Cloud DNS (Production) for 
+users of pyrax versions earlier than 1.9.7. To enable accounts for Managed DNS (EA) without 
+impacting current pyrax usage in Cloud DNS, participating customers with a workflow that 
+depends on the Rackspace pyrax SDK must upgrade to the latest version (1.9.7). Additionally, 
+users of Ansible’s Rackspace modules also must upgrade the pyrax dependency before associated 
+accounts can be enabled for Managed DNS (EA).
 

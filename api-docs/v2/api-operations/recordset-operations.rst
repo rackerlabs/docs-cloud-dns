@@ -1,6 +1,6 @@
 .. _recordset-operations:
 
-Record set Operations 
+Record set operations 
 ~~~~~~~~~~~~~~~~~~~~~
 
 
