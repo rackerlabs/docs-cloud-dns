@@ -5,20 +5,21 @@ Delete a zone export
 
 .. code::
 
-    DELETE /v2/{$TENANT-ID}/zones/tasks/exports/{uuid_id}
+    DELETE /v2/{$TENANT-ID}/zones/tasks/exports/{zoneId}
 
-This call deletes a zone export for the specified zone export uuid ID. This does not affect 
-the zone that was exported. It simply removes the record of the export. If the link to 
-view the export was pointing to a DNS API endpoint, the endpoint will no longer be available.
+This operation deletes a zone export for the specified zone export uuid ID. This 
+operation does not affect the zone that was exported; it simply removes the record of the 
+export. If the link to view the export pointed to a DNS API endpoint, the endpoint will no 
+longer be available.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 204     | No Content            | The server has fulfilled the request but    |
-|         |                       | does not need to return an entity-body, and |
+| 204     | No Content            | The server fulfilled the request but        |
+|         |                       | does not need to return an entity body, and |
 |         |                       | might want to return updated                |
 |         |                       | metainformation.                            |
 +---------+-----------------------+---------------------------------------------+
@@ -27,22 +28,24 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
+| 403     | Forbidden             | The server did not find anything matching   |
+|         |                       | the request URI.                            |
++---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the delete a zone export request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{uuid_id}``         | ​String | The uuid ID for the specified zone export.  |
+| ``{zoneId}``          | ​UUID   | The ID for the zone export to delete.       |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example Delete zone export request**
+**Example: Delete a zone export, request**
 
 .. code::  
 
@@ -53,7 +56,7 @@ This table shows the URI parameters for the delete a zone export request:
 
 This operation does not accept a request body.
  
-**Example Delete zone export response**
+**Example: Delete a zone export, response**
 
 .. code::  
 

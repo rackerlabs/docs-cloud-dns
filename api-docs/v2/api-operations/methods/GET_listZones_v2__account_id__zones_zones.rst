@@ -11,16 +11,13 @@ This operation provides a list of detailed information for all zones.
 
 A ``self`` link is included for each zone.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
-+---------+-----------------------+---------------------------------------------+
-| 201     | Created               | The request has been fulfilled and resulted |
-|         |                       | in a new resource being created.            |
+| 200     | Success               | The request succeeded.                      |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -31,18 +28,18 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 403     | Forbidden             | The server has not found anything matching  |
-|         |                       | the Request-URI.                            |
+| 403     | Forbidden             | The server did not find anything matching   |
+|         |                       | the request URI.                            |
 +---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
-| 405     | Method Not Allowed    | The method specified in the Request-Line is |
+| 405     | Method Not Allowed    | The method specified in the request is      |
 |         |                       | not allowed for the resource identified by  |
-|         |                       | the Request-URI.                            |
+|         |                       | the request URI.                            |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | Request exceeds rate limit or quota         |
+| 413     | Over Limit            | The request exceeds the rate limit or quota.|
 +---------+-----------------------+---------------------------------------------+
-| 415     | Unsupported Media     | The server is refusing to service the       |
+| 415     | Unsupported Media     | The server won't service the                |
 |         | Type                  | request because the entity of the request   |
 |         |                       | is in a format not supported by the         |
 |         |                       | requested resource for the requested        |
@@ -51,17 +48,16 @@ This table shows the possible response codes for this operation:
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the list zones request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example  List zones request**
+**Example:  List zones, request**
 
 .. code::  
 
@@ -73,7 +69,7 @@ This table shows the URI parameters for the list zones request:
 This operation does not accept a request body.
 
 
-**Example List zones response**
+**Example: List zones, response**
 
 .. code::  
 

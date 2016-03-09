@@ -7,18 +7,17 @@ List zone imports
 
     GET /v2/{TENANT_ID}/zones/tasks/imports
 
-This call lists all of the zone imports created by this account. Objects will be returned 
-that can be queried using the links in the ``links`` field.
+This operation lists all of the zone imports created by this account. Objects are 
+returned that can be queried by using the links in the ``links`` field.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
-| Code    |                       |                                             |
+| code    |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Accepted              | The request has been accepted for           |
-|         |                       | processing, but the processing has not been |
-|         |                       | completed.                                  |
+| 200     | Accepted              | The request was accepted for processing,    |
+|         |                       | but the processing has not completed.       |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
@@ -28,17 +27,16 @@ This table shows the possible response codes for this operation:
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-This table shows the URI parameters for the list zone imports request:
+The following table shows the URI parameters for the request.
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
-| ``{TENANT_ID}``       | ​String | The account ID of the owner of the          |
-|                       |         | specified account.                          |
+| ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
  
-**Example List zone imports request**
+**Example: List zone imports, request**
 
 .. code::  
 
@@ -49,7 +47,7 @@ This table shows the URI parameters for the list zone imports request:
 This operation does not accept a request body.
 
  
-**Example List zone imports response**
+**Example: List zone imports, response**
 
 .. code::  
 

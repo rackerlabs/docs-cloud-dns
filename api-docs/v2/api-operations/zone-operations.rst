@@ -1,9 +1,9 @@
 .. _zone-operations: 
 
-Zone Operations
+Zone operations
 ~~~~~~~~~~~~~~~
 
-Use these zone operations to view and manage zones for a Rackspace Cloud account.
+Use the operations in this section to view and manage zones for a Rackspace Cloud account.
 
 .. include:: methods/GET_listZones_v2__account_id__zones_zones.rst
 .. include:: methods/POST_createZone_v2__account_id__zones_zones.rst
