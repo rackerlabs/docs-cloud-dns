@@ -120,7 +120,6 @@ extlinks = {
     'rax-glossary': ('https://developer.rackspace.com/docs/glossary/%s', ''),
     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'how-to': ('http://support.rackspace.com/how-to/%s', ''),
-    'h2': ('https://support.rackspace.com/how-to/%s',''),
     'os': ('http://www.openstack.org/%s', ''),
     'os-docs': ('http://docs.openstack.org/%s', ''),
     'os-wiki': ('http://wiki.openstack.org/%s', ''),

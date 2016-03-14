@@ -115,4 +115,4 @@ RBAC permissions cross-reference to |apiservice| operations
 
 API operations for |product name| may or may not be available to all roles. To see which 
 operations are permitted to invoke which operations, see the 
-:h2:`Detailed Permissions Matrix for DNS <detailed-permissions-matrix-for-dns>` 
+:how-to:`Detailed Permissions Matrix for DNS <detailed-permissions-matrix-for-dns>` 
