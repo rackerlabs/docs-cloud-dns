@@ -6,7 +6,7 @@ Additional resources
 You can download the most current versions of other API-related documents from 
 :rax-dev:`developer.rackspace.com<>`.
 
-For more information about the |product name| service, see the :h2:`Managed DNS FAQ <managed-dns-faq>`
+For more information about the |product name| service, see the :how-to:`Managed DNS FAQ <managed-dns-faq>`
 in the Rackspace How-To. 
 
 For information about Rackspace Cloud products, see the :rax-cloud:`Rackspace Public Cloud site<>`.

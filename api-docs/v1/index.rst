@@ -17,8 +17,8 @@ Cloud DNS service REST API.
 The Rackspace Cloud DNS API enables developers to view and manage domains, subdomains, and
 records through a simple Representational State Transfer (REST) web service interface.
 
-For more information about the DNS service, see the `Cloud DNS FAQ <http://www.rackspace.com/knowledge_center/article/rackspace-cloud-dns-faq>`_
-in the Rackspace Knowledge Center.
+For more information about the DNS service, see the :how-to:`Cloud DNS FAQ <cloud-dns-faq>`
+in the Rackspace How To.
 
 
 .. toctree:: :hidden:

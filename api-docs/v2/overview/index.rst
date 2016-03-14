@@ -6,7 +6,7 @@ About the Rackspace Managed DNS API
 The |apiservice| enables developers to view and manage domains, subdomains, and records 
 through a simple Representational State Transfer (REST) web service interface.
 
-For more information about the |product name| service, see the :h2:`Managed DNS FAQ <managed-dns-faq>`
+For more information about the |product name| service, see the :how-to:`Managed DNS FAQ <managed-dns-faq>`
 in the Rackspace How-To. 
 
 |product name| is a globally distributed (Anycast network) service that 

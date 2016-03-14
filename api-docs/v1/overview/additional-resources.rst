@@ -3,14 +3,21 @@
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
-Issues and bug reports can be directed to your support team via ticket,
-chat, email, or phone.
+Issues and bug reports can be directed to your support team via ticket, chat, email, or phone.
 
-You can download the most current versions of other API-related documents from http://developer.rackspace.com/.
+You can download the most current versions of other API-related documents from 
+:rax-dev:`developer.rackspace.com<>`.
 
-For more details about Rackspace Cloud DNS, refer to http://www.rackspace.com/cloud/dns. This site also offers links to Rackspace's official support channels, including knowledge center articles, forums, phone, chat, and email.
+For more details about Rackspace Cloud DNS, refer to http://www.rackspace.com/cloud/dns. 
+This site also offers links to Rackspace's official support channels, including How To 
+articles, forums, phone, chat, and email.
 
-Using this API document, your Rackspace Cloud account, and at least two cloud servers, you can get started whenever you'd like. See the *Getting Started with Rackspace Cloud DNS* at http://docs.rackspace.com/ for information about getting started using the API.
+For more information about the Cloud DNS service, see the :how-to:`Cloud DNS FAQ <cloud-dns-faq>`
+in the Rackspace How To.
+
+Using this API document, your Rackspace Cloud account, and at least two cloud servers, you 
+can get started whenever you'd like. See the :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#getting-started-guide>`.
+for information about getting started using the API.
 
 Please visit our `Product Feedback Forum`_ and let us know what you think about Cloud DNS!
 
