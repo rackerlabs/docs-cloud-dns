@@ -8,5 +8,4 @@ Use this Getting Started Guide to learn how to authenticate, send API requests,
 set up the command line interface, and complete basic operations by using the |apiservice|.
 
 For more information about |product name| concepts and API operations, see the 
-
 :ref:`Developer Guide<developer-guide>` and the :ref:`API Reference<api-reference>`.
