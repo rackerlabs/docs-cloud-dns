@@ -12,4 +12,4 @@
     Install CLI client <install-CLI-client>
     Send API requests <send-request-ovw>
     Authenticate <authenticate>
-    using-cloud-dns <using-cloud-dns>
+    Use managed DNS <use-cloud-dns>

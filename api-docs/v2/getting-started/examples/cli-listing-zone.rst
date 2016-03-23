@@ -1,7 +1,7 @@
-.. _cli-list-zone:
+.. _cli-listing-zone:
 
-Get details about a zone with the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting details about a zone with the CLI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``zone show`` CLI command to Get details about a zone.
 

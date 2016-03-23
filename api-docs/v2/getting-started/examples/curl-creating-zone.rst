@@ -1,6 +1,6 @@
-.. _curl-create-zone:
+.. _curl-creating-zone:
 
-Create a zone with cURL 
+Creating a zone with cURL 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``create zone`` API operation (``POST /zones``) to create a zone with the 

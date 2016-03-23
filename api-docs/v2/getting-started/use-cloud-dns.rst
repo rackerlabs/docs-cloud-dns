@@ -1,6 +1,12 @@
-.. _using-cloud-dns:
+.. _use-cloud-dns:
 
-Create DNS zones (domains)
+Use Managed DNS
+-------------------------------------
+
+The following sections show you how to use managed DNS to create and manage zones and 
+record sets.
+
+Creating DNS zones (domains)
 -------------------------------------
 
 You can use the examples in this sections to create zones (domains) by using |apiservice| 
@@ -35,14 +41,14 @@ In this case, assume that you want to create a zone by using ``name=example.org`
 
 Choose one of the following methods:
 
--  :ref:`Create a zone with the CLI<cli-create-zone>`
--  :ref:`Create a zone with cURL<curl-create-zone>`
+-  :ref:`Creating a zone with the CLI<cli-creating-zone>`
+-  :ref:`Creating a zone with cURL<curl-creating-zone>`
 
-.. include:: examples/cli-create-zone.rst
-.. include:: examples/curl-create-zone.rst
+.. include:: examples/cli-creating-zone.rst
+.. include:: examples/curl-creating-zone.rst
 
-Get details about DNS zones (domains)
--------------------------------------
+Getting details about DNS zones (domains)
+------------------------------------------
 
 Use the ``list zone`` API operation or the ``zone show`` CLI command to get detailed output 
 for a specific zone by using the ``zone UID``. You can query only zones that you have 
@@ -50,11 +56,11 @@ permission to query, which are ones created using your tenant ID.
 
 Choose one of the following methods:
 
--  :ref:`Get details about a zone with the CLI<cli-list-zone>`
--  :ref:`Get details about with cURL<curl-list-zone>`
+-  :ref:`Getting details about a zone with the CLI<cli-listing-zone>`
+-  :ref:`Getting details about with cURL<curl-listing-zone>`
 
-.. include:: examples/cli-list-zone.rst
-.. include:: examples/curl-list-zone.rst
+.. include:: examples/cli-listing-zone.rst
+.. include:: examples/curl-listing-zone.rst
 
 Create record sets
 -----------------------------
@@ -66,11 +72,11 @@ hostname to an IP address.
 
 Choose one of the following methods:
 
--  :ref:`Create a record set with the CLI<cli-create-recordset>`
--  :ref:`Create a record set with cURL<curl-create-recordset>`
+-  :ref:`Creating a record set with the CLI<cli-creating-recordset>`
+-  :ref:`Creating a record set with cURL<curl-creating-recordset>`
 
-.. include:: examples/cli-create-recordset.rst
-.. include:: examples/curl-create-recordset.rst
+.. include:: examples/cli-creating-recordset.rst
+.. include:: examples/curl-creating-recordset.rst
 
 Get details about record sets
 -------------------------------------
@@ -80,8 +86,8 @@ detailed output for a specific record set by using the ``recordset id``.
 
 Choose one of the following methods:
 
--  :ref:`Get details about a record set with the CLI<cli-list-recordset>`
--  :ref:`Get deatils about a record set with cURL<curl-list-recordset>`
+-  :ref:`Getting details about a record set with the CLI<cli-listing-recordset>`
+-  :ref:`Getting deatils about a record set with cURL<curl-listing-recordset>`
 
-.. include:: examples/cli-list-recordset.rst
-.. include:: examples/curl-list-recordset.rst
+.. include:: examples/cli-listing-recordset.rst
+.. include:: examples/curl-listing-recordset.rst

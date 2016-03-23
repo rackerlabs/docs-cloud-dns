@@ -1,6 +1,6 @@
-.. _cli-create-zone:
+.. _cli-creating-zone:
 
-Create a zone with the CLI 
+Creating a zone with the CLI 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``zone create`` CLI command to create a zone (domain) with the configuration that 
