@@ -1,6 +1,6 @@
-.. _curl-create-recordset:
+.. _curl-creating-recordset:
 
-Create a record set with cURL
+Creating a record set with cURL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples show the cURL request for create record set operation:

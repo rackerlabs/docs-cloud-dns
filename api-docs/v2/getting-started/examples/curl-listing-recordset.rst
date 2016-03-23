@@ -1,7 +1,7 @@
-.. _curl-list-recordset:
+.. _curl-listing-recordset:
 
-Get details about a  record set with cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting details about a  record set with cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example shows the cURL request for list record set operation.
 

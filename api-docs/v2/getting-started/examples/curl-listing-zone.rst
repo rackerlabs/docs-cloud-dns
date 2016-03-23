@@ -1,7 +1,7 @@
-.. _curl-list-zone:
+.. _curl-listing-zone:
 
-Get details about a zone with cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting details about a zone with cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use this API operation to get detailed output for a specific zone. This operation does not 
 require a request body.

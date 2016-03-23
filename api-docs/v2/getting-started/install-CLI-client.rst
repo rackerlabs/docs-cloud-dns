@@ -64,4 +64,4 @@ a plug-in to the OpenStack CLI.
       $ sudo pip install -U distribute
 
 Now that your command line tool is ready, skip to 
-:ref:`Creating a zone with the CLI<cli-create-zone>`.
+:ref:`Creating a zone with the CLI<cli-creating-zone>`.
