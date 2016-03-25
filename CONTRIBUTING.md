@@ -1,7 +1,7 @@
 # Contributor guidelines
 
 These guidelines provide the general process for maintaining source code that builds the 
-Rackspace Cloud Servers developer documentation. 
+Rackspace Cloud DNS and Rackspace Managed DNS developer documentation. 
 
 - [Project description](#project-description)
 - [Updating and adding content](#updating-and-adding-content)
