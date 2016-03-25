@@ -1,4 +1,4 @@
-# Rackspace Cloud DNS API documentation
+# Rackspace Cloud DNS and Managed DNS API documentation
 
 [![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-dns.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-dns)
 

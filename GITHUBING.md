@@ -70,7 +70,7 @@ or another GitHub GUI instead to accomplish the steps.
 
 10. Create a pull request (PR) to the upstream repo for your branch
 
-    a. Go to https://github.com/rackerlabs/docs-cloud-servers
+    a. Go to https://github.com/rackerlabs/docs-cloud-dns
 
     b. Click on the Create pull request button
 
