@@ -1,7 +1,6 @@
 # Rackspace Cloud DNS and Managed DNS API documentation
 
-[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-dns.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-dns)
-
+[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-dns/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-dns/)
 <!-- [![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-dns/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-dns/) -->
 
 This repository contains the source files that generate the following Cloud DNS and Managed 
@@ -16,8 +15,7 @@ DNS API documentation:
 * [Managed DNS API Reference](https://developer.rackspace.com/docs/cloud-dns/v2/developer-guide/#api-reference)
 
 When you commit changes to the master branch of this repository, the 
-[Travis CI/CD build job](https://travis-ci.org/rackerlabs/docs-cloud-dns)
-builds the documentation. Successful builds are deployed to production.
+Strider CI/CD build job builds the documentation. Successful builds are deployed to production.
 
 <!-- When you commit changes to the master branch of this repository, the 
 [Strider CI/CD build job](https://build.developer.rackspace.com/rackerlabs/docs-cloud-dns/)
