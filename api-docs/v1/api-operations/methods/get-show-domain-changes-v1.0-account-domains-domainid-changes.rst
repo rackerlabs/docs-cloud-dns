@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-domain-changes-v1.0-account-domains-domainid-changes:
 
 Show domain changes
@@ -12,16 +9,15 @@ Show domain changes
 
 Shows all changes to a specified domain ``since`` a specified ``date/time``.
 
-This call shows all changes to a specified domain ``since`` a specified date/time. The ``since`` parameter is optional and defaults to midnight of the current day. See :ref:`Date/Time format <cdns-dg-date-time>` for details on how to specify this parameter's value.
+This call shows all changes to a specified domain ``since`` a specified date/time. The `
+`since`` parameter is optional and defaults to midnight of the current day. See 
+:ref:`Date/Time format <cdns-dg-date-time>` for details on how to specify this parameter's 
+value.
 
-The examples below show the requests and
-corresponding responses to list the domain changes since
-midnight, GMT-5, on September 13, 2011.
-
-
+The examples below show the requests and corresponding responses to list the domain changes 
+since midnight, GMT-5, on September 13, 2011.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -55,43 +51,30 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-|{domainId}                |String *(Required)*      |ID for the domain.       |
+|{domainId}                |String                   |ID for the domain.       |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|since                     |String *(Optional)*      |The Date/Time from which |
+|since                     |String                   |The Date/Time from which |
 |                          |                         |the domain changes       |
 |                          |                         |should be shown.         |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
-
 
 **Example List domain Changes: XML request**
 
@@ -103,14 +86,8 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/xml
    Content-Length: 0
-   
-
-
-
-
 
 **Example List domain Changes: JSON request**
-
 
 .. code::
 
@@ -120,25 +97,10 @@ This operation does not accept a request body.
    Content-Type: application/json
    Content-Length: 0
    
-
-
-
-
-
 Response
 """"""""""""""""
 
-
-
-
-
-
-
-
-
-
 **Example List domain Changes: XML response**
-
 
 .. code::
 
@@ -178,14 +140,8 @@ Response
            <changeDetail field="zone_id" originalValue="" newValue="45678"/>
        </change>
    </changes>
-   
-
-
-
-
 
 **Example List domain Changes: JSON response**
-
 
 .. code::
 

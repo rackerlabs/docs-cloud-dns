@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-domain-v1.0-account-domains-domainid:
 
 Show domain
@@ -10,33 +7,39 @@ Show domain
 
     GET /v1.0/{account}/domains/{domainId}
 
-Shows details for a specified domain. Displays details, as specified by the ``showRecords`` and ``showSubdomains`` parameters.
+Shows details for a specified domain. Displays details, as specified by the ``showRecords`` 
+and ``showSubdomains`` parameters.
 
-This call provides the detailed output for a specified domain configured and associated with an account. This call is not capable of returning details for a domain that has been deleted.
+This call provides the detailed output for a specified domain configured and associated with 
+an account. This call is not capable of returning details for a domain that has been deleted.
 
 This call does not require a request body.
 
 .. note::
-   By default, returns a maximum of 100 items at a time if no ``limit`` is specified. To navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in the URI (for example: ``limit=10 & offset=0`` ), as described at :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>`.
+   By default, returns a maximum of 100 items at a time if no ``limit`` is specified. To 
+   navigate the collection returned, the parameters ``limit`` and ``offset`` can be set in 
+   the URI (for example: ``limit=10 & offset=0`` ), as described at 
+   :rax-devdocs:`Pagination <cloud-dns/v1/developer-guide/#document-general-api-info/pagination>`.
    
-   
+Two parameters are available to specify the information about subdomains and records to be 
+returned by the List domain details call: 
 
-Two parameters are available to specify the information about subdomains and records to be returned by the List domain details call: 
+* ``showRecords`` - if this parameter is set to ``true``, then information about records is 
+   returned; if this parameter is set to ``false``, then information about records is not 
+   returned.
+* ``showSubdomains`` - if this parameter is set to ``true``, then information about 
+   subdomains is returned; if this parameter is set to ``false``, then information about 
+   subdomains is not returned.
 
-* ``showRecords`` - if this parameter is set to ``true``, then information about records is returned; if this parameter is set to ``false``, then information about records is not returned.
-* ``showSubdomains`` - if this parameter is set to ``true``, then information about subdomains is returned; if this parameter is set to ``false``, then information about subdomains is not returned.
+The following examples show the parameter settings to return information for both records 
+and subdomains ( ``showSubdomains`` = ``true &`` ``showRecords`` = ``true`` ) for the List 
+domain details call.
 
-
-
-
-The following examples show the parameter settings to return information for both records and subdomains ( ``showSubdomains`` = ``true &`` ``showRecords`` = ``true`` ) for the List domain details call:
-
-The examples also show the parameter settings to return basic information only, without records or subdomains ( ``showRecords`` = ``false &`` ``showSubdomains`` = ``false`` ) for the List domain details call:
-
-
+The examples also show the parameter settings to return basic information only, without 
+records or subdomains ( ``showRecords`` = ``false &`` ``showSubdomains`` = ``false`` ) for 
+the List domain details call.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -70,38 +73,32 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-|{domainId}                |String *(Required)*      |ID for the domain.       |
+|{domainId}                |String                   |ID for the domain.       |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|showRecords               |String *(Optional)*      |If showRecords is set to |
+|showRecords               |String                   |If showRecords is set to |
 |                          |                         |true, information about  |
 |                          |                         |records is returned. If  |
 |                          |                         |showRecords is set to    |
 |                          |                         |false, information about |
 |                          |                         |records is not returned. |
 +--------------------------+-------------------------+-------------------------+
-|showSubdomains            |String *(Optional)*      |If showSubdomains is set |
+|showSubdomains            |String                   |If showSubdomains is set |
 |                          |                         |to true, information     |
 |                          |                         |about subdomains is      |
 |                          |                         |returned. If             |
@@ -111,17 +108,10 @@ This table shows the query parameters for the request:
 |                          |                         |returned.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example List domain details with records, no subdomains: XML request**
 
-
 .. code::
 
    GET https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725233?showRecords=true&showSubdomains=false
@@ -130,14 +120,8 @@ This operation does not accept a request body.
    Content-Type: application/xml
    Content-Length: 0
    
-
-
-
-
-
 **Example List domain details with records, no subdomains: JSON request**
 
-
 .. code::
 
    GET https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725233?showRecords=true&showSubdomains=false
@@ -146,13 +130,7 @@ This operation does not accept a request body.
    Content-Type: application/json
    Content-Length: 0
    
-
-
-
-
-
 **Example List domain details with records and subdomains: XML request**
-
 
 .. code::
 
@@ -162,13 +140,7 @@ This operation does not accept a request body.
    Content-Type: application/xml
    Content-Length: 0
    
-
-
-
-
-
 **Example List domain details with records and subdomains: JSON request**
-
 
 .. code::
 
@@ -177,14 +149,8 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
    Content-Length: 0
-   
-
-
-
-
 
 **Example List domain details, no records, no subdomains: XML request**
-
 
 .. code::
 
@@ -193,11 +159,6 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/xml
    Content-Length: 0
-   
-
-
-
-
 
 **Example List domain details, no records, no subdomains: JSON request**
 
@@ -209,26 +170,11 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
    Content-Length: 0
-   
-
-
-
-
 
 Response
 """"""""""""""""
 
-
-
-
-
-
-
-
-
-
 **Example List domain details with records, no subdomains: XML response**
-
 
 .. code::
 
@@ -253,14 +199,8 @@ Response
            <record id="CNAME-9778009" type="CNAME" name="www.example.com" data="example.com" ttl="5400" updated="2011-06-24T01:12:54Z" created="2011-06-24T01:12:54Z" comment="This is a comment on the CNAME record"/>
        </recordsList>
    </domain>
-   
-
-
-
-
 
 **Example List domain details with records, no subdomains: JSON response**
-
 
 .. code::
 
@@ -340,12 +280,7 @@ Response
      "created" : "2011-06-24T01:12:51.000+0000"
    }
 
-
-
-
-
 **Example List domain details with records and subdomains: XML response**
-
 
 .. code::
 
@@ -376,14 +311,8 @@ Response
            <domain id="2725261" name="south.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:53:14Z" created="2011-06-23T03:53:14Z" comment="Final sample subdomain"/>
        </subdomains>
    </domain>
-   
-
-
-
-
 
 **Example List domain details with records and subdomains: JSON response**
-
 
 .. code::
 
@@ -494,12 +423,7 @@ Response
      "created" : "2011-06-24T01:12:51.000+0000"
    }
 
-
-
-
-
 **Example List domain details, no records, no subdomains: XML response**
-
 
 .. code::
 
@@ -517,13 +441,7 @@ Response
        </nameservers>
    </domain>
    
-
-
-
-
-
 **Example List domain details, no records, no subdomains: JSON response**
-
 
 .. code::
 

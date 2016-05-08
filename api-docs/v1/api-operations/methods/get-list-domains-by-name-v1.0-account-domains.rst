@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-domains-by-name-v1.0-account-domains:
 
 List domains by name
@@ -10,14 +7,14 @@ List domains by name
 
     GET /v1.0/{account}/domains
 
-Filters domains by domain name: list all domains manageable by the account specified that exactly match the value of the ``name`` parameter.
+Filters domains by domain name: list all domains manageable by the account specified that 
+exactly match the value of the ``name`` parameter.
 
-Note that you can use the query parameter ``name`` to filter domains by domain name: list all domains manageable by the account specified that exactly match the fully qualified value of the ``name`` parameter. Note that if there is no exact match, no results are returned. 
-
-
+Note that you can use the query parameter ``name`` to filter domains by domain name: list 
+all domains manageable by the account specified that exactly match the fully qualified value 
+of the ``name`` parameter. Note that if there is no exact match, no results are returned. 
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -55,35 +52,24 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|name                      |String *(Optional)*      |Name of the domain to    |
+|name                      |String                   |Name of the domain to    |
 |                          |                         |find.                    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Filter by Fully Qualified domain Name: XML request**
 
@@ -97,10 +83,6 @@ This operation does not accept a request body.
    Content-Length: 0
    
 
-
-
-
-
 **Example Filter by Fully Qualified domain Name: JSON request**
 
 
@@ -111,10 +93,6 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
    Content-Length: 0
-   
-
-
-
 
 
 **Example Filter by Fully Qualified Subdomain Name: XML request**
@@ -129,10 +107,6 @@ This operation does not accept a request body.
    Content-Length: 0
    
 
-
-
-
-
 **Example Filter by Fully Qualified Subdomain Name: JSON request**
 
 
@@ -144,22 +118,9 @@ This operation does not accept a request body.
    Content-Type: application/json
    Content-Length: 0
    
-
-
-
-
-
+   
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Filter by Fully Qualified domain Name: XML response**
 
@@ -177,10 +138,6 @@ Response
        <domain id="2725352" name="region2.example.net" updated="2011-06-23T20:21:06Z" created="2011-06-23T19:24:27Z"/>
    </domains>
    
-
-
-
-
 
 **Example Filter by Fully Qualified domain Name: JSON response**
 
@@ -203,10 +160,6 @@ Response
      "totalEntries" : 114
    }
 
-
-
-
-
 **Example Filter by Fully Qualified Subdomain Name: XML response**
 
 
@@ -223,10 +176,6 @@ Response
        <domain id="2725257" name="sub1.example.com" emailAddress="sample@rackspace.com" updated="2011-06-23T03:09:34Z" created="2011-06-23T03:09:33Z" comment="1st sample subdomain"/>
    </domains>
    
-
-
-
-
 
 **Example Filter by Fully Qualified Subdomain Name: JSON response**
 
@@ -250,7 +199,4 @@ Response
      } ],
      "totalEntries" : 114
    }
-
-
-
 

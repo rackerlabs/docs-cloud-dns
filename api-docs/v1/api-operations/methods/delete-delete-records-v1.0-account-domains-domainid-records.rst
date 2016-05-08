@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-records-v1.0-account-domains-domainid-records:
 
 Delete records
@@ -17,20 +14,23 @@ Deletes multiple records from the domain.
    :rax-devdocs:`Synchronous and asynchronous responses 
    <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`.
    
-   
-
 These calls delete a specified record or multiple records from a specified domain.
 
-When a record is deleted, any and all record data is immediately purged and is not recoverable via the API. So on a successful delete, subsequent requests for the deleted record should return itemNotFound ( ``404`` ).
+When a record is deleted, any and all record data is immediately purged and is not recoverable 
+via the API. So on a successful delete, subsequent requests for the deleted record should 
+return itemNotFound ( ``404`` ).
 
-Transactionally, delete calls behave differently than other calls in that deletes are never rolled back on exceptions, and multiple deletes in the same request do not fail as a group. Instead, each delete is attempted even if one or more fail. The response for a delete request in which one or more items fail contains information regarding which items failed as well as information regarding specific issues that caused the failure(s). See the examples that follow.
+Transactionally, delete calls behave differently than other calls in that deletes are never 
+rolled back on exceptions, and multiple deletes in the same request do not fail as a group. 
+Instead, each delete is attempted even if one or more fail. The response for a delete request 
+in which one or more items fail contains information regarding which items failed as well 
+as information regarding specific issues that caused the failure(s). See the examples that 
+follow.
 
-In the previous two response examples, the requested record objects could not be deleted, because they were not found.
-
-
+In the previous two response examples, the requested record objects could not be deleted, 
+because they were not found.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,42 +64,30 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-|{domainId}                |String *(Required)*      |ID for the domain.       |
+|{domainId}                |String                   |ID for the domain.       |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|id1                       |String *(Required)*      |ID for the first record. |
+|id1                       |String                   |ID for the first record. |
 +--------------------------+-------------------------+-------------------------+
-|id2                       |String *(Required)*      |ID for the next record.  |
+|id2                       |String                   |ID for the next record.  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 This operation does not accept a request body.
-
-
-
 
 **Example Delete records: XML request**
 
@@ -112,11 +100,6 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/xml
    Content-Length: 0
-   
-
-
-
-
 
 **Example Delete records: JSON request**
 
@@ -130,11 +113,6 @@ This operation does not accept a request body.
    Content-Type: application/json
    Content-Length: 0
    
-
-
-
-
-
 **Example Delete records failure: XML response**
 
 
@@ -161,11 +139,6 @@ This operation does not accept a request body.
            </fault>
        </failedItems>
    </deletefault>
-   
-
-
-
-
 
 **Example Delete records failure: JSON response**
 
@@ -195,20 +168,8 @@ This operation does not accept a request body.
      "details" : "See errors list for details."
    }
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
+"""""""""""""""
 
 This operation does not return a response body.
-
-
-
 
