@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-clone-domain-v1.0-account-domains-domainid-clone:
 
 Clone domain
@@ -20,8 +17,6 @@ Creates a specified domain ( ``example2.com`` ) by cloning a domain with id doma
    <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
    The AsyncResponse returned will be similar to that returned for Create domain but with the request 
    element absent because the clone request has no body.
-   
-   
 
 This call duplicates a single existing domain configuration with a new domain name for a specified Cloud account. By default, all records and, optionally, subdomain(s) are duplicated as well. Both the existing domain (referred to as the reference domain) and the new cloned domain must exist under the same Cloud account.
 
@@ -39,9 +34,6 @@ See the query parameters table for the parameters and options available to speci
    *  If your reference domain already has both default Rackspace Nameserver (NS) records, the cloned domain will be created with no additional default Rackspace NS records. If your reference domain lacks one or both of the default Rackspace NS records, the cloned domain will be created with additional Rackspace default NS records to make a total of two default Rackspace NS records. If the presence of default Rackspace NS records is not your preference, they can be deleted from the cloned domain as long as at least one NS record remains (Rackspace or non-Rackspace).
    *  Any non-default (non-Rackspace) NS records in the reference domain are cloned and modified in a way that is consistent with all other record types.
    
-   
-   
-
 According to the cloneName specified, the domain name and record name(s) will automatically be modified and replaced in the new cloned domain as part of the cloning process and cannot be influenced by any request options. See the table below for the parameters and options available to specify how the cloning affects subdomains, comments, email addresses, and record data.
 
 The following examples show the Clone domain requests.
@@ -51,9 +43,6 @@ The following examples show the Clone domain requests.
    :rax-devdocs:`Synchronous and asynchronous responses 
    <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
    for a description of how the asynchronous call works.
-   
-   
-
 
 
 This table shows the possible response codes for this operation:
@@ -93,31 +82,25 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-|{domainId}                |String *(Required)*      |ID for the domain.       |
+|{domainId}                |String                   |ID for the domain.       |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|cloneName                 |String *(Required)*      |The name of the new      |
+|cloneName                 |String                   |The name of the new      |
 |                          |                         |(cloned) domain.         |
 +--------------------------+-------------------------+-------------------------+
 |cloneSubdomains           |String *(Optional)*      |Recursively clone        |
@@ -158,13 +141,7 @@ This table shows the query parameters for the request:
 |                          |                         |Defaults to ``true``.    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Clone domain: XML request**
 
@@ -178,10 +155,6 @@ This operation does not accept a request body.
    Content-Length: 0
    
 
-
-
-
-
 **Example Clone domain: JSON request**
 
 
@@ -194,21 +167,8 @@ This operation does not accept a request body.
    Content-Length: 0
    
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Initial (202) Clone domain: XML response**
 
@@ -231,10 +191,6 @@ Response
    </asyncresponse>
    
 
-
-
-
-
 **Example Initial (202) Clone domain: JSON response**
 
 
@@ -256,8 +212,6 @@ Response
 
 
 The following are examples of the reference domain and the resulting cloned domain:
-
-
 
 
 **Example Reference (Existing) domain cloner.com: XML**
@@ -293,11 +247,6 @@ The following are examples of the reference domain and the resulting cloned doma
        </subdomains>
    </domain>
    
-
-
-
-
-
 **Example Resulting (Cloned) domain clone1.com: XML**
 
 
@@ -331,11 +280,6 @@ The following are examples of the reference domain and the resulting cloned doma
        </subdomains>
    </domain>
    
-
-
-
-
-
 **Example Reference (Existing) domain cloner.com: JSON**
 
 
@@ -451,9 +395,6 @@ The following are examples of the reference domain and the resulting cloned doma
    }
 
 
-
-
-
 **Example Resulting (Cloned) domain clone1.com: JSON**
 
 
@@ -567,7 +508,3 @@ The following are examples of the reference domain and the resulting cloned doma
      "emailAddress" : "owner@clone1.com",
      "created" : "2013-05-06T17:17:31.000+0000"
    }
-
-
-
-

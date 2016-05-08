@@ -80,10 +80,10 @@ The following table shows the body parameters for the request.
 | Name                  | Type       | Description                                 |
 +=======================+============+=============================================+
 | ``name``              | ​String    | The name for the zone, which cannot be      |
-|                       | (Required) | changed. Must be a valid zone (domain) name.|
+|                       |            | changed. Must be a valid zone (domain) name.|
 +-----------------------+------------+---------------------------------------------+
 | ``email``             | ​String    | Email address to use for contacting the zone|
-|                       | (Required) | administrator.                              |
+|                       |            | administrator.                              |
 +-----------------------+------------+---------------------------------------------+
 | ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
 |                       | (Optional) | minimum value is 300 seconds.               |

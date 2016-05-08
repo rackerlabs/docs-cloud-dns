@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-domains-v1.0-account-domains:
 
 Delete domains
@@ -19,13 +16,24 @@ Deletes multiple domains from an account.
    
    
 
-This call deletes one or more specified domains from the account; when a domain is deleted, its immediate resource records are also deleted from the account. By default, if a deleted domain had subdomains, each subdomain becomes a root domain and is not deleted; this can be overridden by the optional ``deleteSubdomains`` parameter. Utilizing the optional ``deleteSubdomains`` parameter on domains without subdomains does not result in a failure. When a domain is deleted, any and all domain data is immediately purged and is not recoverable via the API. So on a successful delete, subsequent requests for the deleted object should return itemNotFound ( ``404`` ).
+This call deletes one or more specified domains from the account; when a domain is deleted, 
+its immediate resource records are also deleted from the account. By default, if a deleted 
+domain had subdomains, each subdomain becomes a root domain and is not deleted; this can be 
+overridden by the optional ``deleteSubdomains`` parameter. Utilizing the optional 
+``deleteSubdomains`` parameter on domains without subdomains does not result in a failure. 
+When a domain is deleted, any and all domain data is immediately purged and is not recoverable 
+via the API. So on a successful delete, subsequent requests for the deleted object should 
+return itemNotFound ( ``404`` ).
 
-Transactionally, delete calls behave differently than other calls in that deletes are never rolled back on exceptions, and multiple deletes in the same request do not fail as a group. Instead, each delete is attempted even if one or more fail. The response for a delete request in which one or more items fail contains information regarding which items failed as well as information regarding specific issues that caused the failure(s). See the examples that follow.
+Transactionally, delete calls behave differently than other calls in that deletes are never 
+rolled back on exceptions, and multiple deletes in the same request do not fail as a group. 
+Instead, each delete is attempted even if one or more fail. The response for a delete request 
+in which one or more items fail contains information regarding which items failed as well 
+as information regarding specific issues that caused the failure(s). See the examples that 
+follow.
 
-In the previous two response examples, the requested domain objects could not be deleted, because they were not found.
-
-
+In the previous two response examples, the requested domain objects could not be deleted, 
+because they were not found.
 
 This table shows the possible response codes for this operation:
 
@@ -66,38 +74,27 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|id1                       |String *(Optional)*      |The id for the first     |
+|id1                       |String                   |The id for the first     |
 |                          |                         |domain.                  |
 +--------------------------+-------------------------+-------------------------+
-|id2                       |String *(Optional)*      |The id for the next      |
+|id2                       |String                   |The id for the next      |
 |                          |                         |domain.                  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 This operation does not accept a request body.
-
-
-
 
 **Example Delete domains: XML request**
 
@@ -109,11 +106,6 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/xml
    Content-Length: 0
-   
-
-
-
-
 
 **Example Delete domains: JSON request**
 
@@ -125,22 +117,9 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
    Content-Length: 0
-   
-
-
-
-
 
 Response
 """"""""""""""""
 
-
-
-
-
-
 This operation does not return a response body.
-
-
-
 

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-ptr-records-v1.0-account-rdns-service-name:
 
 Delete PTR records
@@ -10,16 +7,14 @@ Delete PTR records
 
     DELETE /v1.0/{account}/rdns/{service-name}
 
-Deletes one or all PTR records associated with a Rackspace Cloud device. Use the optional ``ip`` query parameter to specify a specified record to delete. Omitting this parameter Deletes all PTR records associated with a specified device.
+Deletes one or all PTR records associated with a Rackspace Cloud device. Use the optional 
+``ip`` query parameter to specify a specified record to delete. Omitting this parameter, 
+deletes all PTR records associated with a specified device.
 
 .. note::
    This call returns an asynchronous response. Refer to 
    :rax-devdocs:`Synchronous and asynchronous responses 
    <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`.
-   
-   
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -60,42 +55,31 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-|{service-name}            |String *(Required)*      |Name of the Cloud        |
+|{service-name}            |String                   |Name of the Cloud        |
 |                          |                         |service.                 |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|href                      |String *(Optional)*      |Device-resource-uri for  |
+|href                      |String                   |Device-resource-uri for  |
 |                          |                         |the specified Cloud      |
 |                          |                         |device.                  |
 +--------------------------+-------------------------+-------------------------+
-|ip                        |String *(Optional)*      |IP address for the       |
+|ip                        |String                   |IP address for the       |
 |                          |                         |specified Cloud device.  |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete PTR records: XML request**
 
@@ -107,11 +91,6 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/xml
    Content-Length: 0
-   
-
-
-
-
 
 **Example Delete PTR records: JSON request**
 
@@ -125,10 +104,6 @@ This operation does not accept a request body.
    Content-Length: 0
    
 
-
-
-
-
 **Example Delete PTR record: XML request**
 
 
@@ -141,10 +116,6 @@ This operation does not accept a request body.
    Content-Length: 0
    
 
-
-
-
-
 **Example Delete PTR record: JSON request**
 
 
@@ -155,23 +126,9 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
    Content-Length: 0
-   
-
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Delete PTR records: XML response**
 
@@ -193,11 +150,6 @@ Response
    <verb>DELETE</verb>
    </asyncresponse>
    
-   
-
-
-
-
 
 **Example Delete PTR records: JSON response**
 
@@ -220,9 +172,6 @@ Response
    }
 
 
-
-
-
 **Example Delete PTR record: XML response**
 
 
@@ -242,12 +191,6 @@ Response
    <status>RUNNING</status>
    <verb>DELETE</verb>
    </asyncresponse>
-   
-   
-   
-
-
-
 
 
 **Example Delete PTR record: JSON response**

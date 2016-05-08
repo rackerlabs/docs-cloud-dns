@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-ptr-record-v1.0-account-rdns-service-name-recordid:
 
 Show PTR record
@@ -14,10 +11,7 @@ Shows details for a specified PTR record associated with a specified Cloud devic
 
 This call shows details for a specified PTR record associated with a specified Cloud device.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -51,48 +45,35 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |String *(Required)*      |The tenant ID.           |
+|{account}                 |String                   |The tenant ID.           |
 +--------------------------+-------------------------+-------------------------+
-|{service-name}            |String *(Required)*      |Name of the Cloud        |
+|{service-name}            |String                   |Name of the Cloud        |
 |                          |                         |service.                 |
 +--------------------------+-------------------------+-------------------------+
-|{recordId}                |String *(Required)*      |ID for the record.       |
+|{recordId}                |String                   |ID for the record.       |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|href                      |String *(Optional)*      |Device-resource-uri for  |
+|href                      |String                   |Device-resource-uri for  |
 |                          |                         |the specified Cloud      |
 |                          |                         |device.                  |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List PTR record details: XML request**
-
 
 .. code::
 
@@ -102,13 +83,7 @@ This operation does not accept a request body.
    Content-Type: application/xml
    Content-Length: 0
    
-
-
-
-
-
 **Example List PTR record details: JSON request**
-
 
 .. code::
 
@@ -117,23 +92,9 @@ This operation does not accept a request body.
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
    Content-Length: 0
-   
-
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example List PTR record details: XML response**
 
@@ -153,12 +114,7 @@ Response
            <record id="PTR-000000" type="PTR" name="example.com" data="192.0.2.6" ttl="56000" updated="2011-06-24T01:12:51Z" created="2011-06-24T01:12:51Z"/>
        </recordsList>
    </rdns>
-   
-
-
-
-
-
+  
 **Example List PTR record details: JSON response**
 
 

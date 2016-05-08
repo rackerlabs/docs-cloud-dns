@@ -93,7 +93,7 @@ The following table shows the body parameters for the request.
 | Name                  | Type       | Description                                 |
 +=======================+============+=============================================+
 | ``name``              | ​String    | The name for the zone, which cannot be      |
-|                       | (Required) | changed. Must be a valid zone (domain) name.|
+|                       |            | changed. Must be a valid zone (domain) name.|
 +-----------------------+------------+---------------------------------------------+
 | ``type``              | ​String    | Type of record set, which cannot be         |
 |                       | (Optional) | changed.                                    |
