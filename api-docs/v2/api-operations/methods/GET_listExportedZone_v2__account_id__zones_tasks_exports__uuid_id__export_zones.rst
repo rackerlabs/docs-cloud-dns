@@ -23,7 +23,7 @@ This table shows the possible response codes for this operation:
 | code    |                       |                                             |
 +=========+=======================+=============================================+
 | 200     | Accepted              | The request was accepted for processing,    |
-|         |                       |  but the processing has not completed.      |
+|         |                       | but the processing has not completed.       |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
