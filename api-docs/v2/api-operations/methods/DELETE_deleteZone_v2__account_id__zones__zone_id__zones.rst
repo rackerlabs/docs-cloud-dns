@@ -19,7 +19,7 @@ resources are destroyed, and the operation is non-recoverable.
    - This operation takes a few minutes to become effective on our name servers. For 
       more information about DNS propagation, see :ref:`DNS propagation<cdns-dg-propagation>`. 
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -58,7 +58,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -80,6 +83,8 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
+Response
+""""""""""""""""
  
 **Example: Delete a zone, response**
 

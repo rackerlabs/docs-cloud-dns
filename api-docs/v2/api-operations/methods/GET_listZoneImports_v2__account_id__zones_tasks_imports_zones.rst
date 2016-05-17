@@ -10,7 +10,7 @@ List zone imports
 This operation lists all of the zone imports created by this account. Objects are 
 returned that can be queried by using the links in the ``links`` field.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -63,23 +63,23 @@ This table shows the body parameters for the response:
 |imports.\ **id**                |Uuid                  |The ID of the zone    |
 |                                |                      |import.               |
 +--------------------------------+----------------------+----------------------+
-|imports.\ **zone_id**           |Uuid                  |The ID of the pool.   |
+|imports.\ **zone_id**           |Uuid                  |The ID of the zone.   |
 +--------------------------------+----------------------+----------------------+
 |imports.\ **project_id**        |Integer               |The project, account, |
 |                                |                      |or tenant ID.         |
 +--------------------------------+----------------------+----------------------+
-|imports.\ **message**           |Uuid                  |A description of the  |
+|imports.\ **message**           |String                |A description of the  |
 |                                |                      |zone import.          |
 +--------------------------------+----------------------+----------------------+
-|imports.\ **version**           |Uuid                  |The version of the    |
+|imports.\ **version**           |Integer               |The version of the    |
 |                                |                      |zone import.          |
 +--------------------------------+----------------------+----------------------+
-|imports.\ **created_at**        |Uuid                  |The time stamp        |
+|imports.\ **created_at**        |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |zone import.          |
 +--------------------------------+----------------------+----------------------+
-|imports.\ **updated_at**        |Uuid                  |The time stamp        |
+|imports.\ **updated_at**        |Datestamp             |The time stamp        |
 |                                |                      |indicating the date   |
 |                                |                      |that the zone import  |
 |                                |                      |was last updated      |
@@ -95,10 +95,10 @@ This table shows the body parameters for the response:
 |links.\ **self**                |Uuid                  |The link to the       |
 |                                |                      |zone imports.         |
 +--------------------------------+----------------------+----------------------+
-|**metadata**                    |String                |Any metadata key and  |
+|**metadata**                    |Object                |Any metadata key and  |
 |                                |                      |value pairs.          |
 +--------------------------------+----------------------+----------------------+
-|metadata.\ **total_count**      |String                |The number of imported|
+|metadata.\ **total_count**      |Integer               |The number of imported|
 |                                |                      |zones in the array.   |
 +--------------------------------+----------------------+----------------------+
  

@@ -11,7 +11,7 @@ This operation lists the status of a zone import by querying the UUID that was r
 when the zone import request was created. Objects are returned that can be queried by 
 using the links in the ``links`` field.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -64,23 +64,23 @@ This table shows the body parameters for the response:
 |**id**                          |Uuid                  |The ID of the zone    |
 |                                |                      |import.               |
 +--------------------------------+----------------------+----------------------+
-|**zone_id**                     |Uuid                  |The ID of the pool.   |
+|**zone_id**                     |Uuid                  |The ID of the zone.   |
 +--------------------------------+----------------------+----------------------+
 |**project_id**                  |Integer               |The project, account, |
 |                                |                      |or tenant ID.         |
 +--------------------------------+----------------------+----------------------+
-|**message**                     |Uuid                  |A description of the  |
+|**message**                     |String                |A description of the  |
 |                                |                      |zone import.          |
 +--------------------------------+----------------------+----------------------+
-|**version**                     |Uuid                  |The version of the    |
+|**version**                     |Integer               |The version of the    |
 |                                |                      |zone import.          |
 +--------------------------------+----------------------+----------------------+
-|**created_at**                  |Uuid                  |The time stamp        |
+|**created_at**                  |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |zone import.          |
 +--------------------------------+----------------------+----------------------+
-|**updated_at**                  |Uuid                  |The time stamp        |
+|**updated_at**                  |Datestamp             |The time stamp        |
 |                                |                      |indicating the date   |
 |                                |                      |that the zone import  |
 |                                |                      |was last updated.     |

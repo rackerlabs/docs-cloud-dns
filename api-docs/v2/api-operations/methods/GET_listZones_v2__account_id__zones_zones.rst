@@ -11,7 +11,7 @@ This operation provides a list of detailed information for all zones.
 
 A ``self`` link is included for each zone.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -87,12 +87,12 @@ This table shows the body parameters for the response:
 |zones.\ **project_id**          |Integer               |The project, account, |
 |                                |                      |or tenant ID.         |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **name**                |Uuid                  |The name of the zone. |
+|zones.\ **name**                |String                |The name of the zone. |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **email**               |Uuid                  |The email of the      |
+|zones.\ **email**               |String                |The email of the      |
 |                                |                      |zone's owner.         |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **ttl**                 |Uuid                  |The time to live for  |
+|zones.\ **ttl**                 |Integer               |The time to live for  |
 |                                |                      |the zone.             |
 +--------------------------------+----------------------+----------------------+
 |zones.\ **serial**              |Uuid                  |The epoch time stamp  |
@@ -101,33 +101,33 @@ This table shows the body parameters for the response:
 |                                |                      |zone or the latest    |
 |                                |                      |update date.          |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **status**              |Uuid                  |The status of the     |
+|zones.\ **status**              |String                |The status of the     |
 |                                |                      |zone.                 |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **description**         |Uuid                  |The description       |
+|zones.\ **description**         |String                |The description       |
 |                                |                      |of the zone.          |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **masters**             |Uuid                  |An array of master    |
+|zones.\ **masters**             |Array                 |An array of master    |
 |                                |                      |nameservers.          |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **type**                |Uuid                  |The type of zone.     |
+|zones.\ **type**                |String                |The type of zone.     |
 |                                |                      |The values are either |
 |                                |                      |``PRIMARY`` or        |
 |                                |                      |``SECONDARY``.        |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **transferred_at**      |Uuid                  |The time stamp        |
+|zones.\ **transferred_at**      |Datestamp             |The time stamp        |
 |                                |                      |indicating when the   |
 |                                |                      |zone was transferred. |
 +--------------------------------+----------------------+----------------------+
 |zones.\ **version**             |Uuid                  |The version of the    |
 |                                |                      |zone.                 |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **created_at**          |Uuid                  |The time stamp        |
+|zones.\ **created_at**          |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |zone.                 |
 +--------------------------------+----------------------+----------------------+
-|zones.\ **updated_at**          |Uuid                  |The time stamp        |
+|zones.\ **updated_at**          |Datestamp             |The time stamp        |
 |                                |                      |indicating the date   |
 |                                |                      |that the zone was last|
 |                                |                      |updated.              |
@@ -143,10 +143,10 @@ This table shows the body parameters for the response:
 |links.\ **self**                |Uuid                  |The link to the       |
 |                                |                      |zones.                |
 +--------------------------------+----------------------+----------------------+
-|**metadata**                    |String                |Any metadata key and  |
+|**metadata**                    |Object                |Any metadata key and  |
 |                                |                      |value pairs.          |
 +--------------------------------+----------------------+----------------------+
-|metadata.\ **total_count**      |String                |The number of zones   |
+|metadata.\ **total_count**      |Integer               |The number of zones   |
 |                                |                      | in the array.        |
 +--------------------------------+----------------------+----------------------+
 

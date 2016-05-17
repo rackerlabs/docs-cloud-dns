@@ -10,7 +10,7 @@ List all record sets for a zone
 This operation provides detailed information for all record sets for the
 specified zone.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -87,31 +87,31 @@ This table shows the body parameters for the response:
 |recordsets.\ **id**             |Uuid                  |The ID of the         |
 |                                |                      |record.               |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **zone_id**        |Uuid                  |The ID of the record. |
+|recordsets.\ **zone_id**        |Uuid                  |The ID of the zone.   |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **name**           |Uuid                  |The name of the       |
+|recordsets.\ **name**           |String                |The name of the       |
 |                                |                      |record.               |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **ttl**            |Uuid                  |The time to live for  |
+|recordsets.\ **ttl**            |Integer               |The time to live for  |
 |                                |                      |the record.           |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **description**    |Uuid                  |The description       |
+|recordsets.\ **description**    |String                |The description       |
 |                                |                      |of the record.        |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **records**        |Uuid                  |An array of record    |
+|recordsets.\ **records**        |Array                 |An array of record    |
 |                                |                      |IP addresses.         |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **type**           |Uuid                  |The record type.      |
+|recordsets.\ **type**           |String                |The record type.      |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **version**        |Uuid                  |The version of the    |
+|recordsets.\ **version**        |Integer               |The version of the    |
 |                                |                      |record.               |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **created_at**     |Uuid                  |The time stamp        |
+|recordsets.\ **created_at**     |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |record.               |
 +--------------------------------+----------------------+----------------------+
-|recordsets.\ **updated_at**     |Uuid                  |The time stamp        |
+|recordsets.\ **updated_at**     |Datestamp             |The time stamp        |
 |                                |                      |indicating the date   |
 |                                |                      |that the record was   |
 |                                |                      |last updated.         |
@@ -129,10 +129,10 @@ This table shows the body parameters for the response:
 |links.\ **self**                |Uuid                  |The link to the       |
 |                                |                      |recordsets.           |
 +--------------------------------+----------------------+----------------------+
-|**metadata**                    |String                |Any metadata key and  |
+|**metadata**                    |Object                |Any metadata key and  |
 |                                |                      |value pairs.          |
 +--------------------------------+----------------------+----------------------+
-|metadata.\ **total_count**      |String                |The number of records |
+|metadata.\ **total_count**      |Integer               |The number of records |
 |                                |                      |in the array.         |
 +--------------------------------+----------------------+----------------------+
  

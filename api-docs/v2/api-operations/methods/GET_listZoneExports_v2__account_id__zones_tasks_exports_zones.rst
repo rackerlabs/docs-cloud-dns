@@ -10,7 +10,7 @@ List zone exports
 This operation lists all of the zone exports created by this account. Returned objects can 
 be queried by using the links in the ``links`` field.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -63,26 +63,26 @@ This table shows the body parameters for the response:
 |exports.\ **id**                |Uuid                  |The ID of the zone    |
 |                                |                      |export.               |
 +--------------------------------+----------------------+----------------------+
-|exports.\ **zone_id**           |Uuid                  |The ID of the pool.   |
+|exports.\ **zone_id**           |Uuid                  |The ID of the zone.   |
 +--------------------------------+----------------------+----------------------+
 |exports.\ **project_id**        |Integer               |The project, account, |
 |                                |                      |or tenant ID.         |
 +--------------------------------+----------------------+----------------------+
-|exports.\ **location**          |Uuid                  |The location of the   |
+|exports.\ **location**          |String                |The location of the   |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|exports.\ **message**           |Uuid                  |A description of the  |
+|exports.\ **message**           |String                |A description of the  |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|exports.\ **version**           |Uuid                  |The version of the    |
+|exports.\ **version**           |Integer               |The version of the    |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|exports.\ **created_at**        |Uuid                  |The time stamp        |
+|exports.\ **created_at**        |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|exports.\ **updated_at**        |Uuid                  |The time stamp        |
+|exports.\ **updated_at**        |Datestamp             |The time stamp        |
 |                                |                      |indicating the date   |
 |                                |                      |that the zone export  |
 |                                |                      |was last updated.     |
@@ -98,10 +98,10 @@ This table shows the body parameters for the response:
 |links.\ **self**                |Uuid                  |The link to the       |
 |                                |                      |zone exports.         |
 +--------------------------------+----------------------+----------------------+
-|**metadata**                    |String                |Any metadata key and  |
+|**metadata**                    |Object                |Any metadata key and  |
 |                                |                      |value pairs.          |
 +--------------------------------+----------------------+----------------------+
-|metadata.\ **total_count**      |String                |The number of exported|
+|metadata.\ **total_count**      |Integer               |The number of exported|
 |                                |                      |zones in the array.   |
 +--------------------------------+----------------------+----------------------+
  

@@ -16,7 +16,7 @@ non-recoverable and require you to correct the cause of the failure and resend t
 
 In the example shown below, the TTL is updated to ``3600``.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -94,32 +94,31 @@ This table shows the body parameters for the response:
 |**id**                          |Uuid                  |The ID of the         |
 |                                |                      |record set.           |
 +--------------------------------+----------------------+----------------------+
-|**zone_id**                     |Uuid                  |The ID of the record  |
-|                                |                      |set.                  |
+|**zone_id**                     |Uuid                  |The ID of the zone.   |
 +--------------------------------+----------------------+----------------------+
-|**name**                        |Uuid                  |The name of the       |
+|**name**                        |String                |The name of the       |
 |                                |                      |record set.           |
 +--------------------------------+----------------------+----------------------+
-|**ttl**                         |Uuid                  |The time to live for  |
+|**ttl**                         |Integer               |The time to live for  |
 |                                |                      |the record set.       |
 +--------------------------------+----------------------+----------------------+
-|**description**                 |Uuid                  |The description       |
+|**description**                 |String                |The description       |
 |                                |                      |of the record set.    |
 +--------------------------------+----------------------+----------------------+
-|**records**                     |Uuid                  |An array of record    |
+|**records**                     |Array                 |An array of record    |
 |                                |                      |IP addresses.         |
 +--------------------------------+----------------------+----------------------+
-|**type**                        |Uuid                  |The record type.      |
+|**type**                        |String                |The record type.      |
 +--------------------------------+----------------------+----------------------+
-|**version**                     |Uuid                  |The version of the    |
+|**version**                     |Integer               |The version of the    |
 |                                |                      |record set.           |
 +--------------------------------+----------------------+----------------------+
-|**created_at**                  |Uuid                  |The time stamp        |
+|**created_at**                  |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |record set.           |
 +--------------------------------+----------------------+----------------------+
-|**updated_at**                  |Uuid                  |The time stamp        |
+|**updated_at**                  |Datestamp             |The time stamp        |
 |                                |                      |indicating the last   |
 |                                |                      |update date of the    |
 |                                |                      |record set.           |

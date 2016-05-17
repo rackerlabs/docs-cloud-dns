@@ -15,7 +15,7 @@ link in the ``links`` field.
 
 	The content type for this request is not json.  Instead, use ``Content-type: text/dns``.
 	
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -32,7 +32,10 @@ The following table shows the possible response codes for this operation.
 |         |                       | method.                                     |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -58,6 +61,44 @@ The following table shows the URI parameters for the request.
     
 The body parameters for this operation are the contents of the zone file that you want to
 import.
+
+Response
+""""""""""""""""
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the zone    |
+|                                |                      |import.               |
++--------------------------------+----------------------+----------------------+
+|**zone_id**                     |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|**project_id**                  |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|**message**                     |String                |A description of the  |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Integer               |The version of the    |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone import  |
+|                                |                      |was last updated.     |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the zone.    |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the zone  |
+|                                |                      |import (self).        |
++--------------------------------+----------------------+----------------------+
  
 **Example: Create a zone import, response**
 

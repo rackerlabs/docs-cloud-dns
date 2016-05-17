@@ -12,7 +12,7 @@ operation does not affect the zone that was exported; it simply removes the reco
 export. If the link to view the export pointed to a DNS API endpoint, the endpoint will no 
 longer be available.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -34,14 +34,17 @@ The following table shows the possible response codes for this operation.
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
 | ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{zoneId}``          | ​UUID   | The ID for the zone export to delete.       |
+| ``{zoneId}``          | ​Uuid   | The ID for the zone export to delete.       |
 +-----------------------+---------+---------------------------------------------+
 
  
@@ -55,6 +58,10 @@ The following table shows the URI parameters for the request.
     Content-Type: application/json
 
 This operation does not accept a request body.
+
+Response
+""""""""""""""""
+
  
 **Example: Delete a zone export, response**
 

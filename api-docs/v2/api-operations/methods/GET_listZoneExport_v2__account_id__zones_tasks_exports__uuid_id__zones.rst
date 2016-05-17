@@ -10,7 +10,7 @@ List a zone export record
 This operation lists the zone export record for the specified zone export uuid ID. Returned 
 objects can be queried by using the links in the ``links`` field.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -63,26 +63,26 @@ This table shows the body parameters for the response:
 |**id**                          |Uuid                  |The ID of the zone    |
 |                                |                      |export.               |
 +--------------------------------+----------------------+----------------------+
-|**zone_id**                     |Uuid                  |The ID of the pool.   |
+|**zone_id**                     |Uuid                  |The ID of the zone.   |
 +--------------------------------+----------------------+----------------------+
 |**project_id**                  |Integer               |The project, account, |
 |                                |                      |or tenant ID.         |
 +--------------------------------+----------------------+----------------------+
-|**location**                    |Uuid                  |The location of the   |
+|**location**                    |String                |The location of the   |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|**message**                     |Uuid                  |A description of the  |
+|**message**                     |String                |A description of the  |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|**version**                     |Uuid                  |The version of the    |
+|**version**                     |Integer               |The version of the    |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|**created_at**                  |Uuid                  |The time stamp        |
+|**created_at**                  |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |zone export.          |
 +--------------------------------+----------------------+----------------------+
-|**updated_at**                  |Uuid                  |The time stamp        |
+|**updated_at**                  |Datestamp             |The time stamp        |
 |                                |                      |indicating the date   |
 |                                |                      |that the zone export  |
 |                                |                      |was last updated.     |
