@@ -147,7 +147,7 @@ This table shows the body parameters for the response:
 |                                |                      |value pairs.          |
 +--------------------------------+----------------------+----------------------+
 |metadata.\ **total_count**      |Integer               |The number of zones   |
-|                                |                      | in the array.        |
+|                                |                      |in the array.         |
 +--------------------------------+----------------------+----------------------+
 
 **Example: List zones, response**
