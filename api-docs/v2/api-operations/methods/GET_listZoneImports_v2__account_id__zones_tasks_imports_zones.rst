@@ -27,7 +27,10 @@ The following table shows the possible response codes for this operation.
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -46,6 +49,58 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**imports**                     |Array                 |An array of zones     |
+|                                |                      |imports.              |
++--------------------------------+----------------------+----------------------+
+|imports.\ **id**                |Uuid                  |The ID of the zone    |
+|                                |                      |import.               |
++--------------------------------+----------------------+----------------------+
+|imports.\ **zone_id**           |Uuid                  |The ID of the pool.   |
++--------------------------------+----------------------+----------------------+
+|imports.\ **project_id**        |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|imports.\ **message**           |Uuid                  |A description of the  |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|imports.\ **version**           |Uuid                  |The version of the    |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|imports.\ **created_at**        |Uuid                  |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|imports.\ **updated_at**        |Uuid                  |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone import  |
+|                                |                      |was last updated      |
++--------------------------------+----------------------+----------------------+
+|imports.\ **links**             |Object                |A container with the  |
+|                                |                      |links to the zone.    |
++--------------------------------+----------------------+----------------------+
+|imports.links.\ **self**        |Uuid                  |The link to the zone. |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the imports. |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |zone imports.         |
++--------------------------------+----------------------+----------------------+
+|**metadata**                    |String                |Any metadata key and  |
+|                                |                      |value pairs.          |
++--------------------------------+----------------------+----------------------+
+|metadata.\ **total_count**      |String                |The number of imported|
+|                                |                      |zones in the array.   |
++--------------------------------+----------------------+----------------------+
  
 **Example: List zone imports, response**
 

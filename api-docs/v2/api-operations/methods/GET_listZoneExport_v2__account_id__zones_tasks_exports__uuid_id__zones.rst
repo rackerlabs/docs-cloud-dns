@@ -27,7 +27,10 @@ The following table shows the possible response codes for this operation.
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -48,6 +51,53 @@ The following table shows the URI parameters for the request.
     Accept: application/json
 
 This operation does not accept a request body.
+
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the zone    |
+|                                |                      |export.               |
++--------------------------------+----------------------+----------------------+
+|**zone_id**                     |Uuid                  |The ID of the pool.   |
++--------------------------------+----------------------+----------------------+
+|**project_id**                  |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|**location**                    |Uuid                  |The location of the   |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**message**                     |Uuid                  |A description of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Uuid                  |The version of the    |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Uuid                  |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Uuid                  |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone export  |
+|                                |                      |was last updated.     |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the exports. |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |zone exports (self).  |
++--------------------------------+----------------------+----------------------+
+|links.\ **export**              |Uuid                  |The link to the       |
+|                                |                      |zone export (export). |
++--------------------------------+----------------------+----------------------+
+
+
  
 **Example: List a zone export record, response**
 

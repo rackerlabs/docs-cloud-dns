@@ -55,7 +55,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -79,6 +82,56 @@ The following table shows the URI parameters for the request.
     Content-Type: application/json
 
 This operation does not accept a request body.
+
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the         |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**zone_id**                     |Uuid                  |The ID of the record  |
+|                                |                      |set.                  |
++--------------------------------+----------------------+----------------------+
+|**name**                        |Uuid                  |The name of the       |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**ttl**                         |Uuid                  |The time to live for  |
+|                                |                      |the record set.       |
++--------------------------------+----------------------+----------------------+
+|**description**                 |Uuid                  |The description       |
+|                                |                      |of the record set.    |
++--------------------------------+----------------------+----------------------+
+|**records**                     |Uuid                  |An array of record    |
+|                                |                      |IP addresses.         |
++--------------------------------+----------------------+----------------------+
+|**type**                        |Uuid                  |The record type.      |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Uuid                  |The version of the    |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Uuid                  |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Uuid                  |The time stamp        |
+|                                |                      |indicating the last   |
+|                                |                      |update date of the    |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the          |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+
  
 **Example: List a record set, response**
 

@@ -48,7 +48,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -56,7 +59,6 @@ The following table shows the URI parameters for the request.
 | ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
- 
 **Example:  List zones, request**
 
 .. code::  
@@ -68,6 +70,85 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**zones**                       |Array                 |An array of zones.    |
++--------------------------------+----------------------+----------------------+
+|zones.\ **id**                  |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|zones.\ **pool_id**             |Uuid                  |The ID of the pool.   |
++--------------------------------+----------------------+----------------------+
+|zones.\ **project_id**          |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|zones.\ **name**                |Uuid                  |The name of the zone. |
++--------------------------------+----------------------+----------------------+
+|zones.\ **email**               |Uuid                  |The email of the      |
+|                                |                      |zone's owner.         |
++--------------------------------+----------------------+----------------------+
+|zones.\ **ttl**                 |Uuid                  |The time to live for  |
+|                                |                      |the zone.             |
++--------------------------------+----------------------+----------------------+
+|zones.\ **serial**              |Uuid                  |The epoch time stamp  |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone or the latest    |
+|                                |                      |update date.          |
++--------------------------------+----------------------+----------------------+
+|zones.\ **status**              |Uuid                  |The status of the     |
+|                                |                      |zone.                 |
++--------------------------------+----------------------+----------------------+
+|zones.\ **description**         |Uuid                  |The description       |
+|                                |                      |of the zone.          |
++--------------------------------+----------------------+----------------------+
+|zones.\ **masters**             |Uuid                  |An array of master    |
+|                                |                      |nameservers.          |
++--------------------------------+----------------------+----------------------+
+|zones.\ **type**                |Uuid                  |The type of zone.     |
+|                                |                      |The values are either |
+|                                |                      |``PRIMARY`` or        |
+|                                |                      |``SECONDARY``.        |
++--------------------------------+----------------------+----------------------+
+|zones.\ **transferred_at**      |Uuid                  |The time stamp        |
+|                                |                      |indicating when the   |
+|                                |                      |zone was transferred. |
++--------------------------------+----------------------+----------------------+
+|zones.\ **version**             |Uuid                  |The version of the    |
+|                                |                      |zone.                 |
++--------------------------------+----------------------+----------------------+
+|zones.\ **created_at**          |Uuid                  |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone.                 |
++--------------------------------+----------------------+----------------------+
+|zones.\ **updated_at**          |Uuid                  |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone was last|
+|                                |                      |updated.              |
++--------------------------------+----------------------+----------------------+
+|zones.\ **links**               |Object                |A container with the  |
+|                                |                      |links to the zone.    |
++--------------------------------+----------------------+----------------------+
+|zones.links.\ **self**          |Uuid                  |The link to the zone. |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the zones.   |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |zones.                |
++--------------------------------+----------------------+----------------------+
+|**metadata**                    |String                |Any metadata key and  |
+|                                |                      |value pairs.          |
++--------------------------------+----------------------+----------------------+
+|metadata.\ **total_count**      |String                |The number of zones   |
+|                                |                      | in the array.        |
++--------------------------------+----------------------+----------------------+
 
 **Example: List zones, response**
 

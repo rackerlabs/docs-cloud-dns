@@ -28,7 +28,10 @@ The following table shows the possible response codes for this operation.
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -50,6 +53,47 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the zone    |
+|                                |                      |import.               |
++--------------------------------+----------------------+----------------------+
+|**zone_id**                     |Uuid                  |The ID of the pool.   |
++--------------------------------+----------------------+----------------------+
+|**project_id**                  |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|**message**                     |Uuid                  |A description of the  |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Uuid                  |The version of the    |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Uuid                  |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone import.          |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Uuid                  |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone import  |
+|                                |                      |was last updated.     |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the zone.    |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the zone  |
+|                                |                      |import (self).        |
++--------------------------------+----------------------+----------------------+
+|links.\ **href**                |Uuid                  |The link to the zone  |
+|                                |                      |import (href).        |
++--------------------------------+----------------------+----------------------+
  
 **Example: List a zone import, response**
 
