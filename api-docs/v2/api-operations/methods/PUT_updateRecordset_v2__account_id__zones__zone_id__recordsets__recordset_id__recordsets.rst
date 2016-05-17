@@ -21,7 +21,7 @@ an ``HTTP 400`` (Bad Request) error response is returned with information about 
 failure in the body of the response. Failures in the validation process are 
 non-recoverable and require you to correct the cause of the failure and resend the request.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -64,7 +64,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 
-The following table shows the URI parameters for the request.
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -77,24 +77,27 @@ The following table shows the URI parameters for the request.
 | ``{recordsetId}``     | ​String | The ID of the record set to update.         |
 +-----------------------+---------+---------------------------------------------+
 
-The following table shows the body parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the body parameters for the request:
 
 +-----------------------+------------+---------------------------------------------+
 | Name                  | Type       | Description                                 |
 +=======================+============+=============================================+
-| ``name``              | ​String    | The name for the zone, which cannot be      |
+| **name**              | ​String    | The name for the zone, which cannot be      |
 |                       |            | changed. Must be a valid zone (domain) name.|
 +-----------------------+------------+---------------------------------------------+
-| ``type``              | ​String    | Type of record set, which cannot be         |
+| **type**              | ​String    | Type of record set, which cannot be         |
 |                       | (Optional) | changed.                                    |
 +-----------------------+------------+---------------------------------------------+
-| ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
+| **ttl**               | Integer    | Time-to-live numeric value in seconds. The  |
 |                       | (Optional) | default value is 300 seconds.               |
 +-----------------------+------------+---------------------------------------------+
-| ``description``       | ​String    | A description of the record set (UTF-8 text |
+| **description**       | ​String    | A description of the record set (UTF-8 text |
 |                       | (Optional) | field).                                     |
 +-----------------------+------------+---------------------------------------------+
-| ``records``           | ​Object    | An array of data records.                   |
+| **records**           | ​Object    | An array of data records.                   |
 |                       | (Optional) |                                             |
 +-----------------------+------------+---------------------------------------------+
 
@@ -117,6 +120,45 @@ The following table shows the body parameters for the request.
      }
 
 In this example, the TTL is updated to ``3600``.
+
+Response
+""""""""""""""""
+This table shows the body parameters for the response:
+
++-----------------------+------------+---------------------------------------------+
+| Name                  | Type       | Description                                 |
++=======================+============+=============================================+
+| **id**                | Uuid       |The ID of the record set.                    |
++-----------------------+------------+---------------------------------------------+
+| **zone_id**           | Uuid       |The ID of the zone.                          |
++-----------------------+------------+---------------------------------------------+
+| **name**              | ​String    | The name for the zone, which cannot be      |
+|                       |            | changed. Must be a valid zone (domain) name.|
++-----------------------+------------+---------------------------------------------+
+| **type**              | ​String    | Type of record set, which cannot be         |
+|                       |            | changed.                                    |
++-----------------------+------------+---------------------------------------------+
+| **ttl**               | Integer    | Time-to-live numeric value in seconds. The  |
+|                       |            | default, and minimum, value is 300 seconds. |
++-----------------------+------------+---------------------------------------------+
+|**version**            | Integer    |The version of the record set.               |
++-----------------------+------------+---------------------------------------------+
+|**created_at**         | Datestamp  |The time stamp indicating the record set     |
+|                       |            |creation.                                    |
++-----------------------+------------+---------------------------------------------+
+|**updated_at**         | Datestamp  |The time stamp indicating the last time the  |
+|                       |            |record set was updated.                      |
++-----------------------+------------+---------------------------------------------+
+| **description**       | ​String    | A description of the record set (UTF-8 text |
+|                       |            | field).                                     |
++-----------------------+------------+---------------------------------------------+
+| **records**           | ​Object    | An array of data records.                   |
+|                       |            |                                             |
++-----------------------+------------+---------------------------------------------+
+|**links**              |Object      |A container with the links to the record set.|
++-----------------------+------------+---------------------------------------------+
+|links.\ **self**       |Uuid        |The link to the record set.                  |
++-----------------------+------------+---------------------------------------------+
 
 **Example: Update a record set, response**
 

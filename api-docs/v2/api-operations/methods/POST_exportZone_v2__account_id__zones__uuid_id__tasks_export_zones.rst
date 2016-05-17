@@ -11,7 +11,7 @@ This operation exports the specified zone in BIND9 zone file format. To export a
 BIND9 zone file format, a zone export resource must be created by initializing an export 
 task.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -28,7 +28,10 @@ The following table shows the possible response codes for this operation.
 |         |                       | method.                                     |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -49,6 +52,44 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
  
+Response
+""""""""""""""""
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the zone    |
+|                                |                      |export.               |
++--------------------------------+----------------------+----------------------+
+|**zone_id**                     |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|**project_id**                  |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|**message**                     |String                |A description of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Integer               |The version of the    |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone export  |
+|                                |                      |was last updated.     |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the zone.    |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the zone  |
+|                                |                      |export (self).        |
++--------------------------------+----------------------+----------------------+
+
 **Example: Create a zone export, response**
 
 .. code::  

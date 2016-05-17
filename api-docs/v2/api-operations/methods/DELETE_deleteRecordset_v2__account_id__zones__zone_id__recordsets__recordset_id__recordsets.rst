@@ -15,7 +15,7 @@ This operation deletes a record set with the specified record set ID.
       asynchronous operations work, see 
       :ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`.  
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -55,8 +55,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
+Request
+""""""""""""""""
 
-The following table shows the URI parameters for the request.
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -81,7 +83,9 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
- 
+ Response
+""""""""""""""""
+
 **Example: Delete a record set, response**
 
 .. code::  

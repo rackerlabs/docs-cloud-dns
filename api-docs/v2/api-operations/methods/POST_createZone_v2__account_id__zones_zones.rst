@@ -33,7 +33,7 @@ value is shown as empty. When the zone and/or record TTL is supplied by the user
 via a create or update operation, the TTL values must be 300 seconds or more.
 
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 ..  note:: 
 
@@ -66,7 +66,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -74,21 +77,21 @@ The following table shows the URI parameters for the request.
 | ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
 
-The following table shows the body parameters for the request.
+This table shows the body parameters for the request:
 
 +-----------------------+------------+---------------------------------------------+
 | Name                  | Type       | Description                                 |
 +=======================+============+=============================================+
-| ``name``              | ​String    | The name for the zone, which cannot be      |
+| **name**              | ​String    | The name for the zone, which cannot be      |
 |                       |            | changed. Must be a valid zone (domain) name.|
 +-----------------------+------------+---------------------------------------------+
-| ``email``             | ​String    | Email address to use for contacting the zone|
+| **email**             | ​String    | Email address to use for contacting the zone|
 |                       |            | administrator.                              |
 +-----------------------+------------+---------------------------------------------+
-| ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
+| **ttl**               | Integer    | Time-to-live numeric value in seconds. The  |
 |                       | (Optional) | minimum value is 300 seconds.               |
 +-----------------------+------------+---------------------------------------------+
-| ``description``       | ​String    | A description of the zone.                  |
+| **description**       | ​String    | A description of the zone.                  |
 |                       | (Optional) |                                             |
 +-----------------------+------------+---------------------------------------------+
 
@@ -108,7 +111,73 @@ The following table shows the body parameters for the request.
         "description": "This is an example zone."
     }
 
- 
+Response
+""""""""""""""""
+ This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|**pool_id**                     |Uuid                  |The ID of the pool.   |
++--------------------------------+----------------------+----------------------+
+|**project_id**                  |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|**name**                        |String                |The name of the zone. |
++--------------------------------+----------------------+----------------------+
+|**email**                       |String                |The email of the      |
+|                                |                      |zone's owner.         |
++--------------------------------+----------------------+----------------------+
+|**ttl**                         |Integer               |The time to live for  |
+|                                |                      |the zone.             |
++--------------------------------+----------------------+----------------------+
+|**serial**                      |Uuid                  |The epoch time stamp  |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone or the latest    |
+|                                |                      |update date.          |
++--------------------------------+----------------------+----------------------+
+|**status**                      |String                |The status of the     |
+|                                |                      |zone.                 |
++--------------------------------+----------------------+----------------------+
+|**description**                 |Uuid                  |The description       |
+|                                |                      |of the zone.          |
++--------------------------------+----------------------+----------------------+
+|**masters**                     |Array                 |An array of master    |
+|                                |                      |nameservers.          |
++--------------------------------+----------------------+----------------------+
+|**type**                        |String                |The type of zone.     |
+|                                |                      |The values are either |
+|                                |                      |``PRIMARY`` or        |
+|                                |                      |``SECONDARY``.        |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Integer               |The version of the    |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**transferred_at**              |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |transfer date of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone export  |
+|                                |                      |was last updated.     |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the exports. |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |zone exports (self).  |
++--------------------------------+----------------------+----------------------+
+
 **Example: Create a zone, response**
 
 .. code::  

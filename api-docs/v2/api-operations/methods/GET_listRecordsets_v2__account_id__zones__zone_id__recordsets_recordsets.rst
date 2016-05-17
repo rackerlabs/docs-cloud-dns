@@ -10,7 +10,7 @@ List all record sets for a zone
 This operation provides detailed information for all record sets for the
 specified zone.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -47,7 +47,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -70,7 +73,68 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
+Response
+""""""""""""""""
 
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**recordsets**                  |Array                 |An array of           |
+|                                |                      |recordsets.           |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **id**             |Uuid                  |The ID of the         |
+|                                |                      |record.               |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **zone_id**        |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **name**           |String                |The name of the       |
+|                                |                      |record.               |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **ttl**            |Integer               |The time to live for  |
+|                                |                      |the record.           |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **description**    |String                |The description       |
+|                                |                      |of the record.        |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **records**        |Array                 |An array of record    |
+|                                |                      |IP addresses.         |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **type**           |String                |The record type.      |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **version**        |Integer               |The version of the    |
+|                                |                      |record.               |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **created_at**     |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |record.               |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **updated_at**     |Datestamp             |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the record was   |
+|                                |                      |last updated.         |
++--------------------------------+----------------------+----------------------+
+|recordsets.\ **links**          |Object                |A container with the  |
+|                                |                      |links to the record.  |
++--------------------------------+----------------------+----------------------+
+|recordsets.links.\ **self**     |Uuid                  |The link to the       | 
+|                                |                      |record.               |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the          |
+|                                |                      |recordsets.           |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |recordsets.           |
++--------------------------------+----------------------+----------------------+
+|**metadata**                    |Object                |Any metadata key and  |
+|                                |                      |value pairs.          |
++--------------------------------+----------------------+----------------------+
+|metadata.\ **total_count**      |Integer               |The number of records |
+|                                |                      |in the array.         |
++--------------------------------+----------------------+----------------------+
  
 **Example: List all record sets, response**
 

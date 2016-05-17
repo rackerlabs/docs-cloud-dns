@@ -10,7 +10,7 @@ List zone exports
 This operation lists all of the zone exports created by this account. Returned objects can 
 be queried by using the links in the ``links`` field.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -27,7 +27,10 @@ The following table shows the possible response codes for this operation.
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -45,6 +48,62 @@ The following table shows the URI parameters for the request.
     Accept: application/json
 
 This operation does not accept a request body.
+
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**exports**                     |Array                 |An array of zones     |
+|                                |                      |exports.              |
++--------------------------------+----------------------+----------------------+
+|exports.\ **id**                |Uuid                  |The ID of the zone    |
+|                                |                      |export.               |
++--------------------------------+----------------------+----------------------+
+|exports.\ **zone_id**           |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|exports.\ **project_id**        |Integer               |The project, account, |
+|                                |                      |or tenant ID.         |
++--------------------------------+----------------------+----------------------+
+|exports.\ **location**          |String                |The location of the   |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|exports.\ **message**           |String                |A description of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|exports.\ **version**           |Integer               |The version of the    |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|exports.\ **created_at**        |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |zone export.          |
++--------------------------------+----------------------+----------------------+
+|exports.\ **updated_at**        |Datestamp             |The time stamp        |
+|                                |                      |indicating the date   |
+|                                |                      |that the zone export  |
+|                                |                      |was last updated.     |
++--------------------------------+----------------------+----------------------+
+|exports.\ **links**             |Object                |A container with the  |
+|                                |                      |links to the zone.    |
++--------------------------------+----------------------+----------------------+
+|exports.links.\ **self**        |Uuid                  |The link to the zone. |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the exports. |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |zone exports.         |
++--------------------------------+----------------------+----------------------+
+|**metadata**                    |Object                |Any metadata key and  |
+|                                |                      |value pairs.          |
++--------------------------------+----------------------+----------------------+
+|metadata.\ **total_count**      |Integer               |The number of exported|
+|                                |                      |zones in the array.   |
++--------------------------------+----------------------+----------------------+
  
 **Example: List zone exports, response**
 

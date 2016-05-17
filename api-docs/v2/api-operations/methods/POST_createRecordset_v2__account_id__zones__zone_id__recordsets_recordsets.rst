@@ -17,7 +17,7 @@ This operation provisions a new DNS record set, based on the configuration defin
 request object. 
 
 If the corresponding request cannot be fulfilled because of insufficient or invalid data, 
-an ``HTTP 400`` (Bad Request) error response is returned with information about the 
+an **HTTP 400** (Bad Request) error response is returned with information about the 
 failure in the body of the response. Failures in the validation process are 
 non-recoverable and require you to correct the cause of the failure and resend the request.
 
@@ -75,8 +75,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
+Request
+""""""""""""""""
 
-The following table shows the URI parameters for the request.
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -87,24 +89,24 @@ The following table shows the URI parameters for the request.
 |                       |         | create a record set.                        |
 +-----------------------+---------+---------------------------------------------+
 
-The following table shows the body parameters for the request.
+This table shows the body parameters for the request:
 
 +-----------------------+------------+---------------------------------------------+
 | Name                  | Type       | Description                                 |
 +=======================+============+=============================================+
-| ``name``              | ​String    | The name for the zone, which cannot be      |
+| **name**              | ​String    | The name for the zone, which cannot be      |
 |                       |            | changed. Must be a valid zone (domain) name.|
 +-----------------------+------------+---------------------------------------------+
-| ``type``              | ​String    | Type of record set, which cannot be         |
+| **type**              | ​String    | Type of record set, which cannot be         |
 |                       | (Optional) | changed.                                    |
 +-----------------------+------------+---------------------------------------------+
-| ``ttl``               | Integer    | Time-to-live numeric value in seconds. The  |
+| **ttl**               | Integer    | Time-to-live numeric value in seconds. The  |
 |                       | (Optional) | default, and minimum, value is 300 seconds. |
 +-----------------------+------------+---------------------------------------------+
-| ``description``       | ​String    | A description of the record set (UTF-8 text |
+| **description**       | ​String    | A description of the record set (UTF-8 text |
 |                       | (Optional) | field).                                     |
 +-----------------------+------------+---------------------------------------------+
-| ``records``           | ​Object    | An array of data records.                   |
+| **records**           | ​Object    | An array of data records.                   |
 |                       | (Optional) |                                             |
 +-----------------------+------------+---------------------------------------------+
 
@@ -132,7 +134,30 @@ appropriate values.
       ]
     }
 
- 
+ Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++-----------------------+------------+---------------------------------------------+
+| Name                  | Type       | Description                                 |
++=======================+============+=============================================+
+| **name**              | ​String    | The name for the zone, which cannot be      |
+|                       |            | changed. Must be a valid zone (domain) name.|
++-----------------------+------------+---------------------------------------------+
+| **type**              | ​String    | Type of record set, which cannot be         |
+|                       |            | changed.                                    |
++-----------------------+------------+---------------------------------------------+
+| **ttl**               | Integer    | Time-to-live numeric value in seconds. The  |
+|                       |            | default, and minimum, value is 300 seconds. |
++-----------------------+------------+---------------------------------------------+
+| **description**       | ​String    | A description of the record set (UTF-8 text |
+|                       |            | field).                                     |
++-----------------------+------------+---------------------------------------------+
+| **records**           | ​Object    | An array of data records.                   |
+|                       |            |                                             |
++-----------------------+------------+---------------------------------------------+
+
 **Example: Create an MX record set, request**
 
 .. code::  

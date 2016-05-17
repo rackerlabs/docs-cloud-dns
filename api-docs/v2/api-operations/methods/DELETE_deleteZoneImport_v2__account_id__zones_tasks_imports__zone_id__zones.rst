@@ -11,7 +11,7 @@ This operation deletes a zone import with the specified zone import ID.
 The operation does not affect the zone that was imported; it simply removes the
 record of the import.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -33,14 +33,17 @@ The following table shows the possible response codes for this operation.
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
 +=======================+=========+=============================================+
 | ``{$TENANT-ID}``      | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{zoneId}``          | ​UUID   | The ID of the zone import to delete.        |
+| ``{zoneId}``          | ​Uuid   | The ID of the zone import to delete.        |
 +-----------------------+---------+---------------------------------------------+
 
  
@@ -55,6 +58,8 @@ The following table shows the URI parameters for the request.
 
 This operation does not accept a request body.
 
+Response
+""""""""""""""""
  
 **Example: Delete a zone import, response**
 

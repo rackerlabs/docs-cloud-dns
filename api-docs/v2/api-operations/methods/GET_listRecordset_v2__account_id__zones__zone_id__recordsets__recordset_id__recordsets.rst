@@ -16,7 +16,7 @@ non-recoverable and require you to correct the cause of the failure and resend t
 
 In the example shown below, the TTL is updated to ``3600``.
 
-The following table shows the possible response codes for this operation.
+This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
 | Response| Name                  | Description                                 |
@@ -55,7 +55,10 @@ The following table shows the possible response codes for this operation.
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
-The following table shows the URI parameters for the request.
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
 
 +-----------------------+---------+---------------------------------------------+
 | Name                  | Type    | Description                                 |
@@ -79,6 +82,55 @@ The following table shows the URI parameters for the request.
     Content-Type: application/json
 
 This operation does not accept a request body.
+
+Response
+""""""""""""""""
+
+This table shows the body parameters for the response:
+
++--------------------------------+----------------------+----------------------+
+|Name                            |Type                  |Description           |
++================================+======================+======================+
+|**id**                          |Uuid                  |The ID of the         |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**zone_id**                     |Uuid                  |The ID of the zone.   |
++--------------------------------+----------------------+----------------------+
+|**name**                        |String                |The name of the       |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**ttl**                         |Integer               |The time to live for  |
+|                                |                      |the record set.       |
++--------------------------------+----------------------+----------------------+
+|**description**                 |String                |The description       |
+|                                |                      |of the record set.    |
++--------------------------------+----------------------+----------------------+
+|**records**                     |Array                 |An array of record    |
+|                                |                      |IP addresses.         |
++--------------------------------+----------------------+----------------------+
+|**type**                        |String                |The record type.      |
++--------------------------------+----------------------+----------------------+
+|**version**                     |Integer               |The version of the    |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**created_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the        |
+|                                |                      |creation date of the  |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**updated_at**                  |Datestamp             |The time stamp        |
+|                                |                      |indicating the last   |
+|                                |                      |update date of the    |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|**links**                       |Object                |A container with the  |
+|                                |                      |links to the          |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+|links.\ **self**                |Uuid                  |The link to the       |
+|                                |                      |record set.           |
++--------------------------------+----------------------+----------------------+
+
  
 **Example: List a record set, response**
 
