@@ -13,7 +13,8 @@ are fixed.
 Rate limits
 ~~~~~~~~~~~
 
-Rate limits are shown below for API operations by resource. They are displayed in a simplified, wild-card style format.
+Rate limits are shown below for API operations by resource. They are displayed in a 
+simplified format.
 
 **Zone rate limits:** URIs: ``/zones/`` and ``/zones/<id>``
 
@@ -47,6 +48,9 @@ If you exceed the thresholds established for your account, a ``413`` HTTP respon
 be returned with a ``Reply-After`` header to notify the client when it can attempt to try 
 again. The ``Reply-After`` header is an ISO 8601 date/time field, for example 
 "2012-10-10T21:21:15Z".
+
+To learn about the real time rate-limit API operation see 
+:ref:`List rate limits<GET_listRateLimits_v2_account_id>`.
 
 **Global rate limit**
 
