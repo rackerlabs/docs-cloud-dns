@@ -9,3 +9,4 @@
    
    zone-operations
    recordset-operations
+   other-operations
