@@ -14,7 +14,7 @@ Rate limits
 ~~~~~~~~~~~
 
 Rate limits are shown below for API operations by resource. They are displayed in a 
-simplified, wild-card style format.
+simplified format.
 
 **Zone rate limits:** URIs: ``/zones/`` and ``/zones/<id>``
 

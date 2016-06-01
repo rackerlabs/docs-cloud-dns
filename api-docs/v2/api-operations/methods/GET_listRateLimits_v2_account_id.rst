@@ -82,15 +82,17 @@ This table shows the body parameters for the response:
 +================================+======================+======================+
 |**limits**                      |Object                |A container of limits.|
 +--------------------------------+----------------------+----------------------+
-|limits.\ **rate**               |Array                 |An array of rates.    |
+|limits.\ **rate**               |Array                 |An array of rate      |
 |                                |                      |limits objects.       |
 +--------------------------------+----------------------+----------------------+
 |limits.rate. \ **limit**        |Array                 |An array of limits for|
-|                                |                      |a rate.               |
+|                                |                      |a URI.                |
 +--------------------------------+----------------------+----------------------+
 |limits.rate.limit. \            |Date                  |The next available    |
-|**next-available**              |                      |rate limit date and   |
-|                                |                      |time.                 |
+|**next-available**              |                      |time an API call can  |
+|                                |                      |be made to this URI   |
+|                                |                      |without being rate    |
+|                                |                      |limited.              |
 +--------------------------------+----------------------+----------------------+
 |limits.rate.limit. \ **unit**   |String                |The type of unit for  |
 |                                |                      |the rate limit.  For  |
@@ -130,42 +132,28 @@ This table shows the body parameters for the response:
          {
            "limit": [
              {
-               "next-available": "2016-05-26T14:59:13.120Z",
+               "next-available": "2016-05-26T14:59:13.119Z",
                "unit": "MINUTE",
-               "remaining": 420,
-               "value": 420,
+               "remaining": 4,
+               "value": 4,
                "verb": "GET"
              }
            ],
-           "regex": ".*/v2/(\\d+/limits).*",
-           "uri": "/limits"
+           "regex": ".*/v2/(\\d+)/recordsets.*",
+           "uri": "/recordsets"
          },
          {
            "limit": [
              {
                "next-available": "2016-05-26T14:59:13.119Z",
                "unit": "MINUTE",
-               "remaining": 420,
-               "value": 420,
-               "verb": "GET"
+               "remaining": 20,
+               "value": 20,
+               "verb": "DELETE"
              }
            ],
-           "regex": ".*/v2/(\\d+/pools).*",
-           "uri": "/pools"
-         },
-         ...
-         {
-           "limit": [
-             {
-               "next-available": "2016-05-26T14:59:13.119Z",
-               "unit": "MINUTE",
-               "remaining": 40,
-               "value": 40,
-               "verb": "PATCH"
-             }
-           ],
-           "regex": ".*/v2/(\\d+/tlds).*",
-           "uri": "/tlds"
+           "regex": ".*/v2/(\\d+/zones)/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/recordsets.*",
+           "uri": "/zones/id/recordsets/id"
          },
          {
            "limit": [
@@ -174,10 +162,25 @@ This table shows the body parameters for the response:
                "unit": "MINUTE",
                "remaining": 10,
                "value": 10,
-               "verb": "DELETE"
+               "verb": "POST"
              }
            ],
-           "regex": ".*/v2/(\\d+/blacklists).*",
-           "uri": "/blacklists"
+           "regex": ".*/v2/(\\d+/zones/?(?:tasks/imports/?)?)",
+           "uri": "/zones"
          }
+         {
+           "limit": [
+             {
+               "next-available": "2016-05-26T14:59:13.119Z",
+               "unit": "MINUTE",
+               "remaining": 20,
+               "value": 20,
+               "verb": "PATCH"
+             }
+           ],
+           "regex": ".*/v2/(\\d+/zones)/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/?",
+           "uri": "/zones/id"
+         }
+       ]
+     }
    }
