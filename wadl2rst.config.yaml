@@ -1,3 +1,0 @@
-src/main/resources/wadl/dns.wadl:
-    title: Rackspace Cloud DNS Developer Guide 
-    output_directory: rst/dev-guide/api-operations

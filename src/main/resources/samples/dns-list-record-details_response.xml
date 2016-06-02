@@ -1,8 +1,0 @@
-Status: 200 OK
-Date: Thu, 28 Jul 2011 21:54:21 GMT
-X-API-VERSION: 1.0.17
-Content-Type: application/xml
-Content-Length: 360
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<record id="A-6822994" type="A" name="example.com" data="192.0.2.17" ttl="86400" updated="2011-06-24T01:12:52Z" created="2011-06-24T01:12:52Z" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0"/>

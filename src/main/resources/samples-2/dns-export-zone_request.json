@@ -1,3 +1,0 @@
-POST /v2/1234/zones/074e805e-fe87-4cbb-b10b-21a06e215d41/tasks/export HTTP/1.1
-Host: 127.0.0.1:9001
-

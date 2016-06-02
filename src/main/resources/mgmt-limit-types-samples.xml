@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns3:groupLimitTypes xmlns="http://docs.rackspacecloud.com/dns/api/v1.0"
-    xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
-    <ns3:limitType>rate_limit</ns3:limitType>
-    <ns3:limitType>domain_limit</ns3:limitType>
-    <ns3:limitType>domain_record_limit</ns3:limitType>
-</ns3:groupLimitTypes>

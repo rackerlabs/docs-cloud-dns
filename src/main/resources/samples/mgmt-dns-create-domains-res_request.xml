@@ -1,4 +1,0 @@
-POST https://admin.dns.api.rackspacecloud.com/v1.0/1234/domains
-Accept: application/xml
-Content-Type: application/xml
-Content-Length: 0
