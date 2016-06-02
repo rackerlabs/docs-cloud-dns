@@ -1,7 +1,3 @@
-target
-doctrees/
-rst/
-rst/dev-guide/_build
 api-docs/v1/_build
 api-docs/v2/_build
 .classpath

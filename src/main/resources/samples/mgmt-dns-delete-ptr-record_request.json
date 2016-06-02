@@ -1,4 +1,0 @@
-DELETE https://admin.dns.api.rackspacecloud.com/v1.0/1234/domains/9999999/records/PTR-6817754/192.0.2.8
-Accept: application/json
-Content-Type: application/json
-Content-Length: 0

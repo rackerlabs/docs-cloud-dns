@@ -1,4 +1,0 @@
-GET https://admin.dns.api.rackspacecloud.com/v1.0/searchDomains?name=rackspace
-Accept: application/json
-Content-Type: application/json
-Content-Length: 0

@@ -1,6 +1,0 @@
-DELETE https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725233/records/?
-id=A-6817754&id=111111111&id=222222222&id=NS-6251982
-Accept: application/xml
-X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
-Content-Type: application/xml
-Content-Length: 0

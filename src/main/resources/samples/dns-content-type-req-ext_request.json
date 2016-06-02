@@ -1,9 +1,0 @@
-POST https://dns.api.rackspacecloud.com/v1.0/1234/domains.xml
-X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
-Content-Type: application/json
-Content-Length: 71
-
-{
-  "name" : "example.com",
-  "emailAddress" : "sample@rackspace.com"
-}
