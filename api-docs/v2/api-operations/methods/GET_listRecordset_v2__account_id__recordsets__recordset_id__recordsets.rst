@@ -1,11 +1,11 @@
-.. _GET_listRecordset_v2__account_id__zones__zone_id__recordsets__recordset_id__recordsets:
+.. _GET_listRecordset_v2__account_id__recordsets__recordset_id__recordsets:
 
-List a record set for a zone
+List a record set
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /v2/{TENANT_ID}/zones/{zoneId}/recordsets/{recordsetId}
+    GET /v2/{TENANT_ID}/recordsets/{recordsetId}
 
 This operation retrieves a record set with the specified record set ID.
 
@@ -14,6 +14,7 @@ an ``HTTP 400`` (Bad Request) error response is returned with information about 
 failure in the body of the response. Failures in the validation process are
 non-recoverable and require you to correct the cause of the failure and resend the request.
 
+
 This table shows the possible response codes for this operation:
 
 +---------+-----------------------+---------------------------------------------+
@@ -21,6 +22,9 @@ This table shows the possible response codes for this operation:
 | code    |                       |                                             |
 +=========+=======================+=============================================+
 | 200     | Success               | The request succeeded.                      |
++---------+-----------------------+---------------------------------------------+
+| 301     | Moved Permanently     | Moved Permanently. The canonical location of|
+|         |                       | the requested recordset is provided.        |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -63,9 +67,6 @@ This table shows the URI parameters for the request:
 +=======================+=========+=============================================+
 | ``{TENANT_ID}``       | ​String | The account ID of the account owner.        |
 +-----------------------+---------+---------------------------------------------+
-| ``{zoneId}``          | ​UUID   | The ID of the zone for the record set to    |
-|                       |         | list.                                       |
-+-----------------------+---------+---------------------------------------------+
 | ``{recordsetId}``     | ​String | The ID of the record set to list.           |
 +-----------------------+---------+---------------------------------------------+
 
@@ -74,7 +75,7 @@ This table shows the URI parameters for the request:
 
 .. code::
 
-    GET /v2/123456/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648 HTTP/1.1
+    GET /v2/123456/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648 HTTP/1.1
     Host: global.dns.rackspacecloud.com
     Accept: application/json
     Content-Type: application/json
