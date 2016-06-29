@@ -3,10 +3,11 @@
    :keywords: Rackspace, Managed DNS ReST API, API resources, API methods
 
 
-.. toctree:: 
+.. toctree::
    :caption: API Reference
    :maxdepth: 2
-   
-   zone-operations
-   recordset-operations
+
+   basic-zones-operations
+   tasks-operations
+   recordsets-operations
    other-operations
