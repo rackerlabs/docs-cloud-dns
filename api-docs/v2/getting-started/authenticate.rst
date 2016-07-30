@@ -1,27 +1,40 @@
 .. _authenticate-to-cloud:
 
-.. COMMENT - source common-gs authenticate.rst
-
+===================================
 Authenticate to the Rackspace Cloud
--------------------------------------
+===================================
 
-Whether you use cURL, a REST client, or a command line client (CLI) to interact with the
-|apiservice|, you need an authentication token that you include in the ``X-Auth-Token``
-header in each API request. You also need your account number, also known as your tenant ID. 
+Whether you use cURL, a REST client, or a command-line client (CLI) to send
+requests to the |apiservice|, you need an authentication token to include in
+the ``X-Auth-Token`` header of each request. You get a token by submitting an
+authentication request with valid account credentials to the following
+Rackspace Cloud Identity API service endpoint:
 
-With a valid token, you can submit API requests to any of the API service endpoints included 
-in the service catalog. A token is valid for only 24 hours, which means that you must 
-generate a new token each day.
+.. code::
+
+       https://identity.api.rackspacecloud.com/v2.0
+
+
+With a valid token, you can send API requests to any of the API service
+endpoints that you are authorized to use. The authentication response includes
+a token expiration date. When a token expires, you can send another
+authentication request to get a new one.
 
 
 .. note::
+     For more information about authentication tokens, see the following topics
+     in the Rackspace Cloud Identity API documentation:
 
-   These instructions show how to authenticate by using username and API key credentials, 
-   which is a more secure way to communicate with API services. For information about other 
-   types of credentials you can use to authenticate, see 
-   :rax-devdocs:`Authentication requests <cloud-identity/v2/developer-guide/#document-api-operations/token-operations>` 
-   in the Rackspace Cloud Identity service developer guide. For more information about 
-   authentication tokens, see the following topics in the Rackspace Cloud Identity developer 
-   documentation.
+     - :rax-devdocs:`Authentication token operations
+       <cloud-identity/v2/developer-guide/#document-api-operations/token-operations>`
+
+       The examples in this API guide show how to authenticate by
+       using username and API key credentials, which is a more secure way to
+       communicate with API services. The authentication token operations
+       reference in the Rackspace Cloud Identity API documentation describes
+       other types of credentials that you can use for authentication.
+
+     - :rax-devdocs:`Manage authentication tokens
+       <cloud-identity/v2/developer-guide/#manage-authentication-tokens>`
 
 .. include:: ../common-gs/auth-using-curl.rst

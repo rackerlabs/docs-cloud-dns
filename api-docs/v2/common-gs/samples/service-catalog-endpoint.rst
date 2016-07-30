@@ -1,4 +1,6 @@
- .. code::
+.. _authentication-response-examples:
+
+.. code:: json
 
       {
           "name": "managedDNS",
@@ -9,5 +11,4 @@
               }
           ],
           "type": "dns"
-      },
-      {
+      }
