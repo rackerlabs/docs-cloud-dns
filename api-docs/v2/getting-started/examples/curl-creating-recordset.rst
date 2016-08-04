@@ -1,13 +1,13 @@
 .. _curl-creating-recordset:
 
 Creating a record set with cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples show the cURL request for create record set operation:
 
 **Example: Create record set, cURL request**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
@@ -27,31 +27,33 @@ Remember to replace the values in the example with actual respective values:
 
 Request body:
 
--  **name** 
+-  **name**
 
-   The name you used in the create zone request (see the examples in the "Create a zone" 
-   section).
+   The name you used in the create zone request (see the examples in the
+   "Create a zone" section).
 
 -  **AUTH_TOKEN**
 
-   The token that you received during authentication.  For automatic replacement, set your 
-   environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+   The token that you received during authentication.  For automatic
+   replacement, set your environment variables (see
+   :ref:`Configure environment variables <configure-environment-variables>`).
 
--  **TENANT_ID** 
-   
-   Your Rackspace Cloud account ID.  For automatic  replacement, set your environment 
-   variables (see :ref:`Configure environment variables <configure-environment-variables>`).
+-  **TENANT_ID**
 
--  **zoneId** 
+   Your Rackspace Cloud account ID.  For automatic  replacement, set your
+   environment variables (see
+   :ref:`Configure environment variables <configure-environment-variables>`).
 
-   The ID returned in the create zone response (see the examples in the "Create a zone" 
-   section).
+-  **zoneId**
+
+   The ID returned in the create zone response (see the examples in the
+   "Create a zone" section).
 
 The following example shows the response for the create record set operation:
- 
+
 **Example: Create record set, cURL response**
 
-.. code::  
+.. code::
 
     HTTP/1.1 202 Accepted
     Content-Type: application/json
@@ -74,7 +76,7 @@ The following example shows the response for the create record set operation:
         }
     }
 
-This request is asynchronous, so the ``status`` is set to ``PENDING`` when the record set is 
-initially created. When the record set is created completely, the ``status`` is set to 
-``ACTIVE``. To get the status of the record set, you can query the ``self`` link returned in 
-the create record set response.
+This request is asynchronous, so the ``status`` is set to ``PENDING`` when the
+record set is initially created. When the record set is created completely, the
+``status`` is set to ``ACTIVE``. To get the status of the record set, you can
+query the ``self`` link returned in the create record set response.

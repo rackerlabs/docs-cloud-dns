@@ -1,14 +1,15 @@
-.. _cdns-dg-descriptions:
+.. _descriptions:
 
 Descriptions
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
-Descriptions are supported for requests and responses of zones and record sets by using the 
-``description`` attribute, as demonstrated in the following example:
- 
-**Example 3.7. Example Response with description**
+Descriptions are supported for requests and responses of zones and record sets
+by using the ``description`` attribute, as demonstrated in the following
+example:
 
-.. code::  
+**Example Response with description**
+
+.. code::
 
     Status: 200 OK
     Date: Thu, 28 Jul 2011 21:54:21 GMT
@@ -45,8 +46,9 @@ Descriptions have the following characteristics:
 
 -	Are optional
 
-Descriptions are returned on ``GET`` operations for both zones and record sets regardless 
-of whether the operation is a single or multiple operation, and regardless of whether it 
-is a detail or non-detail operation.
+Descriptions are returned on ``GET`` operations for both zones and record sets
+regardless of whether the operation is a single or multiple operation, and
+regardless of whether it is a detail or non-detail operation.
 
-To remove a description, set it to an empty string, for example: description="".
+To remove a description, set it to an empty string, for example:
+description="".

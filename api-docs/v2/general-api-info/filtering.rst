@@ -1,36 +1,38 @@
-.. _cdns-dg-filtering:
+.. _filtering:
 
+=========
 Filtering
-~~~~~~~~~
+=========
 
-Filtering is available on all collections and is controlled by using query parameters that  
-match the name of the attribute being filtered.
+Filtering is available on all collections and is controlled by using query
+parameters that match the name of the attribute being filtered.
 
 The following attributes support filtering:
 
--  **Record sets**: ``name``, ``type``, ``ttl``, ``data``, ``description``, ``status``
+-  **Record sets**: ``name``, ``type``, ``ttl``, ``data``, ``description``, `
+   `status``
 
 -  **Zones**: ``name``, ``email``, ``ttl``, ``description``, ``status``
 
-Filters can be an exact match search or a wildcard search. Wildcard search is 
+Filters can be an exact match search or a wildcard search. Wildcard search is
 supported by using the asterisk (*) character.
 
 The following example filters a collection of zones by the ``name`` parameter.
 
- 
+
 **Example: Request to filter a collection of zones**
 
-.. code::  
+.. code::
 
-     GET /v2/zones?name=example.com. HTTP/1.1 
+     GET /v2/zones?name=example.com. HTTP/1.1
      Host: global.dns.api.rackspacecloud.com
      Accept: application/json
-     X-Auth-Token: *************  
+     X-Auth-Token: *************
 
- 
+
 **Example: Response to filter a collection of zones**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -59,25 +61,25 @@ The following example filters a collection of zones by the ``name`` parameter.
       "metadata": {
         "total_count": 1
       }
-    } 
+    }
 
-Wildcards can be placed anywhere within the query. The following example demonstrates the 
-use of wildcards on the right side of a query:
+Wildcards can be placed anywhere within the query. The following example
+demonstrates the use of wildcards on the right side of a query:
 
- 
+
 **Example: Request to filter with a wildcard**
 
-.. code::  
+.. code::
 
     GET /v2/zones?name=example* HTTP/1.1
     Host: global.dns.api.rackspacecloud.com
     Accept: application/json
-    X-Auth-Token: ************* 
+    X-Auth-Token: *************
 
- 
+
 **Example: Response to filter with a wildcard**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -123,24 +125,24 @@ use of wildcards on the right side of a query:
       "metadata": {
         "total_count": 2
       }
-    } 
+    }
 
 The following example demonstrates the use of multiple wildcards.
 
- 
+
 **Example: Request to filter with multiple wildcards**
 
-.. code::  
+.. code::
 
     GET /v2/zones?name=*example* HTTP/1.1
     Host: global.dns.api.rackspacecloud.com
     Accept: application/json
-    X-Auth-Token: ************* 
+    X-Auth-Token: *************
 
- 
+
 **Example: Response to filter with multiple wildcards**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Content-Type: application/json

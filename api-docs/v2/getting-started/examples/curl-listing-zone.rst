@@ -1,16 +1,16 @@
 .. _curl-listing-zone:
 
 Getting details about a zone with cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use this API operation to get detailed output for a specific zone. This operation does not 
-require a request body.
+Use this API operation to get detailed output for a specific zone. This
+operation does not require a request body.
 
 The following example shows the cURL request for list zone:
 
 **Example: List zone, cURL request**
 
-.. code::  
+.. code::
 
     curl -s  \
     -H "X-Auth-Token: $AUTH_TOKEN" \
@@ -19,17 +19,19 @@ The following example shows the cURL request for list zone:
 
 Remember to replace the values in the example with actual values.
 
--  **AUTH_TOKEN** 
+-  **AUTH_TOKEN**
 
-	The token that you received during authentication.  For automatic replacement, set your 
-	environment variables (see :ref:`Configure environment variables <configure-environment-variables>`).
-  
+	The token that you received during authentication.  For automatic
+	replacement, set your environment variables (see
+	:ref:`Configure environment variables <configure-environment-variables>`).
 
--  **TENANT_ID** 
 
-   Your Rackspace Cloud account ID.  For automatic  replacement, set your environment 
-   variables (see :ref:`Configure environment variables <configure-environment-variables>`).
-   
+-  **TENANT_ID**
+
+   Your Rackspace Cloud account ID.  For automatic  replacement, set your
+   environment variables (see
+   :ref:`Configure environment variables <configure-environment-variables>`).
+
 -  **zoneId**
 
 	The ID returned in the create zone response.
@@ -38,7 +40,7 @@ The following example shows the response:
 
 **Example List zone response**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Vary: Accept
@@ -65,11 +67,13 @@ The following example shows the response:
         }
     }
 
-The response shows that the zone has been created and has a status of ``ACTIVE``.
+The response shows that the zone has been created and has a status of
+``ACTIVE``.
 
-..  note:: 
+..  note::
 
-    If you have multiple zones or records and want to get a subset of them, you could 
-    paginate, sort or filter the results. See :ref:`Pagination<cdns-paginated-collections>` 
-    or :ref:`Filtering<cdns-dg-filtering>` for more information.
-    
+    If you have multiple zones or records and want to get a subset of them, you
+    could paginate, sort or filter the results. See
+    :ref:`Pagination and sorting<paginated-collections>`
+    or :ref:`Filtering<filtering>` for more information.
+

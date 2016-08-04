@@ -1,23 +1,23 @@
-.. _cdns-dg-links:
+.. _links:
 
 Links
 ~~~~~
 
-A ``links`` object exists at the root of all collection responses. At a minimum, it 
-contains a ``self`` link. If the collection result set is not complete, a ``next`` or 
-``previous`` link is included for pagination to point to the respective items in the 
-collection.
+A ``links`` object exists at the root of all collection responses. At a
+minimum, it contains a ``self`` link. If the collection result set is not
+complete, a ``next`` or ``previous`` link is included for pagination to point
+to the respective items in the collection.
 
- 
+
 **Example: Links in the response for a collection**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Vary: Accept
-    Content-Type: application/json  
+    Content-Type: application/json
 
-.. code::  
+.. code::
 
      {
        "examples": [{
@@ -32,4 +32,4 @@ collection.
          "next": "<URL for Next Page>",
          "previous": "<URL for Previous Page>"
        }
-     }   
+     }

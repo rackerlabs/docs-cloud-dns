@@ -1,7 +1,7 @@
 .. _cli-listing-zone:
 
 Getting details about a zone with the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``zone show`` CLI command to Get details about a zone.
 
@@ -9,13 +9,13 @@ Use the ``zone show`` CLI command to Get details about a zone.
 
 Enter the following command:
 
-.. code::  
+.. code::
 
-     $ openstack zone show example.org.  
+     $ openstack zone show example.org.
 
 The response is similar to the following example:
 
-.. code::  
+.. code::
 
     +----------------+--------------------------------------+
     | Field          | Value                                |
@@ -38,4 +38,5 @@ The response is similar to the following example:
     | version        | 3                                    |
     +----------------+--------------------------------------+
 
-The response shows that the zone has been created and has a status of ``ACTIVE``.
+The response shows that the zone has been created and has a status of
+``ACTIVE``.
