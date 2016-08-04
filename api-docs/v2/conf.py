@@ -324,11 +324,11 @@ latex_documents = [
 man_pages = [
      (master_doc, 'docs-cloud-dns',
      'Rackspace developer documentation',
-     ['Rackspace'], 1)
+     'Rackspace', 1)
 ]
 
 # If true, show URL addresses after external links.
-#man_show_urls = False
+# man_show_urls = False
 
 
 # -- Options for Texinfo output -------------------------------------------
