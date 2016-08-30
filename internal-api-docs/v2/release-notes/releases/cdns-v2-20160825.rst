@@ -1,0 +1,22 @@
+.. _RN_20160314:
+
+v2 release, August 25, 2016
+-----------------------------------------------------
+
+What's new
+~~~~~~~~~~
+This version contains the initial release for |product name| and includes the following items:
+
+- something
+- something else
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
+

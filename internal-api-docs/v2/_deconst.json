@@ -1,0 +1,8 @@
+{
+  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-dns/v2/",
+  "githubUrl": "https://github.com/rackerlabs/docs-cloud-dns/",
+  "githubBranch": "master",
+  "meta": {
+    "preferGithubIssues": true
+  }
+}
