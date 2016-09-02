@@ -1,0 +1,23 @@
+.. _cdns-v1-20141024:
+
+v1.0.34 Configuration Changes, October 24, 2014
+-----------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+Configuration Changes
+
+The default limit for searching domains was updated from 5 per minute to 20 per
+minute. See :ref:`Limits<limits>`.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

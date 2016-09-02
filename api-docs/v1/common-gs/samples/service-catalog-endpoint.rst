@@ -1,4 +1,6 @@
- .. code-block:: json
+.. _authentication-response-examples:
+
+.. code-block:: json
 
       {
           "name": "cloudDNS",

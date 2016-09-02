@@ -1,15 +1,14 @@
 .. _gs-add-records:
 
 Adding records
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 This section shows you how to add records for your new domain:
 
 -  Two A records to map the IPV4 addresses of your two cloud servers
-   that you recorded in `Create a new cloud
-   server <gs-create-server>`.
-   to the new domain that you created in `Create a
-   domain <gs-create-domain>`.
+   that you recorded in :ref:`Create a new cloud server <gs-create-server>`.
+   to the new domain that you created in :ref:`Create a domain
+   <gs-create-domain>`.
 
 -  One CNAME record to create an alias (www.example.com) for your domain
    with a TTL of 5400 and a comment of “This is a comment on the CNAME
@@ -26,9 +25,9 @@ This section shows you how to add records for your new domain:
 
 The following examples show the cURL requests for Add records:
 
- 
+
 cURL Add records: request
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML Request**
 
@@ -52,7 +51,7 @@ cURL Add records: request
     -H "Accept: application/xml" \
     "$API_ENDPOINT/domains/domain_id/records" | ppxml
 
- 
+
 **JSON request**
 
 .. code::
@@ -89,17 +88,16 @@ cURL Add records: request
 Remember to replace the names in the examples above with their actual
 respective values:
 
--  **domain\_id** — as returned in your create domain final successful
-   response (see the examples in `Creating a
-   domain <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html>`__);
-   must be replaced in the request URL
+-  **domain_id** — as returned in your create domain final successful
+   response (see the examples in :ref:`Creating a domain<gs-create-domain>`),
+   this must be replaced in the request URL.
 
 The following examples show the initial asynchronous responses for Add
 records:
 
- 
+
 Initial asynchronous response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML Response**
 
@@ -132,7 +130,7 @@ Initial asynchronous response
     <;/recordsList>;</request>
     </asyncResponse>
 
- 
+
 **JSON response**
 
 .. code::
@@ -156,9 +154,9 @@ Initial asynchronous response
 The following examples show the cURL asynchronous status requests for
 Add records:
 
- 
+
 cURL asynchronous status for Add records: request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML request**
 
@@ -182,7 +180,7 @@ cURL asynchronous status for Add records: request
     "$API_ENDPOINT/status/job_id?showDetails=true"
 
 Adding the parameter ``?showDetails=true`` at the end of the end of the
-URL after the **job\_id** causes the response to display all details for
+URL after the **job_id** causes the response to display all details for
 the aynch request, including the results, if they are available.
 Omitting this parameter causes just basic details to be displayed
 (jobId, callbackUrl, and status attributes).
@@ -190,17 +188,17 @@ Omitting this parameter causes just basic details to be displayed
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
 
--  **job\_id** — as returned in your Create domain response (must be
+-  **job_id** — as returned in your Create domain response (must be
    replaced in the request URL)
 
 The following examples show the *final* successful response for the
 asynchronous Add records call. Refer to
-:rax-devdocs:`Synchronous and asynchronous responses <cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`
+:ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`
 for more information about how the asynchronous call works.
 
- 
-**cURL Add records: final successful response**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+cURL Add records: final successful response
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML response**
 

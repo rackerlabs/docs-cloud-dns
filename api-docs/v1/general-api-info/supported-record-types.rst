@@ -8,8 +8,8 @@ The Rackspace Cloud DNS Service supports the *record* types listed below.
 
 **Rackspace Cloud DNS Supported Record Types**
 
-Record Type: A
-   
+Record Type: **A**
+
 - Maps an IPV4 address to a domain
 
   Example A Record: XML:
@@ -24,7 +24,7 @@ Record Type: A
 
        { "id" : "A-123", "type" : "A", "name" : "example.foo.com", "data" : "123.456.78.9", "ttl" : 86400 }
 
-Record Type: AAAA
+Record Type: **AAAA**
 
 - Maps an IPV6 address to a domain
 
@@ -40,7 +40,7 @@ Record Type: AAAA
 
         { "id" : "AAAA-123", "type" : "AAAA", "name" : "example.foo.com", "data" : "4321:0:1:2:3:4:567:89ab", "ttl" : 86400 }
 
-Record Type: CNAME
+Record Type: **CNAME**
 
 - Creates an alias for a domain
 
@@ -60,7 +60,7 @@ Record Type: CNAME
 
         A CNAME record label (name) can have underscores anywhere in any subdomain labels, but not in the main domain name of the domain to which the record belongs. For example, for the domain example.com, a CNAME record belonging to that domain can have the label ``_ab_b_.cd_e.example.com``
 
-Record Type: MX
+Record Type: **MX**
 
 - Designates a domain's mail server
 
@@ -76,7 +76,7 @@ Record Type: MX
 
        { "id" : "MX-123", "priority" : 10, "type" : "MX", "name" : "example.foo.com", "data" : "mail.example.foo.com", "ttl" : 3600 }
 
-Record Type: NS
+Record Type: **NS**
 
 - Designates a domain's authoritative name server
 
@@ -92,7 +92,7 @@ Record Type: NS
 
         { "id" : "NS-123", "type" : "NS", "name" : "example.foo.com", "data" : "ns1.foo.com", "ttl" : 54000 }
 
-Record Type: PTR
+Record Type: **PTR**
 
 - Designates a reverse DNS record
 
@@ -112,7 +112,7 @@ Record Type: PTR
 
        PTR records can only be managed using the /rdns URIs.
 
-Record Type: SRV
+Record Type: **SRV**
 
 - General service locator record for a domain
 
@@ -174,7 +174,7 @@ Notes
       first three are the *weight*, *port*, and *target* (in that
       order), and the rest are ignored.
 
-Record Type: TXT
+Record Type: **TXT**
 
 - Arbitrary text for a domain record
 
@@ -196,8 +196,8 @@ Notes
 *  ``DKIM`` and ``SPF`` records are supported using ``TXT`` records with
    appropriately formatted data fields.
 
-*  Invalid quote and slash characters are automatically removed from TXT
-   records by the DNS Service.
+*  Invalid quote and slash characters are automatically removed from ``TXT``
+   records by the |product name| Service.
 
 
 

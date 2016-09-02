@@ -1,7 +1,7 @@
 .. _gs-list-domain:
 
 Listing domain details
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 This operation provides detailed output for a specific domain configured
 and associated with your account. This operation is not capable of
@@ -9,12 +9,12 @@ returning details for a domain that has been deleted.
 
 This operation does not require a request body.
 
-The examples list the details for the domain with **domain_id** that
+The examples list the details for the domain with ``domain_id`` that
 you created in the previous section.
 
-The following examples show the cURL requests for List domain details:
+The following examples show the cURL requests for ``List domain`` details:
 
- 
+
 cURL List domain details: request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -41,14 +41,14 @@ cURL List domain details: request
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
 
--  **domain\_id** — as returned in your create domain response (must be
+-  **domain_id** — as returned in your create domain response (must be
    replaced in the request URL)
 
 The following examples show the List domain details responses:
 
- 
+
 List domain details: response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML response**
 
@@ -76,7 +76,7 @@ List domain details: response
       </recordsList>
     </domain>
 
-**JSON response** 
+**JSON response**
 
 .. code::
 
@@ -130,11 +130,11 @@ List domain details: response
       "created": "2012-03-15T18:08:15.000+0000"
     }
 
-By default, the List domain details API call lists details of the
-specified domain, with record information but *without* subdomains.
+By default, the ``List domain details`` API call lists details of the
+specified domain, with record information but without subdomains.
 
 The following parameters are available to control the information
-displayed by the List domain details responses:
+displayed by the ``List domain details`` responses:
 
 -  ``showRecords`` — if this parameter is set to true, then information
    about records is returned; if this parameter is set to false, then
@@ -147,18 +147,18 @@ displayed by the List domain details responses:
 For example, using the following version of the call, information about
 subdomains will be displayed, but information about records will not be
 displayed: ``'https://dns.api.rackspacecloud.com/v1.0/``
-**your\_acct\_id** ``/domains/`` **domain\_id**
+**your_acct_id** ``/domains/`` **domain_id**
 ``?showRecords=false&showSubdomains=true``'
 
 Displaying only the information needed will improve the performance of
 the List domain details call.
 
-The following examples show the cURL requests for List domain details
-with subdomains, but no records:
+The following examples show the cURL requests for ``List domain details
+with subdomains`` but don't show records:
 
- 
+
 cURL List domain details with subdomains, no records: request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML request**
 
@@ -184,17 +184,16 @@ cURL List domain details with subdomains, no records: request
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
 
--  **domain\_id** — as returned in your create domain final successful
-   response (see the examples in `Creating a
-   domain <http://docs.rackspace.com/cdns/api/v1.0/cdns-getting-started/content/Create_Domain.html>`__);
-   must be replaced in the request URL
+-  **domain_id** — as returned in your create domain final successful
+   response (see the examples in :ref:`Creating a domain<gs-create-domain>`),
+   this must be replaced in the request URL.
 
 The following examples show the List domain details with subdomains, no
 records responses:
 
- 
+
 List domain details with subdomains, no records: response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML response**
 
@@ -222,7 +221,7 @@ List domain details with subdomains, no records: response
       </subdomains>
     </domain>
 
-**JSON response** 
+**JSON response**
 
 .. code::
 
