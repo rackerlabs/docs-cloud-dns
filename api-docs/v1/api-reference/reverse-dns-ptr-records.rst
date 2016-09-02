@@ -1,7 +1,8 @@
 .. _reverse-dns-ptr-records-operations:
 
+======================
 Reverse DNS operations
-~~~~~~~~~~~~~~~~~~~~~~
+======================
 
 Use the reverse DNS API operations to view and manage the PTR records
 associated with a Rackspace cloud device.

@@ -16,7 +16,7 @@ to interact directly with the service.
      or the `Cloud Control Panel <https://mycloud.rackspace.com/>`_.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    limits-operations
    domains

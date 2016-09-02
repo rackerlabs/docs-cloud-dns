@@ -1,7 +1,8 @@
 .. _domain-operations:
 
+==================
 Domains operations
-~~~~~~~~~~~~~~~~~~
+==================
 
 
 Use the Domains operations to view and manage domains and subdomains for a

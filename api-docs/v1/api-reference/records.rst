@@ -1,7 +1,8 @@
 .. _records-operations:
 
+==================
 Records operations
-~~~~~~~~~~~~~~~~~~
+==================
 
 Use the following |apiservice| operations to manage DNS records for a
 specified domain.
