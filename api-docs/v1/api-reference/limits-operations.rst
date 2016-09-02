@@ -1,7 +1,8 @@
 .. _limits-operations:
 
+=================
 Limits operations
-~~~~~~~~~~~~~~~~~
+=================
 
 Use the Limits operations to get information about the rate and domain limits
 for a specified Rackspace Cloud account.
