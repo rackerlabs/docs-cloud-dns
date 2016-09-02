@@ -1,8 +1,8 @@
 .. _index:
 
-=================================
-|service name| |contract version|
-=================================
+===============================
+|apiservice| |contract version|
+===============================
 
 *Last updated:* |today|
 
