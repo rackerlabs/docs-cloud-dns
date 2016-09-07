@@ -48,7 +48,7 @@ For more information about the |product name| service, see the
 
 
 .. toctree:: :hidden:
-   :maxdepth: 2
+   :maxdepth: 3
 
    Cloud DNS 1.0 <self>
    getting-started/index
