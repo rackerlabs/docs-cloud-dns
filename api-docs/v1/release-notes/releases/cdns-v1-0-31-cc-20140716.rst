@@ -1,0 +1,22 @@
+.. _cdns-v1-20140716:
+
+v1.0.31 configuration changes, July 16, 2014
+--------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+Role Based Access Control has been added for the Cloud DNS API. For details,
+see :ref:`Role Based Access Control<role-based-access-control>`.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

@@ -1,0 +1,26 @@
+.. _cdns-v1-20140729:
+
+v1.0.33, July 29, 2014
+----------------------
+
+What's new
+~~~~~~~~~~
+
+|no changes|
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+- Improved the performance of requests to retrieve subdomains (see the
+  :ref:`List subdomains <get-list-subdomains-v1.0-account-domains-domainid-subdomains>`
+  and :ref:`Show domain <get-show-domain-v1.0-account-domains-domainid>`
+  operations).
+- Added support for exporting TXT records that have multiple strings in
+  the data field. TXT records that have multiple strings in the data field to
+  work around the 255-byte maximum length of a string within a single TXT
+  record are now successfully exported.
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

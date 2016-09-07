@@ -1,24 +1,24 @@
 .. _gs-create-server:
 
-Creating a new cloud server 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a new cloud server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This guide requires two cloud servers for setting up DNS using the Cloud
 DNS API. If you will be using two *existing* cloud servers on your
 account for this purpose, skip Steps 1-5 and go directly to Step 6
 below. Otherwise, follow the steps below:
 
-Create a cloud server using the cloud servers section of the `Cloud
-Control Panel <http://mycloud.rackspace.com/>`__.
+Create a cloud server using the cloud servers section of the
+:rax-cloud:`Rackspace Public Cloud site<>`.
 
 ..  note::
     You can also create a cloud server using the Cloud Servers API. Refer to
-    the *`Cloud Servers API Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/>`__*
-    for details.
+    the :rax-devdocs:`Cloud Servers API basic operations
+    <cloud-servers/v2/api-reference/svr-basic-operations/>` for details.
 
- 
-**To create a cloud server using the Cloud Control
-Panel:**
+
+To create a cloud server using the Cloud Control Panel:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.  Click **Servers** to view the Cloud Servers page.
 

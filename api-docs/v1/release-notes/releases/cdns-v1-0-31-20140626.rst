@@ -1,0 +1,23 @@
+.. _cdns-v1-20140626:
+
+v1.0.31, June 26, 2014
+----------------------
+
+What's new
+~~~~~~~~~~
+
+The Search Domains with Filtering functionality has been modified to increase
+performance. The request ``GET /domains?name=domainName`` now returns exact
+matches only. For details, see
+:ref:`List domains by name <get-list-domains-by-name-v1.0-account-domains>`.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

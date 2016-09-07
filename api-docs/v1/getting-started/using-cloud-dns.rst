@@ -21,19 +21,22 @@ of service access endpoints for Cloud DNS.
 - ``https://dns.api.rackspacecloud.com/v1.0/1234/``
 - ``https://lon.dns.api.rackspacecloud.com/v1.0/1234/``
 
-When making a Cloud DNS API call call, place the endpoint at the beginning of the
-request URL,for example:``https://dns.api.rackspacecloud.com/v1.0/**your_acct_id**``,
-as you can see in cURL request examples for this guide.
+When making a Cloud DNS API call call, place the endpoint at the beginning of
+the request URL,for example:
+``https://dns.api.rackspacecloud.com/v1.0/**your_acct_id**``, as you can see in
+cURL request examples for this guide.
 
 .. note::
-     These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and ``$TENANT_ID`` environment
-     variables to specify the API endpoint, authentication token, and project ID values
-     for accessing the service. Make sure you
-     :ref:`configure these variables<configure-environment-variables>` before running the
-     code samples. 
+     These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and
+     ``$TENANT_ID`` environment variables to specify the API endpoint,
+     authentication token, and project ID values for accessing the service.
+     Make sure you
+     :ref:`configure these variables<configure-environment-variables>` before
+     running the code samples.
 
 .. note::
-   All examples in this guide assume that you are operating against the US region.
+   All examples in this guide assume that you are operating against the US
+   region.
 
 .. include:: examples/gs-create-server.rst
 .. include:: examples/gs-create-domain.rst

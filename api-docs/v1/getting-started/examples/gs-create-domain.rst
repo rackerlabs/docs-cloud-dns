@@ -1,25 +1,25 @@
 .. _gs-create-domain:
 
 Creating a domain
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 The Create domain API call provisions one or more new DNS domains under
 the account specified, based on the configuration defined in the request
 object. If the corresponding request cannot be fulfilled due to
-insufficient or invalid data, an ``HTTP`` 400 (Bad Request) error
+insufficient or invalid data, an ``HTTP 400 (Bad Request)`` error
 response will be returned with information regarding the nature of the
 failure in the body of the response. Failures in the validation process
 are non-recoverable and require the caller to correct the cause of the
-failure and **POST** the request again.
+failure and ``POST`` the request again.
 
-This call returns an *asynchronous* response. In fact, **PUT**,
-**POST**, and **DELETE** DNS API calls are all *asynchronous*, since
-they may take some time to process. Therefore they return 202 ACCEPTED
+This call returns an asynchronous response. In fact, **PUT**,
+``POST``, and ``DELETE`` DNS API calls are all asynchronous, since
+they may take some time to process. Therefore they return ``202 ACCEPTED``
 responses containing information with a callback URL, which allows the
-progress, status, and/or response information of the call to be
-retrieved at a later point in time.
+progress, status, or response information of the call to be retrieved at a
+later point in time.
 
-You need to use the Create domain API call (POST ``/domains``) to create
+You need to use the Create domain API call (``POST /domains``) to create
 a domain with the configuration that you specify.
 
 In this case, assume that you want to create a domain with the following
@@ -45,10 +45,10 @@ configuration:
 
    -  Domain name = sub1.example.com
 
-      
+
        -  Remember to modify the domain name "sub1.example.com" listed above
           to conform to the name you have chosen for your domain, for
-          example: "sub1.<**your\_domain\_name**>".
+          example: "sub1.<**your_domain_name**>".
 
    -  emailAddress="sample@rackspace.com"
 
@@ -56,17 +56,17 @@ configuration:
 
    -  Domain name = sub2.example.com
 
-      
+
         - Remember to modify the domain name "sub2.example.com" listed above
           to conform to the name you have chosen for your domain, for
-          example: "sub2.<**your\_domain\_name**>".
+          example: "sub2.<**your_domain_name**>".
 
    -  emailAddress="sample@rackspace.com"
 
    -  comment="2nd sample subdomain"
 
 
-Although you could add records for your domain in this Create domain 
+Although you could add records for your domain in this Create domain
 call, to keep things simple, you will add the records using the separate
 Add records call in :ref:`Adding records <gs-add-records>` instead.
 
@@ -132,16 +132,16 @@ cURL Create domain: request
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
 
--  **your\_domain\_name** — to name your domain, you can use any letter,
+-  **your_domain_name** — to name your domain, you can use any letter,
    numbers between 0 and 9, and the character "-".
 
 
 The following examples show the initial asynchronous responses for
 Create domain:
 
- 
+
 Create domain: initial asynchronous response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML Response**
 
@@ -179,7 +179,7 @@ Create domain: initial asynchronous response
 
 
 The ``<request>`` in the XML response comes back with the request you
-sent, with the HTML entities encoded (<; >; ";).
+sent, with the HTML entities encoded (``<``, ``>``, or ``"``).
 
 **JSON Response**
 
@@ -203,15 +203,15 @@ sent, with the HTML entities encoded (<; >; ";).
 
 Notice that you can see the 202 ACCEPTED responses containing
 information with a callback URL (``callbackUrl``), which allows the
-progress, status, and/or response information of the call to be
+progress, status, or response information of the call to be
 retrieved at a later point in time. When a request is made to the
 callback URL provided and the job is still running, another 202 ACCEPTED
 response is returned with the same information as the previous one. If
-the request is successful, the status is COMPLETED.
+the request is successful, the status is ``COMPLETED``.
 
 The following examples show the requests to get the status for the job
 using the ``jobID`` and ``callbackUrl`` provided (which you can see in
-the previous example). Note that the **job\_id** is automatically
+the previous example). Note that the **job_id** is automatically
 inserted for you at the end of the callbackUrl, so you can just copy the
 entire callbackUrl and place it within the single quotes at the end of
 the cURL command. Then follow it with the ``?showDetails=true``
@@ -219,9 +219,9 @@ parameter.
 
 The following examples show the cURL status requests for Create domain:
 
- 
+
 cURL Create domain asynchronous status: request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML Request**
 
@@ -245,7 +245,7 @@ cURL Create domain asynchronous status: request
     "$API_ENDPOINT/status/job_id?showDetails=true"
 
 Adding the parameter ``?showDetails=true`` at the end of the end of the
-URL after the **job\_id** causes the response to display all details for
+URL after the **job_id** causes the response to display all details for
 the asynchronous request, including the results, if they are available.
 Omitting this parameter causes just basic details to be displayed
 (jobId, callbackUrl, and status attributes).
@@ -253,16 +253,16 @@ Omitting this parameter causes just basic details to be displayed
 Remember to replace the names in the examples above with their actual
 respective values for all the cURL examples that follow:
 
--  **job\_id** — as returned in your Create Domain response (must be
+-  **job_id** — as returned in your Create Domain response (must be
    replaced in the request URL)
 
 The following examples show the final successful responses for the Create
-domain asynchronous call. 
-You can find more information about how asynchronous calls work in the 
-`Cloud DNS developer guide <https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`__.
- 
+domain asynchronous call.
+You can find more information about how asynchronous calls work in the
+:ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`.
+
 Create domain: final successful response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **XML Response**
 
@@ -411,15 +411,15 @@ Create domain: final successful response
     "requestUrl": "http://dns.api.rackspacecloud.com/v1.0/1234/domains"
     }
 
-Notice that you can see the 200 OK responses containing information
+Notice that you can see the ``200 OK`` responses containing information
 about the domain/subdomains with status COMPLETED. This indicates that
 the call was successfully completed.
 
-You can find more information about how asynchronous calls work in the 
-`Cloud DNS developer guide <https://developer.rackspace.com/docs/cloud-dns/v1/developer-guide/#document-general-api-info/synchronous-and-asynchronous-responses>`__.
+You can find more information about how asynchronous calls work in the
+:ref:`Synchronous and asynchronous responses<cdns-dg-synch-asynch>`.
 
 In the previous examples, you can see that the domain example.com was
 created along with its subdomains sub1.example.com and sub2.example.com.
 You will need the domain ``id`` for making the List domain details call
 in the next section, and you should supply this value wherever you see
-the field **domain\_id** in the examples in this guide.
+the field **domain_id** in the examples in this guide.

@@ -4,15 +4,15 @@
 Synchronous and asynchronous responses
 ======================================
 
-All successful **GET** requests are *synchronous* calls, since they are
+All successful ``GET`` requests are synchronous calls, since they are
 always retrieving (reading) existing information. With these requests,
 the caller waits until the call returns with the specified code and
 response body.
 
-**PUT**, **POST**, and **DELETE** calls are *asynchronous*, however,
-since they may take some time to process. Therefore they return 202
-ACCEPTED responses containing information with a callback URL, which
-allows the progress, status, and/or response information of the call to
+``PUT``, ``POST``, and ``DELETE*`` calls are asynchronous, however,
+since they may take some time to process. Therefore they return ``202
+ACCEPTED`` responses containing information with a callback URL, which
+allows the progress, status, or response information of the call to
 be retrieved at a later point in time.
 
 When the status of a request is queried (via a ``callbackUrl`` supplied
@@ -21,13 +21,13 @@ returned by default. If more detail is desired, any status URL may
 include an optional ``showDetails`` query parameter that will display
 more information regarding the original request:
 
-**GET** /status/*jobId*\ ?\ ``showDetails``\ =\ ``[true|false]``
+``GET /status/jobId ? showDetails = [true|false]``
 
 - List status of the specified asynchronous request. Display details, as
   specified by the ``showDetails`` parameter.
-   
+
 - Representations: XML, JSON
-   
+
 Normal Response Code(s): 200
 
 Error Response Code(s): dnsFault (400, 500), serviceUnavailable (503),
@@ -72,7 +72,7 @@ examples, depending on whether basic or detailed information is
 requested.
 
 If you use the callback URL *without* specifying the query parameter
-``showDetails=true``, only *basic* information is returned (jobId,
+``showDetails=true``, only basic information is returned (jobId,
 callbackUrl, and status attributes):
 
 **Example: Basic success asynchronous request: XML**
@@ -97,7 +97,7 @@ callbackUrl, and status attributes):
     Content-Length: 0
 
 When a request is made to the callback URL provided and the job is still
-running, another 202 ACCEPTED response is returned with the same
+running, another ``202 ACCEPTED`` response is returned with the same
 information as the previous one.
 
 If the request is successful, the ``status`` is ``COMPLETED``:
@@ -137,7 +137,7 @@ If the request is successful, the ``status`` is ``COMPLETED``:
     }
 
 If you specify the query parameter ``showDetails=true`` for the callback
-URL, *detailed* information is returned (all attributes) :
+URL, detailed information is returned (all attributes) :
 
 **Example: Detail success asynchronous request: XML**
 
@@ -338,14 +338,14 @@ If you use the callback URL with the query parameter
 
 .. note::
    Examples of error responses in the rest of this guide only show the
-   *contents* of the asynchronous ``error`` attribute. Additional
+   contents of the asynchronous ``error`` attribute. Additional
    attributes and elements have been omitted for clarity.
 
 Viewing status of all asynchronous job requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As well as viewing status for a *particular job ID*, as described in the
-previous section, you can also view status information for *all*
+As well as viewing status for a particular job ID, as described in the
+previous section, you can also view status information for all
 asynchronous job requests for an account. You can also filter the
 information requested by using the following optional boolean request
 parameters:
@@ -361,7 +361,7 @@ parameters:
 *  ``showDetails``– if ``true``, specifies that job details are shown
 
 In addition, paging request parameters ``limit`` and ``offset`` can also
-be supplied for the request. 
+be supplied for the request.
 See :ref:`Pagination <paginated-collections>` for details.
 
 The default values for these request parameters (if they are not
@@ -404,7 +404,7 @@ unauthorized (401), badRequest (400), itemNotFound (404), overLimit
 By omitting the ``showDetails`` parameter from the request (or
 explicitly setting it to ``false``), you can request basic information
 for all errors, running jobs, and completed jobs for the account. By
-default (with no query parameters specified) only *basic* information is
+default (with no query parameters specified) only basic information is
 requested:
 
 **Example: Get basic status for all jobs request: XML**
@@ -483,7 +483,7 @@ those still running, and then those that have completed:
 
 
 
-To get *detailed* status information for all jobs, set the
+To get detailed status information for all jobs, set the
 ``showDetails`` parameter to true (``showDetails=true``):
 
 **Example: Get detailed status for all jobs request: XML**
