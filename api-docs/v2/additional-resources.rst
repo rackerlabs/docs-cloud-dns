@@ -1,18 +1,27 @@
 .. _additional-resources:
 
+====================
 Additional resources
-~~~~~~~~~~~~~~~~~~~~
+====================
 
-You can download the most current versions of other API-related documents from
-:rax-dev:`developer.rackspace.com<>`.
+We welcome feedback, comments, and bug reports. Visit the
+`Rackspace Product Feedback forum`_.
 
-For more information about the |product name| service, see the
-:how-to:`Managed DNS FAQ <managed-dns-faq>` in the Rackspace How-To.
+Use the links below to learn more about the |service| service and API.
 
-For information about Rackspace Cloud products, see the
-:rax-cloud:`Rackspace Public Cloud site<>`. This site also provides links to
-official Rackspace support channels, including How-To  articles, forums, phone,
-chat, and email.
+- For general information about |product name|, see the
+  :how-to:`Managed DNS FAQ <managed-dns-faq>` article.
+
+- To learn more about the Cloud Servers service and the various ways you can
+  interact with it (API, SDK, CLI, and Control Panel), see the
+  :rax-devdocs:`Rackspace Cloud Guide to Core Infrastructure
+  Services <user-guides/infrastructure/>`.
+
+- To learn about using Rackspace Cloud SDKs, see
+  :rax-dev:`Software Development Kits & Tools <docs/#sdks>`.
+
+- To get information about other Rackspace Cloud services APIs, see the
+  :rax-devdocs:`Rackspace API Documentation <>`.
 
 Tell us what you think by sending feedback, issues, and bug reports to
 DNS_EA@rackspace.com.
@@ -26,3 +35,4 @@ This API uses standard HTTP 1.1 response codes as documented at
 http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html.
 
 .. _Twitter: https://twitter.com/rackspace
+.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/default
