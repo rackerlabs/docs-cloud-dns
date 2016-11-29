@@ -20,7 +20,7 @@ Domains provisioned by using Rackspace Cloud DNS default to the
 ``dns1.stabletransit.com`` and ``dns2.stabletransit.com`` name servers for the
 Rackspace public cloud. Because all Rackspace DNS has been consolidated under
 ``ns.rackspace.com`` and ``ns2.rackspace.com``, the ``stabletransit`` names now
-lso resolve to these name servers.
+resolve to these name servers.
 
 When |product name| domains are provisioned, the system, by default, adds name
 server records for ``ns.rackspace.com`` and ``ns2.rackspace.com`` to phase out
