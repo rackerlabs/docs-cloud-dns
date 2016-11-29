@@ -7,6 +7,10 @@ Configure the name servers for your domain to ensure that your domain resolves
 properly. You can do this through your domain name registrar or by delegating a
 subzone from another zone.
 
+.. note:: 
+   Add the domain to your Rackspace account before adding the name servers at 
+   your registrar.
+
 Following are the authoritative |product name| name servers:
 
 - ``ns.rackspace.com``
