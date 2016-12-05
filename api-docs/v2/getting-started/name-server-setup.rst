@@ -8,8 +8,12 @@ properly. You can do this through your domain name registrar or by delegating a
 subzone from another zone.
 
 .. note:: 
-   Add the domain to your Rackspace account before adding the name servers at 
-   your registrar.
+   Rackspace cannot automatically verify domain ownership. 
+   Be sure to add the domain to your Rackspace account before adding the
+   Rackspace name servers at your registrar. 
+   When deleting a domain, remove the Rackspace name servers
+   from your registrar prior to removing the domain from your Rackspace account.
+   Contact Support with any questions or concerns.
 
 Following are the authoritative |product name| name servers:
 
