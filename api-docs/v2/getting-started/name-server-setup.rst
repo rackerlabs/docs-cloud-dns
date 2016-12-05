@@ -7,7 +7,7 @@ Configure the name servers for your domain to ensure that your domain resolves
 properly. You can do this through your domain name registrar or by delegating a
 subzone from another zone.
 
-.. note:: 
+.. warning:: 
    Rackspace cannot automatically verify domain ownership. 
    Be sure to add the domain to your Rackspace account before adding the
    Rackspace name servers at your registrar. 
