@@ -67,12 +67,12 @@ List domain details: response
       name="example.com" ttl="3600" emailAddress="sample@rackspace.com" updated="2012-03-15T18:08:15Z"
       created="2012-03-15T18:08:15Z" comment="Optional domain comment...">
       <nameservers>
-        <nameserver name="dns1.stabletransit.com"/>
-        <nameserver name="dns2.stabletransit.com"/>
+        <nameserver name="ns.rackspace.com"/>
+        <nameserver name="ns2.rackspace.com"/>
       </nameservers>
       <recordsList totalEntries="2">
-        <record id="NS-7475194" type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600" updated="2012-03-15T18:08:15Z" created="2012-03-15T18:08:15Z"/>
-        <record id="NS-7475195" type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600" updated="2012-03-15T18:08:15Z" created="2012-03-15T18:08:15Z"/>
+        <record id="NS-7475194" type="NS" name="example.com" data="ns.rackspace.com" ttl="3600" updated="2012-03-15T18:08:15Z" created="2012-03-15T18:08:15Z"/>
+        <record id="NS-7475195" type="NS" name="example.com" data="ns2.rackspace.com" ttl="3600" updated="2012-03-15T18:08:15Z" created="2012-03-15T18:08:15Z"/>
       </recordsList>
     </domain>
 
@@ -101,7 +101,7 @@ List domain details: response
             "name": "example.com",
             "id": "NS-7475194",
             "type": "NS",
-            "data": "dns1.stabletransit.com",
+            "data": "ns.rackspace.com",
             "updated": "2012-03-15T18:08:15.000+0000",
             "ttl": 3600,
             "created": "2012-03-15T18:08:15.000+0000"
@@ -110,7 +110,7 @@ List domain details: response
             "name": "example.com",
             "id": "NS-7475195",
             "type": "NS",
-            "data": "dns2.stabletransit.com",
+            "data": "ns2.rackspace.com",
             "updated": "2012-03-15T18:08:15.000+0000",
             "ttl": 3600,
             "created": "2012-03-15T18:08:15.000+0000"
@@ -121,10 +121,10 @@ List domain details: response
       "emailAddress": "sample@rackspace.com",
       "nameservers": [
         {
-          "name": "dns1.stabletransit.com"
+          "name": "ns.rackspace.com"
         },
         {
-          "name": "dns2.stabletransit.com"
+          "name": "ns2.rackspace.com"
         }
       ],
       "created": "2012-03-15T18:08:15.000+0000"
@@ -212,8 +212,8 @@ List domain details with subdomains, no records: response
       name="example.com" ttl="3600" emailAddress="sample@rackspace.com" updated="2012-03-15T18:08:15Z"
       created="2012-03-15T18:08:15Z" comment="Optional domain comment...">
       <nameservers>
-        <nameserver name="dns1.stabletransit.com"/>
-        <nameserver name="dns2.stabletransit.com"/>
+        <nameserver name="ns.rackspace.com"/>
+        <nameserver name="ns2.rackspace.com"/>
       </nameservers>
       <subdomains totalEntries="2">
         <domain id="3191339" name="sub1.example.com" updated="2012-03-15T18:08:16Z" created="2012-03-15T18:08:16Z" comment="1st sample subdomain"/>
@@ -244,10 +244,10 @@ List domain details with subdomains, no records: response
        "nameservers": {
           "nameserver": [
              {
-                "name": "dns1.stabletransit.com"
+                "name": "ns.rackspace.com"
              },
              {
-                "name": "dns2.stabletransit.com"
+                "name": "ns2.rackspace.com"
              }
           ]
        },

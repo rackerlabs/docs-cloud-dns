@@ -39,7 +39,7 @@ adhering to the following rules:
 * The attribute values of a record must be separated by a single blank or tab.
   No other white space characters.
 * If there are any NS records, the data field should not be
-  dns1.stabletransit.com or dns2.stabletransit.com. They will result in
+  ns.rackspace.com or ns2.rackspace.com. They will result in
   "duplicate record" errors.
 
 
@@ -161,7 +161,7 @@ This table shows the body parameters for the request:
    <domains xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
        <domain contentType="BIND_9">
            <contents>
-   example.net. 3600 IN SOA dns1.stabletransit.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600
+   example.net. 3600 IN SOA ns.rackspace.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600
    example.net. 86400 IN A 110.11.12.16
    example.net. 3600 IN MX 5 mail2.example.net.
    www.example.net. 5400 IN CNAME example.net.
@@ -184,7 +184,7 @@ This table shows the body parameters for the request:
    {
      "domains" : [ {
        "contentType" : "BIND_9",
-       "contents" : "\nexample.net. 3600 IN SOA dns1.stabletransit.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600\nexample.net. 86400 IN A 110.11.12.16\nexample.net. 3600 IN MX 5 mail2.example.net.\nwww.example.net. 5400 IN CNAME example.net.\n"
+       "contents" : "\nexample.net. 3600 IN SOA ns.rackspace.com. sample@rackspace.com. 1308874739 3600 3600 3600 3600\nexample.net. 86400 IN A 110.11.12.16\nexample.net. 3600 IN MX 5 mail2.example.net.\nwww.example.net. 5400 IN CNAME example.net.\n"
      } ]
    }
 
@@ -207,8 +207,8 @@ Response
    <domains xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
        <domain name="example.net" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment...">
            <nameservers>
-               <nameserver name="dns1.stabletransit.com"/>
-               <nameserver name="dns2.stabletransit.com"/>
+               <nameserver name="ns.rackspace.com"/>
+               <nameserver name="ns2.rackspace.com"/>
            </nameservers>
            <recordsList totalEntries="3">
                <record type="A" name="example.net" data="110.11.12.16" ttl="86400"/>
@@ -234,9 +234,9 @@ Response
        "name" : "example.net",
        "comment" : "Optional domain comment...",
        "nameservers" : [ {
-         "name" : "dns1.stabletransit.com"
+         "name" : "ns.rackspace.com"
        }, {
-         "name" : "dns2.stabletransit.com"
+         "name" : "ns2.rackspace.com"
        } ],
        "recordsList" : {
          "totalEntries" : 3,

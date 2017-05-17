@@ -260,14 +260,14 @@ The following are examples of the reference domain and the resulting cloned doma
    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
    <domain id="3586209" accountId="1234" name="cloner.com" ttl="7788" emailAddress="owner@cloner.com" updated="2013-05-06T12:10:55-05:00" created="2013-05-06T12:10:51-05:00" comment="cloner.com is a template domain for cloning others. cloner.com has subdomains - sub1.cloner.com, sub2.cloner.com, sub3.cloner.com" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
        <nameservers>
-           <nameserver name="dns1.stabletransit.com"/>
-           <nameserver name="dns2.stabletransit.com"/>
+           <nameserver name="ns.rackspace.com"/>
+           <nameserver name="ns2.rackspace.com"/>
        </nameservers>
        <recordsList totalEntries="7">
            <record id="A-9516802" type="A" name="ftp.cloner.com" data="192.0.2.8" ttl="5771" updated="2013-05-06T12:10:52-05:00" created="2013-05-06T12:10:52-05:00"/>
            <record id="A-9516803" type="A" name="cloner.com" data="192.0.2.17" ttl="86400" updated="2013-05-06T12:10:52-05:00" created="2013-05-06T12:10:52-05:00"/>
-           <record id="NS-8504404" type="NS" name="cloner.com" data="dns1.stabletransit.com" ttl="7788" updated="2013-05-06T12:10:51-05:00" created="2013-05-06T12:10:51-05:00"/>
-           <record id="NS-8504405" type="NS" name="cloner.com" data="dns2.stabletransit.com" ttl="7788" updated="2013-05-06T12:10:51-05:00" created="2013-05-06T12:10:51-05:00"/>
+           <record id="NS-8504404" type="NS" name="cloner.com" data="ns.rackspace.com" ttl="7788" updated="2013-05-06T12:10:51-05:00" created="2013-05-06T12:10:51-05:00"/>
+           <record id="NS-8504405" type="NS" name="cloner.com" data="ns2.rackspace.com" ttl="7788" updated="2013-05-06T12:10:51-05:00" created="2013-05-06T12:10:51-05:00"/>
            <record id="NS-8504406" type="NS" name="cloner.com" data="server1.cloner.com" ttl="3600" updated="2013-05-06T12:10:53-05:00" created="2013-05-06T12:10:53-05:00"/>
            <record id="MX-4220031" type="MX" name="cloner.com" data="mail.cloner.com" ttl="3600" priority="5" updated="2013-05-06T12:10:54-05:00" created="2013-05-06T12:10:54-05:00"/>
            <record id="CNAME-11336151" type="CNAME" name="www.cloner.com" data="cloner.com" ttl="5400" updated="2013-05-06T12:10:55-05:00" created="2013-05-06T12:10:55-05:00" comment="This is a comment on the CNAME record"/>
@@ -293,14 +293,14 @@ The following are examples of the reference domain and the resulting cloned doma
    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
    <domain id="3586213" accountId="1234" name="clone1.com" ttl="7788" emailAddress="owner@clone1.com" updated="2013-05-06T12:17:35-05:00" created="2013-05-06T12:17:31-05:00" comment="clone1.com is a template domain for cloning others. clone1.com has subdomains - sub1.clone1.com, sub2.clone1.com, sub3.clone1.com" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
        <nameservers>
-           <nameserver name="dns1.stabletransit.com"/>
-           <nameserver name="dns2.stabletransit.com"/>
+           <nameserver name="ns.rackspace.com"/>
+           <nameserver name="ns2.rackspace.com"/>
        </nameservers>
        <recordsList totalEntries="7">
            <record id="A-9516805" type="A" name="ftp.clone1.com" data="192.0.2.8" ttl="5771" updated="2013-05-06T12:17:32-05:00" created="2013-05-06T12:17:32-05:00"/>
            <record id="A-9516806" type="A" name="clone1.com" data="192.0.2.17" ttl="86400" updated="2013-05-06T12:17:33-05:00" created="2013-05-06T12:17:33-05:00"/>
-           <record id="NS-8504413" type="NS" name="clone1.com" data="dns1.stabletransit.com" ttl="7788" updated="2013-05-06T12:17:31-05:00" created="2013-05-06T12:17:31-05:00"/>
-           <record id="NS-8504414" type="NS" name="clone1.com" data="dns2.stabletransit.com" ttl="7788" updated="2013-05-06T12:17:31-05:00" created="2013-05-06T12:17:31-05:00"/>
+           <record id="NS-8504413" type="NS" name="clone1.com" data="ns.rackspace.com" ttl="7788" updated="2013-05-06T12:17:31-05:00" created="2013-05-06T12:17:31-05:00"/>
+           <record id="NS-8504414" type="NS" name="clone1.com" data="ns2.rackspace.com" ttl="7788" updated="2013-05-06T12:17:31-05:00" created="2013-05-06T12:17:31-05:00"/>
            <record id="NS-8504415" type="NS" name="clone1.com" data="server1.clone1.com" ttl="3600" updated="2013-05-06T12:17:34-05:00" created="2013-05-06T12:17:34-05:00"/>
            <record id="MX-4220032" type="MX" name="clone1.com" data="mail.clone1.com" ttl="3600" priority="5" updated="2013-05-06T12:17:35-05:00" created="2013-05-06T12:17:35-05:00"/>
            <record id="CNAME-11336152" type="CNAME" name="www.clone1.com" data="clone1.com" ttl="5400" updated="2013-05-06T12:17:35-05:00" created="2013-05-06T12:17:35-05:00" comment="This is a comment on the CNAME record"/>
@@ -329,9 +329,9 @@ The following are examples of the reference domain and the resulting cloned doma
      "comment" : "cloner.com is a template domain for cloning others. cloner.com has subdomains - sub1.cloner.com, sub2.cloner.com, sub3.cloner.com",
      "updated" : "2013-05-06T17:10:55.000+0000",
      "nameservers" : [ {
-       "name" : "dns1.stabletransit.com"
+       "name" : "ns.rackspace.com"
      }, {
-       "name" : "dns2.stabletransit.com"
+       "name" : "ns2.rackspace.com"
      } ],
      "accountId" : 1234,
      "recordsList" : {
@@ -356,7 +356,7 @@ The following are examples of the reference domain and the resulting cloned doma
          "name" : "cloner.com",
          "id" : "NS-8504404",
          "type" : "NS",
-         "data" : "dns1.stabletransit.com",
+         "data" : "ns.rackspace.com",
          "updated" : "2013-05-06T17:10:51.000+0000",
          "ttl" : 7788,
          "created" : "2013-05-06T17:10:51.000+0000"
@@ -364,7 +364,7 @@ The following are examples of the reference domain and the resulting cloned doma
          "name" : "cloner.com",
          "id" : "NS-8504405",
          "type" : "NS",
-         "data" : "dns2.stabletransit.com",
+         "data" : "ns2.rackspace.com",
          "updated" : "2013-05-06T17:10:51.000+0000",
          "ttl" : 7788,
          "created" : "2013-05-06T17:10:51.000+0000"
@@ -444,9 +444,9 @@ The following are examples of the reference domain and the resulting cloned doma
      "comment" : "clone1.com is a template domain for cloning others. clone1.com has subdomains - sub1.clone1.com, sub2.clone1.com, sub3.clone1.com",
      "updated" : "2013-05-06T17:17:35.000+0000",
      "nameservers" : [ {
-       "name" : "dns1.stabletransit.com"
+       "name" : "ns.rackspace.com"
      }, {
-       "name" : "dns2.stabletransit.com"
+       "name" : "ns2.rackspace.com"
      } ],
      "accountId" : 1234,
      "recordsList" : {
@@ -471,7 +471,7 @@ The following are examples of the reference domain and the resulting cloned doma
          "name" : "clone1.com",
          "id" : "NS-8504413",
          "type" : "NS",
-         "data" : "dns1.stabletransit.com",
+         "data" : "ns.rackspace.com",
          "updated" : "2013-05-06T17:17:31.000+0000",
          "ttl" : 7788,
          "created" : "2013-05-06T17:17:31.000+0000"
@@ -479,7 +479,7 @@ The following are examples of the reference domain and the resulting cloned doma
          "name" : "clone1.com",
          "id" : "NS-8504414",
          "type" : "NS",
-         "data" : "dns2.stabletransit.com",
+         "data" : "ns2.rackspace.com",
          "updated" : "2013-05-06T17:17:31.000+0000",
          "ttl" : 7788,
          "created" : "2013-05-06T17:17:31.000+0000"

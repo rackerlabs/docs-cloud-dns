@@ -301,24 +301,24 @@ Create domain: final successful response
                 emailAddress="sample@rackspace.com" updated="2012-03-15T17:53:05Z"
                 created="2012-03-15T17:53:05Z" comment="Optional domain comment...">
                 <nameservers>
-                    <nameserver name="dns1.stabletransit.com"/>
-                    <nameserver name="dns2.stabletransit.com"/>
+                    <nameserver name="ns.rackspace.com"/>
+                    <nameserver name="ns2.rackspace.com"/>
                 </nameservers>
                 <subdomains>
                     <domain id="3191307" accountId="1234" name="sub1.example.com" ttl="3600"
                         emailAddress="sample@rackspace.com" updated="2012-03-15T17:53:05Z"
                         created="2012-03-15T17:53:05Z" comment="1st sample subdomain">
                         <nameservers>
-                            <nameserver name="dns1.stabletransit.com"/>
-                            <nameserver name="dns2.stabletransit.com"/>
+                            <nameserver name="ns.rackspace.com"/>
+                            <nameserver name="ns2.rackspace.com"/>
                         </nameservers>
                     </domain>
                     <domain id="3191308" accountId="1234" name="sub2.example.com" ttl="3600"
                         emailAddress="sample@rackspace.com" updated="2012-03-15T17:53:05Z"
                         created="2012-03-15T17:53:05Z" comment="1st sample subdomain">
                         <nameservers>
-                            <nameserver name="dns1.stabletransit.com"/>
-                            <nameserver name="dns2.stabletransit.com"/>
+                            <nameserver name="ns.rackspace.com"/>
+                            <nameserver name="ns2.rackspace.com"/>
                         </nameservers>
                     </domain>
                 </subdomains>
@@ -361,10 +361,10 @@ Create domain: final successful response
                 "emailAddress": "sample@rackspace.com",
                 "nameservers": [
                   {
-                    "name": "dns1.stabletransit.com"
+                    "name": "ns.rackspace.com"
                   },
                   {
-                    "name": "dns2.stabletransit.com"
+                    "name": "ns2.rackspace.com"
                   }
                 ],
                 "created": "2012-03-15T18:08:16.000+0000"
@@ -379,10 +379,10 @@ Create domain: final successful response
                 "emailAddress": "sample@rackspace.com",
                 "nameservers": [
                   {
-                    "name": "dns1.stabletransit.com"
+                    "name": "ns.rackspace.com"
                   },
                   {
-                    "name": "dns2.stabletransit.com"
+                    "name": "ns2.rackspace.com"
                   }
                 ],
                 "created": "2012-03-15T18:08:16.000+0000"
@@ -394,10 +394,10 @@ Create domain: final successful response
           "emailAddress": "sample@rackspace.com",
           "nameservers": [
             {
-              "name": "dns1.stabletransit.com"
+              "name": "ns.rackspace.com"
             },
             {
-              "name": "dns2.stabletransit.com"
+              "name": "ns2.rackspace.com"
             }
           ],
           "created": "2012-03-15T18:08:15.000+0000"

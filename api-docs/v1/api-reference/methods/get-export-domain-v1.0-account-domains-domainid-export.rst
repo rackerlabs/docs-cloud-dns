@@ -140,13 +140,13 @@ Response
    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
    <domain id="2725339" accountId="1234" contentType="BIND_9" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
        <contents>
-       		example.net. 3600 IN SOA dns1.stabletransit.com.
+       		example.net. 3600 IN SOA ns.rackspace.com.
    			sample@rackspace.com. 1308874739 3600 3600 3600 3600
    			example.net. 86400 IN A 110.11.12.16
    			example.net. 3600 IN MX 5 mail2.example.net.
    			www.example.net. 5400 IN CNAME example.net.
-   			example.net. 5600 IN NS dns1.stabletransit.com.
-   			example.net. 5600 IN NS dns2.stabletransit.com.
+   			example.net. 5600 IN NS ns.rackspace.com.
+   			example.net. 5600 IN NS ns2.rackspace.com.
    		</contents>
    </domain>
 
@@ -165,7 +165,7 @@ Response
    {
      "id" : 2725339,
      "contentType" : "BIND_9",
-     "contents" : "\n    \t\texample.net. 3600 IN SOA dns1.stabletransit.com.\n\t\t\tsample@rackspace.com. 1308874739 3600 3600 3600 3600\n\t\t\texample.net. 86400 IN A 110.11.12.16\n\t\t\texample.net. 3600 IN MX 5 mail2.example.net.\n\t\t\twww.example.net. 5400 IN CNAME example.net.\n\t\t\texample.net. 5600 IN NS dns1.stabletransit.com.\n\t\t\texample.net. 5600 IN NS dns2.stabletransit.com.\t\t\t\n\t\t",
+     "contents" : "\n    \t\texample.net. 3600 IN SOA ns.rackspace.com.\n\t\t\tsample@rackspace.com. 1308874739 3600 3600 3600 3600\n\t\t\texample.net. 86400 IN A 110.11.12.16\n\t\t\texample.net. 3600 IN MX 5 mail2.example.net.\n\t\t\twww.example.net. 5400 IN CNAME example.net.\n\t\t\texample.net. 5600 IN NS ns.rackspace.com.\n\t\t\texample.net. 5600 IN NS ns2.rackspace.com.\t\t\t\n\t\t",
      "accountId" : 1234
    }
 
