@@ -158,8 +158,8 @@ This table shows the body parameters for the request:
            <recordsList>
                <record type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"/>
                <record type="A" name="example.com" data="192.0.2.17" ttl="86400"/>
-               <record type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600"/>
-               <record type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600"/>
+               <record type="NS" name="example.com" data="ns.rackspace.com" ttl="3600"/>
+               <record type="NS" name="example.com" data="ns2.rackspace.com" ttl="3600"/>
                <record type="MX" name="example.com" data="mail.example.com" ttl="3600" priority="5"/>
                <record type="CNAME" name="www.example.com" data="example.com" ttl="5400" comment="This is a comment on the CNAME record"/>
            </recordsList>
@@ -202,12 +202,12 @@ This table shows the body parameters for the request:
          }, {
            "name" : "example.com",
            "type" : "NS",
-           "data" : "dns1.stabletransit.com",
+           "data" : "ns.rackspace.com",
            "ttl" : 3600
          }, {
            "name" : "example.com",
            "type" : "NS",
-           "data" : "dns2.stabletransit.com",
+           "data" : "ns2.rackspace.com",
            "ttl" : 3600
          }, {
            "name" : "example.com",
@@ -265,14 +265,14 @@ Response
    <domains totalEntries="114" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
        <domain name="example.com" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment...">
            <nameservers>
-               <nameserver name="dns1.stabletransit.com"/>
-               <nameserver name="dns2.stabletransit.com"/>
+               <nameserver name="ns.rackspace.com"/>
+               <nameserver name="ns2.rackspace.com"/>
            </nameservers>
            <recordsList>
                <record type="A" name="ftp.example.com" data="192.0.2.8" ttl="5771"/>
                <record type="A" name="example.com" data="192.0.2.17" ttl="86400"/>
-               <record type="NS" name="example.com" data="dns1.stabletransit.com" ttl="3600"/>
-               <record type="NS" name="example.com" data="dns2.stabletransit.com" ttl="3600"/>
+               <record type="NS" name="example.com" data="ns.rackspace.com" ttl="3600"/>
+               <record type="NS" name="example.com" data="ns2.rackspace.com" ttl="3600"/>
                <record type="MX" name="example.com" data="mail.example.com" ttl="3600" priority="5"/>
                <record type="CNAME" name="www.example.com" data="example.com" ttl="5400" comment="This is a comment on the CNAME record"/>
            </recordsList>
@@ -301,9 +301,9 @@ Response
        "name" : "example.com",
        "comment" : "Optional domain comment...",
        "nameservers" : [ {
-         "name" : "dns1.stabletransit.com"
+         "name" : "ns.rackspace.com"
        }, {
-         "name" : "dns2.stabletransit.com"
+         "name" : "ns2.rackspace.com"
        } ],
        "recordsList" : {
          "records" : [ {
@@ -319,12 +319,12 @@ Response
          }, {
            "name" : "example.com",
            "type" : "NS",
-           "data" : "dns1.stabletransit.com",
+           "data" : "ns.rackspace.com",
            "ttl" : 3600
          }, {
            "name" : "example.com",
            "type" : "NS",
-           "data" : "dns2.stabletransit.com",
+           "data" : "ns2.rackspace.com",
            "ttl" : 3600
          }, {
            "name" : "example.com",

@@ -189,8 +189,8 @@ contains the results of the operation:
         <response xsi:type="domains" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <domain id="12345" accountId="1234" name="example.com" ttl="3600" emailAddress="admin@example.com" updated="2011-08-23T14:02:54-05:00" created="2011-08-23T14:02:54-05:00">
                 <nameservers>
-                    <nameserver name="dns1.stabletransit.com"/>
-                    <nameserver name="dns2.stabletransit.com"/>
+                    <nameserver name="ns.rackspace.com"/>
+                    <nameserver name="ns2.rackspace.com"/>
                 </nameservers>
             </domain>
         </response>
@@ -221,9 +221,9 @@ contains the results of the operation:
           "id" : 12345,
           "updated" : "2011-08-23T19:02:54.000+0000",
           "nameservers" : [ {
-            "name" : "dns1.stabletransit.com"
+            "name" : "ns.rackspace.com"
           }, {
-            "name" : "dns2.stabletransit.com"
+            "name" : "ns2.rackspace.com"
           } ],
           "accountId" : 1234,
           "ttl" : 3600,
@@ -543,8 +543,8 @@ those still running, and then those that have completed:
             <response xsi:type="domains" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                 <domain id="2764458" accountId="440369" name="example.com" ttl="3642" emailAddress="hostmaster@example.com" updated="2011-08-29T15:49:53-05:00" created="2011-08-29T15:49:53-05:00">
                     <nameservers>
-                        <nameserver name="dns1.stabletransit.com"/>
-                        <nameserver name="dns2.stabletransit.com"/>
+                        <nameserver name="ns.rackspace.com"/>
+                        <nameserver name="ns2.rackspace.com"/>
                     </nameservers>
                 </domain>
             </response>
@@ -584,9 +584,9 @@ those still running, and then those that have completed:
             "id" : 2764458,
             "updated" : "2011-08-29T20:49:53.000+0000",
             "nameservers" : [ {
-              "name" : "dns1.stabletransit.com"
+              "name" : "ns.rackspace.com"
             }, {
-              "name" : "dns2.stabletransit.com"
+              "name" : "ns2.rackspace.com"
             } ],
             "accountId" : 440369,
             "ttl" : 3642,
