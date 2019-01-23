@@ -27,8 +27,6 @@ Use the links below to learn more about the |service| service and API.
 Tell us what you think by sending feedback, issues, and bug reports to
 DNS_EA@rackspace.com.
 
-.. COMMENT Please visit our :rax-special:`Product Feedback Forum<feedback>` to
-.. COMMENT let us know what you think about Managed DNS!
 
 You can also follow Rackspace updates and announcements via `Twitter`_.
 
