@@ -70,9 +70,7 @@ Use the following links to get user and reference information for using the
 
 .. note::
 
-   You can also use |product name| from the Cloud Control Panel or by using
-   one of the language-specific
-   :rax-devdocs:`software development kits or the rack CLI <#sdks>`.
+   You can also use |product name| from the Cloud Control Panel.
 
 .. toctree:: :hidden:
    :maxdepth: 3
