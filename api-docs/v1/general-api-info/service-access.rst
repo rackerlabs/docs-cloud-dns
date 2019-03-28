@@ -12,7 +12,7 @@ Use the following service access endpoint to access the |product name| service.
 Replace the $TENANT_ID variable with your Rackspace Cloud account number
 (for example, 123456).
 
-- ``https://global.dns.api.rackspacecloud.com/v2/$TENANT_ID/``
+- ``https://dns.api.rackspacecloud.com/v1.0/$TENANT_ID/``
 
 You can find your account number after the final slash(/) in the ``publicURL``
 field found in the service catalog that isreturned in the authentication
