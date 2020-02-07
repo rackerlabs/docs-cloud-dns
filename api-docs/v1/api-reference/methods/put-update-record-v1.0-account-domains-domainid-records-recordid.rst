@@ -143,14 +143,14 @@ This table shows the body parameters for the request:
 |                          |                         |must be a valid IPv4 or  |
 |                          |                         |IPv6 IP address.         |
 +--------------------------+-------------------------+-------------------------+
-|**priority**              |String *(Optional)*      |Can be included for MX   |
+|**priority**              |Integer *(Optional)*     |Can be included for MX   |
 |                          |                         |and SRV records, but     |
 |                          |                         |forbidden for other      |
 |                          |                         |record types. If         |
 |                          |                         |specified, must be an    |
 |                          |                         |integer from 0 to 65535. |
 +--------------------------+-------------------------+-------------------------+
-|**ttl**                   |String *(Optional)*      |If specified, must be    |
+|**ttl**                   |Integer *(Optional)*     |If specified, must be    |
 |                          |                         |greater than or equal to |
 |                          |                         |300. Defaults to the     |
 |                          |                         |domain TTL if available, |

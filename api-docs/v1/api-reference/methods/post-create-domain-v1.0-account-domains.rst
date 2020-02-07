@@ -130,7 +130,7 @@ This table shows the body parameters for the request:
 |**emailAddress**          |                         |contacting the domain    |
 |                          |                         |administrator.           |
 +--------------------------+-------------------------+-------------------------+
-|domains[*].\ **ttl**      |String *(Optional)*      |If specified, must be    |
+|domains[*].\ **ttl**      |Integer *(Optional)*     |If specified, must be    |
 |                          |                         |greater than or equal to |
 |                          |                         |300. The default value,  |
 |                          |                         |if not specified, is     |
