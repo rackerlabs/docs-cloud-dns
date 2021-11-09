@@ -156,7 +156,7 @@ Response
 
    {
      "name" : "example.com",
-     "id" : 2725233,
+     "id" : "2725233",
      "comment" : "Optional domain comment...",
      "updated" : "2011-06-24T01:23:15.000+0000",
      "nameservers" : [ {
@@ -164,7 +164,7 @@ Response
      }, {
        "name" : "ns2.rackspace.com"
      } ],
-     "accountId" : 1234,
+     "accountId" : "1234",
      "recordsList" : {
        "totalEntries" : 6,
        "records" : [ {

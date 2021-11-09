@@ -143,7 +143,7 @@ Response
    {
      "domains" : [ {
        "name" : "sub1.example.com",
-       "id" : 2725257,
+       "id" : "2725257",
        "comment" : "1st sample subdomain",
        "updated" : "2011-06-23T03:09:34.000+0000",
        "emailAddress" : "sample@rackspace.com",

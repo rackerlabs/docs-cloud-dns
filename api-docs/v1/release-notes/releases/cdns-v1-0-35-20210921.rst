@@ -14,10 +14,10 @@ The migration did change a few minor details about the contract. The following a
 
 Ids are no longer just integers
 +++++++++++++++++++++++++++++++
-As a result of the migration id data type is now of type string. There are now four possible formats.
+As a result of the migration, id and accountId data type is now of type string. There are now four possible formats.
 
 - Ids as a 32 digit UUID. This is the new v2 format for all ids. example: 94a01109-94d3-44df-ae95-5fb1d94edfd4
-- Ids as integers. Applies to migrated v1 zone Ids. example: 123456
+- Ids and accountIds as integers. Applies to migrated v1 zone Ids and all accountIds. example: 123456
 - Ids as a record type plus an integer. Applies to migrated v1 record ids. example: A-123456, TXT-123456
 - Ids as a 10 digit hexadecimal. Applies to migrated audit Ids. example: 0a1b2c3d4e
 

@@ -154,7 +154,7 @@ Response
    {
      "domains" : [ {
        "name" : "region2.example.net",
-       "id" : 2725352,
+       "id" : "2725352",
        "updated" : "2011-06-23T20:21:06.000+0000",
        "created" : "2011-06-23T19:24:27.000+0000"
      } ],
@@ -192,7 +192,7 @@ Response
    {
      "domains" : [ {
        "name" : "sub1.example.com",
-       "id" : 2725257,
+       "id" : "2725257",
        "comment" : "1st sample subdomain",
        "updated" : "2011-06-23T03:09:34.000+0000",
        "emailAddress" : "sample@rackspace.com",

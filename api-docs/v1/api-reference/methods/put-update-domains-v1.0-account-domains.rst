@@ -134,12 +134,12 @@ This operation does not accept a request body.
 
    {
      "domains" : [ {
-       "id" : 2725233,
+       "id" : "2725233",
        "comment" : "Optional domain comment...",
        "ttl" : 3600,
        "emailAddress" : "sample@rackspace.com"
      }, {
-       "id" : 2725257,
+       "id" : "2725257",
        "comment" : "1st sample subdomain",
        "emailAddress" : "sample@rackspace.com"
      } ]
