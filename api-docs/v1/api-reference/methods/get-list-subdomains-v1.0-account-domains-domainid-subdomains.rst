@@ -135,27 +135,27 @@ Response
    {
      "domains" : [ {
        "name" : "sub1.example.com",
-       "id" : 2725257,
+       "id" : "2725257",
        "comment" : "1st sample subdomain",
        "updated" : "2011-06-23T03:09:34.000+0000",
        "emailAddress" : "sample@rackspace.com",
        "created" : "2011-06-23T03:09:33.000+0000"
      }, {
        "name" : "sub2.example.com",
-       "id" : 2725258,
+       "id" : "2725258",
        "comment" : "1st sample subdomain",
        "updated" : "2011-06-23T03:52:55.000+0000",
        "emailAddress" : "sample@rackspace.com",
        "created" : "2011-06-23T03:52:55.000+0000"
      }, {
        "name" : "north.example.com",
-       "id" : 2725260,
+       "id" : "2725260",
        "updated" : "2011-06-23T03:53:10.000+0000",
        "emailAddress" : "sample@rackspace.com",
        "created" : "2011-06-23T03:53:09.000+0000"
      }, {
        "name" : "south.example.com",
-       "id" : 2725261,
+       "id" : "2725261",
        "comment" : "Final sample subdomain",
        "updated" : "2011-06-23T03:53:14.000+0000",
        "emailAddress" : "sample@rackspace.com",

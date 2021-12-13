@@ -169,7 +169,7 @@ Response
          "originalValue" : "Tue Sep 13 15:23:15 UTC 2011"
        } ],
        "accountId" : 1234,
-       "targetId" : 45678
+       "targetId" : "45678"
      }, {
        "domain" : "rs.example.com",
        "targetType" : "MX Record",
@@ -207,7 +207,7 @@ Response
          "newValue" : "45678",
          "originalValue" : ""
        } ],
-       "targetId" : 222222
+       "targetId" : "222222"
      }, {
        "domain" : "rs.example.com",
        "targetType" : "Domain",
@@ -222,7 +222,7 @@ Response
          "originalValue" : "Thu Jul 14 15:14:41 UTC 2011"
        } ],
        "accountId" : 1234,
-       "targetId" : 45678
+       "targetId" : "45678"
      }, {
        "domain" : "rs.example.com",
        "targetType" : "CNAME Record",
@@ -256,7 +256,7 @@ Response
          "newValue" : "45678",
          "originalValue" : ""
        } ],
-       "targetId" : 87654
+       "targetId" : "87654"
      } ]
    }
 

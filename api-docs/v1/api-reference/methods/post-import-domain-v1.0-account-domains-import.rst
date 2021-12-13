@@ -197,69 +197,81 @@ Response
 
 .. code::
 
-   Status: 202 Accepted
-   Date: Thu, 28 Jul 2011 21:54:21 GMT
-   X-API-VERSION: 1.0.17
+   Status: 200 OK
+   Date: Tue, 09 Nov 2021 20:28:58 GMT
    Content-Type: application/xml
    Content-Length: 855
 
    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-   <domains xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
-       <domain name="example.net" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment...">
-           <nameservers>
-               <nameserver name="ns.rackspace.com"/>
-               <nameserver name="ns2.rackspace.com"/>
-           </nameservers>
-           <recordsList totalEntries="3">
-               <record type="A" name="example.net" data="110.11.12.16" ttl="86400"/>
-               <record type="MX" name="example.net" data="mail2.example.net" ttl="3600" priority="5"/>
-               <record type="CNAME" name="www.example.net" data="example.net" ttl="5400"/>
-           </recordsList>
-       </domain>
-   </domains>
+   <callbackUrl>https://dns.api.rackspacecloud.com/v1.0/1234/status/017d0607-07b7-4000-b938-41c43289bf3b</callbackUrl>
+   <jobId>017d0607-07b7-4000-b938-41c43289bf3b</jobId>
+   <requestUrl>https://dns.api.rackspacecloud.com/v1.0/1234/domains/import</requestUrl>
+   <response>
+      <domains>
+          <domain name="example.net" ttl="3600" emailAddress="sample@rackspace.com" comment="Optional domain comment...">
+              <nameservers>
+                  <nameserver name="ns.rackspace.com"/>
+                  <nameserver name="ns2.rackspace.com"/>
+              </nameservers>
+              <recordsList totalEntries="3">
+                  <record type="A" name="example.net" data="110.11.12.16" ttl="86400"/>
+                  <record type="MX" name="example.net" data="mail2.example.net" ttl="3600" priority="5"/>
+                  <record type="CNAME" name="www.example.net" data="example.net" ttl="5400"/>
+              </recordsList>
+          </domain>
+      </domains>
+   </response>
+   <verb>POST</verb>
+   <status>COMPLETED</status>
 
 **Example Import domain: JSON response**
 
 
 .. code::
 
-   Status: 202 Accepted
-   Date: Thu, 28 Jul 2011 21:54:21 GMT
-   X-API-VERSION: 1.0.17
+   Status: 200 OK
+   Date: Tue, 09 Nov 2021 20:28:58 GMT
    Content-Type: application/json
    Content-Length: 756
 
    {
-     "domains" : [ {
-       "name" : "example.net",
-       "comment" : "Optional domain comment...",
-       "nameservers" : [ {
-         "name" : "ns.rackspace.com"
-       }, {
-         "name" : "ns2.rackspace.com"
-       } ],
-       "recordsList" : {
-         "totalEntries" : 3,
-         "records" : [ {
+     "callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/status/017d0607-07b7-4000-b938-41c43289bf3b",
+     "jobId": "017d0607-07b7-4000-b938-41c43289bf3b",
+     "requestUrl": "https://dns.api.rackspacecloud.com/v1.0/1234/domains/import",
+     "response": {
+         "domains" : [ {
            "name" : "example.net",
-           "type" : "A",
-           "data" : "110.11.12.16",
-           "ttl" : 86400
-         }, {
-           "name" : "example.net",
-           "priority" : 5,
-           "type" : "MX",
-           "data" : "mail2.example.net",
-           "ttl" : 3600
-         }, {
-           "name" : "www.example.net",
-           "type" : "CNAME",
-           "data" : "example.net",
-           "ttl" : 5400
+           "comment" : "Optional domain comment...",
+           "nameservers" : [ {
+             "name" : "ns.rackspace.com"
+           }, {
+             "name" : "ns2.rackspace.com"
+           } ],
+           "recordsList" : {
+             "totalEntries" : 3,
+             "records" : [ {
+               "name" : "example.net",
+               "type" : "A",
+               "data" : "110.11.12.16",
+               "ttl" : 86400
+             }, {
+               "name" : "example.net",
+               "priority" : 5,
+               "type" : "MX",
+               "data" : "mail2.example.net",
+               "ttl" : 3600
+             }, {
+               "name" : "www.example.net",
+               "type" : "CNAME",
+               "data" : "example.net",
+               "ttl" : 5400
+             } ]
+           },
+           "ttl" : 3600,
+           "emailAddress" : "sample@rackspace.com"
          } ]
-       },
-       "ttl" : 3600,
-       "emailAddress" : "sample@rackspace.com"
-     } ]
+     },
+     "verb": "POST",
+     "status": "COMPLETED"
    }
 

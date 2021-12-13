@@ -1,0 +1,37 @@
+.. _cdns-v1-20210921:
+
+v1.0.35 Environment Changes, September 21, 2021
+-----------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+Environment Changes
+*******************
+
+The v1 environment was migrated to the v2 environment. For the most part the v1 contract was kept the same.
+The migration did change a few minor details about the contract. The following are the changes:
+
+Ids are no longer just integers
++++++++++++++++++++++++++++++++
+As a result of the migration, id and accountId data type is now of type string. There are now four possible formats.
+
+- Ids as a 32 digit UUID. This is the new v2 format for all ids. example: 94a01109-94d3-44df-ae95-5fb1d94edfd4
+- Ids and accountIds as integers. Applies to migrated v1 zone Ids and all accountIds. example: 123456
+- Ids as a record type plus an integer. Applies to migrated v1 record ids. example: A-123456, TXT-123456
+- Ids as a 10 digit hexadecimal. Applies to migrated audit Ids. example: 0a1b2c3d4e
+
+Checking Job status
++++++++++++++++++++
+Jobs have the possibility of immediately returning a status of COMPLETED whereas previous behavior RUNNING would be returned.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

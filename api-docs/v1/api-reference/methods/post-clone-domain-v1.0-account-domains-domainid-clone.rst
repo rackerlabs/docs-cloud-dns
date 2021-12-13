@@ -325,7 +325,7 @@ The following are examples of the reference domain and the resulting cloned doma
 
    {
      "name" : "cloner.com",
-     "id" : 3586209,
+     "id" : "3586209",
      "comment" : "cloner.com is a template domain for cloning others. cloner.com has subdomains - sub1.cloner.com, sub2.cloner.com, sub3.cloner.com",
      "updated" : "2013-05-06T17:10:55.000+0000",
      "nameservers" : [ {
@@ -333,7 +333,7 @@ The following are examples of the reference domain and the resulting cloned doma
      }, {
        "name" : "ns2.rackspace.com"
      } ],
-     "accountId" : 1234,
+     "accountId" : "1234",
      "recordsList" : {
        "totalEntries" : 7,
        "records" : [ {
@@ -399,21 +399,21 @@ The following are examples of the reference domain and the resulting cloned doma
      "subdomains" : {
        "domains" : [ {
          "name" : "sub1.cloner.com",
-         "id" : 3586210,
+         "id" : "3586210",
          "comment" : "sub1.cloner.com uses rackspace.com for email domain name. Sister subdomains are sub2.cloner.com, sub3.cloner.com",
          "updated" : "2013-05-06T17:10:56.000+0000",
          "emailAddress" : "administrator@rackspace.com",
          "created" : "2013-05-06T17:10:55.000+0000"
        }, {
          "name" : "sub2.cloner.com",
-         "id" : 3586211,
+         "id" : "3586211",
          "comment" : "sub1.cloner.com uses parent domain name, cloner.com, for email domain name",
          "updated" : "2013-05-06T17:10:56.000+0000",
          "emailAddress" : "admin@cloner.com",
          "created" : "2013-05-06T17:10:56.000+0000"
        }, {
          "name" : "sub3.cloner.com",
-         "id" : 3586212,
+         "id" : "3586212",
          "comment" : "sub3.cloner.com uses it's own domain name for email domain name",
          "updated" : "2013-05-06T17:10:57.000+0000",
          "emailAddress" : "adm@sub3.cloner.com",
@@ -440,7 +440,7 @@ The following are examples of the reference domain and the resulting cloned doma
 
    {
      "name" : "clone1.com",
-     "id" : 3586213,
+     "id" : "3586213",
      "comment" : "clone1.com is a template domain for cloning others. clone1.com has subdomains - sub1.clone1.com, sub2.clone1.com, sub3.clone1.com",
      "updated" : "2013-05-06T17:17:35.000+0000",
      "nameservers" : [ {
@@ -448,7 +448,7 @@ The following are examples of the reference domain and the resulting cloned doma
      }, {
        "name" : "ns2.rackspace.com"
      } ],
-     "accountId" : 1234,
+     "accountId" : "1234",
      "recordsList" : {
        "totalEntries" : 7,
        "records" : [ {
@@ -514,21 +514,21 @@ The following are examples of the reference domain and the resulting cloned doma
      "subdomains" : {
        "domains" : [ {
          "name" : "sub1.clone1.com",
-         "id" : 3586214,
+         "id" : "3586214",
          "comment" : "sub1.clone1.com uses rackspace.com for email domain name. Sister subdomains are sub2.clone1.com, sub3.clone1.com",
          "updated" : "2013-05-06T17:17:36.000+0000",
          "emailAddress" : "administrator@rackspace.com",
          "created" : "2013-05-06T17:17:36.000+0000"
        }, {
          "name" : "sub2.clone1.com",
-         "id" : 3586215,
+         "id" : "3586215",
          "comment" : "sub1.clone1.com uses parent domain name, clone1.com, for email domain name",
          "updated" : "2013-05-06T17:17:37.000+0000",
          "emailAddress" : "admin@clone1.com",
          "created" : "2013-05-06T17:17:37.000+0000"
        }, {
          "name" : "sub3.clone1.com",
-         "id" : 3586216,
+         "id" : "3586216",
          "comment" : "sub3.clone1.com uses it's own domain name for email domain name",
          "updated" : "2013-05-06T17:17:37.000+0000",
          "emailAddress" : "adm@sub3.clone1.com",

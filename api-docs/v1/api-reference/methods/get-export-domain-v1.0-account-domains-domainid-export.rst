@@ -27,11 +27,8 @@ no subdomain information is provided).
    *  The BIND 9 formatted contents of the requested domain will have no
       comments listed for the domain or for the records of the domain being
       exported.
-   *  If there are more than 300 records in the Export domain operation,
-      records are dropped from the export due to a known defect. Please contact
-      your support team to perform the export for you.
    *  The following examples show the final successful response for the
-      asynchronous call.
+      asynchronous call with showDetails set to true.
 
 
 This table shows the possible response codes for this operation:
@@ -104,7 +101,7 @@ This operation does not accept a request body.
 
 .. code::
 
-   GET https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725339/export
+   GET https://dns.api.rackspacecloud.com/v1.0/hybrid:30720/domains/292786/export
    Accept: application/xml
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/xml
@@ -116,7 +113,7 @@ This operation does not accept a request body.
 
 .. code::
 
-   GET https://dns.api.rackspacecloud.com/v1.0/1234/domains/2725339/export
+   GET https://dns.api.rackspacecloud.com/v1.0/hybrid:30720/domains/292786/export
    Accept: application/json
    X-Auth-Token: ea85e6ac-baff-4a6c-bf43-848020ea3812
    Content-Type: application/json
@@ -131,24 +128,39 @@ Response
 
 .. code::
 
-   Status: 202 Accepted
-   Date: Thu, 28 Jul 2011 21:54:21 GMT
-   X-API-VERSION: 1.0.17
+   Status: 200 OK
+   Date: Fri, 29 Oct 2021 21:21:04 GMT
    Content-Type: application/xml
-   Content-Length: 665
+   Content-Length: 826
 
    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-   <domain id="2725339" accountId="1234" contentType="BIND_9" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.rackspacecloud.com/dns/api/v1.0" xmlns:ns3="http://docs.rackspacecloud.com/dns/api/management/v1.0">
-       <contents>
-       		example.net. 3600 IN SOA ns.rackspace.com.
-   			sample@rackspace.com. 1308874739 3600 3600 3600 3600
-   			example.net. 86400 IN A 110.11.12.16
-   			example.net. 3600 IN MX 5 mail2.example.net.
-   			www.example.net. 5400 IN CNAME example.net.
-   			example.net. 5600 IN NS ns.rackspace.com.
-   			example.net. 5600 IN NS ns2.rackspace.com.
-   		</contents>
-   </domain>
+   <callbackUrl>https://dns.api.rackspacecloud.com/v1.0/hybrid:30720/status/017d0607-07b7-4000-b938-41c43289bf3b</callbackUrl>
+   <jobId>017d0607-07b7-4000-b938-41c43289bf3b</jobId>
+   <requestUrl>https://dns.api.rackspacecloud.com/v1.0/hybrid:30720/domains/292786/export</requestUrl>
+   <response>
+       <contents>;Configuration for DNS Zone example.com
+
+   ;-----;example.com;
+   example.com. 300 IN SOA ns.rackspace.com. hostmaster.rackspace.com. (
+   1628878394
+   10800
+   3600
+   604800
+   300
+   )
+   pop3.example.com. 86400 IN CNAME example.com.
+   www.example.com. 86400 IN CNAME example.com.
+   example.com. 86400 IN NS ns.rackspace.com.
+   example.com. 86400 IN NS ns2.rackspace.com.
+
+   example.com. 300 IN TXT "a blah blah blah"
+   </contents>
+       <id>292786</id>
+       <accountId>hybrid:30720</accountId>
+       <contentType>BIND_9</contentType>
+   </response>
+   <verb>GET</verb>
+   <status>COMPLETED</status>
 
 
 **Example Export domain: JSON response**
@@ -156,17 +168,23 @@ Response
 
 .. code::
 
-   Status: 202 Accepted
-   Date: Thu, 28 Jul 2011 21:54:21 GMT
-   X-API-VERSION: 1.0.17
+   Status: 200 OK
+   Date: Fri, 29 Oct 2021 21:21:04 GMT
    Content-Type: application/json
-   Content-Length: 476
+   Content-Length: 780
 
    {
-     "id" : 2725339,
-     "contentType" : "BIND_9",
-     "contents" : "\n    \t\texample.net. 3600 IN SOA ns.rackspace.com.\n\t\t\tsample@rackspace.com. 1308874739 3600 3600 3600 3600\n\t\t\texample.net. 86400 IN A 110.11.12.16\n\t\t\texample.net. 3600 IN MX 5 mail2.example.net.\n\t\t\twww.example.net. 5400 IN CNAME example.net.\n\t\t\texample.net. 5600 IN NS ns.rackspace.com.\n\t\t\texample.net. 5600 IN NS ns2.rackspace.com.\t\t\t\n\t\t",
-     "accountId" : 1234
+    "callbackUrl": "https://dns.api.rackspacecloud.com/v1.0/hybrid:30720/status/017d0607-07b7-4000-b938-41c43289bf3b",
+    "jobId": "017d0607-07b7-4000-b938-41c43289bf3b",
+    "requestUrl": "https://dns.api.rackspacecloud.com/v1.0/hybrid:30720/domains/292786/export",
+    "response": {
+        "contents": ";Configuration for DNS Zone example.com\n\n;-----;example.com;\nexample.com. 300 IN SOA ns.rackspace.com. hostmaster.rackspace.com. (\n1628878394\n10800\n3600\n604800\n300\n)\npop3.example.com. 86400 IN CNAME example.com.\nwww.example.com. 86400 IN CNAME example.com.\nexample.com. 86400 IN NS ns.rackspace.com.\nexample.com. 86400 IN NS ns2.rackspace.com.\n\nexample.com. 300 IN TXT \"a blah blah blah\"\n",
+        "id": "292786",
+        "accountId": "hybrid:30720",
+        "contentType": "BIND_9"
+    },
+    "verb": "GET",
+    "status": "COMPLETED"
    }
 
 
